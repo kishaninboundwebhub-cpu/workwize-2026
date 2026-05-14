@@ -1,0 +1,38 @@
+<!--
+  templateType: "page"
+  isAvailableForNewContent: false
+-->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "@id": "{{ content.absolute_url }}#service",
+  "name": {{ content.name|striptags|tojson }},
+  "description": {{ page_meta.meta_description|striptags|trim|tojson }},
+  "serviceType": "IT Procurement Automation Platform",
+  "mainEntityOfPage": {
+    "@id": "{{ content.absolute_url }}#webpage"
+  },
+  "provider": {
+    "@type": "Organization",
+    "name": "Workwize",
+    "url": "https://www.goworkwize.com/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.goworkwize.com/hubfs/Workwize%20Logo%20Sky%20Blue%20icon.svg"
+    }
+  },
+  "brand": {
+    "@type": "Brand",
+    "name": "Workwize"
+  },
+  "audience": {
+    "@type": "BusinessAudience",
+    "audienceType": "IT Teams, Procurement Teams, Remote & Distributed Companies"
+  },
+  "areaServed": {
+    "@type": "Place",
+    "name": "Worldwide"
+  }
+}
+</script>

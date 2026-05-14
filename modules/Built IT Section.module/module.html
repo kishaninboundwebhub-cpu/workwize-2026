@@ -1,0 +1,144 @@
+{% if module.show_hide_ %}
+{% set moduleId = '#hs_cos_wrapper_{{ name }}' %}
+
+<div class="builitsec  trusly{{ module.layout_style }}  fullwidth bgsec space-sec">
+  {% if module.top_shape.src %}
+  <div class="builittop">
+    
+	
+	{% set sizeAttrs = 'width="{{ module.top_shape.width|escape_attr }}" height="{{ module.top_shape.height|escape_attr }}"' %}
+	{% if module.top_shape.size_type == 'auto' %}
+		{% set sizeAttrs = 'width="{{ module.top_shape.width|escape_attr }}" height="{{ module.top_shape.height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+	{% elif module.top_shape.size_type == 'auto_custom_max' %}
+		{% set sizeAttrs = 'width="{{ module.top_shape.max_width|escape_attr }}" height="{{ module.top_shape.max_height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+	{% endif %}
+	 {% set loadingAttr = module.top_shape.loading != 'disabled' ? 'loading="{{ module.top_shape.loading|escape_attr }}"' : '' %}
+	<img src="{{ module.top_shape.src|escape_url }}" alt="{{ module.top_shape.alt|escape_attr }}" {{ loadingAttr }} {{ sizeAttrs }}>
+
+
+  </div>
+{% endif %}  
+  
+  
+  {% if module.bottom_shape.src %}
+  <div class="builitBott">
+    
+	
+	{% set sizeAttrs = 'width="{{ module.bottom_shape.width|escape_attr }}" height="{{ module.bottom_shape.height|escape_attr }}"' %}
+	{% if module.bottom_shape.size_type == 'auto' %}
+		{% set sizeAttrs = 'width="{{ module.bottom_shape.width|escape_attr }}" height="{{ module.bottom_shape.height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+	{% elif module.bottom_shape.size_type == 'auto_custom_max' %}
+		{% set sizeAttrs = 'width="{{ module.bottom_shape.max_width|escape_attr }}" height="{{ module.bottom_shape.max_height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+	{% endif %}
+	 {% set loadingAttr = module.bottom_shape.loading != 'disabled' ? 'loading="{{ module.bottom_shape.loading|escape_attr }}"' : '' %}
+	<img src="{{ module.bottom_shape.src|escape_url }}" alt="{{ module.bottom_shape.alt|escape_attr }}" {{ loadingAttr }} {{ sizeAttrs }}>
+
+
+  </div>
+{% endif %}  
+  
+ <div class="wrapper">
+   
+   <div class="builitTitle text-center pb45 wow fadeInUp">
+     <h2>{{ module.title }}</h2>
+   </div>
+   <div class="builitIouter">
+     <div class="builitInner d_flex">
+      {% for item in module.box_item %}
+       <div class="builitBox wow fadeInUp">
+         <div class="builitBinn {% if item.border_left %} builitBorder {% endif %}">
+
+           <div class="builitBTt pb40">
+              {% if item.select_option_title_or_logo == 'title'  %}
+             <div class="builitBTtext">
+               {{ item.title }}
+             </div>
+            {% elif item.select_option_title_or_logo == 'logo'  %}
+             <div class="builitBTLogo">
+               {% if item.logo.src %}
+                {% set sizeAttrs = 'width="{{ item.logo.width|escape_attr }}" height="{{ item.logo.height|escape_attr }}"' %}
+                {% if item.logo.size_type == 'auto' %}
+                  {% set sizeAttrs = 'width="{{ item.logo.width|escape_attr }}" height="{{ item.logo.height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+                {% elif item.logo.size_type == 'auto_custom_max' %}
+                  {% set sizeAttrs = 'width="{{ item.logo.max_width|escape_attr }}" height="{{ item.logo.max_height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+                {% endif %}
+                 {% set loadingAttr = item.logo.loading != 'disabled' ? 'loading="{{ item.logo.loading|escape_attr }}"' : '' %}
+                <img src="{{ item.logo.src|escape_url }}" alt="{{ item.logo.alt|escape_attr }}" {{ loadingAttr }} {{ sizeAttrs }}>
+              {% endif %}
+             </div>
+             {% endif %}
+           </div>
+           <div class="trusindIBtext">
+               {{ item.text_field }}
+           </div>
+
+         </div>
+       </div>
+      {% endfor %} 
+     </div>
+  </div>
+   
+   <div class="builitBtn d_flex align_center secbtn set-btn-arrows-true {{ module.button.button_choice }} flex_center text-center pt60 wow fadeInUp">
+     {% set href = module.button.button_link.url.href %}
+        {% if module.button.button_link.url.type is equalto "EMAIL_ADDRESS" %}
+          {% set href = "mailto:" + href %}
+        {% elif module.button.button_link.url.type is equalto "PHONE_NUMBER" %}
+          {% set href = "tel:" + href %}
+        {% endif %}
+        <a
+          {% if module.button.button_link.url.type is equalto "CALL_TO_ACTION"  %}
+            href="{{ href }}" {# The href here is not escaped as it is not editable and functions as a JavaScript call to the associated CTA #}
+          {% else %}
+            href="{{ href|escape_url }}"
+          {% endif %}
+          {% if module.button.button_link.open_in_new_tab %}
+            target="_blank"
+          {% endif %}
+          {% if module.button.button_link.rel %}
+            rel="{{ module.button.button_link.rel|escape_attr }}"
+          {% endif %}
+          >
+          {{ module.button.button_text }}
+        </a>
+   </div>
+   
+   
+ </div>
+</div>
+
+
+{% require_css %}
+<style>
+  {{ moduleId }} .bgsec { {% if module.style.select_background == 'bg_color' %}
+    background-color: rgba({{ module.style.background_color.color|convert_rgb }},{{ module.style.background_color.opacity ~ '%' }});
+    {% elif module.style.select_background == 'bg_image' %}
+    {{ module.style.background_image.css }} background-repeat: no-repeat;
+    {% elif module.style.select_background == 'bg_gradient' %}
+    background: {{ module.style.background_gradient.css }};
+    {% endif %} }
+  
+  {{ moduleId }} .space-sec { {{ module.style.spacing.desktop.css }}; position: relative; z-index: 1; }
+  
+  
+  {{ moduleId }} .builitTitle {  max-width:{{ module.title_max_width }}px; margin: 0 auto; }
+  {{ moduleId }} .builitTitle h2 { color:{{ module.color_setting.title_color.color }}; } 
+  {{ moduleId }} .builitTitle h2 span { color:{{ module.color_setting.title_span_color.color }}; } 
+  
+  {% for item in module.box_item %}
+    {{ moduleId }} .builitBox:nth-child({{  loop.index }}) .builitBinn {  background-color:rgba({{ item.box_bg_color.color|convert_rgb }},{{ item.box_bg_color.opacity }}%); }
+    {{ moduleId }} .builitBox:nth-child({{  loop.index }}) .builitBTtext { color:rgba({{ item.title_color.color|convert_rgb }},{{ item.title_color.opacity }}%);  }
+    {{ moduleId }} .builitBox:nth-child({{  loop.index }}) .trusindIBtext { color:rgba({{ item.text_color.color|convert_rgb }},{{ item.text_color.opacity }}%); max-width:{{  item.text_max_width }}px;   }
+    {{ moduleId }} .builitBox:nth-child({{  loop.index }}) .trusindIBtext ul li:before {  background-image:url('{{ item.list_icon.src|escape_url }}');  }
+  {% endfor %}
+  
+  @media(max-width: 991px){ {{ moduleId }} .space-sec { {{ module.style.spacing.tablet.css }}; } }
+  
+  @media(max-width: 767px){ {{ moduleId }} .space-sec { {{ module.style.spacing.mobile.css }}; } }
+  
+</style>
+{% end_require_css %}
+
+
+
+{% endif %}
+

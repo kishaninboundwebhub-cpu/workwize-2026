@@ -1,0 +1,54 @@
+<!--
+  templateType: page
+  isAvailableForNewContent: true
+  label: Pricing Page
+  screenshotPath: ../images/template-previews/pricing.png
+-->
+{% extends "./layouts/base.html" %}
+
+{% block body %}
+{% dnd_area "dnd_area"
+  label="Main section",
+  class="body-container body-container--pricing"
+%}
+
+  {# Hero Section - Platform #}
+  {% dnd_section full_width='true', vertical_alignment='MIDDLE', padding= {'top': '0', 'bottom': '0', 'left': '0', 'right': '0',} %}
+    {% dnd_module "module_17086664136257" path="/Workwize/modules/Hero Section - Pricing", label="Hero Section - Pricing" %}
+    {% end_dnd_module %}  
+  {% end_dnd_section %} 
+
+  {# Pricing Section #}
+  {% dnd_section full_width='true', vertical_alignment='MIDDLE', padding= {'top': '0', 'bottom': '0', 'left': '0', 'right': '0',} %}
+    {% dnd_module "module_170866811246827" path="/Workwize/modules/Pricing Section", label="Pricing Section" %}
+    {% end_dnd_module %}  
+  {% end_dnd_section %}  
+ 
+  {# Logo Section #}
+  {% dnd_section full_width='true', vertical_alignment='MIDDLE', padding= {'top': '0', 'bottom': '0', 'left': '0', 'right': '0',} %}
+    {% dnd_module "module_170867231176849" path="/Workwize/modules/Logo Section", label="Logo Section" %}
+    {% end_dnd_module %}  
+  {% end_dnd_section %}  
+ 
+  {# Testimonial Section - Image #}
+  {# {% dnd_section full_width='true', vertical_alignment='MIDDLE', padding= {'top': '0', 'bottom': '0', 'left': '0', 'right': '0',} %}
+    {% dnd_module "module_170867235478753" path="/Workwize/modules/Testimonial Section - Image", label="Testimonial Section - Image" %}
+    {% end_dnd_module %}  
+  {% end_dnd_section %}  #}
+
+  {# Testimonial Section - Image Global #}
+  {% dnd_section full_width='true', vertical_alignment='MIDDLE', padding= {'top': '0', 'bottom': '0', 'left': '0', 'right': '0',} %}
+    {% dnd_module "module_173891412305573" path="/Workwize/modules/Testimonial Section - Image Global", label="Testimonial Section - Image Global" %}
+    {% end_dnd_module %}  
+  {% end_dnd_section %}  
+ 
+  {# Cta Section Fullwidth #}
+  {% dnd_section full_width='true', vertical_alignment='MIDDLE', padding= {'top': '0', 'bottom': '0', 'left': '0', 'right': '0',} %}
+    {% dnd_module "module_170867237490555" path="/Workwize/modules/Cta Section Fullwidth", label="Cta Section Fullwidth" %}
+    {% end_dnd_module %}  
+  {% end_dnd_section %}  
+
+
+
+{% end_dnd_area %}
+{% endblock body %}

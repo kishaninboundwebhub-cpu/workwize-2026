@@ -1,0 +1,81 @@
+.workwizetable-header { max-width: 1135px; margin-left: auto; margin-right: auto; margin-bottom: 50px; }
+.workwizetable-title h2 { line-height: 1.3334; }
+.workwizetable-column { width: 100%; display: flex; flex-wrap: wrap; }
+.wrkwtbl-row { width: 100%; display: flex; flex-wrap: wrap; background: #f5f7f8; }
+.wrkwtbl-img img { vertical-align: middle; max-width: 22px !important; }
+.wrkwtblcls { position: relative; min-height: 60px; width: 33.33%; border-bottom: 1px solid #FFFFFF; padding: 10px 30px; display: flex; flex-wrap: wrap; align-items: center; font-weight: 700; }
+.wrkwtblhead { gap: 15px;  display: flex; flex-wrap: wrap; align-items: center; width: 100%; }
+/* .wrkwtbl-row .wrkwtblcls:nth-child(3n + 1) { width: 50%; } */
+.wrkwtblcls:nth-child(2n) { color: #FFF; background-color: #122750; }
+.wrkwtbl-row:first-child .wrkwtblcls:nth-child(2n) { border-bottom: 1px solid #FFFFFF; border-top-left-radius: 20px; border-top-right-radius: 20px; }
+.wrkwtbl-row:first-child { background-color: transparent; }
+.wrkwtbl-row:first-child .wrkwtblcls { border-bottom: 1px solid transparent; font-weight: 700; justify-content: center; font-size: 24px; min-height: 100px; }
+.wrkwtbl-row:nth-child(2) { border-top-left-radius: 20px; border-top-right-radius: 20px;  }
+.wrkwtbl-row:last-child { border-bottom-left-radius: 20px; border-bottom-right-radius: 20px;  }
+.wrkwtbl-row:last-child .wrkwtblcls { border-bottom: 0; }
+.wrkwtbl-row:first-child .wrkwtblcls .wrkwtbl-img img { max-width: 220px !important; }
+span.wrkwtbl-img { line-height: 1; display: inline-block; }
+span.wrkwtbl-txt { display: inline-block; }
+span.wrkwtbl-txtspace { width: calc(100% - 37px); }
+
+.workwizetable-column.workw_set_two_column .wrkwtblcls { width: 50%; }
+
+.wrkwtbltxt { font-weight: 400; margin-top: 8px; font-size: 16px; padding-left: 37px; }
+.wrkwtbl-row:first-child .wrkwtblcls .wrkwtblhead { justify-content: center; }
+
+@media (max-width: 1280px) {
+  
+ .wrkwtbl-row:first-child .wrkwtblcls .wrkwtbl-img img { max-width: 200px !important; } 
+    
+}
+
+@media (max-width: 1080px) {
+  
+ .wrkwtbl-row:first-child .wrkwtblcls { font-size: 22px; }
+ .wrkwtbl-row:first-child .wrkwtblcls .wrkwtbl-img img { max-width: 160px !important; } 
+ .wrkwtbl-img img { max-width: 20px !important; }
+ .wrkwtblcls { padding: 10px 24px; } 
+  
+}
+
+@media (max-width: 991px) {
+
+ .workwizetable-sec { overflow: hidden; } 
+ .workwizetable-column { width: 850px; max-width: none; overflow: auto; }
+ .workwizetable-rowinner { overflow: auto; width: 100%; }
+ .workwizetable-rowinner::-webkit-scrollbar { width: 8px; }
+ .workwizetable-rowinner::-webkit-scrollbar:horizontal { height: 8px; }
+ .workwizetable-rowinner::-webkit-scrollbar-track { border-radius: 8px; background-color: #AAAAAA; }
+ .workwizetable-rowinner::-webkit-scrollbar-thumb { border-radius: 8px; background: #227AF7; }
+ .workwizetable-header { margin-bottom: 30px; } 
+  
+}
+
+@media (max-width: 767px) {
+   
+ .wrkwtblcls { padding: 10px 16px; }
+ .workwizetable-column { width: 727px; }
+ .wrkwtbl-row:first-child .wrkwtblcls { min-height: 80px; font-size: 18px; }
+ .wrkwtbl-row:first-child .wrkwtblcls .wrkwtbl-img img { max-width: 140px !important; }
+ span.wrkwtbl-txtspace { width: calc(100% - 35px); } 
+ .wrkwtbl-row:nth-child(2) { border-top-left-radius: 14px; border-top-right-radius: 14px; }
+ .wrkwtbl-row:first-child .wrkwtblcls:nth-child(2n) { border-top-left-radius: 14px; border-top-right-radius: 14px; } 
+ .wrkwtbl-row:last-child { border-bottom-left-radius: 14px; border-bottom-right-radius: 14px; } 
+  
+}
+
+@media (max-width: 480px) {
+ 
+ /* .wrkwtblcls { width: 32.5%; }
+ .wrkwtbl-row .wrkwtblcls:nth-child(3n + 1) { width: 35%; }  */
+ /*.workwizetable-column { width: 650px; } */
+ .wrkwtbl-row:first-child .wrkwtblcls .wrkwtbl-img img { max-width: 105px !important; }
+ .wrkwtbl-row:first-child .wrkwtblcls { font-size: 16px; }
+ .wrkwtblhead { gap: 10px; }
+ .wrkwtbl-img img { max-width: 18px !important; }  
+ span.wrkwtbl-txtspace { width: calc(100% - 28px); } 
+  .wrkwtbltxt { padding-left: 28px; }
+  
+}
+
+

@@ -1,0 +1,72 @@
+{% if module.show_hide_ %}
+{% set moduleId = '#hs_cos_wrapper_{{ name }}' %}
+{% if dynamic_page_hubdb_row %}
+<div id="requestdemo" class="fullwidth reque-demo-sec bgsec space-sec">
+ <div class="wrapper">
+   <div class="reque-demo-title text-center">
+     <h2>{{ module.title }} {{ dynamic_page_hubdb_row.hs_name }}</h2>
+     <div class="reque-demo-tttext">
+       {{ module.sub_title }}
+     </div>
+   </div>
+   <div class="reque-demo-Inner">
+     <div class="reque-demo-left">
+       <div class="reque-demo-form">
+         <h3>{{ module.demo_form.title }}</h3>
+         {% form
+          form_to_use="{{ module.demo_form.form_field.form_id }}"
+          response_response_type="{{ module.demo_form.form_field.response_type }}"
+          response_message="{{ module.demo_form.form_field.message }}"
+          response_redirect_id="{{ module.demo_form.form_field.redirect_id }}"
+          response_redirect_url="{{module.demo_form.form_field.redirect_url}}"
+          gotowebinar_webinar_key="{{ module.demo_form.form_field.gotowebinar_webinar_key }}"
+        %}
+       </div>
+     </div>
+     <div class="reque-demo-right">
+       <div class="reque-demo-logos">
+         {% for item in module.logos.logo %}
+         <div class="reque-demo-logo">
+            {% if item.src %}
+            {% set sizeAttrs = 'width="{{ item.width|escape_attr }}" height="{{ item.height|escape_attr }}"' %}
+            {% if item.size_type == 'auto' %}
+            {% set sizeAttrs = 'width="{{ item.width|escape_attr }}" height="{{ item.height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+            {% elif item.size_type == 'auto_custom_max' %}
+            {% set sizeAttrs = 'width="{{ item.max_width|escape_attr }}" height="{{ item.max_height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+            {% endif %}
+            {% set loadingAttr = item.loading != 'disabled' ? 'loading="{{ item.loading|escape_attr }}"' : '' %}
+            <img src="{{ item.src|escape_url }}" alt="{{ item.alt|escape_attr }}" {{ loadingAttr }} {{ sizeAttrs }}>
+            {% endif %}
+         </div>
+         {% endfor %}
+       </div>
+       <div class="reque-demo-ltext">
+         {{ module.logos.text }}
+       </div>
+     </div>
+   </div>
+ </div>
+</div>
+
+
+{% require_css %}
+<style>
+  {{ moduleId }} .bgsec { {% if module.style.select_background == 'bg_color' %}
+    background-color: rgba({{ module.style.background_color.color|convert_rgb }},{{ module.style.background_color.opacity ~ '%' }});
+    {% elif module.style.select_background == 'bg_image' %}
+    {{ module.style.background_image.css }} background-repeat: no-repeat;
+    {% elif module.style.select_background == 'bg_gradient' %}
+    background: {{ module.style.background_gradient.css }};
+    {% endif %} }
+  
+  {{ moduleId }} .space-sec { {{ module.style.spacing.desktop.css }}; }
+  
+  @media(max-width: 991px){ {{ moduleId }} .space-sec { {{ module.style.spacing.tablet.css }}; } }
+  
+  @media(max-width: 767px){ {{ moduleId }} .space-sec { {{ module.style.spacing.mobile.css }}; } }
+  
+</style>
+{% end_require_css %}
+{% endif %}
+
+{% endif %}

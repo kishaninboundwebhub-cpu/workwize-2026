@@ -1,0 +1,124 @@
+{% if module.show_hide_ %}
+{% set moduleId = '#hs_cos_wrapper_{{ name }}' %}
+
+<div class="testimmonsec over-hidden fullwidth bgsec space-sec">
+  {% if module.image_field_1.src %}
+  <div class="testimmonSimage">
+     
+          {% set sizeAttrs = 'width="{{ module.image_field_1.width|escape_attr }}" height="{{ module.image_field_1.height|escape_attr }}"' %}
+          {% if module.image_field_1.size_type == 'auto' %}
+            {% set sizeAttrs = 'width="{{ module.image_field_1.width|escape_attr }}" height="{{ module.image_field_1.height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+          {% elif module.image_field_1.size_type == 'auto_custom_max' %}
+            {% set sizeAttrs = 'width="{{ module.image_field_1.max_width|escape_attr }}" height="{{ module.image_field_1.max_height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+          {% endif %}
+           {% set loadingAttr = module.image_field_1.loading != 'disabled' ? 'loading="{{ module.image_field_1.loading|escape_attr }}"' : '' %}
+          <img src="{{ module.image_field_1.src|escape_url }}" alt="{{ module.image_field_1.alt|escape_attr }}" {{ loadingAttr }} {{ sizeAttrs }}>
+        
+  </div>
+  {% endif %}
+  
+ <div class="wrapper">
+   <div class="testimmonTitle wow fadeInUp">
+     <h2>{{ module.content.title }}</h2>
+   </div>
+  </div>
+  <div class="testimmonSOuter wow fadeInUp">
+   <div class="testimmonSlider">
+     <div class="swiper-wrapper">
+       {% for item in module.content.testimonial_slide %}
+        <div class="testimmonSlide swiper-slide">
+         <div class="testimmonSlinn">
+           <div class="testimmonSltt">
+             <div class="testimmonSlogo">
+                {% if item.logo.src %}
+                {% set sizeAttrs = 'width="{{ item.logo.width|escape_attr }}" height="{{ item.logo.height|escape_attr }}"' %}
+                {% if item.logo.size_type == 'auto' %}
+                {% set sizeAttrs = 'width="{{ item.logo.width|escape_attr }}" height="{{ item.logo.height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+                {% elif item.logo.size_type == 'auto_custom_max' %}
+                {% set sizeAttrs = 'width="{{ item.logo.max_width|escape_attr }}" height="{{ item.logo.max_height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+                {% endif %}
+                {% set loadingAttr = item.logo.loading != 'disabled' ? 'loading="{{ item.logo.loading|escape_attr }}"' : '' %}
+                <img src="{{ item.logo.src|escape_url }}" alt="{{ item.logo.alt|escape_attr }}" {{ loadingAttr }} {{ sizeAttrs }}>
+                {% endif %}
+             </div>
+             <div class="testimmonStext pt20 pb52">
+               {{ item.text }}
+             </div>
+           </div>
+           <div class="testimmonSbott d_flex align_center gap14">
+             <div class="testimmonSbimng">
+                {% if item.image_field.src %}
+                {% set sizeAttrs = 'width="{{ item.image_field.width|escape_attr }}" height="{{ item.image_field.height|escape_attr }}"' %}
+                {% if item.image_field.size_type == 'auto' %}
+                {% set sizeAttrs = 'width="{{ item.image_field.width|escape_attr }}" height="{{ item.image_field.height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+                {% elif item.image_field.size_type == 'auto_custom_max' %}
+                {% set sizeAttrs = 'width="{{ item.image_field.max_width|escape_attr }}" height="{{ item.image_field.max_height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+                {% endif %}
+                {% set loadingAttr = item.image_field.loading != 'disabled' ? 'loading="{{ item.image_field.loading|escape_attr }}"' : '' %}
+                <img src="{{ item.image_field.src|escape_url }}" alt="{{ item.image_field.alt|escape_attr }}" {{ loadingAttr }} {{ sizeAttrs }}>
+                {% endif %}
+             </div>
+             <div class="testimmonSbndes">
+               <div class="testimmonSbname">
+                 {{ item.names }}
+               </div>
+               <div class="testimmonSbDesig">
+                 {{ item.designation }}
+               </div>
+             </div>
+           </div>
+         </div>  
+       </div>
+       {% endfor %}
+     </div>
+   </div>
+    <div class="wrapper">
+   <div class="testimmonSArrows pt40 d_flex gap16">
+     <div class="testimmonS-button-prev">
+        <svg width="7" height="12" viewBox="0 0 7 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+         <path d="M5.96774 10.9678L0.967743 5.96777L5.96774 0.967773" stroke="#002A5A" stroke-width="1.93548" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+     </div>
+     <div class="testimmonS-button-next">
+        <svg width="7" height="12" viewBox="0 0 7 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0.967742 10.9678L5.96774 5.96777L0.967743 0.967773" stroke="white" stroke-width="1.93548" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+     </div>
+   </div> 
+    </div>
+    
+    
+  </div> 
+</div>
+
+
+{% require_css %}
+<style>
+  {{ moduleId }} .bgsec { {% if module.style.select_background == 'bg_color' %}
+    background-color: rgba({{ module.style.background_color.color|convert_rgb }},{{ module.style.background_color.opacity ~ '%' }});
+    {% elif module.style.select_background == 'bg_image' %}
+    {{ module.style.background_image.css }} background-repeat: no-repeat;
+    {% elif module.style.select_background == 'bg_gradient' %}
+    background: {{ module.style.background_gradient.css }};
+    {% endif %} }
+  
+  {{ moduleId }} .space-sec { {{ module.style.spacing.desktop.css }}; position: relative; z-index: 111; }
+  
+  {{ moduleId }} .testimmonTitle h2 { color:rgba({{ module.color_setting.title_color.color|convert_rgb }},{{ module.color_setting.title_color.opacity }}%); max-width: {{ module.content.title_max_width }}px;  }
+  {{ moduleId }} .testimmonStext { color:rgba({{ module.color_setting.text_color.color|convert_rgb }},{{ module.color_setting.text_color.opacity }}%);  }
+  {{ moduleId }} .testimmonStext strong { color:rgba({{ module.color_setting.testimonial_bold_text_color.color|convert_rgb }},{{ module.color_setting.testimonial_bold_text_color.opacity }}%);  }
+  {{ moduleId }} .testimmonSbname { color:rgba({{ module.color_setting.testimonial_name_color.color|convert_rgb }},{{ module.color_setting.testimonial_name_color.opacity }}%);  }
+  {{ moduleId }} .testimmonSbDesig { color:rgba({{ module.color_setting.testimonial_designation_color.color|convert_rgb }},{{ module.color_setting.testimonial_designation_color.opacity }}%);  }
+  
+  
+  @media(max-width: 991px){ {{ moduleId }} .space-sec { {{ module.style.spacing.tablet.css }}; } }
+  
+  @media(max-width: 767px){ {{ moduleId }} .space-sec { {{ module.style.spacing.mobile.css }}; } }
+  
+</style>
+{% end_require_css %}
+
+
+
+{% endif %}
+

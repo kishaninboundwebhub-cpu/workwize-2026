@@ -1,0 +1,170 @@
+{% if module.show_hide_ %}
+{% set moduleId = '#hs_cos_wrapper_{{ name }}' %}
+
+<div class="workpredsec over-hidden fullwidth bgsec space-sec">
+  
+ <div class="wrapper">
+   <div class="workpredtitle pb100 md_pb60 sm_pb30 text-center wow fadeInUp">
+     <h2>{{ module.top_content.title }}</h2>
+   </div>
+   <div class="workpredOuter d_flex">
+   {% for item in module.inner_content %}
+   <div class="workpredInner d_flex align_center">
+     
+     <div class="workpredILeft wow fadeInLeft">
+       {% if item.icon.src %}
+       <div class="workpredILcon pb8">
+          {% set sizeAttrs = 'width="{{ item.icon.width|escape_attr }}" height="{{ item.icon.height|escape_attr }}"' %}
+          {% if item.icon.size_type == 'auto' %}
+            {% set sizeAttrs = 'width="{{ item.icon.width|escape_attr }}" height="{{ item.icon.height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+          {% elif item.icon.size_type == 'auto_custom_max' %}
+            {% set sizeAttrs = 'width="{{ item.icon.max_width|escape_attr }}" height="{{ item.icon.max_height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+          {% endif %}
+           {% set loadingAttr = item.icon.loading != 'disabled' ? 'loading="{{ item.icon.loading|escape_attr }}"' : '' %}
+          <img src="{{ item.icon.src|escape_url }}" alt="{{ item.icon.alt|escape_attr }}" {{ loadingAttr }} {{ sizeAttrs }}>
+       </div>
+       {% endif %}
+       
+       {% if item.title %}
+       <div class="workpredILtit">
+          <h3>
+            {{ item.title }}
+         </h3>
+       </div>
+       {% endif %}
+       {% if item.sub_text %}
+       <div class="workpredIStext pb10">
+          {{ item.sub_text }}
+       </div>
+       {% endif %}
+       
+       
+       {% if item.show_hide_integrates %}
+       <div class="workpredISinte pb24">
+         {% if item.integrates_content.text_field %}
+           <div class="workpredISintext pb16">
+              {{ item.integrates_content.text_field }}
+           </div>
+       {% endif %}
+         
+         
+         <div class="workpredISintinn d_flex align_center gap24">
+           {% for item2 in item.integrates_content.item %}
+            <div class="workpredISintite d_flex align_center gap10">
+             <div class="workpredISiIcon">
+              {% if item2.icon.src %}
+                {% set sizeAttrs = 'width="{{ item2.icon.width|escape_attr }}" height="{{ item2.icon.height|escape_attr }}"' %}
+                {% if item2.icon.size_type == 'auto' %}
+                  {% set sizeAttrs = 'width="{{ item2.icon.width|escape_attr }}" height="{{ item2.icon.height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+                {% elif item2.icon.size_type == 'auto_custom_max' %}
+                  {% set sizeAttrs = 'width="{{ item2.icon.max_width|escape_attr }}" height="{{ item2.icon.max_height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+                {% endif %}
+                 {% set loadingAttr = item2.icon.loading != 'disabled' ? 'loading="{{ item2.icon.loading|escape_attr }}"' : '' %}
+                <img src="{{ item2.icon.src|escape_url }}" alt="{{ item2.icon.alt|escape_attr }}" {{ loadingAttr }} {{ sizeAttrs }}>
+              {% endif %}
+             </div>
+             <div class="workpredISiItext">
+                {{ item2.text_field_1 }}
+             </div>
+            </div>  
+           {% endfor %}
+           
+         </div>
+         
+         
+         
+       </div>
+       {% endif %}
+       
+        {% if item.bottom_text %}
+         <div class="workpredIbotttext">
+            {{ item.bottom_text }}
+         </div>
+        {% endif %}
+       
+     </div>
+     
+     <div class="workpredIRight wow fadeInRight">
+       <div class="workpredIRimage">
+         {% if item.image_field.src %}
+            {% set sizeAttrs = 'width="{{ item.image_field.width|escape_attr }}" height="{{ item.image_field.height|escape_attr }}"' %}
+            {% if item.image_field.size_type == 'auto' %}
+              {% set sizeAttrs = 'width="{{ item.image_field.width|escape_attr }}" height="{{ item.image_field.height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+            {% elif item.image_field.size_type == 'auto_custom_max' %}
+              {% set sizeAttrs = 'width="{{ item.image_field.max_width|escape_attr }}" height="{{ item.image_field.max_height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+            {% endif %}
+             {% set loadingAttr = item.image_field.loading != 'disabled' ? 'loading="{{ item.image_field.loading|escape_attr }}"' : '' %}
+            <img src="{{ item.image_field.src|escape_url }}" alt="{{ item.image_field.alt|escape_attr }}" {{ loadingAttr }} {{ sizeAttrs }}>
+          {% endif %}
+       </div>
+     </div>
+     
+     
+     
+   </div>
+   {% endfor %}
+   </div>
+  
+   {% if module.button.button_text %}
+   <div class="workpredBtn pt60 secbtn  set-btn-arrows-true d_flex flex_center {{ module.button.button_choice }} text-center wow fadeInUp">
+     {% set href = module.button.button_link.url.href %}
+        {% if module.button.button_link.url.type is equalto "EMAIL_ADDRESS" %}
+          {% set href = "mailto:" + href %}
+        {% elif module.button.button_link.url.type is equalto "PHONE_NUMBER" %}
+          {% set href = "tel:" + href %}
+        {% endif %}
+        <a
+          {% if module.button.button_link.url.type is equalto "CALL_TO_ACTION"  %}
+            href="{{ href }}" {# The href here is not escaped as it is not editable and functions as a JavaScript call to the associated CTA #}
+          {% else %}
+            href="{{ href|escape_url }}"
+          {% endif %}
+          {% if module.button.button_link.open_in_new_tab %}
+            target="_blank"
+          {% endif %}
+          {% if module.button.button_link.rel %}
+            rel="{{ module.button.button_link.rel|escape_attr }}"
+          {% endif %}
+          >
+          {{ module.button.button_text }}
+        </a>
+   </div>
+   {% endif %}
+   
+ </div>
+</div>
+
+
+{% require_css %}
+<style>
+  {{ moduleId }} .bgsec { {% if module.style.select_background == 'bg_color' %}
+    background-color: rgba({{ module.style.background_color.color|convert_rgb }},{{ module.style.background_color.opacity ~ '%' }});
+    {% elif module.style.select_background == 'bg_image' %}
+    {{ module.style.background_image.css }} background-repeat: no-repeat;
+    {% elif module.style.select_background == 'bg_gradient' %}
+    background: {{ module.style.background_gradient.css }};
+    {% endif %} }
+  
+  {{ moduleId }} .space-sec { {{ module.style.spacing.desktop.css }}; position: relative; z-index: 1; }
+  {{ moduleId }} .workpredtitle h2 { max-width:{{ module.top_content.max_width }}px; margin:0 auto; color:rgba({{ module.color_setting.title_color.color|convert_rgb }},{{ module.color_setting.title_color.opacity }}%);  }
+  {{ moduleId }} .workpredtitle h2 span { color:rgba({{ module.color_setting.title_span_color.color|convert_rgb }},{{ module.color_setting.title_span_color.opacity }}%);  }
+  
+  {% for item in module.inner_content %}
+  {{ moduleId }} .workpredInner:nth-child({{  loop.index }}) .workpredILtit h3 { max-width:{{ item.title_max_width }}px; }
+  {{ moduleId }} .workpredInner:nth-child({{  loop.index }}) .workpredIbotttext ul li:after { background:{{ item.list_icon_color.color }}; }
+  
+  {% endfor %}
+  
+  
+  
+  @media(max-width: 991px){ {{ moduleId }} .space-sec { {{ module.style.spacing.tablet.css }}; } }
+  
+  @media(max-width: 767px){ {{ moduleId }} .space-sec { {{ module.style.spacing.mobile.css }}; } }
+  
+</style>
+{% end_require_css %}
+
+
+
+{% endif %}
+

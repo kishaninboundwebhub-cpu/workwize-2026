@@ -1,0 +1,1296 @@
+[ {
+  "id" : "e181e1ee-ef06-5ba8-0ad3-f63113a45d24",
+  "name" : "style",
+  "label" : "Style",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "36fd79d2-1107-4452-d226-d4c096723f16",
+    "name" : "select_background",
+    "label" : "Select Background",
+    "required" : false,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "bg_color", "Background Color" ], [ "bg_image", "Background Image" ], [ "bg_gradient", "Background Gradient" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "bg_color"
+  }, {
+    "id" : "60d0ddef-fb34-a99a-73cb-bda8b10e0fc9",
+    "name" : "background_color",
+    "label" : "Background Color",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "style.select_background",
+      "controlling_value_regex" : "bg_color",
+      "property" : null,
+      "operator" : "MATCHES_REGEX",
+      "access" : null
+    },
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#F7F8F8",
+      "opacity" : 100
+    }
+  }, {
+    "id" : "19f0609d-595d-6ef3-f639-3f6006e095fb",
+    "name" : "background_image",
+    "label" : "Background Image",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "style.select_background",
+      "controlling_value_regex" : "bg_image",
+      "property" : null,
+      "operator" : "MATCHES_REGEX",
+      "access" : null
+    },
+    "type" : "backgroundimage",
+    "display_width" : null,
+    "default" : {
+      "src" : "",
+      "background_position" : "MIDDLE_CENTER",
+      "background_size" : "cover"
+    }
+  }, {
+    "id" : "0df6d4e0-395b-eda2-ec5a-1d08ad6c8d35",
+    "name" : "background_gradient",
+    "label" : "Background Gradient",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "style.select_background",
+      "controlling_value_regex" : "bg_gradient",
+      "property" : null,
+      "operator" : "MATCHES_REGEX",
+      "access" : null
+    },
+    "type" : "gradient",
+    "display_width" : null,
+    "default" : { }
+  }, {
+    "id" : "afeb177b-c31d-1412-5116-70d6f85c5565",
+    "name" : "spacing",
+    "label" : "Spacing",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "d59d9e4c-264e-54fa-99b7-0ff07897b867",
+      "name" : "desktop",
+      "label" : "Desktop",
+      "required" : false,
+      "locked" : false,
+      "type" : "spacing",
+      "display_width" : null,
+      "default" : {
+        "padding" : {
+          "top" : {
+            "value" : 95,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 30,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      }
+    }, {
+      "id" : "0c762a95-1339-05fa-721d-3d79f41b571e",
+      "name" : "tablet",
+      "label" : "Tablet",
+      "required" : false,
+      "locked" : false,
+      "type" : "spacing",
+      "display_width" : null,
+      "default" : {
+        "padding" : {
+          "top" : {
+            "value" : 95,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 30,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      }
+    }, {
+      "id" : "0a8a8c35-4008-f2aa-311a-12325d67b19c",
+      "name" : "mobile",
+      "label" : "Mobile",
+      "required" : false,
+      "locked" : false,
+      "type" : "spacing",
+      "display_width" : null,
+      "default" : {
+        "padding" : {
+          "top" : {
+            "value" : 60,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 30,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      }
+    } ],
+    "tab" : "STYLE",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : {
+      "desktop" : {
+        "padding" : {
+          "top" : {
+            "value" : 95,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 30,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      },
+      "tablet" : {
+        "padding" : {
+          "top" : {
+            "value" : 95,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 30,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      },
+      "mobile" : {
+        "padding" : {
+          "top" : {
+            "value" : 60,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 30,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      }
+    }
+  } ],
+  "tab" : "STYLE",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "select_background" : "bg_color",
+    "background_color" : {
+      "color" : "#F7F8F8",
+      "opacity" : 100
+    },
+    "background_image" : {
+      "src" : "",
+      "background_position" : "MIDDLE_CENTER",
+      "background_size" : "cover"
+    },
+    "background_gradient" : { },
+    "spacing" : {
+      "desktop" : {
+        "padding" : {
+          "top" : {
+            "value" : 95,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 30,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      },
+      "tablet" : {
+        "padding" : {
+          "top" : {
+            "value" : 95,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 30,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      },
+      "mobile" : {
+        "padding" : {
+          "top" : {
+            "value" : 60,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 30,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      }
+    }
+  }
+}, {
+  "id" : "55ccd3e2-31aa-4e79-9772-80facd954415",
+  "name" : "show_hide_",
+  "label" : "Section [Show/ Hide]",
+  "required" : false,
+  "locked" : false,
+  "display" : "toggle",
+  "type" : "boolean",
+  "display_width" : null,
+  "default" : true
+}, {
+  "id" : "ac3fc098-f76c-1285-de3c-b6d3d47cac12",
+  "name" : "content",
+  "label" : "Content",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "fb8e1dbb-4682-74f7-0e2b-b223bd0496bd",
+    "name" : "title",
+    "label" : "Title",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Here’s how we get these results"
+  }, {
+    "id" : "9f249fae-f07c-8836-d536-8bb0ab650504",
+    "name" : "title_max_width",
+    "label" : "Title Max Width",
+    "required" : false,
+    "locked" : false,
+    "display" : "text",
+    "step" : 1,
+    "suffix" : "px",
+    "type" : "number",
+    "display_width" : null
+  }, {
+    "id" : "f3ca5b20-b42a-8976-1c74-1e4e1f4e4bf8",
+    "name" : "select_layout",
+    "label" : "Select Layout",
+    "required" : false,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "style_1", "Layout 1" ], [ "style_2", "Layout 2" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : ""
+  }, {
+    "id" : "b0637f0b-c562-9cfe-94d7-f951f7fd6844",
+    "name" : "feature_tab",
+    "label" : "Feature Tab",
+    "required" : false,
+    "locked" : false,
+    "occurrence" : {
+      "min" : null,
+      "max" : null,
+      "sorting_label_field" : null,
+      "default" : 6
+    },
+    "children" : [ {
+      "id" : "924e0f5b-763d-e395-c0a4-b03e983c5b58",
+      "name" : "feature_tab_text",
+      "label" : "Feature Tab Text",
+      "required" : false,
+      "locked" : false,
+      "allow_new_line" : false,
+      "type" : "text",
+      "display_width" : null,
+      "default" : "Procure"
+    }, {
+      "id" : "272201fa-c844-01bc-1ec9-a569739dce44",
+      "name" : "feature_tab_icon",
+      "label" : "Feature Tab Default Icon",
+      "required" : false,
+      "locked" : false,
+      "responsive" : true,
+      "resizable" : true,
+      "show_loading" : true,
+      "type" : "image",
+      "display_width" : null,
+      "default" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/warehouse-1--delivery-warehouse-shipping-fulfillment.svg",
+        "alt" : "warehouse-1--delivery-warehouse-shipping-fulfillment",
+        "loading" : "lazy",
+        "width" : 32,
+        "height" : 32,
+        "max_width" : 21,
+        "max_height" : 21
+      }
+    }, {
+      "id" : "77828437-ebf9-3ba8-cca7-49cf68b9b30c",
+      "name" : "feature_tab_active_icon",
+      "label" : "Feature Tab Active Icon",
+      "required" : false,
+      "locked" : false,
+      "responsive" : true,
+      "resizable" : true,
+      "show_loading" : true,
+      "type" : "image",
+      "display_width" : null,
+      "default" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/warehouse-1--delivery-warehouse-shipping-fulfillment.svg",
+        "alt" : "warehouse-1--delivery-warehouse-shipping-fulfillment",
+        "loading" : "lazy",
+        "width" : 32,
+        "height" : 32,
+        "max_width" : 21,
+        "max_height" : 21
+      }
+    }, {
+      "id" : "a8c905a6-cea9-5ec0-1644-aad2f1080c31",
+      "name" : "feature_content_icon",
+      "label" : "Feature Content Icon",
+      "required" : false,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : null,
+        "controlling_field_path" : "content.select_layout",
+        "controlling_value_regex" : "style_1",
+        "property" : null,
+        "operator" : "MATCHES_REGEX",
+        "access" : null
+      },
+      "responsive" : true,
+      "resizable" : true,
+      "show_loading" : true,
+      "type" : "image",
+      "display_width" : null,
+      "default" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/warehouse-1--delivery-warehouse-shipping-fulfillment.svg",
+        "alt" : "warehouse-1--delivery-warehouse-shipping-fulfillment",
+        "loading" : "lazy",
+        "width" : 32,
+        "height" : 32,
+        "max_width" : 21,
+        "max_height" : 21
+      }
+    }, {
+      "id" : "457b6f5e-1d94-dd94-509a-9fa4d426ffc9",
+      "name" : "tab_active_color",
+      "label" : "Tab Active Color",
+      "required" : false,
+      "locked" : false,
+      "type" : "color",
+      "display_width" : null,
+      "default" : {
+        "color" : "#227AF7",
+        "opacity" : 100
+      }
+    }, {
+      "id" : "30e2e146-00b1-47fa-cac7-9e5a7792c972",
+      "name" : "title",
+      "label" : "Title",
+      "required" : false,
+      "locked" : false,
+      "allow_new_line" : false,
+      "type" : "text",
+      "display_width" : null,
+      "default" : "Enter new markets. Stick to the same IT budget."
+    }, {
+      "id" : "281ed640-8d2c-f416-f8f3-f87b8106240d",
+      "name" : "text",
+      "label" : "Text",
+      "required" : false,
+      "locked" : false,
+      "type" : "richtext",
+      "display_width" : null,
+      "default" : "<p><span>Don’t juggle vendors. Request orders with a click. Get devices from local suppliers with clear SLAs, local retail prices, and &lt;5-day deliveries.</span>&nbsp;</p>"
+    }, {
+      "id" : "c47fae4b-9bc9-54c4-8ef6-b27a292fc444",
+      "name" : "select_option_image_lottie",
+      "label" : "Select Option Image / Lottie",
+      "required" : false,
+      "locked" : false,
+      "display" : "select",
+      "choices" : [ [ "image", "Image" ], [ "lottie", "Lottie" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "preset" : null,
+      "type" : "choice",
+      "display_width" : null,
+      "default" : "lottie"
+    }, {
+      "id" : "da37fb57-8ddf-3354-416e-cafb20f81565",
+      "name" : "image_field",
+      "label" : "Image",
+      "required" : false,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : null,
+        "controlling_field_path" : "content.feature_tab.select_option_image_lottie",
+        "controlling_value_regex" : "image",
+        "property" : null,
+        "operator" : "MATCHES_REGEX",
+        "access" : null
+      },
+      "responsive" : true,
+      "resizable" : true,
+      "show_loading" : true,
+      "type" : "image",
+      "display_width" : null,
+      "default" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/Frame%202147261393.png",
+        "alt" : "Frame 2147261393",
+        "loading" : "lazy",
+        "width" : 1760,
+        "height" : 920,
+        "max_width" : 1760,
+        "max_height" : 920
+      }
+    }, {
+      "picker" : "file",
+      "id" : "1d8e0e8c-5b26-7e55-9b45-19136b0426bf",
+      "name" : "select_lottie_file",
+      "label" : "Select Lottie File",
+      "required" : false,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : null,
+        "controlling_field_path" : "content.feature_tab.select_option_image_lottie",
+        "controlling_value_regex" : "lottie",
+        "property" : null,
+        "operator" : "MATCHES_REGEX",
+        "access" : null
+      },
+      "type" : "file",
+      "display_width" : null,
+      "default" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/lottie/1_Procure.lottie"
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : [ {
+      "feature_tab_text" : "Procure",
+      "feature_tab_icon" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/warehouse-1--delivery-warehouse-shipping-fulfillment.svg",
+        "alt" : "warehouse-1--delivery-warehouse-shipping-fulfillment",
+        "loading" : "lazy",
+        "width" : 32,
+        "height" : 32,
+        "max_width" : 21,
+        "max_height" : 21
+      },
+      "feature_tab_active_icon" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/warehouse-1--delivery-warehouse-shipping-fulfillment.svg",
+        "alt" : "warehouse-1--delivery-warehouse-shipping-fulfillment",
+        "loading" : "lazy",
+        "width" : 32,
+        "height" : 32,
+        "max_width" : 21,
+        "max_height" : 21
+      },
+      "feature_tab_active_icon_copy" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/warehouse-1--delivery-warehouse-shipping-fulfillment.svg",
+        "alt" : "warehouse-1--delivery-warehouse-shipping-fulfillment",
+        "loading" : "lazy",
+        "width" : 32,
+        "height" : 32,
+        "max_width" : 21,
+        "max_height" : 21
+      },
+      "tab_active_color" : {
+        "color" : "#227AF7",
+        "opacity" : 100
+      },
+      "title" : "Enter new markets. Stick to the same IT budget.",
+      "text" : "<p><span>Don’t juggle vendors. Request orders with a click. Get devices from local suppliers with clear SLAs, local retail prices, and &lt;5-day deliveries.</span>&nbsp;</p>",
+      "select_option_image_lottie" : "lottie",
+      "image_field" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/Frame%202147261393.png",
+        "alt" : "Frame 2147261393",
+        "loading" : "lazy",
+        "width" : 1760,
+        "height" : 920,
+        "max_width" : 1760,
+        "max_height" : 920
+      },
+      "select_lottie_file" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/lottie/1_Procure.lottie"
+    }, {
+      "feature_tab_text" : "Procure",
+      "feature_tab_icon" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/warehouse-1--delivery-warehouse-shipping-fulfillment.svg",
+        "alt" : "warehouse-1--delivery-warehouse-shipping-fulfillment",
+        "loading" : "lazy",
+        "width" : 32,
+        "height" : 32,
+        "max_width" : 21,
+        "max_height" : 21
+      },
+      "feature_tab_active_icon" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/warehouse-1--delivery-warehouse-shipping-fulfillment.svg",
+        "alt" : "warehouse-1--delivery-warehouse-shipping-fulfillment",
+        "loading" : "lazy",
+        "width" : 32,
+        "height" : 32,
+        "max_width" : 21,
+        "max_height" : 21
+      },
+      "feature_tab_active_icon_copy" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/warehouse-1--delivery-warehouse-shipping-fulfillment.svg",
+        "alt" : "warehouse-1--delivery-warehouse-shipping-fulfillment",
+        "loading" : "lazy",
+        "width" : 32,
+        "height" : 32,
+        "max_width" : 21,
+        "max_height" : 21
+      },
+      "tab_active_color" : {
+        "color" : "#227AF7",
+        "opacity" : 100
+      },
+      "title" : "Enter new markets. Stick to the same IT budget.",
+      "text" : "<p><span>Don’t juggle vendors. Request orders with a click. Get devices from local suppliers with clear SLAs, local retail prices, and &lt;5-day deliveries.</span>&nbsp;</p>",
+      "select_option_image_lottie" : "lottie",
+      "image_field" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/Frame%202147261393.png",
+        "alt" : "Frame 2147261393",
+        "loading" : "lazy",
+        "width" : 1760,
+        "height" : 920,
+        "max_width" : 1760,
+        "max_height" : 920
+      },
+      "select_lottie_file" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/lottie/1_Procure.lottie"
+    }, {
+      "feature_tab_text" : "Procure",
+      "feature_tab_icon" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/warehouse-1--delivery-warehouse-shipping-fulfillment.svg",
+        "alt" : "warehouse-1--delivery-warehouse-shipping-fulfillment",
+        "loading" : "lazy",
+        "width" : 32,
+        "height" : 32,
+        "max_width" : 21,
+        "max_height" : 21
+      },
+      "feature_tab_active_icon" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/warehouse-1--delivery-warehouse-shipping-fulfillment.svg",
+        "alt" : "warehouse-1--delivery-warehouse-shipping-fulfillment",
+        "loading" : "lazy",
+        "width" : 32,
+        "height" : 32,
+        "max_width" : 21,
+        "max_height" : 21
+      },
+      "feature_tab_active_icon_copy" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/warehouse-1--delivery-warehouse-shipping-fulfillment.svg",
+        "alt" : "warehouse-1--delivery-warehouse-shipping-fulfillment",
+        "loading" : "lazy",
+        "width" : 32,
+        "height" : 32,
+        "max_width" : 21,
+        "max_height" : 21
+      },
+      "tab_active_color" : {
+        "color" : "#227AF7",
+        "opacity" : 100
+      },
+      "title" : "Enter new markets. Stick to the same IT budget.",
+      "text" : "<p><span>Don’t juggle vendors. Request orders with a click. Get devices from local suppliers with clear SLAs, local retail prices, and &lt;5-day deliveries.</span>&nbsp;</p>",
+      "select_option_image_lottie" : "lottie",
+      "image_field" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/Frame%202147261393.png",
+        "alt" : "Frame 2147261393",
+        "loading" : "lazy",
+        "width" : 1760,
+        "height" : 920,
+        "max_width" : 1760,
+        "max_height" : 920
+      },
+      "select_lottie_file" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/lottie/1_Procure.lottie"
+    }, {
+      "feature_tab_text" : "Procure",
+      "feature_tab_icon" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/warehouse-1--delivery-warehouse-shipping-fulfillment.svg",
+        "alt" : "warehouse-1--delivery-warehouse-shipping-fulfillment",
+        "loading" : "lazy",
+        "width" : 32,
+        "height" : 32,
+        "max_width" : 21,
+        "max_height" : 21
+      },
+      "feature_tab_active_icon" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/warehouse-1--delivery-warehouse-shipping-fulfillment.svg",
+        "alt" : "warehouse-1--delivery-warehouse-shipping-fulfillment",
+        "loading" : "lazy",
+        "width" : 32,
+        "height" : 32,
+        "max_width" : 21,
+        "max_height" : 21
+      },
+      "feature_tab_active_icon_copy" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/warehouse-1--delivery-warehouse-shipping-fulfillment.svg",
+        "alt" : "warehouse-1--delivery-warehouse-shipping-fulfillment",
+        "loading" : "lazy",
+        "width" : 32,
+        "height" : 32,
+        "max_width" : 21,
+        "max_height" : 21
+      },
+      "tab_active_color" : {
+        "color" : "#227AF7",
+        "opacity" : 100
+      },
+      "title" : "Enter new markets. Stick to the same IT budget.",
+      "text" : "<p><span>Don’t juggle vendors. Request orders with a click. Get devices from local suppliers with clear SLAs, local retail prices, and &lt;5-day deliveries.</span>&nbsp;</p>",
+      "select_option_image_lottie" : "lottie",
+      "image_field" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/Frame%202147261393.png",
+        "alt" : "Frame 2147261393",
+        "loading" : "lazy",
+        "width" : 1760,
+        "height" : 920,
+        "max_width" : 1760,
+        "max_height" : 920
+      },
+      "select_lottie_file" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/lottie/1_Procure.lottie"
+    }, {
+      "feature_tab_text" : "Procure",
+      "feature_tab_icon" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/warehouse-1--delivery-warehouse-shipping-fulfillment.svg",
+        "alt" : "warehouse-1--delivery-warehouse-shipping-fulfillment",
+        "loading" : "lazy",
+        "width" : 32,
+        "height" : 32,
+        "max_width" : 21,
+        "max_height" : 21
+      },
+      "feature_tab_active_icon" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/warehouse-1--delivery-warehouse-shipping-fulfillment.svg",
+        "alt" : "warehouse-1--delivery-warehouse-shipping-fulfillment",
+        "loading" : "lazy",
+        "width" : 32,
+        "height" : 32,
+        "max_width" : 21,
+        "max_height" : 21
+      },
+      "feature_tab_active_icon_copy" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/warehouse-1--delivery-warehouse-shipping-fulfillment.svg",
+        "alt" : "warehouse-1--delivery-warehouse-shipping-fulfillment",
+        "loading" : "lazy",
+        "width" : 32,
+        "height" : 32,
+        "max_width" : 21,
+        "max_height" : 21
+      },
+      "tab_active_color" : {
+        "color" : "#227AF7",
+        "opacity" : 100
+      },
+      "title" : "Enter new markets. Stick to the same IT budget.",
+      "text" : "<p><span>Don’t juggle vendors. Request orders with a click. Get devices from local suppliers with clear SLAs, local retail prices, and &lt;5-day deliveries.</span>&nbsp;</p>",
+      "select_option_image_lottie" : "lottie",
+      "image_field" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/Frame%202147261393.png",
+        "alt" : "Frame 2147261393",
+        "loading" : "lazy",
+        "width" : 1760,
+        "height" : 920,
+        "max_width" : 1760,
+        "max_height" : 920
+      },
+      "select_lottie_file" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/lottie/1_Procure.lottie"
+    }, {
+      "feature_tab_text" : "Procure",
+      "feature_tab_icon" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/warehouse-1--delivery-warehouse-shipping-fulfillment.svg",
+        "alt" : "warehouse-1--delivery-warehouse-shipping-fulfillment",
+        "loading" : "lazy",
+        "width" : 32,
+        "height" : 32,
+        "max_width" : 21,
+        "max_height" : 21
+      },
+      "feature_tab_active_icon" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/warehouse-1--delivery-warehouse-shipping-fulfillment.svg",
+        "alt" : "warehouse-1--delivery-warehouse-shipping-fulfillment",
+        "loading" : "lazy",
+        "width" : 32,
+        "height" : 32,
+        "max_width" : 21,
+        "max_height" : 21
+      },
+      "feature_tab_active_icon_copy" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/warehouse-1--delivery-warehouse-shipping-fulfillment.svg",
+        "alt" : "warehouse-1--delivery-warehouse-shipping-fulfillment",
+        "loading" : "lazy",
+        "width" : 32,
+        "height" : 32,
+        "max_width" : 21,
+        "max_height" : 21
+      },
+      "tab_active_color" : {
+        "color" : "#227AF7",
+        "opacity" : 100
+      },
+      "title" : "Enter new markets. Stick to the same IT budget.",
+      "text" : "<p><span>Don’t juggle vendors. Request orders with a click. Get devices from local suppliers with clear SLAs, local retail prices, and &lt;5-day deliveries.</span>&nbsp;</p>",
+      "select_option_image_lottie" : "lottie",
+      "image_field" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/Frame%202147261393.png",
+        "alt" : "Frame 2147261393",
+        "loading" : "lazy",
+        "width" : 1760,
+        "height" : 920,
+        "max_width" : 1760,
+        "max_height" : 920
+      },
+      "select_lottie_file" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/lottie/1_Procure.lottie"
+    } ]
+  }, {
+    "id" : "22e2e9fc-d12a-3c95-8e1c-8a5cc19a0d45",
+    "name" : "button",
+    "label" : "Button",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "fcff9b31-5d80-0fc2-a2c4-8e053e711483",
+      "name" : "button_choice",
+      "label" : "Button Choice",
+      "required" : false,
+      "locked" : false,
+      "display" : "select",
+      "choices" : [ [ "button", "Primary Button" ], [ "second_btn", "Secondary Button" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "preset" : null,
+      "type" : "choice",
+      "display_width" : null,
+      "default" : "button"
+    }, {
+      "id" : "2889ba37-2828-18cb-7fbc-5f7b291b439d",
+      "name" : "button_text",
+      "label" : "Button Text",
+      "required" : false,
+      "locked" : false,
+      "allow_new_line" : false,
+      "type" : "text",
+      "display_width" : null
+    }, {
+      "id" : "2d988c91-830a-c452-30c2-03bb744bfc3f",
+      "name" : "button_link",
+      "label" : "Button Link",
+      "required" : false,
+      "locked" : false,
+      "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG", "CALL_TO_ACTION", "PHONE_NUMBER", "WHATSAPP_NUMBER", "PAYMENT" ],
+      "show_advanced_rel_options" : false,
+      "type" : "link",
+      "display_width" : null,
+      "default" : {
+        "url" : {
+          "content_id" : null,
+          "type" : "EXTERNAL",
+          "href" : ""
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false
+      }
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : {
+      "button_choice" : "button",
+      "button_link" : {
+        "url" : {
+          "content_id" : null,
+          "type" : "EXTERNAL",
+          "href" : ""
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false
+      }
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "title" : "Here’s how we get these results",
+    "select_layout" : "",
+    "feature_tab" : [ {
+      "feature_tab_text" : "Procure",
+      "feature_tab_icon" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/warehouse-1--delivery-warehouse-shipping-fulfillment.svg",
+        "alt" : "warehouse-1--delivery-warehouse-shipping-fulfillment",
+        "loading" : "lazy",
+        "width" : 32,
+        "height" : 32,
+        "max_width" : 21,
+        "max_height" : 21
+      },
+      "feature_tab_active_icon" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/warehouse-1--delivery-warehouse-shipping-fulfillment.svg",
+        "alt" : "warehouse-1--delivery-warehouse-shipping-fulfillment",
+        "loading" : "lazy",
+        "width" : 32,
+        "height" : 32,
+        "max_width" : 21,
+        "max_height" : 21
+      },
+      "feature_tab_active_icon_copy" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/warehouse-1--delivery-warehouse-shipping-fulfillment.svg",
+        "alt" : "warehouse-1--delivery-warehouse-shipping-fulfillment",
+        "loading" : "lazy",
+        "width" : 32,
+        "height" : 32,
+        "max_width" : 21,
+        "max_height" : 21
+      },
+      "tab_active_color" : {
+        "color" : "#227AF7",
+        "opacity" : 100
+      },
+      "title" : "Enter new markets. Stick to the same IT budget.",
+      "text" : "<p><span>Don’t juggle vendors. Request orders with a click. Get devices from local suppliers with clear SLAs, local retail prices, and &lt;5-day deliveries.</span>&nbsp;</p>",
+      "select_option_image_lottie" : "lottie",
+      "image_field" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/Frame%202147261393.png",
+        "alt" : "Frame 2147261393",
+        "loading" : "lazy",
+        "width" : 1760,
+        "height" : 920,
+        "max_width" : 1760,
+        "max_height" : 920
+      },
+      "select_lottie_file" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/lottie/1_Procure.lottie"
+    }, {
+      "feature_tab_text" : "Procure",
+      "feature_tab_icon" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/warehouse-1--delivery-warehouse-shipping-fulfillment.svg",
+        "alt" : "warehouse-1--delivery-warehouse-shipping-fulfillment",
+        "loading" : "lazy",
+        "width" : 32,
+        "height" : 32,
+        "max_width" : 21,
+        "max_height" : 21
+      },
+      "feature_tab_active_icon" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/warehouse-1--delivery-warehouse-shipping-fulfillment.svg",
+        "alt" : "warehouse-1--delivery-warehouse-shipping-fulfillment",
+        "loading" : "lazy",
+        "width" : 32,
+        "height" : 32,
+        "max_width" : 21,
+        "max_height" : 21
+      },
+      "feature_tab_active_icon_copy" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/warehouse-1--delivery-warehouse-shipping-fulfillment.svg",
+        "alt" : "warehouse-1--delivery-warehouse-shipping-fulfillment",
+        "loading" : "lazy",
+        "width" : 32,
+        "height" : 32,
+        "max_width" : 21,
+        "max_height" : 21
+      },
+      "tab_active_color" : {
+        "color" : "#227AF7",
+        "opacity" : 100
+      },
+      "title" : "Enter new markets. Stick to the same IT budget.",
+      "text" : "<p><span>Don’t juggle vendors. Request orders with a click. Get devices from local suppliers with clear SLAs, local retail prices, and &lt;5-day deliveries.</span>&nbsp;</p>",
+      "select_option_image_lottie" : "lottie",
+      "image_field" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/Frame%202147261393.png",
+        "alt" : "Frame 2147261393",
+        "loading" : "lazy",
+        "width" : 1760,
+        "height" : 920,
+        "max_width" : 1760,
+        "max_height" : 920
+      },
+      "select_lottie_file" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/lottie/1_Procure.lottie"
+    }, {
+      "feature_tab_text" : "Procure",
+      "feature_tab_icon" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/warehouse-1--delivery-warehouse-shipping-fulfillment.svg",
+        "alt" : "warehouse-1--delivery-warehouse-shipping-fulfillment",
+        "loading" : "lazy",
+        "width" : 32,
+        "height" : 32,
+        "max_width" : 21,
+        "max_height" : 21
+      },
+      "feature_tab_active_icon" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/warehouse-1--delivery-warehouse-shipping-fulfillment.svg",
+        "alt" : "warehouse-1--delivery-warehouse-shipping-fulfillment",
+        "loading" : "lazy",
+        "width" : 32,
+        "height" : 32,
+        "max_width" : 21,
+        "max_height" : 21
+      },
+      "feature_tab_active_icon_copy" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/warehouse-1--delivery-warehouse-shipping-fulfillment.svg",
+        "alt" : "warehouse-1--delivery-warehouse-shipping-fulfillment",
+        "loading" : "lazy",
+        "width" : 32,
+        "height" : 32,
+        "max_width" : 21,
+        "max_height" : 21
+      },
+      "tab_active_color" : {
+        "color" : "#227AF7",
+        "opacity" : 100
+      },
+      "title" : "Enter new markets. Stick to the same IT budget.",
+      "text" : "<p><span>Don’t juggle vendors. Request orders with a click. Get devices from local suppliers with clear SLAs, local retail prices, and &lt;5-day deliveries.</span>&nbsp;</p>",
+      "select_option_image_lottie" : "lottie",
+      "image_field" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/Frame%202147261393.png",
+        "alt" : "Frame 2147261393",
+        "loading" : "lazy",
+        "width" : 1760,
+        "height" : 920,
+        "max_width" : 1760,
+        "max_height" : 920
+      },
+      "select_lottie_file" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/lottie/1_Procure.lottie"
+    }, {
+      "feature_tab_text" : "Procure",
+      "feature_tab_icon" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/warehouse-1--delivery-warehouse-shipping-fulfillment.svg",
+        "alt" : "warehouse-1--delivery-warehouse-shipping-fulfillment",
+        "loading" : "lazy",
+        "width" : 32,
+        "height" : 32,
+        "max_width" : 21,
+        "max_height" : 21
+      },
+      "feature_tab_active_icon" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/warehouse-1--delivery-warehouse-shipping-fulfillment.svg",
+        "alt" : "warehouse-1--delivery-warehouse-shipping-fulfillment",
+        "loading" : "lazy",
+        "width" : 32,
+        "height" : 32,
+        "max_width" : 21,
+        "max_height" : 21
+      },
+      "feature_tab_active_icon_copy" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/warehouse-1--delivery-warehouse-shipping-fulfillment.svg",
+        "alt" : "warehouse-1--delivery-warehouse-shipping-fulfillment",
+        "loading" : "lazy",
+        "width" : 32,
+        "height" : 32,
+        "max_width" : 21,
+        "max_height" : 21
+      },
+      "tab_active_color" : {
+        "color" : "#227AF7",
+        "opacity" : 100
+      },
+      "title" : "Enter new markets. Stick to the same IT budget.",
+      "text" : "<p><span>Don’t juggle vendors. Request orders with a click. Get devices from local suppliers with clear SLAs, local retail prices, and &lt;5-day deliveries.</span>&nbsp;</p>",
+      "select_option_image_lottie" : "lottie",
+      "image_field" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/Frame%202147261393.png",
+        "alt" : "Frame 2147261393",
+        "loading" : "lazy",
+        "width" : 1760,
+        "height" : 920,
+        "max_width" : 1760,
+        "max_height" : 920
+      },
+      "select_lottie_file" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/lottie/1_Procure.lottie"
+    }, {
+      "feature_tab_text" : "Procure",
+      "feature_tab_icon" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/warehouse-1--delivery-warehouse-shipping-fulfillment.svg",
+        "alt" : "warehouse-1--delivery-warehouse-shipping-fulfillment",
+        "loading" : "lazy",
+        "width" : 32,
+        "height" : 32,
+        "max_width" : 21,
+        "max_height" : 21
+      },
+      "feature_tab_active_icon" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/warehouse-1--delivery-warehouse-shipping-fulfillment.svg",
+        "alt" : "warehouse-1--delivery-warehouse-shipping-fulfillment",
+        "loading" : "lazy",
+        "width" : 32,
+        "height" : 32,
+        "max_width" : 21,
+        "max_height" : 21
+      },
+      "feature_tab_active_icon_copy" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/warehouse-1--delivery-warehouse-shipping-fulfillment.svg",
+        "alt" : "warehouse-1--delivery-warehouse-shipping-fulfillment",
+        "loading" : "lazy",
+        "width" : 32,
+        "height" : 32,
+        "max_width" : 21,
+        "max_height" : 21
+      },
+      "tab_active_color" : {
+        "color" : "#227AF7",
+        "opacity" : 100
+      },
+      "title" : "Enter new markets. Stick to the same IT budget.",
+      "text" : "<p><span>Don’t juggle vendors. Request orders with a click. Get devices from local suppliers with clear SLAs, local retail prices, and &lt;5-day deliveries.</span>&nbsp;</p>",
+      "select_option_image_lottie" : "lottie",
+      "image_field" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/Frame%202147261393.png",
+        "alt" : "Frame 2147261393",
+        "loading" : "lazy",
+        "width" : 1760,
+        "height" : 920,
+        "max_width" : 1760,
+        "max_height" : 920
+      },
+      "select_lottie_file" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/lottie/1_Procure.lottie"
+    }, {
+      "feature_tab_text" : "Procure",
+      "feature_tab_icon" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/warehouse-1--delivery-warehouse-shipping-fulfillment.svg",
+        "alt" : "warehouse-1--delivery-warehouse-shipping-fulfillment",
+        "loading" : "lazy",
+        "width" : 32,
+        "height" : 32,
+        "max_width" : 21,
+        "max_height" : 21
+      },
+      "feature_tab_active_icon" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/warehouse-1--delivery-warehouse-shipping-fulfillment.svg",
+        "alt" : "warehouse-1--delivery-warehouse-shipping-fulfillment",
+        "loading" : "lazy",
+        "width" : 32,
+        "height" : 32,
+        "max_width" : 21,
+        "max_height" : 21
+      },
+      "feature_tab_active_icon_copy" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/warehouse-1--delivery-warehouse-shipping-fulfillment.svg",
+        "alt" : "warehouse-1--delivery-warehouse-shipping-fulfillment",
+        "loading" : "lazy",
+        "width" : 32,
+        "height" : 32,
+        "max_width" : 21,
+        "max_height" : 21
+      },
+      "tab_active_color" : {
+        "color" : "#227AF7",
+        "opacity" : 100
+      },
+      "title" : "Enter new markets. Stick to the same IT budget.",
+      "text" : "<p><span>Don’t juggle vendors. Request orders with a click. Get devices from local suppliers with clear SLAs, local retail prices, and &lt;5-day deliveries.</span>&nbsp;</p>",
+      "select_option_image_lottie" : "lottie",
+      "image_field" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/Frame%202147261393.png",
+        "alt" : "Frame 2147261393",
+        "loading" : "lazy",
+        "width" : 1760,
+        "height" : 920,
+        "max_width" : 1760,
+        "max_height" : 920
+      },
+      "select_lottie_file" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/lottie/1_Procure.lottie"
+    } ],
+    "button" : {
+      "button_choice" : "button",
+      "button_link" : {
+        "url" : {
+          "content_id" : null,
+          "type" : "EXTERNAL",
+          "href" : ""
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false
+      }
+    }
+  }
+}, {
+  "id" : "99a114a6-3fb8-0fdc-0f9e-63325ed5bdf5",
+  "name" : "color_setting",
+  "label" : "Color Setting",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "62573f64-d236-fa10-5c21-1b23f48d0a86",
+    "name" : "title_color",
+    "label" : "Title Color",
+    "required" : false,
+    "locked" : false,
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#050C14",
+      "opacity" : 100
+    }
+  }, {
+    "id" : "0e680be8-1e43-77e2-5c95-6850b3309645",
+    "name" : "title_span_color",
+    "label" : "Title Span Color",
+    "required" : false,
+    "locked" : false,
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#227AF7",
+      "opacity" : 100
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "title_color" : {
+      "color" : "#050C14",
+      "opacity" : 100
+    },
+    "title_span_color" : {
+      "color" : "#227AF7",
+      "opacity" : 100
+    }
+  }
+} ]

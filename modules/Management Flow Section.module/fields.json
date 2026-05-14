@@ -1,0 +1,766 @@
+[ {
+  "id" : "e181e1ee-ef06-5ba8-0ad3-f63113a45d24",
+  "name" : "style",
+  "label" : "Style",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "36fd79d2-1107-4452-d226-d4c096723f16",
+    "name" : "select_background",
+    "label" : "Select Background",
+    "required" : false,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "bg_color", "Background Color" ], [ "bg_image", "Background Image" ], [ "bg_gradient", "Background Gradient" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : ""
+  }, {
+    "id" : "60d0ddef-fb34-a99a-73cb-bda8b10e0fc9",
+    "name" : "background_color",
+    "label" : "Background Color",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "style.select_background",
+      "controlling_value_regex" : "bg_color",
+      "property" : null,
+      "operator" : "MATCHES_REGEX",
+      "access" : null
+    },
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : null,
+      "opacity" : 100
+    }
+  }, {
+    "id" : "19f0609d-595d-6ef3-f639-3f6006e095fb",
+    "name" : "background_image",
+    "label" : "Background Image",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "style.select_background",
+      "controlling_value_regex" : "bg_image",
+      "property" : null,
+      "operator" : "MATCHES_REGEX",
+      "access" : null
+    },
+    "type" : "backgroundimage",
+    "display_width" : null,
+    "default" : {
+      "src" : "",
+      "background_position" : "MIDDLE_CENTER",
+      "background_size" : "cover"
+    }
+  }, {
+    "id" : "0df6d4e0-395b-eda2-ec5a-1d08ad6c8d35",
+    "name" : "background_gradient",
+    "label" : "Background Gradient",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "style.select_background",
+      "controlling_value_regex" : "bg_gradient",
+      "property" : null,
+      "operator" : "MATCHES_REGEX",
+      "access" : null
+    },
+    "type" : "gradient",
+    "display_width" : null,
+    "default" : { }
+  }, {
+    "id" : "afeb177b-c31d-1412-5116-70d6f85c5565",
+    "name" : "spacing",
+    "label" : "Spacing",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "d59d9e4c-264e-54fa-99b7-0ff07897b867",
+      "name" : "desktop",
+      "label" : "Desktop",
+      "required" : false,
+      "locked" : false,
+      "type" : "spacing",
+      "display_width" : null,
+      "default" : {
+        "padding" : {
+          "top" : {
+            "value" : 0,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 140,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      }
+    }, {
+      "id" : "0c762a95-1339-05fa-721d-3d79f41b571e",
+      "name" : "tablet",
+      "label" : "Tablet",
+      "required" : false,
+      "locked" : false,
+      "type" : "spacing",
+      "display_width" : null,
+      "default" : {
+        "padding" : {
+          "top" : {
+            "value" : 0,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 80,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      }
+    }, {
+      "id" : "0a8a8c35-4008-f2aa-311a-12325d67b19c",
+      "name" : "mobile",
+      "label" : "Mobile",
+      "required" : false,
+      "locked" : false,
+      "type" : "spacing",
+      "display_width" : null,
+      "default" : {
+        "padding" : {
+          "top" : {
+            "value" : 0,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 60,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      }
+    } ],
+    "tab" : "STYLE",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : {
+      "desktop" : {
+        "padding" : {
+          "top" : {
+            "value" : 0,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 140,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      },
+      "tablet" : {
+        "padding" : {
+          "top" : {
+            "value" : 0,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 80,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      },
+      "mobile" : {
+        "padding" : {
+          "top" : {
+            "value" : 0,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 60,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      }
+    }
+  } ],
+  "tab" : "STYLE",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "select_background" : "",
+    "background_color" : {
+      "color" : null,
+      "opacity" : 100
+    },
+    "background_image" : {
+      "src" : "",
+      "background_position" : "MIDDLE_CENTER",
+      "background_size" : "cover"
+    },
+    "background_gradient" : { },
+    "spacing" : {
+      "desktop" : {
+        "padding" : {
+          "top" : {
+            "value" : 0,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 140,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      },
+      "tablet" : {
+        "padding" : {
+          "top" : {
+            "value" : 0,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 80,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      },
+      "mobile" : {
+        "padding" : {
+          "top" : {
+            "value" : 0,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 60,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      }
+    }
+  }
+}, {
+  "id" : "55ccd3e2-31aa-4e79-9772-80facd954415",
+  "name" : "show_hide_",
+  "label" : "Section [Show/ Hide]",
+  "required" : false,
+  "locked" : false,
+  "display" : "toggle",
+  "type" : "boolean",
+  "display_width" : null,
+  "default" : true
+}, {
+  "id" : "ac3fc098-f76c-1285-de3c-b6d3d47cac12",
+  "name" : "content",
+  "label" : "Content",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "fb8e1dbb-4682-74f7-0e2b-b223bd0496bd",
+    "name" : "title",
+    "label" : "Title",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "<span>“We’ll fix it later”</span> is how asset management gets expensive."
+  }, {
+    "id" : "ce26ad05-a22d-c393-77f8-a4a856147023",
+    "name" : "text",
+    "label" : "Text",
+    "required" : false,
+    "locked" : false,
+    "type" : "richtext",
+    "display_width" : null,
+    "default" : "<p><span>Later usually comes with a bigger bill.</span></p>\n<p><span>It starts with a few missed devices or delayed shipments, and then compounds to:&nbsp;</span></p>"
+  }, {
+    "id" : "2c4af5de-341e-e414-546b-73f71ecd1972",
+    "name" : "text_box",
+    "label" : "Text Box",
+    "required" : false,
+    "locked" : false,
+    "occurrence" : {
+      "min" : null,
+      "max" : null,
+      "sorting_label_field" : "c964dea7-54ca-be3b-5ee4-b947b14711c4",
+      "default" : 5
+    },
+    "children" : [ {
+      "id" : "4cf96142-b76a-e557-ba4e-10fbb89a7fd0",
+      "name" : "icon",
+      "label" : "Icon",
+      "required" : false,
+      "locked" : false,
+      "responsive" : true,
+      "resizable" : true,
+      "show_loading" : true,
+      "type" : "image",
+      "display_width" : null,
+      "default" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/Warning.svg",
+        "alt" : "Warning",
+        "loading" : "lazy",
+        "width" : 28,
+        "height" : 28,
+        "max_width" : 28,
+        "max_height" : 28
+      }
+    }, {
+      "id" : "c964dea7-54ca-be3b-5ee4-b947b14711c4",
+      "name" : "text_field",
+      "label" : "Text",
+      "required" : false,
+      "locked" : false,
+      "allow_new_line" : false,
+      "type" : "text",
+      "display_width" : null,
+      "default" : "Daily hours of IT time lost to follow-ups and vendor management"
+    }, {
+      "id" : "fb3b9296-5783-4108-8639-444fdda4db50",
+      "name" : "box_width",
+      "label" : "Box Width",
+      "required" : false,
+      "locked" : false,
+      "display" : "text",
+      "step" : 1,
+      "suffix" : "px",
+      "type" : "number",
+      "display_width" : null,
+      "default" : 310
+    }, {
+      "id" : "67b06900-bc04-846b-9913-b5bff78fcc9e",
+      "name" : "box_alignment",
+      "label" : "Box Alignment",
+      "required" : false,
+      "locked" : false,
+      "display" : "select",
+      "choices" : [ [ "left", "left" ], [ "center", "Center" ], [ "right", "Right" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "preset" : null,
+      "type" : "choice",
+      "display_width" : null,
+      "default" : "left"
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : [ {
+      "icon" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/Warning.svg",
+        "alt" : "Warning",
+        "loading" : "lazy",
+        "width" : 28,
+        "height" : 28,
+        "max_width" : 28,
+        "max_height" : 28
+      },
+      "text_field" : "Daily hours of IT time lost to follow-ups and vendor management",
+      "box_width" : 310,
+      "box_alignment" : "left"
+    }, {
+      "icon" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/Warning.svg",
+        "alt" : "Warning",
+        "loading" : "lazy",
+        "width" : 28,
+        "height" : 28,
+        "max_width" : 28,
+        "max_height" : 28
+      },
+      "text_field" : "Daily hours of IT time lost to follow-ups and vendor management",
+      "box_width" : 310,
+      "box_alignment" : "left"
+    }, {
+      "icon" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/Warning.svg",
+        "alt" : "Warning",
+        "loading" : "lazy",
+        "width" : 28,
+        "height" : 28,
+        "max_width" : 28,
+        "max_height" : 28
+      },
+      "text_field" : "Daily hours of IT time lost to follow-ups and vendor management",
+      "box_width" : 310,
+      "box_alignment" : "left"
+    }, {
+      "icon" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/Warning.svg",
+        "alt" : "Warning",
+        "loading" : "lazy",
+        "width" : 28,
+        "height" : 28,
+        "max_width" : 28,
+        "max_height" : 28
+      },
+      "text_field" : "Daily hours of IT time lost to follow-ups and vendor management",
+      "box_width" : 310,
+      "box_alignment" : "left"
+    }, {
+      "icon" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/Warning.svg",
+        "alt" : "Warning",
+        "loading" : "lazy",
+        "width" : 28,
+        "height" : 28,
+        "max_width" : 28,
+        "max_height" : 28
+      },
+      "text_field" : "Daily hours of IT time lost to follow-ups and vendor management",
+      "box_width" : 310,
+      "box_alignment" : "left"
+    } ]
+  }, {
+    "id" : "b0f7da0b-8657-bdcb-84b0-e8a88f28dc88",
+    "name" : "bottom_text",
+    "label" : "Bottom Text",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Most teams don’t notice the full impact until it shows up in budgets or security reviews."
+  }, {
+    "id" : "b9d528b6-5d1c-3f49-54f2-33a358c63d1d",
+    "name" : "button",
+    "label" : "Button",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "2023d0f5-66e7-e220-6076-4b92c16edadb",
+      "name" : "button_choice",
+      "label" : "Button Choice",
+      "required" : false,
+      "locked" : false,
+      "display" : "select",
+      "choices" : [ [ "button", "Primary Button" ], [ "second_btn", "Secondary Button" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "preset" : null,
+      "type" : "choice",
+      "display_width" : null,
+      "default" : "button"
+    }, {
+      "id" : "72f3d448-7b51-8494-5090-e953f6c5443e",
+      "name" : "button_text",
+      "label" : "Button Text",
+      "required" : false,
+      "locked" : false,
+      "allow_new_line" : false,
+      "type" : "text",
+      "display_width" : null,
+      "default" : "Book a 30-min demo"
+    }, {
+      "id" : "5d9f7a48-ab89-f4c7-55ed-39b5914c9c10",
+      "name" : "button_link",
+      "label" : "Button Link",
+      "required" : false,
+      "locked" : false,
+      "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG", "CALL_TO_ACTION", "PHONE_NUMBER", "WHATSAPP_NUMBER", "PAYMENT" ],
+      "show_advanced_rel_options" : false,
+      "type" : "link",
+      "display_width" : null,
+      "default" : {
+        "url" : {
+          "content_id" : null,
+          "type" : "EXTERNAL",
+          "href" : ""
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false
+      }
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : {
+      "button_choice" : "button",
+      "button_text" : "Book a 30-min demo",
+      "button_link" : {
+        "url" : {
+          "content_id" : null,
+          "type" : "EXTERNAL",
+          "href" : ""
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false
+      }
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "title" : "<span>“We’ll fix it later”</span> is how asset management gets expensive.",
+    "text" : "<p><span>Later usually comes with a bigger bill.</span></p>\n<p><span>It starts with a few missed devices or delayed shipments, and then compounds to:&nbsp;</span></p>",
+    "text_box" : [ {
+      "icon" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/Warning.svg",
+        "alt" : "Warning",
+        "loading" : "lazy",
+        "width" : 28,
+        "height" : 28,
+        "max_width" : 28,
+        "max_height" : 28
+      },
+      "text_field" : "Daily hours of IT time lost to follow-ups and vendor management",
+      "box_width" : 310,
+      "box_alignment" : "left"
+    }, {
+      "icon" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/Warning.svg",
+        "alt" : "Warning",
+        "loading" : "lazy",
+        "width" : 28,
+        "height" : 28,
+        "max_width" : 28,
+        "max_height" : 28
+      },
+      "text_field" : "Daily hours of IT time lost to follow-ups and vendor management",
+      "box_width" : 310,
+      "box_alignment" : "left"
+    }, {
+      "icon" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/Warning.svg",
+        "alt" : "Warning",
+        "loading" : "lazy",
+        "width" : 28,
+        "height" : 28,
+        "max_width" : 28,
+        "max_height" : 28
+      },
+      "text_field" : "Daily hours of IT time lost to follow-ups and vendor management",
+      "box_width" : 310,
+      "box_alignment" : "left"
+    }, {
+      "icon" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/Warning.svg",
+        "alt" : "Warning",
+        "loading" : "lazy",
+        "width" : 28,
+        "height" : 28,
+        "max_width" : 28,
+        "max_height" : 28
+      },
+      "text_field" : "Daily hours of IT time lost to follow-ups and vendor management",
+      "box_width" : 310,
+      "box_alignment" : "left"
+    }, {
+      "icon" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/Warning.svg",
+        "alt" : "Warning",
+        "loading" : "lazy",
+        "width" : 28,
+        "height" : 28,
+        "max_width" : 28,
+        "max_height" : 28
+      },
+      "text_field" : "Daily hours of IT time lost to follow-ups and vendor management",
+      "box_width" : 310,
+      "box_alignment" : "left"
+    } ],
+    "bottom_text" : "Most teams don’t notice the full impact until it shows up in budgets or security reviews.",
+    "button" : {
+      "button_choice" : "button",
+      "button_text" : "Book a 30-min demo",
+      "button_link" : {
+        "url" : {
+          "content_id" : null,
+          "type" : "EXTERNAL",
+          "href" : ""
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false
+      }
+    }
+  }
+}, {
+  "id" : "99a114a6-3fb8-0fdc-0f9e-63325ed5bdf5",
+  "name" : "color_setting",
+  "label" : "Color Setting",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "62573f64-d236-fa10-5c21-1b23f48d0a86",
+    "name" : "title_color",
+    "label" : "Title Color",
+    "required" : false,
+    "locked" : false,
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#050C14",
+      "opacity" : 100
+    }
+  }, {
+    "id" : "27fc9724-6a2c-6650-c822-ca2b32b693d7",
+    "name" : "title_span_color",
+    "label" : "Title Span Color",
+    "required" : false,
+    "locked" : false,
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#227AF7",
+      "opacity" : 100
+    }
+  }, {
+    "id" : "85940fad-3583-32c1-d6bb-cd2e7eef7632",
+    "name" : "text_color",
+    "label" : "Top Text Color",
+    "required" : false,
+    "locked" : false,
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#050C14",
+      "opacity" : 75
+    }
+  }, {
+    "id" : "74f7b8f0-01cd-f0e5-90cc-577f0ec45599",
+    "name" : "box_text_color",
+    "label" : "Box Text Color",
+    "required" : false,
+    "locked" : false,
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#050C14",
+      "opacity" : 75
+    }
+  }, {
+    "id" : "4b46edb3-45ff-a36b-628b-a1ec9c3281a4",
+    "name" : "bottom_text_color",
+    "label" : "Bottom Text Color",
+    "required" : false,
+    "locked" : false,
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#050C14",
+      "opacity" : 75
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "title_color" : {
+      "color" : "#050C14",
+      "opacity" : 100
+    },
+    "title_span_color" : {
+      "color" : "#227AF7",
+      "opacity" : 100
+    },
+    "text_color" : {
+      "color" : "#050C14",
+      "opacity" : 75
+    },
+    "box_text_color" : {
+      "color" : "#050C14",
+      "opacity" : 75
+    },
+    "bottom_text_color" : {
+      "color" : "#050C14",
+      "opacity" : 75
+    }
+  }
+} ]

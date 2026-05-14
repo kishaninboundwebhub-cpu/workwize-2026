@@ -1,0 +1,149 @@
+{% if module.show_hide_ %}
+{% set moduleId = '#hs_cos_wrapper_{{ name }}' %}
+<div class="fullwidth leader-sec bgsec space-sec">
+ <div class="wrapper">
+  <div class="secinner leader-inner">
+   {% if module.text or module.title %}   
+   <div class="secheader text-center leader-header">
+    {% if module.title %} 
+    <div class="sectitle {% if not module.text %} removespace{% endif %}">
+     <h2 class="h1">{{ module.title }}</h2> 
+    </div>
+    {% endif %}
+    {% if module.text %}  
+    <div class="sectxt"> 
+     {{ module.text }} 
+    </div>
+    {% endif %} 
+   </div>
+   {% endif %}
+   <div class="flexwrap w-100 leader-rows">
+    {% for item in module.content %} 
+    <div class="leader-cols">
+     <div class="leader-img" style="background-image: url({{ item.image.src }});">
+      {% if item.select_image == 'tp_rght' %} 
+      <span class="leader-shapeimg {{ item.select_image }}">
+       {% if item.top_right_shape.src %}
+       {% set sizeAttrs = 'width="{{ item.top_right_shape.width }}" height="{{ item.top_right_shape.height }}"' %}
+       {% if item.top_right_shape.size_type == 'auto' %}
+       {% set sizeAttrs = 'width="{{ item.top_right_shape.width }}" height="{{ item.top_right_shape.height }}" style="max-width: 100%; height: auto;"' %}
+       {% elif item.top_right_shape.size_type == 'auto_custom_max' %}
+       {% set sizeAttrs = 'width="{{ item.top_right_shape.max_width }}" height="{{ item.top_right_shape.max_height }}" style="max-width: 100%; height: auto;"' %}
+       {% endif %}
+       {% set loadingAttr = item.top_right_shape.loading != 'disabled' ? 'loading="{{ item.top_right_shape.loading }}"' : '' %}
+       <img src="{{ item.top_right_shape.src }}" alt="{{ item.top_right_shape.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
+       {% endif %} 
+      </span>
+      {% elif item.select_image == 'bm_rght' %} 
+      <span class="leader-shapeimg {{ item.select_image }}">
+       {% if item.bottom_right_shape.src %}
+       {% set sizeAttrs = 'width="{{ item.bottom_right_shape.width }}" height="{{ item.bottom_right_shape.height }}"' %}
+       {% if item.bottom_right_shape.size_type == 'auto' %}
+       {% set sizeAttrs = 'width="{{ item.bottom_right_shape.width }}" height="{{ item.bottom_right_shape.height }}" style="max-width: 100%; height: auto;"' %}
+       {% elif item.bottom_right_shape.size_type == 'auto_custom_max' %}
+       {% set sizeAttrs = 'width="{{ item.bottom_right_shape.max_width }}" height="{{ item.bottom_right_shape.max_height }}" style="max-width: 100%; height: auto;"' %}
+       {% endif %}
+       {% set loadingAttr = item.bottom_right_shape.loading != 'disabled' ? 'loading="{{ item.bottom_right_shape.loading }}"' : '' %}
+       <img src="{{ item.bottom_right_shape.src }}" alt="{{ item.bottom_right_shape.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
+       {% endif %} 
+      </span>
+      {% elif item.select_image == 'bm_left' %} 
+      <span class="leader-shapeimg {{ item.select_image }}">
+       {% if item.bottom_left_shape.src %}
+       {% set sizeAttrs = 'width="{{ item.bottom_left_shape.width }}" height="{{ item.bottom_left_shape.height }}"' %}
+       {% if item.bottom_left_shape.size_type == 'auto' %}
+       {% set sizeAttrs = 'width="{{ item.bottom_left_shape.width }}" height="{{ item.bottom_left_shape.height }}" style="max-width: 100%; height: auto;"' %}
+       {% elif item.bottom_left_shape.size_type == 'auto_custom_max' %}
+       {% set sizeAttrs = 'width="{{ item.bottom_left_shape.max_width }}" height="{{ item.bottom_left_shape.max_height }}" style="max-width: 100%; height: auto;"' %}
+       {% endif %}
+       {% set loadingAttr = item.bottom_left_shape.loading != 'disabled' ? 'loading="{{ item.bottom_left_shape.loading }}"' : '' %}
+       <img src="{{ item.bottom_left_shape.src }}" alt="{{ item.bottom_left_shape.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
+       {% endif %} 
+      </span>
+      {% endif %}
+     </div>
+     <div class="leader-content">
+      {% if item.title %} 
+       <h3>{{ item.title }}</h3>
+      {% endif %}
+      {% if item.position %} 
+      <div class="leader-ctxt">
+       {{ item.position }}
+      </div>
+      {% endif %}
+      {% if item.social_text %} 
+      <div class="leader-linkedin">
+       {% set href = item.social_link.url.href %}
+       {% if item.social_link.url.type is equalto "EMAIL_ADDRESS" %}
+       {% set href = "mailto:" + href %}
+       {% endif %}
+       <a href="{{ href }}"
+       {% if item.social_link.open_in_new_tab %}target="_blank"{% endif %}
+       {% if item.social_link.rel %}rel="{{ item.social_link.rel }}"{% endif %}
+       >
+        {{ item.social_text }}
+       </a> 
+      </div>
+      {% endif %} 
+     </div>
+    </div>
+    {% endfor %} 
+   </div> 
+   {% if module.button %} 
+   <div class="secbtns flexwrap w-100 leader-btns alignCenter justifyCenter">
+    {% for item in module.button %} 
+    <div class="secbtn leaderbtn {{ item.button_choice }}">
+     {% set href = item.button_link.url.href %}
+     {% if item.button_link.url.type is equalto "EMAIL_ADDRESS" %}
+     {% set href = "mailto:" + href %}
+     {% endif %}
+     <a href="{{ href }}"
+     {% if item.button_link.open_in_new_tab %}target="_blank"{% endif %}
+     {% if item.button_link.rel %}rel="{{ item.button_link.rel }}"{% endif %}
+     >
+      {{ item.button_text }}
+     </a> 
+    </div>
+    {% endfor %} 
+   </div>  
+   {% endif %} 
+  </div>    
+ </div>
+</div>
+
+
+{% require_css %}
+<style>
+  {{ moduleId }} .bgsec { {% if module.style.select_background == 'bg_color' %}
+    background-color: rgba({{ module.style.background_color.color|convert_rgb }},{{ module.style.background_color.opacity ~ '%' }});
+    {% elif module.style.select_background == 'bg_image' %}
+    {{ module.style.background_image.css }} background-repeat: no-repeat;
+    {% elif module.style.select_background == 'bg_gradient' %}
+    background: {{ module.style.background_gradient.css }};
+    {% endif %} }
+  
+  {{ moduleId }} .space-sec { {{ module.style.spacing.desktop.css }}; }
+  
+  {{ moduleId }} .sectitle h1,
+  {{ moduleId }} .sectitle h2 , 
+  {{ moduleId }} .sectitle h3 , 
+  {{ moduleId }} .sectitle h4 , 
+  {{ moduleId }} .sectitle h5 ,
+  {{ moduleId }} .sectitle h6 { color: rgba({{ module.color_settings.title_color.color|convert_rgb }},{{ module.color_settings.title_color.opacity ~ '%' }}); }
+  {{ moduleId }} .sectxt , {{ moduleId }} .sectxt * { color: rgba({{ module.color_settings.text_color.color|convert_rgb }},{{ module.color_settings.text_color.opacity ~ '%' }}); } 
+  
+  {{ moduleId }} .secheader { max-width: {{ module.heading_maxwidth }}px; }
+  
+  {% for item in module.button %} 
+   {{ moduleId }} .secbtn:nth-child({{ loop.index }}) a { background-color: rgba({{ item.background_color.color|convert_rgb }},{{ item.background_color.opacity ~ '%' }}); border-color: rgba({{ item.border_color.color|convert_rgb }},{{ item.border_color.opacity ~ '%' }}); color: rgba({{ item.text_color.color|convert_rgb }},{{ item.text_color.opacity ~ '%' }}); }
+   {{ moduleId }} .secbtn:nth-child({{ loop.index }}) a:hover { background-color: rgba({{ item.background_color_hover_.color|convert_rgb }},{{ item.background_color_hover_.opacity ~ '%' }}); border-color: rgba({{ item.border_color_hover_.color|convert_rgb }},{{ item.border_color_hover_.opacity ~ '%' }}); color: rgba({{ item.text_color_hover_.color|convert_rgb }},{{ item.text_color_hover_.opacity ~ '%' }}); }  
+  {% endfor %}
+  
+  
+  @media(max-width: 991px){ {{ moduleId }} .space-sec { {{ module.style.spacing.tablet.css }}; } }
+  
+  @media(max-width: 767px){ {{ moduleId }} .space-sec { {{ module.style.spacing.mobile.css }}; } }
+  
+</style>
+{% end_require_css %}
+{% endif %}

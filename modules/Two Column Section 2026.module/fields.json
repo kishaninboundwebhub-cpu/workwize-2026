@@ -1,0 +1,678 @@
+[ {
+  "id" : "e181e1ee-ef06-5ba8-0ad3-f63113a45d24",
+  "name" : "style",
+  "label" : "Style",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "36fd79d2-1107-4452-d226-d4c096723f16",
+    "name" : "select_background",
+    "label" : "Select Background",
+    "required" : false,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "bg_color", "Background Color" ], [ "bg_image", "Background Image" ], [ "bg_gradient", "Background Gradient" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : ""
+  }, {
+    "id" : "60d0ddef-fb34-a99a-73cb-bda8b10e0fc9",
+    "name" : "background_color",
+    "label" : "Background Color",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "style.select_background",
+      "controlling_value_regex" : "bg_color",
+      "property" : null,
+      "operator" : "MATCHES_REGEX",
+      "access" : null
+    },
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : null,
+      "opacity" : 100
+    }
+  }, {
+    "id" : "19f0609d-595d-6ef3-f639-3f6006e095fb",
+    "name" : "background_image",
+    "label" : "Background Image",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "style.select_background",
+      "controlling_value_regex" : "bg_image",
+      "property" : null,
+      "operator" : "MATCHES_REGEX",
+      "access" : null
+    },
+    "type" : "backgroundimage",
+    "display_width" : null,
+    "default" : {
+      "src" : "",
+      "background_position" : "MIDDLE_CENTER",
+      "background_size" : "cover"
+    }
+  }, {
+    "id" : "0df6d4e0-395b-eda2-ec5a-1d08ad6c8d35",
+    "name" : "background_gradient",
+    "label" : "Background Gradient",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "style.select_background",
+      "controlling_value_regex" : "bg_gradient",
+      "property" : null,
+      "operator" : "MATCHES_REGEX",
+      "access" : null
+    },
+    "type" : "gradient",
+    "display_width" : null,
+    "default" : { }
+  }, {
+    "id" : "afeb177b-c31d-1412-5116-70d6f85c5565",
+    "name" : "spacing",
+    "label" : "Spacing",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "d59d9e4c-264e-54fa-99b7-0ff07897b867",
+      "name" : "desktop",
+      "label" : "Desktop",
+      "required" : false,
+      "locked" : false,
+      "type" : "spacing",
+      "display_width" : null,
+      "default" : {
+        "padding" : {
+          "top" : {
+            "value" : 140,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 116,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      }
+    }, {
+      "id" : "0c762a95-1339-05fa-721d-3d79f41b571e",
+      "name" : "tablet",
+      "label" : "Tablet",
+      "required" : false,
+      "locked" : false,
+      "type" : "spacing",
+      "display_width" : null,
+      "default" : {
+        "padding" : {
+          "top" : {
+            "value" : 100,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 100,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      }
+    }, {
+      "id" : "0a8a8c35-4008-f2aa-311a-12325d67b19c",
+      "name" : "mobile",
+      "label" : "Mobile",
+      "required" : false,
+      "locked" : false,
+      "type" : "spacing",
+      "display_width" : null,
+      "default" : {
+        "padding" : {
+          "top" : {
+            "value" : 60,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 60,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      }
+    } ],
+    "tab" : "STYLE",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : {
+      "desktop" : {
+        "padding" : {
+          "top" : {
+            "value" : 140,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 116,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      },
+      "tablet" : {
+        "padding" : {
+          "top" : {
+            "value" : 100,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 100,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      },
+      "mobile" : {
+        "padding" : {
+          "top" : {
+            "value" : 60,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 60,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      }
+    }
+  } ],
+  "tab" : "STYLE",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "select_background" : "",
+    "background_color" : {
+      "color" : null,
+      "opacity" : 100
+    },
+    "background_image" : {
+      "src" : "",
+      "background_position" : "MIDDLE_CENTER",
+      "background_size" : "cover"
+    },
+    "background_gradient" : { },
+    "spacing" : {
+      "desktop" : {
+        "padding" : {
+          "top" : {
+            "value" : 140,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 116,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      },
+      "tablet" : {
+        "padding" : {
+          "top" : {
+            "value" : 100,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 100,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      },
+      "mobile" : {
+        "padding" : {
+          "top" : {
+            "value" : 60,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 60,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      }
+    }
+  }
+}, {
+  "id" : "55ccd3e2-31aa-4e79-9772-80facd954415",
+  "name" : "show_hide_",
+  "label" : "Section [Show/ Hide]",
+  "required" : false,
+  "locked" : false,
+  "display" : "toggle",
+  "type" : "boolean",
+  "display_width" : null,
+  "default" : true
+}, {
+  "id" : "ac3fc098-f76c-1285-de3c-b6d3d47cac12",
+  "name" : "content",
+  "label" : "Content",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "fb8e1dbb-4682-74f7-0e2b-b223bd0496bd",
+    "name" : "title",
+    "label" : "Title",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Other tools help you manage devices. <span>Workwize automates global ops from the ground up.</span>"
+  }, {
+    "id" : "5894e4ca-e280-be31-9cc4-035772da2d24",
+    "name" : "list_item",
+    "label" : "List Item",
+    "required" : false,
+    "locked" : false,
+    "occurrence" : {
+      "min" : null,
+      "max" : null,
+      "sorting_label_field" : null,
+      "default" : 3
+    },
+    "children" : [ {
+      "id" : "56454c48-b6f7-5422-ec0d-1732e0fa91db",
+      "name" : "title",
+      "label" : "Title",
+      "required" : false,
+      "locked" : false,
+      "allow_new_line" : false,
+      "type" : "text",
+      "display_width" : null,
+      "default" : "We log all compliance proof for you. Every device. Every region."
+    }, {
+      "id" : "0183e103-538d-c703-e487-443b8404e7bd",
+      "name" : "text_field",
+      "label" : "Text",
+      "required" : false,
+      "locked" : false,
+      "allow_new_line" : false,
+      "type" : "text",
+      "display_width" : null,
+      "default" : "Every shipment, assignment, retrieval, wipe, and disposal is documented automatically."
+    }, {
+      "id" : "c186aa7b-830e-092b-db47-526d7f3e909a",
+      "name" : "icon",
+      "label" : "Icon",
+      "required" : false,
+      "locked" : false,
+      "responsive" : true,
+      "resizable" : true,
+      "show_loading" : true,
+      "type" : "image",
+      "display_width" : null,
+      "default" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/Frame%20(3).svg",
+        "alt" : "Frame (3)",
+        "loading" : "lazy",
+        "width" : 28,
+        "height" : 28,
+        "max_width" : 28,
+        "max_height" : 28
+      }
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : [ {
+      "title" : "We log all compliance proof for you. Every device. Every region.",
+      "text_field" : "Every shipment, assignment, retrieval, wipe, and disposal is documented automatically.",
+      "icon" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/Frame%20(3).svg",
+        "alt" : "Frame (3)",
+        "loading" : "lazy",
+        "width" : 28,
+        "height" : 28,
+        "max_width" : 28,
+        "max_height" : 28
+      }
+    }, {
+      "title" : "We log all compliance proof for you. Every device. Every region.",
+      "text_field" : "Every shipment, assignment, retrieval, wipe, and disposal is documented automatically.",
+      "icon" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/Frame%20(3).svg",
+        "alt" : "Frame (3)",
+        "loading" : "lazy",
+        "width" : 28,
+        "height" : 28,
+        "max_width" : 28,
+        "max_height" : 28
+      }
+    }, {
+      "title" : "We log all compliance proof for you. Every device. Every region.",
+      "text_field" : "Every shipment, assignment, retrieval, wipe, and disposal is documented automatically.",
+      "icon" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/Frame%20(3).svg",
+        "alt" : "Frame (3)",
+        "loading" : "lazy",
+        "width" : 28,
+        "height" : 28,
+        "max_width" : 28,
+        "max_height" : 28
+      }
+    } ]
+  }, {
+    "id" : "0fa6c3f8-4c25-2e96-f8f4-15a2c06fe860",
+    "name" : "image_field",
+    "label" : "Image",
+    "required" : false,
+    "locked" : false,
+    "responsive" : true,
+    "resizable" : true,
+    "show_loading" : true,
+    "type" : "image",
+    "display_width" : null,
+    "default" : {
+      "size_type" : "exact",
+      "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/Frame%202147261713.png",
+      "alt" : "Frame 2147261713",
+      "loading" : "lazy",
+      "width" : 1240,
+      "height" : 1280,
+      "max_width" : 1240,
+      "max_height" : 1280
+    }
+  }, {
+    "id" : "3d351ea7-efe2-434f-3fa8-891a85fcc7cd",
+    "name" : "button",
+    "label" : "Button",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "6f626900-11f2-40cd-4ba9-c3a8c1e018f4",
+      "name" : "button_text",
+      "label" : "Button Text",
+      "required" : false,
+      "locked" : false,
+      "allow_new_line" : false,
+      "type" : "text",
+      "display_width" : null,
+      "default" : "Book a 30-min demo"
+    }, {
+      "id" : "efe1ce10-e628-84cb-00cc-052cd2fbb104",
+      "name" : "button_link",
+      "label" : "Button Link",
+      "required" : false,
+      "locked" : false,
+      "supported_types" : [ "EXTERNAL", "FILE", "CONTENT", "BLOG", "CALL_TO_ACTION", "PAYMENT", "EMAIL_ADDRESS", "PHONE_NUMBER", "WHATSAPP_NUMBER" ],
+      "show_advanced_rel_options" : false,
+      "type" : "link",
+      "display_width" : null,
+      "default" : {
+        "url" : {
+          "content_id" : null,
+          "type" : "EXTERNAL",
+          "href" : ""
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false
+      }
+    }, {
+      "id" : "958bbe46-1495-644a-66e6-147b5078dcd7",
+      "name" : "set_arrow",
+      "label" : "Set Arrow",
+      "required" : false,
+      "locked" : false,
+      "display" : "toggle",
+      "type" : "boolean",
+      "display_width" : null,
+      "default" : true
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : {
+      "button_text" : "Book a 30-min demo",
+      "button_link" : {
+        "url" : {
+          "content_id" : null,
+          "type" : "EXTERNAL",
+          "href" : ""
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false
+      },
+      "set_arrow" : true
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "title" : "Other tools help you manage devices. <span>Workwize automates global ops from the ground up.</span>",
+    "list_item" : [ {
+      "title" : "We log all compliance proof for you. Every device. Every region.",
+      "text_field" : "Every shipment, assignment, retrieval, wipe, and disposal is documented automatically.",
+      "icon" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/Frame%20(3).svg",
+        "alt" : "Frame (3)",
+        "loading" : "lazy",
+        "width" : 28,
+        "height" : 28,
+        "max_width" : 28,
+        "max_height" : 28
+      }
+    }, {
+      "title" : "We log all compliance proof for you. Every device. Every region.",
+      "text_field" : "Every shipment, assignment, retrieval, wipe, and disposal is documented automatically.",
+      "icon" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/Frame%20(3).svg",
+        "alt" : "Frame (3)",
+        "loading" : "lazy",
+        "width" : 28,
+        "height" : 28,
+        "max_width" : 28,
+        "max_height" : 28
+      }
+    }, {
+      "title" : "We log all compliance proof for you. Every device. Every region.",
+      "text_field" : "Every shipment, assignment, retrieval, wipe, and disposal is documented automatically.",
+      "icon" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/Frame%20(3).svg",
+        "alt" : "Frame (3)",
+        "loading" : "lazy",
+        "width" : 28,
+        "height" : 28,
+        "max_width" : 28,
+        "max_height" : 28
+      }
+    } ],
+    "image_field" : {
+      "size_type" : "exact",
+      "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/Frame%202147261713.png",
+      "alt" : "Frame 2147261713",
+      "loading" : "lazy",
+      "width" : 1240,
+      "height" : 1280,
+      "max_width" : 1240,
+      "max_height" : 1280
+    },
+    "button" : {
+      "button_text" : "Book a 30-min demo",
+      "button_link" : {
+        "url" : {
+          "content_id" : null,
+          "type" : "EXTERNAL",
+          "href" : ""
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false
+      },
+      "set_arrow" : true
+    }
+  }
+}, {
+  "id" : "99a114a6-3fb8-0fdc-0f9e-63325ed5bdf5",
+  "name" : "color_setting",
+  "label" : "Color Setting",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "62573f64-d236-fa10-5c21-1b23f48d0a86",
+    "name" : "title_color",
+    "label" : "Title Color",
+    "required" : false,
+    "locked" : false,
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#050C14",
+      "opacity" : 100
+    }
+  }, {
+    "id" : "8e7b4d5c-14db-d0b2-d4f4-f5673fe92ecc",
+    "name" : "title_span_color",
+    "label" : "Title Span Color",
+    "required" : false,
+    "locked" : false,
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#227AF7",
+      "opacity" : 100
+    }
+  }, {
+    "id" : "7fa1d2ff-a8da-cff3-4a7b-7509495e6564",
+    "name" : "list_title_color",
+    "label" : "List Title Color",
+    "required" : false,
+    "locked" : false,
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#050C14",
+      "opacity" : 100
+    }
+  }, {
+    "id" : "0ae4a0c5-de9e-6271-cf61-e805c21929da",
+    "name" : "list_text_color",
+    "label" : "List Text Color",
+    "required" : false,
+    "locked" : false,
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#050C14",
+      "opacity" : 75
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "title_color" : {
+      "color" : "#050C14",
+      "opacity" : 100
+    },
+    "title_span_color" : {
+      "color" : "#227AF7",
+      "opacity" : 100
+    },
+    "list_title_color" : {
+      "color" : "#050C14",
+      "opacity" : 100
+    },
+    "list_text_color" : {
+      "color" : "#050C14",
+      "opacity" : 75
+    }
+  }
+} ]

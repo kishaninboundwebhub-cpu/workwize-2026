@@ -1,0 +1,502 @@
+[ {
+  "id" : "e181e1ee-ef06-5ba8-0ad3-f63113a45d24",
+  "name" : "style",
+  "label" : "Style",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "36fd79d2-1107-4452-d226-d4c096723f16",
+    "name" : "select_background",
+    "label" : "Select Background",
+    "required" : false,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "bg_color", "Background Color" ], [ "bg_image", "Background Image" ], [ "bg_gradient", "Background Gradient" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : ""
+  }, {
+    "id" : "60d0ddef-fb34-a99a-73cb-bda8b10e0fc9",
+    "name" : "background_color",
+    "label" : "Background Color",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "style.select_background",
+      "controlling_value_regex" : "bg_color",
+      "property" : null,
+      "operator" : "MATCHES_REGEX",
+      "access" : null
+    },
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : null,
+      "opacity" : 100
+    }
+  }, {
+    "id" : "19f0609d-595d-6ef3-f639-3f6006e095fb",
+    "name" : "background_image",
+    "label" : "Background Image",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "style.select_background",
+      "controlling_value_regex" : "bg_image",
+      "property" : null,
+      "operator" : "MATCHES_REGEX",
+      "access" : null
+    },
+    "type" : "backgroundimage",
+    "display_width" : null,
+    "default" : {
+      "background_position" : "TOP_CENTER",
+      "background_size" : "cover",
+      "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/Group%202147262867.png"
+    }
+  }, {
+    "id" : "0df6d4e0-395b-eda2-ec5a-1d08ad6c8d35",
+    "name" : "background_gradient",
+    "label" : "Background Gradient",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "style.select_background",
+      "controlling_value_regex" : "bg_gradient",
+      "property" : null,
+      "operator" : "MATCHES_REGEX",
+      "access" : null
+    },
+    "type" : "gradient",
+    "display_width" : null,
+    "default" : { }
+  }, {
+    "id" : "afeb177b-c31d-1412-5116-70d6f85c5565",
+    "name" : "spacing",
+    "label" : "Spacing",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "d59d9e4c-264e-54fa-99b7-0ff07897b867",
+      "name" : "desktop",
+      "label" : "Desktop",
+      "required" : false,
+      "locked" : false,
+      "type" : "spacing",
+      "display_width" : null,
+      "default" : {
+        "padding" : {
+          "top" : {
+            "value" : 60,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 94,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      }
+    }, {
+      "id" : "0c762a95-1339-05fa-721d-3d79f41b571e",
+      "name" : "tablet",
+      "label" : "Tablet",
+      "required" : false,
+      "locked" : false,
+      "type" : "spacing",
+      "display_width" : null,
+      "default" : {
+        "padding" : {
+          "top" : {
+            "value" : 60,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 80,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      }
+    }, {
+      "id" : "0a8a8c35-4008-f2aa-311a-12325d67b19c",
+      "name" : "mobile",
+      "label" : "Mobile",
+      "required" : false,
+      "locked" : false,
+      "type" : "spacing",
+      "display_width" : null,
+      "default" : {
+        "padding" : {
+          "top" : {
+            "value" : 60,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 60,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      }
+    } ],
+    "tab" : "STYLE",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : {
+      "desktop" : {
+        "padding" : {
+          "top" : {
+            "value" : 60,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 94,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      },
+      "tablet" : {
+        "padding" : {
+          "top" : {
+            "value" : 60,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 80,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      },
+      "mobile" : {
+        "padding" : {
+          "top" : {
+            "value" : 60,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 60,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      }
+    }
+  } ],
+  "tab" : "STYLE",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "select_background" : "",
+    "background_color" : {
+      "color" : null,
+      "opacity" : 100
+    },
+    "background_image" : {
+      "background_position" : "TOP_CENTER",
+      "background_size" : "cover",
+      "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/Group%202147262867.png"
+    },
+    "background_gradient" : { },
+    "spacing" : {
+      "desktop" : {
+        "padding" : {
+          "top" : {
+            "value" : 60,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 94,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      },
+      "tablet" : {
+        "padding" : {
+          "top" : {
+            "value" : 60,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 80,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      },
+      "mobile" : {
+        "padding" : {
+          "top" : {
+            "value" : 60,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 60,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      }
+    }
+  }
+}, {
+  "id" : "55ccd3e2-31aa-4e79-9772-80facd954415",
+  "name" : "show_hide_",
+  "label" : "Section [Show/ Hide]",
+  "required" : false,
+  "locked" : false,
+  "display" : "toggle",
+  "type" : "boolean",
+  "display_width" : null,
+  "default" : true
+}, {
+  "id" : "816e23db-8d7e-7584-87d2-24ddffb1517b",
+  "name" : "sub_title",
+  "label" : "Sub Title",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "workwise Platform Demo"
+}, {
+  "id" : "8f12f706-cfd9-3d52-bd6e-1a4d9fd78216",
+  "name" : "title",
+  "label" : "Title",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "You’ve outgrown patchwork operations. <span>We’ll show you how it should run.</span>"
+}, {
+  "id" : "3e44a193-014c-fbb6-9e5b-352732913b7f",
+  "name" : "text",
+  "label" : "Text",
+  "required" : false,
+  "locked" : false,
+  "type" : "richtext",
+  "display_width" : null,
+  "default" : "<p>See how your IT hardware workflows would run without constant follow-ups, scattered tools, or missing records.</p>\n<ul>\n<li>Standardized workflows across teams and regions</li>\n<li>Built-in logs, approvals, and audit trails</li>\n<li>Automated platform backed by global logistics and warehousing</li>\n<li>One place to see every request, action, and outcome</li>\n</ul>"
+}, {
+  "id" : "d9090ed4-2d8c-c0b2-5936-bd352fcd91f1",
+  "name" : "form_content",
+  "label" : "Form Content",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "217b8636-e751-34c1-aed6-865e2ffcab2c",
+    "name" : "title",
+    "label" : "Title",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Bring your toughest hardware ops question. We’ll solve it."
+  }, {
+    "id" : "1a41332c-3ed1-7285-eb8a-62279fd41b60",
+    "name" : "form_field",
+    "label" : "Form",
+    "required" : false,
+    "locked" : false,
+    "embed_versions" : [ "v2", "v4" ],
+    "type" : "form",
+    "display_width" : null,
+    "default" : {
+      "form_id" : "5b8fb353-8f3f-4f86-bfde-ea99bd63c9c0",
+      "response_type" : "inline",
+      "message" : "Thanks for submitting the form.",
+      "form_type" : "HUBSPOT"
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "title" : "Bring your toughest hardware ops question. We’ll solve it.",
+    "form_field" : {
+      "form_id" : "5b8fb353-8f3f-4f86-bfde-ea99bd63c9c0",
+      "response_type" : "inline",
+      "message" : "Thanks for submitting the form.",
+      "form_type" : "HUBSPOT"
+    }
+  }
+}, {
+  "id" : "3e787836-a9fa-97bc-e6a7-e46ce021a08d",
+  "name" : "color_settings",
+  "label" : "Color Settings",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "0bfa717a-3e23-1a95-9a99-e3d4c7839085",
+    "name" : "title_color",
+    "label" : "Title Color",
+    "required" : false,
+    "locked" : false,
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#050C14",
+      "opacity" : 100
+    }
+  }, {
+    "id" : "35c3ffcb-f777-d175-35bc-607e75f90a42",
+    "name" : "title_span_color",
+    "label" : "Title Span Color",
+    "required" : false,
+    "locked" : false,
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#227AF7",
+      "opacity" : 100
+    }
+  }, {
+    "id" : "d3e8eca6-9ade-aa45-f16c-ec7c5681a429",
+    "name" : "sub_title_color",
+    "label" : "Sub Title Color",
+    "required" : false,
+    "locked" : false,
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#D73FAF",
+      "opacity" : 100
+    }
+  }, {
+    "id" : "1687aa46-d4a3-fc86-f1d0-ca07e51a1e7c",
+    "name" : "text_color",
+    "label" : "Text Color",
+    "required" : false,
+    "locked" : false,
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#050C14",
+      "opacity" : 80
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "title_color" : {
+      "color" : "#050C14",
+      "opacity" : 100
+    },
+    "title_span_color" : {
+      "color" : "#227AF7",
+      "opacity" : 100
+    },
+    "sub_title_color" : {
+      "color" : "#D73FAF",
+      "opacity" : 100
+    },
+    "text_color" : {
+      "color" : "#050C14",
+      "opacity" : 80
+    }
+  }
+}, {
+  "id" : "9a491f93-1e41-f45d-539c-32668b903198",
+  "name" : "image_field",
+  "label" : "Image",
+  "required" : false,
+  "locked" : false,
+  "responsive" : true,
+  "resizable" : true,
+  "show_loading" : true,
+  "type" : "image",
+  "display_width" : null,
+  "default" : {
+    "size_type" : "exact",
+    "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/USA%2c%20Canada%2c%20Mexico.png",
+    "alt" : "USA, Canada, Mexico",
+    "loading" : "lazy",
+    "width" : 576,
+    "height" : 971,
+    "max_width" : 576,
+    "max_height" : 971
+  }
+} ]

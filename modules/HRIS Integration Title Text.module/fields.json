@@ -1,0 +1,814 @@
+[ {
+  "id" : "f904cca8-4d01-7544-c91b-d79e710476d3",
+  "name" : "style",
+  "label" : "Style",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "bb6182f0-1f54-957b-efc6-fb72c6760e80",
+    "name" : "desktop_spacing",
+    "label" : "Desktop Spacing",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "ee2aae81-dffd-a424-bf54-c97b9474e7fb",
+      "name" : "spacing_field",
+      "label" : "Spacing",
+      "required" : false,
+      "locked" : false,
+      "type" : "spacing",
+      "display_width" : null,
+      "default" : {
+        "padding" : {
+          "top" : {
+            "value" : 50,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 50,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      }
+    } ],
+    "tab" : "STYLE",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : {
+      "spacing_field" : {
+        "padding" : {
+          "top" : {
+            "value" : 50,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 50,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      }
+    }
+  }, {
+    "id" : "0074895f-68e7-44c1-d4cf-bb93204e494d",
+    "name" : "tablet_spacing",
+    "label" : "Tablet Spacing",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "a543bb02-fc22-8b8c-c2df-5ac4668a1538",
+      "name" : "spacing_field",
+      "label" : "Spacing",
+      "required" : false,
+      "locked" : false,
+      "type" : "spacing",
+      "display_width" : null,
+      "default" : {
+        "padding" : {
+          "top" : {
+            "value" : 50,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 50,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      }
+    } ],
+    "tab" : "STYLE",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : {
+      "spacing_field" : {
+        "padding" : {
+          "top" : {
+            "value" : 50,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 50,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      }
+    }
+  }, {
+    "id" : "61e9cf70-254b-0ea8-ac17-d1f371c22aa3",
+    "name" : "mobile_spacing",
+    "label" : "Mobile Spacing",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "83e952a2-479e-29e8-58b2-f376b11cd41e",
+      "name" : "spacing_field",
+      "label" : "Spacing",
+      "required" : false,
+      "locked" : false,
+      "type" : "spacing",
+      "display_width" : null,
+      "default" : {
+        "padding" : {
+          "top" : {
+            "value" : 50,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 50,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      }
+    } ],
+    "tab" : "STYLE",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : {
+      "spacing_field" : {
+        "padding" : {
+          "top" : {
+            "value" : 50,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 50,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      }
+    }
+  } ],
+  "tab" : "STYLE",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "desktop_spacing" : {
+      "spacing_field" : {
+        "padding" : {
+          "top" : {
+            "value" : 50,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 50,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      }
+    },
+    "tablet_spacing" : {
+      "spacing_field" : {
+        "padding" : {
+          "top" : {
+            "value" : 50,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 50,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      }
+    },
+    "mobile_spacing" : {
+      "spacing_field" : {
+        "padding" : {
+          "top" : {
+            "value" : 50,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 50,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      }
+    }
+  }
+}, {
+  "id" : "17bace81-f129-2839-a8a9-f4d23c09ba7c",
+  "name" : "content",
+  "label" : "Default Content",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "22753d55-275f-4af6-6fa8-960279c1722f",
+    "name" : "title",
+    "label" : "Title",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Seamlessly Equip Your Global Workforce with Workwize & {{ dynamic_page_hubdb_row.hs_name }} Integration"
+  }, {
+    "id" : "a1cdbcf9-3ac3-2339-f9c4-4a8f1f3e0c94",
+    "name" : "text",
+    "label" : "Text",
+    "required" : false,
+    "locked" : false,
+    "type" : "richtext",
+    "display_width" : null,
+    "default" : "<p>Integrating {{ dynamic_page_hubdb_row.hs_name }} with Workwize enables your HR and IT teams to streamline hardware and asset management for employees in over 100+ countries.</p>\n<p>With this powerful integration, onboarding, managing, and offboarding employees has never been easier.</p>"
+  }, {
+    "id" : "fbd4414b-7413-97fd-a41e-fe1fd1c9c736",
+    "name" : "button",
+    "label" : "Button",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "c69dc6ec-5b66-fee9-0268-d554009c1e75",
+      "name" : "button_text",
+      "label" : "Button Text",
+      "required" : false,
+      "locked" : false,
+      "allow_new_line" : false,
+      "type" : "text",
+      "display_width" : null
+    }, {
+      "id" : "f42fa2cb-72f0-8047-e819-ad8159f6f227",
+      "name" : "button_link",
+      "label" : "Button Link",
+      "required" : false,
+      "locked" : false,
+      "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG", "CALL_TO_ACTION", "PHONE_NUMBER", "WHATSAPP_NUMBER", "PAYMENT" ],
+      "show_advanced_rel_options" : false,
+      "type" : "link",
+      "display_width" : null,
+      "default" : {
+        "url" : {
+          "content_id" : null,
+          "type" : "EXTERNAL",
+          "href" : ""
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false
+      }
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : {
+      "button_link" : {
+        "url" : {
+          "content_id" : null,
+          "type" : "EXTERNAL",
+          "href" : ""
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false
+      }
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "title" : "Seamlessly Equip Your Global Workforce with Workwize & {{ dynamic_page_hubdb_row.hs_name }} Integration",
+    "text" : "<p>Integrating {{ dynamic_page_hubdb_row.hs_name }} with Workwize enables your HR and IT teams to streamline hardware and asset management for employees in over 100+ countries.</p>\n<p>With this powerful integration, onboarding, managing, and offboarding employees has never been easier.</p>",
+    "button" : {
+      "button_link" : {
+        "url" : {
+          "content_id" : null,
+          "type" : "EXTERNAL",
+          "href" : ""
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false
+      }
+    }
+  }
+}, {
+  "id" : "337399ff-6610-3cbd-5020-f4c7f22904e2",
+  "name" : "mdm_content",
+  "label" : "MDM Content",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "567d6c2f-a952-a190-5228-55822170741a",
+    "name" : "title",
+    "label" : "Title",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Seamlessly Equip Your Global Workforce with Workwize & {{ dynamic_page_hubdb_row.hs_name }} Integration"
+  }, {
+    "id" : "c62ee261-b3a5-b069-e3fd-3730265e05a9",
+    "name" : "text",
+    "label" : "Text",
+    "required" : false,
+    "locked" : false,
+    "type" : "richtext",
+    "display_width" : null,
+    "default" : "<p>Integrating {{ dynamic_page_hubdb_row.hs_name }} with Workwize enables your HR and IT teams to streamline hardware and asset management for employees in over 100+ countries.</p>\n<p>With this powerful integration, onboarding, managing, and offboarding employees has never been easier.</p>"
+  }, {
+    "id" : "ab9c5387-6449-3da4-1e66-451c4f91c0a9",
+    "name" : "button",
+    "label" : "Button",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "b0844c43-4237-6fa1-70a5-c5efb9794fd4",
+      "name" : "button_text",
+      "label" : "Button Text",
+      "required" : false,
+      "locked" : false,
+      "allow_new_line" : false,
+      "type" : "text",
+      "display_width" : null
+    }, {
+      "id" : "c844dfc0-76d9-7edd-7f10-bb0614664bda",
+      "name" : "button_link",
+      "label" : "Button Link",
+      "required" : false,
+      "locked" : false,
+      "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG", "CALL_TO_ACTION", "PHONE_NUMBER", "WHATSAPP_NUMBER", "PAYMENT" ],
+      "show_advanced_rel_options" : false,
+      "type" : "link",
+      "display_width" : null,
+      "default" : {
+        "url" : {
+          "content_id" : null,
+          "type" : "EXTERNAL",
+          "href" : ""
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false
+      }
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : {
+      "button_link" : {
+        "url" : {
+          "content_id" : null,
+          "type" : "EXTERNAL",
+          "href" : ""
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false
+      }
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "title" : "Seamlessly Equip Your Global Workforce with Workwize & {{ dynamic_page_hubdb_row.hs_name }} Integration",
+    "text" : "<p>Integrating {{ dynamic_page_hubdb_row.hs_name }} with Workwize enables your HR and IT teams to streamline hardware and asset management for employees in over 100+ countries.</p>\n<p>With this powerful integration, onboarding, managing, and offboarding employees has never been easier.</p>",
+    "button" : {
+      "button_link" : {
+        "url" : {
+          "content_id" : null,
+          "type" : "EXTERNAL",
+          "href" : ""
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false
+      }
+    }
+  }
+}, {
+  "id" : "7e15ebda-cb84-25cc-d970-98708a7a6281",
+  "name" : "productivity_content",
+  "label" : "Productivity Content",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "16bd940c-e48b-9c3a-7781-cb25c351d5d3",
+    "name" : "title",
+    "label" : "Title",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Streamline Device Updates with Workwize + {{ dynamic_page_hubdb_row.hs_name }} Integration"
+  }, {
+    "id" : "07df3b59-ccdf-a45e-e77e-d054acc4c45e",
+    "name" : "text",
+    "label" : "Text",
+    "required" : false,
+    "locked" : false,
+    "type" : "richtext",
+    "display_width" : null,
+    "default" : "<p>With Workwize's {{ dynamic_page_hubdb_row.hs_name }} integration, your IT team and employees stay connected, informed, and efficient during IT devices' onboarding, shipping, and offboarding phases.</p>"
+  }, {
+    "id" : "61a7fa71-1f0f-37ef-5052-37d1f136f73b",
+    "name" : "button",
+    "label" : "Button",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "4472afe8-80f9-7ed1-8e14-341d396ec179",
+      "name" : "button_text",
+      "label" : "Button Text",
+      "required" : false,
+      "locked" : false,
+      "allow_new_line" : false,
+      "type" : "text",
+      "display_width" : null
+    }, {
+      "id" : "32b38902-481d-8596-6715-b91cf26bfd05",
+      "name" : "button_link",
+      "label" : "Button Link",
+      "required" : false,
+      "locked" : false,
+      "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG", "CALL_TO_ACTION", "PHONE_NUMBER", "WHATSAPP_NUMBER", "PAYMENT" ],
+      "show_advanced_rel_options" : false,
+      "type" : "link",
+      "display_width" : null,
+      "default" : {
+        "url" : {
+          "content_id" : null,
+          "type" : "EXTERNAL",
+          "href" : ""
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false
+      }
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : {
+      "button_link" : {
+        "url" : {
+          "content_id" : null,
+          "type" : "EXTERNAL",
+          "href" : ""
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false
+      }
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "title" : "Streamline Device Updates with Workwize + {{ dynamic_page_hubdb_row.hs_name }} Integration",
+    "text" : "<p>With Workwize's {{ dynamic_page_hubdb_row.hs_name }} integration, your IT team and employees stay connected, informed, and efficient during IT devices' onboarding, shipping, and offboarding phases.</p>",
+    "button" : {
+      "button_link" : {
+        "url" : {
+          "content_id" : null,
+          "type" : "EXTERNAL",
+          "href" : ""
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false
+      }
+    }
+  }
+}, {
+  "id" : "7209d4e1-ce00-48ce-e494-53430bf98be0",
+  "name" : "identity_content",
+  "label" : "Identity Content",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "bad7965f-5f00-97c7-c943-2a9be0210096",
+    "name" : "title",
+    "label" : "Title",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Integrating {{ dynamic_page_hubdb_row.hs_name }} and Workwize empowers IT teams to optimize hardware and asset management for employees in over 100 countries. "
+  }, {
+    "id" : "b91c4792-7a90-50f3-02e1-9146675ff94f",
+    "name" : "text",
+    "label" : "Text",
+    "required" : false,
+    "locked" : false,
+    "type" : "richtext",
+    "display_width" : null,
+    "default" : "<p>With this powerful combination, onboarding, managing, and offboarding employees become more efficient, secure, and automated.</p>"
+  }, {
+    "id" : "adcff975-d5a9-8e17-787e-2298e6d0ed46",
+    "name" : "button",
+    "label" : "Button",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "95f91396-6ad8-80d9-eb39-8b9954529289",
+      "name" : "button_text",
+      "label" : "Button Text",
+      "required" : false,
+      "locked" : false,
+      "allow_new_line" : false,
+      "type" : "text",
+      "display_width" : null
+    }, {
+      "id" : "55ba9d05-fba0-df45-6be3-4fa49aa8a4f1",
+      "name" : "button_link",
+      "label" : "Button Link",
+      "required" : false,
+      "locked" : false,
+      "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG", "CALL_TO_ACTION", "PHONE_NUMBER", "WHATSAPP_NUMBER", "PAYMENT" ],
+      "show_advanced_rel_options" : false,
+      "type" : "link",
+      "display_width" : null,
+      "default" : {
+        "url" : {
+          "content_id" : null,
+          "type" : "EXTERNAL",
+          "href" : ""
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false
+      }
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : {
+      "button_link" : {
+        "url" : {
+          "content_id" : null,
+          "type" : "EXTERNAL",
+          "href" : ""
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false
+      }
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "title" : "Integrating {{ dynamic_page_hubdb_row.hs_name }} and Workwize empowers IT teams to optimize hardware and asset management for employees in over 100 countries. ",
+    "text" : "<p>With this powerful combination, onboarding, managing, and offboarding employees become more efficient, secure, and automated.</p>",
+    "button" : {
+      "button_link" : {
+        "url" : {
+          "content_id" : null,
+          "type" : "EXTERNAL",
+          "href" : ""
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false
+      }
+    }
+  }
+}, {
+  "id" : "638b3a0b-acd0-7e4b-ce9a-fb566f6914d3",
+  "name" : "hris_content",
+  "label" : "HRIS Content",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "18ccb20b-7356-7bce-0d63-269c35c477ea",
+    "name" : "title",
+    "label" : "Title",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Seamlessly Equip Your Global Workforce with Workwize & {{ dynamic_page_hubdb_row.hs_name }} Integration"
+  }, {
+    "id" : "232ba955-301d-aa96-0289-6a1b57e91db0",
+    "name" : "text",
+    "label" : "Text",
+    "required" : false,
+    "locked" : false,
+    "type" : "richtext",
+    "display_width" : null,
+    "default" : "<p>Integrating BambooHR with Workwize enables your HR and IT teams to streamline hardware and asset management for employees in over 100+ countries.</p>\n<p>With this powerful integration, onboarding, managing, and offboarding employees has never been easier.</p>"
+  }, {
+    "id" : "547db182-d799-d6ff-5d00-d1a59e5b38c2",
+    "name" : "button",
+    "label" : "Button",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "1e18b515-5556-f351-a6a8-d0c7bcebb71d",
+      "name" : "button_text",
+      "label" : "Button Text",
+      "required" : false,
+      "locked" : false,
+      "allow_new_line" : false,
+      "type" : "text",
+      "display_width" : null
+    }, {
+      "id" : "7ba13c60-302a-3b8c-1cdc-fcab1079ae5e",
+      "name" : "button_link",
+      "label" : "Button Link",
+      "required" : false,
+      "locked" : false,
+      "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG", "CALL_TO_ACTION", "PHONE_NUMBER", "WHATSAPP_NUMBER", "PAYMENT" ],
+      "show_advanced_rel_options" : false,
+      "type" : "link",
+      "display_width" : null,
+      "default" : {
+        "url" : {
+          "content_id" : null,
+          "type" : "EXTERNAL",
+          "href" : ""
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false
+      }
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : {
+      "button_link" : {
+        "url" : {
+          "content_id" : null,
+          "type" : "EXTERNAL",
+          "href" : ""
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false
+      }
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "title" : "Seamlessly Equip Your Global Workforce with Workwize & {{ dynamic_page_hubdb_row.hs_name }} Integration",
+    "text" : "<p>Integrating BambooHR with Workwize enables your HR and IT teams to streamline hardware and asset management for employees in over 100+ countries.</p>\n<p>With this powerful integration, onboarding, managing, and offboarding employees has never been easier.</p>",
+    "button" : {
+      "button_link" : {
+        "url" : {
+          "content_id" : null,
+          "type" : "EXTERNAL",
+          "href" : ""
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false
+      }
+    }
+  }
+}, {
+  "id" : "2cb2f48e-9f64-8ce9-8359-5dc1000be7d3",
+  "name" : "styles",
+  "label" : "Styles",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "ea6e78a1-10c7-14a8-9f33-3629c6bb1eda",
+    "name" : "background_color",
+    "label" : "Background Color",
+    "required" : false,
+    "locked" : false,
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#fff",
+      "opacity" : 100
+    }
+  }, {
+    "id" : "aa0041b0-b9c4-9f96-ff63-60bd1d80e346",
+    "name" : "title_color",
+    "label" : "Title Color",
+    "required" : false,
+    "locked" : false,
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#122750",
+      "opacity" : 100
+    }
+  }, {
+    "id" : "62a000ee-1501-424a-c410-e92d7d90f819",
+    "name" : "text_color",
+    "label" : "Text Color",
+    "required" : false,
+    "locked" : false,
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#122750",
+      "opacity" : 100
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "background_color" : {
+      "color" : "#fff",
+      "opacity" : 100
+    },
+    "title_color" : {
+      "color" : "#122750",
+      "opacity" : 100
+    },
+    "text_color" : {
+      "color" : "#122750",
+      "opacity" : 100
+    }
+  }
+} ]

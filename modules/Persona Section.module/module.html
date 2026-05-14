@@ -1,0 +1,137 @@
+{% if module.show_hide_ %}
+{% set moduleId = '#hs_cos_wrapper_{{ name }}' %}
+
+<div class="personsec fullwidth bgsec space-sec">
+ <div class="wrapper">
+   <div class="personTitle text-center pb45 wow fadeInUp">
+     <h2>{{ module.content.title }}</h2>
+   </div>
+   
+   <div class="personInners d_flex">
+     {% for item in module.content.box_column %}
+     <div class="personITems wow fadeInUp">
+       <div class="personITinn">
+         <div class="personIiconte">
+         <div class="personIicon">
+            {% if item.icon.src %}
+            {% set sizeAttrs = 'width="{{ item.icon.width|escape_attr }}" height="{{ item.icon.height|escape_attr }}"' %}
+            {% if item.icon.size_type == 'auto' %}
+            {% set sizeAttrs = 'width="{{ item.icon.width|escape_attr }}" height="{{ item.icon.height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+            {% elif item.icon.size_type == 'auto_custom_max' %}
+            {% set sizeAttrs = 'width="{{ item.icon.max_width|escape_attr }}" height="{{ item.icon.max_height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+            {% endif %}
+            {% set loadingAttr = item.icon.loading != 'disabled' ? 'loading="{{ item.icon.loading|escape_attr }}"' : '' %}
+            <img src="{{ item.icon.src|escape_url }}" alt="{{ item.icon.alt|escape_attr }}" {{ loadingAttr }} {{ sizeAttrs }}>
+            {% endif %}
+         </div>
+         <div class="personITitle">
+           <h3>{{ item.title }}</h3>
+         </div>
+         <div class="personITtext">
+           {{ item.text }}
+         </div>
+         </div>
+         <div class="personImags">
+           {% if item.image_field.src %}
+            {% set sizeAttrs = 'width="{{ item.image_field.width|escape_attr }}" height="{{ item.image_field.height|escape_attr }}"' %}
+            {% if item.image_field.size_type == 'auto' %}
+              {% set sizeAttrs = 'width="{{ item.image_field.width|escape_attr }}" height="{{ item.image_field.height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+            {% elif item.image_field.size_type == 'auto_custom_max' %}
+              {% set sizeAttrs = 'width="{{ item.image_field.max_width|escape_attr }}" height="{{ item.image_field.max_height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+            {% endif %}
+             {% set loadingAttr = item.image_field.loading != 'disabled' ? 'loading="{{ item.image_field.loading|escape_attr }}"' : '' %}
+            <img src="{{ item.image_field.src|escape_url }}" alt="{{ item.image_field.alt|escape_attr }}" {{ loadingAttr }} {{ sizeAttrs }}>
+          {% endif %}
+           
+           
+           {% if item.person_image_1.src %}
+    {% set sizeAttrs = 'width="{{ item.person_image_1.width|escape_attr }}" height="{{ item.person_image_1.height|escape_attr }}"' %}
+    {% if item.person_image_1.size_type == 'auto' %}
+      {% set sizeAttrs = 'width="{{ item.person_image_1.width|escape_attr }}" height="{{ item.person_image_1.height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+    {% elif item.person_image_1.size_type == 'auto_custom_max' %}
+      {% set sizeAttrs = 'width="{{ item.person_image_1.max_width|escape_attr }}" height="{{ item.person_image_1.max_height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+    {% endif %}
+     {% set loadingAttr = item.person_image_1.loading != 'disabled' ? 'loading="{{ item.person_image_1.loading|escape_attr }}"' : '' %}
+    <img src="{{ item.person_image_1.src|escape_url }}" alt="{{ item.person_image_1.alt|escape_attr }}" {{ loadingAttr }} {{ sizeAttrs }}>
+  {% endif %}
+         </div>
+         
+         <div class="personivbtn button d_flex">
+           
+           {% set href = item.button.button_link.url.href %}
+            {% if item.button.button_link.url.type is equalto "EMAIL_ADDRESS" %}
+              {% set href = "mailto:" + href %}
+            {% elif item.button.button_link.url.type is equalto "PHONE_NUMBER" %}
+              {% set href = "tel:" + href %}
+            {% endif %}
+            <a
+              {% if item.button.button_link.url.type is equalto "CALL_TO_ACTION"  %}
+                href="{{ href }}" {# The href here is not escaped as it is not editable and functions as a JavaScript call to the associated CTA #}
+              {% else %}
+                href="{{ href|escape_url }}"
+              {% endif %}
+              {% if item.button.button_link.open_in_new_tab %}
+                target="_blank"
+              {% endif %}
+              {% if item.button.button_link.rel %}
+                rel="{{ item.button.button_link.rel|escape_attr }}"
+              {% endif %}
+              >
+              <span>
+                {{ item.button.button_text }}
+              </span>
+              <svg width="6" height="9" viewBox="0 0 6 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M0.75 0.75L4.5 4.5L0.75 8.25" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
+         </div>
+       </div>
+     </div>
+     {% endfor %}
+   </div>
+   
+  </div>
+  
+</div>
+
+  
+
+
+
+
+{% require_css %}
+<style>
+  {{ moduleId }} .bgsec { {% if module.style.select_background == 'bg_color' %}
+    background-color: rgba({{ module.style.background_color.color|convert_rgb }},{{ module.style.background_color.opacity ~ '%' }});
+    {% elif module.style.select_background == 'bg_image' %}
+    {{ module.style.background_image.css }} background-repeat: no-repeat;
+    {% elif module.style.select_background == 'bg_gradient' %}
+    background: {{ module.style.background_gradient.css }};
+    {% endif %} }
+  
+  {{ moduleId }} .space-sec { {{ module.style.spacing.desktop.css }}; }
+  
+  {{ moduleId }} .personTitle h2 { color:rgba({{ module.color_setting.title_color.color|convert_rgb }},{{ module.color_setting.title_color.opacity }}%);  }
+  {{ moduleId }} .personTitle h2 span { color:rgba({{ module.color_setting.title_span_color.color|convert_rgb }},{{ module.color_setting.title_span_color.opacity }}%);  }
+  
+  {% for item in module.content.box_column %}
+   {{ moduleId }} .personITems:nth-child({{ loop.index }}) .personITinn:before {   background: linear-gradient(180deg, rgba({{ item.overlay_gradient_color.color|convert_rgb }},{{ item.overlay_gradient_color.opacity }}%) 60.41%, rgba({{ item.overlay_gradient_color.color|convert_rgb }},0%)  100%); }
+  {{ moduleId }} .personITems:nth-child({{ loop.index }}) .personITitle h3 { color:rgba({{ item.title_color.color|convert_rgb }},{{ item.title_color.opacity }}%);  }
+  {{ moduleId }} .personITems:nth-child({{ loop.index }}) .personITtext { color:rgba({{ item.text_color.color|convert_rgb }},{{ item.text_color.opacity }}%);  }
+  {{ moduleId }} .personITems:nth-child({{ loop.index }}) .personITtext strong { color:rgba({{ item.text_color.color|convert_rgb }},100%);  }
+  
+  
+  
+  {% endfor %}
+  
+  @media(max-width: 991px){ {{ moduleId }} .space-sec { {{ module.style.spacing.tablet.css }}; } }
+  
+  @media(max-width: 767px){ {{ moduleId }} .space-sec { {{ module.style.spacing.mobile.css }}; } }
+  
+</style>
+{% end_require_css %}
+
+
+
+{% endif %}
+

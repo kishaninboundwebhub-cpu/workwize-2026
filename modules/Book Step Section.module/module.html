@@ -1,0 +1,86 @@
+{% if module.show_hide_ %}
+{% set moduleId = '#hs_cos_wrapper_{{ name }}' %}
+
+<div class="bookstepSec fullwidth bgsec space-sec">
+  {% if module.image_field_1.src %}
+  <div class="bookstepSimage">
+     
+          {% set sizeAttrs = 'width="{{ module.image_field_1.width|escape_attr }}" height="{{ module.image_field_1.height|escape_attr }}"' %}
+          {% if module.image_field_1.size_type == 'auto' %}
+            {% set sizeAttrs = 'width="{{ module.image_field_1.width|escape_attr }}" height="{{ module.image_field_1.height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+          {% elif module.image_field_1.size_type == 'auto_custom_max' %}
+            {% set sizeAttrs = 'width="{{ module.image_field_1.max_width|escape_attr }}" height="{{ module.image_field_1.max_height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+          {% endif %}
+           {% set loadingAttr = module.image_field_1.loading != 'disabled' ? 'loading="{{ module.image_field_1.loading|escape_attr }}"' : '' %}
+          <img src="{{ module.image_field_1.src|escape_url }}" alt="{{ module.image_field_1.alt|escape_attr }}" {{ loadingAttr }} {{ sizeAttrs }}>
+        
+  </div>
+  {% endif %}
+  
+ <div class="wrapper">
+   <div class="bookstepTitle pb60 text-center wow fadeInUp">
+     <h2>{{ module.content.title }}</h2>
+   </div>
+  
+  <div class="bookstepOuter wow fadeInUp">
+   <div class="bookstepSlider">
+     <div class="swiper-wrapper">
+       {% for item in module.content.step_item %}
+        <div class="bookstepSlide swiper-slide">
+         <div class="bookstepInn">
+           <div class="bookstepStep">
+             Step {{ loop.index }}
+             <span class="bookstepSround"></span>
+           </div>
+           <div class="bookstepSIcon">
+                {% if item.image_field.src %}
+                {% set sizeAttrs = 'width="{{ item.image_field.width|escape_attr }}" height="{{ item.image_field.height|escape_attr }}"' %}
+                {% if item.image_field.size_type == 'auto' %}
+                {% set sizeAttrs = 'width="{{ item.image_field.width|escape_attr }}" height="{{ item.image_field.height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+                {% elif item.image_field.size_type == 'auto_custom_max' %}
+                {% set sizeAttrs = 'width="{{ item.image_field.max_width|escape_attr }}" height="{{ item.image_field.max_height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+                {% endif %}
+                {% set loadingAttr = item.image_field.loading != 'disabled' ? 'loading="{{ item.image_field.loading|escape_attr }}"' : '' %}
+                <img src="{{ item.image_field.src|escape_url }}" alt="{{ item.image_field.alt|escape_attr }}" {{ loadingAttr }} {{ sizeAttrs }}>
+                {% endif %}
+           </div>
+           <div class="bookstepSotext">
+             {{ item.text_field }}
+           </div>
+         </div>  
+       </div>
+       {% endfor %}
+     </div>
+   </div>
+    
+  </div> 
+  </div>
+</div>
+
+
+{% require_css %}
+<style>
+  {{ moduleId }} .bgsec { {% if module.style.select_background == 'bg_color' %}
+    background-color: rgba({{ module.style.background_color.color|convert_rgb }},{{ module.style.background_color.opacity ~ '%' }});
+    {% elif module.style.select_background == 'bg_image' %}
+    {{ module.style.background_image.css }} background-repeat: no-repeat;
+    {% elif module.style.select_background == 'bg_gradient' %}
+    background: {{ module.style.background_gradient.css }};
+    {% endif %} }
+  
+  {{ moduleId }} .space-sec { {{ module.style.spacing.desktop.css }}; position: relative; z-index: 1; }
+  
+  {{ moduleId }} .bookstepTitle h2 { color:rgba({{ module.color_setting.title_color.color|convert_rgb }},{{ module.color_setting.title_color.opacity }}%);  }
+  
+  
+  @media(max-width: 991px){ {{ moduleId }} .space-sec { {{ module.style.spacing.tablet.css }}; } }
+  
+  @media(max-width: 767px){ {{ moduleId }} .space-sec { {{ module.style.spacing.mobile.css }}; } }
+  
+</style>
+{% end_require_css %}
+
+
+
+{% endif %}
+

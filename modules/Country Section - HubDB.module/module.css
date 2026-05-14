@@ -1,0 +1,37 @@
+.globalheader { text-align: center; margin-bottom: 60px; }
+.countrydynamicsection { padding : 100px 0 }
+.globalrowInBoxInnerSection .globalrowInBox { display: flex;    align-items: center;    gap: 18px;    flex-wrap: wrap;}
+.globalrowInBoxInnerSection .globalrowInBox .globalrowInBoxLogo {  width: 36px;   height: 36px;    line-height: 1;}
+.globalrowInBoxInnerSection .globalrowInBox .globalrowInBoxLogo img {  width: 100%;    height: 100%;    object-fit: contain;}
+.globalrowInBoxInnerSection .globalrowInBox .globalrowInBoxTitle {    width: calc(100% - 54px);}
+.globalrowInBoxInnerSection .globalrowInBox .globalrowInBoxTitle h4 {   margin: 0;}
+.globalrowMainParent {   display: flex;    align-items: flex-start;    gap: 36px;    flex-wrap: wrap;    max-width: 50rem;    width: 100%;    margin: 0 auto;}
+
+.globalrowInBoxInnerSection .globalrowInBox { position: relative;  padding: .75rem; border-bottom: 1px solid #13141440;}
+.globalrowInBoxInnerSection .globalrowInBox a.inpagelink {  position: absolute;  width: 100%;  height: 100%;  top: 0; left: 0;}
+.globalrowInBoxSec .globalrowInBoxSecTitle {  margin-bottom: .25rem;}
+.globalrowInBoxInnerSection {  border-top: 1px solid #13141440;}
+.globalrowInparentSec {  display: flex;  flex-direction: column;  gap: 2rem;}
+.globalrowInBoxInnerSection .globalrowInBox span.globalrowInBoxbg {  width: 100%; height: 100%; z-index: -1;    transition: opacity .3s;    position: absolute;    inset: 0%;    opacity: 0;}
+.globalrowInBoxInnerSection .globalrowInBox:hover span.globalrowInBoxbg {    opacity: 40%;}
+.globalrowMainParent .globalrowInparentSec { max-width: calc(50% - 18px);  width: 100%;}
+
+
+@media (max-width : 991px){
+.countrydynamicsection { padding : 100px 0 } { padding: 70px 0;}
+}
+
+@media (max-width:767px){
+.globalrowInBoxInnerSection .globalrowInBox .globalrowInBoxTitle h4 {  font-size: 20px;}
+.globalrowInBoxSec .globalrowInBoxSecTitle h3 {  font-size: 22px;}
+.globalrowInBoxInnerSection .globalrowInBox {  padding: .50rem;}
+.globalrowMainParent .globalrowInparentSec {  gap: 1.5rem;}
+}
+
+@media (max-width : 640px){
+.globalrowMainParent .globalrowInparentSec { max-width: 100%;}
+.globalrowMainParent { gap: 1.5rem;}
+  .countrydynamicsection { padding : 50px 0 } 
+}
+
+

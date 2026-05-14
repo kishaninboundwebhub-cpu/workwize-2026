@@ -1,0 +1,38 @@
+<!--
+  templateType: error_page
+  isAvailableForNewContent: true
+  label: Workwize - 404 error
+  screenshotPath: ../../images/template-previews/404.png
+-->
+{% set template_css = "../../css/templates/system.css" %}
+{% extends "../layouts/base.html" %}
+{# pageTitle is used on system templates for setting a value for the title tag #}
+{% set pageTitle = "Error 404 | Page not found" %}
+
+{% block body %}  
+<div class="error-pagesec fullwidth">
+ 
+  <div class="error-pageinner fullwidth" data-error="404">
+    
+    {% module "module_17102350553056" path="/Workwize/modules/404 Section", label="404 Section" %}
+    {#{% module "content"
+      path="@hubspot/rich_text",
+      html="<h1>Page not found.</h1>"
+    %}
+    {% module "button secbtn"
+      path="../../modules/button",
+      button_text="Go Home"
+      link={
+        "url":
+          {
+            "type": "EXTERNAL",
+            "href": "/"
+          },
+          "open_in_new_tab": false,
+          "no_follow": false
+      }
+    %} #}
+  </div>
+</div>
+  
+{% endblock body %}

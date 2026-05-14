@@ -1,0 +1,961 @@
+[ {
+  "id" : "e181e1ee-ef06-5ba8-0ad3-f63113a45d24",
+  "name" : "style",
+  "label" : "Style",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "36fd79d2-1107-4452-d226-d4c096723f16",
+    "name" : "select_background",
+    "label" : "Select Background",
+    "required" : false,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "bg_color", "Background Color" ], [ "bg_image", "Background Image" ], [ "bg_gradient", "Background Gradient" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : ""
+  }, {
+    "id" : "60d0ddef-fb34-a99a-73cb-bda8b10e0fc9",
+    "name" : "background_color",
+    "label" : "Background Color",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "style.select_background",
+      "controlling_value_regex" : "bg_color",
+      "property" : null,
+      "operator" : "MATCHES_REGEX",
+      "access" : null
+    },
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#002A5A",
+      "opacity" : 100
+    }
+  }, {
+    "id" : "19f0609d-595d-6ef3-f639-3f6006e095fb",
+    "name" : "background_image",
+    "label" : "Background Image",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "style.select_background",
+      "controlling_value_regex" : "bg_image",
+      "property" : null,
+      "operator" : "MATCHES_REGEX",
+      "access" : null
+    },
+    "type" : "backgroundimage",
+    "display_width" : null,
+    "default" : {
+      "src" : "",
+      "background_position" : "MIDDLE_CENTER",
+      "background_size" : "cover"
+    }
+  }, {
+    "id" : "0df6d4e0-395b-eda2-ec5a-1d08ad6c8d35",
+    "name" : "background_gradient",
+    "label" : "Background Gradient",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "style.select_background",
+      "controlling_value_regex" : "bg_gradient",
+      "property" : null,
+      "operator" : "MATCHES_REGEX",
+      "access" : null
+    },
+    "type" : "gradient",
+    "display_width" : null,
+    "default" : { }
+  }, {
+    "id" : "afeb177b-c31d-1412-5116-70d6f85c5565",
+    "name" : "spacing",
+    "label" : "Spacing",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "d59d9e4c-264e-54fa-99b7-0ff07897b867",
+      "name" : "desktop",
+      "label" : "Desktop",
+      "required" : false,
+      "locked" : false,
+      "type" : "spacing",
+      "display_width" : null,
+      "default" : {
+        "padding" : {
+          "top" : {
+            "value" : 120,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 140,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      }
+    }, {
+      "id" : "0c762a95-1339-05fa-721d-3d79f41b571e",
+      "name" : "tablet",
+      "label" : "Tablet",
+      "required" : false,
+      "locked" : false,
+      "type" : "spacing",
+      "display_width" : null,
+      "default" : {
+        "padding" : {
+          "top" : {
+            "value" : 80,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 80,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      }
+    }, {
+      "id" : "0a8a8c35-4008-f2aa-311a-12325d67b19c",
+      "name" : "mobile",
+      "label" : "Mobile",
+      "required" : false,
+      "locked" : false,
+      "type" : "spacing",
+      "display_width" : null,
+      "default" : {
+        "padding" : {
+          "top" : {
+            "value" : 60,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 60,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      }
+    } ],
+    "tab" : "STYLE",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : {
+      "desktop" : {
+        "padding" : {
+          "top" : {
+            "value" : 120,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 140,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      },
+      "tablet" : {
+        "padding" : {
+          "top" : {
+            "value" : 80,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 80,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      },
+      "mobile" : {
+        "padding" : {
+          "top" : {
+            "value" : 60,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 60,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      }
+    }
+  } ],
+  "tab" : "STYLE",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "select_background" : "",
+    "background_color" : {
+      "color" : "#002A5A",
+      "opacity" : 100
+    },
+    "background_image" : {
+      "src" : "",
+      "background_position" : "MIDDLE_CENTER",
+      "background_size" : "cover"
+    },
+    "background_gradient" : { },
+    "spacing" : {
+      "desktop" : {
+        "padding" : {
+          "top" : {
+            "value" : 120,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 140,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      },
+      "tablet" : {
+        "padding" : {
+          "top" : {
+            "value" : 80,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 80,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      },
+      "mobile" : {
+        "padding" : {
+          "top" : {
+            "value" : 60,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 60,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      }
+    }
+  }
+}, {
+  "id" : "55ccd3e2-31aa-4e79-9772-80facd954415",
+  "name" : "show_hide_",
+  "label" : "Section [Show/ Hide]",
+  "required" : false,
+  "locked" : false,
+  "display" : "toggle",
+  "type" : "boolean",
+  "display_width" : null,
+  "default" : true
+}, {
+  "id" : "ac3fc098-f76c-1285-de3c-b6d3d47cac12",
+  "name" : "content",
+  "label" : "Content",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "fb8e1dbb-4682-74f7-0e2b-b223bd0496bd",
+    "name" : "title",
+    "label" : "Title",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Why teams running global operations love Workwize."
+  }, {
+    "id" : "3f35509c-5556-2ca0-293d-9a76064ee891",
+    "name" : "cards",
+    "label" : "Cards",
+    "required" : false,
+    "locked" : false,
+    "occurrence" : {
+      "min" : null,
+      "max" : null,
+      "sorting_label_field" : null,
+      "default" : 2
+    },
+    "children" : [ {
+      "id" : "b0ffa6d0-d7b6-d0df-a95a-510a3bee8c46",
+      "name" : "stat_number",
+      "label" : "Stat Number",
+      "required" : false,
+      "locked" : false,
+      "allow_new_line" : false,
+      "type" : "text",
+      "display_width" : null,
+      "default" : "4.1x"
+    }, {
+      "id" : "d9a25a1b-e0f6-1304-4252-496731aa974a",
+      "name" : "logo",
+      "label" : "Logo",
+      "required" : false,
+      "locked" : false,
+      "responsive" : true,
+      "resizable" : true,
+      "show_loading" : false,
+      "type" : "image",
+      "display_width" : null,
+      "default" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/Mask%20group%20(7).svg",
+        "alt" : "Mask group (7)",
+        "loading" : "lazy",
+        "width" : 116,
+        "height" : 20,
+        "max_width" : 116,
+        "max_height" : 20
+      }
+    }, {
+      "id" : "73ff5f8e-a3f8-0466-4ceb-116eaa0731e2",
+      "name" : "text_field",
+      "label" : "Text",
+      "required" : false,
+      "locked" : false,
+      "allow_new_line" : false,
+      "type" : "text",
+      "display_width" : null,
+      "default" : "ROI from transforming global IT ops"
+    }, {
+      "id" : "6a36808d-3e5f-de6b-c3f4-45342a209bdd",
+      "name" : "button",
+      "label" : "Button",
+      "required" : false,
+      "locked" : false,
+      "children" : [ {
+        "id" : "d0057c55-a07a-f44f-171f-68cee875857e",
+        "name" : "button_text",
+        "label" : "Button Text",
+        "required" : false,
+        "locked" : false,
+        "allow_new_line" : false,
+        "type" : "text",
+        "display_width" : null,
+        "default" : "Read the case study"
+      }, {
+        "id" : "33b3d7ae-b407-6b8d-803e-2392654a2b75",
+        "name" : "button_link",
+        "label" : "Button Link",
+        "required" : false,
+        "locked" : false,
+        "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG", "CALL_TO_ACTION", "PHONE_NUMBER", "WHATSAPP_NUMBER", "PAYMENT" ],
+        "show_advanced_rel_options" : false,
+        "type" : "link",
+        "display_width" : null,
+        "default" : {
+          "url" : {
+            "content_id" : null,
+            "type" : "EXTERNAL",
+            "href" : ""
+          },
+          "open_in_new_tab" : false,
+          "no_follow" : false
+        }
+      } ],
+      "tab" : "CONTENT",
+      "expanded" : false,
+      "group_occurrence_meta" : null,
+      "type" : "group",
+      "display_width" : null,
+      "default" : {
+        "button_text" : "Read the case study",
+        "button_link" : {
+          "url" : {
+            "content_id" : null,
+            "type" : "EXTERNAL",
+            "href" : ""
+          },
+          "open_in_new_tab" : false,
+          "no_follow" : false
+        }
+      }
+    }, {
+      "id" : "58f56529-0445-6509-a57c-6fa616aa570b",
+      "name" : "quote_text",
+      "label" : "Quote Text",
+      "required" : false,
+      "locked" : false,
+      "type" : "richtext",
+      "display_width" : null,
+      "default" : "<p><span><strong>“ Before Workwize, managing IT hardware for global hires was time-consuming, error-prone, and expensive.</strong> We had delays, lost equipment, and billing discrepancies across the board. ”</span>&nbsp;</p>"
+    }, {
+      "id" : "9a638d81-2b50-6eb3-dc45-c17f7930b46f",
+      "name" : "avtar_image",
+      "label" : "Avtar Image",
+      "required" : false,
+      "locked" : false,
+      "responsive" : true,
+      "resizable" : true,
+      "show_loading" : false,
+      "type" : "image",
+      "display_width" : null,
+      "default" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/Group%202147261402%20(2).png",
+        "alt" : "Group 2147261402 (2)",
+        "loading" : "lazy",
+        "width" : 88,
+        "height" : 88,
+        "max_width" : 88,
+        "max_height" : 88
+      }
+    }, {
+      "id" : "f0ec4622-2b85-d3c4-ea23-106481847077",
+      "name" : "author_name",
+      "label" : "Author Name",
+      "required" : false,
+      "locked" : false,
+      "allow_new_line" : false,
+      "type" : "text",
+      "display_width" : null,
+      "default" : "Ben Guz"
+    }, {
+      "id" : "8e4300ae-4064-d9be-810f-a0a330cc55b0",
+      "name" : "author_role",
+      "label" : "Author Role",
+      "required" : false,
+      "locked" : false,
+      "allow_new_line" : false,
+      "type" : "text",
+      "display_width" : null,
+      "default" : "EMEA IT Manager"
+    }, {
+      "id" : "de410f88-2c97-757c-28d9-0c7aacc60c1d",
+      "name" : "style",
+      "label" : "Style",
+      "required" : false,
+      "locked" : false,
+      "children" : [ {
+        "id" : "894ead78-e6ba-8567-28d7-f722ee0f9ac4",
+        "name" : "stat_number_color",
+        "label" : "Stat Number Color",
+        "required" : false,
+        "locked" : false,
+        "type" : "color",
+        "display_width" : null,
+        "default" : {
+          "color" : "#D73FAF",
+          "opacity" : 100
+        }
+      }, {
+        "id" : "96c8eaeb-fe3b-2b1d-5e7a-abf03cc7967e",
+        "name" : "border_color",
+        "label" : "Border Color",
+        "required" : false,
+        "locked" : false,
+        "type" : "color",
+        "display_width" : null,
+        "default" : {
+          "color" : "#227AF7",
+          "opacity" : 40
+        }
+      }, {
+        "id" : "698b5089-53ab-dfe4-2b8b-e88c8f00758d",
+        "name" : "border_corner_color",
+        "label" : "Border Corner Color",
+        "required" : false,
+        "locked" : false,
+        "type" : "color",
+        "display_width" : null,
+        "default" : {
+          "color" : "#D73FAF",
+          "opacity" : 100
+        }
+      }, {
+        "id" : "573bc05c-3d34-4598-31bd-e4033afaacd9",
+        "name" : "text_color",
+        "label" : "Text Color",
+        "required" : false,
+        "locked" : false,
+        "type" : "color",
+        "display_width" : null,
+        "default" : {
+          "color" : "#050C14",
+          "opacity" : 100
+        }
+      }, {
+        "id" : "03e6f9ab-24f2-f4ee-66d6-fc695c9c78d6",
+        "name" : "quote_text_color",
+        "label" : "Quote Text Color",
+        "required" : false,
+        "locked" : false,
+        "type" : "color",
+        "display_width" : null,
+        "default" : {
+          "color" : "#050C14",
+          "opacity" : 100
+        }
+      }, {
+        "id" : "b4782c24-0732-7d55-ff06-ca9ec12618e8",
+        "name" : "author_name_color",
+        "label" : "Author Name Color",
+        "required" : false,
+        "locked" : false,
+        "type" : "color",
+        "display_width" : null,
+        "default" : {
+          "color" : "#050C14",
+          "opacity" : 80
+        }
+      }, {
+        "id" : "a217f1c0-8b68-a4f1-dd54-b2a5dd2da43d",
+        "name" : "author_role_color",
+        "label" : "Author Role Color",
+        "required" : false,
+        "locked" : false,
+        "type" : "color",
+        "display_width" : null,
+        "default" : {
+          "color" : "#050C14",
+          "opacity" : 50
+        }
+      } ],
+      "tab" : "CONTENT",
+      "expanded" : false,
+      "group_occurrence_meta" : null,
+      "type" : "group",
+      "display_width" : null,
+      "default" : {
+        "stat_number_color" : {
+          "color" : "#D73FAF",
+          "opacity" : 100
+        },
+        "border_color" : {
+          "color" : "#227AF7",
+          "opacity" : 40
+        },
+        "border_corner_color" : {
+          "color" : "#D73FAF",
+          "opacity" : 100
+        },
+        "text_color" : {
+          "color" : "#050C14",
+          "opacity" : 100
+        },
+        "quote_text_color" : {
+          "color" : "#050C14",
+          "opacity" : 100
+        },
+        "author_name_color" : {
+          "color" : "#050C14",
+          "opacity" : 80
+        },
+        "author_role_color" : {
+          "color" : "#050C14",
+          "opacity" : 50
+        }
+      }
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : [ {
+      "stat_number" : "4.1x",
+      "logo" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/Mask%20group%20(7).svg",
+        "alt" : "Mask group (7)",
+        "loading" : "lazy",
+        "width" : 116,
+        "height" : 20,
+        "max_width" : 116,
+        "max_height" : 20
+      },
+      "text_field" : "ROI from transforming global IT ops",
+      "button" : {
+        "button_text" : "Read the case study",
+        "button_link" : {
+          "url" : {
+            "content_id" : null,
+            "type" : "EXTERNAL",
+            "href" : ""
+          },
+          "open_in_new_tab" : false,
+          "no_follow" : false
+        }
+      },
+      "quote_text" : "<p><span><strong>“ Before Workwize, managing IT hardware for global hires was time-consuming, error-prone, and expensive.</strong> We had delays, lost equipment, and billing discrepancies across the board. ”</span>&nbsp;</p>",
+      "avtar_image" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/Group%202147261402%20(2).png",
+        "alt" : "Group 2147261402 (2)",
+        "loading" : "lazy",
+        "width" : 88,
+        "height" : 88,
+        "max_width" : 88,
+        "max_height" : 88
+      },
+      "author_name" : "Ben Guz",
+      "author_role" : "EMEA IT Manager",
+      "style" : {
+        "stat_number_color" : {
+          "color" : "#D73FAF",
+          "opacity" : 100
+        },
+        "border_color" : {
+          "color" : "#227AF7",
+          "opacity" : 40
+        },
+        "border_corner_color" : {
+          "color" : "#D73FAF",
+          "opacity" : 100
+        },
+        "text_color" : {
+          "color" : "#050C14",
+          "opacity" : 100
+        },
+        "quote_text_color" : {
+          "color" : "#050C14",
+          "opacity" : 100
+        },
+        "author_name_color" : {
+          "color" : "#050C14",
+          "opacity" : 80
+        },
+        "author_role_color" : {
+          "color" : "#050C14",
+          "opacity" : 50
+        }
+      }
+    }, {
+      "stat_number" : "4.1x",
+      "logo" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/Mask%20group%20(7).svg",
+        "alt" : "Mask group (7)",
+        "loading" : "lazy",
+        "width" : 116,
+        "height" : 20,
+        "max_width" : 116,
+        "max_height" : 20
+      },
+      "text_field" : "ROI from transforming global IT ops",
+      "button" : {
+        "button_text" : "Read the case study",
+        "button_link" : {
+          "url" : {
+            "content_id" : null,
+            "type" : "EXTERNAL",
+            "href" : ""
+          },
+          "open_in_new_tab" : false,
+          "no_follow" : false
+        }
+      },
+      "quote_text" : "<p><span><strong>“ Before Workwize, managing IT hardware for global hires was time-consuming, error-prone, and expensive.</strong> We had delays, lost equipment, and billing discrepancies across the board. ”</span>&nbsp;</p>",
+      "avtar_image" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/Group%202147261402%20(2).png",
+        "alt" : "Group 2147261402 (2)",
+        "loading" : "lazy",
+        "width" : 88,
+        "height" : 88,
+        "max_width" : 88,
+        "max_height" : 88
+      },
+      "author_name" : "Ben Guz",
+      "author_role" : "EMEA IT Manager",
+      "style" : {
+        "stat_number_color" : {
+          "color" : "#D73FAF",
+          "opacity" : 100
+        },
+        "border_color" : {
+          "color" : "#227AF7",
+          "opacity" : 40
+        },
+        "border_corner_color" : {
+          "color" : "#D73FAF",
+          "opacity" : 100
+        },
+        "text_color" : {
+          "color" : "#050C14",
+          "opacity" : 100
+        },
+        "quote_text_color" : {
+          "color" : "#050C14",
+          "opacity" : 100
+        },
+        "author_name_color" : {
+          "color" : "#050C14",
+          "opacity" : 80
+        },
+        "author_role_color" : {
+          "color" : "#050C14",
+          "opacity" : 50
+        }
+      }
+    } ]
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "title" : "Why teams running global operations love Workwize.",
+    "cards" : [ {
+      "stat_number" : "4.1x",
+      "logo" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/Mask%20group%20(7).svg",
+        "alt" : "Mask group (7)",
+        "loading" : "lazy",
+        "width" : 116,
+        "height" : 20,
+        "max_width" : 116,
+        "max_height" : 20
+      },
+      "text_field" : "ROI from transforming global IT ops",
+      "button" : {
+        "button_text" : "Read the case study",
+        "button_link" : {
+          "url" : {
+            "content_id" : null,
+            "type" : "EXTERNAL",
+            "href" : ""
+          },
+          "open_in_new_tab" : false,
+          "no_follow" : false
+        }
+      },
+      "quote_text" : "<p><span><strong>“ Before Workwize, managing IT hardware for global hires was time-consuming, error-prone, and expensive.</strong> We had delays, lost equipment, and billing discrepancies across the board. ”</span>&nbsp;</p>",
+      "avtar_image" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/Group%202147261402%20(2).png",
+        "alt" : "Group 2147261402 (2)",
+        "loading" : "lazy",
+        "width" : 88,
+        "height" : 88,
+        "max_width" : 88,
+        "max_height" : 88
+      },
+      "author_name" : "Ben Guz",
+      "author_role" : "EMEA IT Manager",
+      "style" : {
+        "stat_number_color" : {
+          "color" : "#D73FAF",
+          "opacity" : 100
+        },
+        "border_color" : {
+          "color" : "#227AF7",
+          "opacity" : 40
+        },
+        "border_corner_color" : {
+          "color" : "#D73FAF",
+          "opacity" : 100
+        },
+        "text_color" : {
+          "color" : "#050C14",
+          "opacity" : 100
+        },
+        "quote_text_color" : {
+          "color" : "#050C14",
+          "opacity" : 100
+        },
+        "author_name_color" : {
+          "color" : "#050C14",
+          "opacity" : 80
+        },
+        "author_role_color" : {
+          "color" : "#050C14",
+          "opacity" : 50
+        }
+      }
+    }, {
+      "stat_number" : "4.1x",
+      "logo" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/Mask%20group%20(7).svg",
+        "alt" : "Mask group (7)",
+        "loading" : "lazy",
+        "width" : 116,
+        "height" : 20,
+        "max_width" : 116,
+        "max_height" : 20
+      },
+      "text_field" : "ROI from transforming global IT ops",
+      "button" : {
+        "button_text" : "Read the case study",
+        "button_link" : {
+          "url" : {
+            "content_id" : null,
+            "type" : "EXTERNAL",
+            "href" : ""
+          },
+          "open_in_new_tab" : false,
+          "no_follow" : false
+        }
+      },
+      "quote_text" : "<p><span><strong>“ Before Workwize, managing IT hardware for global hires was time-consuming, error-prone, and expensive.</strong> We had delays, lost equipment, and billing discrepancies across the board. ”</span>&nbsp;</p>",
+      "avtar_image" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/Group%202147261402%20(2).png",
+        "alt" : "Group 2147261402 (2)",
+        "loading" : "lazy",
+        "width" : 88,
+        "height" : 88,
+        "max_width" : 88,
+        "max_height" : 88
+      },
+      "author_name" : "Ben Guz",
+      "author_role" : "EMEA IT Manager",
+      "style" : {
+        "stat_number_color" : {
+          "color" : "#D73FAF",
+          "opacity" : 100
+        },
+        "border_color" : {
+          "color" : "#227AF7",
+          "opacity" : 40
+        },
+        "border_corner_color" : {
+          "color" : "#D73FAF",
+          "opacity" : 100
+        },
+        "text_color" : {
+          "color" : "#050C14",
+          "opacity" : 100
+        },
+        "quote_text_color" : {
+          "color" : "#050C14",
+          "opacity" : 100
+        },
+        "author_name_color" : {
+          "color" : "#050C14",
+          "opacity" : 80
+        },
+        "author_role_color" : {
+          "color" : "#050C14",
+          "opacity" : 50
+        }
+      }
+    } ]
+  }
+}, {
+  "id" : "99a114a6-3fb8-0fdc-0f9e-63325ed5bdf5",
+  "name" : "color_setting",
+  "label" : "Color Setting",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "62573f64-d236-fa10-5c21-1b23f48d0a86",
+    "name" : "title_color",
+    "label" : "Title Color",
+    "required" : false,
+    "locked" : false,
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#050C14",
+      "opacity" : 100
+    }
+  }, {
+    "id" : "8e7b4d5c-14db-d0b2-d4f4-f5673fe92ecc",
+    "name" : "title_span_color",
+    "label" : "Title Span Color",
+    "required" : false,
+    "locked" : false,
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#F6DE45",
+      "opacity" : 100
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "title_color" : {
+      "color" : "#050C14",
+      "opacity" : 100
+    },
+    "title_span_color" : {
+      "color" : "#F6DE45",
+      "opacity" : 100
+    }
+  }
+} ]

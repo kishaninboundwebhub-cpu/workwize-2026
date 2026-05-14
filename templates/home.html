@@ -1,0 +1,107 @@
+<!--
+  templateType: page
+  isAvailableForNewContent: true
+  label: Home
+  screenshotPath: ../images/template-previews/home.png
+-->
+{% extends "./layouts/base.html" %}
+
+{% block body %}
+
+{# All templates are recommended to have an h1 present for both accessibility and SEO best practice. This should be at the top of the template before any other textual content. The h1 element below is within a dnd area to allow content editors the ability to adjust the content and alignment of the text. #}
+
+{% dnd_area "dnd_area" label="Main section", class="body-container body-container--home" %}
+
+  {% dnd_section full_width="true" padding={'default': { 'top': 0 , 'right': 0 , 'left': 0 , 'bottom': 0 } } %}
+    {% dnd_module "module_170859220832833" path="./../modules/Hero Section", label="Hero Section" %}
+    {% end_dnd_module %}
+  {% end_dnd_section %}
+
+  {% dnd_section full_width="true" padding={'default': { 'top': 0 , 'right': 0 , 'left': 0 , 'bottom': 0 } } %}
+    {% dnd_module "module_170859220832833" path="./../modules/Logo Section", label="Logo Section" %}
+    {% end_dnd_module %}
+  {% end_dnd_section %}
+
+  {% dnd_section full_width="true" padding={'default': { 'top': 0 , 'right': 0 , 'left': 0 , 'bottom': 0 } } %}
+    {% dnd_module "module_170859220832833" path="./../modules/Trust Indicator Section", label="Trust Indicator Section" %}
+    {% end_dnd_module %}
+  {% end_dnd_section %}
+
+  {% dnd_section full_width="true" padding={'default': { 'top': 0 , 'right': 0 , 'left': 0 , 'bottom': 0 } } %}
+    {% dnd_module "module_170859220832833" path="./../modules/Problem Section", label="Problem Section" %}
+    {% end_dnd_module %}
+  {% end_dnd_section %}
+
+
+  {% dnd_section full_width="true" padding={'default': { 'top': 0 , 'right': 0 , 'left': 0 , 'bottom': 0 } } %}
+    {% dnd_module "module_170859220832833" path="./../modules/Solution Section", label="Solution Section" %}
+    {% end_dnd_module %}
+  {% end_dnd_section %}
+
+
+  {% dnd_section full_width="true" padding={'default': { 'top': 0 , 'right': 0 , 'left': 0 , 'bottom': 0 } } %}
+    {% dnd_module "module_170859220832833" path="./../modules/Lifecycle Section", label="Lifecycle Section" %}
+    {% end_dnd_module %}
+  {% end_dnd_section %}
+
+
+  {% dnd_section full_width="true" padding={'default': { 'top': 0 , 'right': 0 , 'left': 0 , 'bottom': 0 } } %}
+    {% dnd_module "module_170859220832833" path="./../modules/Testimonials Section", label="Testimonials Section" %}
+    {% end_dnd_module %}
+  {% end_dnd_section %}
+
+
+
+  {% dnd_section full_width="true" padding={'default': { 'top': 0 , 'right': 0 , 'left': 0 , 'bottom': 0 } } %}
+    {% dnd_module "module_170859220832833" path="./../modules/Features Section", label="Features Section" %}
+    {% end_dnd_module %}
+  {% end_dnd_section %}
+
+
+  {% dnd_section full_width="true" padding={'default': { 'top': 0 , 'right': 0 , 'left': 0 , 'bottom': 0 } } %}
+    {% dnd_module "module_170859220832833" path="./../modules/Pricing section new 2026", label="Pricing section new 2026" %}
+    {% end_dnd_module %}
+  {% end_dnd_section %}
+
+
+  {% dnd_section full_width="true" padding={'default': { 'top': 0 , 'right': 0 , 'left': 0 , 'bottom': 0 } } %}
+    {% dnd_module "module_170859220832833" path="./../modules/Case Study Section", label="Case Study Section" %}
+    {% end_dnd_module %}
+  {% end_dnd_section %}
+
+  {% dnd_section full_width="true" padding={'default': { 'top': 0 , 'right': 0 , 'left': 0 , 'bottom': 0 } } %}
+    {% dnd_module "module_170859220832833" path="./../modules/Persona Section", label="Persona Section" %}
+    {% end_dnd_module %}
+  {% end_dnd_section %}
+
+
+
+  {% dnd_section full_width="true" padding={'default': { 'top': 0 , 'right': 0 , 'left': 0 , 'bottom': 0 } } %}
+    {% dnd_module "module_170859220832833" path="./../modules/Integration Section", label="Integration Section" %}
+    {% end_dnd_module %}
+  {% end_dnd_section %}
+
+
+  {% dnd_section full_width="true" padding={'default': { 'top': 0 , 'right': 0 , 'left': 0 , 'bottom': 0 } } %}
+    {% dnd_module "module_170859220832833" path="./../modules/Two Column Section 2026", label="Two Column Section 2026" %}
+    {% end_dnd_module %}
+  {% end_dnd_section %}
+
+
+  {% dnd_section full_width="true" padding={'default': { 'top': 0 , 'right': 0 , 'left': 0 , 'bottom': 0 } } %}
+    {% dnd_module "module_170859220832833" path="./../modules/FAQ Section 2026", label="FAQ Section 2026" %}
+    {% end_dnd_module %}
+  {% end_dnd_section %}
+   
+
+
+  {% dnd_section full_width="true" padding={'default': { 'top': 0 , 'right': 0 , 'left': 0 , 'bottom': 0 } } %}
+    {% dnd_module "module_170859220832833" path="./../modules/CTA Section 2026", label="CTA Section 2026" %}
+    {% end_dnd_module %}
+  {% end_dnd_section %}
+   
+  
+
+
+{% end_dnd_area %}
+{% endblock body %}

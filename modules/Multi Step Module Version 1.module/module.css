@@ -1,0 +1,109 @@
+@import url('https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css');
+
+div#multistepSecV1formBox form .form-step-content { background: rgba(245, 247, 248,100%); border-radius: 24px; padding: 40px; width: 100%;}
+/* div#multistepSecV1formBox form {position: relative;overflow: hidden;width: 100%;} */
+/* div#multistepSecV1formBox form .form-step-content:not(:first-child) {position: absolute;top: 0;width: 100%;height: fit-content;transition: all ease-in-out 0.3s;} */
+div#multistepformv1 {  max-width: 60%; width: 100%;}
+div#multistepSecV1formBox form .form-step-content { opacity: 1 !important; background: white; border: 0 none; box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4); box-sizing: border-box; position: relative; display : none}
+div#multistepSecV1formBox form .form-step-content:not(:first-of-type) {  display: none;}
+.multistepSecV1formInner { display: flex; align-items: center; gap: 30px;}
+.multistepSecV1formInner .multistepSecV1step { width: 32px;}
+.multistepSecV1formInner div#multistepSecV1formBox { width: calc(100% - 62px); overflow: hidden;}
+
+.multistepSecV1formInner .multistepSecV1step ul li .step-icon { background: #fff; color : rgba(34, 122, 247,100%);}
+.multistepSecV1formInner .multistepSecV1step ul li.active .step-icon { background: rgba(34, 122, 247,100%); color : #fff}
+.multistepSecV1formInner .multistepSecV1step ul li:not(:first-child) { padding-top: 50px;  position: relative;}
+.multistepSecV1formInner .multistepSecV1step ul li:not(:first-child):before { position: absolute; content: ''; width: 1px; height: calc(100% - 40px); background: #fff; left: 50%; transform: translateX(-50%); top: 4px;}
+.multistepSecV1formInner div#multistepSecV1formBox form .stepcta {  justify-content: flex-end; margin-top : 50px !important;}
+
+div#multistepSecV1formBox form .form-step-content .hs_submit { margin-top: 50px !important;}
+.multistepSecV1formInner div#multistepSecV1formBox form input[type=text],.multistepSecV1formInner div#multistepSecV1formBox form input[type=search],.multistepSecV1formInner div#multistepSecV1formBox form input[type=email], .multistepSecV1formInner div#multistepSecV1formBox form input[type=password],.multistepSecV1formInner div#multistepSecV1formBox form input[type=tel],.multistepSecV1formInner div#multistepSecV1formBox form input[type=number],.multistepSecV1formInner div#multistepSecV1formBox form input[type=file], .multistepSecV1formInner div#multistepSecV1formBox form select, .multistepSecV1formInner div#multistepSecV1formBox form textarea {  background: rgba(34, 122, 247,10%);}
+.multistepSecV1formInner .multistepSecV1step ul li .step-icon {  cursor: pointer;}
+.multistepSecV1formInner .multistepSecV1step ul li.active:before { background: rgba(34, 122, 247,100%);}
+.multistepSecV1formInner .multistepSecV1step ul li.completed:before { background: rgba(34, 122, 247,100%);}
+.multistepSecV1formInner .multistepSecV1step ul li.completed span.step-icon { background: rgba(34, 122, 247, 100%); color: #fff;}
+
+
+
+.multistepSecV1formInner div#multistepSecV1formBox .stepcta a.next-btn {
+  font-size: 0;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' focusable='false' class='chakra-icon css-1qxoo7u'%3E%3Cpath fill='%23227af7' d='M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z'%3E%3C/path%3E%3C/svg%3E"), transparent;
+  background-repeat: no-repeat !important;
+  background-position: center center !important;
+  width: 40px;
+  height: 40px;
+  border: 1px solid #227af7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: 25px  !important;
+  padding: 0;
+  border-radius: 50%;
+  transform: translateX(-50px) scale(0.5);
+  transition: all ease-in-out 0.3s;
+  opacity: 0;
+}
+
+.multistepSecV1formInner div#multistepSecV1formBox form .stepcta.visible .next-btn { transform: translateX(0) scale(1); opacity: 1;}
+
+
+.multistepSecV1Inner {  display: flex; align-items: stretch; justify-content: space-between; gap: 30px; flex-wrap : wrap}
+.multistepSecV1Inner .multistepSecV1RTCOl {  width: calc(40% - 30px);}
+div#multistepSecV1formBox form  span.hs-form-required { color: red;  display: inline-block;}
+.multistepSecV1formInner div#multistepSecV1formBox .submitted-message { background: rgba(245, 247, 248, 100%); border-radius: 24px; box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4); box-sizing: border-box; height: 324px; display: flex; align-items: center;  justify-content: center;];}
+
+.multistepSecV1formInner div#multistepSecV1formBox { position: relative; border-radius: 24px;}
+.multistepSecV1formInner div#multistepSecV1formBox .FormLoader .loader-14 {  width: 48px;  height: 48px; display: inline-block;  position: relative;}
+.multistepSecV1formInner div#multistepSecV1formBox .FormLoader .loader-14::after,.multistepSecV1formInner div#multistepSecV1formBox .FormLoader  .loader-14::before { content: ""; width: 48px; height: 48px; border-radius: 50%; border: 3px solid rgba(18, 39, 80,100%); position: absolute; left: 0; top: 0; -webkit-animation: animloader14 2s linear infinite;  animation: animloader14 2s linear infinite;}
+.multistepSecV1formInner div#multistepSecV1formBox .FormLoader .loader-14::after {  -webkit-animation-delay: 1s;  animation-delay: 1s;}
+.multistepSecV1formInner div#multistepSecV1formBox .FormLoader { background: #fff;}
+
+@keyframes animloader14 {
+    0% { transform: scale(0); opacity: 1;}
+    100% { transform: scale(1); opacity: 0;}
+  }
+  
+.multistepSecV1RTCOlBoxInmain { display: flex; flex-direction: column; justify-content: center;  height: 100%;}
+.multistepSecV1RTCOlBox { background-color: #f5f7f8; border-radius: 24px; cursor: grab; padding: 40px; display : none; height : 100%}
+.multistepSecV1RTBoxImg {  background-repeat: no-repeat;  background-size: contain; background-position: center left;  padding-bottom: 12%;}
+.multistepSecV1RTBoxCnt {  padding-top: 32px;}
+.multistepSecV1RTStar ul {  display: flex;    align-items: center;  gap: 1px; line-height: 0;}
+.multistepSecV1RTCnt {  padding-top: 16px; letter-spacing: .25px;}
+.multistepSecV1RTtesti {  padding-top: 30px; display: flex;  align-items: center; gap: 16px;}
+.multistepSecV1RTtesti .multistepSecV1RTTImg { background-repeat: no-repeat; background-size: cover; background-position: center center; width: 65px; height: 65px; border-radius: 50%;}
+.multistepSecV1RTtesti .multistepSecV1RTTCnt { width: calc(100% - 81px);}
+.multistepSecV1RTtesti .multistepSecV1RTTCnt .multistepSecV1RTTTitle {  font-size: 14px;  line-height: 1.5;}
+.multistepSecV1RTtesti .multistepSecV1RTTCnt .multistepSecV1RTTDesi { font-size: 14px; line-height: 1.5;}
+.multistepSecV1RTtesti .multistepSecV1RTTCnt .multistepSecV1RTTDesi span {color: #227af7; font-weight: 500}
+div#multistepSecV1formBox form .form-step-content fieldset:not(.wrapper-point)+* > div { margin-top: 25px; }
+div#multistepSecV1formBox form .form-step-content fieldset .hs-richtext, div#multistepSecV1formBox form .form-step-content fieldset .hs-richtext p:last-child { margin: 0; }
+div#multistepSecV1formBox form .form-step-content fieldset .legal-consent-container a { color: #227af7; font-weight: 700; vertical-align: inherit;}
+div#multistepSecV1formBox form .form-step-content .hs_submit .actions { display: flex; align-items: center; justify-content: space-between; padding-top: 50px;}
+div#multistepSecV1formBox form .form-step-content .hs_submit .actions .stepcta {  margin: 0 !important; padding: 0;}
+div#multistepSecV1formBox form .form-step-content.active { display: block; }
+.multistepSecV1formInner div#multistepSecV1formBox form .stepcta { justify-content: space-between;}
+.multistepSecV1formInner div#multistepSecV1formBox form .stepcta .prev-btn { font-size: 0;    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' focusable='false' class='chakra-icon css-1qxoo7u'%3E%3Cpath fill='%23227af7' d='M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z'%3E%3C/path%3E%3C/svg%3E"), transparent;
+    background-repeat: no-repeat !important;  background-position: center center !important; width: 40px; height: 40px; border: 1px solid #227af7; display: flex; align-items: center; justify-content: center; background-size: 25px !important;  padding: 0; border-radius: 50%; transition: all ease-in-out 0.3s; transform: rotate(180deg);}
+.multistepSecV1formInner div#multistepSecV1formBox form .step1 .stepcta .prev-btn {opacity : 0}
+
+@media (max-width : 1080px){
+
+  div#multistepSecV1formBox form .form-step-content {  padding: 20px;}
+  .multistepSecV1Inner { flex-direction: column; justify-content: flex-start;}
+  div#multistepformv1 { max-width: 100%;}
+  .multistepSecV1Inner .multistepSecV1RTCOl {  width: 100%;}
+  .multistepSecV1RTCOlBox { margin: 0; max-width: 100%;}
+  .multistepSecV1RTCOlBox .multistepSecV1RTBoxImg {display: inline-block;margin-right: -4px;vertical-align: middle;width: 200px;height: 200px;padding-bottom: 0;}
+  .multistepSecV1RTCOlBox .multistepSecV1RTBoxCnt {display: inline-block;margin-right: -4px;vertical-align: middle;width: calc(100% - 200px);padding-left: 30px;padding-top: 0;}
+}
+
+@media (max-width : 767px){
+.multistepSecV1Inner .multistepSecV1RTCOl { display: none;}
+.multistepSecV1formInner div#multistepSecV1formBox { width: 100%;}
+.multistepSecV1formInner { flex-wrap: wrap;}
+.multistepSecV1formInner .multistepSecV1step ul { display: flex; align-items: flex-start; justify-content: center;}
+.multistepSecV1formInner .multistepSecV1step ul li:not(:first-child) { padding-top: 0; padding-left: 50px;}
+.multistepSecV1formInner .multistepSecV1step {  width: 100%;}
+.multistepSecV1formInner .multistepSecV1step ul li:not(:first-child):before { height: 1px; width: calc(100% - 40px); transform: translateY(-50%);  left: 4px;  top: 50%;}
+}
+

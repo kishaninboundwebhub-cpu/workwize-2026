@@ -1,0 +1,376 @@
+{% if module.show_hide_ %}
+{% set moduleId = '#hs_cos_wrapper_{{ name }}' %}
+{% if dynamic_page_hubdb_row %}
+<div class="fullwidth ship-lapt-sec bgsec space-sec">
+ <div class="wrapper">
+   <div class="ship-lapt-inner flexwrap">
+     <div class="ship-lapt-left">
+       <div class="ship-lapt-back">
+         {% set href = module.back_page_button.back_page_link.url.href %}
+          {% if module.back_page_button.back_page_link.url.type is equalto "EMAIL_ADDRESS" %}
+            {% set href = "mailto:" + href %}
+          {% endif %}
+          <a
+            {% if module.back_page_button.back_page_link.url.type is equalto "CALL_TO_ACTION"  %}
+              href="{{ href }}" {# The href here is not escaped as it is not editable and functions as a JavaScript call to the associated CTA #}
+            {% else %}
+              href="{{ href|escape_url }}"
+            {% endif %}
+            {% if module.back_page_button.back_page_link.open_in_new_tab %}
+              target="_blank"
+            {% endif %}
+            {% if module.back_page_button.back_page_link.rel %}
+              rel="{{ module.back_page_button.back_page_link.rel|escape_attr }}"
+            {% endif %}
+            >
+            <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M1.00013 7.4999L13.7207 7.4999" stroke="#227AF7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+              <path d="M6.13037 1.4755L0.999739 7.49951L6.13037 13.5245" stroke="#227AF7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+             </svg>
+            {{ module.back_page_button.back_page_button_text }}
+          </a>
+       </div>
+       <div class="blgpst-list">
+         <h4>{{ module.sidebar_title }}</h4>
+         <div class="toc-hubspot">
+           <ul class="toc-hublist">
+             
+<!--            <li class="toc-lst2 gaqList"><a href="#faq">FAQ</a></li> -->
+           </ul>
+         </div>
+       </div>
+     </div>
+     <div class="ship-lapt-right">
+      
+       <div class="ship-lapt-tti text-center">
+         <h1>{{ module.title_starting_text }} {{ dynamic_page_hubdb_row.hs_name }}</h1>
+       </div>
+       
+       
+       <div class="ship-lapt-rtop flexwrap alignCenter">
+        <img src="{{ dynamic_page_hubdb_row.country_flag.url }}" alt="{{ dynamic_page_hubdb_row.hs_name }}" loading="lazy" class="ship-img-cou-one">
+       </div>
+       <div class="ship-lapt-content">
+         {% for item in module.content_item %}
+           {% if item.select_content_option == 'text' %}
+             <div class="ship-lapt-text">
+                {{ item.text }}
+             </div>
+          {% elif item.select_content_option == 'cta' %}
+             <div class="ship-lapt-cta">
+               
+               {% if item.cta.select_cta_style == 'cta_yellow' %}
+                <div class="ship-lapt-cta-con set-style-{{  item.cta.select_cta_style }} flexwrap">
+                  {% if item.cta.cta_one.image_field.src %}
+                   <div class="ship-lapt-cta-img">
+                          {% set sizeAttrs = 'width="{{ item.cta.cta_one.image_field.width|escape_attr }}" height="{{ item.cta.cta_one.image_field.height|escape_attr }}"' %}
+                          {% if item.cta.cta_one.image_field.size_type == 'auto' %}
+                            {% set sizeAttrs = 'width="{{ item.cta.cta_one.image_field.width|escape_attr }}" height="{{ item.cta.cta_one.image_field.height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+                          {% elif item.cta.cta_one.image_field.size_type == 'auto_custom_max' %}
+                            {% set sizeAttrs = 'width="{{ item.cta.cta_one.image_field.max_width|escape_attr }}" height="{{ item.cta.cta_one.image_field.max_height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+                          {% endif %}
+                           {% set loadingAttr = item.cta.cta_one.image_field.loading != 'disabled' ? 'loading="{{ item.cta.cta_one.image_field.loading|escape_attr }}"' : '' %}
+                          <img src="{{ item.cta.cta_one.image_field.src|escape_url }}" alt="{{ item.cta.cta_one.image_field.alt|escape_attr }}" {{ loadingAttr }} {{ sizeAttrs }}>
+                   </div>
+                  {% endif %}
+                   <div class="ship-lapt-cta-contb">
+                     <div class="ship-lapt-cta-text">
+                       {{ item.cta.cta_one.cta_text }}
+                     </div>
+                     <div class="ship-lapt-cta-btn">
+                       {% set href = item.cta.cta_one.cta_link.url.href %}
+                        {% if item.cta.cta_one.cta_link.url.type is equalto "EMAIL_ADDRESS" %}
+                          {% set href = "mailto:" + href %}
+                        {% endif %}
+                        <a
+                          {% if item.cta.cta_one.cta_link.url.type is equalto "CALL_TO_ACTION"  %}
+                            href="{{ href }}" {# The href here is not escaped as it is not editable and functions as a JavaScript call to the associated CTA #}
+                          {% else %}
+                            href="{{ href|escape_url }}"
+                          {% endif %}
+                          {% if item.cta.cta_one.cta_link.open_in_new_tab %}
+                            target="_blank"
+                          {% endif %}
+                          {% if item.cta.cta_one.cta_link.rel %}
+                            rel="{{ item.cta.cta_one.cta_link.rel|escape_attr }}"
+                          {% endif %}
+                          >
+                          {{ item.cta.cta_one.button_text }}
+                        </a>
+                     </div>
+                   </div>
+                        {% set href = item.cta.cta_one.cta_link.url.href %}
+                        {% if item.cta.cta_one.cta_link.url.type is equalto "EMAIL_ADDRESS" %}
+                          {% set href = "mailto:" + href %}
+                        {% endif %}
+                        <a class="ship-lapt-cta-link"
+                          {% if item.cta.cta_one.cta_link.url.type is equalto "CALL_TO_ACTION"  %}
+                            href="{{ href }}" {# The href here is not escaped as it is not editable and functions as a JavaScript call to the associated CTA #}
+                          {% else %}
+                            href="{{ href|escape_url }}"
+                          {% endif %}
+                          {% if item.cta.cta_one.cta_link.open_in_new_tab %}
+                            target="_blank"
+                          {% endif %}
+                          {% if item.cta.cta_one.cta_link.rel %}
+                            rel="{{ item.cta.cta_one.cta_link.rel|escape_attr }}"
+                          {% endif %}
+                          >
+                        </a>
+                </div>
+               {% elif item.cta.select_cta_style == 'cta_blue' %}
+                <div class="ship-lapt-cta-con set-style-{{  item.cta.select_cta_style }} flexwrap">
+                  {% if item.cta.cta_blue.image_field.src %}
+                   <div class="ship-lapt-cta-img">
+                      {% set sizeAttrs = 'width="{{ item.cta.cta_blue.image_field.width|escape_attr }}" height="{{ item.cta.cta_blue.image_field.height|escape_attr }}"' %}
+                      {% if item.cta.cta_blue.image_field.size_type == 'auto' %}
+                      {% set sizeAttrs = 'width="{{ item.cta.cta_blue.image_field.width|escape_attr }}" height="{{ item.cta.cta_blue.image_field.height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+                      {% elif item.cta.cta_blue.image_field.size_type == 'auto_custom_max' %}
+                      {% set sizeAttrs = 'width="{{ item.cta.cta_blue.image_field.max_width|escape_attr }}" height="{{ item.cta.cta_blue.image_field.max_height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+                      {% endif %}
+                      {% set loadingAttr = item.cta.cta_blue.image_field.loading != 'disabled' ? 'loading="{{ item.cta.cta_blue.image_field.loading|escape_attr }}"' : '' %}
+                      <img src="{{ item.cta.cta_blue.image_field.src|escape_url }}" alt="{{ item.cta.cta_blue.image_field.alt|escape_attr }}" {{ loadingAttr }} {{ sizeAttrs }}>
+                   </div>
+                  {% endif %}
+                   <div class="ship-lapt-cta-contb">
+                     <div class="ship-lapt-cta-text">
+                       {{ item.cta.cta_blue.cta_text }}
+                     </div>
+                     <div class="ship-lapt-cta-btn">
+                        {% set href = item.cta.cta_blue.cta_link.url.href %}
+                        {% if item.cta.cta_blue.cta_link.url.type is equalto "EMAIL_ADDRESS" %}
+                          {% set href = "mailto:" + href %}
+                        {% endif %}
+                        <a
+                          {% if item.cta.cta_blue.cta_link.url.type is equalto "CALL_TO_ACTION"  %}
+                            href="{{ href }}" {# The href here is not escaped as it is not editable and functions as a JavaScript call to the associated CTA #}
+                          {% else %}
+                            href="{{ href|escape_url }}"
+                          {% endif %}
+                          {% if item.cta.cta_blue.cta_link.open_in_new_tab %}
+                            target="_blank"
+                          {% endif %}
+                          {% if item.cta.cta_blue.cta_link.rel %}
+                            rel="{{ item.cta.cta_blue.cta_link.rel|escape_attr }}"
+                          {% endif %}
+                          >
+                          {{ item.cta.cta_blue.button_text }}
+                        </a>
+                     </div>
+                   </div>
+                        {% set href = item.cta.cta_blue.cta_link.url.href %}
+                        {% if item.cta.cta_blue.cta_link.url.type is equalto "EMAIL_ADDRESS" %}
+                          {% set href = "mailto:" + href %}
+                        {% endif %}
+                        <a class="ship-lapt-cta-link"
+                          {% if item.cta.cta_blue.cta_link.url.type is equalto "CALL_TO_ACTION"  %}
+                            href="{{ href }}" {# The href here is not escaped as it is not editable and functions as a JavaScript call to the associated CTA #}
+                          {% else %}
+                            href="{{ href|escape_url }}"
+                          {% endif %}
+                          {% if item.cta.cta_blue.cta_link.open_in_new_tab %}
+                            target="_blank"
+                          {% endif %}
+                          {% if item.cta.cta_blue.cta_link.rel %}
+                            rel="{{ item.cta.cta_blue.cta_link.rel|escape_attr }}"
+                          {% endif %}
+                          >
+                        </a>
+                </div>
+               
+               {% elif item.cta.select_cta_style == 'cta_purple' %}
+               
+               
+               <div class="ship-lapt-cta-con set-style-{{  item.cta.select_cta_style }} flexwrap" style="background-image:url('{{ item.cta.cta_purple.image_field.src }}')">
+                 {% if item.cta.cta_blue.image_field.src %}
+                   <div class="ship-lapt-cta-img">
+                      {% set sizeAttrs = 'width="{{ item.cta.cta_blue.image_field.width|escape_attr }}" height="{{ item.cta.cta_blue.image_field.height|escape_attr }}"' %}
+                      {% if item.cta.cta_blue.image_field.size_type == 'auto' %}
+                      {% set sizeAttrs = 'width="{{ item.cta.cta_blue.image_field.width|escape_attr }}" height="{{ item.cta.cta_blue.image_field.height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+                      {% elif item.cta.cta_blue.image_field.size_type == 'auto_custom_max' %}
+                      {% set sizeAttrs = 'width="{{ item.cta.cta_blue.image_field.max_width|escape_attr }}" height="{{ item.cta.cta_blue.image_field.max_height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+                      {% endif %}
+                      {% set loadingAttr = item.cta.cta_blue.image_field.loading != 'disabled' ? 'loading="{{ item.cta.cta_blue.image_field.loading|escape_attr }}"' : '' %}
+                      <img src="{{ item.cta.cta_blue.image_field.src|escape_url }}" alt="{{ item.cta.cta_blue.image_field.alt|escape_attr }}" {{ loadingAttr }} {{ sizeAttrs }}>
+                   </div>
+                 {% endif %}
+                   <div class="ship-lapt-cta-contb">
+                     <div class="ship-lapt-cta-text">
+                       <h3 class="ship-lapt-cta-tttext">
+                         {{ item.cta.cta_purple.cta_text }}  
+                       </h3>
+                       {% if item.cta.cta_purple.cta_sub_text %}
+                         <div class="ship-lapt-cta-ttsttext">
+                           {{ item.cta.cta_purple.cta_sub_text }}  
+                         </div>
+                       {% endif %}
+                     </div>
+                     <div class="ship-lapt-cta-btn">
+                          {% set href = item.cta.cta_purple.cta_link.url.href %}
+                          {% if item.cta.cta_purple.cta_link.url.type is equalto "EMAIL_ADDRESS" %}
+                            {% set href = "mailto:" + href %}
+                          {% endif %}
+                          <a
+                            {% if item.cta.cta_purple.cta_link.url.type is equalto "CALL_TO_ACTION"  %}
+                              href="{{ href }}" {# The href here is not escaped as it is not editable and functions as a JavaScript call to the associated CTA #}
+                            {% else %}
+                              href="{{ href|escape_url }}"
+                            {% endif %}
+                            {% if item.cta.cta_purple.cta_link.open_in_new_tab %}
+                              target="_blank"
+                            {% endif %}
+                            {% if item.cta.cta_purple.cta_link.rel %}
+                              rel="{{ item.cta.cta_purple.cta_link.rel|escape_attr }}"
+                            {% endif %}
+                            >
+                          {{ item.cta.cta_purple.button_text }}
+                        </a>
+                     </div>
+                   </div>
+                        {% set href = item.cta.cta_purple.cta_link.url.href %}
+                          {% if item.cta.cta_purple.cta_link.url.type is equalto "EMAIL_ADDRESS" %}
+                            {% set href = "mailto:" + href %}
+                          {% endif %}
+                          <a class="ship-lapt-cta-link"
+                            {% if item.cta.cta_purple.cta_link.url.type is equalto "CALL_TO_ACTION"  %}
+                              href="{{ href }}" {# The href here is not escaped as it is not editable and functions as a JavaScript call to the associated CTA #}
+                            {% else %}
+                              href="{{ href|escape_url }}"
+                            {% endif %}
+                            {% if item.cta.cta_purple.cta_link.open_in_new_tab %}
+                              target="_blank"
+                            {% endif %}
+                            {% if item.cta.cta_purple.cta_link.rel %}
+                              rel="{{ item.cta.cta_purple.cta_link.rel|escape_attr }}"
+                            {% endif %}
+                            >
+                        </a>
+                </div>
+               
+               
+               {% endif %}
+               
+               
+             </div>
+           {% endif %}
+         {% endfor %}
+       </div>
+     </div>
+   </div>
+ </div>
+</div>
+
+
+{% require_css %}
+<style>
+  {{ moduleId }} .bgsec { {% if module.style.select_background == 'bg_color' %}
+    background-color: rgba({{ module.style.background_color.color|convert_rgb }},{{ module.style.background_color.opacity ~ '%' }});
+    {% elif module.style.select_background == 'bg_image' %}
+    {{ module.style.background_image.css }} background-repeat: no-repeat;
+    {% elif module.style.select_background == 'bg_gradient' %}
+    background: {{ module.style.background_gradient.css }};
+    {% endif %} }
+  
+  {{ moduleId }} .space-sec { {{ module.style.spacing.desktop.css }}; }
+  
+  @media(max-width: 991px){ {{ moduleId }} .space-sec { {{ module.style.spacing.tablet.css }}; } }
+  
+  @media(max-width: 767px){ {{ moduleId }} .space-sec { {{ module.style.spacing.mobile.css }}; } }
+  
+</style>
+{% end_require_css %}
+
+{% require_js %}
+   <script>
+    $(document).ready(function(){ 
+  
+  $(".ship-lapt-content h2").each(function() {
+    if($(this).html() != "&nbsp;"){		 
+	     $('.toc-hubspot ul').append('<li class="toc-lst2"><a href="#'+$(this).text().replaceAll(".", "-").replaceAll("(", "-") .replaceAll(")", "-").replaceAll("—", "-").replaceAll(",", "-").replace(/(=\w)|(\s\w)|(%20\w)/g,val=>val.toLowerCase()).replaceAll(/(=\w)|(\s\w)|(%20\w)/g,val=>val.toLowerCase()).replaceAll(" ", "-").replaceAll("  ", "-").replaceAll(":", "-") .replaceAll("?", "-") .replaceAll("%", "-") .replaceAll("#", "-") .replaceAll("@", "-") .replaceAll("/", "-") .replaceAll("!", "-") .replaceAll("&", "-")+'">'+$(this).text()+'</a></li>');
+      
+    }	
+	});
+  
+     var seen = {};
+    $('.blgpst-list .toc-hublist li a').each(function() {
+      var txt = $(this).text().trim().toLowerCase()
+      if (seen[txt]) {
+        $(this).parent().remove();
+      } else {
+        seen[txt] = true;
+      }
+    });
+   // toLowerCase();
+  
+	var $headers = $('.ship-lapt-content h2');
+	$headers.attr("id", function() {
+		return $(this)
+		.text() // get the h1 text
+		.replace(/(=\w)|(\s\w)|(%20\w)/g,val=>val.toLowerCase())
+		.replaceAll(/(=\w)|(\s\w)|(%20\w)/g,val=>val.toLowerCase())
+		.replaceAll(" ", "-")
+		.replaceAll("  ", "-")
+		.replaceAll(":", "-")
+		.replaceAll("?", "-")
+		.replaceAll("%", "-")
+		.replaceAll("#", "-")
+		.replaceAll("@", "-")
+		.replaceAll("/", "-")
+		.replaceAll("!", "-")
+		.replaceAll(",", "-")
+		.replaceAll("—", "-")
+		.replaceAll("(", "-")
+	  .replaceAll(")", "-")
+	  .replaceAll(".", "-")
+	  .replaceAll("&", "-");
+	});
+
+	 
+	  var sections12 = $('.ship-lapt-content h2');
+    var nav12 = $('.toc-hublist');
+    var nav_height12 = nav12.outerHeight();
+    
+		$(window).on('scroll', function () {
+			var cur_pos12 = $(this).scrollTop();
+			 
+			sections12.each(function() {
+				var top12 = $(this).offset().top - 68 ,
+						bottom12 = top12 + $(this).outerHeight();
+
+				if (cur_pos12 >= top12 && cur_pos12 <= bottom12) {
+					nav12.find('.toc-lst2 a').removeClass('active-tab');
+					sections12.removeClass('active');
+
+					$(this).addClass('active');
+					nav12.find('.toc-lst2 > a[href="#'+$(this).attr('id')+'"]').addClass('active-tab');
+				}
+			});
+		});
+		setTimeout(function(){
+		nav12.find(" .toc-lst2 > a[href^='#']").on('click', function(e) {
+      e.preventDefault()
+			var $el12 = $(this);
+			var id = $el12.attr('href');
+
+			$('html, body').animate({
+				scrollTop: $(id).offset().top - 58
+			}, 500);
+
+			return false;
+		});
+   }, 1000);
+	 	 
+});
+
+
+
+   </script>
+{% end_require_js %}
+
+
+
+
+
+{% endif %}
+
+{% endif %}

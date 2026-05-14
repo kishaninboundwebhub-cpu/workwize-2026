@@ -1,0 +1,186 @@
+{% if module.show_hide_ %}
+{% set moduleId = '#hs_cos_wrapper_{{ name }}' %}
+{% if module.select_post_option == 'recent_post' %}
+  {% macro related_post(rec_post, count, total) %}
+    {% if count == 1 %}
+
+  <div class="blglisting-sec blglisting-sec-related fullwidth bgsec space-sec">
+   <div class="wrapper">
+    <div class="secinner blglisting-inner">
+    {% if module.text or module.title %}   
+    <div class="blglistingheader secheader text-center">
+      {% if module.title %} 
+      <div class="sectitle {% if not module.text %} removespace{% endif %}">
+       <h2 class="h1">{{ module.title }}</h2> 
+      </div>
+      {% endif %}
+     </div>
+    {% endif %}       
+
+    <div class="blglisting-box flexwrap w-100">    
+
+    {# End blog author/tag header #}
+   <div class="blglisting-row flexwrap w-100">     
+    {% endif %}
+
+      <div class="blglisting-cols">
+     
+     <a href="{{ rec_post.absolute_url }}" class="blglisting-climg" style="background-image: url('{{ rec_post.featured_image }}');">     
+     </a>        
+     
+     <div class="blglisting-content">     
+       {% if content.tag_list %}
+       <div class="blglisting-tags">
+        {% for tag in rec_post.tag_list %}
+         <a class="blglisting-tag" href="{{ blog_tag_url(group.id, tag.slug) }}">{{ tag.name }}{% if !loop.last%}<span> , </span> {% endif %}</a>
+        {% endfor %}
+       </div>
+       {% endif %}     
+       <h3 class="h4 blglisting-cltitle"><a href="{{ rec_post.absolute_url }}">{{ rec_post.name }}</a></h3>          
+
+       {# Date #}     
+       {#<time class="blog-index__post-date blog-index__post-date--{{ list_type }}" datetime="{{ content.publish_date }}">{{ content.publish_date_localized }}</time>#}
+       {# End date #}
+      {% if module.show_hide_blog_content %}
+       <div class="blglisting-cltxt">
+        {{ rec_post.post_list_content|truncatehtml(94 , '...') }}    
+       </div>          
+      {% endif %}
+     </div>      
+    </div>  
+     {% if count == total %}
+    </div>  
+   </div> 
+    {% if module.button %} 
+    <div class="secbtns blglistingbtns justifyCenter text-center flexwrap w-100">
+     {% for item in module.button %} 
+     <div class="secbtn blglistingbtn {{ item.button_choice }}">
+      {% set href = item.button_link.url.href %}
+      {% if item.button_link.url.type is equalto "EMAIL_ADDRESS" %}
+      {% set href = "mailto:" + href %}
+      {% endif %}
+      <a href="{{ href }}"
+      {% if item.button_link.open_in_new_tab %}target="_blank"{% endif %}
+      {% if item.button_link.rel %}rel="{{ item.button_link.rel }}"{% endif %}
+      >
+       {{ item.button_text }}
+      </a> 
+     </div>
+     {% endfor %} 
+    </div>  
+    {% endif %}  
+    </div>    
+   </div>
+  </div>
+    {% endif %}
+  {% endmacro %}
+
+  {% related_blog_posts limit=3, post_formatter='related_post', no_wrapper=True %}
+{% elif module.select_post_option == 'selected_post' %}
+
+<div class="blglisting-sec blglisting-sec-related fullwidth bgsec space-sec">
+   <div class="wrapper">
+    <div class="secinner blglisting-inner">
+    {% if module.text or module.title %}   
+    <div class="blglistingheader secheader text-center">
+      {% if module.title %} 
+      <div class="sectitle {% if not module.text %} removespace{% endif %}">
+       <h2 class="h1">{{ module.title }}</h2> 
+      </div>
+      {% endif %}
+     </div>
+    {% endif %}       
+
+    <div class="blglisting-box flexwrap w-100">    
+
+    {# End blog author/tag header #}
+    <div class="blglisting-row flexwrap w-100">     
+    
+      {% for item in module.selected_blog_post %}
+          <div class="blglisting-cols">
+            <a href="{{ content_by_id(item.select_blog_post).absolute_url }}" class="blglisting-climg" style="background-image: url('{{ content_by_id(item.select_blog_post).featuredImage }}');"></a>        
+
+            <div class="blglisting-content">     
+              {% set post_content = content_by_id(item.select_blog_post) %}
+
+              {% if post_content.tag_list %}
+                <div class="blglisting-tags">
+                  {% for tag in post_content.tag_list %}
+                    <a class="blglisting-tag">{{ tag.name }}{% if not loop.last %}<span>, </span>{% endif %}</a>
+                  {% endfor %}
+                </div>
+              {% endif %}
+
+              <h3 class="h4 blglisting-cltitle"><a href="{{ post_content.absolute_url }}">{{ post_content.name }}</a></h3>          
+              {% if module.show_hide_blog_content %}
+              <div class="blglisting-cltxt">
+                {{ post_content.post_list_content|truncatehtml(94 , '...') }}    
+              </div>  
+              {% endif %}
+            </div>      
+          </div>  
+        {% endfor %}
+
+    </div>  
+    </div> 
+    {% if module.button %} 
+    <div class="secbtns blglistingbtns justifyCenter text-center flexwrap w-100">
+     {% for item in module.button %} 
+     <div class="secbtn blglistingbtn {{ item.button_choice }}">
+      {% set href = item.button_link.url.href %}
+      {% if item.button_link.url.type is equalto "EMAIL_ADDRESS" %}
+      {% set href = "mailto:" + href %}
+      {% endif %}
+      <a href="{{ href }}"
+      {% if item.button_link.open_in_new_tab %}target="_blank"{% endif %}
+      {% if item.button_link.rel %}rel="{{ item.button_link.rel }}"{% endif %}
+      >
+       {{ item.button_text }}
+      </a> 
+     </div>
+     {% endfor %} 
+    </div>  
+    {% endif %}  
+    </div>    
+   </div>
+  </div>
+
+{% endif %}
+
+
+
+
+
+{% require_css %}
+<style>
+  {{ moduleId }} .bgsec { {% if module.style.select_background == 'bg_color' %}
+    background-color: rgba({{ module.style.background_color.color|convert_rgb }},{{ module.style.background_color.opacity ~ '%' }});
+    {% elif module.style.select_background == 'bg_image' %}
+    {{ module.style.background_image.css }} background-repeat: no-repeat;
+    {% elif module.style.select_background == 'bg_gradient' %}
+    background: {{ module.style.background_gradient.css }};
+    {% endif %} }
+  
+  {{ moduleId }} .space-sec { {{ module.style.spacing.desktop.css }}; }
+  
+  {{ moduleId }} .sectitle h1,
+  {{ moduleId }} .sectitle h2 , 
+  {{ moduleId }} .sectitle h3 , 
+  {{ moduleId }} .sectitle h4 , 
+  {{ moduleId }} .sectitle h5 ,
+  {{ moduleId }} .sectitle h6 { color: rgba({{ module.color_settings.title_color.color|convert_rgb }},{{ module.color_settings.title_color.opacity ~ '%' }}); }
+  {{ moduleId }} .sectxt , {{ moduleId }} .sectxt * { color: rgba({{ module.color_settings.text_color.color|convert_rgb }},{{ module.color_settings.text_color.opacity ~ '%' }}); } 
+  
+ {# {% for item in module.button %} 
+   {{ moduleId }} .secbtn:nth-child({{ loop.index }}) a { background-color: rgba({{ item.background_color.color|convert_rgb }},{{ item.background_color.opacity ~ '%' }}); border-color: rgba({{ item.border_color.color|convert_rgb }},{{ item.border_color.opacity ~ '%' }}); color: rgba({{ item.text_color.color|convert_rgb }},{{ item.text_color.opacity ~ '%' }}); }
+   {{ moduleId }} .secbtn:nth-child({{ loop.index }}) a:hover { background-color: rgba({{ item.background_color_hover_.color|convert_rgb }},{{ item.background_color_hover_.opacity ~ '%' }}); border-color: rgba({{ item.border_color_hover_.color|convert_rgb }},{{ item.border_color_hover_.opacity ~ '%' }}); color: rgba({{ item.text_color_hover_.color|convert_rgb }},{{ item.text_color_hover_.opacity ~ '%' }}); }  
+  {% endfor %} #}
+  
+  
+  @media(max-width: 991px){ {{ moduleId }} .space-sec { {{ module.style.spacing.tablet.css }}; } }
+  
+  @media(max-width: 767px){ {{ moduleId }} .space-sec { {{ module.style.spacing.mobile.css }}; } }
+  
+</style>
+{% end_require_css %}
+{% endif %}

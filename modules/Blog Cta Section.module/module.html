@@ -1,0 +1,76 @@
+{% if module.show_hide_ %}
+{% set moduleId = '#hs_cos_wrapper_{{ name }}' %}
+
+  <div class="blogpost-ctainn">
+    {% for item in module.content %}
+    <div class="blogpost-ctacols">
+    {#{% if item.image.src|escape_url %}
+    <div class="blogpost-ctaimg">
+      {% if module.image.src %}
+	      {% set sizeAttrs = 'width="{{ module.image.width|escape_attr }}" height="{{ module.image.height|escape_attr }}"' %}
+	      {% if module.image.size_type == 'auto' %}
+	      {% set sizeAttrs = 'width="{{ module.image.width|escape_attr }}" height="{{ module.image.height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+	      {% elif module.image.size_type == 'auto_custom_max' %}
+	      {% set sizeAttrs = 'width="{{ module.image.max_width|escape_attr }}" height="{{ module.image.max_height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+	      {% endif %}
+	      {% set loadingAttr = module.image.loading != 'disabled' ? 'loading="{{ module.image.loading|escape_attr }}"' : '' %}
+	      <img src="{{ module.image.src|escape_url }}" alt="{{ module.image.alt|escape_attr }}" {{ loadingAttr }} {{ sizeAttrs }}>
+        {% endif %}
+    </div>
+    {% endif %}#}
+    
+    {% if item.title %}<div class="sectitle"><h4>{{ item.title }}</h4></div>{% endif %}
+    {% if item.text %}<div class="blogpost-txt sectxt">{{ item.text }}</div>{% endif %}
+    {% if item.button.text %}
+    <div class="blogpost-cta secbtn {{ item.button.button_choice }}">
+      {% set href = item.button.link.url.href %}
+    	{% if item.button.link.url.type is equalto "EMAIL_ADDRESS" %}
+    	  {% set href = "mailto:" + href %}
+    	{% endif %}
+    	<a
+    	  {% if item.button.link.url.type is equalto "CALL_TO_ACTION"  %}
+    	    href="{{ href }}" {# The href here is not escaped as it is not editable and functions as a JavaScript call to the associated CTA #}
+    	  {% else %} href="{{ href|escape_url }}" {% endif %}
+    	  {% if item.button.link.open_in_new_tab %} target="_blank" {% endif %}
+    	  {% if item.button.link.rel %} rel="{{ item.button.link.rel|escape_attr }}" {% endif %}
+    	  >
+        {{ item.button.text }}
+      </a>
+    </div>
+    {% endif %}
+    </div>
+    {% endfor %}
+  </div>
+
+
+{% require_css %}
+<style>
+  
+  
+  {{ moduleId }} .space-sec { {{ module.style.spacing.desktop.css }}; }
+  
+  {% for item in module.content %}  
+  {{ moduleId }} .blogpost-ctacols:nth-child({{ loop.index }}) {  background-color: rgba({{ item.color_settings.box_background_color.color|convert_rgb }},{{ item.color_settings.box_background_color.opacity ~ '%' }}); }
+  
+  
+  {{ moduleId }} .blogpost-ctacols:nth-child({{ loop.index }}) .sectitle h1,
+  {{ moduleId }} .blogpost-ctacols:nth-child({{ loop.index }}) .sectitle h2 , 
+  {{ moduleId }} .blogpost-ctacols:nth-child({{ loop.index }}) .sectitle h3 , 
+  {{ moduleId }} .blogpost-ctacols:nth-child({{ loop.index }}) .sectitle h4 , 
+  {{ moduleId }} .blogpost-ctacols:nth-child({{ loop.index }}) .sectitle h5 ,
+  {{ moduleId }} .blogpost-ctacols:nth-child({{ loop.index }}) .sectitle h6 { color: rgba({{ item.color_settings.title_color.color|convert_rgb }},{{ item.color_settings.title_color.opacity ~ '%' }}); }
+  {{ moduleId }} .blogpost-ctacols:nth-child({{ loop.index }}) .sectxt , {{ moduleId }} .blogpost-ctacols:nth-child({{ loop.index }}) .sectxt * { color: rgba({{ item.color_settings.text_color.color|convert_rgb }},{{ item.color_settings.text_color.opacity ~ '%' }}); } 
+  
+
+   {{ moduleId }} .blogpost-ctacols:nth-child({{ loop.index }}) .secbtn a { background-color: rgba({{ item.button.background_color.color|convert_rgb }},{{ item.button.background_color.opacity ~ '%' }}); border-color: rgba({{ item.button.border_color.color|convert_rgb }},{{ item.button.border_color.opacity ~ '%' }}); color: rgba({{ item.button.text_color.color|convert_rgb }},{{ item.button.text_color.opacity ~ '%' }}); }
+   {{ moduleId }} .blogpost-ctacols:nth-child({{ loop.index }}) .secbtn a:hover { background-color: rgba({{ item.button.background_color_hover_.color|convert_rgb }},{{ item.button.background_color_hover_.opacity ~ '%' }}); border-color: rgba({{ item.button.border_color_hover_.color|convert_rgb }},{{ item.button.border_color_hover_.opacity ~ '%' }}); color: rgba({{ item.button.text_color_hover_.color|convert_rgb }},{{ item.button.text_color_hover_.opacity ~ '%' }}); }  
+  {% endfor %} 
+  
+  
+  @media(max-width: 991px){ {{ moduleId }} .space-sec { {{ module.style.spacing.tablet.css }}; } }
+  
+  @media(max-width: 767px){ {{ moduleId }} .space-sec { {{ module.style.spacing.mobile.css }}; } }
+  
+</style>
+{% end_require_css %}
+{% endif %}

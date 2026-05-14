@@ -1,0 +1,114 @@
+{% if module.show_hide_ %}
+{% set moduleId = '#hs_cos_wrapper_{{ name }}' %}
+<div class="fullwidth parallSec space-sec">
+  <div class="parallbg"></div>
+  <div class="parallbgPerson"></div>
+  <div class="parallInner">
+    <div class="parallILeft">
+      
+      <div class="parallILImags">
+          {% if module.images.image_1.image.src %}
+          {% set sizeAttrs = 'width="{{ module.images.image_1.image.width|escape_attr }}" height="{{ module.images.image_1.image.height|escape_attr }}"' %}
+          {% if module.images.image_1.image.size_type == 'auto' %}
+          {% set sizeAttrs = 'width="{{ module.images.image_1.image.width|escape_attr }}" height="{{ module.images.image_1.image.height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+          {% elif module.images.image_1.image.size_type == 'auto_custom_max' %}
+          {% set sizeAttrs = 'width="{{ module.images.image_1.image.max_width|escape_attr }}" height="{{ module.images.image_1.image.max_height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+          {% endif %}
+          {% set loadingAttr = module.images.image_1.image.loading != 'disabled' ? 'loading="{{ module.images.image_1.image.loading|escape_attr }}"' : '' %}
+          <img src="{{ module.images.image_1.image.src|escape_url }}" alt="{{ module.images.image_1.image.alt|escape_attr }}" {{ loadingAttr }} {{ sizeAttrs }}>
+          {% endif %}
+      </div>
+      
+      <div class="parallILImags">
+        {% if module.images.image_2.image.src %}
+        {% set sizeAttrs = 'width="{{ module.images.image_2.image.width|escape_attr }}" height="{{ module.images.image_2.image.height|escape_attr }}"' %}
+        {% if module.images.image_2.image.size_type == 'auto' %}
+        {% set sizeAttrs = 'width="{{ module.images.image_2.image.width|escape_attr }}" height="{{ module.images.image_2.image.height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+        {% elif module.images.image_2.image.size_type == 'auto_custom_max' %}
+        {% set sizeAttrs = 'width="{{ module.images.image_2.image.max_width|escape_attr }}" height="{{ module.images.image_2.image.max_height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+        {% endif %}
+        {% set loadingAttr = module.images.image_2.image.loading != 'disabled' ? 'loading="{{ module.images.image_2.image.loading|escape_attr }}"' : '' %}
+        <img class="deskImages" src="{{ module.images.image_2.image.src|escape_url }}" alt="{{ module.images.image_2.image.alt|escape_attr }}" {{ loadingAttr }} {{ sizeAttrs }}>
+        {% endif %}
+        
+        {% if module.images.image_2.mobile_image.src %}
+        {% set sizeAttrs = 'width="{{ module.images.image_2.mobile_image.width|escape_attr }}" height="{{ module.images.image_2.mobile_image.height|escape_attr }}"' %}
+        {% if module.images.image_2.mobile_image.size_type == 'auto' %}
+        {% set sizeAttrs = 'width="{{ module.images.image_2.mobile_image.width|escape_attr }}" height="{{ module.images.image_2.mobile_image.height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+        {% elif module.images.image_2.mobile_image.size_type == 'auto_custom_max' %}
+        {% set sizeAttrs = 'width="{{ module.images.image_2.mobile_image.max_width|escape_attr }}" height="{{ module.images.image_2.mobile_image.max_height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+        {% endif %}
+        {% set loadingAttr = module.images.image_2.mobile_image.loading != 'disabled' ? 'loading="{{ module.images.image_2.mobile_image.loading|escape_attr }}"' : '' %}
+        <img class="mobImages" src="{{ module.images.image_2.mobile_image.src|escape_url }}" alt="{{ module.images.image_2.mobile_image.alt|escape_attr }}" {{ loadingAttr }} {{ sizeAttrs }}>
+        {% endif %}
+        
+        
+        
+      </div>
+      
+      <div class="parallILImags">
+        {% if module.images.image_3.image.src %}
+        {% set sizeAttrs = 'width="{{ module.images.image_3.image.width|escape_attr }}" height="{{ module.images.image_3.image.height|escape_attr }}"' %}
+        {% if module.images.image_3.image.size_type == 'auto' %}
+        {% set sizeAttrs = 'width="{{ module.images.image_3.image.width|escape_attr }}" height="{{ module.images.image_3.image.height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+        {% elif module.images.image_3.image.size_type == 'auto_custom_max' %}
+        {% set sizeAttrs = 'width="{{ module.images.image_3.image.max_width|escape_attr }}" height="{{ module.images.image_3.image.max_height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+        {% endif %}
+        {% set loadingAttr = module.images.image_3.image.loading != 'disabled' ? 'loading="{{ module.images.image_3.image.loading|escape_attr }}"' : '' %}
+        <img src="{{ module.images.image_3.image.src|escape_url }}" alt="{{ module.images.image_3.image.alt|escape_attr }}" {{ loadingAttr }} {{ sizeAttrs }}>
+        {% endif %}
+      </div>
+      
+    </div>  
+    <div class="parallIRight">
+      
+    <div class="parallIRImags">
+        {% if module.images.image_4.image.src %}
+        {% set sizeAttrs = 'width="{{ module.images.image_4.image.width|escape_attr }}" height="{{ module.images.image_4.image.height|escape_attr }}"' %}
+        {% if module.images.image_4.image.size_type == 'auto' %}
+        {% set sizeAttrs = 'width="{{ module.images.image_4.image.width|escape_attr }}" height="{{ module.images.image_4.image.height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+        {% elif module.images.image_4.image.size_type == 'auto_custom_max' %}
+        {% set sizeAttrs = 'width="{{ module.images.image_4.image.max_width|escape_attr }}" height="{{ module.images.image_4.image.max_height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+        {% endif %}
+        {% set loadingAttr = module.images.image_4.image.loading != 'disabled' ? 'loading="{{ module.images.image_4.image.loading|escape_attr }}"' : '' %}
+        <img src="{{ module.images.image_4.image.src|escape_url }}" alt="{{ module.images.image_4.image.alt|escape_attr }}" {{ loadingAttr }} {{ sizeAttrs }}>
+        {% endif %}
+      </div>
+      
+      <div class="parallIRImags">
+        {% if module.images.image_5.image.src %}
+        {% set sizeAttrs = 'width="{{ module.images.image_5.image.width|escape_attr }}" height="{{ module.images.image_5.image.height|escape_attr }}"' %}
+        {% if module.images.image_5.image.size_type == 'auto' %}
+        {% set sizeAttrs = 'width="{{ module.images.image_5.image.width|escape_attr }}" height="{{ module.images.image_5.image.height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+        {% elif module.images.image_5.image.size_type == 'auto_custom_max' %}
+        {% set sizeAttrs = 'width="{{ module.images.image_5.image.max_width|escape_attr }}" height="{{ module.images.image_5.image.max_height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+        {% endif %}
+        {% set loadingAttr = module.images.image_5.image.loading != 'disabled' ? 'loading="{{ module.images.image_5.image.loading|escape_attr }}"' : '' %}
+        <img src="{{ module.images.image_5.image.src|escape_url }}" alt="{{ module.images.image_5.image.alt|escape_attr }}" {{ loadingAttr }} {{ sizeAttrs }}>
+        {% endif %}
+      </div>
+      
+      
+    </div>
+  </div> 
+  
+  
+  
+  
+</div>
+
+{% require_css %}
+  <style>
+    {% scope_css %}
+      .parallbg {  background-image:url('{{ module.background_image.src }}');   } 
+      .parallbgPerson {  background-image:url('{{ module.background_image_person.src }}');   }   
+        
+    {% end_scope_css %}
+  </style>
+{% end_require_css %}
+
+
+
+
+
+{% endif %}

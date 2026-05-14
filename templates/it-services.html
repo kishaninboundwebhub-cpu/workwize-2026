@@ -1,0 +1,53 @@
+<!--
+  templateType: page
+  isAvailableForNewContent: true
+  label: It Services - 2024
+-->
+{% extends "./layouts/base.html" %}
+
+{% block body %}
+
+{# All templates are recommended to have an h1 present for both accessibility and SEO best practice. This should be at the top of the template before any other textual content. The h1 element below is within a dnd area to allow content editors the ability to adjust the content and alignment of the text. #}
+<main class="body-container-wrapper">
+{% dnd_area "dnd_area" label="Listing Section", class="body-container body-container--hubdb" %}
+ 
+  {% dnd_section full_width="true" padding={'default': { 'top': 0 , 'right': 0 , 'left': 0 , 'bottom': 0 } } %}
+    {% dnd_module "module_17189652417965" path="/Workwize/modules/Updated HUBDB Module - 2024 New", label="Updated HUBDB Module - 2024 New" %}
+    {% end_dnd_module %}
+  {% end_dnd_section %}
+  
+
+
+{% end_dnd_area %}
+
+<div class="country-innerpage-main">
+  
+ {% module "module_17234592825546" path="/Workwize/modules/Hero Section - HubDB Inner", label="Hero Section - HubDB Inner" %}
+  
+ {% module "module_172346051760323" path="/Workwize/modules/Logo Section - HubDB Inner", label="Logo Section - HubDB Inner" %} 
+  
+ {% module "module_172346150012935" path="/Workwize/modules/Work Zig Zag Section - HubDB Inner", label="Work Zig Zag Section - HubDB Inner" %}
+  
+ {% module "module_172260824595999" path="/Workwize/modules/Quick Fact Section - HubDB Inner", label="Quick Fact Section - HubDB Inner" %}
+  
+ {% module "module_1722599810954962" path="/Workwize/modules/Zig Zag Section - HubDB Inner", label="Zig Zag Section - HubDB Inner" %}  
+  
+ {% module "module_1722599810954872" path="/Workwize/modules/Zig Zag Section - HubDB Inner", label="Zig Zag Section - HubDB Inner" %}  
+  
+ {% module "module_172260313885384" path="/Workwize/modules/Pricing Section 2024 HubDB Inner", label="Pricing Section 2024 HubDB Inner" %}
+ 
+  {% module "module_17655330630051" path="/Workwize/modules/Pricing Section 2024 HubDB Inner - Global", label="Pricing Section 2024 HubDB Inner - Global" %}
+  
+ {% module "module_172260694366792" path="/Workwize/modules/Request Demo Form - HubDB Inner", label="Request Demo Form - HubDB Inner" %} 
+ 
+</div>
+  
+   
+  
+</main>
+
+
+
+
+
+{% endblock body %}

@@ -1,0 +1,505 @@
+{% if module.show_hide_ %}
+{% set moduleId = '#hs_cos_wrapper_{{ name }}' %}
+<div class="{{name}} fullwidth bgsec space-sec multistepSecV1">
+  <div class="wrapper">
+    <div class="secinner multistepSecV1Inner">
+      <div class="multistepSecV1form" id="multistepformv1">
+
+        <div class="multistepSecV1formInner">
+          <div class="multistepSecV1step">
+            <ul>
+
+            </ul>
+          </div>
+          <div class="multistepSecV1formBox" id="{{ module.form_id }}">
+            <div class="FormLoader" style="display : none">
+              <span class="loader-14"> </span>
+            </div>
+            {% form
+              form_to_use="{{ module.form.form_id }}"
+              response_response_type="{{ module.form.response_type }}"
+              response_message="{{ module.form.message }}"
+              response_redirect_id="{{ module.form.redirect_id }}"
+              response_redirect_url="{{module.form.redirect_url}}"
+              gotowebinar_webinar_key="{{ module.form.gotowebinar_webinar_key }}"
+           %}
+          </div>
+        </div>
+      </div>
+      <div class="multistepSecV1RTCOl">
+        {% for item in module.step_form_content %}
+        <div class="multistepSecV1RTCOlBox animated {% if loop.first %}active{% endif %}" data-step="{{ loop.index }}" style="{% if loop.first %}display : block{% endif %}"> 
+          <div class="multistepSecV1RTCOlBoxInmain">
+
+
+            {% if item.logo.src %}
+            <div class="multistepSecV1RTBoxImg" style="background-image: url('{{ item.logo.src|escape_url }}');">
+
+            </div>
+            {% endif %}
+            <div class="multistepSecV1RTBoxCnt">
+              {% if item.star|length %}
+              <div class="multistepSecV1RTStar">
+                <ul>
+                  {% for item2 in item.star %}
+                  <li><img src="{{ item2.image.src|escape_url }}" alt="{{ item2.image.alt|escape_attr }}" {{ loadingAttr }} {{ sizeAttrs }}></li>
+                  {% endfor %}
+                </ul>
+              </div>
+              {% endif %}
+              {% if  item.content  %}
+              <div class="multistepSecV1RTCnt">
+                {{ item.content }}
+              </div>
+              {% endif %}
+              <div class="multistepSecV1RTtesti">
+                {% if item.box_image.src %}
+                <div class="multistepSecV1RTTImg" style="background-image: url({{ item.box_image.src|escape_url }})">
+
+                </div>
+                {% endif %}
+                <div class="multistepSecV1RTTCnt">
+                  {% if item.testimonial_name %}
+                  <div class="multistepSecV1RTTTitle">
+                    {{ item.testimonial_name }}
+                  </div>
+                  {% endif %}
+                  {% if item.testimonial_designation %}
+                  <div class="multistepSecV1RTTDesi">
+                    {{ item.testimonial_designation }}
+                  </div>
+                  {% endif %}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>    
+  </div>
+</div>
+
+
+{% require_css %}
+<style>
+  {{ moduleId }} .bgsec { {% if module.style.select_background == 'bg_color' %}
+    background-color: rgba({{ module.style.background_color.color|convert_rgb }},{{ module.style.background_color.opacity ~ '%' }});
+    {% elif module.style.select_background == 'bg_image' %}
+    {{ module.style.background_image.css }} background-repeat: no-repeat;
+    {% elif module.style.select_background == 'bg_gradient' %}
+    background: {{ module.style.background_gradient.css }};
+    {% endif %} }
+
+  {{ moduleId }} .space-sec { {{ module.style.spacing.desktop.css }}; }
+
+
+  @media(max-width: 991px){ {{ moduleId }} .space-sec { {{ module.style.spacing.tablet.css }}; } }
+
+  @media(max-width: 767px){ {{ moduleId }} .space-sec { {{ module.style.spacing.mobile.css }}; } }
+
+</style>
+{% end_require_css %}
+{% endif %}
+
+{% require_js %}
+<script>
+  $(".FormLoader").show()
+
+  function loadForm12(){
+    console.log('test','test');
+    if($(`#{{ module.form_id }}`).find('form').length){
+      var formid = `#{{ module.form_id }}`;
+
+      $(formid).addClass('form-loaded');
+      //$(formid + ' .hs-richtext').parent().addClass('wrapper-point');
+      $(formid + ' .hs-richtext.hs-main-font-element').each(function(){
+        if($(this).find('img').length){
+          $(this).parent().addClass('wrapper-point');
+        }
+      });
+
+      $(document).on("keypress", formid +" form", function(event) { 
+        return event.keyCode != 13;
+      });
+
+
+      $(formid+' .wrapper-point').each(function (index) {
+
+        if($(this).find(formid+' .hs-richtext.hs-main-font-element > img').length){
+          console.log("check lenght")
+          return;
+        }
+        else{
+
+
+          var dataStep = "step"+(index+1);
+          var stepnumber = index+1;
+          console.log(stepnumber,"check lenght")
+          $(this).nextUntil(".wrapper-point").addBack().wrapAll('<div data-filter=".' + dataStep + '"  data-step='+ stepnumber +'  data-number='+ stepnumber +' class="animated form-step-content ' + dataStep + '" />');
+        }
+
+      });
+      var totalSteps  = $(formid + ' .form-step-content').length;
+      console.log(totalSteps,"totalSteps")
+      var progressSteps = $('.multistepSecV1step ul');
+      progressSteps.empty(); // Clear any existing steps
+      for (let i = 1; i <= totalSteps; i++) {
+        progressSteps.append(`
+        <li class="step ${i === 1 ? 'active' : ''}" data-step="${i}">
+          <span class="step-icon">${i === 1 ? i : i}</span>
+  </li>
+      `);
+      }
+
+
+
+      $(formid+' .form-step-content').each(function () {
+        if(!$(this).find('.hs-button.primary').length > 0){
+
+          $(this).append('<div class="stepcta"><a class="hs-button disable primary prev-btn">Previous</a><a class="hs-button disable primary next-btn">Next</a></div>'); 
+
+
+        }
+        else{
+          $(this).find('.actions').prepend('<div class="stepcta"><a class="hs-button disable primary prev-btn">Previous</a></div>');
+          //           $(this).find('.hs_submit').addClass('stepcta');
+          //           $(this).find('.actions').prepend('<div class="stepcta"><a class="hs-button  primary submit_btn">Submit</a></div>');
+          //           $(this).find('.hs_submit .actions').prepend('<a class="hs-button disable primary prev-btn">Previous</a><span class="allsteps"></span>'); 
+        } 
+      });
+
+      $(formid+' .form-step-content.step1,.ms-form-steps .from-step-outer:first-child').addClass('active');
+      $(formid+' .form-step-content.step1,.ms-form-steps .from-step-outer:first-child').show();
+      var validity = false; 
+
+
+      $(document).on('click', '.multistepSecV1formBox .next-btn',function(){
+        var el = $(this);
+        var element =  $(this).closest('.form-step-content').find('[required]');
+        var elementtwo =  $(this).closest('.form-step-content').find('ul[required]');
+        var file =  $(this).closest('.form-step-content').find('input[type="file"]');
+        var elcount = 0;
+        var currentStep = parseInt($('.visiblestep').text()) || 1;
+
+
+
+
+        var getRel = $(this).closest('.form-step-content').attr('data-filter');
+        if(!element.hasClass('invalid')){
+
+          validity = true;
+        }
+        else{
+
+          validity = false;
+        }
+
+        element.each(function () {
+          var elnew = $(this);
+          $(this).focus();
+          elnew.blur();
+          setTimeout(function(){ 
+            if(elnew.hasClass('invalid')){
+
+              validity=false;
+            }
+          }, 500);
+        });
+
+        elementtwo.each(function () {
+          var elnew = $(this).find('input');
+          elnew.each(function(){
+            var el = $(this);
+            if (el.is(':checked')) {
+              elcount = elcount+1;
+            }
+          });
+
+          if(elcount < 1){
+            validity=false;
+            $(this).after('<ul class="no-list hs-error-msgs inputs-list" ><li><label >Please complete this required field.</label></li></ul>')
+          }
+          else{
+            $(this).next('.hs-error-msgs').remove();
+          }
+
+          elcount=0;
+        });
+
+        file.each(function(){
+          if($(this).closest('.hs_file_upload').find('.hs-form-required').length > 0){
+            var getid = $(this).attr('id'); 
+
+            if ($(this).get(0).files.length === 0) {
+              validity=false;
+              $(this).closest('.hs-form-field').after('<ul class="no-list hs-error-msgs inputs-list" ><li><label >Please complete this required field.</label></li></ul>');
+            }
+            else{
+              $(this).closest('.hs-form-field').next('.hs-error-msgs').remove();
+            }
+          }
+        });
+
+
+        $(formid).click()
+
+        // Update progress bar on successful navigation
+        if (validity) {
+          //                     var nextStep = currentStep + 1;
+          //           $('.visiblestep').text(nextStep);
+          //           updateProgressBar(nextStep);
+          //           console.log(nextStep,"nextStep next click")
+          //           updateprogress(currentStep,nextStep)
+        }
+
+        setTimeout(function(){ 
+          if(validity){
+
+            //           var nextStep = currentStep + 1;
+
+
+            //             $(".FormLoader").fadeIn(250);
+
+            $(formid+' .from-step-outer'+getRel).removeClass('active zoomIn').addClass('completed');
+            $(formid+' .from-step-outer'+getRel).next().addClass('active zoomIn');
+
+            var nextstepnumber = el.closest('.form-step-content').next().attr('data-number');
+            console.log(nextstepnumber,"nextstepnumber")
+            $('.visiblestep').text(nextstepnumber)
+
+            $('.visiblestep').text(nextstepnumber);
+            //             updateProgressBar(nextstepnumber);
+            console.log(nextstepnumber,"nextStep next click")
+
+
+            el.closest('.form-step-content').removeClass('active zoomIn invalid').fadeOut('500',function(){
+              el.closest('.form-step-content').next().addClass('active zoomIn').fadeIn(500);  
+              updateprogress(currentStep,nextstepnumber);
+              checkAllSteps();
+              validity = false;
+            });
+            //             setTimeout(function() {
+            //               $(".FormLoader").fadeOut(250)
+            //             },1000)
+            if(el.hasClass('submit_btn')){
+              //               $(".FormLoader").fadeIn(250);
+              //               $(".FormLoader").addClass("Darkwhite")
+              //$(this).next('input[type="submit"]').click();
+              //               setTimeout(function() {
+              //                 $(".FormLoader").fadeOut(250)
+              //               },4000)
+              $(formid+' input[type="submit"]').click()
+            }
+          }else{
+            el.closest('.form-step-content').addClass('invalid'); 
+          }
+
+          elcount=0
+        }, 500);
+      });
+
+
+      $(document).on('click','.multistepSecV1formBox .prev-btn',function(){
+        var el = $(this);
+        var getRel = $(this).closest('.form-step-content').attr('data-filter');
+        console.log(getRel,"getRel")
+
+
+
+        $(' .form-step-content'+getRel).removeClass('active').removeClass('completed');
+        $(' .form-step-content'+getRel).prev().addClass('active').removeClass('completed');;
+        el.closest(' .form-step-content').removeClass('active').fadeOut('500',function(){
+          el.closest(' .form-step-content').prev().addClass('active').fadeIn();
+          var nextstepnumber = $('.form-step-content:visible').attr('data-number');
+          console.log(nextstepnumber,"nextstepnumber")
+          $('.visiblestep').text(nextstepnumber)
+
+
+          var currentStep = $(this).closest('.form-step-content').attr('data-number');;
+          console.log(currentStep,"currentStep")
+          var prevStep = currentStep - 1;
+
+          if (currentStep > 1) {
+            var prevStep = currentStep - 1;
+            updateprogress(currentStep,prevStep);
+//             $('.visiblestep').text(prevStep);
+//             updateProgressBar(prevStep);
+          }
+
+        });
+      });
+
+      
+
+      var btnval = $(' .submit_btn').next('input[type="submit"]').val();
+      $(' .submit_btn').text(btnval);
+
+      $(document).on("click",'.multistepSecV1formInner .multistepSecV1step ul li', function(){
+        var currentstep = $(this).closest('ul').find('li.step.active').attr('data-step');
+        var nextstep = $(this).attr('data-step');
+        //         console.log(nextstep,currentstep)
+        updateprogress(currentstep,nextstep);
+        checkAllSteps();
+      })
+      function updateprogress(currentstep,nextstep){
+        $('.multistepSecV1step .step[data-step='+nextstep+']').addClass('active').removeClass('completed').prevAll(".step").addClass('completed').removeClass('active');
+        $('.multistepSecV1step .step[data-step='+nextstep+']').siblings('.step').removeClass('active')
+        $('.multistepSecV1RTCOlBox[data-step='+nextstep+']').show().addClass('active zoomIn').siblings('.multistepSecV1RTCOlBox').hide().removeClass('active zoomIn');
+
+        if(nextstep > currentstep){
+          $('div#multistepSecV1formBox form .form-step-content[data-step='+nextstep+']').show().addClass('active zoomIn').siblings('.form-step-content').hide().removeClass('active zoomIn')
+        } else {
+          $('div#multistepSecV1formBox form .form-step-content[data-step='+nextstep+']').show().addClass('active zoomIn').siblings('.form-step-content').hide().removeClass('active zoomIn');
+          $('.multistepSecV1step .step[data-step='+nextstep+']').nextAll(".step").removeClass('completed')
+          console.log(currentstep,"nextstep")
+        }
+
+      }
+
+      console.log($('div#multistepSecV1formBox form .form-step-content:visible').attr('data-step'), "viasible")
+      var visiblestep = $('div#multistepSecV1formBox form .form-step-content:visible').attr('data-step');
+      visible(visiblestep);
+      checkAllSteps();
+      function visible(visiblestep) {
+        let $currentStep = $('[data-step="' + visiblestep + '"]');
+
+        let allFilled = true;
+
+        $currentStep.find('input:visible, select:visible, textarea:visible').each(function() {
+          if ($(this).val().trim() === "") {
+            allFilled = false;
+            //                         checkSteps();
+            return false; // Break the loop early if any field is empty
+          }
+        });
+
+        if (allFilled) {
+          $currentStep.find('.stepcta').addClass("visible");
+        } else {
+          $currentStep.find('.stepcta').removeClass("visible");
+        }
+      }
+
+
+      function checkAllSteps() {
+        let allFilled = true;
+
+        // Select all required fields across all steps
+        let $requiredFields = $('.multistepSecV1formBox form').find('input[required], select[required], textarea[required]');
+        console.log("Checking required fields:", $requiredFields.length);
+
+        $requiredFields.each(function () {
+          let $field = $(this);
+          let fieldType = $field.attr('type');
+          let fieldValue = $field.val();
+
+//           console.log("Checking field:", this, "Type:", fieldType, "Value:", fieldValue);
+
+          if (fieldType === 'checkbox' || fieldType === 'radio') {
+            let groupName = $field.attr('name');
+            if ($(`input[name="${groupName}"]:checked`).length === 0) {
+              allFilled = false;
+              return false;
+            }
+          } else if (fieldType === 'file') {
+            if ($field.get(0).files.length === 0) {
+              allFilled = false;
+              return false;
+            }
+          } else {
+            if ($.trim(fieldValue) === "") {
+              allFilled = false;
+              return false;
+            }
+          }
+        });
+
+        // ✅ NEW: Ensure at least one checkbox is checked inside each `.inputs-list[required]`
+        $('.multistepSecV1formBox  .inputs-list[required]').each(function () {
+          if ($(this).find('input[type="checkbox"]:checked').length === 0) {
+            console.log("Required checkbox group not checked:", this);
+            allFilled = false;
+            return false;
+          }
+        });
+
+        console.log("All fields filled?", allFilled);
+
+        let $submitButton = $('.multistepSecV1formBox  form').find('input[type=submit], button[type=submit]');
+
+        if (allFilled) {
+          console.log("Enabling submit button");
+          $submitButton.removeClass("disabled").css("pointer-events", "auto").prop("disabled", false);
+        } else {
+          console.log("Disabling submit button");
+          $submitButton.addClass("disabled").css("pointer-events", "none").prop("disabled", true);
+        }
+      }
+
+      // ✅ Trigger validation on input change
+      $(document).on('input change', '.multistepSecV1formBox  form input,.multistepSecV1formBox  form select,.multistepSecV1formBox  form textarea', function () {
+        checkAllSteps();
+      });
+
+
+
+
+      // Attach event listener to all input, select, and textarea elements
+      $(document).on('input change', '.multistepSecV1formBox input:visible,.multistepSecV1formBox  select:visible,.multistepSecV1formBox  textarea:visible', function() {
+        let visiblestep = $(this).closest('[data-step]').attr('data-step');
+        visible(visiblestep);
+//         checkSteps()
+      });
+      //             $(document).on('input change', 'input:visible[required], select:visible[required], textarea:visible[required]', function() {
+      //               checkSteps();
+      //             });
+
+      $(' .page-center').show(); 
+      $(' .form-loader').hide();
+    }
+
+  }
+
+
+
+  window.addEventListener('message', function(event) {
+    if(event.data.type === 'hsFormCallback' && event.data.eventName === 'onFormReady'  && event.data.id == $(`.{{name}} #{{ module.form_id }}`).find('form').data('form-id')) {
+      console.log('form loaded')
+      setTimeout(function() {
+        $(".FormLoader").fadeOut(250)
+      },500)
+
+      if($(".multistepSecV1formBox form .hs-richtext img").length > "0"){
+        loadForm12();
+      } else {
+        $('.multistepSecV1step').hide()
+      }
+
+
+
+      function formshouldLoad(){
+        if($(`.{{name}} #multistepSecV1formBox`).hasClass('form-loaded')){
+
+          console.log("jquery start here")
+
+        } else {
+          //                             loadForm()
+        }
+      }
+    }
+  });
+
+  window.addEventListener('message', function(event) {
+    if (event.data.type === 'hsFormCallback' && event.data.eventName === 'onFormSubmit' && event.data.id == $(`#{{ module.form_id }}`).find('form').data('form-id')) {
+      console.log("form is submitted")
+      $(".FormLoader").fadeIn(250);
+      setTimeout(function() {
+        $(".FormLoader").fadeOut(250);
+      },1000)
+    }
+  });
+
+
+</script>
+{% end_require_js %}

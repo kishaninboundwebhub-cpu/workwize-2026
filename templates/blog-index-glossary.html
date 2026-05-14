@@ -1,0 +1,32 @@
+<!--
+  templateType: blog_listing
+  isAvailableForNewContent: true
+  label: Blog Listing - Glossary
+  screenshotPath: ../images/template-previews/blog-index.png
+-->
+{% set template_css = "../../css/templates/blog.css" %}
+{% extends "./layouts/base.html" %}
+
+{% block body %}
+{% dnd_area "dnd_area" label="Main section", class="body-container body-container--blog-index" %}
+
+  {# Hero Section - Glossary #}
+  {% dnd_section full_width='true', vertical_alignment='MIDDLE', padding= {'top': '0', 'bottom': '0', 'left': '0', 'right': '0',} %}
+    {% dnd_module "module_17173943217048" path="/Workwize/modules/Hero Section - Glossary", label="Hero Section - Glossary" %}
+    {% end_dnd_module %}  
+  {% end_dnd_section %}
+  
+ {# Blog listings and pagination #}
+ 
+ {% dnd_section full_width="true" padding={'default': { 'top': 0 , 'right': 0 , 'left': 0 , 'bottom': 0 } } %}
+  {% dnd_module "module_17212793123721" path="/Workwize/modules/Work Glossary - Section", label="Work Glossary - Section" %}
+  {% end_dnd_module %}     
+ {% end_dnd_section %}
+
+ {% dnd_section full_width="true" padding={'default': { 'top': 0 , 'right': 0 , 'left': 0 , 'bottom': 0 } } %}
+  {% dnd_module "module_170867878552659" path="/Workwize/modules/Subscription Section", label="Subscription Section" %}
+  {% end_dnd_module %}     
+ {% end_dnd_section %}
+
+{% end_dnd_area %}
+{% endblock body %}

@@ -1,0 +1,232 @@
+{% if module.show_hide_ %}
+{% set moduleId = '#hs_cos_wrapper_{{ name }}' %}
+<div class="zzsplaoverSec fullwidth bgsec space-sec" data-autoplay="{{ module.autoplay_tab }}">
+  <div class="wrapper">
+    <div class="zzsplaoverInner {% if module.reverse_content %} zzsplaoverReverse {% endif %} d_flex align_center">
+      <div class="zzsplaoverLeft wow fadeInLeft">
+        <div class="zzsplaoverLTop pb12 d_flex gap12 align_center">
+            {% if module.content.top_text.icon.src %}
+            {% set sizeAttrs = 'width="{{ module.content.top_text.icon.width|escape_attr }}" height="{{ module.content.top_text.icon.height|escape_attr }}"' %}
+            {% if module.content.top_text.icon.size_type == 'auto' %}
+            {% set sizeAttrs = 'width="{{ module.content.top_text.icon.width|escape_attr }}" height="{{ module.content.top_text.icon.height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+            {% elif module.content.top_text.icon.size_type == 'auto_custom_max' %}
+            {% set sizeAttrs = 'width="{{ module.content.top_text.icon.max_width|escape_attr }}" height="{{ module.content.top_text.icon.max_height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+            {% endif %}
+            {% set loadingAttr = module.content.top_text.icon.loading != 'disabled' ? 'loading="{{ module.content.top_text.icon.loading|escape_attr }}"' : '' %}
+            <img src="{{ module.content.top_text.icon.src|escape_url }}" alt="{{ module.content.top_text.icon.alt|escape_attr }}" {{ loadingAttr }} {{ sizeAttrs }}>
+            {% endif %}
+          {{ module.content.top_text.text }}
+        </div>
+        
+        <h2>{{ module.content.title }}</h2>
+        
+        
+        <div class="zzsplaoverTabes">
+          {% for item in module.content.tab_item %}
+          <div class="zzsplaoverTab">
+            <h3 data-value=".zzsplaovert{{  loop.index }}">
+              {% if item.icon.src %}
+              {% set sizeAttrs = 'width="{{ item.icon.width|escape_attr }}" height="{{ item.icon.height|escape_attr }}"' %}
+              {% if item.icon.size_type == 'auto' %}
+              {% set sizeAttrs = 'width="{{ item.icon.width|escape_attr }}" height="{{ item.icon.height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+              {% elif item.icon.size_type == 'auto_custom_max' %}
+              {% set sizeAttrs = 'width="{{ item.icon.max_width|escape_attr }}" height="{{ item.icon.max_height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+              {% endif %}
+              {% set loadingAttr = item.icon.loading != 'disabled' ? 'loading="{{ item.icon.loading|escape_attr }}"' : '' %}
+              <img src="{{ item.icon.src|escape_url }}" alt="{{ item.icon.alt|escape_attr }}" {{ loadingAttr }} {{ sizeAttrs }}>
+              {% endif %}
+            {{ item.title }}
+            </h3>
+            <div class="zzsplaoverTconte">
+              <div class="zzsplaoverTtext">
+                  {{ item.text }}
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+        
+      </div>
+      
+      <div class="zzsplaoverRight wow fadeInRight">
+         {% for item in module.content.tab_item %}
+        <div class="zzsplaoverRConte zzsplaovert{{  loop.index }}">
+          <div class="zzsplaoverRCinn">
+          {% if item.select_option_video_or_image == 'image' %}
+          <div class="zzsplaoverRCImage">
+            {% if item.image_field.src %}
+              {% set sizeAttrs = 'width="{{ item.image_field.width|escape_attr }}" height="{{ item.image_field.height|escape_attr }}"' %}
+              {% if item.image_field.size_type == 'auto' %}
+                {% set sizeAttrs = 'width="{{ item.image_field.width|escape_attr }}" height="{{ item.image_field.height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+              {% elif item.image_field.size_type == 'auto_custom_max' %}
+                {% set sizeAttrs = 'width="{{ item.image_field.max_width|escape_attr }}" height="{{ item.image_field.max_height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+              {% endif %}
+               {% set loadingAttr = item.image_field.loading != 'disabled' ? 'loading="{{ item.image_field.loading|escape_attr }}"' : '' %}
+              <img src="{{ item.image_field.src|escape_url }}" alt="{{ item.image_field.alt|escape_attr }}" {{ loadingAttr }} {{ sizeAttrs }}>
+            {% endif %}
+          </div>
+          {% elif item.select_option_video_or_image == 'video' %}
+          <div class="zzsplaoverRCVideo">
+            <video width="320" height="240" controls>
+              <source src="{{ item.video }}" type="video/mp4">
+              <source src="{{ item.video }}" type="video/ogg">
+            </video>
+          </div>
+          {% endif %}
+         </div>  
+        </div>
+        {% endfor %}
+      
+      </div>
+      
+      
+    </div>
+    {% if module.content.show_button %}
+    <div class="zzsplaoverBtn secbtn button d_flex flex_center  set-btn-arrows-true pt60 wow fadeInUp">
+        {% set href = module.content.button.button_link.url.href %}
+        {% if module.content.button.button_link.url.type is equalto "EMAIL_ADDRESS" %}
+          {% set href = "mailto:" + href %}
+        {% elif module.content.button.button_link.url.type is equalto "PHONE_NUMBER" %}
+          {% set href = "tel:" + href %}
+        {% endif %}
+        <a
+          {% if module.content.button.button_link.url.type is equalto "CALL_TO_ACTION"  %}
+            href="{{ href }}" {# The href here is not escaped as it is not editable and functions as a JavaScript call to the associated CTA #}
+          {% else %}
+            href="{{ href|escape_url }}"
+          {% endif %}
+          {% if module.content.button.button_link.open_in_new_tab %}
+            target="_blank"
+          {% endif %}
+          {% if module.content.button.button_link.rel %}
+            rel="{{ module.content.button.button_link.rel|escape_attr }}"
+          {% endif %}
+          >
+          {{ module.content.button.button_text }}
+        </a>   
+    </div>
+    {% endif %}
+    
+  </div>
+</div>
+
+
+
+
+
+{% require_css %}
+<style>
+  {{ moduleId }} .bgsec { {% if module.style.select_background == 'bg_color' %}
+    background-color: rgba({{ module.style.background_color.color|convert_rgb }},{{ module.style.background_color.opacity ~ '%' }});
+    {% elif module.style.select_background == 'bg_image' %}
+    {{ module.style.background_image.css }} background-repeat: no-repeat;
+    {% elif module.style.select_background == 'bg_gradient' %}
+    background: {{ module.style.background_gradient.css }};
+    {% endif %} }
+  
+  {{ moduleId }} .space-sec { {{ module.style.spacing.desktop.css }}; }
+  
+  
+  {{ moduleId }} .zzsplaoverRCinn {  background-color: rgba({{ module.content.background_color.color|convert_rgb }},{{ module.content.background_color.opacity }}%) }
+  
+  {{ moduleId }} .zzsplaoverTab:after {  background-color: rgba({{ module.content.active_line_background_color.color|convert_rgb }},{{ module.content.active_line_background_color.opacity }}%) }
+  
+  
+  
+  
+  
+  
+  @media(max-width: 991px){ {{ moduleId }} .space-sec { {{ module.style.spacing.tablet.css }}; } }
+  
+  @media(max-width: 767px){ {{ moduleId }} .space-sec { {{ module.style.spacing.mobile.css }}; } }
+  
+</style>
+{% end_require_css %}
+
+
+
+
+{% require_js %}
+  <script>
+ 
+$(document).ready(function() {
+    const cycleSpeed = 3000;
+
+    $('.zzsplaoverSec').each(function() {
+        const $sec = $(this);
+        let timer; 
+        
+        // --- NEW: Pull the setting from this specific section's data attribute ---
+        // We convert the string "true"/"false" to an actual boolean
+        const isAutoplayEnabled = $sec.attr('data-autoplay') === "true";
+
+        const stop = () => {
+            if (timer) clearInterval(timer);
+        };
+
+        const start = () => {
+            stop(); 
+            // Now this only checks THIS section's setting
+            if (!isAutoplayEnabled || $(window).width() < 1200) return; 
+
+            timer = setInterval(() => {
+                let $current = $sec.find('.zzsplaoverTab.active');
+                let $nxt = $current.next('.zzsplaoverTab');
+                if ($nxt.length === 0) $nxt = $sec.find('.zzsplaoverTab').first();
+                $nxt.find('h3').trigger('click');
+            }, cycleSpeed);
+        };
+
+        $sec.find('.zzsplaoverRConte').on('mouseenter', stop).on('mouseleave', start);
+
+        $sec.find('.zzsplaoverTab h3').off('click').on('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            const $h3 = $(this);
+            const $tab = $h3.parent();
+            const $cnt = $h3.next();
+            const val = $h3.attr('data-value');
+
+            if ($tab.hasClass('active')) return;
+
+            $sec.find('.zzsplaoverRConte video').each(function() { this.pause(); });
+            $sec.find('.zzsplaoverRConte').stop(true, true).removeClass('active');
+            $sec.find('.zzsplaoverTconte.open').removeClass('open').css('height', 0);
+            $sec.find('.zzsplaoverTab.active').removeClass('active');
+
+            $cnt.addClass('open').css('height', $cnt.prop('scrollHeight') + "px");
+            $tab.addClass('active');
+
+            if (val) $sec.find(val).stop(true, true).addClass('active');
+            
+            // Only restart if THIS section has autoplay enabled
+            if (isAutoplayEnabled) start();
+        });
+
+        $sec.find('.zzsplaoverTab:first-child h3').trigger('click');
+
+        $(window).on('resize', function() {
+            if ($(window).width() < 1200) {
+                stop();
+            } else if (isAutoplayEnabled && $sec.find('.zzsplaoverTab.active').length) {
+                start();
+            }
+        });
+    });
+});
+
+
+  </script>
+{% end_require_js %}
+
+
+
+
+
+
+
+{% endif %}
+
+
+

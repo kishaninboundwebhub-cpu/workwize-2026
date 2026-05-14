@@ -1,0 +1,92 @@
+<div class="blgpst-list newtoc">
+  <h4>TABLE OF CONTENTS</h4>
+  <div class="toc-hubspot">
+     <ul class="toc-hublist">
+       
+    </ul>
+  </div>
+</div>
+
+{% require_js %}
+<script>
+$(document).ready(function(){ 
+  
+  $(".body-container--landing-page .row-number-5 .hs_cos_wrapper_type_rich_text h2, .body-container--landing-page .row-number-5 .hs_cos_wrapper_type_rich_text h3").each(function() {
+    if($(this).html() != "&nbsp;"){		 
+	     $('.toc-hubspot ul').append('<li class="toc-lst2"><a href="#'+$(this).text().replaceAll(".", "-").replaceAll("(", "-") .replaceAll(")", "-").replaceAll("—", "-").replaceAll(",", "-").replace(/(=\w)|(\s\w)|(%20\w)/g,val=>val.toLowerCase()).replaceAll(/(=\w)|(\s\w)|(%20\w)/g,val=>val.toLowerCase()).replaceAll(" ", "-").replaceAll("  ", "-").replaceAll(":", "-") .replaceAll("?", "-") .replaceAll("%", "-") .replaceAll("#", "-") .replaceAll("@", "-") .replaceAll("/", "-") .replaceAll("!", "-") .replaceAll("&", "-")+'">'+$(this).text()+'</a></li>');
+      
+    }	
+	});
+  
+     var seen = {};
+    $('.blgpst-list .toc-hublist li a').each(function() {
+      var txt = $(this).text().trim().toLowerCase()
+      if (seen[txt]) {
+        $(this).parent().remove();
+      } else {
+        seen[txt] = true;
+      }
+    });
+   // toLowerCase();
+  
+	var $headers = $('.body-container--landing-page .row-number-5 .hs_cos_wrapper_type_rich_text h2, .body-container--landing-page .row-number-5 .hs_cos_wrapper_type_rich_text h3');
+	$headers.attr("id", function() {
+		return $(this)
+		.text() // get the h1 text
+		.replace(/(=\w)|(\s\w)|(%20\w)/g,val=>val.toLowerCase())
+		.replaceAll(/(=\w)|(\s\w)|(%20\w)/g,val=>val.toLowerCase())
+		.replaceAll(" ", "-")
+		.replaceAll("  ", "-")
+		.replaceAll(":", "-")
+		.replaceAll("?", "-")
+		.replaceAll("%", "-")
+		.replaceAll("#", "-")
+		.replaceAll("@", "-")
+		.replaceAll("/", "-")
+		.replaceAll("!", "-")
+		.replaceAll(",", "-")
+		.replaceAll("—", "-")
+		.replaceAll("(", "-")
+	  .replaceAll(")", "-")
+	  .replaceAll(".", "-")
+	  .replaceAll("&", "-");
+	});
+
+	 
+	  var sections12 = $('.body-container--landing-page .row-number-5 .hs_cos_wrapper_type_rich_text h2, .body-container--landing-page .row-number-5 .hs_cos_wrapper_type_rich_text h3');
+    var nav12 = $('.toc-hublist');
+    var nav_height12 = nav12.outerHeight();
+    
+		$(window).on('scroll', function () {
+			var cur_pos12 = $(this).scrollTop();
+			 
+			sections12.each(function() {
+				var top12 = $(this).offset().top - 68 ,
+						bottom12 = top12 + $(this).outerHeight();
+
+				if (cur_pos12 >= top12 && cur_pos12 <= bottom12) {
+					nav12.find('.toc-lst2 a').removeClass('active-tab');
+					sections12.removeClass('active');
+
+					$(this).addClass('active');
+					nav12.find('.toc-lst2 > a[href="#'+$(this).attr('id')+'"]').addClass('active-tab');
+				}
+			});
+		});
+		setTimeout(function(){
+		nav12.find(" .toc-lst2 > a[href^='#']").on('click', function(e) {
+      e.preventDefault()
+			var $el12 = $(this);
+			var id = $el12.attr('href');
+
+			$('html, body').animate({
+				scrollTop: $(id).offset().top - 58
+			}, 500);
+
+			return false;
+		});
+   }, 1000);
+	 	 
+});
+</script>
+{% end_require_js %}

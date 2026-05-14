@@ -1,0 +1,63 @@
+{% if module.show_hide_ %}
+{% set moduleId = '#hs_cos_wrapper_{{ name }}' %}
+{% if dynamic_page_hubdb_row %}
+<div class="zgzh-sec fullwidth bgsec space-sec">
+ <div class="wrapper">
+  <div class="zigzag-rw flexwrap img_right quickfact-zigzag">
+         <div class="zigzag-img cflag">
+           <div class="zigzag-img-bg">
+              {% if module.select_image_option == 'flag' %}
+               <img class="img-flag" src="{{ dynamic_page_hubdb_row.flag.url }}" alt="{{ dynamic_page_hubdb_row.hs_name }}" loading="lazy">
+              {% elif module.select_image_option == 'image' %}
+                <img class="img-image" src="{{ dynamic_page_hubdb_row.country_img.url }}" alt="{{ dynamic_page_hubdb_row.hs_name }}" loading="lazy">
+              {% else %}
+                <img class="img-else" src="{{ dynamic_page_hubdb_row.country_img.url }}" alt="{{ dynamic_page_hubdb_row.hs_name }}" loading="lazy">
+              {% endif %}  
+           </div>
+         </div>
+         <div class="zigzag-content">
+            <div class="sectitle">
+               <h3>{{ module.title }} {{ dynamic_page_hubdb_row.hs_name }}</h3>
+            </div>
+            <div class="sectxt zagzag-txt">
+               <ul>
+          <li><strong>Keyboard layout:</strong> {{ dynamic_page_hubdb_row.keyboardlayout }}</li>
+          <li><strong>Power plug:</strong> {{ dynamic_page_hubdb_row.powerplug }}</li>
+          <li><strong>Voltage:</strong> {{ dynamic_page_hubdb_row.voltage }} </li>
+          <li><strong>Dialcode:</strong> {{ dynamic_page_hubdb_row.dialcode }}</li>
+          <li><strong>Local regulations:</strong> {{ dynamic_page_hubdb_row.locallaws }}</li>
+          <li><strong>Local safety standards:</strong> {{ dynamic_page_hubdb_row.safetystandards }}</li>
+          <li><strong>Standard OS language:</strong> {{ dynamic_page_hubdb_row.oslanguage }}</li>
+          <li><strong>Shipping regulations:</strong> {{ dynamic_page_hubdb_row.shippingregulations }}</li>
+        </ul>
+            </div>
+         </div>
+      </div>
+   
+   
+   
+ </div>
+</div>
+
+
+{% require_css %}
+<style>
+  {{ moduleId }} .bgsec { {% if module.style.select_background == 'bg_color' %}
+    background-color: rgba({{ module.style.background_color.color|convert_rgb }},{{ module.style.background_color.opacity ~ '%' }});
+    {% elif module.style.select_background == 'bg_image' %}
+    {{ module.style.background_image.css }} background-repeat: no-repeat;
+    {% elif module.style.select_background == 'bg_gradient' %}
+    background: {{ module.style.background_gradient.css }};
+    {% endif %} }
+  
+  {{ moduleId }} .space-sec { {{ module.style.spacing.desktop.css }}; }
+  
+  
+  @media(max-width: 991px){ {{ moduleId }} .space-sec { {{ module.style.spacing.tablet.css }}; } }
+  
+  @media(max-width: 767px){ {{ moduleId }} .space-sec { {{ module.style.spacing.mobile.css }}; } }
+  
+</style>
+{% end_require_css %}
+{% endif %}
+{% endif %}

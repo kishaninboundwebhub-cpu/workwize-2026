@@ -1,0 +1,8 @@
+.pricing-cure-box { display: none; }
+.pricing-cure-box:first-child { display: block; }
+.pricing-cure-switcher-top { margin: 0 0 50px; text-align: center; }
+.pricing-cure-switcher { display: flex; flex-wrap: wrap; justify-content: center; row-gap: 10px; column-gap: 10px; }
+.pricing-cure-switcher a { border: 1px solid #12275066; border-radius: 100px; color: #122750; font-family: Okta Neue; font-size: 14px; font-weight: 400; line-height: normal; padding: 6px 16px; }
+.pricing-cure-switcher a.active, .pricing-cure-switcher a:hover { background-color: #122750; border-color: #122750; color: #FFFFFF; }
+.pricing-cure-switcher-top h3 { margin: 0 0 16px; font-size: 18px; line-height: normal; }
+.pricing-cure-switcher a span { vertical-align: text-top; }

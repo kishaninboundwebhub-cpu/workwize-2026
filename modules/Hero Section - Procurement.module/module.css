@@ -1,0 +1,5 @@
+.hrprocu-txt table tr td { border: 0; }
+@media(max-width:350px){
+.emb-meeting iframe { position: relative; left: -16px;}
+  
+}

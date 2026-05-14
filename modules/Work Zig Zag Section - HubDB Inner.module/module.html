@@ -1,0 +1,69 @@
+{% if dynamic_page_hubdb_row %}
+{% set moduleId = '#hs_cos_wrapper_{{ name }}' %}
+<div class="fullwidth zigzag-sec bgsec space-sec">
+    <div class="wrapper">
+      <div class="zigzag-header-area">
+        <div class="zigzag-header-wrap">
+        <h2> {{ module.content.title }} </h2>
+        <div class="hw-intro">
+            {{ module.content.text }}
+        </div>
+        </div>
+      </div>
+      <div class="secinner zigzag-inner">
+        {% for item in module.content.content_item %}
+        <div class="zigzag-rw flexwrap img_left">
+         <div class="zigzag-img">
+            {% if item.image_field.src %}
+            {% set sizeAttrs = 'width="{{ item.image_field.width|escape_attr }}" height="{{ item.image_field.height|escape_attr }}"' %}
+            {% if item.image_field.size_type == 'auto' %}
+            {% set sizeAttrs = 'width="{{ item.image_field.width|escape_attr }}" height="{{ item.image_field.height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+            {% elif item.image_field.size_type == 'auto_custom_max' %}
+            {% set sizeAttrs = 'width="{{ item.image_field.max_width|escape_attr }}" height="{{ item.image_field.max_height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+            {% endif %}
+            {% set loadingAttr = item.image_field.loading != 'disabled' ? 'loading="{{ item.image_field.loading|escape_attr }}"' : '' %}
+            <img src="{{ item.image_field.src|escape_url }}" alt="{{ item.image_field.alt|escape_attr }}" {{ loadingAttr }} {{ sizeAttrs }}>
+            {% endif %}
+         </div>
+         <div class="zigzag-content">
+            <div class="zagzag-no">{{  loop.index }}</div>
+            <div class="sectitle">
+               <h3>{{ item.title }}</h3>
+            </div>
+            <div class="sectxt zagzag-txt">
+               {{ item.text }}
+            </div>
+         </div>
+      </div>
+      {% endfor %}
+        
+      </div>
+    </div>
+  </div>
+
+
+{% require_css %}
+<style>
+  {{ moduleId }} .bgsec {  background-color:rgba({{ module.styles.background_color.color|convert_rgb }},{{ module.styles.background_color.opacity }}%); }
+  
+  {{ moduleId }} .space-sec { {{ module.style.spacing.desktop.css }}; }
+  
+  
+  @media(min-width: 992px){  
+   {{ moduleId }} .zigzag-rw:nth-child(even) { flex-flow: row-reverse; }
+   {{ moduleId }} .zigzag-rw:nth-child(even) .zigzag-content { padding: 0 110px 0 0; }
+  
+  }
+  @media(max-width: 991px){ 
+    {{ moduleId }} .space-sec { {{ module.style.spacing.tablet.css }}; }
+  
+  
+  }
+  
+  @media(max-width: 767px){ {{ moduleId }} .space-sec { {{ module.style.spacing.mobile.css }}; } }
+  
+</style>
+{% end_require_css %}
+
+
+{% endif %}

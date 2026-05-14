@@ -1,0 +1,40 @@
+<!--
+  templateType: "page"
+  isAvailableForNewContent: false
+-->
+{% set clean_content = content.post_body|striptags %}
+{% set word_count = clean_content|split(" ")|length %}
+{% set reading_time = (word_count / 220)|round(0, 'ceil') %}
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": ["Article","TechArticle"],
+  "@id": "{{ content.absolute_url }}#casestudy",
+  "headline": {{ content.name|striptags|tojson }},
+  "description": {{ content.meta_description|default(content.post_summary)|striptags|tojson }},
+  "datePublished": "{{ content.publish_date|datetimeformat('%Y-%m-%dT%H:%M:%SZ') }}",
+  "dateModified": "{{ content.updated|datetimeformat('%Y-%m-%dT%H:%M:%SZ') }}",
+  "author": {
+    "@type": "Organization",
+    "name": "Workwize",
+    "url": "https://www.goworkwize.com"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Workwize",
+    "logo": "https://www.goworkwize.com/hubfs/Workwize/Image/Workwize%20Logo%20Sky%20Blue%20icon.svg"
+  },
+  {% if content.featured_image %}
+  "image": [
+    "{{ content.featured_image }}"
+  ],
+  {% endif %}
+  "wordCount": {{ word_count }},
+  "timeRequired": "PT{{ reading_time }}M",
+  "mainEntityOfPage": 
+    {
+      "@id": "{{ content.absolute_url }}#webpage"
+    }
+}
+</script>

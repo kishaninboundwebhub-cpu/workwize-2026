@@ -1,0 +1,1391 @@
+[ {
+  "id" : "e181e1ee-ef06-5ba8-0ad3-f63113a45d24",
+  "name" : "style",
+  "label" : "Style",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "36fd79d2-1107-4452-d226-d4c096723f16",
+    "name" : "select_background",
+    "label" : "Select Background",
+    "required" : false,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "bg_color", "Background Color" ], [ "bg_image", "Background Image" ], [ "bg_gradient", "Background Gradient" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : ""
+  }, {
+    "id" : "60d0ddef-fb34-a99a-73cb-bda8b10e0fc9",
+    "name" : "background_color",
+    "label" : "Background Color",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "style.select_background",
+      "controlling_value_regex" : "bg_color",
+      "property" : null,
+      "operator" : "MATCHES_REGEX",
+      "access" : null
+    },
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#122750",
+      "opacity" : 100
+    }
+  }, {
+    "id" : "19f0609d-595d-6ef3-f639-3f6006e095fb",
+    "name" : "background_image",
+    "label" : "Background Image",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "style.select_background",
+      "controlling_value_regex" : "bg_image",
+      "property" : null,
+      "operator" : "MATCHES_REGEX",
+      "access" : null
+    },
+    "type" : "backgroundimage",
+    "display_width" : null,
+    "default" : {
+      "src" : "",
+      "background_position" : "MIDDLE_CENTER",
+      "background_size" : "cover"
+    }
+  }, {
+    "id" : "0df6d4e0-395b-eda2-ec5a-1d08ad6c8d35",
+    "name" : "background_gradient",
+    "label" : "Background Gradient",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "style.select_background",
+      "controlling_value_regex" : "bg_gradient",
+      "property" : null,
+      "operator" : "MATCHES_REGEX",
+      "access" : null
+    },
+    "type" : "gradient",
+    "display_width" : null,
+    "default" : { }
+  }, {
+    "id" : "afeb177b-c31d-1412-5116-70d6f85c5565",
+    "name" : "spacing",
+    "label" : "Spacing",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "d59d9e4c-264e-54fa-99b7-0ff07897b867",
+      "name" : "desktop",
+      "label" : "Desktop",
+      "required" : false,
+      "locked" : false,
+      "type" : "spacing",
+      "display_width" : null,
+      "default" : {
+        "padding" : {
+          "top" : {
+            "value" : 30,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 30,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      }
+    }, {
+      "id" : "0c762a95-1339-05fa-721d-3d79f41b571e",
+      "name" : "tablet",
+      "label" : "Tablet",
+      "required" : false,
+      "locked" : false,
+      "type" : "spacing",
+      "display_width" : null,
+      "default" : {
+        "padding" : {
+          "top" : {
+            "value" : 30,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 30,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      }
+    }, {
+      "id" : "0a8a8c35-4008-f2aa-311a-12325d67b19c",
+      "name" : "mobile",
+      "label" : "Mobile",
+      "required" : false,
+      "locked" : false,
+      "type" : "spacing",
+      "display_width" : null,
+      "default" : {
+        "padding" : {
+          "top" : {
+            "value" : 30,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 30,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      }
+    } ],
+    "tab" : "STYLE",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : {
+      "desktop" : {
+        "padding" : {
+          "top" : {
+            "value" : 30,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 30,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      },
+      "tablet" : {
+        "padding" : {
+          "top" : {
+            "value" : 30,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 30,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      },
+      "mobile" : {
+        "padding" : {
+          "top" : {
+            "value" : 30,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 30,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      }
+    }
+  } ],
+  "tab" : "STYLE",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "select_background" : "",
+    "background_color" : {
+      "color" : "#122750",
+      "opacity" : 100
+    },
+    "background_image" : {
+      "src" : "",
+      "background_position" : "MIDDLE_CENTER",
+      "background_size" : "cover"
+    },
+    "background_gradient" : { },
+    "spacing" : {
+      "desktop" : {
+        "padding" : {
+          "top" : {
+            "value" : 30,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 30,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      },
+      "tablet" : {
+        "padding" : {
+          "top" : {
+            "value" : 30,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 30,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      },
+      "mobile" : {
+        "padding" : {
+          "top" : {
+            "value" : 30,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 30,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      }
+    }
+  }
+}, {
+  "id" : "55ccd3e2-31aa-4e79-9772-80facd954415",
+  "name" : "show_hide_",
+  "label" : "Section [Show/ Hide]",
+  "required" : false,
+  "locked" : false,
+  "display" : "toggle",
+  "type" : "boolean",
+  "display_width" : null,
+  "default" : true
+}, {
+  "id" : "074c4f36-b9e5-ed27-bd45-233e88d2d207",
+  "name" : "top_content",
+  "label" : "Top Content",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "496d4407-abd4-c6ea-6410-2a7f84894093",
+    "name" : "title",
+    "label" : "Title",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "The full list of tools Workwize works with <span>(including yours).</span>"
+  }, {
+    "id" : "22d18f76-6818-75f3-d727-d5920f459ad0",
+    "name" : "text",
+    "label" : "Text",
+    "required" : false,
+    "locked" : false,
+    "type" : "richtext",
+    "display_width" : null,
+    "default" : "<p><span>Browse the full integration library and see how Workwize fits into the stack your team already runs on.</span>&nbsp;</p>"
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "title" : "The full list of tools Workwize works with <span>(including yours).</span>",
+    "text" : "<p><span>Browse the full integration library and see how Workwize fits into the stack your team already runs on.</span>&nbsp;</p>"
+  }
+}, {
+  "id" : "90a68aef-7302-50f0-1454-7796665ac4fd",
+  "name" : "list_inner",
+  "label" : "List Inner",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : null,
+    "max" : null,
+    "sorting_label_field" : "bc0f6621-29c4-fe0e-d8e2-c117a14e5856",
+    "default" : 4
+  },
+  "children" : [ {
+    "id" : "bc54c138-fd06-3684-5d01-f8cbaa0ad8b4",
+    "name" : "tab_names",
+    "label" : "Tab Name",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "MDM"
+  }, {
+    "id" : "bc0f6621-29c4-fe0e-d8e2-c117a14e5856",
+    "name" : "title",
+    "label" : "Title",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "HRIS"
+  }, {
+    "id" : "febb63be-1207-21ca-2b4d-87c8bcee2fa2",
+    "name" : "text",
+    "label" : "Text",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Ensure that hardware onboarding and offboarding are handled the moment HR makes the call."
+  }, {
+    "id" : "1b930279-9bc1-07ea-f9ca-4c4cff93436b",
+    "name" : "list_item",
+    "label" : "List Item",
+    "required" : false,
+    "locked" : false,
+    "occurrence" : {
+      "min" : null,
+      "max" : null,
+      "sorting_label_field" : null,
+      "default" : 12
+    },
+    "children" : [ {
+      "id" : "6a05298f-1ab1-e8d5-6890-a9b9b3b6beac",
+      "name" : "text_field",
+      "label" : "Text",
+      "required" : false,
+      "locked" : false,
+      "allow_new_line" : false,
+      "type" : "text",
+      "display_width" : null,
+      "default" : "BambooHR + Workwize"
+    }, {
+      "id" : "b2ee814b-8384-b2c8-1cd8-bbd156fbc6b5",
+      "name" : "image",
+      "label" : "Image",
+      "required" : false,
+      "locked" : false,
+      "responsive" : true,
+      "resizable" : true,
+      "show_loading" : false,
+      "type" : "image",
+      "display_width" : null,
+      "default" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/image%201519.svg",
+        "alt" : "image 1519",
+        "loading" : "lazy",
+        "width" : 54,
+        "height" : 48,
+        "max_width" : 54,
+        "max_height" : 48
+      }
+    }, {
+      "id" : "cd74d990-3610-2735-cc57-ab1f0b9f1315",
+      "name" : "link_field",
+      "label" : "Link",
+      "required" : false,
+      "locked" : false,
+      "supported_types" : [ "EXTERNAL", "FILE", "CONTENT", "BLOG", "CALL_TO_ACTION", "PAYMENT", "EMAIL_ADDRESS", "PHONE_NUMBER", "WHATSAPP_NUMBER" ],
+      "show_advanced_rel_options" : false,
+      "type" : "link",
+      "display_width" : null,
+      "default" : {
+        "url" : {
+          "content_id" : null,
+          "type" : "EXTERNAL",
+          "href" : ""
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false
+      }
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : [ {
+      "text_field" : "BambooHR + Workwize",
+      "image" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/image%201519.svg",
+        "alt" : "image 1519",
+        "loading" : "lazy",
+        "width" : 54,
+        "height" : 48,
+        "max_width" : 54,
+        "max_height" : 48
+      },
+      "link_field" : {
+        "url" : {
+          "content_id" : null,
+          "type" : "EXTERNAL",
+          "href" : ""
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false
+      }
+    }, {
+      "text_field" : "BambooHR + Workwize",
+      "image" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/image%201519.svg",
+        "alt" : "image 1519",
+        "loading" : "lazy",
+        "width" : 54,
+        "height" : 48,
+        "max_width" : 54,
+        "max_height" : 48
+      },
+      "link_field" : {
+        "url" : {
+          "content_id" : null,
+          "type" : "EXTERNAL",
+          "href" : ""
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false
+      }
+    }, {
+      "text_field" : "BambooHR + Workwize",
+      "image" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/image%201519.svg",
+        "alt" : "image 1519",
+        "loading" : "lazy",
+        "width" : 54,
+        "height" : 48,
+        "max_width" : 54,
+        "max_height" : 48
+      },
+      "link_field" : {
+        "url" : {
+          "content_id" : null,
+          "type" : "EXTERNAL",
+          "href" : ""
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false
+      }
+    }, {
+      "text_field" : "BambooHR + Workwize",
+      "image" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/image%201519.svg",
+        "alt" : "image 1519",
+        "loading" : "lazy",
+        "width" : 54,
+        "height" : 48,
+        "max_width" : 54,
+        "max_height" : 48
+      },
+      "link_field" : {
+        "url" : {
+          "content_id" : null,
+          "type" : "EXTERNAL",
+          "href" : ""
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false
+      }
+    }, {
+      "text_field" : "BambooHR + Workwize",
+      "image" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/image%201519.svg",
+        "alt" : "image 1519",
+        "loading" : "lazy",
+        "width" : 54,
+        "height" : 48,
+        "max_width" : 54,
+        "max_height" : 48
+      },
+      "link_field" : {
+        "url" : {
+          "content_id" : null,
+          "type" : "EXTERNAL",
+          "href" : ""
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false
+      }
+    }, {
+      "text_field" : "BambooHR + Workwize",
+      "image" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/image%201519.svg",
+        "alt" : "image 1519",
+        "loading" : "lazy",
+        "width" : 54,
+        "height" : 48,
+        "max_width" : 54,
+        "max_height" : 48
+      },
+      "link_field" : {
+        "url" : {
+          "content_id" : null,
+          "type" : "EXTERNAL",
+          "href" : ""
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false
+      }
+    }, {
+      "text_field" : "BambooHR + Workwize",
+      "image" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/image%201519.svg",
+        "alt" : "image 1519",
+        "loading" : "lazy",
+        "width" : 54,
+        "height" : 48,
+        "max_width" : 54,
+        "max_height" : 48
+      },
+      "link_field" : {
+        "url" : {
+          "content_id" : null,
+          "type" : "EXTERNAL",
+          "href" : ""
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false
+      }
+    }, {
+      "text_field" : "BambooHR + Workwize",
+      "image" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/image%201519.svg",
+        "alt" : "image 1519",
+        "loading" : "lazy",
+        "width" : 54,
+        "height" : 48,
+        "max_width" : 54,
+        "max_height" : 48
+      },
+      "link_field" : {
+        "url" : {
+          "content_id" : null,
+          "type" : "EXTERNAL",
+          "href" : ""
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false
+      }
+    }, {
+      "text_field" : "BambooHR + Workwize",
+      "image" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/image%201519.svg",
+        "alt" : "image 1519",
+        "loading" : "lazy",
+        "width" : 54,
+        "height" : 48,
+        "max_width" : 54,
+        "max_height" : 48
+      },
+      "link_field" : {
+        "url" : {
+          "content_id" : null,
+          "type" : "EXTERNAL",
+          "href" : ""
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false
+      }
+    }, {
+      "text_field" : "BambooHR + Workwize",
+      "image" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/image%201519.svg",
+        "alt" : "image 1519",
+        "loading" : "lazy",
+        "width" : 54,
+        "height" : 48,
+        "max_width" : 54,
+        "max_height" : 48
+      },
+      "link_field" : {
+        "url" : {
+          "content_id" : null,
+          "type" : "EXTERNAL",
+          "href" : ""
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false
+      }
+    }, {
+      "text_field" : "BambooHR + Workwize",
+      "image" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/image%201519.svg",
+        "alt" : "image 1519",
+        "loading" : "lazy",
+        "width" : 54,
+        "height" : 48,
+        "max_width" : 54,
+        "max_height" : 48
+      },
+      "link_field" : {
+        "url" : {
+          "content_id" : null,
+          "type" : "EXTERNAL",
+          "href" : ""
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false
+      }
+    }, {
+      "text_field" : "BambooHR + Workwize",
+      "image" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/image%201519.svg",
+        "alt" : "image 1519",
+        "loading" : "lazy",
+        "width" : 54,
+        "height" : 48,
+        "max_width" : 54,
+        "max_height" : 48
+      },
+      "link_field" : {
+        "url" : {
+          "content_id" : null,
+          "type" : "EXTERNAL",
+          "href" : ""
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false
+      }
+    } ]
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : [ {
+    "tab_names" : "MDM",
+    "title" : "HRIS",
+    "text" : "Ensure that hardware onboarding and offboarding are handled the moment HR makes the call.",
+    "list_item" : [ {
+      "text_field" : "BambooHR + Workwize",
+      "image" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/image%201519.svg",
+        "alt" : "image 1519",
+        "loading" : "lazy",
+        "width" : 54,
+        "height" : 48,
+        "max_width" : 54,
+        "max_height" : 48
+      }
+    }, {
+      "text_field" : "BambooHR + Workwize",
+      "image" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/image%201519.svg",
+        "alt" : "image 1519",
+        "loading" : "lazy",
+        "width" : 54,
+        "height" : 48,
+        "max_width" : 54,
+        "max_height" : 48
+      }
+    }, {
+      "text_field" : "BambooHR + Workwize",
+      "image" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/image%201519.svg",
+        "alt" : "image 1519",
+        "loading" : "lazy",
+        "width" : 54,
+        "height" : 48,
+        "max_width" : 54,
+        "max_height" : 48
+      }
+    }, {
+      "text_field" : "BambooHR + Workwize",
+      "image" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/image%201519.svg",
+        "alt" : "image 1519",
+        "loading" : "lazy",
+        "width" : 54,
+        "height" : 48,
+        "max_width" : 54,
+        "max_height" : 48
+      }
+    }, {
+      "text_field" : "BambooHR + Workwize",
+      "image" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/image%201519.svg",
+        "alt" : "image 1519",
+        "loading" : "lazy",
+        "width" : 54,
+        "height" : 48,
+        "max_width" : 54,
+        "max_height" : 48
+      }
+    }, {
+      "text_field" : "BambooHR + Workwize",
+      "image" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/image%201519.svg",
+        "alt" : "image 1519",
+        "loading" : "lazy",
+        "width" : 54,
+        "height" : 48,
+        "max_width" : 54,
+        "max_height" : 48
+      }
+    }, {
+      "text_field" : "BambooHR + Workwize",
+      "image" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/image%201519.svg",
+        "alt" : "image 1519",
+        "loading" : "lazy",
+        "width" : 54,
+        "height" : 48,
+        "max_width" : 54,
+        "max_height" : 48
+      }
+    }, {
+      "text_field" : "BambooHR + Workwize",
+      "image" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/image%201519.svg",
+        "alt" : "image 1519",
+        "loading" : "lazy",
+        "width" : 54,
+        "height" : 48,
+        "max_width" : 54,
+        "max_height" : 48
+      }
+    }, {
+      "text_field" : "BambooHR + Workwize",
+      "image" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/image%201519.svg",
+        "alt" : "image 1519",
+        "loading" : "lazy",
+        "width" : 54,
+        "height" : 48,
+        "max_width" : 54,
+        "max_height" : 48
+      }
+    }, {
+      "text_field" : "BambooHR + Workwize",
+      "image" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/image%201519.svg",
+        "alt" : "image 1519",
+        "loading" : "lazy",
+        "width" : 54,
+        "height" : 48,
+        "max_width" : 54,
+        "max_height" : 48
+      }
+    }, {
+      "text_field" : "BambooHR + Workwize",
+      "image" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/image%201519.svg",
+        "alt" : "image 1519",
+        "loading" : "lazy",
+        "width" : 54,
+        "height" : 48,
+        "max_width" : 54,
+        "max_height" : 48
+      }
+    }, {
+      "text_field" : "BambooHR + Workwize",
+      "image" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/image%201519.svg",
+        "alt" : "image 1519",
+        "loading" : "lazy",
+        "width" : 54,
+        "height" : 48,
+        "max_width" : 54,
+        "max_height" : 48
+      }
+    } ]
+  }, {
+    "tab_names" : "MDM",
+    "title" : "HRIS",
+    "text" : "Ensure that hardware onboarding and offboarding are handled the moment HR makes the call.",
+    "list_item" : [ {
+      "text_field" : "BambooHR + Workwize",
+      "image" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/image%201519.svg",
+        "alt" : "image 1519",
+        "loading" : "lazy",
+        "width" : 54,
+        "height" : 48,
+        "max_width" : 54,
+        "max_height" : 48
+      }
+    }, {
+      "text_field" : "BambooHR + Workwize",
+      "image" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/image%201519.svg",
+        "alt" : "image 1519",
+        "loading" : "lazy",
+        "width" : 54,
+        "height" : 48,
+        "max_width" : 54,
+        "max_height" : 48
+      }
+    }, {
+      "text_field" : "BambooHR + Workwize",
+      "image" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/image%201519.svg",
+        "alt" : "image 1519",
+        "loading" : "lazy",
+        "width" : 54,
+        "height" : 48,
+        "max_width" : 54,
+        "max_height" : 48
+      }
+    }, {
+      "text_field" : "BambooHR + Workwize",
+      "image" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/image%201519.svg",
+        "alt" : "image 1519",
+        "loading" : "lazy",
+        "width" : 54,
+        "height" : 48,
+        "max_width" : 54,
+        "max_height" : 48
+      }
+    }, {
+      "text_field" : "BambooHR + Workwize",
+      "image" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/image%201519.svg",
+        "alt" : "image 1519",
+        "loading" : "lazy",
+        "width" : 54,
+        "height" : 48,
+        "max_width" : 54,
+        "max_height" : 48
+      }
+    }, {
+      "text_field" : "BambooHR + Workwize",
+      "image" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/image%201519.svg",
+        "alt" : "image 1519",
+        "loading" : "lazy",
+        "width" : 54,
+        "height" : 48,
+        "max_width" : 54,
+        "max_height" : 48
+      }
+    }, {
+      "text_field" : "BambooHR + Workwize",
+      "image" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/image%201519.svg",
+        "alt" : "image 1519",
+        "loading" : "lazy",
+        "width" : 54,
+        "height" : 48,
+        "max_width" : 54,
+        "max_height" : 48
+      }
+    }, {
+      "text_field" : "BambooHR + Workwize",
+      "image" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/image%201519.svg",
+        "alt" : "image 1519",
+        "loading" : "lazy",
+        "width" : 54,
+        "height" : 48,
+        "max_width" : 54,
+        "max_height" : 48
+      }
+    }, {
+      "text_field" : "BambooHR + Workwize",
+      "image" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/image%201519.svg",
+        "alt" : "image 1519",
+        "loading" : "lazy",
+        "width" : 54,
+        "height" : 48,
+        "max_width" : 54,
+        "max_height" : 48
+      }
+    }, {
+      "text_field" : "BambooHR + Workwize",
+      "image" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/image%201519.svg",
+        "alt" : "image 1519",
+        "loading" : "lazy",
+        "width" : 54,
+        "height" : 48,
+        "max_width" : 54,
+        "max_height" : 48
+      }
+    }, {
+      "text_field" : "BambooHR + Workwize",
+      "image" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/image%201519.svg",
+        "alt" : "image 1519",
+        "loading" : "lazy",
+        "width" : 54,
+        "height" : 48,
+        "max_width" : 54,
+        "max_height" : 48
+      }
+    }, {
+      "text_field" : "BambooHR + Workwize",
+      "image" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/image%201519.svg",
+        "alt" : "image 1519",
+        "loading" : "lazy",
+        "width" : 54,
+        "height" : 48,
+        "max_width" : 54,
+        "max_height" : 48
+      }
+    } ]
+  }, {
+    "tab_names" : "MDM",
+    "title" : "HRIS",
+    "text" : "Ensure that hardware onboarding and offboarding are handled the moment HR makes the call.",
+    "list_item" : [ {
+      "text_field" : "BambooHR + Workwize",
+      "image" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/image%201519.svg",
+        "alt" : "image 1519",
+        "loading" : "lazy",
+        "width" : 54,
+        "height" : 48,
+        "max_width" : 54,
+        "max_height" : 48
+      }
+    }, {
+      "text_field" : "BambooHR + Workwize",
+      "image" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/image%201519.svg",
+        "alt" : "image 1519",
+        "loading" : "lazy",
+        "width" : 54,
+        "height" : 48,
+        "max_width" : 54,
+        "max_height" : 48
+      }
+    }, {
+      "text_field" : "BambooHR + Workwize",
+      "image" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/image%201519.svg",
+        "alt" : "image 1519",
+        "loading" : "lazy",
+        "width" : 54,
+        "height" : 48,
+        "max_width" : 54,
+        "max_height" : 48
+      }
+    }, {
+      "text_field" : "BambooHR + Workwize",
+      "image" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/image%201519.svg",
+        "alt" : "image 1519",
+        "loading" : "lazy",
+        "width" : 54,
+        "height" : 48,
+        "max_width" : 54,
+        "max_height" : 48
+      }
+    }, {
+      "text_field" : "BambooHR + Workwize",
+      "image" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/image%201519.svg",
+        "alt" : "image 1519",
+        "loading" : "lazy",
+        "width" : 54,
+        "height" : 48,
+        "max_width" : 54,
+        "max_height" : 48
+      }
+    }, {
+      "text_field" : "BambooHR + Workwize",
+      "image" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/image%201519.svg",
+        "alt" : "image 1519",
+        "loading" : "lazy",
+        "width" : 54,
+        "height" : 48,
+        "max_width" : 54,
+        "max_height" : 48
+      }
+    }, {
+      "text_field" : "BambooHR + Workwize",
+      "image" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/image%201519.svg",
+        "alt" : "image 1519",
+        "loading" : "lazy",
+        "width" : 54,
+        "height" : 48,
+        "max_width" : 54,
+        "max_height" : 48
+      }
+    }, {
+      "text_field" : "BambooHR + Workwize",
+      "image" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/image%201519.svg",
+        "alt" : "image 1519",
+        "loading" : "lazy",
+        "width" : 54,
+        "height" : 48,
+        "max_width" : 54,
+        "max_height" : 48
+      }
+    }, {
+      "text_field" : "BambooHR + Workwize",
+      "image" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/image%201519.svg",
+        "alt" : "image 1519",
+        "loading" : "lazy",
+        "width" : 54,
+        "height" : 48,
+        "max_width" : 54,
+        "max_height" : 48
+      }
+    }, {
+      "text_field" : "BambooHR + Workwize",
+      "image" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/image%201519.svg",
+        "alt" : "image 1519",
+        "loading" : "lazy",
+        "width" : 54,
+        "height" : 48,
+        "max_width" : 54,
+        "max_height" : 48
+      }
+    }, {
+      "text_field" : "BambooHR + Workwize",
+      "image" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/image%201519.svg",
+        "alt" : "image 1519",
+        "loading" : "lazy",
+        "width" : 54,
+        "height" : 48,
+        "max_width" : 54,
+        "max_height" : 48
+      }
+    }, {
+      "text_field" : "BambooHR + Workwize",
+      "image" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/image%201519.svg",
+        "alt" : "image 1519",
+        "loading" : "lazy",
+        "width" : 54,
+        "height" : 48,
+        "max_width" : 54,
+        "max_height" : 48
+      }
+    } ]
+  }, {
+    "tab_names" : "MDM",
+    "title" : "HRIS",
+    "text" : "Ensure that hardware onboarding and offboarding are handled the moment HR makes the call.",
+    "list_item" : [ {
+      "text_field" : "BambooHR + Workwize",
+      "image" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/image%201519.svg",
+        "alt" : "image 1519",
+        "loading" : "lazy",
+        "width" : 54,
+        "height" : 48,
+        "max_width" : 54,
+        "max_height" : 48
+      }
+    }, {
+      "text_field" : "BambooHR + Workwize",
+      "image" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/image%201519.svg",
+        "alt" : "image 1519",
+        "loading" : "lazy",
+        "width" : 54,
+        "height" : 48,
+        "max_width" : 54,
+        "max_height" : 48
+      }
+    }, {
+      "text_field" : "BambooHR + Workwize",
+      "image" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/image%201519.svg",
+        "alt" : "image 1519",
+        "loading" : "lazy",
+        "width" : 54,
+        "height" : 48,
+        "max_width" : 54,
+        "max_height" : 48
+      }
+    }, {
+      "text_field" : "BambooHR + Workwize",
+      "image" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/image%201519.svg",
+        "alt" : "image 1519",
+        "loading" : "lazy",
+        "width" : 54,
+        "height" : 48,
+        "max_width" : 54,
+        "max_height" : 48
+      }
+    }, {
+      "text_field" : "BambooHR + Workwize",
+      "image" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/image%201519.svg",
+        "alt" : "image 1519",
+        "loading" : "lazy",
+        "width" : 54,
+        "height" : 48,
+        "max_width" : 54,
+        "max_height" : 48
+      }
+    }, {
+      "text_field" : "BambooHR + Workwize",
+      "image" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/image%201519.svg",
+        "alt" : "image 1519",
+        "loading" : "lazy",
+        "width" : 54,
+        "height" : 48,
+        "max_width" : 54,
+        "max_height" : 48
+      }
+    }, {
+      "text_field" : "BambooHR + Workwize",
+      "image" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/image%201519.svg",
+        "alt" : "image 1519",
+        "loading" : "lazy",
+        "width" : 54,
+        "height" : 48,
+        "max_width" : 54,
+        "max_height" : 48
+      }
+    }, {
+      "text_field" : "BambooHR + Workwize",
+      "image" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/image%201519.svg",
+        "alt" : "image 1519",
+        "loading" : "lazy",
+        "width" : 54,
+        "height" : 48,
+        "max_width" : 54,
+        "max_height" : 48
+      }
+    }, {
+      "text_field" : "BambooHR + Workwize",
+      "image" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/image%201519.svg",
+        "alt" : "image 1519",
+        "loading" : "lazy",
+        "width" : 54,
+        "height" : 48,
+        "max_width" : 54,
+        "max_height" : 48
+      }
+    }, {
+      "text_field" : "BambooHR + Workwize",
+      "image" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/image%201519.svg",
+        "alt" : "image 1519",
+        "loading" : "lazy",
+        "width" : 54,
+        "height" : 48,
+        "max_width" : 54,
+        "max_height" : 48
+      }
+    }, {
+      "text_field" : "BambooHR + Workwize",
+      "image" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/image%201519.svg",
+        "alt" : "image 1519",
+        "loading" : "lazy",
+        "width" : 54,
+        "height" : 48,
+        "max_width" : 54,
+        "max_height" : 48
+      }
+    }, {
+      "text_field" : "BambooHR + Workwize",
+      "image" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/image%201519.svg",
+        "alt" : "image 1519",
+        "loading" : "lazy",
+        "width" : 54,
+        "height" : 48,
+        "max_width" : 54,
+        "max_height" : 48
+      }
+    } ]
+  } ]
+}, {
+  "id" : "b6ac38ef-f94c-f9a5-6501-17f0b2a6214f",
+  "name" : "color_setting",
+  "label" : "Color Setting",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "ebdd37df-211c-6125-dbc4-f5a70db1d0d2",
+    "name" : "title_color",
+    "label" : "Title Color",
+    "required" : false,
+    "locked" : false,
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#050C14",
+      "opacity" : 100
+    }
+  }, {
+    "id" : "50a496a6-0404-8d2b-22b5-060a591fdb6a",
+    "name" : "title_span_color",
+    "label" : "Title Span Color",
+    "required" : false,
+    "locked" : false,
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#227AF7",
+      "opacity" : 100
+    }
+  }, {
+    "id" : "27c8af34-3fc3-b15d-1c80-f60e2b27cf96",
+    "name" : "text_color",
+    "label" : "Text Color",
+    "required" : false,
+    "locked" : false,
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#050C14",
+      "opacity" : 75
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "title_color" : {
+      "color" : "#050C14",
+      "opacity" : 100
+    },
+    "title_span_color" : {
+      "color" : "#227AF7",
+      "opacity" : 100
+    },
+    "text_color" : {
+      "color" : "#050C14",
+      "opacity" : 75
+    }
+  }
+} ]

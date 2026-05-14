@@ -1,0 +1,326 @@
+{% if module.show_hide_ %}
+{% set moduleId = '#hs_cos_wrapper_{{ name }}' %}
+<div class="herosec heroplatsec fullwidth bgsec space-sec">
+  
+  <div class="hero-lrimgs">
+    <div class="hero-llimg">
+     {% if module.left_image.src %}
+        {% set sizeAttrs = 'width="{{ module.left_image.width|escape_attr }}" height="{{ module.left_image.height|escape_attr }}"' %}
+        {% if module.left_image.size_type == 'auto' %}
+          {% set sizeAttrs = 'width="{{ module.left_image.width|escape_attr }}" height="{{ module.left_image.height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+        {% elif module.left_image.size_type == 'auto_custom_max' %}
+          {% set sizeAttrs = 'width="{{ module.left_image.max_width|escape_attr }}" height="{{ module.left_image.max_height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+        {% endif %}
+         {% set loadingAttr = module.left_image.loading != 'disabled' ? 'loading="{{ module.left_image.loading|escape_attr }}"' : '' %}
+        <img src="{{ module.left_image.src|escape_url }}" alt="{{ module.left_image.alt|escape_attr }}" {{ loadingAttr }} {{ sizeAttrs }}>
+      {% endif %}
+    </div>
+    <div class="hero-rrimg">
+      {% if module.right_image.src %}
+      {% set sizeAttrs = 'width="{{ module.right_image.width|escape_attr }}" height="{{ module.right_image.height|escape_attr }}"' %}
+      {% if module.right_image.size_type == 'auto' %}
+        {% set sizeAttrs = 'width="{{ module.right_image.width|escape_attr }}" height="{{ module.right_image.height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+      {% elif module.right_image.size_type == 'auto_custom_max' %}
+        {% set sizeAttrs = 'width="{{ module.right_image.max_width|escape_attr }}" height="{{ module.right_image.max_height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+      {% endif %}
+       {% set loadingAttr = module.right_image.loading != 'disabled' ? 'loading="{{ module.right_image.loading|escape_attr }}"' : '' %}
+      <img src="{{ module.right_image.src|escape_url }}" alt="{{ module.right_image.alt|escape_attr }}" {{ loadingAttr }} {{ sizeAttrs }}>
+    {% endif %}
+    </div>
+  </div>
+  
+  
+ <div class="wrapper">
+  <div class="heroinner secinner">
+   <div class="heroheader secheader w-100 text-center"> 
+   
+     <div class="hero-lsdubtt pb12">
+     {{ module.sub_title }}
+    </div>
+     
+     
+    {% if module.title %}  
+    <div class="herotitle sectitle wow fadeInUp">
+     <h1>{{ module.title }}</h1> 
+    </div>
+    {% endif %}
+    {% if module.text %}
+    <div class="herotxt sectxt wow fadeInUp"> 
+     {{ module.text }} 
+    </div>
+    {% endif %} 
+    {% if module.button %} 
+    <div class="herobtns secbtns flexwrap triggBtn justifyCenter w-100 wow fadeInUp">
+    {% for item in module.button %}
+    <div class="herobtn secbtn {{ item.button_choice }} set-btn-arrows-{{ item.set_arrow_ }}">
+       {% set href = item.button_link.url.href %}
+       {% if item.button_link.url.type is equalto "EMAIL_ADDRESS" %}
+       {% set href = "mailto:" + href %}
+       {% endif %}
+       <a href="{{ href }}"
+       {% if item.button_link.open_in_new_tab %}target="_blank"{% endif %}
+       {% if item.button_link.rel %}rel="{{ item.button_link.rel }}"{% endif %}
+       >
+        {{ item.button_text }}
+       </a>  
+    </div>
+    {% endfor %} 
+   </div>  
+   {% endif %}  
+  
+   </div> 
+  </div>  
+   
+   
+   <div class="heropTabcii wow fadeInUp pt80 pb40">
+     {% for item in module.tabes.tab_item %}
+       <div class="heropTabcimgcon heropTab{{  loop.index }}">
+          <div class="heropTabcimg">
+            {% if item.image_field.src %}
+              {% set sizeAttrs = 'width="{{ item.image_field.width|escape_attr }}" height="{{ item.image_field.height|escape_attr }}"' %}
+              {% if item.image_field.size_type == 'auto' %}
+                {% set sizeAttrs = 'width="{{ item.image_field.width|escape_attr }}" height="{{ item.image_field.height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+              {% elif item.image_field.size_type == 'auto_custom_max' %}
+                {% set sizeAttrs = 'width="{{ item.image_field.max_width|escape_attr }}" height="{{ item.image_field.max_height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+              {% endif %}
+               {% set loadingAttr = item.image_field.loading != 'disabled' ? 'loading="{{ item.image_field.loading|escape_attr }}"' : '' %}
+              <img src="{{ item.image_field.src|escape_url }}" alt="{{ item.image_field.alt|escape_attr }}" {{ loadingAttr }} {{ sizeAttrs }}>
+            {% endif %}
+         </div>
+       </div>
+     {% endfor %} 
+     
+   </div>
+   
+   
+   <div class="heropTabListe wow fadeInUp"> 
+    {% for item in module.tabes.tab_item %}
+       <div class="heropTabItt" data-value=".heropTab{{  loop.index }}">
+         <div class="heropTabInn d_flex align_center gap10">
+           <svg class="border-svg" viewBox="0 0 200 50" preserveAspectRatio="none">
+            <rect class="border-path" x="1" y="1" width="198" height="48" rx="24" />
+          </svg>
+        <div class="heropTabIcon">
+          {% if item.tab_default_icon.src %}
+          {% set sizeAttrs = 'width="{{ item.tab_default_icon.width|escape_attr }}" height="{{ item.tab_default_icon.height|escape_attr }}"' %}
+          {% if item.tab_default_icon.size_type == 'auto' %}
+          {% set sizeAttrs = 'width="{{ item.tab_default_icon.width|escape_attr }}" height="{{ item.tab_default_icon.height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+          {% elif item.tab_default_icon.size_type == 'auto_custom_max' %}
+          {% set sizeAttrs = 'width="{{ item.tab_default_icon.max_width|escape_attr }}" height="{{ item.tab_default_icon.max_height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+          {% endif %}
+          {% set loadingAttr = item.tab_default_icon.loading != 'disabled' ? 'loading="{{ item.tab_default_icon.loading|escape_attr }}"' : '' %}
+          <img class="heropTIDef" src="{{ item.tab_default_icon.src|escape_url }}" alt="{{ item.tab_default_icon.alt|escape_attr }}" {{ loadingAttr }} {{ sizeAttrs }}>
+          {% endif %}
+          
+            {% if item.tab_active_icon.src %}
+            {% set sizeAttrs = 'width="{{ item.tab_active_icon.width|escape_attr }}" height="{{ item.tab_active_icon.height|escape_attr }}"' %}
+            {% if item.tab_active_icon.size_type == 'auto' %}
+            {% set sizeAttrs = 'width="{{ item.tab_active_icon.width|escape_attr }}" height="{{ item.tab_active_icon.height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+            {% elif item.tab_active_icon.size_type == 'auto_custom_max' %}
+            {% set sizeAttrs = 'width="{{ item.tab_active_icon.max_width|escape_attr }}" height="{{ item.tab_active_icon.max_height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+            {% endif %}
+            {% set loadingAttr = item.tab_active_icon.loading != 'disabled' ? 'loading="{{ item.tab_active_icon.loading|escape_attr }}"' : '' %}
+            <img class="heropTIActive" src="{{ item.tab_active_icon.src|escape_url }}" alt="{{ item.tab_active_icon.alt|escape_attr }}" {{ loadingAttr }} {{ sizeAttrs }}>
+            {% endif %}
+          
+          
+          
+        </div>
+        <div class="heropTabtext">
+         {{ item.text_field }}
+        </div>
+           </div>
+       </div>
+     {% endfor %}
+   
+   </div>
+   
+   
+   
+   
+ </div>
+</div>
+
+
+
+
+
+{% require_css %}
+<style>
+  {{ moduleId }} .bgsec { {% if module.style.select_background == 'bg_color' %}
+    background-color: rgba({{ module.style.background_color.color|convert_rgb }},{{ module.style.background_color.opacity ~ '%' }});
+    {% elif module.style.select_background == 'bg_image' %}
+    {{ module.style.background_image.css }} background-repeat: no-repeat;
+    {% elif module.style.select_background == 'bg_gradient' %}
+    background: {{ module.style.background_gradient.css }};
+    {% endif %} }
+  
+  {{ moduleId }} .space-sec { {{ module.style.spacing.desktop.css }}; }
+  
+  {{ moduleId }} .sectitle h1 { color: rgba({{ module.color_settings.title_color.color|convert_rgb }},{{ module.color_settings.title_color.opacity ~ '%' }}); }
+  {{ moduleId }} .sectitle h1 span { color: rgba({{ module.color_settings.title_span_color.color|convert_rgb }},{{ module.color_settings.title_span_color.opacity ~ '%' }}); }
+  {{ moduleId }} .sectxt , {{ moduleId }} .sectxt * { color: rgba({{ module.color_settings.text_color.color|convert_rgb }},{{ module.color_settings.text_color.opacity ~ '%' }}); } 
+  {{ moduleId }} .herotxt { max-width:{{ module.text_max_width }}px;  }
+  {{ moduleId }} .hero-lsdubtt { color: rgba({{ module.color_settings.sub_title_color.color|convert_rgb }},{{ module.color_settings.sub_title_color.opacity ~ '%' }}); }
+  
+  {% for item in module.button %} 
+   {{ moduleId }} .secbtn:nth-child({{ loop.index }}) a { background-color: rgba({{ item.background_color.color|convert_rgb }},{{ item.background_color.opacity ~ '%' }}); border-color: rgba({{ item.border_color.color|convert_rgb }},{{ item.border_color.opacity ~ '%' }}); color: rgba({{ item.text_color.color|convert_rgb }},{{ item.text_color.opacity ~ '%' }}); }
+   {{ moduleId }} .secbtn:nth-child({{ loop.index }}) a:hover { background-color: rgba({{ item.background_color_hover_.color|convert_rgb }},{{ item.background_color_hover_.opacity ~ '%' }}); border-color: rgba({{ item.border_color_hover_.color|convert_rgb }},{{ item.border_color_hover_.opacity ~ '%' }}); color: rgba({{ item.text_color_hover_.color|convert_rgb }},{{ item.text_color_hover_.opacity ~ '%' }}); }  
+  {% endfor %}
+  
+  {% if module.shape_image.src %}
+   {{ moduleId }} .heroinner:before { background-image: url({{ module.shape_image.src }}); }
+  {% endif %}
+  
+  {{ moduleId }} .heroheader { max-width: {{ module.header_max_width }}px; }
+  
+  
+  @media(max-width: 991px){ {{ moduleId }} .space-sec { {{ module.style.spacing.tablet.css }}; } }
+  
+  @media(max-width: 767px){ {{ moduleId }} .space-sec { {{ module.style.spacing.mobile.css }}; } }
+  
+</style>
+{% end_require_css %}
+
+
+{% require_js %}
+  <script>
+ 
+$(document).ready(function () {
+    // --- SETTINGS ---
+    const isAutoplayEnabled = {{ module.autoplay_tabs }}; // Set to false to disable autoplay entirely
+    const cycleSpeed = 3000;        // Speed in milliseconds
+    const mobileBreakpoint = 1200;  // Pixels
+    
+    let tabTimeout;
+    let isHovering = false; 
+
+    // --- 1. SLIDER DRAG LOGIC ---
+    const sliderClasses = ['.heropTabListe'];
+    sliderClasses.forEach(selector => {
+        const slider = document.querySelector(selector);
+        if (!slider) return;
+
+        let isDown = false;
+        let startX;
+        let scrollLeft;
+
+        slider.addEventListener('mousedown', (e) => {
+            isDown = true;
+            slider.classList.add('dragging');
+            startX = e.pageX - slider.offsetLeft;
+            scrollLeft = slider.scrollLeft;
+        });
+        slider.addEventListener('mouseleave', () => isDown = false);
+        slider.addEventListener('mouseup', () => isDown = false);
+        slider.addEventListener('mousemove', (e) => {
+            if (!isDown) return;
+            e.preventDefault();
+            const x = e.pageX - slider.offsetLeft;
+            const walk = (x - startX) * 2;
+            slider.scrollLeft = scrollLeft - walk;
+        });
+    });
+
+    // --- 2. AUTO-CYCLE LOGIC ---
+    function startAutoCycle() {
+        clearTimeout(tabTimeout);
+
+        // Conditions to STOP autoplay:
+        // 1. Master switch is OFF
+        // 2. Screen is mobile/tablet size
+        // 3. User is hovering
+        if (!isAutoplayEnabled || $(window).width() < mobileBreakpoint || isHovering) {
+            return; 
+        }
+
+        tabTimeout = setTimeout(function () {
+            let $next = $(".heropTabItt.active").next(".heropTabItt");
+            if ($next.length === 0) {
+                $next = $(".heropTabItt").first();
+            }
+            $next.trigger("click");
+        }, cycleSpeed);
+    }
+
+    // --- 3. EVENT LISTENERS (Hover & Resize) ---
+    
+    // Pause on Hover
+    $(".heropTabcimgcon").on('mouseenter', function() {
+        isHovering = true;
+        clearTimeout(tabTimeout);
+    }).on('mouseleave', function() {
+        isHovering = false;
+        startAutoCycle();
+    });
+
+    // Handle Window Resize
+    $(window).on('resize', function() {
+        if ($(window).width() < mobileBreakpoint) {
+            clearTimeout(tabTimeout);
+        } else {
+            startAutoCycle();
+        }
+    });
+
+    // --- 4. UNIFIED CLICK HANDLER ---
+    $(document).on("click", ".heropTabItt", function (e) {
+        e.preventDefault();
+        const $this = $(this);
+        
+        // Prevent re-triggering the same tab
+        if ($this.hasClass('active') && tabTimeout && isAutoplayEnabled) {
+            // We still want to reset the timer for the NEXT tab
+            startAutoCycle();
+            return false;
+        }
+
+        // A. Update Active States
+        $this.siblings().removeClass("active");
+        $this.addClass("active");
+
+        // B. Switch Image/Video Content
+        const targetImage = $this.attr("data-value");
+        if (targetImage) {
+            $(".heropTabcimgcon").removeClass('active');
+            $(targetImage).addClass('active');
+            
+            // Kickstart the next timer loop
+            startAutoCycle();
+        }
+
+        // C. Center the tab horizontally in the slider
+        const $container = $this.parent();
+        if ($container.length) {
+            const tabOffset = $this[0].offsetLeft;
+            const tabWidth = $this.outerWidth();
+            const containerWidth = $container.width();
+            const scrollTo = tabOffset - (containerWidth / 2) + (tabWidth / 2);
+
+            $container.stop().animate({ scrollLeft: scrollTo }, 600);
+        }
+
+        return false;
+    });
+
+    // --- 5. INITIALIZE ---
+    const $firstTab = $(".heropTabItt").first();
+    
+    if ($(window).width() >= mobileBreakpoint && isAutoplayEnabled) {
+        // Full Start
+        $firstTab.trigger("click");
+    } else {
+        // Static Start (No timer)
+        $firstTab.addClass('active');
+        $($firstTab.attr('data-value')).addClass('active');
+    }
+});
+
+  </script>
+{% end_require_js %}
+
+
+{% endif %}
+
+
+

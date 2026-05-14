@@ -1,0 +1,1248 @@
+[ {
+  "id" : "437b9b81-3c23-b3ad-919b-20ad4e289597",
+  "name" : "style",
+  "label" : "Style",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "0da867a4-7711-a643-f125-e3c75bd2b1dd",
+    "name" : "spacing",
+    "label" : "Spacing",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "cfc69b31-0d89-a13f-f32e-30dee7065fce",
+      "name" : "desktop",
+      "label" : "Desktop",
+      "required" : false,
+      "locked" : false,
+      "type" : "spacing",
+      "display_width" : null,
+      "default" : {
+        "padding" : {
+          "top" : {
+            "value" : 100,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 20,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      }
+    }, {
+      "id" : "89a4718d-9be2-037d-41e0-61d584136b64",
+      "name" : "tablet",
+      "label" : "Tablet",
+      "required" : false,
+      "locked" : false,
+      "type" : "spacing",
+      "display_width" : null,
+      "default" : {
+        "padding" : {
+          "top" : {
+            "value" : 80,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 20,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      }
+    }, {
+      "id" : "292a2f46-ee08-7935-a8f8-164146697ffe",
+      "name" : "mobile",
+      "label" : "Mobile",
+      "required" : false,
+      "locked" : false,
+      "type" : "spacing",
+      "display_width" : null,
+      "default" : {
+        "padding" : {
+          "top" : {
+            "value" : 60,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 80,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      }
+    } ],
+    "tab" : "STYLE",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : {
+      "desktop" : {
+        "padding" : {
+          "top" : {
+            "value" : 100,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 20,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      },
+      "tablet" : {
+        "padding" : {
+          "top" : {
+            "value" : 80,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 20,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      },
+      "mobile" : {
+        "padding" : {
+          "top" : {
+            "value" : 60,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 80,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      }
+    }
+  } ],
+  "tab" : "STYLE",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "spacing" : {
+      "desktop" : {
+        "padding" : {
+          "top" : {
+            "value" : 100,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 20,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      },
+      "tablet" : {
+        "padding" : {
+          "top" : {
+            "value" : 80,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 20,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      },
+      "mobile" : {
+        "padding" : {
+          "top" : {
+            "value" : 60,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 80,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      }
+    }
+  }
+}, {
+  "id" : "e2dc3a15-292c-a6a9-1053-c7876d24f755",
+  "name" : "logo_link",
+  "label" : "Logo Link",
+  "required" : false,
+  "locked" : false,
+  "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG", "CALL_TO_ACTION", "PHONE_NUMBER", "WHATSAPP_NUMBER" ],
+  "show_advanced_rel_options" : false,
+  "type" : "link",
+  "display_width" : null,
+  "default" : {
+    "url" : {
+      "content_id" : null,
+      "href" : "\\",
+      "type" : "EXTERNAL"
+    },
+    "open_in_new_tab" : false,
+    "no_follow" : false
+  }
+}, {
+  "id" : "59cb1c83-1f4f-8f7b-c961-5274b6c0c0f3",
+  "name" : "logo",
+  "label" : "Logo",
+  "required" : false,
+  "locked" : false,
+  "responsive" : true,
+  "resizable" : true,
+  "show_loading" : false,
+  "type" : "image",
+  "display_width" : null,
+  "default" : {
+    "size_type" : "auto",
+    "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize/Image/Workwize%20Logo%20White.svg",
+    "alt" : "Workwize Logo White",
+    "loading" : "lazy",
+    "width" : 240,
+    "height" : 37,
+    "max_width" : 240,
+    "max_height" : 37
+  }
+}, {
+  "id" : "2fe6eb45-5d88-a71a-7d54-0d37bf93ca91",
+  "name" : "text",
+  "label" : "Text",
+  "required" : false,
+  "locked" : false,
+  "type" : "richtext",
+  "display_width" : null,
+  "default" : "<p>Stadhouderskade 5-6 1054 ES Amsterdam The Netherlands</p>\n<p><span>33 Irving Place New York, NY 10003 USA</span></p>"
+}, {
+  "id" : "d6f66f2c-455a-82d5-8970-da509a1e0044",
+  "name" : "form_title",
+  "label" : "Form Title",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : ""
+}, {
+  "id" : "90fc9ca5-9569-01f1-8fe6-cf863c5c1674",
+  "name" : "form",
+  "label" : "Form",
+  "required" : false,
+  "locked" : false,
+  "embed_versions" : [ "v2", "v4" ],
+  "type" : "form",
+  "display_width" : null,
+  "default" : {
+    "form_id" : "47a14f14-fc94-44f3-a889-7029bab8e388",
+    "response_type" : "inline",
+    "message" : "Thanks for submitting the form.",
+    "gotowebinar_webinar_key" : null,
+    "form_type" : "HUBSPOT"
+  }
+}, {
+  "id" : "04dc5c6a-3b30-f580-1d12-97d04db7c59c",
+  "name" : "row",
+  "label" : "Row",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : null,
+    "max" : null,
+    "sorting_label_field" : null,
+    "default" : 3
+  },
+  "children" : [ {
+    "id" : "89ac73d9-9666-440c-893e-046fe08279c0",
+    "name" : "colum",
+    "label" : "Colum",
+    "required" : false,
+    "locked" : false,
+    "occurrence" : {
+      "min" : null,
+      "max" : null,
+      "sorting_label_field" : null,
+      "default" : 2
+    },
+    "children" : [ {
+      "id" : "a65276f3-dd47-b001-1f35-b7bad9f660f4",
+      "name" : "title",
+      "label" : "Title",
+      "required" : false,
+      "locked" : false,
+      "allow_new_line" : false,
+      "type" : "text",
+      "display_width" : null,
+      "default" : "Platform"
+    }, {
+      "id" : "9e76c7d6-4da2-9ba0-11a3-74bb1a839ae4",
+      "name" : "menu",
+      "label" : "Menu",
+      "required" : false,
+      "locked" : false,
+      "type" : "simplemenu",
+      "display_width" : null,
+      "default" : [ {
+        "isPublished" : false,
+        "pageLinkId" : null,
+        "contentGroupId" : null,
+        "pageLinkName" : null,
+        "isDeleted" : null,
+        "categoryId" : null,
+        "subCategory" : null,
+        "contentType" : null,
+        "state" : null,
+        "linkLabel" : "Deploy Your Devices to ABM & WM",
+        "linkUrl" : null,
+        "linkParams" : null,
+        "linkTarget" : null,
+        "type" : "NO_LINK",
+        "children" : [ ]
+      }, {
+        "isPublished" : false,
+        "pageLinkId" : null,
+        "contentGroupId" : null,
+        "pageLinkName" : null,
+        "isDeleted" : null,
+        "categoryId" : null,
+        "subCategory" : null,
+        "contentType" : null,
+        "state" : null,
+        "linkLabel" : "Manage & Track Remote Assets",
+        "linkUrl" : null,
+        "linkParams" : null,
+        "linkTarget" : null,
+        "type" : "PAGE_LINK",
+        "children" : [ ]
+      }, {
+        "isPublished" : false,
+        "pageLinkId" : null,
+        "contentGroupId" : null,
+        "pageLinkName" : null,
+        "isDeleted" : null,
+        "categoryId" : null,
+        "subCategory" : null,
+        "contentType" : null,
+        "state" : null,
+        "linkLabel" : "Remote Office Experience",
+        "linkUrl" : null,
+        "linkParams" : null,
+        "linkTarget" : null,
+        "type" : "PAGE_LINK",
+        "children" : [ ]
+      }, {
+        "isPublished" : false,
+        "pageLinkId" : null,
+        "contentGroupId" : null,
+        "pageLinkName" : null,
+        "isDeleted" : null,
+        "categoryId" : null,
+        "subCategory" : null,
+        "contentType" : null,
+        "state" : null,
+        "linkLabel" : "Seamless Offboarding",
+        "linkUrl" : null,
+        "linkParams" : null,
+        "linkTarget" : null,
+        "type" : "PAGE_LINK",
+        "children" : [ ]
+      } ]
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : [ {
+      "title" : "Platform",
+      "menu" : [ {
+        "isPublished" : false,
+        "pageLinkId" : null,
+        "contentGroupId" : null,
+        "pageLinkName" : null,
+        "isDeleted" : null,
+        "categoryId" : null,
+        "subCategory" : null,
+        "contentType" : null,
+        "state" : null,
+        "linkLabel" : "Deploy Your Devices to ABM & WM",
+        "linkUrl" : null,
+        "linkParams" : null,
+        "linkTarget" : null,
+        "type" : "NO_LINK",
+        "children" : [ ]
+      }, {
+        "isPublished" : false,
+        "pageLinkId" : null,
+        "contentGroupId" : null,
+        "pageLinkName" : null,
+        "isDeleted" : null,
+        "categoryId" : null,
+        "subCategory" : null,
+        "contentType" : null,
+        "state" : null,
+        "linkLabel" : "Manage & Track Remote Assets",
+        "linkUrl" : null,
+        "linkParams" : null,
+        "linkTarget" : null,
+        "type" : "PAGE_LINK",
+        "children" : [ ]
+      }, {
+        "isPublished" : false,
+        "pageLinkId" : null,
+        "contentGroupId" : null,
+        "pageLinkName" : null,
+        "isDeleted" : null,
+        "categoryId" : null,
+        "subCategory" : null,
+        "contentType" : null,
+        "state" : null,
+        "linkLabel" : "Remote Office Experience",
+        "linkUrl" : null,
+        "linkParams" : null,
+        "linkTarget" : null,
+        "type" : "PAGE_LINK",
+        "children" : [ ]
+      }, {
+        "isPublished" : false,
+        "pageLinkId" : null,
+        "contentGroupId" : null,
+        "pageLinkName" : null,
+        "isDeleted" : null,
+        "categoryId" : null,
+        "subCategory" : null,
+        "contentType" : null,
+        "state" : null,
+        "linkLabel" : "Seamless Offboarding",
+        "linkUrl" : null,
+        "linkParams" : null,
+        "linkTarget" : null,
+        "type" : "PAGE_LINK",
+        "children" : [ ]
+      } ]
+    }, {
+      "title" : "Platform",
+      "menu" : [ {
+        "isPublished" : false,
+        "pageLinkId" : null,
+        "contentGroupId" : null,
+        "pageLinkName" : null,
+        "isDeleted" : null,
+        "categoryId" : null,
+        "subCategory" : null,
+        "contentType" : null,
+        "state" : null,
+        "linkLabel" : "Deploy Your Devices to ABM & WM",
+        "linkUrl" : null,
+        "linkParams" : null,
+        "linkTarget" : null,
+        "type" : "NO_LINK",
+        "children" : [ ]
+      }, {
+        "isPublished" : false,
+        "pageLinkId" : null,
+        "contentGroupId" : null,
+        "pageLinkName" : null,
+        "isDeleted" : null,
+        "categoryId" : null,
+        "subCategory" : null,
+        "contentType" : null,
+        "state" : null,
+        "linkLabel" : "Manage & Track Remote Assets",
+        "linkUrl" : null,
+        "linkParams" : null,
+        "linkTarget" : null,
+        "type" : "PAGE_LINK",
+        "children" : [ ]
+      }, {
+        "isPublished" : false,
+        "pageLinkId" : null,
+        "contentGroupId" : null,
+        "pageLinkName" : null,
+        "isDeleted" : null,
+        "categoryId" : null,
+        "subCategory" : null,
+        "contentType" : null,
+        "state" : null,
+        "linkLabel" : "Remote Office Experience",
+        "linkUrl" : null,
+        "linkParams" : null,
+        "linkTarget" : null,
+        "type" : "PAGE_LINK",
+        "children" : [ ]
+      }, {
+        "isPublished" : false,
+        "pageLinkId" : null,
+        "contentGroupId" : null,
+        "pageLinkName" : null,
+        "isDeleted" : null,
+        "categoryId" : null,
+        "subCategory" : null,
+        "contentType" : null,
+        "state" : null,
+        "linkLabel" : "Seamless Offboarding",
+        "linkUrl" : null,
+        "linkParams" : null,
+        "linkTarget" : null,
+        "type" : "PAGE_LINK",
+        "children" : [ ]
+      } ]
+    } ]
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : [ {
+    "colum" : [ {
+      "title" : "Platform",
+      "menu" : [ {
+        "isPublished" : false,
+        "pageLinkId" : null,
+        "contentGroupId" : null,
+        "pageLinkName" : null,
+        "isDeleted" : null,
+        "categoryId" : null,
+        "subCategory" : null,
+        "contentType" : null,
+        "state" : null,
+        "linkLabel" : "Deploy Your Devices to ABM & WM",
+        "linkUrl" : null,
+        "linkParams" : null,
+        "linkTarget" : null,
+        "type" : "NO_LINK",
+        "children" : [ ]
+      }, {
+        "isPublished" : false,
+        "pageLinkId" : null,
+        "contentGroupId" : null,
+        "pageLinkName" : null,
+        "isDeleted" : null,
+        "categoryId" : null,
+        "subCategory" : null,
+        "contentType" : null,
+        "state" : null,
+        "linkLabel" : "Manage & Track Remote Assets",
+        "linkUrl" : null,
+        "linkParams" : null,
+        "linkTarget" : null,
+        "type" : "PAGE_LINK",
+        "children" : [ ]
+      }, {
+        "isPublished" : false,
+        "pageLinkId" : null,
+        "contentGroupId" : null,
+        "pageLinkName" : null,
+        "isDeleted" : null,
+        "categoryId" : null,
+        "subCategory" : null,
+        "contentType" : null,
+        "state" : null,
+        "linkLabel" : "Remote Office Experience",
+        "linkUrl" : null,
+        "linkParams" : null,
+        "linkTarget" : null,
+        "type" : "PAGE_LINK",
+        "children" : [ ]
+      }, {
+        "isPublished" : false,
+        "pageLinkId" : null,
+        "contentGroupId" : null,
+        "pageLinkName" : null,
+        "isDeleted" : null,
+        "categoryId" : null,
+        "subCategory" : null,
+        "contentType" : null,
+        "state" : null,
+        "linkLabel" : "Seamless Offboarding",
+        "linkUrl" : null,
+        "linkParams" : null,
+        "linkTarget" : null,
+        "type" : "PAGE_LINK",
+        "children" : [ ]
+      } ]
+    }, {
+      "title" : "Platform",
+      "menu" : [ {
+        "isPublished" : false,
+        "pageLinkId" : null,
+        "contentGroupId" : null,
+        "pageLinkName" : null,
+        "isDeleted" : null,
+        "categoryId" : null,
+        "subCategory" : null,
+        "contentType" : null,
+        "state" : null,
+        "linkLabel" : "Deploy Your Devices to ABM & WM",
+        "linkUrl" : null,
+        "linkParams" : null,
+        "linkTarget" : null,
+        "type" : "NO_LINK",
+        "children" : [ ]
+      }, {
+        "isPublished" : false,
+        "pageLinkId" : null,
+        "contentGroupId" : null,
+        "pageLinkName" : null,
+        "isDeleted" : null,
+        "categoryId" : null,
+        "subCategory" : null,
+        "contentType" : null,
+        "state" : null,
+        "linkLabel" : "Manage & Track Remote Assets",
+        "linkUrl" : null,
+        "linkParams" : null,
+        "linkTarget" : null,
+        "type" : "PAGE_LINK",
+        "children" : [ ]
+      }, {
+        "isPublished" : false,
+        "pageLinkId" : null,
+        "contentGroupId" : null,
+        "pageLinkName" : null,
+        "isDeleted" : null,
+        "categoryId" : null,
+        "subCategory" : null,
+        "contentType" : null,
+        "state" : null,
+        "linkLabel" : "Remote Office Experience",
+        "linkUrl" : null,
+        "linkParams" : null,
+        "linkTarget" : null,
+        "type" : "PAGE_LINK",
+        "children" : [ ]
+      }, {
+        "isPublished" : false,
+        "pageLinkId" : null,
+        "contentGroupId" : null,
+        "pageLinkName" : null,
+        "isDeleted" : null,
+        "categoryId" : null,
+        "subCategory" : null,
+        "contentType" : null,
+        "state" : null,
+        "linkLabel" : "Seamless Offboarding",
+        "linkUrl" : null,
+        "linkParams" : null,
+        "linkTarget" : null,
+        "type" : "PAGE_LINK",
+        "children" : [ ]
+      } ]
+    } ]
+  }, {
+    "colum" : [ {
+      "title" : "Platform",
+      "menu" : [ {
+        "isPublished" : false,
+        "pageLinkId" : null,
+        "contentGroupId" : null,
+        "pageLinkName" : null,
+        "isDeleted" : null,
+        "categoryId" : null,
+        "subCategory" : null,
+        "contentType" : null,
+        "state" : null,
+        "linkLabel" : "Deploy Your Devices to ABM & WM",
+        "linkUrl" : null,
+        "linkParams" : null,
+        "linkTarget" : null,
+        "type" : "NO_LINK",
+        "children" : [ ]
+      }, {
+        "isPublished" : false,
+        "pageLinkId" : null,
+        "contentGroupId" : null,
+        "pageLinkName" : null,
+        "isDeleted" : null,
+        "categoryId" : null,
+        "subCategory" : null,
+        "contentType" : null,
+        "state" : null,
+        "linkLabel" : "Manage & Track Remote Assets",
+        "linkUrl" : null,
+        "linkParams" : null,
+        "linkTarget" : null,
+        "type" : "PAGE_LINK",
+        "children" : [ ]
+      }, {
+        "isPublished" : false,
+        "pageLinkId" : null,
+        "contentGroupId" : null,
+        "pageLinkName" : null,
+        "isDeleted" : null,
+        "categoryId" : null,
+        "subCategory" : null,
+        "contentType" : null,
+        "state" : null,
+        "linkLabel" : "Remote Office Experience",
+        "linkUrl" : null,
+        "linkParams" : null,
+        "linkTarget" : null,
+        "type" : "PAGE_LINK",
+        "children" : [ ]
+      }, {
+        "isPublished" : false,
+        "pageLinkId" : null,
+        "contentGroupId" : null,
+        "pageLinkName" : null,
+        "isDeleted" : null,
+        "categoryId" : null,
+        "subCategory" : null,
+        "contentType" : null,
+        "state" : null,
+        "linkLabel" : "Seamless Offboarding",
+        "linkUrl" : null,
+        "linkParams" : null,
+        "linkTarget" : null,
+        "type" : "PAGE_LINK",
+        "children" : [ ]
+      } ]
+    }, {
+      "title" : "Platform",
+      "menu" : [ {
+        "isPublished" : false,
+        "pageLinkId" : null,
+        "contentGroupId" : null,
+        "pageLinkName" : null,
+        "isDeleted" : null,
+        "categoryId" : null,
+        "subCategory" : null,
+        "contentType" : null,
+        "state" : null,
+        "linkLabel" : "Deploy Your Devices to ABM & WM",
+        "linkUrl" : null,
+        "linkParams" : null,
+        "linkTarget" : null,
+        "type" : "NO_LINK",
+        "children" : [ ]
+      }, {
+        "isPublished" : false,
+        "pageLinkId" : null,
+        "contentGroupId" : null,
+        "pageLinkName" : null,
+        "isDeleted" : null,
+        "categoryId" : null,
+        "subCategory" : null,
+        "contentType" : null,
+        "state" : null,
+        "linkLabel" : "Manage & Track Remote Assets",
+        "linkUrl" : null,
+        "linkParams" : null,
+        "linkTarget" : null,
+        "type" : "PAGE_LINK",
+        "children" : [ ]
+      }, {
+        "isPublished" : false,
+        "pageLinkId" : null,
+        "contentGroupId" : null,
+        "pageLinkName" : null,
+        "isDeleted" : null,
+        "categoryId" : null,
+        "subCategory" : null,
+        "contentType" : null,
+        "state" : null,
+        "linkLabel" : "Remote Office Experience",
+        "linkUrl" : null,
+        "linkParams" : null,
+        "linkTarget" : null,
+        "type" : "PAGE_LINK",
+        "children" : [ ]
+      }, {
+        "isPublished" : false,
+        "pageLinkId" : null,
+        "contentGroupId" : null,
+        "pageLinkName" : null,
+        "isDeleted" : null,
+        "categoryId" : null,
+        "subCategory" : null,
+        "contentType" : null,
+        "state" : null,
+        "linkLabel" : "Seamless Offboarding",
+        "linkUrl" : null,
+        "linkParams" : null,
+        "linkTarget" : null,
+        "type" : "PAGE_LINK",
+        "children" : [ ]
+      } ]
+    } ]
+  }, {
+    "colum" : [ {
+      "title" : "Platform",
+      "menu" : [ {
+        "isPublished" : false,
+        "pageLinkId" : null,
+        "contentGroupId" : null,
+        "pageLinkName" : null,
+        "isDeleted" : null,
+        "categoryId" : null,
+        "subCategory" : null,
+        "contentType" : null,
+        "state" : null,
+        "linkLabel" : "Deploy Your Devices to ABM & WM",
+        "linkUrl" : null,
+        "linkParams" : null,
+        "linkTarget" : null,
+        "type" : "NO_LINK",
+        "children" : [ ]
+      }, {
+        "isPublished" : false,
+        "pageLinkId" : null,
+        "contentGroupId" : null,
+        "pageLinkName" : null,
+        "isDeleted" : null,
+        "categoryId" : null,
+        "subCategory" : null,
+        "contentType" : null,
+        "state" : null,
+        "linkLabel" : "Manage & Track Remote Assets",
+        "linkUrl" : null,
+        "linkParams" : null,
+        "linkTarget" : null,
+        "type" : "PAGE_LINK",
+        "children" : [ ]
+      }, {
+        "isPublished" : false,
+        "pageLinkId" : null,
+        "contentGroupId" : null,
+        "pageLinkName" : null,
+        "isDeleted" : null,
+        "categoryId" : null,
+        "subCategory" : null,
+        "contentType" : null,
+        "state" : null,
+        "linkLabel" : "Remote Office Experience",
+        "linkUrl" : null,
+        "linkParams" : null,
+        "linkTarget" : null,
+        "type" : "PAGE_LINK",
+        "children" : [ ]
+      }, {
+        "isPublished" : false,
+        "pageLinkId" : null,
+        "contentGroupId" : null,
+        "pageLinkName" : null,
+        "isDeleted" : null,
+        "categoryId" : null,
+        "subCategory" : null,
+        "contentType" : null,
+        "state" : null,
+        "linkLabel" : "Seamless Offboarding",
+        "linkUrl" : null,
+        "linkParams" : null,
+        "linkTarget" : null,
+        "type" : "PAGE_LINK",
+        "children" : [ ]
+      } ]
+    }, {
+      "title" : "Platform",
+      "menu" : [ {
+        "isPublished" : false,
+        "pageLinkId" : null,
+        "contentGroupId" : null,
+        "pageLinkName" : null,
+        "isDeleted" : null,
+        "categoryId" : null,
+        "subCategory" : null,
+        "contentType" : null,
+        "state" : null,
+        "linkLabel" : "Deploy Your Devices to ABM & WM",
+        "linkUrl" : null,
+        "linkParams" : null,
+        "linkTarget" : null,
+        "type" : "NO_LINK",
+        "children" : [ ]
+      }, {
+        "isPublished" : false,
+        "pageLinkId" : null,
+        "contentGroupId" : null,
+        "pageLinkName" : null,
+        "isDeleted" : null,
+        "categoryId" : null,
+        "subCategory" : null,
+        "contentType" : null,
+        "state" : null,
+        "linkLabel" : "Manage & Track Remote Assets",
+        "linkUrl" : null,
+        "linkParams" : null,
+        "linkTarget" : null,
+        "type" : "PAGE_LINK",
+        "children" : [ ]
+      }, {
+        "isPublished" : false,
+        "pageLinkId" : null,
+        "contentGroupId" : null,
+        "pageLinkName" : null,
+        "isDeleted" : null,
+        "categoryId" : null,
+        "subCategory" : null,
+        "contentType" : null,
+        "state" : null,
+        "linkLabel" : "Remote Office Experience",
+        "linkUrl" : null,
+        "linkParams" : null,
+        "linkTarget" : null,
+        "type" : "PAGE_LINK",
+        "children" : [ ]
+      }, {
+        "isPublished" : false,
+        "pageLinkId" : null,
+        "contentGroupId" : null,
+        "pageLinkName" : null,
+        "isDeleted" : null,
+        "categoryId" : null,
+        "subCategory" : null,
+        "contentType" : null,
+        "state" : null,
+        "linkLabel" : "Seamless Offboarding",
+        "linkUrl" : null,
+        "linkParams" : null,
+        "linkTarget" : null,
+        "type" : "PAGE_LINK",
+        "children" : [ ]
+      } ]
+    } ]
+  } ]
+}, {
+  "id" : "1cdb6c60-1230-54ec-9d4b-057271645b35",
+  "name" : "copy_right_text",
+  "label" : "Copy Right Text",
+  "required" : false,
+  "locked" : false,
+  "type" : "richtext",
+  "display_width" : null,
+  "default" : "<p>Copyright © {{ year }} Workwize B.V.</p>"
+}, {
+  "id" : "37fcf2d0-0a20-3dab-2083-ac5b51849dac",
+  "name" : "follow_us_title",
+  "label" : "Follow Us Title",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "Follow us"
+}, {
+  "id" : "4e9f5407-e08a-573d-3f38-bf6022dc19ba",
+  "name" : "social_media",
+  "label" : "Social Media",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : null,
+    "max" : null,
+    "sorting_label_field" : null,
+    "default" : 4
+  },
+  "children" : [ {
+    "id" : "abc9a717-c7b4-f62b-79aa-7ab8dcc372b1",
+    "name" : "icon",
+    "label" : "Icon",
+    "required" : false,
+    "locked" : false,
+    "icon_set" : "fontawesome-6.4.2",
+    "type" : "icon",
+    "display_width" : null,
+    "default" : { }
+  }, {
+    "id" : "1db3776a-784f-9a72-46dd-9c3a9172b570",
+    "name" : "link",
+    "label" : "Link",
+    "required" : false,
+    "locked" : false,
+    "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG", "CALL_TO_ACTION", "PHONE_NUMBER", "WHATSAPP_NUMBER" ],
+    "show_advanced_rel_options" : false,
+    "type" : "link",
+    "display_width" : null,
+    "default" : {
+      "url" : {
+        "content_id" : null,
+        "type" : "EXTERNAL",
+        "href" : ""
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    }
+  }, {
+    "id" : "ec55541a-d3ee-e1c5-7c1a-20808fbcf7ca",
+    "name" : "social_text",
+    "label" : "Social Text",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Linkedin"
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : [ {
+    "icon" : { },
+    "link" : {
+      "url" : {
+        "content_id" : null,
+        "type" : "EXTERNAL",
+        "href" : ""
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    },
+    "social_text" : "Linkedin"
+  }, {
+    "icon" : { },
+    "link" : {
+      "url" : {
+        "content_id" : null,
+        "type" : "EXTERNAL",
+        "href" : ""
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    },
+    "social_text" : "Linkedin"
+  }, {
+    "icon" : { },
+    "link" : {
+      "url" : {
+        "content_id" : null,
+        "type" : "EXTERNAL",
+        "href" : ""
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    },
+    "social_text" : "Linkedin"
+  }, {
+    "icon" : { },
+    "link" : {
+      "url" : {
+        "content_id" : null,
+        "type" : "EXTERNAL",
+        "href" : ""
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    },
+    "social_text" : "Linkedin"
+  } ]
+}, {
+  "id" : "cdca778b-4c45-f0db-0128-64bbdf1e85e1",
+  "name" : "bottom_logo",
+  "label" : "Bottom Logo",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : null,
+    "max" : null,
+    "sorting_label_field" : null,
+    "default" : 1
+  },
+  "children" : [ {
+    "id" : "bbf4a164-000b-596f-938c-acba0dbded84",
+    "name" : "image",
+    "label" : "Image",
+    "required" : false,
+    "locked" : false,
+    "responsive" : true,
+    "resizable" : true,
+    "show_loading" : false,
+    "type" : "image",
+    "display_width" : null,
+    "default" : {
+      "size_type" : "auto_custom_max",
+      "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/PrescientSecurity.png",
+      "alt" : "PrescientSecurity",
+      "loading" : "lazy",
+      "width" : 611,
+      "height" : 640,
+      "max_width" : 100,
+      "max_height" : 105
+    }
+  }, {
+    "id" : "fae389e7-1b3c-66f5-f950-7e489cdaf1d1",
+    "name" : "link",
+    "label" : "Link",
+    "required" : false,
+    "locked" : false,
+    "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG", "CALL_TO_ACTION", "PHONE_NUMBER", "WHATSAPP_NUMBER" ],
+    "show_advanced_rel_options" : false,
+    "type" : "link",
+    "display_width" : null,
+    "default" : {
+      "url" : {
+        "content_id" : null,
+        "type" : "EXTERNAL",
+        "href" : ""
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : [ {
+    "image" : {
+      "size_type" : "auto_custom_max",
+      "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/PrescientSecurity.png",
+      "alt" : "PrescientSecurity",
+      "loading" : "lazy",
+      "width" : 611,
+      "height" : 640,
+      "max_width" : 100,
+      "max_height" : 105
+    },
+    "link" : {
+      "url" : {
+        "content_id" : null,
+        "type" : "EXTERNAL",
+        "href" : ""
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    }
+  } ]
+}, {
+  "id" : "eb3e1e9b-dbeb-8eb5-3707-4a89ef009629",
+  "name" : "display_mode",
+  "label" : "Display mode",
+  "required" : false,
+  "locked" : false,
+  "display" : "select",
+  "choices" : [ [ "localized", "Localized" ], [ "pagelang", "PageLang" ], [ "hybrid", "Hybrid" ] ],
+  "multiple" : false,
+  "reordering_enabled" : true,
+  "preset" : null,
+  "type" : "choice",
+  "display_width" : null,
+  "default" : "localized"
+}, {
+  "id" : "84b199d2-6895-80f9-d0e7-3b0693fac70c",
+  "name" : "menu_copy",
+  "label" : "Privacy Menu",
+  "required" : false,
+  "locked" : false,
+  "type" : "simplemenu",
+  "display_width" : null,
+  "default" : [ {
+    "isPublished" : false,
+    "pageLinkId" : null,
+    "contentGroupId" : null,
+    "pageLinkName" : null,
+    "isDeleted" : null,
+    "categoryId" : null,
+    "subCategory" : null,
+    "contentType" : null,
+    "state" : null,
+    "linkLabel" : "Legal",
+    "linkUrl" : null,
+    "linkParams" : null,
+    "linkTarget" : null,
+    "type" : "NO_LINK",
+    "children" : [ ]
+  }, {
+    "isPublished" : true,
+    "pageLinkId" : 95857249263,
+    "contentGroupId" : null,
+    "pageLinkName" : "Privacy Policy",
+    "isDeleted" : false,
+    "categoryId" : 1,
+    "subCategory" : "site_page",
+    "contentType" : "site_page",
+    "state" : "PUBLISHED_OR_SCHEDULED",
+    "linkLabel" : "Privacy Policy",
+    "linkUrl" : null,
+    "linkParams" : null,
+    "linkTarget" : null,
+    "type" : "PAGE_LINK",
+    "children" : [ ]
+  }, {
+    "isPublished" : true,
+    "pageLinkId" : 98710049270,
+    "contentGroupId" : null,
+    "pageLinkName" : "Terms and Conditions",
+    "isDeleted" : false,
+    "categoryId" : 1,
+    "subCategory" : "site_page",
+    "contentType" : "site_page",
+    "state" : "PUBLISHED_OR_SCHEDULED",
+    "linkLabel" : "Terms & Conditions",
+    "linkUrl" : null,
+    "linkParams" : null,
+    "linkTarget" : null,
+    "type" : "PAGE_LINK",
+    "children" : [ ]
+  } ]
+} ]

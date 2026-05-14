@@ -1,0 +1,110 @@
+{% if dynamic_page_hubdb_row %}
+
+{% if module.hide_show_section %}
+	
+<div class="two-col-cont-section  section-new spacSec fullwidth">
+  <div class="wrapper">
+    <div class="two-col-cont-inner flexwrap">
+      <div class="two-col-cont-left">
+        <div class="two-col-cont-left-inn">
+        {% if module.content.left_content.icon.src %}
+        <div class="two-col-cont-icon">
+          {% set sizeAttrs = 'width="{{ module.content.left_content.icon.width|escape_attr }}" height="{{ module.content.left_content.icon.height|escape_attr }}"' %}
+          {% if module.content.left_content.icon.size_type == 'auto' %}
+          {% set sizeAttrs = 'width="{{ module.content.left_content.icon.width|escape_attr }}" height="{{ module.content.left_content.icon.height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+          {% elif module.content.left_content.icon.size_type == 'auto_custom_max' %}
+          {% set sizeAttrs = 'width="{{ module.content.left_content.icon.max_width|escape_attr }}" height="{{ module.content.left_content.icon.max_height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+          {% endif %}
+          {% set loadingAttr = module.content.left_content.icon.loading != 'disabled' ? 'loading="{{ module.content.left_content.icon.loading|escape_attr }}"' : '' %}
+          <img src="{{ module.content.left_content.icon.src|escape_url }}" alt="{{ module.content.left_content.icon.alt|escape_attr }}" {{ loadingAttr }} {{ sizeAttrs }}>
+        </div>
+        {% endif %}
+        <h2>{{ module.content.left_content.title }}</h2>
+        
+        {% if module.content.left_content.text %}
+          <div class="two-col-cont-rtext">
+            {{ module.content.left_content.text }}
+          </div>
+        {% endif %}
+        {% if module.content.left_content.chat_image.src %}
+        <div class="two-col-cont-chat">
+            {% set sizeAttrs = 'width="{{ module.content.left_content.chat_image.width|escape_attr }}" height="{{ module.content.left_content.chat_image.height|escape_attr }}"' %}
+            {% if module.content.left_content.chat_image.size_type == 'auto' %}
+            {% set sizeAttrs = 'width="{{ module.content.left_content.chat_image.width|escape_attr }}" height="{{ module.content.left_content.chat_image.height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+            {% elif module.content.left_content.chat_image.size_type == 'auto_custom_max' %}
+            {% set sizeAttrs = 'width="{{ module.content.left_content.chat_image.max_width|escape_attr }}" height="{{ module.content.left_content.chat_image.max_height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+            {% endif %}
+            {% set loadingAttr = module.content.left_content.chat_image.loading != 'disabled' ? 'loading="{{ module.content.left_content.chat_image.loading|escape_attr }}"' : '' %}
+            <img src="{{ module.content.left_content.chat_image.src|escape_url }}" alt="{{ module.content.left_content.chat_image.alt|escape_attr }}" {{ loadingAttr }} {{ sizeAttrs }}>
+        </div>
+        {% endif %}
+      </div>
+     </div>
+      <div class="two-col-cont-right">
+        <div class="two-col-cont-right-inn">
+        <h3>{{ module.content.right_content.title }}</h3>
+        <div class="two-col-cont-rtext">
+          {{ module.content.right_content.text }}
+        </div>
+        <div class="two-col-cont-rtInn flexwrap">
+          {% for item in module.content.right_content.column_item %}
+          <div class="two-col-cont-ritem">
+            <div class="two-col-cont-ricon">
+              {% if item.icon.src %}
+              {% set sizeAttrs = 'width="{{ item.icon.width|escape_attr }}" height="{{ item.icon.height|escape_attr }}"' %}
+              {% if item.icon.size_type == 'auto' %}
+              {% set sizeAttrs = 'width="{{ item.icon.width|escape_attr }}" height="{{ item.icon.height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+              {% elif item.icon.size_type == 'auto_custom_max' %}
+              {% set sizeAttrs = 'width="{{ item.icon.max_width|escape_attr }}" height="{{ item.icon.max_height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+              {% endif %}
+              {% set loadingAttr = item.icon.loading != 'disabled' ? 'loading="{{ item.icon.loading|escape_attr }}"' : '' %}
+              <img src="{{ item.icon.src|escape_url }}" alt="{{ item.icon.alt|escape_attr }}" {{ loadingAttr }} {{ sizeAttrs }}>
+              {% endif %}
+            </div>
+            <div class="two-col-cont-rconte">
+              <h4>{{ item.title }}</h4>
+              <div class="two-col-cont-text">
+                {{ item.text }}
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+     </div>
+    </div>
+  </div> 
+</div>
+  
+{% require_css %}
+  <style>
+    {% scope_css %}
+      .spacSec { {{ module.style.spacing.desktop.css }}  }
+      .two-col-cont-left-inn { background-color:{{ module.content.left_content.select_background_style }};  }
+      .two-col-cont-right-inn  { background-color:{{ module.content.right_content.select_background_style }};  }
+    
+    
+
+      @media(max-width:991px){
+       .spacSec { {{ module.style.spacing.tablet.css }}  }
+      }
+
+      @media(max-width:767px){
+       .spacSec { {{ module.style.spacing.mobile.css }}  }
+      }
+    
+    {% end_scope_css %}
+  </style>
+{% end_require_css %}
+
+{% endif %}
+{% endif %}
+
+
+
+
+
+
+
+
+

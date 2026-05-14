@@ -1,0 +1,108 @@
+{% if module.show_hide_ %}
+{% set moduleId = '#hs_cos_wrapper_{{ name }}' %}
+<div class="heroDemoSec fullwidth bgsec space-sec">
+ <div class="wrapper">
+   <div class="heroDemoInner d_flex align_center">
+     <div class="heroDemoLeft">
+       <div class="heroDemoSub geist-mono uppercase font-medium pb16">{{ module.sub_title }}</div>
+        <h1>{{ module.title }}</h1>
+       {% if module.text %}
+        <div class="heroDemoStext sectxt">
+            {{ module.text }}
+        </div>
+       {% endif %}
+     </div>
+    
+     <div class="heroDemoRight"> 
+       <div class="heroDemoForm">
+         <h3>{{ module.form_content.title }}</h3>
+         
+          <script charset="utf-8" type="text/javascript" src="//js-eu1.hsforms.net/forms/embed/v2.js"></script>
+          <script>
+            hbspt.forms.create({
+              portalId: "25662839",
+              formId: "{{ module.form_content.form_field.form_id }}",
+              region: "eu1",
+              css:"",
+              
+              onFormReady: function($form){
+                var submitValue = $form.find('input[type="submit"]').val();
+                var customHtml = `
+                <div class="democusttext">
+                    ${submitValue}
+                    <svg width="6" height="9" viewBox="0 0 6 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M0.75 0.75L4.5 4.5L0.75 8.25" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>`;
+              
+                $(customHtml).insertAfter($form.find('.hs-submit .actions input'));
+              
+              } 
+              
+              
+            });
+          </script>
+         
+         
+         
+         
+         
+       </div>
+     </div>
+   </div>
+ </div>
+  
+  <div class="heroDemimage">
+    {% if module.image_field.src %}
+      {% set sizeAttrs = 'width="{{ module.image_field.width|escape_attr }}" height="{{ module.image_field.height|escape_attr }}"' %}
+      {% if module.image_field.size_type == 'auto' %}
+        {% set sizeAttrs = 'width="{{ module.image_field.width|escape_attr }}" height="{{ module.image_field.height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+      {% elif module.image_field.size_type == 'auto_custom_max' %}
+        {% set sizeAttrs = 'width="{{ module.image_field.max_width|escape_attr }}" height="{{ module.image_field.max_height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+      {% endif %}
+       {% set loadingAttr = module.image_field.loading != 'disabled' ? 'loading="{{ module.image_field.loading|escape_attr }}"' : '' %}
+      <img src="{{ module.image_field.src|escape_url }}" alt="{{ module.image_field.alt|escape_attr }}" {{ loadingAttr }} {{ sizeAttrs }}>
+    {% endif %}
+  </div>
+  
+  
+  
+</div>
+
+
+
+
+
+{% require_css %}
+<style>
+  {{ moduleId }} .bgsec { {% if module.style.select_background == 'bg_color' %}
+    background-color: rgba({{ module.style.background_color.color|convert_rgb }},{{ module.style.background_color.opacity ~ '%' }});
+    {% elif module.style.select_background == 'bg_image' %}
+    {{ module.style.background_image.css }} background-repeat: no-repeat;
+    {% elif module.style.select_background == 'bg_gradient' %}
+    background: {{ module.style.background_gradient.css }};
+    {% endif %} }
+  
+  {{ moduleId }} .space-sec { {{ module.style.spacing.desktop.css }}; }
+  
+  {{ moduleId }} .heroDemoLeft h1 { color: rgba({{ module.color_settings.title_color.color|convert_rgb }},{{ module.color_settings.title_color.opacity ~ '%' }}); }
+  {{ moduleId }} .heroDemoLeft h1 span { color: rgba({{ module.color_settings.title_span_color.color|convert_rgb }},{{ module.color_settings.title_span_color.opacity ~ '%' }}); }
+  {{ moduleId }} .sectxt , {{ moduleId }} .sectxt * { color: rgba({{ module.color_settings.text_color.color|convert_rgb }},{{ module.color_settings.text_color.opacity ~ '%' }}); } 
+  {{ moduleId }} .heroDemoSub { color: rgba({{ module.color_settings.sub_title_color.color|convert_rgb }},{{ module.color_settings.sub_title_color.opacity ~ '%' }}); }
+  
+  
+  
+  @media(max-width: 991px){ {{ moduleId }} .space-sec { {{ module.style.spacing.tablet.css }}; } }
+  
+  @media(max-width: 767px){ {{ moduleId }} .space-sec { {{ module.style.spacing.mobile.css }}; } }
+  
+</style>
+{% end_require_css %}
+
+
+
+
+{% endif %}
+
+
+

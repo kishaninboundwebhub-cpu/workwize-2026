@@ -1,0 +1,225 @@
+{% if module.show_hide_ %}
+
+{# ===== START - PRICING OFFER CATALOG SCHEMA ===== #}
+{% include "/Workwize/templates/partials/Schema Markup/Pricing Page.html" %}
+{# ===== END - PRICING OFFER CATALOG SCHEMA ===== #}
+
+{% set moduleId = '#hs_cos_wrapper_{{ name }}' %}
+{#{% if dynamic_page_hubdb_row %}#}
+<div class="fullwidth pricing-sec bgsec space-sec">
+ <div class="wrapper">
+  <div class="secinner pricing-inner">
+   {% if module.text or module.title %}   
+   <div class="secheader text-center">
+    {% if module.title %} 
+    <div class="sectitle">
+     <h2>{{ module.title }}</h2> 
+    </div>
+    {% endif %}
+    {% if module.text %}  
+    <div class="sectxt"> 
+     {{ module.text }} 
+    </div>
+    {% endif %} 
+   </div>
+   {% endif %}
+   {% if module.pricing_toggle_show_hide_ %}
+   <div class="pricing-cure-switcher-top">
+     <h3>Currency</h3>
+     <div class="pricing-cure-switcher">
+       <a data-value=".usd"><span>$ USD</span></a>
+       <a data-value=".eur"><span>€ EUR</span></a>
+       <a data-value=".gbp"><span>£ GBP</span></a>
+     </div>  
+   </div>  
+   {% endif %}
+   <div class="pricing-rw flexwrap">
+     {% for item in module.content %}
+       <div class="pricing-col pricing-col-tspace-cl {% if item.popular_text %} pricing-col-tspace {% endif %}">
+         <div class="pricing-content">
+         {% if item.popular_text %}
+           <div class="pricingpopu"> 
+             <svg xmlns="https://www.w3.org/2000/svg" width="512" height="512" enable-background="new 0 0 512 512" viewBox="0 0 512 512" id="electric-current">
+             <polygon fill="none" stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="20" stroke-width="20" points="259.579 234.712 304.605 16.829 121.368 311.551 245.999 274.883 162.736 496.124 391.602 202.657"></polygon>
+             </svg>
+             {{ item.popular_text }}
+           </div>
+         {% endif %}  
+           
+         {% if item.title %}<h3 class="text-center">{{ item.title }}</h3>{% endif %}
+         {% if item.title_text %}<div class="pricing-tiletxt txtcolor text-center">{{ item.title_text }}</div>{% endif %}
+        <div class="pricing-cure-inner">   
+          <div class="pricing-cure-box usd text-center">
+            <div class="pricing-seatxt txtcolor">{{ item.currency_content.usd_content.seat_text }}</div>
+            <div class="pricing-platxt txtcolor">{{ item.currency_content.usd_content.platform_text }}</div>
+          </div> 
+           
+          <div class="pricing-cure-box eur text-center">
+            <div class="pricing-seatxt txtcolor">{{ item.currency_content.eur_content.seat_text }}</div>
+            <div class="pricing-platxt txtcolor">{{ item.currency_content.eur_content.platform_text }}</div>
+          </div> 
+           
+          <div class="pricing-cure-box gbp text-center">
+            <div class="pricing-seatxt txtcolor">{{ item.currency_content.gbp_content.seat_text }}</div>
+            <div class="pricing-platxt txtcolor">{{ item.currency_content.gbp_content.platform_text }}</div>
+          </div> 
+         </div>  
+         {% if item.button.button_text %} 
+          <div class="secbtns">
+            <div class="secbtn triggBtn {{ item.button.button_choice }}">
+              {% set href = item.button.button_link.url.href %}
+	            {% if item.button.button_link.url.type is equalto "EMAIL_ADDRESS" %}
+		          {% set href = "mailto:" + href %}
+	            {% endif %}
+	            <a href="{{ href }}"
+		          {% if item.button.button_link.open_in_new_tab %}target="_blank"{% endif %}
+		          {% if item.button.button_link.rel %}rel="{{ item.button.button_link.rel }}"{% endif %}
+		          >
+                {{ item.button.button_text }}
+              </a> 
+            </div>      
+          </div>  
+         {% endif %} 
+         {% if item.text %}<div class="pricing-txt txtcolor">{{ item.text }}</div>{% endif %}
+           {% if item.custom_list %}
+          <div class="pricing-txt pricing-txt-list txtcolor">
+             <ul>
+               {% for item2 in item.list %}
+                 <li>
+                   <span class="pricingss-icon">
+                      {% if item2.icon.src %}
+                      {% set sizeAttrs = 'width="{{ item2.icon.width|escape_attr }}" height="{{ item2.icon.height|escape_attr }}"' %}
+                      {% if item2.icon.size_type == 'auto' %}
+                      {% set sizeAttrs = 'width="{{ item2.icon.width|escape_attr }}" height="{{ item2.icon.height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+                      {% elif item2.icon.size_type == 'auto_custom_max' %}
+                      {% set sizeAttrs = 'width="{{ item2.icon.max_width|escape_attr }}" height="{{ item2.icon.max_height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+                      {% endif %}
+                      {% set loadingAttr = item2.icon.loading != 'disabled' ? 'loading="{{ item2.icon.loading|escape_attr }}"' : '' %}
+                      <img src="{{ item2.icon.src|escape_url }}" alt="{{ item2.icon.alt|escape_attr }}" {{ loadingAttr }} {{ sizeAttrs }}>
+                      {% endif %}
+                   </span>
+                  <span  class="pricingss-text">{{ item2.text_field }}</span>
+                 </li>
+               {% endfor %}
+            </ul>
+          </div>
+           {% endif %}
+         </div>
+       </div>
+     {% endfor %}
+   </div>
+    {% if module.bottom_note %}
+       <div class="pricingssnote text-center">
+         {{ module.bottom_note }}
+       </div>
+    {% endif %}
+  </div>    
+ </div>
+</div>
+
+
+{% require_css %}
+<style>
+  {{ moduleId }} .bgsec { {% if module.style.select_background == 'bg_color' %}
+    background-color: rgba({{ module.style.background_color.color|convert_rgb }},{{ module.style.background_color.opacity ~ '%' }});
+    {% elif module.style.select_background == 'bg_image' %}
+    {{ module.style.background_image.css }} background-repeat: no-repeat;
+    {% elif module.style.select_background == 'bg_gradient' %}
+    background: {{ module.style.background_gradient.css }};
+    {% endif %} }
+  
+  {{ moduleId }} .space-sec { {{ module.style.spacing.desktop.css }}; }
+  
+  {{ moduleId }} .sectitle h1,
+  {{ moduleId }} .sectitle h2 , 
+  {{ moduleId }} .sectitle h3 , 
+  {{ moduleId }} .sectitle h4 , 
+  {{ moduleId }} .sectitle h5 ,
+  {{ moduleId }} .sectitle h6 { color: rgba({{ module.color_settings.title_color.color|convert_rgb }},{{ module.color_settings.title_color.opacity ~ '%' }}); }
+  {{ moduleId }} .sectxt , {{ moduleId }} .sectxt * { color: rgba({{ module.color_settings.text_color.color|convert_rgb }},{{ module.color_settings.text_color.opacity ~ '%' }}); } 
+  
+  {% for item in module.content %}
+   {{ moduleId }} .pricing-col:nth-child({{ loop.index }}) .pricing-content { background-color: rgba({{ item.color_setting.background_color.color|convert_rgb }},{{ item.color_setting.background_color.opacity ~ '%' }}); }
+   {{ moduleId }} .pricing-col:nth-child({{ loop.index }}) h3 { color: rgba({{ item.color_setting.title_color.color|convert_rgb }},{{ item.color_setting.title_color.opacity ~ '%' }}); }
+   {{ moduleId }} .pricing-col:nth-child({{ loop.index }}) .txtcolor { color: rgba({{ item.color_setting.text_color.color|convert_rgb }},{{ item.color_setting.text_color.opacity ~ '%' }}); }
+  {{ moduleId }} .pricing-col:nth-child({{ loop.index }}) .pricing-seatxt.txtcolor { color: rgba({{ item.color_setting.pricing_text_color.color|convert_rgb }},{{ item.color_setting.pricing_text_color.opacity ~ '%' }}); }
+   {{ moduleId }} .pricing-col:nth-child({{ loop.index }}) .pricing-txt ul li:before { content:''; background-image: url({{ item.text_icon.src }}); }
+   {{ moduleId }} .pricing-col:nth-child({{ loop.index }}) a { background-color: rgba({{ item.button.background_color.color|convert_rgb }},{{ item.button.background_color.opacity ~ '%' }}); border-color: rgba({{ item.button.border_color.color|convert_rgb }},{{ item.button.border_color.opacity ~ '%' }}); color: rgba({{ item.button.text_color.color|convert_rgb }},{{ item.button.text_color.opacity ~ '%' }}); }
+   {{ moduleId }} .pricing-col:nth-child({{ loop.index }}) a:hover { background-color: rgba({{ item.button.background_color_hover_.color|convert_rgb }},{{ item.button.background_color_hover_.opacity ~ '%' }}); border-color: rgba({{ item.button.border_color_hover_.color|convert_rgb }},{{ item.button.border_color_hover_.opacity ~ '%' }}); color: rgba({{ item.button.text_color_hover_.color|convert_rgb }},{{ item.button.text_color_hover_.opacity ~ '%' }}); }  
+  {% endfor %}
+  
+  
+  @media(max-width: 991px){ {{ moduleId }} .space-sec { {{ module.style.spacing.tablet.css }}; } }
+  
+  @media(max-width: 767px){ {{ moduleId }} .space-sec { {{ module.style.spacing.mobile.css }}; } }
+  
+</style>
+{% end_require_css %}
+{#{% endif %}#}
+
+
+{% require_js %}
+  <script>
+    $(document).ready(function(){
+      $(".pricing-cure-switcher a").on("click", (function (e) {
+        e.preventDefault();
+         $(".pricing-cure-switcher a").removeClass("active");
+         $(this).addClass("active"); 
+         $(".pricing-cure-box").hide();
+         $($(this).attr("data-value")).show();
+      }));  
+    });
+
+
+ // Function to add class to the body element based on location
+        function addLocationClass(location) {
+            const body = document.querySelector('body');
+            if (location === 'US') {
+                body.classList.add('USD');
+                $('.pricing-cure-switcher a:first-child').trigger('click');
+            } else if (location === 'GB') {
+                $('.pricing-cure-switcher a:last-child').trigger('click');
+                body.classList.add('UK');
+            } else if (location === 'DE' || location === 'FR' || location === 'NL' || location === 'ES' || location === 'PL' || location === 'IT' || location === 'BE' || location === 'IE') {
+                $('.pricing-cure-switcher a:nth-child(2)').trigger('click');
+                body.classList.add('Germany');
+            } else {
+                $('.pricing-cure-switcher a:first-child').trigger('click');
+            }
+        }
+
+        // Function to fetch IP address and determine location
+        async function fetchLocation() {
+            try {
+                const response = await fetch('https://ipapi.co/json/');
+                const data = await response.json();
+                const country = data.country;
+                addLocationClass(country);
+            } catch (error) {
+                console.error('Error fetching IP location:', error);
+            }
+        }
+
+        // Call the function to fetch location when the page loads
+        fetchLocation();
+
+  </script>
+{% end_require_js %}
+
+{% endif %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,36 @@
+<!--
+  templateType: blog_listing
+  isAvailableForNewContent: true
+  label: Blog Listing templates
+  screenshotPath: ../images/template-previews/blog-index.png
+-->
+{% set template_css = "../../css/templates/blog.css" %}
+{% extends "./layouts/base.html" %}
+
+{% block body %}
+{% dnd_area "dnd_area" label="Main section", class="body-container body-container--blog-index" %}
+
+ {% dnd_section full_width="true" padding={'default': { 'top': 0 , 'right': 0 , 'left': 0 , 'bottom': 0 } } %}
+   {% dnd_module "module_17086664136257" path="/Workwize/modules/Hero Section - Pricing", label="Hero Section - Pricing" %}
+   {% end_dnd_module %}
+ {% end_dnd_section %}
+ 
+ {% dnd_section full_width="true" padding={'default': { 'top': 0 , 'right': 0 , 'left': 0 , 'bottom': 0 } } %}
+   {% dnd_module "module_17346763900314" path="/Workwize/modules/Logo Slider Section", label="Logo Slider Section" %}
+   {% end_dnd_module %}     
+ {% end_dnd_section %}
+  
+ {# Blog listings and pagination #}
+ 
+ {% dnd_section full_width="true" padding={'default': { 'top': 0 , 'right': 0 , 'left': 0 , 'bottom': 0 } } %}
+   {% dnd_module "module_173467739176310" path="/Workwize/modules/Blog Listing - Templates", label="Blog Listing - Templates" %}
+   {% end_dnd_module %}     
+ {% end_dnd_section %}
+
+ {% dnd_section full_width="true" padding={'default': { 'top': 0 , 'right': 0 , 'left': 0 , 'bottom': 0 } } %}
+   {% dnd_module "module_1708606831113123" path="/Workwize/modules/Cta Section Fullwidth", label="Cta Section Fullwidth" %}
+   {% end_dnd_module %}     
+ {% end_dnd_section %}
+
+{% end_dnd_area %}
+{% endblock body %}

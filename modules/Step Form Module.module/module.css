@@ -1,0 +1,5 @@
+/* .multistepformpopupbox.multistepformpopUpdate fieldset.form-columns-1,
+.multistepformpopupbox.multistepformpopUpdate .hs_submit.hs-submit { max-width: 500px !important; margin: 0 auto; } */
+/* .multistepformpopupbox.multistepformpopUpdate h3 { font-size: 20px; } */
+.multistepformpopupbox.multistepformpopUpdate .hs-fieldtype-number.field.hs-form-field .input { width: 12%; }
+.multistepformpopupbox.multistepformpopUpdate legend.hs-field-desc { font-style: italic; font-size: 15px; line-height: normal; }

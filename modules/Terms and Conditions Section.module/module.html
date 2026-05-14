@@ -1,0 +1,70 @@
+<div class="tearmcondosec spaceSec fullwidth">
+  <div class="wrapper">
+    <div class="tearmcondoTitle text-center">
+      <h1>{{ module.title.title }}</h1>
+    </div>
+    <div class="tearmcondoInners flexwrap {% if module.reverse_table_content %}reverse_row{% endif %}">
+      <div class="tearmcondoLeft">
+        <div class="tearmcondoConte">
+          <div class="tearmcondoCTops">
+            {{ module.main_content.top_content }}
+          </div>
+          
+          <div class="tearmcondoCacocon">
+            {% for item in module.main_content.accordion_item %}
+            <div class="tearmcondoCaitt">
+              <h2>{{ item.title }}</h2>
+              <div class="tearmcondoCtext">
+                <div class="tearmcondoCinn">
+                  {{ item.text }}
+                </div>
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+          
+          
+          
+        </div>
+      </div>
+      
+      <div class="tearmcondoRight"> 
+        <div class="tearmcondoRtable">
+          <h3>{{ module.table_of_contents_title.title }}</h3>
+          <ul></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% require_css %}
+  <style>
+    {% scope_css %}
+      .spaceSec { {{ module.style.desktop.spacing.css }}  }
+    
+    
+      @media(max-width:991px){
+        .spaceSec { {{ module.style.tablet.spacing.css }}  }
+      }
+    
+      @media(max-width:767px){
+        .spaceSec { {{ module.style.mobile.spacing.css }}  }
+      }
+    
+    
+    {% end_scope_css %}
+  </style>
+{% end_require_css %}
+
+
+
+
+
+
+
+
+
+
+
+
+

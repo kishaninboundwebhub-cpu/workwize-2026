@@ -1,0 +1,129 @@
+{% if module.show_hide_ %}
+{% set moduleId = '#hs_cos_wrapper_{{ name }}' %}
+<div class="fullwidth twimg-sec bgsec space-sec">
+ <div class="wrapper">
+  <div class="secinner twimg-inner flexwrap">
+    <div class="twimg-lf">
+      {% if module.image.src %}
+	       {% set sizeAttrs = 'width="{{ module.image.width }}" height="{{ module.image.height }}"' %}
+	       {% if module.image.size_type == 'auto' %}
+		     {% set sizeAttrs = 'width="{{ module.image.width }}" height="{{ module.image.height }}" style="max-width: 100%; height: auto;"' %}
+	       {% elif module.image.size_type == 'auto_custom_max' %}
+		     {% set sizeAttrs = 'width="{{ module.image.max_width }}" height="{{ module.image.max_height }}" style="max-width: 100%; height: auto;"' %}
+	       {% endif %}
+	       {% set loadingAttr = module.image.loading != 'disabled' ? 'loading="{{ module.image.loading }}"' : '' %}
+	       <img src="{{ module.image.src }}" alt="{{ module.image.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
+       {% endif %}
+    </div>
+    <div class="twimg-rght">
+      {% if module.text or module.title %}   
+      <div class="secheader">
+        {% if module.title %} 
+        <div class="sectitle {% if not module.text %} removespace{% endif %}">
+          <h3>{{ module.title }}</h3> 
+        </div>
+        {% endif %}
+        {% if module.text %}  
+        <div class="sectxt twimg-txt olstyle{% if module.color_settings.list_update_icon.src %} list-icon{% endif %}">{{ module.text }}</div>
+        {% endif %} 
+      </div>
+      {% endif %} 
+      {% if module.button_option == 'anotherow_centerbtn' %}
+      {% else %}
+      {% if module.button %} 
+      <div class="secbtns flexwrap  w-100">
+        {% for item in module.button %} 
+        <div class="secbtn {% if item.smooth_scrolling %}twimgbtns-smothscrolling{% endif %} {{ item.button_choice }}">
+          {% set href = item.button_link.url.href %}
+          {% if item.button_link.url.type is equalto "EMAIL_ADDRESS" %}
+          {% set href = "mailto:" + href %}
+          {% endif %}
+          <a href="{{ href }}"
+          {% if item.button_link.open_in_new_tab %}target="_blank"{% endif %}
+          {% if item.button_link.rel %}rel="{{ item.button_link.rel }}"{% endif %}
+          >
+            {{ item.button_text }}
+          </a> 
+        </div>
+        {% endfor %} 
+      </div>  
+      {% endif %} 
+      {% endif %} 
+    </div>
+  </div> 
+        {% if module.button_option == 'anotherow_centerbtn' %}
+      {% if module.button %} 
+      <div class="twimgbtns secbtns flexwrap justifyCenter w-100">
+        {% for item in module.button %} 
+        <div class="secbtn {% if item.smooth_scrolling %}twimgbtns-smothscrolling{% endif %} {{ item.button_choice }}">
+          {% set href = item.button_link.url.href %}
+          {% if item.button_link.url.type is equalto "EMAIL_ADDRESS" %}
+          {% set href = "mailto:" + href %}
+          {% endif %}
+          <a href="{{ href }}"
+          {% if item.button_link.open_in_new_tab %}target="_blank"{% endif %}
+          {% if item.button_link.rel %}rel="{{ item.button_link.rel }}"{% endif %}
+          >
+            {{ item.button_text }}
+          </a> 
+        </div>
+        {% endfor %} 
+      </div>  
+      {% endif %} 
+      {% endif %}  
+  {% if module.icon.src %}
+    <div class="arrowup text-center">
+      <a {% if module.arrow_up_id %}href="{{ module.arrow_up_id }}"{% endif %}>
+        {% if module.icon.src %}
+	        {% set sizeAttrs = 'width="{{ module.icon.width }}" height="{{ module.icon.height }}"' %}
+	        {% if module.icon.size_type == 'auto' %}
+		      {% set sizeAttrs = 'width="{{ module.icon.width }}" height="{{ module.icon.height }}" style="max-width: 100%; height: auto;"' %}
+	        {% elif module.icon.size_type == 'auto_custom_max' %}
+		      {% set sizeAttrs = 'width="{{ module.icon.max_width }}" height="{{ module.icon.max_height }}" style="max-width: 100%; height: auto;"' %}
+	        {% endif %}
+	        {% set loadingAttr = module.icon.loading != 'disabled' ? 'loading="{{ module.icon.loading }}"' : '' %}
+	        <img src="{{ module.icon.src }}" alt="{{ module.icon.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
+        {% endif %}
+      </a>
+      </div>
+  {% endif %}
+ </div>
+</div>
+
+
+{% require_css %}
+<style>
+  {{ moduleId }} .bgsec { {% if module.style.select_background == 'bg_color' %}
+    background-color: rgba({{ module.style.background_color.color|convert_rgb }},{{ module.style.background_color.opacity ~ '%' }});
+    {% elif module.style.select_background == 'bg_image' %}
+    {{ module.style.background_image.css }} background-repeat: no-repeat;
+    {% elif module.style.select_background == 'bg_gradient' %}
+    background: {{ module.style.background_gradient.css }};
+    {% endif %} }
+  
+  {{ moduleId }} .space-sec { {{ module.style.spacing.desktop.css }}; }
+  
+  {{ moduleId }} .sectitle h1,
+  {{ moduleId }} .sectitle h2 , 
+  {{ moduleId }} .sectitle h3 , 
+  {{ moduleId }} .sectitle h4 , 
+  {{ moduleId }} .sectitle h5 ,
+  {{ moduleId }} .sectitle h6 { color: rgba({{ module.color_settings.title_color.color|convert_rgb }},{{ module.color_settings.title_color.opacity ~ '%' }}); }
+  {{ moduleId }} .sectxt , {{ moduleId }} .sectxt * { color: rgba({{ module.color_settings.text_color.color|convert_rgb }},{{ module.color_settings.text_color.opacity ~ '%' }}); } 
+  
+  {% for item in module.button %} 
+   {{ moduleId }} .secbtn:nth-child({{ loop.index }}) a { background-color: rgba({{ item.background_color.color|convert_rgb }},{{ item.background_color.opacity ~ '%' }}); border-color: rgba({{ item.border_color.color|convert_rgb }},{{ item.border_color.opacity ~ '%' }}); color: rgba({{ item.text_color.color|convert_rgb }},{{ item.text_color.opacity ~ '%' }}); }
+   {{ moduleId }} .secbtn:nth-child({{ loop.index }}) a:hover { background-color: rgba({{ item.background_color_hover_.color|convert_rgb }},{{ item.background_color_hover_.opacity ~ '%' }}); border-color: rgba({{ item.border_color_hover_.color|convert_rgb }},{{ item.border_color_hover_.opacity ~ '%' }}); color: rgba({{ item.text_color_hover_.color|convert_rgb }},{{ item.text_color_hover_.opacity ~ '%' }}); }  
+  {% endfor %}
+  
+  {% if module.color_settings.list_update_icon.src %}
+  {{ moduleId }} .list-icon li:before { content: ''; background: url({{ module.color_settings.list_update_icon.src }})no-repeat 0 0 / contain;}
+  {% endif %}
+  
+  @media(max-width: 991px){ {{ moduleId }} .space-sec { {{ module.style.spacing.tablet.css }}; } }
+  
+  @media(max-width: 767px){ {{ moduleId }} .space-sec { {{ module.style.spacing.mobile.css }}; } }
+  
+</style>
+{% end_require_css %}
+{% endif %}

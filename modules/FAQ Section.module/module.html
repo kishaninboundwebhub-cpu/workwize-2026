@@ -1,0 +1,97 @@
+{% if module.show_hide_ %}
+
+{# START - FAQ Schema logic #}
+{% include "/Workwize/templates/partials/Schema Markup/FAQ general.html" %}
+{# END - FAQ Schema logic #}
+
+
+
+{% set moduleId = '#hs_cos_wrapper_{{ name }}' %}
+<div class="faqsec fullwidth bgsec space-sec">
+ <div class="wrapper">
+  <div class="faqinner secinner">
+   {% if module.text or module.title %}   
+   <div class="faqheader secheader w-100 text-center">
+    {% if module.title %} 
+    <div class="faqtitle sectitle {% if not module.text %} removespace{% endif %}">
+     <h2 class="h1">{{ module.title }}</h2> 
+    </div>
+    {% endif %}
+    {% if module.text %}  
+    <div class="faqtxt"> 
+     {{ module.text }} 
+    </div>
+    {% endif %} 
+   </div>
+   {% endif %}
+   <div class="faqrow w-100">
+    {% for item in module.faq_column %} 
+    <div class="faqcols">
+     <div class="faqcolstitle">{{ item.title }}</div>
+     <div class="faqcolstxt">{{ item.text }}</div> 
+    </div>  
+    {% endfor %} 
+   </div> 
+   {% if module.button %} 
+   <div class="faqbtns secbtns flexwrap w-100 justifyCenter">
+    {% for item in module.button %} 
+    <div class="faqbtn secbtn {{ item.button_choice }}">
+     {% set href = item.button_link.url.href %}
+     {% if item.button_link.url.type is equalto "EMAIL_ADDRESS" %}
+     {% set href = "mailto:" + href %}
+     {% endif %}
+     <a href="{{ href }}"
+     {% if item.button_link.open_in_new_tab %}target="_blank"{% endif %}
+     {% if item.button_link.rel %}rel="{{ item.button_link.rel }}"{% endif %}
+     >
+      {{ item.button_text }}
+     </a> 
+    </div>
+    {% endfor %} 
+   </div>  
+   {% endif %} 
+  </div>    
+ </div>
+</div>
+
+
+{% require_css %}
+<style>
+  {{ moduleId }} .bgsec { {% if module.style.select_background == 'bg_color' %}
+    background-color: rgba({{ module.style.background_color.color|convert_rgb }},{{ module.style.background_color.opacity ~ '%' }});
+    {% elif module.style.select_background == 'bg_image' %}
+    {{ module.style.background_image.css }} background-repeat: no-repeat;
+    {% elif module.style.select_background == 'bg_gradient' %}
+    background: {{ module.style.background_gradient.css }};
+    {% endif %} }
+  
+  {{ moduleId }} .space-sec { {{ module.style.spacing.desktop.css }}; }
+  {{ moduleId }} .sectitle h2.h1 ,
+  {{ moduleId }} .sectitle h1 ,
+  {{ moduleId }} .sectitle h2 , 
+  {{ moduleId }} .sectitle h3 , 
+  {{ moduleId }} .sectitle h4 , 
+  {{ moduleId }} .sectitle h5 ,
+  {{ moduleId }} .sectitle h6 { color: rgba({{ module.color_settings.title_color.color|convert_rgb }},{{ module.color_settings.title_color.opacity ~ '%' }}); }
+  {{ moduleId }} .sectxt , {{ moduleId }} .sectxt * { color: rgba({{ module.color_settings.text_color.color|convert_rgb }},{{ module.color_settings.text_color.opacity ~ '%' }}); } 
+  
+  {% for item in module.button %} 
+   {{ moduleId }} .secbtn:nth-child({{ loop.index }}) a { background-color: rgba({{ item.background_color.color|convert_rgb }},{{ item.background_color.opacity ~ '%' }}); border-color: rgba({{ item.border_color.color|convert_rgb }},{{ item.border_color.opacity ~ '%' }}); color: rgba({{ item.text_color.color|convert_rgb }},{{ item.text_color.opacity ~ '%' }}); }
+   {{ moduleId }} .secbtn:nth-child({{ loop.index }}) a:hover { background-color: rgba({{ item.background_color_hover_.color|convert_rgb }},{{ item.background_color_hover_.opacity ~ '%' }}); border-color: rgba({{ item.border_color_hover_.color|convert_rgb }},{{ item.border_color_hover_.opacity ~ '%' }}); color: rgba({{ item.text_color_hover_.color|convert_rgb }},{{ item.text_color_hover_.opacity ~ '%' }}); }  
+  {% endfor %}
+  
+   {% for item in module.faq_column %} 
+  {{ moduleId }} .faqcols:nth-child({{ loop.index }}) { background-color: rgba({{ item.background_color.color|convert_rgb }},{{ item.background_color.opacity ~ '%' }}); }
+  {{ moduleId }} .faqcols:nth-child({{ loop.index }}) .faqcolstitle:before , {{ moduleId }} .faqcols:nth-child({{ loop.index }}) .faqcolstitle:after { background-color: rgba({{ item.title_color.color|convert_rgb }}, 50%);}
+  {{ moduleId }} .faqcols:nth-child({{ loop.index }}) .faqcolstitle { color: rgba({{ item.title_color.color|convert_rgb }},{{ item.title_color.opacity ~ '%' }}); }
+  {{ moduleId }} .faqcols:nth-child({{ loop.index }}) .faqcolstxt { color: rgba({{ item.text_color.color|convert_rgb }},{{ item.text_color.opacity ~ '%' }}); }
+  {% endfor %}
+  
+  
+  @media(max-width: 991px){ {{ moduleId }} .space-sec { {{ module.style.spacing.tablet.css }}; } }
+  
+  @media(max-width: 767px){ {{ moduleId }} .space-sec { {{ module.style.spacing.mobile.css }}; } }
+  
+</style>
+{% end_require_css %}
+{% endif %}

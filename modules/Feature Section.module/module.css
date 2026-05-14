@@ -1,0 +1,30 @@
+.FeatureInSec { text-align: center }
+.FeatureInSec {  margin-bottom: 30px;}
+.FeatureBoxSec { display: flex; flex-wrap: wrap; align-items: flex-start; gap: 30px;}
+.FeatureBoxSec .FeatureBox {max-width: calc(33.33% - 20px);width: 100%;border-radius: 20px;background: #fff;overflow: hidden;}
+.FeatureBoxSec .FeatureBox .FeatureBoximg {  background-repeat: no-repeat; background-position: center center;  background-size: cover; padding-bottom: 50%;}
+.FeatureBoxSec .FeatureBox .FeatureBoxCntCol { padding: 20px;}
+.FeatureBoxSec .FeatureBox .FeatureBoxCntCol .FeatureBoxTitle * { font-weight: 600; margin-bottom: 10px;}
+.FeatureBoxSec .FeatureBox .FeatureBoxCntCol .FeatureBoxBtn { text-align: center; margin-top: 10px;}
+.FeatureBoxSec .FeatureBox .FeatureBoxCntCol .FeatureBoxBtn a { font-size: 16px; position: relative;  color: #227AF7;}
+.FeatureBoxSec .FeatureBox .FeatureBoxCntCol .FeatureBoxBtn a:after { content: '';  position: absolute;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' width='512' height='512' x='0' y='0' viewBox='0 0 32 32' style='enable-background:new 0 0 512 512' xml:space='preserve' class=''%3E%3Cg%3E%3Cg fill='%23000' fill-rule='evenodd' clip-rule='evenodd'%3E%3Cpath d='M4 16a1 1 0 0 1 1-1h22a1 1 0 1 1 0 2H5a1 1 0 0 1-1-1z' fill='%23227af7' opacity='1' data-original='%23000000' class=''%3E%3C/path%3E%3Cpath d='M17.293 6.293a1 1 0 0 1 1.414 0l9 9a1 1 0 0 1 0 1.414l-9 9a1 1 0 0 1-1.414-1.414L25.586 16l-8.293-8.293a1 1 0 0 1 0-1.414z' fill='%23227af7' opacity='1' data-original='%23000000' class=''%3E%3C/path%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    width: 20px; height: 20px; background-repeat: no-repeat !important; background-size: cover !important; background-position: center center; top: 50%; transform: translateY(-50%); right: -25px;}
+
+
+.FeatureBoxSec.Featureslider .FeatureBox {  margin: 0 15px;}
+.FeatureBoxSec.Featureslider { position: relative; padding-bottom: 80px;}
+.FeatureBoxSec.Featureslider .slick-arrow { bottom: 0; top: unset; position: absolute; left: calc(50% + 30px);  transform: translateX(-50%);}
+.FeatureBoxSec.Featureslider .slick-arrow.slick-prev {  left: calc(50% - 30px);}
+.FeatureBoxSec.Featureslider .slick-arrow:hover:before,.FeatureBoxSec.FeatureBoxBlogSec .slick-arrow:focus:before { border-color: #fff;}
+.FeatureBoxSec.Featureslider .FeatureBoxTitle { margin-bottom : 10px; }
+
+@media (max-width: 1080px){
+
+.FeatureBoxSec .FeatureBox { max-width: calc(50% - 15px);}
+}
+
+@media (max-width : 767px){
+.FeatureBoxSec .FeatureBox { max-width: 100%;}
+}
+

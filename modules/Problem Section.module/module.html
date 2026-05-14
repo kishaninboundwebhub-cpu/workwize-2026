@@ -1,0 +1,69 @@
+{% if module.show_hide_ %}
+{% set moduleId = '#hs_cos_wrapper_{{ name }}' %}
+
+
+<div class="problsec fullwidth bgsec space-sec">
+ <div class="wrapper">
+   <div class="problTop wow fadeInUp pb40">
+     <h2>{{ module.content.title }}</h2>
+     <div class="problTtext">
+       {{ module.content.text }}
+     </div>
+   </div>
+   <div class="problInner d_flex">
+     {% for item in module.content.box_item %}
+       <div class="problItem wow fadeInUp">
+         <div class="problInn">
+           <div class="problImage">
+              {% if item.image_field.src %}
+              {% set sizeAttrs = 'width="{{ item.image_field.width|escape_attr }}" height="{{ item.image_field.height|escape_attr }}"' %}
+              {% if item.image_field.size_type == 'auto' %}
+              {% set sizeAttrs = 'width="{{ item.image_field.width|escape_attr }}" height="{{ item.image_field.height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+              {% elif item.image_field.size_type == 'auto_custom_max' %}
+              {% set sizeAttrs = 'width="{{ item.image_field.max_width|escape_attr }}" height="{{ item.image_field.max_height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+              {% endif %}
+              {% set loadingAttr = item.image_field.loading != 'disabled' ? 'loading="{{ item.image_field.loading|escape_attr }}"' : '' %}
+              <img src="{{ item.image_field.src|escape_url }}" alt="{{ item.image_field.alt|escape_attr }}" {{ loadingAttr }} {{ sizeAttrs }}>
+              {% endif %}
+           </div>
+           <div class="problbtext pt20">
+             {{ item.text_field }}
+           </div>
+         </div>
+       </div>
+     {% endfor %}
+   </div>
+ </div>
+</div>
+
+
+{% require_css %}
+<style>
+  {{ moduleId }} .bgsec { {% if module.style.select_background == 'bg_color' %}
+    background-color: rgba({{ module.style.background_color.color|convert_rgb }},{{ module.style.background_color.opacity ~ '%' }});
+    {% elif module.style.select_background == 'bg_image' %}
+    {{ module.style.background_image.css }} background-repeat: no-repeat;
+    {% elif module.style.select_background == 'bg_gradient' %}
+    background: {{ module.style.background_gradient.css }};
+    {% endif %} }
+  
+  {{ moduleId }} .space-sec { {{ module.style.spacing.desktop.css }}; }
+  
+  {{ moduleId }} .problTop h2 { color:rgba({{ module.color_setting.title_color.color|convert_rgb }},{{ module.color_setting.title_color.opacity }}%);  }
+  {{ moduleId }} .problTtext { color:rgba({{ module.color_setting.text_color.color|convert_rgb }},{{ module.color_setting.text_color.opacity }}%);  }
+  {{ moduleId }} .problbtext { color:rgba({{ module.color_setting.box_text_color.color|convert_rgb }},{{ module.color_setting.box_text_color.opacity }}%);  }
+  
+  
+  
+  
+  @media(max-width: 991px){ {{ moduleId }} .space-sec { {{ module.style.spacing.tablet.css }}; } }
+  
+  @media(max-width: 767px){ {{ moduleId }} .space-sec { {{ module.style.spacing.mobile.css }}; } }
+  
+</style>
+{% end_require_css %}
+
+
+
+{% endif %}
+

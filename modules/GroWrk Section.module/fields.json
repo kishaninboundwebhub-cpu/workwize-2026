@@ -1,0 +1,639 @@
+[ {
+  "id" : "e181e1ee-ef06-5ba8-0ad3-f63113a45d24",
+  "name" : "style",
+  "label" : "Style",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "36fd79d2-1107-4452-d226-d4c096723f16",
+    "name" : "select_background",
+    "label" : "Select Background",
+    "required" : false,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "bg_color", "Background Color" ], [ "bg_image", "Background Image" ], [ "bg_gradient", "Background Gradient" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : ""
+  }, {
+    "id" : "60d0ddef-fb34-a99a-73cb-bda8b10e0fc9",
+    "name" : "background_color",
+    "label" : "Background Color",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "style.select_background",
+      "controlling_value_regex" : "bg_color",
+      "property" : null,
+      "operator" : "MATCHES_REGEX",
+      "access" : null
+    },
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#002A5A",
+      "opacity" : 100
+    }
+  }, {
+    "id" : "19f0609d-595d-6ef3-f639-3f6006e095fb",
+    "name" : "background_image",
+    "label" : "Background Image",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "style.select_background",
+      "controlling_value_regex" : "bg_image",
+      "property" : null,
+      "operator" : "MATCHES_REGEX",
+      "access" : null
+    },
+    "type" : "backgroundimage",
+    "display_width" : null,
+    "default" : {
+      "src" : "",
+      "background_position" : "MIDDLE_CENTER",
+      "background_size" : "cover"
+    }
+  }, {
+    "id" : "0df6d4e0-395b-eda2-ec5a-1d08ad6c8d35",
+    "name" : "background_gradient",
+    "label" : "Background Gradient",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "style.select_background",
+      "controlling_value_regex" : "bg_gradient",
+      "property" : null,
+      "operator" : "MATCHES_REGEX",
+      "access" : null
+    },
+    "type" : "gradient",
+    "display_width" : null,
+    "default" : { }
+  }, {
+    "id" : "afeb177b-c31d-1412-5116-70d6f85c5565",
+    "name" : "spacing",
+    "label" : "Spacing",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "d59d9e4c-264e-54fa-99b7-0ff07897b867",
+      "name" : "desktop",
+      "label" : "Desktop",
+      "required" : false,
+      "locked" : false,
+      "type" : "spacing",
+      "display_width" : null,
+      "default" : {
+        "padding" : {
+          "top" : {
+            "value" : 100,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 100,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      }
+    }, {
+      "id" : "0c762a95-1339-05fa-721d-3d79f41b571e",
+      "name" : "tablet",
+      "label" : "Tablet",
+      "required" : false,
+      "locked" : false,
+      "type" : "spacing",
+      "display_width" : null,
+      "default" : {
+        "padding" : {
+          "top" : {
+            "value" : 80,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 80,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      }
+    }, {
+      "id" : "0a8a8c35-4008-f2aa-311a-12325d67b19c",
+      "name" : "mobile",
+      "label" : "Mobile",
+      "required" : false,
+      "locked" : false,
+      "type" : "spacing",
+      "display_width" : null,
+      "default" : {
+        "padding" : {
+          "top" : {
+            "value" : 60,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 60,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      }
+    } ],
+    "tab" : "STYLE",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : {
+      "desktop" : {
+        "padding" : {
+          "top" : {
+            "value" : 100,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 100,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      },
+      "tablet" : {
+        "padding" : {
+          "top" : {
+            "value" : 80,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 80,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      },
+      "mobile" : {
+        "padding" : {
+          "top" : {
+            "value" : 60,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 60,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      }
+    }
+  } ],
+  "tab" : "STYLE",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "select_background" : "",
+    "background_color" : {
+      "color" : "#002A5A",
+      "opacity" : 100
+    },
+    "background_image" : {
+      "src" : "",
+      "background_position" : "MIDDLE_CENTER",
+      "background_size" : "cover"
+    },
+    "background_gradient" : { },
+    "spacing" : {
+      "desktop" : {
+        "padding" : {
+          "top" : {
+            "value" : 100,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 100,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      },
+      "tablet" : {
+        "padding" : {
+          "top" : {
+            "value" : 80,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 80,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      },
+      "mobile" : {
+        "padding" : {
+          "top" : {
+            "value" : 60,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 60,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      }
+    }
+  }
+}, {
+  "id" : "55ccd3e2-31aa-4e79-9772-80facd954415",
+  "name" : "show_hide_",
+  "label" : "Section [Show/ Hide]",
+  "required" : false,
+  "locked" : false,
+  "display" : "toggle",
+  "type" : "boolean",
+  "display_width" : null,
+  "default" : true
+}, {
+  "id" : "7b18c478-576b-6b01-16d4-43695561b4f8",
+  "name" : "top_content",
+  "label" : "Top Content",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "496d4407-abd4-c6ea-6410-2a7f84894093",
+    "name" : "title",
+    "label" : "Title",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "GroWrk makes sense if your headcount never changes."
+  }, {
+    "id" : "145c99b0-c589-40ea-693a-b828ad329fbe",
+    "name" : "text",
+    "label" : "Text",
+    "required" : false,
+    "locked" : false,
+    "type" : "richtext",
+    "display_width" : null,
+    "default" : "<p>Growrk is great for managing assets in small, remote-first teams.</p>\n<p>But as you hit enterprise scale, expand to more regions, add multiple subsidiaries, juggle thousands of devices….</p>"
+  }, {
+    "id" : "a5d11276-51bb-9b32-d09e-a600c5955aad",
+    "name" : "sub_title",
+    "label" : "Sub Title",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Growrk’s workflows start to crack."
+  }, {
+    "id" : "7b2456c9-2879-9ce7-d8f3-24efa23a9bcd",
+    "name" : "sub_text",
+    "label" : "Sub Text",
+    "required" : false,
+    "locked" : false,
+    "type" : "richtext",
+    "display_width" : null,
+    "default" : "<p><span>At this point, you need a platform built for complexity. You need operations that stay consistent, data you can trust, and costs you can plan for.</span>&nbsp;</p>"
+  }, {
+    "id" : "506cf766-57d6-25b4-752c-b5b3dfc366a1",
+    "name" : "max_width",
+    "label" : "Max Width",
+    "required" : false,
+    "locked" : false,
+    "display" : "text",
+    "step" : 1,
+    "suffix" : "px",
+    "type" : "number",
+    "display_width" : null,
+    "default" : 600
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "title" : "GroWrk makes sense if your headcount never changes.",
+    "text" : "<p>Growrk is great for managing assets in small, remote-first teams.</p>\n<p>But as you hit enterprise scale, expand to more regions, add multiple subsidiaries, juggle thousands of devices….</p>",
+    "sub_title" : "Growrk’s workflows start to crack.",
+    "sub_text" : "<p><span>At this point, you need a platform built for complexity. You need operations that stay consistent, data you can trust, and costs you can plan for.</span>&nbsp;</p>",
+    "max_width" : 600
+  }
+}, {
+  "id" : "556f285c-9662-4b0a-a902-96a72ee2e0ff",
+  "name" : "bottom_content",
+  "label" : "Bottom Content",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "9fd8a6ea-ddc4-9e4e-a286-11cc6a21ecd8",
+    "name" : "title",
+    "label" : "Title",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "You got GroWrk to save time. <br> But IT is still stepping in all the time."
+  }, {
+    "id" : "60db4ed8-1ebc-a321-2ac4-58915156dfe7",
+    "name" : "sub_text",
+    "label" : "Sub Text",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : ""
+  }, {
+    "id" : "fdafe73f-2401-eab9-3b50-d0d9926b5c13",
+    "name" : "card_item",
+    "label" : "Card Item",
+    "required" : false,
+    "locked" : false,
+    "occurrence" : {
+      "min" : null,
+      "max" : null,
+      "sorting_label_field" : "1ed92313-14b4-3e9c-648a-c18d1ecc5734",
+      "default" : 4
+    },
+    "children" : [ {
+      "id" : "8444cd06-9746-5d96-ca0f-c9b445428911",
+      "name" : "image_field",
+      "label" : "Image",
+      "required" : false,
+      "locked" : false,
+      "responsive" : true,
+      "resizable" : true,
+      "show_loading" : true,
+      "type" : "image",
+      "display_width" : null,
+      "default" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/Frame%202147261534.png",
+        "alt" : "Frame 2147261534",
+        "loading" : "lazy",
+        "width" : 720,
+        "height" : 372,
+        "max_width" : 720,
+        "max_height" : 372
+      }
+    }, {
+      "id" : "1ed92313-14b4-3e9c-648a-c18d1ecc5734",
+      "name" : "title",
+      "label" : "Title",
+      "required" : false,
+      "locked" : false,
+      "allow_new_line" : false,
+      "type" : "text",
+      "display_width" : null,
+      "default" : "You’re relying on manual workarounds for automation gaps."
+    }, {
+      "id" : "4e086b11-f525-c080-e202-aefa3608edd6",
+      "name" : "text",
+      "label" : "Text",
+      "required" : false,
+      "locked" : false,
+      "type" : "richtext",
+      "display_width" : null,
+      "default" : "<span>You’re manually fixing up HRIS glitches, portal errors, and data inaccuracies. </span>&nbsp;"
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : [ {
+      "image_field" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/Frame%202147261534.png",
+        "alt" : "Frame 2147261534",
+        "loading" : "lazy",
+        "width" : 720,
+        "height" : 372,
+        "max_width" : 720,
+        "max_height" : 372
+      },
+      "title" : "You’re relying on manual workarounds for automation gaps.",
+      "text" : "<span>You’re manually fixing up HRIS glitches, portal errors, and data inaccuracies. </span>&nbsp;"
+    }, {
+      "image_field" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/Frame%202147261534.png",
+        "alt" : "Frame 2147261534",
+        "loading" : "lazy",
+        "width" : 720,
+        "height" : 372,
+        "max_width" : 720,
+        "max_height" : 372
+      },
+      "title" : "You’re relying on manual workarounds for automation gaps.",
+      "text" : "<span>You’re manually fixing up HRIS glitches, portal errors, and data inaccuracies. </span>&nbsp;"
+    }, {
+      "image_field" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/Frame%202147261534.png",
+        "alt" : "Frame 2147261534",
+        "loading" : "lazy",
+        "width" : 720,
+        "height" : 372,
+        "max_width" : 720,
+        "max_height" : 372
+      },
+      "title" : "You’re relying on manual workarounds for automation gaps.",
+      "text" : "<span>You’re manually fixing up HRIS glitches, portal errors, and data inaccuracies. </span>&nbsp;"
+    }, {
+      "image_field" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/Frame%202147261534.png",
+        "alt" : "Frame 2147261534",
+        "loading" : "lazy",
+        "width" : 720,
+        "height" : 372,
+        "max_width" : 720,
+        "max_height" : 372
+      },
+      "title" : "You’re relying on manual workarounds for automation gaps.",
+      "text" : "<span>You’re manually fixing up HRIS glitches, portal errors, and data inaccuracies. </span>&nbsp;"
+    } ]
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "title" : "You got GroWrk to save time. <br> But IT is still stepping in all the time.",
+    "sub_text" : "",
+    "card_item" : [ {
+      "image_field" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/Frame%202147261534.png",
+        "alt" : "Frame 2147261534",
+        "loading" : "lazy",
+        "width" : 720,
+        "height" : 372,
+        "max_width" : 720,
+        "max_height" : 372
+      },
+      "title" : "You’re relying on manual workarounds for automation gaps.",
+      "text" : "<span>You’re manually fixing up HRIS glitches, portal errors, and data inaccuracies. </span>&nbsp;"
+    }, {
+      "image_field" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/Frame%202147261534.png",
+        "alt" : "Frame 2147261534",
+        "loading" : "lazy",
+        "width" : 720,
+        "height" : 372,
+        "max_width" : 720,
+        "max_height" : 372
+      },
+      "title" : "You’re relying on manual workarounds for automation gaps.",
+      "text" : "<span>You’re manually fixing up HRIS glitches, portal errors, and data inaccuracies. </span>&nbsp;"
+    }, {
+      "image_field" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/Frame%202147261534.png",
+        "alt" : "Frame 2147261534",
+        "loading" : "lazy",
+        "width" : 720,
+        "height" : 372,
+        "max_width" : 720,
+        "max_height" : 372
+      },
+      "title" : "You’re relying on manual workarounds for automation gaps.",
+      "text" : "<span>You’re manually fixing up HRIS glitches, portal errors, and data inaccuracies. </span>&nbsp;"
+    }, {
+      "image_field" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/Frame%202147261534.png",
+        "alt" : "Frame 2147261534",
+        "loading" : "lazy",
+        "width" : 720,
+        "height" : 372,
+        "max_width" : 720,
+        "max_height" : 372
+      },
+      "title" : "You’re relying on manual workarounds for automation gaps.",
+      "text" : "<span>You’re manually fixing up HRIS glitches, portal errors, and data inaccuracies. </span>&nbsp;"
+    } ]
+  }
+}, {
+  "id" : "4f144763-2920-d341-6c81-e65bbebeded5",
+  "name" : "top_shape",
+  "label" : "Left Shape",
+  "required" : false,
+  "locked" : false,
+  "responsive" : true,
+  "resizable" : true,
+  "show_loading" : false,
+  "type" : "image",
+  "display_width" : null,
+  "default" : {
+    "size_type" : "auto_custom_max",
+    "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/Group%202147262701%20(1).png",
+    "alt" : "Group 2147262701 (1)",
+    "loading" : "lazy",
+    "width" : 1380,
+    "height" : 2865,
+    "max_width" : 963.3507853403141,
+    "max_height" : 2000
+  }
+}, {
+  "id" : "db81c548-45ff-b854-d7fe-5d1971ef54c6",
+  "name" : "bottom_shape",
+  "label" : "Right Shape",
+  "required" : false,
+  "locked" : false,
+  "responsive" : true,
+  "resizable" : true,
+  "show_loading" : true,
+  "type" : "image",
+  "display_width" : null,
+  "default" : {
+    "size_type" : "auto_custom_max",
+    "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/right-shapes.png",
+    "alt" : "right-shapes",
+    "loading" : "lazy",
+    "width" : 1398,
+    "height" : 2841,
+    "max_width" : 1398,
+    "max_height" : 2841
+  }
+} ]

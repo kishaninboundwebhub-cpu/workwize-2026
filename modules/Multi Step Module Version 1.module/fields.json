@@ -1,0 +1,667 @@
+[ {
+  "id" : "e181e1ee-ef06-5ba8-0ad3-f63113a45d24",
+  "name" : "style",
+  "label" : "Style",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "36fd79d2-1107-4452-d226-d4c096723f16",
+    "name" : "select_background",
+    "label" : "Select Background",
+    "required" : false,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "bg_color", "Background Color" ], [ "bg_image", "Background Image" ], [ "bg_gradient", "Background Gradient" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "bg_color"
+  }, {
+    "id" : "60d0ddef-fb34-a99a-73cb-bda8b10e0fc9",
+    "name" : "background_color",
+    "label" : "Background Color",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "style.select_background",
+      "controlling_value_regex" : "bg_color",
+      "property" : null,
+      "operator" : "MATCHES_REGEX",
+      "access" : null
+    },
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#122750",
+      "opacity" : 100
+    }
+  }, {
+    "id" : "19f0609d-595d-6ef3-f639-3f6006e095fb",
+    "name" : "background_image",
+    "label" : "Background Image",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "style.select_background",
+      "controlling_value_regex" : "bg_image",
+      "property" : null,
+      "operator" : "MATCHES_REGEX",
+      "access" : null
+    },
+    "type" : "backgroundimage",
+    "display_width" : null,
+    "default" : {
+      "src" : "",
+      "background_position" : "MIDDLE_CENTER",
+      "background_size" : "cover"
+    }
+  }, {
+    "id" : "0df6d4e0-395b-eda2-ec5a-1d08ad6c8d35",
+    "name" : "background_gradient",
+    "label" : "Background Gradient",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "style.select_background",
+      "controlling_value_regex" : "bg_gradient",
+      "property" : null,
+      "operator" : "MATCHES_REGEX",
+      "access" : null
+    },
+    "type" : "gradient",
+    "display_width" : null,
+    "default" : { }
+  }, {
+    "id" : "afeb177b-c31d-1412-5116-70d6f85c5565",
+    "name" : "spacing",
+    "label" : "Spacing",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "d59d9e4c-264e-54fa-99b7-0ff07897b867",
+      "name" : "desktop",
+      "label" : "Desktop",
+      "required" : false,
+      "locked" : false,
+      "type" : "spacing",
+      "display_width" : null,
+      "default" : {
+        "padding" : {
+          "top" : {
+            "value" : 150,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 150,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      }
+    }, {
+      "id" : "0c762a95-1339-05fa-721d-3d79f41b571e",
+      "name" : "tablet",
+      "label" : "Tablet",
+      "required" : false,
+      "locked" : false,
+      "type" : "spacing",
+      "display_width" : null,
+      "default" : { }
+    }, {
+      "id" : "0a8a8c35-4008-f2aa-311a-12325d67b19c",
+      "name" : "mobile",
+      "label" : "Mobile",
+      "required" : false,
+      "locked" : false,
+      "type" : "spacing",
+      "display_width" : null,
+      "default" : { }
+    } ],
+    "tab" : "STYLE",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : {
+      "desktop" : {
+        "padding" : {
+          "top" : {
+            "value" : 150,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 150,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      },
+      "tablet" : { },
+      "mobile" : { }
+    }
+  } ],
+  "tab" : "STYLE",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "select_background" : "bg_color",
+    "background_color" : {
+      "color" : "#122750",
+      "opacity" : 100
+    },
+    "background_image" : {
+      "src" : "",
+      "background_position" : "MIDDLE_CENTER",
+      "background_size" : "cover"
+    },
+    "background_gradient" : { },
+    "spacing" : {
+      "desktop" : {
+        "padding" : {
+          "top" : {
+            "value" : 150,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 150,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      },
+      "tablet" : { },
+      "mobile" : { }
+    }
+  }
+}, {
+  "id" : "55ccd3e2-31aa-4e79-9772-80facd954415",
+  "name" : "show_hide_",
+  "label" : "Section [Show/ Hide]",
+  "required" : false,
+  "locked" : false,
+  "display" : "toggle",
+  "type" : "boolean",
+  "display_width" : null,
+  "default" : true
+}, {
+  "id" : "5476dd9b-03d7-5ea9-32bd-4ab32fcf7b6a",
+  "name" : "form",
+  "label" : "Form",
+  "required" : false,
+  "locked" : false,
+  "embed_versions" : [ "v2", "v4" ],
+  "type" : "form",
+  "display_width" : null,
+  "default" : {
+    "form_id" : "9f38e86a-8da0-4e8b-a42c-f122e5af13ba",
+    "response_type" : "inline",
+    "message" : "Thanks for submitting the form.",
+    "gotowebinar_webinar_key" : null,
+    "webinar_id" : null,
+    "webinar_source" : null,
+    "form_type" : "HUBSPOT"
+  }
+}, {
+  "id" : "97a8879a-a3af-3156-433d-d099f1b6c7ff",
+  "name" : "form_id",
+  "label" : "Form ID",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "multistepSecV1formBox"
+}, {
+  "id" : "8be81baf-6ac5-9c86-3a28-588835547703",
+  "name" : "step_form_content",
+  "label" : "Step Form Content",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : null,
+    "max" : null,
+    "sorting_label_field" : "ec5dcc92-9f38-e031-b356-f08768fed170",
+    "default" : 3
+  },
+  "children" : [ {
+    "id" : "20a0014f-6eb5-c7a1-c68c-ff1c06eeb8c5",
+    "name" : "logo",
+    "label" : "Logo",
+    "required" : false,
+    "locked" : false,
+    "responsive" : true,
+    "resizable" : true,
+    "show_loading" : false,
+    "type" : "image",
+    "display_width" : null,
+    "default" : {
+      "size_type" : "auto",
+      "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Onward%20Search%20logo.svg",
+      "alt" : "Onward Search logo",
+      "loading" : "lazy",
+      "width" : 157,
+      "height" : 59,
+      "max_width" : 157,
+      "max_height" : 59
+    }
+  }, {
+    "id" : "3491b7ec-8a79-ee0c-b20e-b3b31ff1afea",
+    "name" : "star",
+    "label" : "Star",
+    "required" : false,
+    "locked" : false,
+    "occurrence" : {
+      "min" : null,
+      "max" : null,
+      "sorting_label_field" : null,
+      "default" : 5
+    },
+    "children" : [ {
+      "id" : "c813ce98-4a53-7a6f-3337-ae932a887ec8",
+      "name" : "image",
+      "label" : "Image",
+      "required" : false,
+      "locked" : false,
+      "responsive" : true,
+      "resizable" : true,
+      "show_loading" : false,
+      "type" : "image",
+      "display_width" : null,
+      "default" : {
+        "size_type" : "auto",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Star.svg",
+        "alt" : "Star",
+        "loading" : "lazy",
+        "width" : 15,
+        "height" : 14,
+        "max_width" : 15,
+        "max_height" : 14
+      }
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : [ {
+      "image" : {
+        "size_type" : "auto",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Star.svg",
+        "alt" : "Star",
+        "loading" : "lazy",
+        "width" : 15,
+        "height" : 14,
+        "max_width" : 15,
+        "max_height" : 14
+      }
+    }, {
+      "image" : {
+        "size_type" : "auto",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Star.svg",
+        "alt" : "Star",
+        "loading" : "lazy",
+        "width" : 15,
+        "height" : 14,
+        "max_width" : 15,
+        "max_height" : 14
+      }
+    }, {
+      "image" : {
+        "size_type" : "auto",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Star.svg",
+        "alt" : "Star",
+        "loading" : "lazy",
+        "width" : 15,
+        "height" : 14,
+        "max_width" : 15,
+        "max_height" : 14
+      }
+    }, {
+      "image" : {
+        "size_type" : "auto",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Star.svg",
+        "alt" : "Star",
+        "loading" : "lazy",
+        "width" : 15,
+        "height" : 14,
+        "max_width" : 15,
+        "max_height" : 14
+      }
+    }, {
+      "image" : {
+        "size_type" : "auto",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Star.svg",
+        "alt" : "Star",
+        "loading" : "lazy",
+        "width" : 15,
+        "height" : 14,
+        "max_width" : 15,
+        "max_height" : 14
+      }
+    } ]
+  }, {
+    "id" : "04ed1921-ce45-ef3e-69b1-5ec4053ba73f",
+    "name" : "content",
+    "label" : "Content",
+    "required" : false,
+    "locked" : false,
+    "type" : "richtext",
+    "display_width" : null,
+    "default" : "<p>\"Using Supermetrics has not just saved us time but also money – it’s actually saving us tens of thousands of pounds per year.\"</p>"
+  }, {
+    "id" : "d1061bba-4e35-7651-fac1-5023491308af",
+    "name" : "box_image",
+    "label" : "Testimonial Image",
+    "required" : false,
+    "locked" : false,
+    "responsive" : true,
+    "resizable" : true,
+    "show_loading" : false,
+    "type" : "image",
+    "display_width" : null,
+    "default" : {
+      "size_type" : "auto_custom_max",
+      "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Christos%20Livas.jpeg",
+      "alt" : "Christos Livas",
+      "loading" : "lazy",
+      "width" : 100,
+      "height" : 100,
+      "max_width" : 100,
+      "max_height" : 100
+    }
+  }, {
+    "id" : "c5b5a391-5a33-5eaa-b6ba-bcf26f27ebe0",
+    "name" : "testimonial_name",
+    "label" : "Testimonial Name",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "<strong>Christos Livas</strong>"
+  }, {
+    "id" : "1d225384-0764-ba6a-a4c5-d14c591e2886",
+    "name" : "testimonial_designation",
+    "label" : "Testimonial Designation",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "IT Specialist <span>@Hack The Box</span>"
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : [ {
+    "logo" : {
+      "size_type" : "auto",
+      "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Onward%20Search%20logo.svg",
+      "alt" : "Onward Search logo",
+      "loading" : "lazy",
+      "width" : 157,
+      "height" : 59,
+      "max_width" : 157,
+      "max_height" : 59
+    },
+    "star" : [ {
+      "image" : {
+        "size_type" : "auto",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Star.svg",
+        "alt" : "Star",
+        "loading" : "lazy",
+        "width" : 15,
+        "height" : 14,
+        "max_width" : 15,
+        "max_height" : 14
+      }
+    }, {
+      "image" : {
+        "size_type" : "auto",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Star.svg",
+        "alt" : "Star",
+        "loading" : "lazy",
+        "width" : 15,
+        "height" : 14,
+        "max_width" : 15,
+        "max_height" : 14
+      }
+    }, {
+      "image" : {
+        "size_type" : "auto",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Star.svg",
+        "alt" : "Star",
+        "loading" : "lazy",
+        "width" : 15,
+        "height" : 14,
+        "max_width" : 15,
+        "max_height" : 14
+      }
+    }, {
+      "image" : {
+        "size_type" : "auto",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Star.svg",
+        "alt" : "Star",
+        "loading" : "lazy",
+        "width" : 15,
+        "height" : 14,
+        "max_width" : 15,
+        "max_height" : 14
+      }
+    }, {
+      "image" : {
+        "size_type" : "auto",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Star.svg",
+        "alt" : "Star",
+        "loading" : "lazy",
+        "width" : 15,
+        "height" : 14,
+        "max_width" : 15,
+        "max_height" : 14
+      }
+    } ],
+    "content" : "<p>\"Using Supermetrics has not just saved us time but also money – it’s actually saving us tens of thousands of pounds per year.\"</p>",
+    "box_image" : {
+      "size_type" : "auto_custom_max",
+      "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Christos%20Livas.jpeg",
+      "alt" : "Christos Livas",
+      "loading" : "lazy",
+      "width" : 100,
+      "height" : 100,
+      "max_width" : 100,
+      "max_height" : 100
+    },
+    "testimonial_name" : "<strong>Christos Livas</strong>",
+    "testimonial_designation" : "IT Specialist <span>@Hack The Box</span>"
+  }, {
+    "logo" : {
+      "size_type" : "auto",
+      "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Onward%20Search%20logo.svg",
+      "alt" : "Onward Search logo",
+      "loading" : "lazy",
+      "width" : 157,
+      "height" : 59,
+      "max_width" : 157,
+      "max_height" : 59
+    },
+    "star" : [ {
+      "image" : {
+        "size_type" : "auto",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Star.svg",
+        "alt" : "Star",
+        "loading" : "lazy",
+        "width" : 15,
+        "height" : 14,
+        "max_width" : 15,
+        "max_height" : 14
+      }
+    }, {
+      "image" : {
+        "size_type" : "auto",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Star.svg",
+        "alt" : "Star",
+        "loading" : "lazy",
+        "width" : 15,
+        "height" : 14,
+        "max_width" : 15,
+        "max_height" : 14
+      }
+    }, {
+      "image" : {
+        "size_type" : "auto",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Star.svg",
+        "alt" : "Star",
+        "loading" : "lazy",
+        "width" : 15,
+        "height" : 14,
+        "max_width" : 15,
+        "max_height" : 14
+      }
+    }, {
+      "image" : {
+        "size_type" : "auto",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Star.svg",
+        "alt" : "Star",
+        "loading" : "lazy",
+        "width" : 15,
+        "height" : 14,
+        "max_width" : 15,
+        "max_height" : 14
+      }
+    }, {
+      "image" : {
+        "size_type" : "auto",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Star.svg",
+        "alt" : "Star",
+        "loading" : "lazy",
+        "width" : 15,
+        "height" : 14,
+        "max_width" : 15,
+        "max_height" : 14
+      }
+    } ],
+    "content" : "<p>\"Using Supermetrics has not just saved us time but also money – it’s actually saving us tens of thousands of pounds per year.\"</p>",
+    "box_image" : {
+      "size_type" : "auto_custom_max",
+      "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Christos%20Livas.jpeg",
+      "alt" : "Christos Livas",
+      "loading" : "lazy",
+      "width" : 100,
+      "height" : 100,
+      "max_width" : 100,
+      "max_height" : 100
+    },
+    "testimonial_name" : "<strong>Christos Livas</strong>",
+    "testimonial_designation" : "IT Specialist <span>@Hack The Box</span>"
+  }, {
+    "logo" : {
+      "size_type" : "auto",
+      "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Onward%20Search%20logo.svg",
+      "alt" : "Onward Search logo",
+      "loading" : "lazy",
+      "width" : 157,
+      "height" : 59,
+      "max_width" : 157,
+      "max_height" : 59
+    },
+    "star" : [ {
+      "image" : {
+        "size_type" : "auto",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Star.svg",
+        "alt" : "Star",
+        "loading" : "lazy",
+        "width" : 15,
+        "height" : 14,
+        "max_width" : 15,
+        "max_height" : 14
+      }
+    }, {
+      "image" : {
+        "size_type" : "auto",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Star.svg",
+        "alt" : "Star",
+        "loading" : "lazy",
+        "width" : 15,
+        "height" : 14,
+        "max_width" : 15,
+        "max_height" : 14
+      }
+    }, {
+      "image" : {
+        "size_type" : "auto",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Star.svg",
+        "alt" : "Star",
+        "loading" : "lazy",
+        "width" : 15,
+        "height" : 14,
+        "max_width" : 15,
+        "max_height" : 14
+      }
+    }, {
+      "image" : {
+        "size_type" : "auto",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Star.svg",
+        "alt" : "Star",
+        "loading" : "lazy",
+        "width" : 15,
+        "height" : 14,
+        "max_width" : 15,
+        "max_height" : 14
+      }
+    }, {
+      "image" : {
+        "size_type" : "auto",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Star.svg",
+        "alt" : "Star",
+        "loading" : "lazy",
+        "width" : 15,
+        "height" : 14,
+        "max_width" : 15,
+        "max_height" : 14
+      }
+    } ],
+    "content" : "<p>\"Using Supermetrics has not just saved us time but also money – it’s actually saving us tens of thousands of pounds per year.\"</p>",
+    "box_image" : {
+      "size_type" : "auto_custom_max",
+      "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Christos%20Livas.jpeg",
+      "alt" : "Christos Livas",
+      "loading" : "lazy",
+      "width" : 100,
+      "height" : 100,
+      "max_width" : 100,
+      "max_height" : 100
+    },
+    "testimonial_name" : "<strong>Christos Livas</strong>",
+    "testimonial_designation" : "IT Specialist <span>@Hack The Box</span>"
+  } ]
+} ]

@@ -1,0 +1,321 @@
+{% if module.show_hide_ %}
+{% set moduleId = '#hs_cos_wrapper_{{ name }}' %}
+
+<div class="intefilltsec fullwidth bgsec space-sec">
+ <div class="wrapper">
+  
+   <div class="intefilltTitle text-center wow fadeInUp">
+     <h2>{{ module.top_content.title }}</h2>
+   </div>
+   <div class="intefilltText text-center wow fadeInUp">
+     {{ module.top_content.text }}
+   </div>
+   
+   <div class="intefillttop gap24 pt40 pb80 d_flex align_center flex_center wow fadeInUp">
+     <div class="intefilltLeft d_flex align_center">
+       <div class="intefilltbInn">
+       <div class="intefilltTab active" data-trigger="*"> All </div>
+       {% for item in module.list_inner %}
+         <div class="intefilltTab" data-trigger=".{{ item.tab_names|replace(' ','_')|replace('/','_')|replace('[','')|replace(']','')|lower }}">
+           {{ item.tab_names }}
+         </div>
+       {% endfor %}
+       </div>
+     </div>
+     
+     
+     <div class="intefilltRight">
+       <div class="intefilltSearch"> 
+         
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <g opacity="0.5" clip-path="url(#clip0_1943_29852)">
+        <path d="M8.75 15C12.2018 15 15 12.2018 15 8.75C15 5.29822 12.2018 2.5 8.75 2.5C5.29822 2.5 2.5 5.29822 2.5 8.75C2.5 12.2018 5.29822 15 8.75 15Z" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M13.1641 13.1719L17.4945 17.5023" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </g>
+        <defs>
+        <clipPath id="clip0_1943_29852">
+        <rect width="20" height="20" fill="white"/>
+        </clipPath>
+        </defs>
+        </svg>
+        <input type="text" placeholder="Search an integration">
+       </div>
+     </div>
+     
+     
+     
+     
+   </div>
+   
+   
+   <div class="intefilltOuter wow fadeInUp">
+     {% for item in module.list_inner %}
+     <div class="intefilltInner {{ item.tab_names|replace(' ','_')|replace('/','_')|replace('[','')|replace(']','')|lower }}">
+       <h3>{{ item.title }}</h3>
+       <div class="intefilltItext">
+         {{ item.text }}
+       </div>
+       
+       <div class="intefilltListe pt48 d_flex">
+         {% for item2 in item.list_item %}
+         <div class="intefilltLitem">
+           <div class="intefilltLinn">
+             <div class="intefilltIcon">
+               {% if item2.image.src %}
+                  {% set sizeAttrs = 'width="{{ item2.image.width|escape_attr }}" height="{{ item2.image.height|escape_attr }}"' %}
+                  {% if item2.image.size_type == 'auto' %}
+                    {% set sizeAttrs = 'width="{{ item2.image.width|escape_attr }}" height="{{ item2.image.height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+                  {% elif item2.image.size_type == 'auto_custom_max' %}
+                    {% set sizeAttrs = 'width="{{ item2.image.max_width|escape_attr }}" height="{{ item2.image.max_height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+                  {% endif %}
+                   {% set loadingAttr = item2.image.loading != 'disabled' ? 'loading="{{ item2.image.loading|escape_attr }}"' : '' %}
+                  <img src="{{ item2.image.src|escape_url }}" alt="{{ item2.image.alt|escape_attr }}" {{ loadingAttr }} {{ sizeAttrs }}>
+                {% endif %}
+             </div>
+             
+             <div class="intefillttext">
+               
+               {% set href = item2.link_field.url.href %}
+                  {% if item2.link_field.url.type is equalto "EMAIL_ADDRESS" %}
+                    {% set href = "mailto:" + href %}
+                  {% elif item2.link_field.url.type is equalto "PHONE_NUMBER" %}
+                    {% set href = "tel:" + href %}
+                  {% endif %}
+                  <a
+                    {% if item2.link_field.url.type is equalto "CALL_TO_ACTION"  %}
+                      href="{{ href }}" {# The href here is not escaped as it is not editable and functions as a JavaScript call to the associated CTA #}
+                    {% else %}
+                      href="{{ href|escape_url }}"
+                    {% endif %}
+                    {% if item2.link_field.open_in_new_tab %}
+                      target="_blank"
+                    {% endif %}
+                    {% if item2.link_field.rel %}
+                      rel="{{ item2.link_field.rel|escape_attr }}"
+                    {% endif %}
+                    >
+                    <div>
+                    {{ item2.text_field }}
+                    </div>
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M16.0091 9.41421L7.40249 18.0208L5.98828 16.6066L14.5949 8H7.0091V6H18.0091V17H16.0091V9.41421Z" fill="#050C14"/>
+                      </svg>
+                  </a>
+             </div>
+           </div>
+         </div>
+         {% endfor %}
+       </div>
+       
+       <div class="loadMinn d_flex flex_center">
+         <div class="loadMore">
+           Load more
+           
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g clip-path="url(#clip0_1943_29709)">
+            <g clip-path="url(#clip1_1943_29709)">
+            <path d="M9.75 4.875L6 8.625L2.25 4.875" stroke="#050C14" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </g>
+            </g>
+            <defs>
+            <clipPath id="clip0_1943_29709">
+            <rect width="12" height="12" fill="white"/>
+            </clipPath>
+            <clipPath id="clip1_1943_29709">
+            <rect width="12" height="12" fill="white" transform="translate(0 0.375)"/>
+            </clipPath>
+            </defs>
+            </svg>
+
+         </div>
+       </div>
+       
+     </div>
+   {% endfor %}   
+      
+   </div>
+   
+   
+   <div class="Nofound">
+     Not found!
+   </div>
+   
+ </div>
+</div>
+
+
+{% require_css %}
+<style>
+  {{ moduleId }} .bgsec { {% if module.style.select_background == 'bg_color' %}
+    background-color: rgba({{ module.style.background_color.color|convert_rgb }},{{ module.style.background_color.opacity ~ '%' }});
+    {% elif module.style.select_background == 'bg_image' %}
+    {{ module.style.background_image.css }} background-repeat: no-repeat;
+    {% elif module.style.select_background == 'bg_gradient' %}
+    background: {{ module.style.background_gradient.css }};
+    {% endif %} }
+  
+  {{ moduleId }} .space-sec { {{ module.style.spacing.desktop.css }}; }
+  
+  
+  {{ moduleId }} .intefilltTitle h2 { color:{{ module.color_setting.title_color.color }}; } 
+  {{ moduleId }} .intefilltTitle h2 span { color:{{ module.color_setting.title_span_color.color }}; } 
+  {{ moduleId }} .intefilltText { color:rgba({{ module.color_setting.text_color.color|convert_rgb }},{{ module.color_setting.text_color.opacity }}%); } 
+  
+ 
+  
+  @media(max-width: 991px){ {{ moduleId }} .space-sec { {{ module.style.spacing.tablet.css }}; } }
+  
+  @media(max-width: 767px){ {{ moduleId }} .space-sec { {{ module.style.spacing.mobile.css }}; } }
+  
+</style>
+{% end_require_css %}
+
+
+
+{% require_js %}
+  <script>
+   $(document).ready(function() {
+    const initialShow = 9;
+    const $items = $('.intefilltInner');
+    const $filters = $('.intefilltTab');
+    const $searchInput = $('.intefilltSearch input[type="text"]');
+    const $noFound = $('.Nofound'); // Reference to your "Not Found" div
+
+    // Helper to store original text so we can revert when search is cleared
+    function storeOriginalText() {
+        $items.each(function() {
+            const $section = $(this);
+            const $h3 = $section.find('h3');
+            const $desc = $section.find('.intefilltItext');
+            
+            if (!$h3.data('original')) $h3.data('original', $h3.html());
+            if (!$desc.data('original')) $desc.data('original', $desc.html());
+
+            $section.find('.intefilltLitem a').each(function() {
+                if (!$(this).data('original')) $(this).data('original', $(this).html());
+            });
+        });
+    }
+
+    function applyCombinedLogic() {
+        const activeTrigger = $('.intefilltTab.active').attr('data-trigger') || '*';
+        const query = $searchInput.val().trim();
+        const lowerQuery = query.toLowerCase();
+        
+        let anySectionVisible = false; // Track if at least one section shows up
+
+        $items.each(function() {
+            const $section = $(this);
+            const isTabMatch = (activeTrigger === '*' || $section.is(activeTrigger));
+            
+            const $h3 = $section.find('h3');
+            const $desc = $section.find('.intefilltItext');
+
+            // --- CLEAR/HIGHLIGHT LOGIC ---
+            if (query === "") {
+                $h3.html($h3.data('original'));
+                $desc.html($desc.data('original'));
+            } else {
+                let cleanH3 = $h3.data('original');
+                let cleanDesc = $desc.data('original');
+                const regex = new RegExp(`(${query.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, '\\$&')})`, "gi");
+                $h3.html(cleanH3.replace(regex, '<span class="highlight">$1</span>'));
+                $desc.html(cleanDesc.replace(regex, '<span class="highlight">$1</span>'));
+            }
+            
+            const isSectionTextMatch = ($h3.text().toLowerCase().indexOf(lowerQuery) > -1 || 
+                                        $desc.text().toLowerCase().indexOf(lowerQuery) > -1);
+
+            let visibleInThisSection = 0;
+            const $listItems = $section.find('.intefilltLitem');
+
+            $listItems.each(function() {
+                const $link = $(this).find('a');
+                const originalLinkHtml = $link.data('original');
+                const itemText = $link.text().toLowerCase();
+
+                if (lowerQuery === "" || itemText.indexOf(lowerQuery) > -1 || isSectionTextMatch) {
+                    $(this).addClass('search-match').removeClass('search-hide');
+                    
+                    if (query !== "") {
+                        const regex = new RegExp(`(${query.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, '\\$&')})`, "gi");
+                        $link.contents().filter(function() {
+                            return this.nodeType === 3;
+                        }).each(function() {
+                            const highlighted = this.textContent.replace(regex, '<span class="highlight">$1</span>');
+                            $(this).replaceWith(highlighted);
+                        });
+                    } else {
+                        $link.html(originalLinkHtml);
+                    }
+                    visibleInThisSection++;
+                } else {
+                    $(this).addClass('search-hide').removeClass('search-match');
+                }
+            });
+
+            if (isTabMatch && (visibleInThisSection > 0 || isSectionTextMatch)) {
+                $section.show();
+                handlePagination($section);
+                anySectionVisible = true; // At least one section is visible
+            } else {
+                $section.hide();
+            }
+        });
+
+        // --- SHOW/HIDE "NOT FOUND" MESSAGE ---
+        if (anySectionVisible) {
+            $noFound.hide();
+        } else {
+            $noFound.fadeIn();
+        }
+    }
+
+    function handlePagination($section) {
+        const $visibleItems = $section.find('.intefilltLitem.search-match');
+        const $loadMoreBtn = $section.find('.loadMore');
+
+        $visibleItems.hide();
+        $visibleItems.slice(0, initialShow).fadeIn();
+
+        if ($visibleItems.length <= initialShow) {
+            $loadMoreBtn.hide();
+        } else {
+            $loadMoreBtn.show();
+        }
+    }
+
+    // Initialize
+    storeOriginalText();
+    applyCombinedLogic();
+
+    // Events
+    $filters.on('click', function() {
+        $filters.removeClass('active');
+        $(this).addClass('active');
+        applyCombinedLogic();
+    });
+
+    $searchInput.on('keyup', function() {
+        applyCombinedLogic();
+    });
+
+    $(document).on('click', '.loadMore', function(e) {
+        e.preventDefault();
+        const $section = $(this).closest('.intefilltInner');
+        $section.find('.intefilltLitem.search-match:hidden').slice(0, initialShow).fadeIn();
+        if ($section.find('.intefilltLitem.search-match:hidden').length === 0) $(this).hide();
+    });
+});
+
+
+  </script>
+{% end_require_js %}
+
+
+
+
+
+
+{% endif %}
+

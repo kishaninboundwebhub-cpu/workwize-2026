@@ -1,0 +1,253 @@
+{% if module.show_hide_ %}
+{% set moduleId = '#hs_cos_wrapper_{{ name }}' %}
+
+<div class="itteadhlsec  itteadhl{{ module.select_card_layout }}  fullwidth bgsec space-sec">
+  
+  <div class="itteadhlImg">
+    {% if module.top_shape.src %}
+      {% set sizeAttrs = 'width="{{ module.top_shape.width|escape_attr }}" height="{{ module.top_shape.height|escape_attr }}"' %}
+      {% if module.top_shape.size_type == 'auto' %}
+        {% set sizeAttrs = 'width="{{ module.top_shape.width|escape_attr }}" height="{{ module.top_shape.height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+      {% elif module.top_shape.size_type == 'auto_custom_max' %}
+        {% set sizeAttrs = 'width="{{ module.top_shape.max_width|escape_attr }}" height="{{ module.top_shape.max_height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+      {% endif %}
+       {% set loadingAttr = module.top_shape.loading != 'disabled' ? 'loading="{{ module.top_shape.loading|escape_attr }}"' : '' %}
+      <img src="{{ module.top_shape.src|escape_url }}" alt="{{ module.top_shape.alt|escape_attr }}" {{ loadingAttr }} {{ sizeAttrs }}>
+    {% endif %}
+  </div>
+  <div class="itteadhRImg">
+    {% if module.bottom_shape.src %}
+        {% set sizeAttrs = 'width="{{ module.bottom_shape.width|escape_attr }}" height="{{ module.bottom_shape.height|escape_attr }}"' %}
+        {% if module.bottom_shape.size_type == 'auto' %}
+          {% set sizeAttrs = 'width="{{ module.bottom_shape.width|escape_attr }}" height="{{ module.bottom_shape.height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+        {% elif module.bottom_shape.size_type == 'auto_custom_max' %}
+          {% set sizeAttrs = 'width="{{ module.bottom_shape.max_width|escape_attr }}" height="{{ module.bottom_shape.max_height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+        {% endif %}
+         {% set loadingAttr = module.bottom_shape.loading != 'disabled' ? 'loading="{{ module.bottom_shape.loading|escape_attr }}"' : '' %}
+        <img src="{{ module.bottom_shape.src|escape_url }}" alt="{{ module.bottom_shape.alt|escape_attr }}" {{ loadingAttr }} {{ sizeAttrs }}>
+      {% endif %}
+  </div>
+ <div class="wrapper">
+   <div class="itteadhlTop pb50 text-center wow fadeInUp">
+     <div class="itteadhlTIcon pb28">
+        {% if module.top_icon.src %}
+        {% set sizeAttrs = 'width="{{ module.top_icon.width|escape_attr }}" height="{{ module.top_icon.height|escape_attr }}"' %}
+        {% if module.top_icon.size_type == 'auto' %}
+        {% set sizeAttrs = 'width="{{ module.top_icon.width|escape_attr }}" height="{{ module.top_icon.height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+        {% elif module.top_icon.size_type == 'auto_custom_max' %}
+        {% set sizeAttrs = 'width="{{ module.top_icon.max_width|escape_attr }}" height="{{ module.top_icon.max_height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+        {% endif %}
+        {% set loadingAttr = module.top_icon.loading != 'disabled' ? 'loading="{{ module.top_icon.loading|escape_attr }}"' : '' %}
+        <img src="{{ module.top_icon.src|escape_url }}" alt="{{ module.top_icon.alt|escape_attr }}" {{ loadingAttr }} {{ sizeAttrs }}>
+        {% endif %}
+     </div>
+     <h2>{{ module.title }}</h2>
+     <div class="itteadhlText pt16">
+      {{ module.text }}
+     </div>
+   </div>
+   
+   
+   <div class="itteadhlmidd wow fadeInUp  itteadhlm{{ module.select_card_layout }}">
+     <div class="itteadhlInner d_flex flex_center">
+       {% for item in module.text_box %}
+         <div class="itteadhlIBox">
+           <div class="itteadhlIBinn">
+              <div class="itteadhlIBIcon">
+                {% if item.icon.src %}
+                  {% set sizeAttrs = 'width="{{ item.icon.width|escape_attr }}" height="{{ item.icon.height|escape_attr }}"' %}
+                  {% if item.icon.size_type == 'auto' %}
+                    {% set sizeAttrs = 'width="{{ item.icon.width|escape_attr }}" height="{{ item.icon.height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+                  {% elif item.icon.size_type == 'auto_custom_max' %}
+                    {% set sizeAttrs = 'width="{{ item.icon.max_width|escape_attr }}" height="{{ item.icon.max_height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+                  {% endif %}
+                   {% set loadingAttr = item.icon.loading != 'disabled' ? 'loading="{{ item.icon.loading|escape_attr }}"' : '' %}
+                  <img src="{{ item.icon.src|escape_url }}" alt="{{ item.icon.alt|escape_attr }}" {{ loadingAttr }} {{ sizeAttrs }}>
+                {% endif %}
+             </div>
+             <div class="itteadhlIBItext">
+                {{ item.text_field }}
+             </div>
+           </div>
+         </div>
+       {% endfor %}
+     </div>
+   </div>
+   
+   
+   
+   <div class="itteadhlIBttext text-center">
+      <div class="itteadhlIBtxtxt pb60">
+        {{ module.bottom_text.bottom_text }}
+      </div>
+     
+     <div class="itteadhlIBttIcon">
+       <span class="itteadhicout">
+       <span class="itteadhic">
+        {% if module.bottom_text.icon.src %}
+            {% set sizeAttrs = 'width="{{ module.bottom_text.icon.width|escape_attr }}" height="{{ module.bottom_text.icon.height|escape_attr }}"' %}
+            {% if module.bottom_text.icon.size_type == 'auto' %}
+              {% set sizeAttrs = 'width="{{ module.bottom_text.icon.width|escape_attr }}" height="{{ module.bottom_text.icon.height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+            {% elif module.bottom_text.icon.size_type == 'auto_custom_max' %}
+              {% set sizeAttrs = 'width="{{ module.bottom_text.icon.max_width|escape_attr }}" height="{{ module.bottom_text.icon.max_height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+            {% endif %}
+             {% set loadingAttr = module.bottom_text.icon.loading != 'disabled' ? 'loading="{{ module.bottom_text.icon.loading|escape_attr }}"' : '' %}
+            <img src="{{ module.bottom_text.icon.src|escape_url }}" alt="{{ module.bottom_text.icon.alt|escape_attr }}" {{ loadingAttr }} {{ sizeAttrs }}>
+          {% endif %}
+         </span>
+         </span>
+      </div>
+     
+     
+   </div>
+   
+   
+   <div class="glbInner d_flex align_center wow fadeInUp">
+
+        <!-- LEFT: Content -->
+        <div class="glbLeft wow fadeInUp">
+
+          <!-- Globe Icon -->
+          <div class="glbIcon pb16">
+            {% if module.bottom_content.icon.src %}
+              {% set sizeAttrs = 'width="{{ module.bottom_content.icon.width|escape_attr }}" height="{{ module.bottom_content.icon.height|escape_attr }}"' %}
+              {% if module.bottom_content.icon.size_type == 'auto' %}
+                {% set sizeAttrs = 'width="{{ module.bottom_content.icon.width|escape_attr }}" height="{{ module.bottom_content.icon.height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+              {% elif module.bottom_content.icon.size_type == 'auto_custom_max' %}
+                {% set sizeAttrs = 'width="{{ module.bottom_content.icon.max_width|escape_attr }}" height="{{ module.bottom_content.icon.max_height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+              {% endif %}
+               {% set loadingAttr = module.bottom_content.icon.loading != 'disabled' ? 'loading="{{ module.bottom_content.icon.loading|escape_attr }}"' : '' %}
+              <img src="{{ module.bottom_content.icon.src|escape_url }}" alt="{{ module.bottom_content.icon.alt|escape_attr }}" {{ loadingAttr }} {{ sizeAttrs }}>
+            {% endif %}
+            
+          </div>
+
+         
+          <!-- Headline -->
+          <div class="glbTitle pb16 wow fadeInUp">
+            <h2>{{ module.bottom_content.title }}</h2>
+          </div>
+
+          <!-- Body -->
+          {% if module.bottom_content.text %}
+          <div class="glbBody  wow fadeInUp">
+            {{ module.bottom_content.text }}
+          </div>
+          {% endif %}
+
+          
+          <!-- Button -->
+          {% if module.bottom_content.button.button_text %}
+          <div class="glbBtn pt36 d_flex align_center secbtn set-btn-arrows-true {{ module.bottom_content.button.button_choice }} wow fadeInUp">
+            {% set href = module.bottom_content.button.button_link.url.href %}
+              {% if module.bottom_content.button.button_link.url.type is equalto "EMAIL_ADDRESS" %}
+                {% set href = "mailto:" + href %}
+              {% elif module.bottom_content.button.button_link.url.type is equalto "PHONE_NUMBER" %}
+                {% set href = "tel:" + href %}
+              {% endif %}
+              <a
+                {% if module.bottom_content.button.button_link.url.type is equalto "CALL_TO_ACTION"  %}
+                  href="{{ href }}" {# The href here is not escaped as it is not editable and functions as a JavaScript call to the associated CTA #}
+                {% else %}
+                  href="{{ href|escape_url }}"
+                {% endif %}
+                {% if module.bottom_content.button.button_link.open_in_new_tab %}
+                  target="_blank"
+                {% endif %}
+                {% if module.bottom_content.button.button_link.rel %}
+                  rel="{{ module.bottom_content.button.button_link.rel|escape_attr }}"
+                {% endif %}
+                >
+                {{ module.bottom_content.button.button_text }}
+              </a>
+          </div>
+          {% endif %}
+        </div>
+
+        <!-- RIGHT: Map Image -->
+        <div class="glbRight wow fadeInUp">
+          <div class="glbMapWrap">
+            {% if module.bottom_content.right_image.src %}
+              {% set sizeAttrs = 'width="{{ module.bottom_content.right_image.width|escape_attr }}" height="{{ module.bottom_content.right_image.height|escape_attr }}"' %}
+              {% if module.bottom_content.right_image.size_type == 'auto' %}
+                {% set sizeAttrs = 'width="{{ module.bottom_content.right_image.width|escape_attr }}" height="{{ module.bottom_content.right_image.height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+              {% elif module.bottom_content.right_image.size_type == 'auto_custom_max' %}
+                {% set sizeAttrs = 'width="{{ module.bottom_content.right_image.max_width|escape_attr }}" height="{{ module.bottom_content.right_image.max_height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+              {% endif %}
+               {% set loadingAttr = module.bottom_content.right_image.loading != 'disabled' ? 'loading="{{ module.bottom_content.right_image.loading|escape_attr }}"' : '' %}
+              <img src="{{ module.bottom_content.right_image.src|escape_url }}" alt="{{ module.bottom_content.right_image.alt|escape_attr }}" {{ loadingAttr }} {{ sizeAttrs }}>
+            {% endif %}
+          </div>
+          
+          {% if module.button.button_text %}
+          <div class="glbMbtn pt36 d_flex align_center secbtn set-btn-arrows-true {{ module.button.button_choice }} wow fadeInUp">
+            {% set href = module.button.button_link.url.href %}
+            {% if module.button.button_link.url.type is equalto "EMAIL_ADDRESS" %}
+              {% set href = "mailto:" + href %}
+            {% elif module.button.button_link.url.type is equalto "PHONE_NUMBER" %}
+              {% set href = "tel:" + href %}
+            {% endif %}
+            <a
+              {% if module.button.button_link.url.type is equalto "CALL_TO_ACTION"  %}
+                href="{{ href }}" {# The href here is not escaped as it is not editable and functions as a JavaScript call to the associated CTA #}
+              {% else %}
+                href="{{ href|escape_url }}"
+              {% endif %}
+              {% if module.button.button_link.open_in_new_tab %}
+                target="_blank"
+              {% endif %}
+              {% if module.button.button_link.rel %}
+                rel="{{ module.button.button_link.rel|escape_attr }}"
+              {% endif %}
+              >
+              {{ module.button.button_text }}
+            </a>
+          </div>
+          {% endif %}
+          
+          
+          
+        </div>
+
+      </div>
+   
+   
+ </div>
+</div>
+
+
+{% require_css %}
+<style>
+  {{ moduleId }} .bgsec { {% if module.style.select_background == 'bg_color' %}
+    background-color: rgba({{ module.style.background_color.color|convert_rgb }},{{ module.style.background_color.opacity ~ '%' }});
+    {% elif module.style.select_background == 'bg_image' %}
+    {{ module.style.background_image.css }} background-repeat: no-repeat;
+    {% elif module.style.select_background == 'bg_gradient' %}
+    background: {{ module.style.background_gradient.css }};
+    {% endif %} }
+  
+  {{ moduleId }} .space-sec { {{ module.style.spacing.desktop.css }}; position: relative; z-index: 1; }
+  
+  
+  
+  {{ moduleId }} .itteadhlTop h2 { color:{{ module.color_setting.title_color.color }}; max-width:{{ module.title_max_width }}px;  margin: 0 auto; } 
+  {{ moduleId }} .itteadhlTop h2 span { color:{{ module.color_setting.title_span_color.color }}; }  
+  {{ moduleId }} .itteadhlText { color:rgba({{ module.color_setting.text_color.color|convert_rgb }},{{ module.color_setting.text_color.opacity }}%); max-width:{{ module.text_max_width }}px; } 
+  {{ moduleId }} .glbTitle h2 {  max-width:{{ module.bottom_content.title_max_width }}px;   }
+  {{ moduleId }} .glbBody {  max-width:{{ module.bottom_content.text_max_width }}px;   }
+  {{ moduleId }} .itteadhlIBtxtxt {  max-width:{{ module.bottom_text.text_max_width }}px; margin: 0 auto; }
+  {{ moduleId }} .itteadhlIBItext  { color:rgba({{ module.color_setting.card_text_color.color|convert_rgb }},{{ module.color_setting.card_text_color.opacity }}%);  }
+  
+  
+  
+  @media(max-width: 991px){ {{ moduleId }} .space-sec { {{ module.style.spacing.tablet.css }}; } }
+  
+  @media(max-width: 767px){ {{ moduleId }} .space-sec { {{ module.style.spacing.mobile.css }}; } }
+  
+</style>
+{% end_require_css %}
+
+
+
+{% endif %}
+

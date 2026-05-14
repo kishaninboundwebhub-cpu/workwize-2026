@@ -1,0 +1,807 @@
+[ {
+  "id" : "e181e1ee-ef06-5ba8-0ad3-f63113a45d24",
+  "name" : "style",
+  "label" : "Style",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "36fd79d2-1107-4452-d226-d4c096723f16",
+    "name" : "select_background",
+    "label" : "Select Background",
+    "required" : false,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "bg_color", "Background Color" ], [ "bg_image", "Background Image" ], [ "bg_gradient", "Background Gradient" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "bg_color"
+  }, {
+    "id" : "60d0ddef-fb34-a99a-73cb-bda8b10e0fc9",
+    "name" : "background_color",
+    "label" : "Background Color",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "style.select_background",
+      "controlling_value_regex" : "bg_color",
+      "property" : null,
+      "operator" : "MATCHES_REGEX",
+      "access" : null
+    },
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#FFFFFF",
+      "opacity" : 100
+    }
+  }, {
+    "id" : "19f0609d-595d-6ef3-f639-3f6006e095fb",
+    "name" : "background_image",
+    "label" : "Background Image",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "style.select_background",
+      "controlling_value_regex" : "bg_image",
+      "property" : null,
+      "operator" : "MATCHES_REGEX",
+      "access" : null
+    },
+    "type" : "backgroundimage",
+    "display_width" : null,
+    "default" : {
+      "src" : "",
+      "background_position" : "MIDDLE_CENTER",
+      "background_size" : "cover"
+    }
+  }, {
+    "id" : "0df6d4e0-395b-eda2-ec5a-1d08ad6c8d35",
+    "name" : "background_gradient",
+    "label" : "Background Gradient",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "style.select_background",
+      "controlling_value_regex" : "bg_gradient",
+      "property" : null,
+      "operator" : "MATCHES_REGEX",
+      "access" : null
+    },
+    "type" : "gradient",
+    "display_width" : null,
+    "default" : { }
+  }, {
+    "id" : "afeb177b-c31d-1412-5116-70d6f85c5565",
+    "name" : "spacing",
+    "label" : "Spacing",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "d59d9e4c-264e-54fa-99b7-0ff07897b867",
+      "name" : "desktop",
+      "label" : "Desktop",
+      "required" : false,
+      "locked" : false,
+      "type" : "spacing",
+      "display_width" : null,
+      "default" : {
+        "padding" : {
+          "top" : {
+            "value" : 120,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 120,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      }
+    }, {
+      "id" : "0c762a95-1339-05fa-721d-3d79f41b571e",
+      "name" : "tablet",
+      "label" : "Tablet",
+      "required" : false,
+      "locked" : false,
+      "type" : "spacing",
+      "display_width" : null,
+      "default" : {
+        "padding" : {
+          "top" : {
+            "value" : 80,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 80,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      }
+    }, {
+      "id" : "0a8a8c35-4008-f2aa-311a-12325d67b19c",
+      "name" : "mobile",
+      "label" : "Mobile",
+      "required" : false,
+      "locked" : false,
+      "type" : "spacing",
+      "display_width" : null,
+      "default" : {
+        "padding" : {
+          "top" : {
+            "value" : 60,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 60,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      }
+    } ],
+    "tab" : "STYLE",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : {
+      "desktop" : {
+        "padding" : {
+          "top" : {
+            "value" : 120,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 120,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      },
+      "tablet" : {
+        "padding" : {
+          "top" : {
+            "value" : 80,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 80,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      },
+      "mobile" : {
+        "padding" : {
+          "top" : {
+            "value" : 60,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 60,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      }
+    }
+  } ],
+  "tab" : "STYLE",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "select_background" : "bg_color",
+    "background_color" : {
+      "color" : "#FFFFFF",
+      "opacity" : 100
+    },
+    "background_image" : {
+      "src" : "",
+      "background_position" : "MIDDLE_CENTER",
+      "background_size" : "cover"
+    },
+    "background_gradient" : { },
+    "spacing" : {
+      "desktop" : {
+        "padding" : {
+          "top" : {
+            "value" : 120,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 120,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      },
+      "tablet" : {
+        "padding" : {
+          "top" : {
+            "value" : 80,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 80,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      },
+      "mobile" : {
+        "padding" : {
+          "top" : {
+            "value" : 60,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 60,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      }
+    }
+  }
+}, {
+  "id" : "55ccd3e2-31aa-4e79-9772-80facd954415",
+  "name" : "show_hide_",
+  "label" : "Section [Show/ Hide]",
+  "required" : false,
+  "locked" : false,
+  "display" : "toggle",
+  "type" : "boolean",
+  "display_width" : null,
+  "default" : true
+}, {
+  "id" : "496d4407-abd4-c6ea-6410-2a7f84894093",
+  "name" : "title",
+  "label" : "Title",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "Replace ad hoc purchases with <br><span>one system for global IT procurement.</span>"
+}, {
+  "id" : "90a68aef-7302-50f0-1454-7796665ac4fd",
+  "name" : "tab_item",
+  "label" : "Tab Item",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : null,
+    "max" : null,
+    "sorting_label_field" : null,
+    "default" : 5
+  },
+  "children" : [ {
+    "id" : "79a44cff-c7ac-a701-65b9-e27d6fe3e52c",
+    "name" : "tab_text",
+    "label" : "Tab Text",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "HRIS Integration"
+  }, {
+    "id" : "4b1da544-5719-c722-15af-5360d65f58f1",
+    "name" : "top_text",
+    "label" : "Top Text",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Skip juggling complicated custom rules and long lead times."
+  }, {
+    "id" : "d09a88ac-1ec9-b377-ecd2-d64094d0ccfc",
+    "name" : "title",
+    "label" : "Title",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Global inventory. Local delivery."
+  }, {
+    "id" : "a11cc5ff-7baa-50c0-3994-6c4d2379dd5a",
+    "name" : "text",
+    "label" : "Text",
+    "required" : false,
+    "locked" : false,
+    "type" : "richtext",
+    "display_width" : null,
+    "default" : "<p>Keep ready-to-deploy devices within easy reach of every team. Reduce customs friction, shipping delays, and import costs.</p>\n<ul>\n<li>Ship faster and get deliveries in 5-7 days when products are stored in a local warehouse.</li>\n<li>Monitor what’s in stock in Austin and what’s needed in Antwerp with the Workwize platform.</li>\n<li>Scale storage as your business grows without investing in additional real estate.</li>\n</ul>"
+  }, {
+    "id" : "1d238498-e5f5-8973-6f7d-f80797b9d293",
+    "name" : "image_field",
+    "label" : "Image",
+    "required" : false,
+    "locked" : false,
+    "responsive" : true,
+    "resizable" : true,
+    "show_loading" : true,
+    "type" : "image",
+    "display_width" : null,
+    "default" : {
+      "size_type" : "exact",
+      "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/Feaute_%201%20Visuals%20(12).png",
+      "alt" : "Feaute_ 1 Visuals (12)",
+      "loading" : "lazy",
+      "width" : 1232,
+      "height" : 600,
+      "max_width" : 1232,
+      "max_height" : 600
+    }
+  }, {
+    "id" : "a341827e-4b46-58f4-e9ef-8648c789f589",
+    "name" : "show_country_flag",
+    "label" : "Show Country Flag",
+    "required" : false,
+    "locked" : false,
+    "display" : "toggle",
+    "type" : "boolean",
+    "display_width" : null,
+    "default" : false
+  }, {
+    "id" : "b27f4d7d-3fa3-0213-781e-04f8235d08e2",
+    "name" : "top_flag",
+    "label" : "Top Flag",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "tab_item.show_country_flag",
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "MATCHES_REGEX",
+      "access" : null
+    },
+    "responsive" : true,
+    "resizable" : true,
+    "show_loading" : false,
+    "type" : "image",
+    "display_width" : null,
+    "default" : {
+      "size_type" : "auto",
+      "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/Flag%20Container.png",
+      "alt" : "Flag Container",
+      "loading" : "lazy",
+      "width" : 212,
+      "height" : 72,
+      "max_width" : 212,
+      "max_height" : 72
+    }
+  }, {
+    "id" : "62077510-a3d1-ae73-c492-a39f52165ba3",
+    "name" : "bottom_flag",
+    "label" : "Bottom Flag",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "tab_item.show_country_flag",
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "MATCHES_REGEX",
+      "access" : null
+    },
+    "responsive" : true,
+    "resizable" : true,
+    "show_loading" : true,
+    "type" : "image",
+    "display_width" : null,
+    "default" : {
+      "size_type" : "auto",
+      "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/Flag%20Container%20(1).png",
+      "alt" : "Flag Container (1)",
+      "loading" : "lazy",
+      "width" : 200,
+      "height" : 72,
+      "max_width" : 200,
+      "max_height" : 72
+    }
+  }, {
+    "id" : "c7dbd227-d548-05dd-d42d-3b1357a730aa",
+    "name" : "icon_color",
+    "label" : "Icon Color",
+    "required" : false,
+    "locked" : false,
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#227af7",
+      "opacity" : 100
+    }
+  }, {
+    "id" : "87541f62-abe4-4b08-304d-db3c752dd478",
+    "name" : "tab_active_color",
+    "label" : "Tab Active Color",
+    "required" : false,
+    "locked" : false,
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#227af7",
+      "opacity" : 100
+    }
+  }, {
+    "id" : "0c67f3bf-9181-5c37-f493-118d4303a49c",
+    "name" : "box_background_color",
+    "label" : "Box Background Color",
+    "required" : false,
+    "locked" : false,
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#d8e7fd",
+      "opacity" : 100
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : [ {
+    "tab_text" : "HRIS Integration",
+    "top_text" : "Skip juggling complicated custom rules and long lead times.",
+    "title" : "Global inventory. Local delivery.",
+    "text" : "<p>Keep ready-to-deploy devices within easy reach of every team. Reduce customs friction, shipping delays, and import costs.</p>\n<ul>\n<li>Ship faster and get deliveries in 5-7 days when products are stored in a local warehouse.</li>\n<li>Monitor what’s in stock in Austin and what’s needed in Antwerp with the Workwize platform.</li>\n<li>Scale storage as your business grows without investing in additional real estate.</li>\n</ul>",
+    "image_field" : {
+      "size_type" : "exact",
+      "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/Feaute_%201%20Visuals%20(12).png",
+      "alt" : "Feaute_ 1 Visuals (12)",
+      "loading" : "lazy",
+      "width" : 1232,
+      "height" : 600,
+      "max_width" : 1232,
+      "max_height" : 600
+    },
+    "show_country_flag" : false,
+    "top_flag" : {
+      "size_type" : "auto",
+      "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/Flag%20Container.png",
+      "alt" : "Flag Container",
+      "loading" : "lazy",
+      "width" : 212,
+      "height" : 72,
+      "max_width" : 212,
+      "max_height" : 72
+    },
+    "bottom_flag" : {
+      "size_type" : "auto",
+      "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/Flag%20Container%20(1).png",
+      "alt" : "Flag Container (1)",
+      "loading" : "lazy",
+      "width" : 200,
+      "height" : 72,
+      "max_width" : 200,
+      "max_height" : 72
+    },
+    "icon_color" : {
+      "color" : "#227af7",
+      "opacity" : 100
+    },
+    "tab_active_color" : {
+      "color" : "#227af7",
+      "opacity" : 100
+    },
+    "tab_active_color_copy" : {
+      "color" : "#d8e7fd",
+      "opacity" : 100
+    }
+  }, {
+    "tab_text" : "HRIS Integration",
+    "top_text" : "Skip juggling complicated custom rules and long lead times.",
+    "title" : "Global inventory. Local delivery.",
+    "text" : "<p>Keep ready-to-deploy devices within easy reach of every team. Reduce customs friction, shipping delays, and import costs.</p>\n<ul>\n<li>Ship faster and get deliveries in 5-7 days when products are stored in a local warehouse.</li>\n<li>Monitor what’s in stock in Austin and what’s needed in Antwerp with the Workwize platform.</li>\n<li>Scale storage as your business grows without investing in additional real estate.</li>\n</ul>",
+    "image_field" : {
+      "size_type" : "exact",
+      "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/Feaute_%201%20Visuals%20(12).png",
+      "alt" : "Feaute_ 1 Visuals (12)",
+      "loading" : "lazy",
+      "width" : 1232,
+      "height" : 600,
+      "max_width" : 1232,
+      "max_height" : 600
+    },
+    "show_country_flag" : false,
+    "top_flag" : {
+      "size_type" : "auto",
+      "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/Flag%20Container.png",
+      "alt" : "Flag Container",
+      "loading" : "lazy",
+      "width" : 212,
+      "height" : 72,
+      "max_width" : 212,
+      "max_height" : 72
+    },
+    "bottom_flag" : {
+      "size_type" : "auto",
+      "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/Flag%20Container%20(1).png",
+      "alt" : "Flag Container (1)",
+      "loading" : "lazy",
+      "width" : 200,
+      "height" : 72,
+      "max_width" : 200,
+      "max_height" : 72
+    },
+    "icon_color" : {
+      "color" : "#227af7",
+      "opacity" : 100
+    },
+    "tab_active_color" : {
+      "color" : "#227af7",
+      "opacity" : 100
+    },
+    "tab_active_color_copy" : {
+      "color" : "#d8e7fd",
+      "opacity" : 100
+    }
+  }, {
+    "tab_text" : "HRIS Integration",
+    "top_text" : "Skip juggling complicated custom rules and long lead times.",
+    "title" : "Global inventory. Local delivery.",
+    "text" : "<p>Keep ready-to-deploy devices within easy reach of every team. Reduce customs friction, shipping delays, and import costs.</p>\n<ul>\n<li>Ship faster and get deliveries in 5-7 days when products are stored in a local warehouse.</li>\n<li>Monitor what’s in stock in Austin and what’s needed in Antwerp with the Workwize platform.</li>\n<li>Scale storage as your business grows without investing in additional real estate.</li>\n</ul>",
+    "image_field" : {
+      "size_type" : "exact",
+      "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/Feaute_%201%20Visuals%20(12).png",
+      "alt" : "Feaute_ 1 Visuals (12)",
+      "loading" : "lazy",
+      "width" : 1232,
+      "height" : 600,
+      "max_width" : 1232,
+      "max_height" : 600
+    },
+    "show_country_flag" : false,
+    "top_flag" : {
+      "size_type" : "auto",
+      "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/Flag%20Container.png",
+      "alt" : "Flag Container",
+      "loading" : "lazy",
+      "width" : 212,
+      "height" : 72,
+      "max_width" : 212,
+      "max_height" : 72
+    },
+    "bottom_flag" : {
+      "size_type" : "auto",
+      "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/Flag%20Container%20(1).png",
+      "alt" : "Flag Container (1)",
+      "loading" : "lazy",
+      "width" : 200,
+      "height" : 72,
+      "max_width" : 200,
+      "max_height" : 72
+    },
+    "icon_color" : {
+      "color" : "#227af7",
+      "opacity" : 100
+    },
+    "tab_active_color" : {
+      "color" : "#227af7",
+      "opacity" : 100
+    },
+    "tab_active_color_copy" : {
+      "color" : "#d8e7fd",
+      "opacity" : 100
+    }
+  }, {
+    "tab_text" : "HRIS Integration",
+    "top_text" : "Skip juggling complicated custom rules and long lead times.",
+    "title" : "Global inventory. Local delivery.",
+    "text" : "<p>Keep ready-to-deploy devices within easy reach of every team. Reduce customs friction, shipping delays, and import costs.</p>\n<ul>\n<li>Ship faster and get deliveries in 5-7 days when products are stored in a local warehouse.</li>\n<li>Monitor what’s in stock in Austin and what’s needed in Antwerp with the Workwize platform.</li>\n<li>Scale storage as your business grows without investing in additional real estate.</li>\n</ul>",
+    "image_field" : {
+      "size_type" : "exact",
+      "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/Feaute_%201%20Visuals%20(12).png",
+      "alt" : "Feaute_ 1 Visuals (12)",
+      "loading" : "lazy",
+      "width" : 1232,
+      "height" : 600,
+      "max_width" : 1232,
+      "max_height" : 600
+    },
+    "show_country_flag" : false,
+    "top_flag" : {
+      "size_type" : "auto",
+      "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/Flag%20Container.png",
+      "alt" : "Flag Container",
+      "loading" : "lazy",
+      "width" : 212,
+      "height" : 72,
+      "max_width" : 212,
+      "max_height" : 72
+    },
+    "bottom_flag" : {
+      "size_type" : "auto",
+      "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/Flag%20Container%20(1).png",
+      "alt" : "Flag Container (1)",
+      "loading" : "lazy",
+      "width" : 200,
+      "height" : 72,
+      "max_width" : 200,
+      "max_height" : 72
+    },
+    "icon_color" : {
+      "color" : "#227af7",
+      "opacity" : 100
+    },
+    "tab_active_color" : {
+      "color" : "#227af7",
+      "opacity" : 100
+    },
+    "tab_active_color_copy" : {
+      "color" : "#d8e7fd",
+      "opacity" : 100
+    }
+  }, {
+    "tab_text" : "HRIS Integration",
+    "top_text" : "Skip juggling complicated custom rules and long lead times.",
+    "title" : "Global inventory. Local delivery.",
+    "text" : "<p>Keep ready-to-deploy devices within easy reach of every team. Reduce customs friction, shipping delays, and import costs.</p>\n<ul>\n<li>Ship faster and get deliveries in 5-7 days when products are stored in a local warehouse.</li>\n<li>Monitor what’s in stock in Austin and what’s needed in Antwerp with the Workwize platform.</li>\n<li>Scale storage as your business grows without investing in additional real estate.</li>\n</ul>",
+    "image_field" : {
+      "size_type" : "exact",
+      "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/Feaute_%201%20Visuals%20(12).png",
+      "alt" : "Feaute_ 1 Visuals (12)",
+      "loading" : "lazy",
+      "width" : 1232,
+      "height" : 600,
+      "max_width" : 1232,
+      "max_height" : 600
+    },
+    "show_country_flag" : false,
+    "top_flag" : {
+      "size_type" : "auto",
+      "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/Flag%20Container.png",
+      "alt" : "Flag Container",
+      "loading" : "lazy",
+      "width" : 212,
+      "height" : 72,
+      "max_width" : 212,
+      "max_height" : 72
+    },
+    "bottom_flag" : {
+      "size_type" : "auto",
+      "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/Flag%20Container%20(1).png",
+      "alt" : "Flag Container (1)",
+      "loading" : "lazy",
+      "width" : 200,
+      "height" : 72,
+      "max_width" : 200,
+      "max_height" : 72
+    },
+    "icon_color" : {
+      "color" : "#227af7",
+      "opacity" : 100
+    },
+    "tab_active_color" : {
+      "color" : "#227af7",
+      "opacity" : 100
+    },
+    "tab_active_color_copy" : {
+      "color" : "#d8e7fd",
+      "opacity" : 100
+    }
+  } ]
+}, {
+  "id" : "b6dc36f1-826f-64f5-e23f-1dfa9fc4492b",
+  "name" : "color_setting",
+  "label" : "Color Setting",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "ebdd37df-211c-6125-dbc4-f5a70db1d0d2",
+    "name" : "title_color",
+    "label" : "Title Color",
+    "required" : false,
+    "locked" : false,
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#050C14",
+      "opacity" : 100
+    }
+  }, {
+    "id" : "aed51554-a31e-3a11-93f0-4b6cf3b87324",
+    "name" : "title_span_color",
+    "label" : "Title Span Color",
+    "required" : false,
+    "locked" : false,
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#227AF7",
+      "opacity" : 100
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "title_color" : {
+      "color" : "#050C14",
+      "opacity" : 100
+    },
+    "title_span_color" : {
+      "color" : "#227AF7",
+      "opacity" : 100
+    }
+  }
+} ]

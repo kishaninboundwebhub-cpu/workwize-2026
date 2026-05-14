@@ -1,0 +1,290 @@
+<!--
+  templateType: "blog_post"
+  label: "Blog Post - Workwize"
+  screenshotPath: "../images/template-previews/blog-post.png"
+  isAvailableForNewContent: true
+-->
+{% boolean "gated_toggle" label='Show/Hide Author Section', value='True', no_wrapper=True, export_to_template_context=True %}
+
+{% set template_css = "../../css/templates/blog.css" %}
+{% extends "./layouts/base.html" %}
+
+{# START - BlogPosting SchemaMarkup data include #}
+{% block custom_schema %}
+    {% include "/Workwize/templates/partials/Schema Markup/Blog Posts.html" %}
+{% endblock %}
+{# END - BlogPosting SchemaMarkup data include #}
+
+{% block body %}
+
+ {% text "whitepaper_text" label='Whitepaper Page Link', value="", export_to_template_context=True %}
+ {% boolean "image_slider" label="Show Hide Image Slider", value="False", export_to_template_context=True %}
+{# {% boolean "left_list" label="Show Left List Bottom", value="False", export_to_template_context=True %}#}
+
+{% boolean "hide_blog_post" label="Hide Blog Post In Listing", value="False", export_to_template_context=True %}
+{% boolean "show_button" label="Table Add Button", value="False", export_to_template_context=True %}
+{#{% boolean "show_social_icon" label="Add Social Icon & Verified Image", value="False", export_to_template_context=True %}
+{% boolean "show_right_cta" label="Add Right Cta", value="True", export_to_template_context=True %}#}
+
+<div class="body-container body-container--blog-post">
+
+  {# Blog post #}
+
+  <div class="blogpost-wzsec fullwidth  blogpost-thrcol ">
+   <div class="wrapper">
+    <div class="blogpost-wzinner w-100 flexwrap">
+     <div class="blogpost-left">
+       <div class="second_btn">
+        <a href="{{ group.absolute_url }}"> 
+       <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M1.00013 7.4999L13.7207 7.4999" stroke="#227AF7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M6.13037 1.4755L0.999739 7.49951L6.13037 13.5245" stroke="#227AF7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+       </svg> 
+        Back to Blog</a>
+       </div>
+       <div class="blgpst-table">
+        {#{% if content.widgets.left_list.body.value != true %}#}
+       <div class="blgpst-list">
+        <h4>TABLE OF CONTENTS</h4>
+			  <div class="toc-hubspot">
+          <ul class="toc-hublist"></ul> 
+        </div> 
+        {% if content.widgets.show_button.body.value %}
+        <div class="toc-button button">
+          <a href="/">Try Workwize</a>
+        </div>
+         {% endif %}
+      </div>
+       {#{% endif %}#}
+       {#{% if content.widgets.show_social_icon.body.value %}#}
+       <div class="blogpost-social">
+         <h5><strong>Share Article</strong></h5>
+       <ul class="flexwrap">       
+         <li>
+          <a href="http://www.facebook.com/sharer.php?u={{ content.absolute_url }}">
+           <svg version="1.0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" aria-hidden="true"><g id="Facebook1_layer"><path d="M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z"></path></g></svg>
+          </a> 
+         </li>       
+         <li>
+          <a href="http://www.linkedin.com/shareArticle?mini=true&url={{ content.absolute_url }}">
+           <svg version="1.0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" aria-hidden="true"><g id="LinkedIn In2_layer"><path d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"></path></g></svg>
+          </a> 
+         </li>       
+         <li>
+          <a href="http://twitter.com/share?text={{ page_meta.html_title }}&url={{ content.absolute_url }}">
+           <svg version="1.0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" aria-hidden="true"><g id="Twitter3_layer"><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"></path></g></svg>
+          </a> 
+         </li>
+         <li>
+          <a href="https://www.instagram.com/goworkwize/">
+           <svg version="1.0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" aria-hidden="true"><g id="Instagram4_layer"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"></path></g></svg>
+          </a> 
+          </li>       
+         </ul> 
+       </div>
+       {#{% endif %}#}
+       </div>
+     </div>
+     <div class="blogpostright">
+      {% if content.tag_list %}
+      <div class="blogpostright-tags">
+       {% for tag in content.tag_list %}
+        <a class="blogpostright-taglink" href="{{ blog_tag_url(group.id, tag.slug) }}" rel="tag">{{ tag.name }}</a>{% if not loop.last %}<span> , </span>{% endif %}
+       {% endfor %}
+      </div>
+      {% endif %} 
+      <h1 class="h2">{{ content.name }}</h1>
+      
+      
+       <div class="blogpost-trust-badge">
+         <img src="https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Icons/icon.png" width="25" >
+         <span>Edited & Reviewed</span>
+       </div>
+      
+       
+      <div class="blogpostright-meta">
+        <div>
+         Last Update  
+        </div>
+        <time datetime="{{ content.publish_date }}" class="blogpostright-timestamp">
+          {{ content.updated|datetimeformat('%B %e, %Y') }}
+        </time>
+      </div>
+       {% if content.featured_image %}
+      <div class="blogpostright-fimg">
+       <img src="{{ content.featured_image }}" loading="lazy" alt="{{ content.featured_image_alt_text }}">       
+      </div>
+       {% endif %}
+      <div class="blog-post__body blogpostright-content">
+        {{ content.post_body }}
+      </div>
+      {% module "module_170875785396732" path="/Workwize/modules/CTA Section - Blog Post", label="CTA Section - Blog Post" %}
+       {% if content.widgets.image_slider.body.value == true %}
+         {% module "module_17207895042231" path="@hubspot/image_slider_gallery", label="Image Slider" %}
+       {% endif %}
+     {# {% if content.widgets.left_list.body.value != true %} #}
+      <div class="blog-post__body blogpostright-content bp-bottomcontent">
+       {% rich_text "blog_content" label="Blog Content After CTA Banner" html="<h3>Review hardware requirements and send necessary gear</h3> <p>Therefore, implement a notification system to alert IT teams about all new hires and share with them information as to their role and department. Doing so enables IT to get to work right away and prepare the necessary gear and information that new hires need as quickly as possible to be sure items don’t arrive late.</p>" %}
+      </div>
+      {#{% endif %}#}
+      {#{% module "module_17376170134278" path="/Workwize/modules/FAQ Section - Blog", label="FAQ Section - Blog" %} #}
+      
+       {% if widget_data.gated_toggle.body.value == true %} 
+      <div class="blogpostright-author flexwrap w-100">
+       <div class="bp-authorleft">
+        <span class="w-100 bp-atitle">About author</span>
+         <div class="bpa-lrow flexwrap w-100 alignCenter">
+          <div class="bpa-limg">
+           <a href="{{ blog_author_url(group.id, content.blog_post_author.slug) }}" style="background-image: url({{ content.blog_author.avatar }});"></a> 
+          </div>
+          <div class="bpa-lcontent"> 
+           <a href="{{ blog_author_url(group.id, content.blog_post_author.slug) }}" rel="author">
+            {{ content.blog_post_author.display_name }}
+           </a>
+            <span class="bpa-lbio">{{ content.blog_author.bio }}</span>
+         </div>
+         </div>
+       </div>
+       <div class="bp-smright">
+        <span class="w-100 bp-smtitle">Share this article</span>
+        <ul>       
+         <li>
+          <a href="http://www.facebook.com/sharer.php?u={{ content.absolute_url }}">
+           <svg version="1.0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" aria-hidden="true"><g id="Facebook1_layer"><path d="M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z"></path></g></svg>
+          </a> 
+         </li>       
+         <li>
+          <a href="http://www.linkedin.com/shareArticle?mini=true&url={{ content.absolute_url }}">
+           <svg version="1.0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" aria-hidden="true"><g id="LinkedIn In2_layer"><path d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"></path></g></svg>
+          </a> 
+         </li>       
+         <li>
+          <a href="http://twitter.com/share?text={{ page_meta.html_title }}&url={{ content.absolute_url }}">
+           <svg version="1.0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" aria-hidden="true"><g id="Twitter3_layer"><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"></path></g></svg>
+          </a> 
+         </li>
+         <li>
+          <a href="https://www.instagram.com/goworkwize/">
+           <svg version="1.0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" aria-hidden="true"><g id="Instagram4_layer"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"></path></g></svg>
+          </a> 
+          </li>       
+         </ul> 
+       </div>
+      </div> 
+       {% endif %}
+       
+       
+        <div class="blogpost-author flexwrap w-100">
+        <h4 class="w-100 bp-atitle">About the authors:</h4>
+         <div class="author-lrow flexwrap w-100 alignCenter">
+          <div class="author-lf">
+            {% if content.blog_author.avatar %}<div class="author-limg"><a href="{{ blog_author_url(group.id, content.blog_post_author.slug) }}" style="background-image: url({{ content.blog_author.avatar }});"></a> </div>{% endif %}
+            {% if content.blog_post_author.display_name %}<div class="author-lname"><a href="{{ blog_author_url(group.id, content.blog_post_author.slug) }}" rel="author">{{ content.blog_post_author.display_name }}</a></div>{% endif %}
+            {% if content.blog_post_author.linkedin %}
+            <div class="author-lSocial" >
+              <a href="{{ content.blog_post_author.linkedin }}" target="_blank"><svg version="1.0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" aria-hidden="true"><g id="LinkedIn In2_layer"><path d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"></path></g></svg></a>
+            </div>
+            {% endif %}
+           </div>
+          <div class="author-lcontent"> 
+            <span class="bpa-lbio">{{ content.blog_author.bio }}</span>
+         </div>
+         </div>
+      </div> 
+       {#
+       {% module "module_17424774745445" path="/Workwize/modules/Popup Section", label="Popup Section" %}
+       #}
+    </div>
+     {#{% if content.widgets.show_right_cta.body.value == true %}#}
+     <div class="blogpostcta">
+       <div class="blogpost_ctabox">
+       {% module "module_174316204686111" path="/Workwize/modules/Blog Cta Section", label="Blog Cta Section" %}
+       </div>
+     </div>
+     {# endif %}#}
+    </div> 
+     {#{% if content.widgets.left_list.body.value == true %}
+     <div class="blogpost-wzinner blogpost-bmcontent w-100 flexwrap" >
+       <div class="blogpost-left">
+        <div class="blgpst-list">
+        <h4>TABLE OF CONTENTS</h4>
+			  <div class="toc-hubspot">
+          <ul class="toc-hublist"></ul> 
+        </div> 
+      </div>
+       </div>
+       <div class="blogpostright">
+         {#<div class="blog-post__body blogpostright-content">
+          {{ content.post_body }}
+        </div>#}
+        {#<div class="blog-post__body blogpostright-content bp-bottomcontent">
+          {% rich_text "blog_content" label="Blog Content After CTA Banner" html="<h3>Review hardware requirements and send necessary gear</h3> <p>Therefore, implement a notification system to alert IT teams about all new hires and share with them information as to their role and department. Doing so enables IT to get to work right away and prepare the necessary gear and information that new hires need as quickly as possible to be sure items don’t arrive late.</p>" %}
+        </div>
+       </div>
+     </div>
+     {% endif %}#}
+   </div>   
+  </div> 
+  {% module "module_17376223967128" path="/Workwize/modules/FAQ Section - Insight", label="FAQ Section - Insight" %}
+  {% module "module_172258563070620" path="/Workwize/modules/Recent Post Section Blog", label="Recent Post Section Blog" %}
+ 
+
+  {% module "module_1708606831113123" path="/Workwize/modules/Cta Section Fullwidth", label="Cta Section Fullwidth" %}
+  
+    {#{% if group.allow_comments %}
+      <div class="blog-comments">
+        {% module "blog_comments"
+          path="@hubspot/blog_comments",
+          label="Blog comments"
+        %}
+      </div>
+    {% endif %} #}
+  
+  
+  {# Recent posts listing #}
+  
+  {# This macro is used to format each recent post card and gets passed to the related_blog_posts HubL tag below #}  
+  {# {% macro related_posts(post, count, total) %}
+  {% if count == 1 %}
+   <section class="blog-related-posts">
+        <div class="content-wrapper">
+          <h2>Read On</h2>
+          <div class="blog-related-posts__list">
+    {% endif %}
+            <article class="blog-related-posts__post" aria-label="Blog post summary: {{ post.name }}">
+              {% if post.featured_image %}
+                <a class="blog-related-posts__post-image-wrapper" href="{{ post.absolute_url }}" aria-label="{% if post.featured_image_alt_text %} Featured image: {{ post.featured_image_alt_text }} - {% endif %}Read full post: {{ post.name }}">
+                  <img class="blog-related-posts__image" src="{{ post.featured_image }}" loading="lazy" width="352" alt="{{ post.featured_image_alt_text }}">
+                </a>
+              {% endif %}
+              <div class="blog-related-posts__content">
+                <h3 class="blog-related-posts__title">
+                  <a class="blog-related-posts__title-link" href="{{ post.absolute_url }}">{{ post.name }}</a></h3>
+                {{ post.post_summary|truncatehtml(100) }}
+              </div>
+            </article>
+      {% if count == total %}
+          </div>
+        </div>
+      </section>
+  {% endif %}
+  {% endmacro %}
+  {% related_blog_posts limit=3, no_wrapper=True, post_formatter="related_posts" %} #}
+ 
+
+  
+</div>
+
+
+{% endblock body %}
+
+{% require_js %}
+    <script>
+	     $(document).ready(function(){
+				 $('.header-logo').removeClass('hlogowhite-text-with-sky-blue-logo'); 
+         $('.header-logo').addClass('hlogodark-blue-text-with-blue-logo'); 
+         $('.header-sec').removeClass('headerwhite-text-with-sky-blue-logo'); 
+         $('.header-sec').addClass('headerdark-blue-text-with-blue-logo'); 
+			 });
+	   </script>
+    {% end_require_js %}

@@ -1,0 +1,760 @@
+[ {
+  "id" : "e181e1ee-ef06-5ba8-0ad3-f63113a45d24",
+  "name" : "style",
+  "label" : "Style",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "36fd79d2-1107-4452-d226-d4c096723f16",
+    "name" : "select_background",
+    "label" : "Select Background",
+    "required" : false,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "bg_color", "Background Color" ], [ "bg_image", "Background Image" ], [ "bg_gradient", "Background Gradient" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : ""
+  }, {
+    "id" : "60d0ddef-fb34-a99a-73cb-bda8b10e0fc9",
+    "name" : "background_color",
+    "label" : "Background Color",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "style.select_background",
+      "controlling_value_regex" : "bg_color",
+      "property" : null,
+      "operator" : "MATCHES_REGEX",
+      "access" : null
+    },
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#fff",
+      "opacity" : 100
+    }
+  }, {
+    "id" : "19f0609d-595d-6ef3-f639-3f6006e095fb",
+    "name" : "background_image",
+    "label" : "Background Image",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "style.select_background",
+      "controlling_value_regex" : "bg_image",
+      "property" : null,
+      "operator" : "MATCHES_REGEX",
+      "access" : null
+    },
+    "type" : "backgroundimage",
+    "display_width" : null,
+    "default" : {
+      "src" : "",
+      "background_position" : "MIDDLE_CENTER",
+      "background_size" : "cover"
+    }
+  }, {
+    "id" : "0df6d4e0-395b-eda2-ec5a-1d08ad6c8d35",
+    "name" : "background_gradient",
+    "label" : "Background Gradient",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "style.select_background",
+      "controlling_value_regex" : "bg_gradient",
+      "property" : null,
+      "operator" : "MATCHES_REGEX",
+      "access" : null
+    },
+    "type" : "gradient",
+    "display_width" : null,
+    "default" : { }
+  }, {
+    "id" : "afeb177b-c31d-1412-5116-70d6f85c5565",
+    "name" : "spacing",
+    "label" : "Spacing",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "d59d9e4c-264e-54fa-99b7-0ff07897b867",
+      "name" : "desktop",
+      "label" : "Desktop",
+      "required" : false,
+      "locked" : false,
+      "type" : "spacing",
+      "display_width" : null,
+      "default" : {
+        "padding" : {
+          "top" : {
+            "value" : 136,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 30,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      }
+    }, {
+      "id" : "0c762a95-1339-05fa-721d-3d79f41b571e",
+      "name" : "tablet",
+      "label" : "Tablet",
+      "required" : false,
+      "locked" : false,
+      "type" : "spacing",
+      "display_width" : null,
+      "default" : {
+        "padding" : {
+          "top" : {
+            "value" : 100,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 30,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      }
+    }, {
+      "id" : "0a8a8c35-4008-f2aa-311a-12325d67b19c",
+      "name" : "mobile",
+      "label" : "Mobile",
+      "required" : false,
+      "locked" : false,
+      "type" : "spacing",
+      "display_width" : null,
+      "default" : {
+        "padding" : {
+          "top" : {
+            "value" : 60,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 30,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      }
+    } ],
+    "tab" : "STYLE",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : {
+      "desktop" : {
+        "padding" : {
+          "top" : {
+            "value" : 136,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 30,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      },
+      "tablet" : {
+        "padding" : {
+          "top" : {
+            "value" : 100,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 30,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      },
+      "mobile" : {
+        "padding" : {
+          "top" : {
+            "value" : 60,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 30,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      }
+    }
+  } ],
+  "tab" : "STYLE",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "select_background" : "",
+    "background_color" : {
+      "color" : "#fff",
+      "opacity" : 100
+    },
+    "background_image" : {
+      "src" : "",
+      "background_position" : "MIDDLE_CENTER",
+      "background_size" : "cover"
+    },
+    "background_gradient" : { },
+    "spacing" : {
+      "desktop" : {
+        "padding" : {
+          "top" : {
+            "value" : 136,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 30,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      },
+      "tablet" : {
+        "padding" : {
+          "top" : {
+            "value" : 100,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 30,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      },
+      "mobile" : {
+        "padding" : {
+          "top" : {
+            "value" : 60,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 30,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      }
+    }
+  }
+}, {
+  "id" : "55ccd3e2-31aa-4e79-9772-80facd954415",
+  "name" : "show_hide_",
+  "label" : "Section [Show/ Hide]",
+  "required" : false,
+  "locked" : false,
+  "display" : "toggle",
+  "type" : "boolean",
+  "display_width" : null,
+  "default" : true
+}, {
+  "id" : "ac3fc098-f76c-1285-de3c-b6d3d47cac12",
+  "name" : "content",
+  "label" : "Content",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "fb8e1dbb-4682-74f7-0e2b-b223bd0496bd",
+    "name" : "title",
+    "label" : "Title",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "What happens when you stop managing hardware manually."
+  }, {
+    "id" : "6675abd3-1127-5517-315b-c2eddad4147b",
+    "name" : "title_max_width",
+    "label" : "Title Max Width",
+    "required" : false,
+    "locked" : false,
+    "display" : "text",
+    "step" : 1,
+    "suffix" : "px",
+    "type" : "number",
+    "display_width" : null,
+    "default" : 600
+  }, {
+    "id" : "ed3c4093-d4bd-bb57-1051-0fe48700d4e6",
+    "name" : "testimonial_slide",
+    "label" : "Testimonial Slide",
+    "required" : false,
+    "locked" : false,
+    "occurrence" : {
+      "min" : null,
+      "max" : null,
+      "sorting_label_field" : "5beb2a79-7343-3a84-1364-b66aeff2e325",
+      "default" : 4
+    },
+    "children" : [ {
+      "id" : "121b107a-5fb8-32c2-0386-155effede7c0",
+      "name" : "logo",
+      "label" : "Logo",
+      "required" : false,
+      "locked" : false,
+      "responsive" : true,
+      "resizable" : true,
+      "show_loading" : true,
+      "type" : "image",
+      "display_width" : null,
+      "default" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/image%201514.svg",
+        "alt" : "image 1514",
+        "loading" : "lazy",
+        "width" : 88,
+        "height" : 32,
+        "max_width" : 88,
+        "max_height" : 32
+      }
+    }, {
+      "id" : "e211ec47-2457-861e-ed57-5186850a6d40",
+      "name" : "text",
+      "label" : "Text",
+      "required" : false,
+      "locked" : false,
+      "type" : "richtext",
+      "display_width" : null,
+      "default" : "<p><span>A one-stop-shop for your hardware lifecycle!<strong> We've swapped from working with three vendors across the globe</strong> to one singular place, which made it easier for our team, finance, and others to get timely updates on hardware orders, repairs, and offboarding.</span>&nbsp;</p>"
+    }, {
+      "id" : "5beb2a79-7343-3a84-1364-b66aeff2e325",
+      "name" : "names",
+      "label" : "Name",
+      "required" : false,
+      "locked" : false,
+      "allow_new_line" : false,
+      "type" : "text",
+      "display_width" : null,
+      "default" : "Zoárd Manó Csoltai"
+    }, {
+      "id" : "cacb25f6-aed3-ca8b-ba59-9c210de5e4e5",
+      "name" : "designation",
+      "label" : "Designation",
+      "required" : false,
+      "locked" : false,
+      "allow_new_line" : false,
+      "type" : "text",
+      "display_width" : null,
+      "default" : "Senior Tech Ops Engineer @Pleo"
+    }, {
+      "id" : "8d47373c-d74e-7871-e799-67274c60cec2",
+      "name" : "image_field",
+      "label" : "Image",
+      "required" : false,
+      "locked" : false,
+      "responsive" : true,
+      "resizable" : true,
+      "show_loading" : false,
+      "type" : "image",
+      "display_width" : null,
+      "default" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/Group%202147261402.png",
+        "alt" : "Group 2147261402",
+        "loading" : "lazy",
+        "width" : 88,
+        "height" : 88,
+        "max_width" : 88,
+        "max_height" : 88
+      }
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : [ {
+      "logo" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/image%201514.svg",
+        "alt" : "image 1514",
+        "loading" : "lazy",
+        "width" : 88,
+        "height" : 32,
+        "max_width" : 88,
+        "max_height" : 32
+      },
+      "text" : "<p><span>A one-stop-shop for your hardware lifecycle!<strong> We've swapped from working with three vendors across the globe</strong> to one singular place, which made it easier for our team, finance, and others to get timely updates on hardware orders, repairs, and offboarding.</span>&nbsp;</p>",
+      "names" : "Zoárd Manó Csoltai",
+      "designation" : "Senior Tech Ops Engineer @Pleo",
+      "image_field" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/Group%202147261402.png",
+        "alt" : "Group 2147261402",
+        "loading" : "lazy",
+        "width" : 88,
+        "height" : 88,
+        "max_width" : 88,
+        "max_height" : 88
+      }
+    }, {
+      "logo" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/image%201514.svg",
+        "alt" : "image 1514",
+        "loading" : "lazy",
+        "width" : 88,
+        "height" : 32,
+        "max_width" : 88,
+        "max_height" : 32
+      },
+      "text" : "<p><span>A one-stop-shop for your hardware lifecycle!<strong> We've swapped from working with three vendors across the globe</strong> to one singular place, which made it easier for our team, finance, and others to get timely updates on hardware orders, repairs, and offboarding.</span>&nbsp;</p>",
+      "names" : "Zoárd Manó Csoltai",
+      "designation" : "Senior Tech Ops Engineer @Pleo",
+      "image_field" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/Group%202147261402.png",
+        "alt" : "Group 2147261402",
+        "loading" : "lazy",
+        "width" : 88,
+        "height" : 88,
+        "max_width" : 88,
+        "max_height" : 88
+      }
+    }, {
+      "logo" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/image%201514.svg",
+        "alt" : "image 1514",
+        "loading" : "lazy",
+        "width" : 88,
+        "height" : 32,
+        "max_width" : 88,
+        "max_height" : 32
+      },
+      "text" : "<p><span>A one-stop-shop for your hardware lifecycle!<strong> We've swapped from working with three vendors across the globe</strong> to one singular place, which made it easier for our team, finance, and others to get timely updates on hardware orders, repairs, and offboarding.</span>&nbsp;</p>",
+      "names" : "Zoárd Manó Csoltai",
+      "designation" : "Senior Tech Ops Engineer @Pleo",
+      "image_field" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/Group%202147261402.png",
+        "alt" : "Group 2147261402",
+        "loading" : "lazy",
+        "width" : 88,
+        "height" : 88,
+        "max_width" : 88,
+        "max_height" : 88
+      }
+    }, {
+      "logo" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/image%201514.svg",
+        "alt" : "image 1514",
+        "loading" : "lazy",
+        "width" : 88,
+        "height" : 32,
+        "max_width" : 88,
+        "max_height" : 32
+      },
+      "text" : "<p><span>A one-stop-shop for your hardware lifecycle!<strong> We've swapped from working with three vendors across the globe</strong> to one singular place, which made it easier for our team, finance, and others to get timely updates on hardware orders, repairs, and offboarding.</span>&nbsp;</p>",
+      "names" : "Zoárd Manó Csoltai",
+      "designation" : "Senior Tech Ops Engineer @Pleo",
+      "image_field" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/Group%202147261402.png",
+        "alt" : "Group 2147261402",
+        "loading" : "lazy",
+        "width" : 88,
+        "height" : 88,
+        "max_width" : 88,
+        "max_height" : 88
+      }
+    } ]
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "title" : "What happens when you stop managing hardware manually.",
+    "title_max_width" : 600,
+    "testimonial_slide" : [ {
+      "logo" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/image%201514.svg",
+        "alt" : "image 1514",
+        "loading" : "lazy",
+        "width" : 88,
+        "height" : 32,
+        "max_width" : 88,
+        "max_height" : 32
+      },
+      "text" : "<p><span>A one-stop-shop for your hardware lifecycle!<strong> We've swapped from working with three vendors across the globe</strong> to one singular place, which made it easier for our team, finance, and others to get timely updates on hardware orders, repairs, and offboarding.</span>&nbsp;</p>",
+      "names" : "Zoárd Manó Csoltai",
+      "designation" : "Senior Tech Ops Engineer @Pleo",
+      "image_field" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/Group%202147261402.png",
+        "alt" : "Group 2147261402",
+        "loading" : "lazy",
+        "width" : 88,
+        "height" : 88,
+        "max_width" : 88,
+        "max_height" : 88
+      }
+    }, {
+      "logo" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/image%201514.svg",
+        "alt" : "image 1514",
+        "loading" : "lazy",
+        "width" : 88,
+        "height" : 32,
+        "max_width" : 88,
+        "max_height" : 32
+      },
+      "text" : "<p><span>A one-stop-shop for your hardware lifecycle!<strong> We've swapped from working with three vendors across the globe</strong> to one singular place, which made it easier for our team, finance, and others to get timely updates on hardware orders, repairs, and offboarding.</span>&nbsp;</p>",
+      "names" : "Zoárd Manó Csoltai",
+      "designation" : "Senior Tech Ops Engineer @Pleo",
+      "image_field" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/Group%202147261402.png",
+        "alt" : "Group 2147261402",
+        "loading" : "lazy",
+        "width" : 88,
+        "height" : 88,
+        "max_width" : 88,
+        "max_height" : 88
+      }
+    }, {
+      "logo" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/image%201514.svg",
+        "alt" : "image 1514",
+        "loading" : "lazy",
+        "width" : 88,
+        "height" : 32,
+        "max_width" : 88,
+        "max_height" : 32
+      },
+      "text" : "<p><span>A one-stop-shop for your hardware lifecycle!<strong> We've swapped from working with three vendors across the globe</strong> to one singular place, which made it easier for our team, finance, and others to get timely updates on hardware orders, repairs, and offboarding.</span>&nbsp;</p>",
+      "names" : "Zoárd Manó Csoltai",
+      "designation" : "Senior Tech Ops Engineer @Pleo",
+      "image_field" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/Group%202147261402.png",
+        "alt" : "Group 2147261402",
+        "loading" : "lazy",
+        "width" : 88,
+        "height" : 88,
+        "max_width" : 88,
+        "max_height" : 88
+      }
+    }, {
+      "logo" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/image%201514.svg",
+        "alt" : "image 1514",
+        "loading" : "lazy",
+        "width" : 88,
+        "height" : 32,
+        "max_width" : 88,
+        "max_height" : 32
+      },
+      "text" : "<p><span>A one-stop-shop for your hardware lifecycle!<strong> We've swapped from working with three vendors across the globe</strong> to one singular place, which made it easier for our team, finance, and others to get timely updates on hardware orders, repairs, and offboarding.</span>&nbsp;</p>",
+      "names" : "Zoárd Manó Csoltai",
+      "designation" : "Senior Tech Ops Engineer @Pleo",
+      "image_field" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/Group%202147261402.png",
+        "alt" : "Group 2147261402",
+        "loading" : "lazy",
+        "width" : 88,
+        "height" : 88,
+        "max_width" : 88,
+        "max_height" : 88
+      }
+    } ]
+  }
+}, {
+  "id" : "99a114a6-3fb8-0fdc-0f9e-63325ed5bdf5",
+  "name" : "color_setting",
+  "label" : "Color Setting",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "62573f64-d236-fa10-5c21-1b23f48d0a86",
+    "name" : "title_color",
+    "label" : "Title Color",
+    "required" : false,
+    "locked" : false,
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#050C14",
+      "opacity" : 100
+    }
+  }, {
+    "id" : "85940fad-3583-32c1-d6bb-cd2e7eef7632",
+    "name" : "text_color",
+    "label" : "Testimonial Text Color",
+    "required" : false,
+    "locked" : false,
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#050C14",
+      "opacity" : 75
+    }
+  }, {
+    "id" : "efa8b8c9-0c58-ecf7-fbbc-d997f6cd49a0",
+    "name" : "testimonial_bold_text_color",
+    "label" : "Testimonial Bold Text Color",
+    "required" : false,
+    "locked" : false,
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#050C14",
+      "opacity" : 100
+    }
+  }, {
+    "id" : "cd2cdd9e-1309-f672-ce58-62352dd70882",
+    "name" : "testimonial_name_color",
+    "label" : "Testimonial Name Color",
+    "required" : false,
+    "locked" : false,
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#050C14",
+      "opacity" : 75
+    }
+  }, {
+    "id" : "7c2543aa-4faa-8ffb-4cea-17ba6c40bd8e",
+    "name" : "testimonial_designation_color",
+    "label" : "Testimonial Designation Color",
+    "required" : false,
+    "locked" : false,
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#050C14",
+      "opacity" : 50
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "title_color" : {
+      "color" : "#050C14",
+      "opacity" : 100
+    },
+    "text_color" : {
+      "color" : "#050C14",
+      "opacity" : 75
+    },
+    "testimonial_bold_text_color" : {
+      "color" : "#050C14",
+      "opacity" : 100
+    },
+    "testimonial_name_color" : {
+      "color" : "#050C14",
+      "opacity" : 75
+    },
+    "testimonial_designation_color" : {
+      "color" : "#050C14",
+      "opacity" : 50
+    }
+  }
+}, {
+  "id" : "4b728034-b566-4e00-690f-d9324ac5e668",
+  "name" : "image_field_1",
+  "label" : "Image",
+  "required" : false,
+  "locked" : false,
+  "responsive" : true,
+  "resizable" : true,
+  "show_loading" : false,
+  "type" : "image",
+  "display_width" : null,
+  "default" : {
+    "size_type" : "auto",
+    "src" : "",
+    "alt" : null,
+    "loading" : "lazy"
+  }
+} ]

@@ -1,0 +1,926 @@
+{% if module.show_hide_ %}
+	
+{% set moduleId = '#hs_cos_wrapper_{{ name }}' %}
+<div id="{{ module.section_id }}" class="{{name}} PricingSection fullwidth bgsec space-sec">
+  <div class="wrapper">
+    <div class="Pricinginner secinner fullwidth" id="{{ module.form_id }}">
+      
+      <div class="PricingTop wow fadeInUp pb60">
+        <h2>{{ module.title }}</h2>
+        <div class="PricingTtext">
+          {{ module.top_text }}
+        </div>
+      </div>
+     
+      
+    <div class="PricingiRow d_flex">  
+      <div class="PricingiLeft wow fadeInUp">
+        <div class="PricingForm">
+
+          {% form
+            form_to_use="{{ module.form_field.form_id }}"
+            response_response_type="{{ module.form_field.response_type }}"
+            response_message="{{ module.form_field.message }}"
+            response_redirect_id="{{ module.form_field.redirect_id }}"
+            response_redirect_url="{{module.form_field.redirect_url}}"
+            gotowebinar_webinar_key="{{ module.form_field.gotowebinar_webinar_key }}"
+          %}
+
+          <div class="FormLoader" style="display : none">
+            <div class="loader" id="loader-4">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+          </div>
+        </div>
+        <div class="PricingResultSection" style="display : none">
+        <div class="PricingResultTitle">
+          <h2>{{ module.result_box_group.title }}
+
+          </h2>
+
+        </div>
+        <div class="PricingResultContent" id="TotalPrice">
+          {{ module.result_box_group.content }} :
+          <span class="Price"></span>
+        </div>
+        <div class="ResultBoxGroups">
+
+          <div class="procuringBox ResultBox" id="procuring">
+            <div class="ResultBoxTitle">
+              <h3>{{ module.result_box_group.procuring_group.title }}
+                <span class="Price"></span>
+              </h3>
+
+            </div>
+            {% if module.result_box_group.procuring_group.content %}
+            <div class="ResultBoxContent">
+              {{ module.result_box_group.procuring_group.content }}
+            </div>
+            {% endif %}
+          </div>
+
+          <div class="deployingBox ResultBox" id="deploying">
+            <div class="ResultBoxTitle">
+              <h3>{{ module.result_box_group.deploying_group.title }}
+                <span class="Price"></span>
+              </h3>
+
+            </div>
+            {% if module.result_box_group.deploying_group.content %}
+            <div class="ResultBoxContent">
+              {{ module.result_box_group.deploying_group.content }}
+            </div>
+            {% endif %}
+          </div>
+
+          <div class="managingBox ResultBox" id="managing">
+            <div class="ResultBoxTitle">
+              <h3>{{ module.result_box_group.managing_group.title }}
+                <span class="Price"></span>
+              </h3>
+            </div>
+            {% if module.result_box_group.managing_group.content %}
+            <div class="ResultBoxContent">
+              {{ module.result_box_group.managing_group.content }}
+            </div>
+            {% endif %}
+          </div>
+
+          <div class="retrievalsBox ResultBox" id="retrievals">
+            <div class="ResultBoxTitle">
+              <h3>{{ module.result_box_group.retrievals_group.title }}
+                <span class="Price"></span>
+              </h3>
+            </div>
+            {% if module.result_box_group.retrievals_group.content %}
+            <div class="ResultBoxContent">
+              {{ module.result_box_group.retrievals_group.content }}
+            </div>
+            {% endif %}
+          </div>
+
+          <div class="disposalsBox ResultBox" id="disposal">
+            <div class="ResultBoxTitle">
+              <h3>{{ module.result_box_group.disposals_group.title }}
+                <span class="Price"></span>
+              </h3>
+            </div>
+            {% if module.result_box_group.disposals_group.content %}
+            <div class="ResultBoxContent">
+              {{ module.result_box_group.disposals_group.content }}
+            </div>
+            {% endif %}
+          </div>
+
+        </div>
+
+
+
+      </div>
+        
+      </div> 
+      <div class="PricingiRight wow fadeInUp">
+        <div class="PricingiRinn text-enter">
+          <div class="PricingiRimage">
+            {% if module.right_box.image_field.src %}
+              {% set sizeAttrs = 'width="{{ module.right_box.image_field.width|escape_attr }}" height="{{ module.right_box.image_field.height|escape_attr }}"' %}
+              {% if module.right_box.image_field.size_type == 'auto' %}
+                {% set sizeAttrs = 'width="{{ module.right_box.image_field.width|escape_attr }}" height="{{ module.right_box.image_field.height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+              {% elif module.right_box.image_field.size_type == 'auto_custom_max' %}
+                {% set sizeAttrs = 'width="{{ module.right_box.image_field.max_width|escape_attr }}" height="{{ module.right_box.image_field.max_height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+              {% endif %}
+               {% set loadingAttr = module.right_box.image_field.loading != 'disabled' ? 'loading="{{ module.right_box.image_field.loading|escape_attr }}"' : '' %}
+              <img src="{{ module.right_box.image_field.src|escape_url }}" alt="{{ module.right_box.image_field.alt|escape_attr }}" {{ loadingAttr }} {{ sizeAttrs }}>
+            {% endif %}
+          </div>
+          
+          <div class="PricingiRConte">
+            <h3>{{ module.right_box.title }}</h3>
+            <div class="PricingiRitext pb28">
+              {{ module.right_box.text }}
+            </div>
+            <div class="PricingiRibtn d_flex flex_center secbtn {{ module.right_box.button.button_choice }} {% if module.right_box.button.set_arrow %} set-btn-arrows-true {% endif %}">
+            {% set href = module.right_box.button.button_link.url.href %}
+              {% if module.right_box.button.button_link.url.type is equalto "EMAIL_ADDRESS" %}
+                {% set href = "mailto:" + href %}
+              {% elif module.right_box.button.button_link.url.type is equalto "PHONE_NUMBER" %}
+                {% set href = "tel:" + href %}
+              {% endif %}
+              <a
+                {% if module.right_box.button.button_link.url.type is equalto "CALL_TO_ACTION"  %}
+                  href="{{ href }}" {# The href here is not escaped as it is not editable and functions as a JavaScript call to the associated CTA #}
+                {% else %}
+                  href="{{ href|escape_url }}"
+                {% endif %}
+                {% if module.right_box.button.button_link.open_in_new_tab %}
+                  target="_blank"
+                {% endif %}
+                {% if module.right_box.button.button_link.rel %}
+                  rel="{{ module.right_box.button.button_link.rel|escape_attr }}"
+                {% endif %}
+                >
+                {{ module.right_box.button.button_text }}
+              </a>
+            </div>
+          </div>
+          
+          
+          
+        </div>
+      </div>
+   </div> 
+      
+      
+      
+    </div>    
+  </div>
+</div>
+
+
+
+{% require_css %}
+<style>
+  {{ moduleId }} .bgsec { {% if module.style.select_background == 'bg_color' %}
+    background-color: rgba({{ module.style.background_color.color|convert_rgb }},{{ module.style.background_color.opacity ~ '%' }});
+    {% elif module.style.select_background == 'bg_image' %}
+    {{ module.style.background_image.css }} background-repeat: no-repeat;
+    {% elif module.style.select_background == 'bg_gradient' %}
+    background: {{ module.style.background_gradient.css }};
+    {% endif %} }
+  
+  {{ moduleId }} .space-sec { {{ module.style.spacing.desktop.css }}; }
+  
+  
+  @media(max-width: 991px){ {{ moduleId }} .space-sec { {{ module.style.spacing.tablet.css }}; } }
+  
+  @media(max-width: 767px){ {{ moduleId }} .space-sec { {{ module.style.spacing.mobile.css }}; } }
+  
+</style>
+{% end_require_css %}
+
+
+{% require_js %}
+<script>
+  $(".FormLoader").show()
+
+
+
+  function loadForm12(){
+
+    if($(`.{{name}} #{{ module.form_id }}`).find('.hs_cos_wrapper_type_form').length){
+      var formid = `.{{name}} #{{ module.form_id }}`;
+
+      $(formid).addClass('form-loaded');
+      //$(formid + ' .hs-richtext').parent().addClass('wrapper-point');
+      $(formid + ' .hs-richtext.hs-main-font-element').each(function(){
+        if($(this).find('img').length){
+          $(this).parent().addClass('wrapper-point');
+        }
+      });
+
+      $(document).on("keypress", formid+" form", function(event) { 
+        return event.keyCode != 13;
+      });
+
+
+      $(formid+' .PricingForm .wrapper-point').each(function (index) {
+
+        if($(this).find(formid+' .hs-richtext.hs-main-font-element > img').length){
+
+          return;
+        }
+        else{
+
+
+          var dataStep = "step"+(index+1);
+          var stepnumber = index+1;
+          $(this).nextUntil(".wrapper-point").addBack().wrapAll('<div data-filter=".' + dataStep + '" data-number='+ stepnumber +' class="form-step-content ' + dataStep + '" />');
+        }
+
+      });
+
+      $(formid+' .form-step-content').each(function () {
+        if(!$(this).find('.hs-button.primary').length > 0){
+
+          $(this).append('<div class="stepcta"><a class="hs-button disable primary prev-btn">Previous</a><span class="allsteps"></span><a class="hs-button disable primary next-btn">Next</a></div>'); 
+
+
+        }
+        else{
+          //           $(this).find('.hs_submit').addClass('stepcta');
+          $(this).find('.actions').prepend('<div class="stepcta"><a class="hs-button disable primary prev-btn">Previous</a><span class="allsteps"></span><a class="hs-button  primary next-btn submit_btn">Submit</a></div>');
+          //           $(this).find('.hs_submit .actions').prepend('<a class="hs-button disable primary prev-btn">Previous</a><span class="allsteps"></span>'); 
+        } 
+      });
+
+      $(formid+' .form-step-content.step1,.ms-form-steps .from-step-outer:first-child').addClass('active');
+      $(formid+' .form-step-content.step1,.ms-form-steps .from-step-outer:first-child').show();
+
+    // 1. When the user clicks into the input - Clean the slate
+    $(document).on('focus', '.PricingForm [required], .PricingForm input[type="number"]', function() {
+        var $parent = $(this).closest('.hs-form-field');
+        
+        $(this).removeClass('invalid');
+        $parent.removeClass('parent-error-class');
+    });
+
+    // 2. When the user clicks away - Check for ANY error (Empty OR Range error)
+    $(document).on('blur', '.PricingForm [required], .PricingForm input[type="number"]', function() {
+        var $el = $(this);
+        var $parent = $el.closest('.hs-form-field');
+
+        // Wait a tiny bit (100ms) to let the form's own validation script finish
+        setTimeout(function() {
+            // Check if value is empty OR if the input fails HTML5 validation (like max="100")
+            // OR if the 'invalid' class was added by another script
+            if ($el.val().trim() === "" || !$el[0].checkValidity() || $el.hasClass('invalid')) {
+                
+                $el.addClass('invalid');
+                $parent.addClass('parent-error-class');
+            } else {
+                // If it's actually valid, make sure the class is gone
+                $el.removeClass('invalid');
+                $parent.removeClass('parent-error-class');
+            }
+        }, 100); 
+    });
+
+
+      var validity = false; 
+
+
+      $(document).on('click',formid+' .PricingForm .next-btn',function(){
+        var el = $(this);
+        var element =  $(this).closest('.form-step-content').find('[required]');
+        var elementtwo =  $(this).closest('.form-step-content').find('ul[required]');
+        var elementthree =  $(this).closest('.form-step-content').find('ul');
+        var file =  $(this).closest('.form-step-content').find('input[type="file"]');
+        var elcount = 0;
+
+
+//         $('html, body').stop().animate({
+//           'scrollTop': $(".PricingSection").offset().top
+//         }, 700);
+
+
+
+        var getRel = $(this).closest('.form-step-content').attr('data-filter');
+        if(!element.hasClass('invalid')){
+
+          validity = true;
+        }
+        else{
+          setTimeout(function() {
+            $(".FormLoader").fadeIn(250)
+          },500)
+          validity = false;
+        }
+
+        element.each(function () {
+            var elnew = $(this);
+            var parentField = elnew.closest('.hs-form-field'); // Or use .parent() depending on your HTML structure
+            
+            $(this).focus();
+            elnew.blur();
+
+            setTimeout(function(){ 
+                if(elnew.hasClass('invalid')){
+                    validity = false;
+                    // Add the error class to the parent
+                    parentField.addClass('parent-error-class'); 
+                } else {
+                    // Remove it if the user corrected it
+                    parentField.removeClass('parent-error-class');
+                }
+            }, 500);
+        });
+
+        elementtwo.each(function () {
+          var elnew = $(this).find('input');
+          elnew.each(function(){
+            var el = $(this);
+            if (el.is(':checked')) {
+              elcount = elcount+1;
+            }
+          });
+
+          if(elcount < 1){
+            validity=false;
+            $(this).after('<ul class="no-list hs-error-msgs inputs-list" ><li><label >Please complete this required field.</label></li></ul>')
+          }
+          else{
+            $(this).next('.hs-error-msgs').remove();
+          }
+
+          elcount=0;
+        });
+
+        //         new
+        elementthree.each(function () {
+          var elnew1 = $(this).find('input');
+          var isRequired = $(this).find("span.hs-form-required").length > 0;
+          var elcount1 = 0;
+
+          if (isRequired) {
+            elnew1.each(function () {
+              if ($(this).is(':checked')) {
+                elcount1++;
+              }
+            });
+
+            if (elcount1 < 1) {
+              validity = false;
+
+              // Prevent duplicate error messages
+              if (elnew1.next('.hs-error-msgs').length === 0) {
+                elnew1.after('<ul class="no-list hs-error-msgs inputs-list"><li><label>Please complete this required field.</label></li></ul>');
+              }
+            } else {
+              // Remove existing error messages if valid
+              elnew1.next('.hs-error-msgs').remove();
+            }
+          }
+        });
+
+        //         new
+
+
+
+        file.each(function(){
+          if($(this).closest('.hs_file_upload').find('.hs-form-required').length > 0){
+            var getid = $(this).attr('id'); 
+
+            if ($(this).get(0).files.length === 0) {
+              validity=false;
+              $(this).closest('.hs-form-field').after('<ul class="no-list hs-error-msgs inputs-list" ><li><label >Please complete this required field.</label></li></ul>');
+            }
+            else{
+              $(this).closest('.hs-form-field').next('.hs-error-msgs').remove();
+            }
+          }
+        });
+
+
+        $(formid).click()
+        setTimeout(function(){ 
+          if(validity){
+
+
+            $(".FormLoader").fadeIn(250);
+
+            $(formid+' .from-step-outer'+getRel).removeClass('active').addClass('completed');
+            $(formid+' .from-step-outer'+getRel).next().addClass('active');
+
+            var nextstepnumber = el.closest('.form-step-content').next().attr('data-number');
+
+            $('.visiblestep').text(nextstepnumber)
+
+            el.closest('.form-step-content').removeClass('active invalid').fadeOut('500',function(){
+              el.closest('.form-step-content').next().addClass('active').fadeIn(500);  
+
+              validity = false;
+            });
+            setTimeout(function() {
+              $(".FormLoader").fadeOut(250)
+            },1000)
+            if(el.hasClass('submit_btn')){
+              $(".FormLoader").fadeIn(250);
+              $(".FormLoader").addClass("Darkwhite")
+              //$(this).next('input[type="submit"]').click();
+              setTimeout(function() {
+                $(".FormLoader").fadeOut(250)
+              },4000)
+
+
+              $(formid+' input[type="submit"]').click()
+
+            }
+          }else{
+            el.closest('.form-step-content').addClass('invalid'); 
+          }
+
+          elcount=0
+        }, 500);
+      });
+
+      $(document).on('click',formid+'.PricingForm input[type="checkbox"] , '+formid+'.PricingForm input[type="radio"]',function(){
+        var el = $(this);
+        if (el.is(':checked')) {
+          el.closest('ul').next('.hs-error-msgs').remove();
+        }
+      });      
+
+      $(document).on('change',formid+'.PricingForm input[type="file"]',function(){
+        $(this).closest('.hs-form-field').next('.hs-error-msgs').remove();
+      });         
+
+      var btnval = $(formid+' .submit_btn').next('input[type="submit"]').val();
+      $(formid+' .submit_btn').text(btnval);
+
+
+
+      $(formid+' .PricingForm').on('click','.prev-btn',function(){
+        var el = $(this);
+        var getRel = $(this).closest(formid+' .form-step-content').attr('data-filter');
+
+//         $('html, body').stop().animate({
+//           'scrollTop': $(".PricingSection").offset().top
+//         }, 700);
+        $(formid+' .form-step-content'+getRel).removeClass('active').removeClass('completed');
+        $(formid+' .form-step-content'+getRel).prev().addClass('active').removeClass('completed');;
+        el.closest(formid+' .form-step-content').removeClass('active').fadeOut('500',function(){
+          el.closest(formid+' .form-step-content').prev().addClass('active').fadeIn();
+          var nextstepnumber = $('.form-step-content:visible').attr('data-number');
+
+          $('.visiblestep').text(nextstepnumber)
+        });
+      });
+
+      $(formid+' .page-center').show(); 
+      $(formid+' .form-loader').hide();
+    }
+  }
+
+
+
+  window.addEventListener('message', function(event) {
+    if(event.data.type === 'hsFormCallback' && event.data.eventName === 'onFormReady'  && event.data.id == $(`.{{name}} .PricingForm`).find('form').data('form-id')) {
+      setTimeout(function() {
+        $(".FormLoader").fadeOut(250)
+      },500)
+      loadForm12();
+
+      $('.PricingForm form .hs_what_is_your_yearly_employee_turnover_rate_ label').append("<span class='extratext'>Annual turnover rate = # of terminates (annual) / # of employees at the beginning of the annual period</span>");
+      $('.PricingForm form .hs_what_is_your_yearly_employee_growth_rate_ label').append("<span class='extratext'>Employee growth rate = ((Ending number of employees - Beginning number of employees) / Beginning number of employees) x 100</span>");
+
+
+      var totalsteps = $(".form-step-content").length;
+
+
+      $('.allsteps').html('<div class="stepin">STEP <span class="visiblestep">1</span> of <span class="visiblesteplast">'+ totalsteps +'</span></div>')
+
+      //       Cal. start  
+      // Define the value mapping for each equipment
+      var equipmentValues = {
+        "Laptop": 2407.5,
+        "Monitor": 267.5,
+        "Mouse": 64.2,
+        "Keyboard": 74.9
+      };
+
+      //       here find all value for calc
+      var how_many_employees_do_you_currently_have_f4;
+      var what_is_your_yearly_employee_turnover_rate_f5;
+      var what_is_your_yearly_employee_growth_rate_f6;
+      var what_is_the_average_lifespan_of_your_assets_f7;
+      var what_kind_of_equipment_do_you_provide_for_your_new_employees_f12_f15;
+      var sourcing__procurement___vendor_management_time_spent_it____possibly_extra_time_hr_F21;
+      var onboarding_devices__pre_configuration__logistical_operational_efforts_etc__F22;
+      var managing_invoices__it___finance_F24;
+      var managing_updating_it_inventory__it__hr__finance___vendors_F25;
+      var retrieving_time_spent_it_F27;
+      var handling_a_repair__or_warranty_issuing_F28;
+      var disposing_it_assets_F30;
+      var Average_cost_IT_equipment_Total;
+      //       here find all value for calc      
+
+      $('.PricingForm form input[name="how_many_employees_do_you_currently_have_"]').on("keyup change", function(){
+
+        how_many_employees_do_you_currently_have_f4 = parseFloat($(this).val());
+
+        if(how_many_employees_do_you_currently_have_f4 != NaN && how_many_employees_do_you_currently_have_f4 != ""){
+          AllCalc(how_many_employees_do_you_currently_have_f4,what_is_your_yearly_employee_turnover_rate_f5,what_is_your_yearly_employee_growth_rate_f6,what_is_the_average_lifespan_of_your_assets_f7,what_kind_of_equipment_do_you_provide_for_your_new_employees_f12_f15,sourcing__procurement___vendor_management_time_spent_it____possibly_extra_time_hr_F21,onboarding_devices__pre_configuration__logistical_operational_efforts_etc__F22,managing_invoices__it___finance_F24,managing_updating_it_inventory__it__hr__finance___vendors_F25,retrieving_time_spent_it_F27,handling_a_repair__or_warranty_issuing_F28,disposing_it_assets_F30,Average_cost_IT_equipment_Total);
+        }
+
+      })
+
+      $('.PricingForm form input[name="what_is_your_yearly_employee_turnover_rate_"]').on("keyup change", function(){
+        what_is_your_yearly_employee_turnover_rate_f5 = parseFloat($(this).val()/100);
+
+        if(what_is_your_yearly_employee_turnover_rate_f5 != NaN && what_is_your_yearly_employee_turnover_rate_f5 != ""){
+          AllCalc(how_many_employees_do_you_currently_have_f4,what_is_your_yearly_employee_turnover_rate_f5,what_is_your_yearly_employee_growth_rate_f6,what_is_the_average_lifespan_of_your_assets_f7,what_kind_of_equipment_do_you_provide_for_your_new_employees_f12_f15,sourcing__procurement___vendor_management_time_spent_it____possibly_extra_time_hr_F21,onboarding_devices__pre_configuration__logistical_operational_efforts_etc__F22,managing_invoices__it___finance_F24,managing_updating_it_inventory__it__hr__finance___vendors_F25,retrieving_time_spent_it_F27,handling_a_repair__or_warranty_issuing_F28,disposing_it_assets_F30,Average_cost_IT_equipment_Total);
+        }
+      })
+
+      $('.PricingForm form input[name="what_is_your_yearly_employee_growth_rate_"]').on("keyup change", function(){
+        what_is_your_yearly_employee_growth_rate_f6 = parseFloat($(this).val()/100);
+
+        if(what_is_your_yearly_employee_growth_rate_f6 != NaN && what_is_your_yearly_employee_growth_rate_f6 != ""){
+          AllCalc(how_many_employees_do_you_currently_have_f4,what_is_your_yearly_employee_turnover_rate_f5,what_is_your_yearly_employee_growth_rate_f6,what_is_the_average_lifespan_of_your_assets_f7,what_kind_of_equipment_do_you_provide_for_your_new_employees_f12_f15,sourcing__procurement___vendor_management_time_spent_it____possibly_extra_time_hr_F21,onboarding_devices__pre_configuration__logistical_operational_efforts_etc__F22,managing_invoices__it___finance_F24,managing_updating_it_inventory__it__hr__finance___vendors_F25,retrieving_time_spent_it_F27,handling_a_repair__or_warranty_issuing_F28,disposing_it_assets_F30,Average_cost_IT_equipment_Total);
+        }
+
+      })
+
+      $('.PricingForm form input[name="what_is_the_average_lifespan_of_your_assets_"]').on("keyup change", function(){
+        what_is_the_average_lifespan_of_your_assets_f7 = $(this).val();
+
+        if(what_is_the_average_lifespan_of_your_assets_f7 != NaN && what_is_the_average_lifespan_of_your_assets_f7 != ""){
+          AllCalc(how_many_employees_do_you_currently_have_f4,what_is_your_yearly_employee_turnover_rate_f5,what_is_your_yearly_employee_growth_rate_f6,what_is_the_average_lifespan_of_your_assets_f7,what_kind_of_equipment_do_you_provide_for_your_new_employees_f12_f15,sourcing__procurement___vendor_management_time_spent_it____possibly_extra_time_hr_F21,onboarding_devices__pre_configuration__logistical_operational_efforts_etc__F22,managing_invoices__it___finance_F24,managing_updating_it_inventory__it__hr__finance___vendors_F25,retrieving_time_spent_it_F27,handling_a_repair__or_warranty_issuing_F28,disposing_it_assets_F30,Average_cost_IT_equipment_Total);
+        }
+      })
+
+      $('.PricingForm form input[name="what_kind_of_equipment_do_you_provide_for_your_new_employees_"]').on("change", function() {
+        // Get all checked checkboxes
+        what_kind_of_equipment_do_you_provide_for_your_new_employees_f12_f15 = $('input[name="what_kind_of_equipment_do_you_provide_for_your_new_employees_"]:checked')
+          .map(function() {
+          return $(this).val();
+        }).get(); // Convert to array
+
+        // Calculate total value of selected equipment
+        Average_cost_IT_equipment_Total = what_kind_of_equipment_do_you_provide_for_your_new_employees_f12_f15.reduce(function(sum, equipment) {
+          return sum + (equipmentValues[equipment] || 0);
+        }, 0);
+
+
+        if(Average_cost_IT_equipment_Total != NaN && Average_cost_IT_equipment_Total != ""){
+          AllCalc(how_many_employees_do_you_currently_have_f4,what_is_your_yearly_employee_turnover_rate_f5,what_is_your_yearly_employee_growth_rate_f6,what_is_the_average_lifespan_of_your_assets_f7,what_kind_of_equipment_do_you_provide_for_your_new_employees_f12_f15,sourcing__procurement___vendor_management_time_spent_it____possibly_extra_time_hr_F21,onboarding_devices__pre_configuration__logistical_operational_efforts_etc__F22,managing_invoices__it___finance_F24,managing_updating_it_inventory__it__hr__finance___vendors_F25,retrieving_time_spent_it_F27,handling_a_repair__or_warranty_issuing_F28,disposing_it_assets_F30,Average_cost_IT_equipment_Total);
+        }
+
+      });
+
+      $('.PricingForm form input[name="sourcing__procurement___vendor_management_time_spent_it____possibly_extra_time_hr_"]').on("keyup change", function(){
+        sourcing__procurement___vendor_management_time_spent_it____possibly_extra_time_hr_F21 = $(this).val();
+        if(sourcing__procurement___vendor_management_time_spent_it____possibly_extra_time_hr_F21 != NaN && sourcing__procurement___vendor_management_time_spent_it____possibly_extra_time_hr_F21 != ""){
+          AllCalc(how_many_employees_do_you_currently_have_f4,what_is_your_yearly_employee_turnover_rate_f5,what_is_your_yearly_employee_growth_rate_f6,what_is_the_average_lifespan_of_your_assets_f7,what_kind_of_equipment_do_you_provide_for_your_new_employees_f12_f15,sourcing__procurement___vendor_management_time_spent_it____possibly_extra_time_hr_F21,onboarding_devices__pre_configuration__logistical_operational_efforts_etc__F22,managing_invoices__it___finance_F24,managing_updating_it_inventory__it__hr__finance___vendors_F25,retrieving_time_spent_it_F27,handling_a_repair__or_warranty_issuing_F28,disposing_it_assets_F30,Average_cost_IT_equipment_Total);
+        }
+      })
+
+
+      $('.PricingForm form input[name="onboarding_devices__pre_configuration__logistical_operational_efforts_etc__"]').on("keyup change", function(){
+        onboarding_devices__pre_configuration__logistical_operational_efforts_etc__F22 = $(this).val();
+        if(onboarding_devices__pre_configuration__logistical_operational_efforts_etc__F22 != NaN && onboarding_devices__pre_configuration__logistical_operational_efforts_etc__F22 != ""){
+          AllCalc(how_many_employees_do_you_currently_have_f4,what_is_your_yearly_employee_turnover_rate_f5,what_is_your_yearly_employee_growth_rate_f6,what_is_the_average_lifespan_of_your_assets_f7,what_kind_of_equipment_do_you_provide_for_your_new_employees_f12_f15,sourcing__procurement___vendor_management_time_spent_it____possibly_extra_time_hr_F21,onboarding_devices__pre_configuration__logistical_operational_efforts_etc__F22,managing_invoices__it___finance_F24,managing_updating_it_inventory__it__hr__finance___vendors_F25,retrieving_time_spent_it_F27,handling_a_repair__or_warranty_issuing_F28,disposing_it_assets_F30,Average_cost_IT_equipment_Total);
+        }
+      })      
+
+      $('.PricingForm form input[name="managing_invoices__it___finance_"]').on("keyup change", function(){
+        managing_invoices__it___finance_F24 = $(this).val();
+        if(managing_invoices__it___finance_F24 != NaN && managing_invoices__it___finance_F24 != ""){
+          AllCalc(how_many_employees_do_you_currently_have_f4,what_is_your_yearly_employee_turnover_rate_f5,what_is_your_yearly_employee_growth_rate_f6,what_is_the_average_lifespan_of_your_assets_f7,what_kind_of_equipment_do_you_provide_for_your_new_employees_f12_f15,sourcing__procurement___vendor_management_time_spent_it____possibly_extra_time_hr_F21,onboarding_devices__pre_configuration__logistical_operational_efforts_etc__F22,managing_invoices__it___finance_F24,managing_updating_it_inventory__it__hr__finance___vendors_F25,retrieving_time_spent_it_F27,handling_a_repair__or_warranty_issuing_F28,disposing_it_assets_F30,Average_cost_IT_equipment_Total);
+        }
+      })      
+
+      $('.PricingForm form input[name="managing_updating_it_inventory__it__hr__finance___vendors_"]').on("keyup change", function(){
+        managing_updating_it_inventory__it__hr__finance___vendors_F25 = $(this).val();
+        if(managing_updating_it_inventory__it__hr__finance___vendors_F25 != NaN && managing_updating_it_inventory__it__hr__finance___vendors_F25 != ""){
+          AllCalc(how_many_employees_do_you_currently_have_f4,what_is_your_yearly_employee_turnover_rate_f5,what_is_your_yearly_employee_growth_rate_f6,what_is_the_average_lifespan_of_your_assets_f7,what_kind_of_equipment_do_you_provide_for_your_new_employees_f12_f15,sourcing__procurement___vendor_management_time_spent_it____possibly_extra_time_hr_F21,onboarding_devices__pre_configuration__logistical_operational_efforts_etc__F22,managing_invoices__it___finance_F24,managing_updating_it_inventory__it__hr__finance___vendors_F25,retrieving_time_spent_it_F27,handling_a_repair__or_warranty_issuing_F28,disposing_it_assets_F30,Average_cost_IT_equipment_Total);
+        }
+      })      
+
+      $('.PricingForm form input[name="retrieving_time_spent_it"]').on("keyup change", function(){
+        retrieving_time_spent_it_F27 = $(this).val();
+        //         console.log(retrieving_time_spent_it_F27,"retrieving_time_spent_it_F27")
+        if(retrieving_time_spent_it_F27 != NaN && retrieving_time_spent_it_F27 != ""){
+          AllCalc(how_many_employees_do_you_currently_have_f4,what_is_your_yearly_employee_turnover_rate_f5,what_is_your_yearly_employee_growth_rate_f6,what_is_the_average_lifespan_of_your_assets_f7,what_kind_of_equipment_do_you_provide_for_your_new_employees_f12_f15,sourcing__procurement___vendor_management_time_spent_it____possibly_extra_time_hr_F21,onboarding_devices__pre_configuration__logistical_operational_efforts_etc__F22,managing_invoices__it___finance_F24,managing_updating_it_inventory__it__hr__finance___vendors_F25,retrieving_time_spent_it_F27,handling_a_repair__or_warranty_issuing_F28,disposing_it_assets_F30,Average_cost_IT_equipment_Total);
+        }
+      })      
+
+      $('.PricingForm form input[name="handling_a_repair__or_warranty_issuing_"]').on("keyup change", function(){
+        handling_a_repair__or_warranty_issuing_F28 = $(this).val();
+        if(handling_a_repair__or_warranty_issuing_F28 != NaN && handling_a_repair__or_warranty_issuing_F28 != ""){
+          AllCalc(how_many_employees_do_you_currently_have_f4,what_is_your_yearly_employee_turnover_rate_f5,what_is_your_yearly_employee_growth_rate_f6,what_is_the_average_lifespan_of_your_assets_f7,what_kind_of_equipment_do_you_provide_for_your_new_employees_f12_f15,sourcing__procurement___vendor_management_time_spent_it____possibly_extra_time_hr_F21,onboarding_devices__pre_configuration__logistical_operational_efforts_etc__F22,managing_invoices__it___finance_F24,managing_updating_it_inventory__it__hr__finance___vendors_F25,retrieving_time_spent_it_F27,handling_a_repair__or_warranty_issuing_F28,disposing_it_assets_F30,Average_cost_IT_equipment_Total);
+        }
+      })      
+
+      $('.PricingForm form input[name="disposing_it_assets"]').on("keyup change", function(){
+        disposing_it_assets_F30 = $(this).val();
+        if(disposing_it_assets_F30 != NaN && disposing_it_assets_F30 != ""){
+          AllCalc(how_many_employees_do_you_currently_have_f4,what_is_your_yearly_employee_turnover_rate_f5,what_is_your_yearly_employee_growth_rate_f6,what_is_the_average_lifespan_of_your_assets_f7,what_kind_of_equipment_do_you_provide_for_your_new_employees_f12_f15,sourcing__procurement___vendor_management_time_spent_it____possibly_extra_time_hr_F21,onboarding_devices__pre_configuration__logistical_operational_efforts_etc__F22,managing_invoices__it___finance_F24,managing_updating_it_inventory__it__hr__finance___vendors_F25,retrieving_time_spent_it_F27,handling_a_repair__or_warranty_issuing_F28,disposing_it_assets_F30,Average_cost_IT_equipment_Total);
+        }
+      })      
+
+
+
+
+
+      //       Cal. end
+
+
+      function formshouldLoad(){
+        if($(`.{{name}} #{{ module.form_id }}`).hasClass('form-loaded')){
+
+          console.log("jquery start here")
+
+        } else {
+          //                             loadForm()
+        }
+      }
+    }
+    
+    
+    
+     $(".PricingForm form .hs-fieldtype-checkbox ul li").on("click", (function (e) {
+		  $(this).addClass("active"); 
+	   }));
+    
+    
+    
+  });
+
+  //   Form Submit event
+  window.addEventListener('message', function(event) {
+    if (event.data.type === 'hsFormCallback' && event.data.eventName === 'onFormSubmit' && event.data.id == $(`.{{name}} .PricingForm`).find('form').data('form-id')) {
+
+      $(".FormLoader").fadeIn(250);
+      setTimeout(function() {
+        $(".PricingForm").fadeOut(0);
+        $(".FormLoader").fadeOut(0);
+        $('.PricingResultSection').fadeIn(250);
+        $('.ResultPageCTA').fadeIn(250)
+      },2000);
+    }
+  });
+
+
+
+
+  //     FinalVal
+  let Yearly_cost_savings_procurement_N24;
+  let Yearly_costs_savings_deploying_N37;
+  let Yearly_costs_savings_managing_N47;
+  let Yearly_costs_savings_retrievals_N67;
+  let Yearly_costs_savings_disposals_N76;
+
+  function AllCalc(how_many_employees_do_you_currently_have_f4,what_is_your_yearly_employee_turnover_rate_f5,what_is_your_yearly_employee_growth_rate_f6,what_is_the_average_lifespan_of_your_assets_f7,what_kind_of_equipment_do_you_provide_for_your_new_employees_f12_f15,sourcing__procurement___vendor_management_time_spent_it____possibly_extra_time_hr_F21,onboarding_devices__pre_configuration__logistical_operational_efforts_etc__F22,managing_invoices__it___finance_F24,managing_updating_it_inventory__it__hr__finance___vendors_F25,retrieving_time_spent_it_F27,handling_a_repair__or_warranty_issuing_F28,disposing_it_assets_F30,Average_cost_IT_equipment_Total){
+    console.log("AllCalc works")
+    var Value_of_F4 = how_many_employees_do_you_currently_have_f4;
+    var Value_of_F5 = what_is_your_yearly_employee_turnover_rate_f5;
+    var Value_of_F6 = what_is_your_yearly_employee_growth_rate_f6;
+    var Value_of_F7 = what_is_the_average_lifespan_of_your_assets_f7;
+    var Value_of_F12_to_F15 = what_kind_of_equipment_do_you_provide_for_your_new_employees_f12_f15;
+    var Value_of__F21 = sourcing__procurement___vendor_management_time_spent_it____possibly_extra_time_hr_F21;
+    var Value_of_F22 = onboarding_devices__pre_configuration__logistical_operational_efforts_etc__F22;
+    var Value_of_F24 = managing_invoices__it___finance_F24;
+    var Value_of_F25 = managing_updating_it_inventory__it__hr__finance___vendors_F25;
+    var Value_of__F27 = retrieving_time_spent_it_F27;
+    var Value_of_F28 = handling_a_repair__or_warranty_issuing_F28;
+    var Value_of_F30 = disposing_it_assets_F30;
+    var Value_of_L11 = Average_cost_IT_equipment_Total;
+
+    //       Row L start
+    var Current_number_of_employees_L4 = Value_of_F4;
+    var Yearly_turnover_rate_of_employees_L5 = Value_of_F5;
+    var Yearly_growth_rate_of_employees_L6 = Value_of_F6;
+    var Average_new_hires_per_year_L7 = Math.round((Value_of_F4*Value_of_F5) + (Value_of_F4*Value_of_F6));
+    var Average_offboardings_per_year_L8 = Math.round((Value_of_F4*Value_of_F5));
+    var Average_offboarding_redeployment_cost_L9 = parseFloat(53.5);
+    var Avarage_hourly_salary_IT_L10  = parseFloat(48.15);
+    var Average_cost_IT_equipment_L11 = Value_of_L11;
+    var Average_asset_lifespan = Value_of_F7;
+    var Percentage_of_devices_that_needa_repair_L13 = parseFloat(0.08);
+
+    //     Assumptions based on research and data for ROI calculation*
+    var Percentage_of_people_missing_essential_T4 = parseFloat(0.15);
+    var Average_IT_hourly_salary_T5 =  parseFloat(53.5);
+    var Average_monthly_Salary_general_T6 = parseFloat(37.45);
+    var Average_working_hours_month_T7 = parseInt(174);
+    var Averageextra_costs_employee_next_to_monthly_salary_T8 =  parseFloat(0.2);
+    var Average_nonretrieved_devices_before_Workwize_T9 =  parseFloat(0.3);
+    var All_data_is_based_on_a_work_week_of_T10 = parseInt(40);
+
+
+
+
+
+    if(Value_of__F21 != undefined && Value_of__F21 != "" && Average_new_hires_per_year_L7 != undefined && Average_new_hires_per_year_L7 != "" ){
+      Procure(Value_of__F21,Avarage_hourly_salary_IT_L10,Averageextra_costs_employee_next_to_monthly_salary_T8,Average_new_hires_per_year_L7)
+    }
+    if(Value_of__F21 != undefined && Value_of__F21 != "" && Value_of_F22 != undefined && Value_of_F22 != "" && Average_new_hires_per_year_L7 != undefined && Average_new_hires_per_year_L7 != ""){
+      Deploy(Value_of__F21,Value_of_F22,Avarage_hourly_salary_IT_L10,Averageextra_costs_employee_next_to_monthly_salary_T8,Average_monthly_Salary_general_T6,All_data_is_based_on_a_work_week_of_T10,Percentage_of_people_missing_essential_T4,Average_new_hires_per_year_L7)
+    }
+    if(Value_of_F24 != undefined && Value_of_F24 != "" && Value_of_F25 != undefined && Value_of_F25 != "" && Value_of_F4 != "" && Value_of_F4 != undefined && Value_of_F22 != undefined && Value_of_F22 != ""){
+      managing(Value_of_F24,Value_of_F25,Average_monthly_Salary_general_T6,Averageextra_costs_employee_next_to_monthly_salary_T8,Avarage_hourly_salary_IT_L10,Value_of_F4,Value_of_F22)
+    }
+    if(Value_of__F27 != "" && Value_of__F27 != undefined && Value_of_F28  != undefined && Value_of_F28 != ""){
+      retrievals(Value_of__F27,Avarage_hourly_salary_IT_L10,Averageextra_costs_employee_next_to_monthly_salary_T8,Average_offboardings_per_year_L8,Value_of_F28,Percentage_of_devices_that_needa_repair_L13,Value_of_F4,Value_of_F7,Average_nonretrieved_devices_before_Workwize_T9,Average_cost_IT_equipment_L11,Average_new_hires_per_year_L7)
+    }
+    if(Value_of_F30 != "" && Value_of_F30 != undefined){
+      disposals(Value_of_F30,Avarage_hourly_salary_IT_L10,Value_of_F4,Value_of_F7,Avarage_hourly_salary_IT_L10)
+    }
+
+    console.log(Yearly_cost_savings_procurement_N24,"Yearly_cost_savings_procurement_N24");
+    console.log(Yearly_costs_savings_deploying_N37,"Yearly_costs_savings_deploying_N37");
+    console.log(Yearly_costs_savings_managing_N47,"Yearly_costs_savings_managing_N47");
+    console.log(Yearly_costs_savings_retrievals_N67,"Yearly_costs_savings_retrievals_N67");
+        console.log(Yearly_costs_savings_disposals_N76,"Yearly_costs_savings_disposals_N76");
+    
+    if(Yearly_cost_savings_procurement_N24 != undefined && Yearly_costs_savings_deploying_N37 != undefined && Yearly_costs_savings_managing_N47 != undefined && Yearly_costs_savings_retrievals_N67 != undefined  &&  Yearly_costs_savings_disposals_N76 != undefined){
+     
+      FinalValue(Yearly_cost_savings_procurement_N24,Yearly_costs_savings_deploying_N37,Yearly_costs_savings_managing_N47,Yearly_costs_savings_retrievals_N67,Yearly_costs_savings_disposals_N76)
+    }
+  }
+
+
+  //   Yearly cost savings procurement
+  function Procure(Value_of__F21,Avarage_hourly_salary_IT_L10,Averageextra_costs_employee_next_to_monthly_salary_T8,Average_new_hires_per_year_L7){
+    //   beforeworkwize
+    var Sourcing_procurement_L18 = Value_of__F21;
+    var Onboarding_costs_per_new_hire_L19 = Sourcing_procurement_L18*Avarage_hourly_salary_IT_L10 * (1+Averageextra_costs_employee_next_to_monthly_salary_T8);
+    var Total_cost_of_onboarding_all_hires_L21 = Average_new_hires_per_year_L7 * Onboarding_costs_per_new_hire_L19
+
+    //   With Workwize
+    //     var Sourcing_procurement_N18 = parseFloat((1 / 60));
+    var Sourcing_procurement_N18 = 0;
+    var Onboarding_costs_per_new_hire_N19 = Sourcing_procurement_N18 * Avarage_hourly_salary_IT_L10;
+    var Total_cost_of_onboarding_all_hires_N21 = Average_new_hires_per_year_L7*(Onboarding_costs_per_new_hire_N19+0)
+    Yearly_cost_savings_procurement_N24 = Total_cost_of_onboarding_all_hires_L21 - Total_cost_of_onboarding_all_hires_N21
+
+
+  }
+
+
+  //   Yearly costs savings deploying
+  function Deploy(Value_of__F21, Value_of_F22,Avarage_hourly_salary_IT_L10,Averageextra_costs_employee_next_to_monthly_salary_T8,Average_monthly_Salary_general_T6,All_data_is_based_on_a_work_week_of_T10,Percentage_of_people_missing_essential_T4,Average_new_hires_per_year_L7){
+    var Sourcing_procurement_L18 = Value_of__F21;
+    var Onboarding_costs_per_new_hire_L19 = Sourcing_procurement_L18*Avarage_hourly_salary_IT_L10 * (1+Averageextra_costs_employee_next_to_monthly_salary_T8);
+
+    // Before Workwize
+    var Time_spent_on_onboarding_devices_L31 = Value_of_F22;
+    var Deploying_costs_per_hire_L32 = Time_spent_on_onboarding_devices_L31*Avarage_hourly_salary_IT_L10*(1+Averageextra_costs_employee_next_to_monthly_salary_T8);
+    var Cost_late_laptop_first_weekper_newhire_L34 = Average_monthly_Salary_general_T6*(1+Averageextra_costs_employee_next_to_monthly_salary_T8)*All_data_is_based_on_a_work_week_of_T10*Percentage_of_people_missing_essential_T4
+    var Total_costof_deploying_all_new_hires_L35 = Average_new_hires_per_year_L7*(Deploying_costs_per_hire_L32+Cost_late_laptop_first_weekper_newhire_L34);
+
+    //     With Workwize
+    //     var Time_spent_on_onboarding_devices_N31 = parseFloat((1 / 60));
+    var Time_spent_on_onboarding_devices_N31 = 0;
+    var Deploying_costs_per_hire_N32 = Time_spent_on_onboarding_devices_N31 * Onboarding_costs_per_new_hire_L19;
+    Yearly_costs_savings_deploying_N37 = Total_costof_deploying_all_new_hires_L35;
+
+
+  }
+
+  //   Yearly costs savings managing
+
+  function managing(Value_of_F24,Value_of_F25,Average_monthly_Salary_general_T6,Averageextra_costs_employee_next_to_monthly_salary_T8,Avarage_hourly_salary_IT_L10,Value_of_F4,Value_of_F22){
+    //     Before Workwize
+    var Managing_time_spent_on_invoices_L42 = Value_of_F24;
+    var Managing_time_spent_on_updating_L43 = Value_of_F25;
+    var Asset_Management_cost_per_employee_L44 = (Managing_time_spent_on_invoices_L42*Average_monthly_Salary_general_T6*(1+Averageextra_costs_employee_next_to_monthly_salary_T8))+(Managing_time_spent_on_updating_L43*Avarage_hourly_salary_IT_L10*(1+Averageextra_costs_employee_next_to_monthly_salary_T8));
+    var Total_cost_of_managing_all_equipment_L45 = Value_of_F4 * Asset_Management_cost_per_employee_L44;
+
+    //     With Workwize
+    //     var Managing_time_spent_on_invoices_N42 = parseFloat((1 / 60));
+    //     var Managing_time_spent_on_updating_N43 = parseFloat((1 / 60));
+    var Managing_time_spent_on_invoices_N42 = 0;
+    var Managing_time_spent_on_updating_N43 = 0;
+    var Asset_Management_cost_per_employee_N44 = (Managing_time_spent_on_invoices_N42*Value_of_F22)+(Managing_time_spent_on_updating_N43*(Value_of_F22*Avarage_hourly_salary_IT_L10*(1+Averageextra_costs_employee_next_to_monthly_salary_T8)))
+    Yearly_costs_savings_managing_N47 = Total_cost_of_managing_all_equipment_L45;
+
+  }
+
+  // Yearly costs savings retrievals
+
+  function retrievals(Value_of__F27,Avarage_hourly_salary_IT_L10,Averageextra_costs_employee_next_to_monthly_salary_T8,Average_offboardings_per_year_L8,Value_of_F28,Percentage_of_devices_that_needa_repair_L13,Value_of_F4,Value_of_F7,Average_nonretrieved_devices_before_Workwize_T9,Average_cost_IT_equipment_L11,Average_new_hires_per_year_L7){
+    // Offboarding employee
+    var Retrieving_time_spent_IT_L53 = Value_of__F27;
+    var Offboarding_costs_per_new_hire_L54 = Retrieving_time_spent_IT_L53*Avarage_hourly_salary_IT_L10*(1+Averageextra_costs_employee_next_to_monthly_salary_T8)
+    var Total_cost_of_offboarding_L55 = Offboarding_costs_per_new_hire_L54*Average_offboardings_per_year_L8
+
+    // With Workwize
+    //     var Retrieving_time_spent_IT_N53 = parseFloat((5 / 60));
+    var Retrieving_time_spent_IT_N53 = 0;
+    var Offboarding_costs_per_new_hire_N54 = Retrieving_time_spent_IT_N53*Avarage_hourly_salary_IT_L10;
+    var Total_cost_of_offboarding_N55 = Offboarding_costs_per_new_hire_N54 * Average_offboardings_per_year_L8;
+
+    //     //     Repairs
+    //     //   Before Workwize
+    var Time_spent_IT_handling_a_repair_L58 = Value_of_F28;
+    var Cost_per_retrieving_at_repair_L59 = Time_spent_IT_handling_a_repair_L58*Avarage_hourly_salary_IT_L10*(1+Averageextra_costs_employee_next_to_monthly_salary_T8);
+    var Total_cost_time_spent_repairs_L60 = Cost_per_retrieving_at_repair_L59*Percentage_of_devices_that_needa_repair_L13*Value_of_F4;
+
+
+    //     //     With Workwize
+    //     var Time_spent_IT_handling_a_repair_N58 =  parseFloat((5 / 60));
+    var Time_spent_IT_handling_a_repair_N58 =  0;
+    var Cost_per_retrieving_at_repair_N59 = Time_spent_IT_handling_a_repair_N58*Avarage_hourly_salary_IT_L10;
+    var Total_cost_time_spent_repairs_N60 = Cost_per_retrieving_at_repair_N59*Value_of_F4/Value_of_F7;
+
+    //     //     Devices non-retrieved
+    //     //   Before Workwize
+    var Average_IT_equipment_nonretrieved_L63 = Average_nonretrieved_devices_before_Workwize_T9;
+    var Average_costs_nonretrieval_IT_equipment_L64 = Average_IT_equipment_nonretrieved_L63 * Average_cost_IT_equipment_L11;
+    var Toal_cost_nonretrieval_equipment_L65 = Average_costs_nonretrieval_IT_equipment_L64 * Average_new_hires_per_year_L7;
+
+    //     //     With Workwize
+    var Average_IT_equipment_nonretrieved_N63 = 0;
+    var Average_costs_nonretrieval_IT_equipment_L64 = Average_IT_equipment_nonretrieved_N63 * Average_cost_IT_equipment_L11;
+    var Toal_cost_nonretrieval_equipment_N65 = Average_costs_nonretrieval_IT_equipment_L64;
+
+    Yearly_costs_savings_retrievals_N67 = (Total_cost_time_spent_repairs_L60 - Total_cost_time_spent_repairs_N60)+(Total_cost_of_offboarding_L55 - Total_cost_of_offboarding_N55)+(Toal_cost_nonretrieval_equipment_L65 - Toal_cost_nonretrieval_equipment_N65);
+
+
+  }
+
+  // Yearly costs savings disposals
+
+  function disposals(Value_of_F30,Avarage_hourly_salary_IT_L10,Value_of_F4,Value_of_F7,Avarage_hourly_salary_IT_L10){
+    //     Before Workwize
+    var Disposing_time_spent_IT_L72 = Value_of_F30;
+    var Disposing_costs_per_device_L73 = Disposing_time_spent_IT_L72*Avarage_hourly_salary_IT_L10;
+    var Total_cost_of_disposing_L74 =  Disposing_costs_per_device_L73*Value_of_F4/Value_of_F7
+
+    // With Workwize
+
+    //     var Disposing_time_spent_IT_N72 = parseFloat((5 / 60));
+    var Disposing_time_spent_IT_N72 = 0;
+    var Disposing_costs_per_device_N73 = Disposing_time_spent_IT_N72*Avarage_hourly_salary_IT_L10;
+    var Total_cost_of_disposing_N74 = Disposing_costs_per_device_N73*Value_of_F4/Value_of_F7;
+
+    Yearly_costs_savings_disposals_N76 = Total_cost_of_disposing_L74 - Total_cost_of_disposing_N74
+
+
+  }
+
+  // Final Val
+  function FinalValue(Yearly_cost_savings_procurement_N24,Yearly_costs_savings_deploying_N37,Yearly_costs_savings_managing_N47,Yearly_costs_savings_retrievals_N67,Yearly_costs_savings_disposals_N76){
+
+    //     console.log("N24 =>", Yearly_cost_savings_procurement_N24, "|| N37 ==>", Yearly_costs_savings_deploying_N37, "|| N47 ==> ",Yearly_costs_savings_managing_N47, "|| N67 ==> ",Yearly_costs_savings_retrievals_N67, "|| N76 ==> ", Yearly_costs_savings_disposals_N76 )
+
+
+    var Total_yearly_savings_from_using_Workwize_F35 = Math.ceil(Yearly_cost_savings_procurement_N24 + Yearly_costs_savings_deploying_N37 + Yearly_costs_savings_managing_N47 + Yearly_costs_savings_retrievals_N67 + Yearly_costs_savings_disposals_N76);    
+    var Yearly_costs_savings_procuring_F37 = Math.ceil(Yearly_cost_savings_procurement_N24);
+    var Yearly_costs_savings_deploying_F38 = Math.ceil(Yearly_costs_savings_deploying_N37);
+    var Yearly_costs_savings_managing_F39 = Math.ceil(Yearly_costs_savings_managing_N47);
+    var Yearly_costs_savings_retrievals_F40 = Math.ceil(Yearly_costs_savings_retrievals_N67);
+    var Yearly_costs_savings_disposals_F41 = Math.ceil(Yearly_costs_savings_disposals_N76);
+
+
+    $('.PricingForm form input[name="total_yearly_savings_from_using_workwize"]').val(Total_yearly_savings_from_using_Workwize_F35.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1.")).change();
+    $('.PricingForm form input[name="yearly_costs_savings_procuring"]').val(Yearly_costs_savings_procuring_F37.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1.")).change();
+    $('.PricingForm form input[name="yearly_costs_savings_deploying"]').val(Yearly_costs_savings_deploying_F38.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1.")).change();
+    $('.PricingForm form input[name="yearly_costs_savings_managing"]').val(Yearly_costs_savings_managing_F39.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1.")).change();
+    $('.PricingForm form input[name="yearly_costs_savings_retrievals"]').val(Yearly_costs_savings_retrievals_F40.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1.")).change();
+    $('.PricingForm form input[name="yearly_costs_savings_disposals"]').val(Yearly_costs_savings_disposals_F41.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1.")).change();
+
+
+    $("#TotalPrice .Price").text("$ " + Total_yearly_savings_from_using_Workwize_F35.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1."));
+    $("#procuring .Price").text("$ " + Yearly_costs_savings_procuring_F37.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1."));
+    $("#deploying .Price").text("$ " + Yearly_costs_savings_deploying_F38.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1."));
+    $("#managing .Price").text("$ " + Yearly_costs_savings_managing_F39.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1."));
+    $("#retrievals .Price").text("$ " + Yearly_costs_savings_retrievals_F40.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1."));
+    $("#disposal .Price").text("$ " + Yearly_costs_savings_disposals_F41.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1."));
+
+
+//     console.log("Total_yearly_savings_from_using_Workwize_F35 ==> ", Total_yearly_savings_from_using_Workwize_F35);
+//     console.log("Yearly_costs_savings_procuring_F37 ==> ", Yearly_costs_savings_procuring_F37)
+//     console.log("Yearly_costs_savings_deploying_F38 ==> ", Yearly_costs_savings_deploying_F38)
+//     console.log("Yearly_costs_savings_managing_F39 ==> ", Yearly_costs_savings_managing_F39)
+//     console.log("Yearly_costs_savings_retrievals_F40 ==> ", Yearly_costs_savings_retrievals_F40)
+//     console.log("Yearly_costs_savings_disposals_F41 ==> ", Yearly_costs_savings_disposals_F41)
+
+
+
+  }
+
+
+
+
+
+
+
+</script>
+{% end_require_js %}
+
+{% endif %}

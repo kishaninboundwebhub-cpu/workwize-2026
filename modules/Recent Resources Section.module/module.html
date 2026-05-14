@@ -1,0 +1,147 @@
+{% if module.show_hide_ %}
+{% set moduleId = '#hs_cos_wrapper_{{ name }}' %}
+{% set rec_posts = blog_recent_posts(module.select_blog, 3) %}
+<div class="receresosec recerlay{{  module.select_layout }} fullwidth bgsec space-sec">
+ <div class="wrapper">
+   
+   {% if module.select_layout == 'layout_2' %}
+    <div class="receresoTop d_flex align_end space_between gap20 pb64 sm_pb30 wow fadeInUp">
+      <div class="receresoTitle">
+         <h2>{{ module.title }}</h2>
+      </div>
+      
+      <div class="receresoTbtn">
+         <div class="receresoBtn {{ module.button.button_choice }} secbtn set-btn-arrows-true d_flex align_center flex_center  wow fadeInUp">
+     {% set href = module.button.button_link.url.href %}
+        {% if module.button.button_link.url.type is equalto "EMAIL_ADDRESS" %}
+          {% set href = "mailto:" + href %}
+        {% elif module.button.button_link.url.type is equalto "PHONE_NUMBER" %}
+          {% set href = "tel:" + href %}
+        {% endif %}
+        <a
+          {% if module.button.button_link.url.type is equalto "CALL_TO_ACTION"  %}
+            href="{{ href }}" {# The href here is not escaped as it is not editable and functions as a JavaScript call to the associated CTA #}
+          {% else %}
+            href="{{ href|escape_url }}"
+          {% endif %}
+          {% if module.button.button_link.open_in_new_tab %}
+            target="_blank"
+          {% endif %}
+          {% if module.button.button_link.rel %}
+            rel="{{ module.button.button_link.rel|escape_attr }}"
+          {% endif %}
+          >
+          {{ module.button.button_text }}
+        </a>
+   </div>
+      </div>
+      
+    </div>
+   
+   
+   
+   
+   {% else %}
+   <div class="receresoTitle text-center pb44 wow fadeInUp">
+     <h2>{{ module.title }}</h2>
+   </div>
+   {% endif %}
+   
+   
+   
+   <div class="receresoInner d_flex wow fadeInUp">
+     {% for rec_post in rec_posts %}
+     <div class="receresoItem">
+       <div class="woproceInn">
+         <div class="woproceImage">
+           <a href="{{ rec_post.absolute_url }}">
+            <img src="{{ rec_post.featured_image }}" alt="imgs" loading="lazy">
+           </a>
+         </div> 
+         <div class="woprocetaConte pt24 d_flex align_center gap4">
+           <div class="woproceTag">
+             {% for tag in rec_post.tag_list|first %}
+                <a  href="{{ blog_tag_url(group.id, tag.slug)|escape_url }}">{{ tag.name|sanitize_html }}</a>{% if not loop.last %}<span>, </span>{% endif %}
+             {% endfor %}
+           </div>
+           <span class="woproceDot"></span>
+           <div class="woproceDate">
+             {{ rec_post.publish_date|format_date('MMM d, yyyy') }}
+           </div>
+         </div>
+         <div class="woproceItitl pt10">
+           <h3>
+             <a href="{{ rec_post.absolute_url }}">{{ rec_post.name }}</a>
+           </h3>  
+         </div> 
+         <div class="woproceText">
+             {{ rec_post.post_list_content|striptags|truncate(48, False, '...') }}
+         </div>
+         
+         
+       </div>
+     </div>
+     {% endfor %}
+   </div>
+   {% if module.select_layout == 'layout_2' %}
+   
+   {% else %}
+   <div class="receresoBtn {{ module.button.button_choice }} secbtn set-btn-arrows-true d_flex align_center flex_center pt60 wow fadeInUp">
+     {% set href = module.button.button_link.url.href %}
+        {% if module.button.button_link.url.type is equalto "EMAIL_ADDRESS" %}
+          {% set href = "mailto:" + href %}
+        {% elif module.button.button_link.url.type is equalto "PHONE_NUMBER" %}
+          {% set href = "tel:" + href %}
+        {% endif %}
+        <a
+          {% if module.button.button_link.url.type is equalto "CALL_TO_ACTION"  %}
+            href="{{ href }}" {# The href here is not escaped as it is not editable and functions as a JavaScript call to the associated CTA #}
+          {% else %}
+            href="{{ href|escape_url }}"
+          {% endif %}
+          {% if module.button.button_link.open_in_new_tab %}
+            target="_blank"
+          {% endif %}
+          {% if module.button.button_link.rel %}
+            rel="{{ module.button.button_link.rel|escape_attr }}"
+          {% endif %}
+          >
+          {{ module.button.button_text }}
+        </a>
+   </div>
+   {% endif %}
+   
+   
+   
+ </div>
+</div>
+
+
+{% require_css %}
+<style>
+  {{ moduleId }} .bgsec { {% if module.style.select_background == 'bg_color' %}
+    background-color: rgba({{ module.style.background_color.color|convert_rgb }},{{ module.style.background_color.opacity ~ '%' }});
+    {% elif module.style.select_background == 'bg_image' %}
+    {{ module.style.background_image.css }} background-repeat: no-repeat;
+    {% elif module.style.select_background == 'bg_gradient' %}
+    background: {{ module.style.background_gradient.css }};
+    {% endif %} }
+  
+  {{ moduleId }} .space-sec { {{ module.style.spacing.desktop.css }}; }
+  {{ moduleId }} .receresoTitle { max-width:{{ module.title_max_width }}px;  }
+  {{ moduleId }} .receresoTitle h2 { color:{{ module.color_setting.title_color.color }}; } 
+  {{ moduleId }} .receresoTitle h2 span { color:{{ module.color_setting.title_span_color.color }}; } 
+  
+  
+  
+  @media(max-width: 991px){ {{ moduleId }} .space-sec { {{ module.style.spacing.tablet.css }}; } }
+  
+  @media(max-width: 767px){ {{ moduleId }} .space-sec { {{ module.style.spacing.mobile.css }}; } }
+  
+</style>
+{% end_require_css %}
+
+
+
+{% endif %}
+

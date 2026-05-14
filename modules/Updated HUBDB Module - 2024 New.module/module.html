@@ -1,0 +1,89 @@
+{% set dynamic_page_hubdb_table_id = module.select_hubdb_table %}
+{% if dynamic_page_hubdb_row %}
+{% elif dynamic_page_hubdb_table_id %}
+<div class="dynamic-data-outer fullwidth">
+   <div class="wrapper">
+     <h2 class="dd-list-top-title">
+       {{ module.title }}
+     </h2>
+      <div class="dd-list fullwidth">
+         {% for row in hubdb_table_rows(dynamic_page_hubdb_table_id) %}
+         {% if row.hide_column %} {% else %}
+         <div class="dynamic-data-box" country-loop="{{ loop.index }}">
+           <div class="ddb-img">
+             {% if row.country_img.url %}
+               <img src="{{ row.country_img.url }}" alt="{{ row.hs_name }}" loading="lazy">
+              {% else %}
+              <img src="https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize/Image/photo-icon-picture-icon-image-sign-symbol-vector-illustration_64749-4409.png" alt="{{ dynamic_page_hubdb_row.hs_name }}" loading="lazy">
+              {% endif %}
+           </div>
+           <div class="ddb-info">
+             <h4>{{ module.box_starting_text }} {{ row.hs_name }}</h4>
+             {#<div class="dd-short-intro">
+               Looking for a reliable IT service in  {{ row.hs_name }}? IT teams use Workwize to manage the entire lifecycle of global IT hardware locally through a vast network of local suppliers and warehouses. Backed by an intuitive platform and automated workflows, Workwize streamlines IT procurement, deployment, management, retrieval, and disposal across {{ row.hs_name }}.
+             </div>#}
+             <div class="dd-read-more button">
+            <a href="{{ request.path }}/{{ row.hs_path }}">Read More</a>  
+           </div>
+           </div>
+           
+           
+         </div>
+         {% endif %} 
+         {% endfor %}
+      </div>
+     <div class="load-more-data button fullwidth">
+       <a href="#" id="loadMore">Load More</a>
+     </div>
+   </div>
+</div>
+{% endif %}
+
+
+{% require_js %}
+  <script>
+    $(document).ready(function(){
+      $(".pricing-cure-switcher a").on("click", (function (e) {
+        e.preventDefault();
+         $(".pricing-cure-switcher a").removeClass("active");
+         $(this).addClass("active"); 
+         $(".pricing-cure-box").hide();
+         $($(this).attr("data-value")).show();
+      }));  
+    });
+
+
+ // Function to add class to the body element based on location
+        function addLocationClass(location) {
+            const body = document.querySelector('body');
+            if (location === 'US') {
+                body.classList.add('USD');
+                $('.pricing-cure-switcher a:first-child').trigger('click');
+            } else if (location === 'GB') {
+                $('.pricing-cure-switcher a:last-child').trigger('click');
+                body.classList.add('UK');
+            } else if (location === 'DE' || location === 'FR' || location === 'NL' || location === 'ES' || location === 'PL' || location === 'IT' || location === 'BE' || location === 'IE') {
+                $('.pricing-cure-switcher a:nth-child(2)').trigger('click');
+                body.classList.add('Germany');
+            } else {
+                $('.pricing-cure-switcher a:first-child').trigger('click');
+            }
+        }
+
+        // Function to fetch IP address and determine location
+        async function fetchLocation() {
+            try {
+                const response = await fetch('https://ipapi.co/json/');
+                const data = await response.json();
+                const country = data.country;
+                addLocationClass(country);
+            } catch (error) {
+                console.error('Error fetching IP location:', error);
+            }
+        }
+
+        // Call the function to fetch location when the page loads
+        fetchLocation();
+
+  </script>
+{% end_require_js %}

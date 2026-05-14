@@ -1,0 +1,120 @@
+{% if module.show_hide_ %}
+{% set moduleId = '#hs_cos_wrapper_{{ name }}' %}
+
+<div class="faqssSec fullwidth bgsec space-sec">
+ <div class="wrapper">
+   <div class="faqssTitle text-center pb60 wow fadeInUp">
+     <h2>{{ module.content.title }}</h2>
+   </div>
+   <div class="faqssInner d_flex wow fadeInUp">
+  <div class="faqCol">
+    {% for item in module.content.faq_item %}
+      {% if loop.index is odd %}
+        <div class="faqssItem" data-loop="{{  loop.index }}">
+          <div class="faqssItinn">
+            <h3>
+              {{ item.title }}
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="https://www.w3.org/2000/svg"> <g clip-path="url(#clip0_1861_356)"> <path d="M12.6038 5.82031L7.75501 10.6691L2.90625 5.82031" stroke="#050C14" stroke-width="1.93548" stroke-linecap="round" stroke-linejoin="round"></path> </g> <defs> <clipPath id="clip0_1861_356"> <rect width="15.516" height="15.516" fill="white"></rect> </clipPath> </defs> </svg>
+            </h3>
+            <div class="faqssItextt">
+              <div class="faqssItetxtx">
+                {{ item.text }}
+              </div>
+            </div>
+          </div>
+        </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+
+  <div class="faqCol">
+    {% for item in module.content.faq_item %}
+      {% if loop.index is even %}
+        <div class="faqssItem" data-loop="{{  loop.index }}">
+          <div class="faqssItinn">
+            <h3>
+              {{ item.title }}
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="https://www.w3.org/2000/svg"> <g clip-path="url(#clip0_1861_356)"> <path d="M12.6038 5.82031L7.75501 10.6691L2.90625 5.82031" stroke="#050C14" stroke-width="1.93548" stroke-linecap="round" stroke-linejoin="round"></path> </g> <defs> <clipPath id="clip0_1861_356"> <rect width="15.516" height="15.516" fill="white"></rect> </clipPath> </defs> </svg>
+            </h3>
+            <div class="faqssItextt">
+              <div class="faqssItetxtx">
+                {{ item.text }}
+              </div>
+            </div>
+          </div>
+        </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+   </div>
+  </div>
+  
+  
+  <div class="faqsslShape">
+      {% if module.content.left_shape.src %}
+      {% set sizeAttrs = 'width="{{ module.content.left_shape.width|escape_attr }}" height="{{ module.content.left_shape.height|escape_attr }}"' %}
+      {% if module.content.left_shape.size_type == 'auto' %}
+        {% set sizeAttrs = 'width="{{ module.content.left_shape.width|escape_attr }}" height="{{ module.content.left_shape.height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+      {% elif module.content.left_shape.size_type == 'auto_custom_max' %}
+        {% set sizeAttrs = 'width="{{ module.content.left_shape.max_width|escape_attr }}" height="{{ module.content.left_shape.max_height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+      {% endif %}
+       {% set loadingAttr = module.content.left_shape.loading != 'disabled' ? 'loading="{{ module.content.left_shape.loading|escape_attr }}"' : '' %}
+      <img src="{{ module.content.left_shape.src|escape_url }}" alt="{{ module.content.left_shape.alt|escape_attr }}" {{ loadingAttr }} {{ sizeAttrs }}>
+    {% endif %}
+  </div>
+  
+  <div class="faqssrShape">
+      {% if module.content.right_shape.src %}
+      {% set sizeAttrs = 'width="{{ module.content.right_shape.width|escape_attr }}" height="{{ module.content.right_shape.height|escape_attr }}"' %}
+      {% if module.content.right_shape.size_type == 'auto' %}
+        {% set sizeAttrs = 'width="{{ module.content.right_shape.width|escape_attr }}" height="{{ module.content.right_shape.height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+      {% elif module.content.right_shape.size_type == 'auto_custom_max' %}
+        {% set sizeAttrs = 'width="{{ module.content.right_shape.max_width|escape_attr }}" height="{{ module.content.right_shape.max_height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+      {% endif %}
+       {% set loadingAttr = module.content.right_shape.loading != 'disabled' ? 'loading="{{ module.content.right_shape.loading|escape_attr }}"' : '' %}
+      <img src="{{ module.content.right_shape.src|escape_url }}" alt="{{ module.content.right_shape.alt|escape_attr }}" {{ loadingAttr }} {{ sizeAttrs }}>
+    {% endif %}
+  </div>
+  
+  
+  
+  
+  
+</div>
+
+  
+
+
+
+
+{% require_css %}
+<style>
+  {{ moduleId }} .bgsec { {% if module.style.select_background == 'bg_color' %}
+    background-color: rgba({{ module.style.background_color.color|convert_rgb }},{{ module.style.background_color.opacity ~ '%' }});
+    {% elif module.style.select_background == 'bg_image' %}
+    {{ module.style.background_image.css }} background-repeat: no-repeat;
+    {% elif module.style.select_background == 'bg_gradient' %}
+    background: {{ module.style.background_gradient.css }};
+    {% endif %} }
+  
+  {{ moduleId }} .space-sec { {{ module.style.spacing.desktop.css }}; }
+  
+  {{ moduleId }} .faqssTitle h2 { max-width:{{ module.content.title_max_width }}px; color:rgba({{ module.color_setting.title_color.color|convert_rgb }},{{ module.color_setting.title_color.opacity }}%);  }
+  {{ moduleId }} .faqssTitle h2 span { color:rgba({{ module.color_setting.title_span_color.color|convert_rgb }},{{ module.color_setting.title_span_color.opacity }}%);  }
+  
+  {{ moduleId }} .faqssItinn h3 { color:rgba({{ module.color_setting.list_title_color.color|convert_rgb }},{{ module.color_setting.list_title_color.opacity }}%);  }
+  {{ moduleId }} .faqssItetxtx { color:rgba({{ module.color_setting.list_text_color.color|convert_rgb }},{{ module.color_setting.list_text_color.opacity }}%);  }
+  
+
+  
+  @media(max-width: 991px){ {{ moduleId }} .space-sec { {{ module.style.spacing.tablet.css }}; } }
+  
+  @media(max-width: 767px){ {{ moduleId }} .space-sec { {{ module.style.spacing.mobile.css }}; } }
+  
+</style>
+{% end_require_css %}
+
+
+
+{% endif %}
+

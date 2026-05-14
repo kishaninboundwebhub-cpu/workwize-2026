@@ -1,0 +1,1141 @@
+[ {
+  "id" : "abc78ad1-2be9-c889-081b-6d6baf008422",
+  "name" : "style",
+  "label" : "Style",
+  "required" : false,
+  "locked" : true,
+  "children" : [ {
+    "id" : "1269c598-1e5c-2c43-baf1-cd4d517f3a2e",
+    "name" : "spacing",
+    "label" : "Spacing",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "fb914f2f-2288-209f-7c94-54762a4d124a",
+      "name" : "desktop",
+      "label" : "Desktop",
+      "required" : false,
+      "locked" : false,
+      "type" : "spacing",
+      "display_width" : null,
+      "default" : {
+        "padding" : {
+          "top" : {
+            "value" : 100,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 100,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      }
+    }, {
+      "id" : "f107e04e-2d4f-b1e2-1a72-9be08a044f99",
+      "name" : "tablet",
+      "label" : "Tablet",
+      "required" : false,
+      "locked" : false,
+      "type" : "spacing",
+      "display_width" : null,
+      "default" : {
+        "padding" : {
+          "top" : {
+            "value" : 80,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 80,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      }
+    }, {
+      "id" : "324be658-679a-19f2-b0d0-024311efad93",
+      "name" : "mobile",
+      "label" : "Mobile",
+      "required" : false,
+      "locked" : false,
+      "type" : "spacing",
+      "display_width" : null,
+      "default" : {
+        "padding" : {
+          "top" : {
+            "value" : 60,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 60,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      }
+    } ],
+    "tab" : "STYLE",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : {
+      "desktop" : {
+        "padding" : {
+          "top" : {
+            "value" : 100,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 100,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      },
+      "tablet" : {
+        "padding" : {
+          "top" : {
+            "value" : 80,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 80,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      },
+      "mobile" : {
+        "padding" : {
+          "top" : {
+            "value" : 60,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 60,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      }
+    }
+  } ],
+  "tab" : "STYLE",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "spacing" : {
+      "desktop" : {
+        "padding" : {
+          "top" : {
+            "value" : 100,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 100,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      },
+      "tablet" : {
+        "padding" : {
+          "top" : {
+            "value" : 80,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 80,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      },
+      "mobile" : {
+        "padding" : {
+          "top" : {
+            "value" : 60,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 60,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      }
+    }
+  }
+}, {
+  "id" : "15baa1cf-66a7-78da-3d9e-b21a2e9660a9",
+  "name" : "title",
+  "label" : "Title",
+  "required" : false,
+  "locked" : true,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "Review"
+}, {
+  "id" : "2a06756d-ab32-1556-bf7a-a9460a7a1505",
+  "name" : "review_item",
+  "label" : "Review Item",
+  "required" : false,
+  "locked" : true,
+  "occurrence" : {
+    "min" : null,
+    "max" : null,
+    "sorting_label_field" : null,
+    "default" : 7
+  },
+  "children" : [ {
+    "id" : "126a3749-0869-65fb-2427-2a4a22575fc0",
+    "name" : "image_field",
+    "label" : "Image",
+    "required" : false,
+    "locked" : false,
+    "responsive" : true,
+    "resizable" : true,
+    "show_loading" : true,
+    "type" : "image",
+    "display_width" : null,
+    "default" : {
+      "size_type" : "exact",
+      "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Christos%20Livas.jpeg",
+      "alt" : "Christos Livas",
+      "loading" : "lazy",
+      "width" : 100,
+      "height" : 100,
+      "max_width" : 100,
+      "max_height" : 100
+    }
+  }, {
+    "id" : "3e7ca30b-32f1-caee-a96e-393117168278",
+    "name" : "person_name",
+    "label" : "Person Name",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Christos Livas"
+  }, {
+    "id" : "306db79f-f77b-f813-0997-2f0e7755fa50",
+    "name" : "job_title",
+    "label" : "Job Title",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "IT Specialist"
+  }, {
+    "id" : "0df48469-f758-2889-621f-329d69b0e280",
+    "name" : "company_name",
+    "label" : "Company Name",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "@Hack The Box"
+  }, {
+    "id" : "f2888b5a-2909-b955-ee7e-f7f19a6d0c6e",
+    "name" : "review_comment",
+    "label" : "Review Comment",
+    "required" : false,
+    "locked" : false,
+    "type" : "richtext",
+    "display_width" : null,
+    "default" : "<span> \"<strong>Workwize delivers what it promises</strong>. With only very few or zero issues, an IT admin can manage his/her inventory with ease and deliver the equipment to his/her colleagues on time.\" </span>"
+  }, {
+    "id" : "af74f181-bbd0-4d70-8030-71b0029cdda1",
+    "name" : "platform_image",
+    "label" : "Platform Icon",
+    "required" : false,
+    "locked" : false,
+    "responsive" : true,
+    "resizable" : true,
+    "show_loading" : true,
+    "type" : "image",
+    "display_width" : null,
+    "default" : {
+      "size_type" : "exact",
+      "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Integrations%20Icon/Google%20Workspace_integrations_icon.png",
+      "alt" : "Google Workspace_integrations_icon",
+      "loading" : "lazy",
+      "width" : 144,
+      "height" : 144,
+      "max_width" : 144,
+      "max_height" : 144
+    }
+  }, {
+    "id" : "25efb537-dc3a-a6b0-fe63-e5a132bce861",
+    "name" : "rating",
+    "label" : "Rating",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "bde143e5-5e02-396d-c30c-d48e15bc0860",
+      "name" : "star",
+      "label" : "Star",
+      "required" : false,
+      "locked" : false,
+      "occurrence" : {
+        "min" : null,
+        "max" : null,
+        "sorting_label_field" : null,
+        "default" : 5
+      },
+      "responsive" : true,
+      "resizable" : true,
+      "show_loading" : true,
+      "type" : "image",
+      "display_width" : null,
+      "default" : [ {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Star.svg",
+        "alt" : "Star",
+        "loading" : "lazy",
+        "width" : 15,
+        "height" : 14,
+        "max_width" : 15,
+        "max_height" : 14
+      }, {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Star.svg",
+        "alt" : "Star",
+        "loading" : "lazy",
+        "width" : 15,
+        "height" : 14,
+        "max_width" : 15,
+        "max_height" : 14
+      }, {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Star.svg",
+        "alt" : "Star",
+        "loading" : "lazy",
+        "width" : 15,
+        "height" : 14,
+        "max_width" : 15,
+        "max_height" : 14
+      }, {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Star.svg",
+        "alt" : "Star",
+        "loading" : "lazy",
+        "width" : 15,
+        "height" : 14,
+        "max_width" : 15,
+        "max_height" : 14
+      }, {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Star.svg",
+        "alt" : "Star",
+        "loading" : "lazy",
+        "width" : 15,
+        "height" : 14,
+        "max_width" : 15,
+        "max_height" : 14
+      } ]
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : {
+      "star" : [ {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Star.svg",
+        "alt" : "Star",
+        "loading" : "lazy",
+        "width" : 15,
+        "height" : 14,
+        "max_width" : 15,
+        "max_height" : 14
+      }, {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Star.svg",
+        "alt" : "Star",
+        "loading" : "lazy",
+        "width" : 15,
+        "height" : 14,
+        "max_width" : 15,
+        "max_height" : 14
+      }, {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Star.svg",
+        "alt" : "Star",
+        "loading" : "lazy",
+        "width" : 15,
+        "height" : 14,
+        "max_width" : 15,
+        "max_height" : 14
+      }, {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Star.svg",
+        "alt" : "Star",
+        "loading" : "lazy",
+        "width" : 15,
+        "height" : 14,
+        "max_width" : 15,
+        "max_height" : 14
+      }, {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Star.svg",
+        "alt" : "Star",
+        "loading" : "lazy",
+        "width" : 15,
+        "height" : 14,
+        "max_width" : 15,
+        "max_height" : 14
+      } ]
+    }
+  }, {
+    "id" : "948d5ed6-ac08-6cbc-be1d-32d0d8752961",
+    "name" : "hide_show_button",
+    "label" : "Hide Show Button",
+    "required" : false,
+    "locked" : false,
+    "display" : "toggle",
+    "type" : "boolean",
+    "display_width" : null,
+    "default" : true
+  }, {
+    "id" : "ac2d0c6d-aead-dee1-cb29-85d6c25e56f5",
+    "name" : "button",
+    "label" : "Button",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "review_item.hide_show_button",
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "MATCHES_REGEX",
+      "access" : null
+    },
+    "children" : [ {
+      "id" : "1a15cfe8-33a4-9a22-cc5b-c8de9f2e9a3e",
+      "name" : "button_text",
+      "label" : "Button Text",
+      "required" : false,
+      "locked" : false,
+      "allow_new_line" : false,
+      "type" : "text",
+      "display_width" : null,
+      "default" : "Register Today!"
+    }, {
+      "id" : "0d3f082f-2d31-aa58-3e4d-ca619742c047",
+      "name" : "button_link",
+      "label" : "Button Link",
+      "required" : false,
+      "locked" : false,
+      "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG", "CALL_TO_ACTION", "PHONE_NUMBER", "WHATSAPP_NUMBER", "PAYMENT" ],
+      "show_advanced_rel_options" : false,
+      "type" : "link",
+      "display_width" : null,
+      "default" : {
+        "url" : {
+          "content_id" : null,
+          "type" : "EXTERNAL",
+          "href" : ""
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false
+      }
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : {
+      "button_text" : "Register Today!",
+      "button_link" : {
+        "url" : {
+          "content_id" : null,
+          "type" : "EXTERNAL",
+          "href" : ""
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false
+      }
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : [ {
+    "image_field" : {
+      "size_type" : "exact",
+      "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Christos%20Livas.jpeg",
+      "alt" : "Christos Livas",
+      "loading" : "lazy",
+      "width" : 100,
+      "height" : 100,
+      "max_width" : 100,
+      "max_height" : 100
+    },
+    "person_name" : "Christos Livas",
+    "job_title" : "IT Specialist",
+    "company_name" : "@Hack The Box",
+    "review_comment" : "<span> \"<strong>Workwize delivers what it promises</strong>. With only very few or zero issues, an IT admin can manage his/her inventory with ease and deliver the equipment to his/her colleagues on time.\" </span>",
+    "platform_image" : {
+      "size_type" : "exact",
+      "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Integrations%20Icon/Google%20Workspace_integrations_icon.png",
+      "alt" : "Google Workspace_integrations_icon",
+      "loading" : "lazy",
+      "width" : 144,
+      "height" : 144,
+      "max_width" : 144,
+      "max_height" : 144
+    },
+    "rating" : {
+      "star" : [ {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Star.svg",
+        "alt" : "Star",
+        "loading" : "lazy",
+        "width" : 15,
+        "height" : 14,
+        "max_width" : 15,
+        "max_height" : 14
+      }, {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Star.svg",
+        "alt" : "Star",
+        "loading" : "lazy",
+        "width" : 15,
+        "height" : 14,
+        "max_width" : 15,
+        "max_height" : 14
+      }, {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Star.svg",
+        "alt" : "Star",
+        "loading" : "lazy",
+        "width" : 15,
+        "height" : 14,
+        "max_width" : 15,
+        "max_height" : 14
+      }, {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Star.svg",
+        "alt" : "Star",
+        "loading" : "lazy",
+        "width" : 15,
+        "height" : 14,
+        "max_width" : 15,
+        "max_height" : 14
+      }, {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Star.svg",
+        "alt" : "Star",
+        "loading" : "lazy",
+        "width" : 15,
+        "height" : 14,
+        "max_width" : 15,
+        "max_height" : 14
+      } ]
+    },
+    "hide_show_button" : true,
+    "button" : {
+      "button_text" : "Register Today!",
+      "button_link" : {
+        "url" : {
+          "content_id" : null,
+          "type" : "EXTERNAL",
+          "href" : ""
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false
+      }
+    }
+  }, {
+    "image_field" : {
+      "size_type" : "exact",
+      "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Christos%20Livas.jpeg",
+      "alt" : "Christos Livas",
+      "loading" : "lazy",
+      "width" : 100,
+      "height" : 100,
+      "max_width" : 100,
+      "max_height" : 100
+    },
+    "person_name" : "Christos Livas",
+    "job_title" : "IT Specialist",
+    "company_name" : "@Hack The Box",
+    "review_comment" : "<span> \"<strong>Workwize delivers what it promises</strong>. With only very few or zero issues, an IT admin can manage his/her inventory with ease and deliver the equipment to his/her colleagues on time.\" </span>",
+    "platform_image" : {
+      "size_type" : "exact",
+      "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Integrations%20Icon/Google%20Workspace_integrations_icon.png",
+      "alt" : "Google Workspace_integrations_icon",
+      "loading" : "lazy",
+      "width" : 144,
+      "height" : 144,
+      "max_width" : 144,
+      "max_height" : 144
+    },
+    "rating" : {
+      "star" : [ {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Star.svg",
+        "alt" : "Star",
+        "loading" : "lazy",
+        "width" : 15,
+        "height" : 14,
+        "max_width" : 15,
+        "max_height" : 14
+      }, {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Star.svg",
+        "alt" : "Star",
+        "loading" : "lazy",
+        "width" : 15,
+        "height" : 14,
+        "max_width" : 15,
+        "max_height" : 14
+      }, {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Star.svg",
+        "alt" : "Star",
+        "loading" : "lazy",
+        "width" : 15,
+        "height" : 14,
+        "max_width" : 15,
+        "max_height" : 14
+      }, {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Star.svg",
+        "alt" : "Star",
+        "loading" : "lazy",
+        "width" : 15,
+        "height" : 14,
+        "max_width" : 15,
+        "max_height" : 14
+      }, {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Star.svg",
+        "alt" : "Star",
+        "loading" : "lazy",
+        "width" : 15,
+        "height" : 14,
+        "max_width" : 15,
+        "max_height" : 14
+      } ]
+    },
+    "hide_show_button" : true,
+    "button" : {
+      "button_text" : "Register Today!",
+      "button_link" : {
+        "url" : {
+          "content_id" : null,
+          "type" : "EXTERNAL",
+          "href" : ""
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false
+      }
+    }
+  }, {
+    "image_field" : {
+      "size_type" : "exact",
+      "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Christos%20Livas.jpeg",
+      "alt" : "Christos Livas",
+      "loading" : "lazy",
+      "width" : 100,
+      "height" : 100,
+      "max_width" : 100,
+      "max_height" : 100
+    },
+    "person_name" : "Christos Livas",
+    "job_title" : "IT Specialist",
+    "company_name" : "@Hack The Box",
+    "review_comment" : "<span> \"<strong>Workwize delivers what it promises</strong>. With only very few or zero issues, an IT admin can manage his/her inventory with ease and deliver the equipment to his/her colleagues on time.\" </span>",
+    "platform_image" : {
+      "size_type" : "exact",
+      "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Integrations%20Icon/Google%20Workspace_integrations_icon.png",
+      "alt" : "Google Workspace_integrations_icon",
+      "loading" : "lazy",
+      "width" : 144,
+      "height" : 144,
+      "max_width" : 144,
+      "max_height" : 144
+    },
+    "rating" : {
+      "star" : [ {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Star.svg",
+        "alt" : "Star",
+        "loading" : "lazy",
+        "width" : 15,
+        "height" : 14,
+        "max_width" : 15,
+        "max_height" : 14
+      }, {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Star.svg",
+        "alt" : "Star",
+        "loading" : "lazy",
+        "width" : 15,
+        "height" : 14,
+        "max_width" : 15,
+        "max_height" : 14
+      }, {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Star.svg",
+        "alt" : "Star",
+        "loading" : "lazy",
+        "width" : 15,
+        "height" : 14,
+        "max_width" : 15,
+        "max_height" : 14
+      }, {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Star.svg",
+        "alt" : "Star",
+        "loading" : "lazy",
+        "width" : 15,
+        "height" : 14,
+        "max_width" : 15,
+        "max_height" : 14
+      }, {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Star.svg",
+        "alt" : "Star",
+        "loading" : "lazy",
+        "width" : 15,
+        "height" : 14,
+        "max_width" : 15,
+        "max_height" : 14
+      } ]
+    },
+    "hide_show_button" : true,
+    "button" : {
+      "button_text" : "Register Today!",
+      "button_link" : {
+        "url" : {
+          "content_id" : null,
+          "type" : "EXTERNAL",
+          "href" : ""
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false
+      }
+    }
+  }, {
+    "image_field" : {
+      "size_type" : "exact",
+      "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Christos%20Livas.jpeg",
+      "alt" : "Christos Livas",
+      "loading" : "lazy",
+      "width" : 100,
+      "height" : 100,
+      "max_width" : 100,
+      "max_height" : 100
+    },
+    "person_name" : "Christos Livas",
+    "job_title" : "IT Specialist",
+    "company_name" : "@Hack The Box",
+    "review_comment" : "<span> \"<strong>Workwize delivers what it promises</strong>. With only very few or zero issues, an IT admin can manage his/her inventory with ease and deliver the equipment to his/her colleagues on time.\" </span>",
+    "platform_image" : {
+      "size_type" : "exact",
+      "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Integrations%20Icon/Google%20Workspace_integrations_icon.png",
+      "alt" : "Google Workspace_integrations_icon",
+      "loading" : "lazy",
+      "width" : 144,
+      "height" : 144,
+      "max_width" : 144,
+      "max_height" : 144
+    },
+    "rating" : {
+      "star" : [ {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Star.svg",
+        "alt" : "Star",
+        "loading" : "lazy",
+        "width" : 15,
+        "height" : 14,
+        "max_width" : 15,
+        "max_height" : 14
+      }, {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Star.svg",
+        "alt" : "Star",
+        "loading" : "lazy",
+        "width" : 15,
+        "height" : 14,
+        "max_width" : 15,
+        "max_height" : 14
+      }, {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Star.svg",
+        "alt" : "Star",
+        "loading" : "lazy",
+        "width" : 15,
+        "height" : 14,
+        "max_width" : 15,
+        "max_height" : 14
+      }, {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Star.svg",
+        "alt" : "Star",
+        "loading" : "lazy",
+        "width" : 15,
+        "height" : 14,
+        "max_width" : 15,
+        "max_height" : 14
+      }, {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Star.svg",
+        "alt" : "Star",
+        "loading" : "lazy",
+        "width" : 15,
+        "height" : 14,
+        "max_width" : 15,
+        "max_height" : 14
+      } ]
+    },
+    "hide_show_button" : true,
+    "button" : {
+      "button_text" : "Register Today!",
+      "button_link" : {
+        "url" : {
+          "content_id" : null,
+          "type" : "EXTERNAL",
+          "href" : ""
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false
+      }
+    }
+  }, {
+    "image_field" : {
+      "size_type" : "exact",
+      "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Christos%20Livas.jpeg",
+      "alt" : "Christos Livas",
+      "loading" : "lazy",
+      "width" : 100,
+      "height" : 100,
+      "max_width" : 100,
+      "max_height" : 100
+    },
+    "person_name" : "Christos Livas",
+    "job_title" : "IT Specialist",
+    "company_name" : "@Hack The Box",
+    "review_comment" : "<span> \"<strong>Workwize delivers what it promises</strong>. With only very few or zero issues, an IT admin can manage his/her inventory with ease and deliver the equipment to his/her colleagues on time.\" </span>",
+    "platform_image" : {
+      "size_type" : "exact",
+      "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Integrations%20Icon/Google%20Workspace_integrations_icon.png",
+      "alt" : "Google Workspace_integrations_icon",
+      "loading" : "lazy",
+      "width" : 144,
+      "height" : 144,
+      "max_width" : 144,
+      "max_height" : 144
+    },
+    "rating" : {
+      "star" : [ {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Star.svg",
+        "alt" : "Star",
+        "loading" : "lazy",
+        "width" : 15,
+        "height" : 14,
+        "max_width" : 15,
+        "max_height" : 14
+      }, {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Star.svg",
+        "alt" : "Star",
+        "loading" : "lazy",
+        "width" : 15,
+        "height" : 14,
+        "max_width" : 15,
+        "max_height" : 14
+      }, {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Star.svg",
+        "alt" : "Star",
+        "loading" : "lazy",
+        "width" : 15,
+        "height" : 14,
+        "max_width" : 15,
+        "max_height" : 14
+      }, {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Star.svg",
+        "alt" : "Star",
+        "loading" : "lazy",
+        "width" : 15,
+        "height" : 14,
+        "max_width" : 15,
+        "max_height" : 14
+      }, {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Star.svg",
+        "alt" : "Star",
+        "loading" : "lazy",
+        "width" : 15,
+        "height" : 14,
+        "max_width" : 15,
+        "max_height" : 14
+      } ]
+    },
+    "hide_show_button" : true,
+    "button" : {
+      "button_text" : "Register Today!",
+      "button_link" : {
+        "url" : {
+          "content_id" : null,
+          "type" : "EXTERNAL",
+          "href" : ""
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false
+      }
+    }
+  }, {
+    "image_field" : {
+      "size_type" : "exact",
+      "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Christos%20Livas.jpeg",
+      "alt" : "Christos Livas",
+      "loading" : "lazy",
+      "width" : 100,
+      "height" : 100,
+      "max_width" : 100,
+      "max_height" : 100
+    },
+    "person_name" : "Christos Livas",
+    "job_title" : "IT Specialist",
+    "company_name" : "@Hack The Box",
+    "review_comment" : "<span> \"<strong>Workwize delivers what it promises</strong>. With only very few or zero issues, an IT admin can manage his/her inventory with ease and deliver the equipment to his/her colleagues on time.\" </span>",
+    "platform_image" : {
+      "size_type" : "exact",
+      "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Integrations%20Icon/Google%20Workspace_integrations_icon.png",
+      "alt" : "Google Workspace_integrations_icon",
+      "loading" : "lazy",
+      "width" : 144,
+      "height" : 144,
+      "max_width" : 144,
+      "max_height" : 144
+    },
+    "rating" : {
+      "star" : [ {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Star.svg",
+        "alt" : "Star",
+        "loading" : "lazy",
+        "width" : 15,
+        "height" : 14,
+        "max_width" : 15,
+        "max_height" : 14
+      }, {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Star.svg",
+        "alt" : "Star",
+        "loading" : "lazy",
+        "width" : 15,
+        "height" : 14,
+        "max_width" : 15,
+        "max_height" : 14
+      }, {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Star.svg",
+        "alt" : "Star",
+        "loading" : "lazy",
+        "width" : 15,
+        "height" : 14,
+        "max_width" : 15,
+        "max_height" : 14
+      }, {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Star.svg",
+        "alt" : "Star",
+        "loading" : "lazy",
+        "width" : 15,
+        "height" : 14,
+        "max_width" : 15,
+        "max_height" : 14
+      }, {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Star.svg",
+        "alt" : "Star",
+        "loading" : "lazy",
+        "width" : 15,
+        "height" : 14,
+        "max_width" : 15,
+        "max_height" : 14
+      } ]
+    },
+    "hide_show_button" : true,
+    "button" : {
+      "button_text" : "Register Today!",
+      "button_link" : {
+        "url" : {
+          "content_id" : null,
+          "type" : "EXTERNAL",
+          "href" : ""
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false
+      }
+    }
+  }, {
+    "image_field" : {
+      "size_type" : "exact",
+      "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Christos%20Livas.jpeg",
+      "alt" : "Christos Livas",
+      "loading" : "lazy",
+      "width" : 100,
+      "height" : 100,
+      "max_width" : 100,
+      "max_height" : 100
+    },
+    "person_name" : "Christos Livas",
+    "job_title" : "IT Specialist",
+    "company_name" : "@Hack The Box",
+    "review_comment" : "<span> \"<strong>Workwize delivers what it promises</strong>. With only very few or zero issues, an IT admin can manage his/her inventory with ease and deliver the equipment to his/her colleagues on time.\" </span>",
+    "platform_image" : {
+      "size_type" : "exact",
+      "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Integrations%20Icon/Google%20Workspace_integrations_icon.png",
+      "alt" : "Google Workspace_integrations_icon",
+      "loading" : "lazy",
+      "width" : 144,
+      "height" : 144,
+      "max_width" : 144,
+      "max_height" : 144
+    },
+    "rating" : {
+      "star" : [ {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Star.svg",
+        "alt" : "Star",
+        "loading" : "lazy",
+        "width" : 15,
+        "height" : 14,
+        "max_width" : 15,
+        "max_height" : 14
+      }, {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Star.svg",
+        "alt" : "Star",
+        "loading" : "lazy",
+        "width" : 15,
+        "height" : 14,
+        "max_width" : 15,
+        "max_height" : 14
+      }, {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Star.svg",
+        "alt" : "Star",
+        "loading" : "lazy",
+        "width" : 15,
+        "height" : 14,
+        "max_width" : 15,
+        "max_height" : 14
+      }, {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Star.svg",
+        "alt" : "Star",
+        "loading" : "lazy",
+        "width" : 15,
+        "height" : 14,
+        "max_width" : 15,
+        "max_height" : 14
+      }, {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Star.svg",
+        "alt" : "Star",
+        "loading" : "lazy",
+        "width" : 15,
+        "height" : 14,
+        "max_width" : 15,
+        "max_height" : 14
+      } ]
+    },
+    "hide_show_button" : true,
+    "button" : {
+      "button_text" : "Register Today!",
+      "button_link" : {
+        "url" : {
+          "content_id" : null,
+          "type" : "EXTERNAL",
+          "href" : ""
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false
+      }
+    }
+  } ]
+} ]

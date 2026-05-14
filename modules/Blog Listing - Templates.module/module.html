@@ -1,0 +1,69 @@
+{% if module.show_hide_ %}
+{% set moduleId = '#hs_cos_wrapper_{{ name }}' %}
+<div class="fullwidth bgsec space-sec blglst-templat-sec">
+  <div class="wrapper">
+    <div class="blglstFillter">
+      <div class="blglstFilll filters">
+        <label>All Templates</label>
+        <ul class="button-group" data-filter-group="tag-filter">
+          <li data-filter="*" class="is-checked">All Templates</li>
+          {% for item in module.select_tag %}   
+           {% set tagnames = item.tag %}
+          <li data-filter=".{{ tagnames|lower|replace(' ','-') }}">
+            {{ tagnames }}
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+    
+    
+    <div class="blglst-templat">
+      {% for item in module.select_tag %}   
+       {% set tagname = item.tag %}
+       {% set tag_posts = blog_recent_tag_posts(module.select_blog, tagname|lower|replace(" ","-"), 100) %}      
+     <div class="blglst-templat-inner">
+       <div class="blglst-title text-center"><h2>{{ tagname }}</h2></div>      
+       <div class="blglst-templat-rows flexwrap">
+        {% for content in tag_posts %}
+        <div class="blglst-templat-cols {{ tagname|lower|replace(' ','-') }}" data-category-inner="{{ tagname|lower|replace(' ','-') }}">
+          {% if content.featured_image %}
+          <div class="blglst-templatimg">
+            <a href="{{ content.absolute_url }}" style="background-image: url({{ content.featured_image }});"></a>
+          </div>
+          {% endif %}
+          <h4><a href="{{ content.absolute_url }}">{{ content.name }}</a></h4>
+          {% if module.button_text %}
+          <div class="blglst-templabtn button">
+            <a href="{{ content.absolute_url }}">{{ module.button_text }}</a>
+          </div>
+          {% endif %}
+        </div>
+        {% endfor %}
+       </div>     
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+
+{% require_css %}
+<style>
+  {{ moduleId }} .bgsec { {% if module.style.select_background == 'bg_color' %}
+    background-color: rgba({{ module.style.background_color.color|convert_rgb }},{{ module.style.background_color.opacity ~ '%' }});
+    {% elif module.style.select_background == 'bg_image' %}
+    {{ module.style.background_image.css }} background-repeat: no-repeat;
+    {% elif module.style.select_background == 'bg_gradient' %}
+    background: {{ module.style.background_gradient.css }};
+    {% endif %} }
+  
+  {{ moduleId }} .space-sec { {{ module.style.spacing.desktop.css }}; }
+  
+  @media(max-width: 991px){ {{ moduleId }} .space-sec { {{ module.style.spacing.tablet.css }}; } }
+  
+  @media(max-width: 767px){ {{ moduleId }} .space-sec { {{ module.style.spacing.mobile.css }}; } }
+  
+</style>
+{% end_require_css %}
+{% endif %}

@@ -1,0 +1,42 @@
+<!--
+  templateType: page
+  isAvailableForNewContent: true
+  label: Landing Page Custom Header
+  screenshotPath: ../images/template-previews/landing-page.png
+-->
+{% extends "./layouts/base.html" %}
+
+{% block header %}
+  {% module "module_17126544901492" path="/Workwize/modules/Header Section - No Navigation", label="Header Section - No Navigation" %}
+{% endblock header %}
+
+{% block body %}
+{% dnd_area "dnd_area"
+  label="Main section",
+  class="body-container body-container--landing-page"
+%}
+
+  {# Hero banner #}
+
+  {% include_dnd_partial
+    path="../sections/hero-banner.html"
+    context={
+      "content": "<h1>Download your free eBook</h1><p>Use this space to tell everyone what your eBook is all about.</p>"
+    }
+  %}
+
+  {# Three column image with text #}
+
+  {% include_dnd_partial
+    path="../sections/multi-column-content.html",
+    context={
+      "background_color": "#FFFFFF"
+    }
+  %}
+
+{% end_dnd_area %}
+{% endblock body %}
+
+{% block footer %}
+    {% global_partial path="./partials/footer-landing-page.html" %}
+{% endblock footer %}

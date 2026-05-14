@@ -1,0 +1,26 @@
+/* .workwize-iframe { position: relative; padding-top: 100%; } */
+.workwize-iframe-inner .hs-embed-content-wrapper > div { padding-bottom: 96% !important; }
+
+@media(max-width: 1340px) {
+  
+ .workwize-iframe-inner .hs-embed-content-wrapper>div { padding-bottom: 0 !important; min-height: 1250px; }
+  
+}
+
+@media(max-width: 991px) {
+  
+ .workwize-iframe-inner .hs-embed-content-wrapper>div { min-height: 1270px; }  
+  
+}
+
+@media(max-width: 767px) {
+  
+ .workwize-iframe-inner .hs-embed-content-wrapper>div { min-height: 1380px; }  
+  
+}
+
+@media(max-width: 480px) {
+  
+ .workwize-iframe-inner .hs-embed-content-wrapper>div { min-height: 1700px; }  
+  
+}

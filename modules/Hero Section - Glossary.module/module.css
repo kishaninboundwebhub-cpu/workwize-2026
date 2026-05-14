@@ -1,0 +1,22 @@
+.hrglos-filter { max-width: 880px; margin: 40px auto 0; }
+.hrglossary-search form { position: relative; z-index: 1; }
+.hrglossary-search form .hs-search-field__input { margin: 0; min-height: 60px; letter-spacing: 0.25px; background-color: #F5F7F8; border-color: #F5F7F8; color: #1227504D; padding-right: 60px; }
+.hrglossary-search form .hs-search-field__input::placeholder { color: #1227504d; }
+.hrglossary-search form button { position: absolute; right: 10px; top: 9px; border-radius: 10px; padding: 10px; max-height: 42px; color: #fff; width: 42px; text-align: center; }
+.hrglossary-search form button svg { height: 22px; fill: #fff; }
+.hrroots { padding-top: 24px; justify-content: center; -webkit-justify-content: center; }
+.hrroots > li { margin: 0 2px; }
+.hrroots > li a { color: #fff; line-height: 1; padding: 4px 6px 8px; font-weight: 500; font-family: 'Okta Neue'; border-radius: 6px; min-width: 28px; }
+.hrroots > li a:hover { background: rgb(34, 122, 247); }
+
+.hs-search-field {  position: relative; }
+.hs-search-field__input {  box-sizing: border-box;  width: 100%; }
+.hs-search-field__bar button svg { height: 10px; }
+.hs-search-field__suggestions { margin: 0; padding: 0; list-style: none; }
+.hrglossary-search .hs-search-field--open .hs-search-field__suggestions { background: #fff; background: #fff; padding: 15px 20px; border-radius: 12px; margin-top: 3px; position: absolute; width: 100%; left: 0; top: 100%; }
+.hs-search-field__suggestions li { display: block; margin: 0; padding: 0; }
+.hs-search-field__suggestions #results-for { font-weight: bold; }
+.hs-search-field__suggestions a,
+.hs-search-field__suggestions #results-for { display: block; }
+.hs-search-field__suggestions a:hover,
+.hs-search-field__suggestions a:focus { background-color: rgba(0, 0, 0, 0.1); outline: none; }

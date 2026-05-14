@@ -1,0 +1,942 @@
+[ {
+  "id" : "e181e1ee-ef06-5ba8-0ad3-f63113a45d24",
+  "name" : "style",
+  "label" : "Style",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "36fd79d2-1107-4452-d226-d4c096723f16",
+    "name" : "select_background",
+    "label" : "Select Background",
+    "required" : false,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "bg_color", "Background Color" ], [ "bg_image", "Background Image" ], [ "bg_gradient", "Background Gradient" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : ""
+  }, {
+    "id" : "60d0ddef-fb34-a99a-73cb-bda8b10e0fc9",
+    "name" : "background_color",
+    "label" : "Background Color",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "style.select_background",
+      "controlling_value_regex" : "bg_color",
+      "property" : null,
+      "operator" : "MATCHES_REGEX",
+      "access" : null
+    },
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : null,
+      "opacity" : 100
+    }
+  }, {
+    "id" : "19f0609d-595d-6ef3-f639-3f6006e095fb",
+    "name" : "background_image",
+    "label" : "Background Image",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "style.select_background",
+      "controlling_value_regex" : "bg_image",
+      "property" : null,
+      "operator" : "MATCHES_REGEX",
+      "access" : null
+    },
+    "type" : "backgroundimage",
+    "display_width" : null,
+    "default" : {
+      "src" : "",
+      "background_position" : "MIDDLE_CENTER",
+      "background_size" : "cover"
+    }
+  }, {
+    "id" : "0df6d4e0-395b-eda2-ec5a-1d08ad6c8d35",
+    "name" : "background_gradient",
+    "label" : "Background Gradient",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "style.select_background",
+      "controlling_value_regex" : "bg_gradient",
+      "property" : null,
+      "operator" : "MATCHES_REGEX",
+      "access" : null
+    },
+    "type" : "gradient",
+    "display_width" : null,
+    "default" : { }
+  }, {
+    "id" : "afeb177b-c31d-1412-5116-70d6f85c5565",
+    "name" : "spacing",
+    "label" : "Spacing",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "d59d9e4c-264e-54fa-99b7-0ff07897b867",
+      "name" : "desktop",
+      "label" : "Desktop",
+      "required" : false,
+      "locked" : false,
+      "type" : "spacing",
+      "display_width" : null,
+      "default" : {
+        "padding" : {
+          "top" : {
+            "value" : 0,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 0,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      }
+    }, {
+      "id" : "0c762a95-1339-05fa-721d-3d79f41b571e",
+      "name" : "tablet",
+      "label" : "Tablet",
+      "required" : false,
+      "locked" : false,
+      "type" : "spacing",
+      "display_width" : null,
+      "default" : {
+        "padding" : {
+          "top" : {
+            "value" : 0,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 0,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      }
+    }, {
+      "id" : "0a8a8c35-4008-f2aa-311a-12325d67b19c",
+      "name" : "mobile",
+      "label" : "Mobile",
+      "required" : false,
+      "locked" : false,
+      "type" : "spacing",
+      "display_width" : null,
+      "default" : {
+        "padding" : {
+          "top" : {
+            "value" : 0,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 0,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      }
+    } ],
+    "tab" : "STYLE",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : {
+      "desktop" : {
+        "padding" : {
+          "top" : {
+            "value" : 0,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 0,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      },
+      "tablet" : {
+        "padding" : {
+          "top" : {
+            "value" : 0,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 0,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      },
+      "mobile" : {
+        "padding" : {
+          "top" : {
+            "value" : 0,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 0,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      }
+    }
+  } ],
+  "tab" : "STYLE",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "select_background" : "",
+    "background_color" : {
+      "color" : null,
+      "opacity" : 100
+    },
+    "background_image" : {
+      "src" : "",
+      "background_position" : "MIDDLE_CENTER",
+      "background_size" : "cover"
+    },
+    "background_gradient" : { },
+    "spacing" : {
+      "desktop" : {
+        "padding" : {
+          "top" : {
+            "value" : 0,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 0,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      },
+      "tablet" : {
+        "padding" : {
+          "top" : {
+            "value" : 0,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 0,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      },
+      "mobile" : {
+        "padding" : {
+          "top" : {
+            "value" : 0,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 0,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      }
+    }
+  }
+}, {
+  "id" : "55ccd3e2-31aa-4e79-9772-80facd954415",
+  "name" : "show_hide_",
+  "label" : "Section [Show/ Hide]",
+  "required" : false,
+  "locked" : false,
+  "display" : "toggle",
+  "type" : "boolean",
+  "display_width" : null,
+  "default" : true
+}, {
+  "id" : "496d4407-abd4-c6ea-6410-2a7f84894093",
+  "name" : "title",
+  "label" : "Title",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "<span>Workwize makes procurement easy. </span> And then keeps going."
+}, {
+  "id" : "90a68aef-7302-50f0-1454-7796665ac4fd",
+  "name" : "box_item",
+  "label" : "Box Item",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : null,
+    "max" : null,
+    "sorting_label_field" : "d09a88ac-1ec9-b377-ecd2-d64094d0ccfc",
+    "default" : 5
+  },
+  "children" : [ {
+    "id" : "2d330018-8642-6dc9-6c29-9b65b9a1a5f0",
+    "name" : "select_box_layout",
+    "label" : "Select Box Layout",
+    "required" : false,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "def_box", "Default Box" ], [ "cta_box", "CTA Box" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "def_box"
+  }, {
+    "id" : "d09a88ac-1ec9-b377-ecd2-d64094d0ccfc",
+    "name" : "title",
+    "label" : "Title",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "box_item.select_box_layout",
+      "controlling_value_regex" : "def_box",
+      "property" : null,
+      "operator" : "MATCHES_REGEX",
+      "access" : null
+    },
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Deploy"
+  }, {
+    "id" : "8979cbc5-34f3-73df-d34d-63eb14aac335",
+    "name" : "text_field",
+    "label" : "Text",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "box_item.select_box_layout",
+      "controlling_value_regex" : "def_box",
+      "property" : null,
+      "operator" : "MATCHES_REGEX",
+      "access" : null
+    },
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Ship pre-configured devices to your employees worldwide."
+  }, {
+    "id" : "f7f43994-bbda-ceb8-9a10-4cf92e8e14f9",
+    "name" : "learn_more_link",
+    "label" : "Learn More",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "box_item.select_box_layout",
+      "controlling_value_regex" : "def_box",
+      "property" : null,
+      "operator" : "MATCHES_REGEX",
+      "access" : null
+    },
+    "children" : [ {
+      "id" : "5d23432f-4da5-36c4-943b-e8babb37712f",
+      "name" : "text_field_1",
+      "label" : "Text",
+      "required" : false,
+      "locked" : false,
+      "allow_new_line" : false,
+      "type" : "text",
+      "display_width" : null,
+      "default" : "Learn more"
+    }, {
+      "id" : "68cd0c3f-a5e5-487b-4c5d-11ce4cd3d5a2",
+      "name" : "learn_more_link",
+      "label" : "Learn More Link",
+      "required" : false,
+      "locked" : false,
+      "supported_types" : [ "EXTERNAL", "FILE", "CONTENT", "BLOG", "CALL_TO_ACTION", "PAYMENT", "EMAIL_ADDRESS", "PHONE_NUMBER", "WHATSAPP_NUMBER" ],
+      "show_advanced_rel_options" : false,
+      "type" : "link",
+      "display_width" : null,
+      "default" : {
+        "url" : {
+          "content_id" : null,
+          "type" : "EXTERNAL",
+          "href" : ""
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false
+      }
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : {
+      "text_field_1" : "Learn more",
+      "learn_more_link" : {
+        "url" : {
+          "content_id" : null,
+          "type" : "EXTERNAL",
+          "href" : ""
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false
+      }
+    }
+  }, {
+    "id" : "aa9c56e4-4f96-a0c3-8c0d-6ec8b46ef623",
+    "name" : "icon",
+    "label" : "Icon",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "box_item.select_box_layout",
+      "controlling_value_regex" : "def_box",
+      "property" : null,
+      "operator" : "MATCHES_REGEX",
+      "access" : null
+    },
+    "responsive" : true,
+    "resizable" : true,
+    "show_loading" : true,
+    "type" : "image",
+    "display_width" : null,
+    "default" : {
+      "size_type" : "exact",
+      "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/International-Shipment%20Streamline%20Core%20(4).svg",
+      "alt" : "International-Shipment Streamline Core (4)",
+      "loading" : "lazy",
+      "width" : 32,
+      "height" : 32,
+      "max_width" : 32,
+      "max_height" : 32
+    }
+  }, {
+    "id" : "565350ed-00da-37f7-5873-72442221bef6",
+    "name" : "dot_image",
+    "label" : "Dot Image",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "box_item.select_box_layout",
+      "controlling_value_regex" : "def_box",
+      "property" : null,
+      "operator" : "MATCHES_REGEX",
+      "access" : null
+    },
+    "responsive" : true,
+    "resizable" : true,
+    "show_loading" : false,
+    "type" : "image",
+    "display_width" : null,
+    "default" : {
+      "size_type" : "exact",
+      "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/Group%202147261862.svg",
+      "alt" : "Group 2147261862",
+      "loading" : "lazy",
+      "width" : 400,
+      "height" : 64,
+      "max_width" : 400,
+      "max_height" : 64
+    }
+  }, {
+    "id" : "9fd032c7-c977-cd81-a94c-c40a7f26155f",
+    "name" : "text_field_2",
+    "label" : "Text",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "box_item.select_box_layout",
+      "controlling_value_regex" : "cta_box",
+      "property" : null,
+      "operator" : "MATCHES_REGEX",
+      "access" : null
+    },
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Workwize automates global ops from the ground up."
+  }, {
+    "id" : "8da40b46-5a86-2039-292a-348be1d005f2",
+    "name" : "button",
+    "label" : "Button",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "box_item.select_box_layout",
+      "controlling_value_regex" : "cta_box",
+      "property" : null,
+      "operator" : "MATCHES_REGEX",
+      "access" : null
+    },
+    "children" : [ {
+      "id" : "170a7ede-45a9-02d5-53d7-d80334db8a85",
+      "name" : "button_choice",
+      "label" : "Button Choice",
+      "required" : false,
+      "locked" : false,
+      "display" : "select",
+      "choices" : [ [ "button", "Primary Button" ], [ "second_btn", "Secondary Button" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "preset" : null,
+      "type" : "choice",
+      "display_width" : null,
+      "default" : "second_btn"
+    }, {
+      "id" : "643651bb-d18b-c80c-339b-99612bd59b11",
+      "name" : "button_text",
+      "label" : "Button Text",
+      "required" : false,
+      "locked" : false,
+      "allow_new_line" : false,
+      "type" : "text",
+      "display_width" : null,
+      "default" : "Book a 30-min Custom demo"
+    }, {
+      "id" : "4cf4d7d7-c0ce-b469-926f-3735eb813bd5",
+      "name" : "button_link",
+      "label" : "Button Link",
+      "required" : false,
+      "locked" : false,
+      "supported_types" : [ "EXTERNAL", "FILE", "CONTENT", "BLOG", "CALL_TO_ACTION", "PAYMENT", "EMAIL_ADDRESS", "PHONE_NUMBER", "WHATSAPP_NUMBER" ],
+      "show_advanced_rel_options" : false,
+      "type" : "link",
+      "display_width" : null,
+      "default" : {
+        "url" : {
+          "content_id" : null,
+          "type" : "EXTERNAL",
+          "href" : ""
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false
+      }
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : {
+      "button_choice" : "second_btn",
+      "button_text" : "Book a 30-min Custom demo",
+      "button_link" : {
+        "url" : {
+          "content_id" : null,
+          "type" : "EXTERNAL",
+          "href" : ""
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false
+      }
+    }
+  }, {
+    "id" : "e736f36e-535e-90d6-2aa4-0c0bc3753725",
+    "name" : "cta_box_shape",
+    "label" : "CTA Box Shape",
+    "required" : false,
+    "locked" : false,
+    "responsive" : true,
+    "resizable" : true,
+    "show_loading" : true,
+    "type" : "image",
+    "display_width" : null,
+    "default" : {
+      "size_type" : "exact",
+      "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/Group%202147261571.svg",
+      "alt" : "Group 2147261571",
+      "loading" : "lazy",
+      "width" : 216,
+      "height" : 146,
+      "max_width" : 216,
+      "max_height" : 146
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : [ {
+    "select_box_layout" : "def_box",
+    "title" : "Deploy",
+    "text_field" : "Ship pre-configured devices to your employees worldwide.",
+    "learn_more_link" : {
+      "text_field_1" : "Learn more",
+      "learn_more_link" : {
+        "url" : {
+          "content_id" : null,
+          "type" : "EXTERNAL",
+          "href" : ""
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false
+      }
+    },
+    "icon" : {
+      "size_type" : "exact",
+      "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/International-Shipment%20Streamline%20Core%20(4).svg",
+      "alt" : "International-Shipment Streamline Core (4)",
+      "loading" : "lazy",
+      "width" : 32,
+      "height" : 32,
+      "max_width" : 32,
+      "max_height" : 32
+    },
+    "dot_image" : {
+      "size_type" : "exact",
+      "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/Group%202147261862.svg",
+      "alt" : "Group 2147261862",
+      "loading" : "lazy",
+      "width" : 400,
+      "height" : 64,
+      "max_width" : 400,
+      "max_height" : 64
+    },
+    "text_field_2" : "Workwize automates global ops from the ground up.",
+    "button" : {
+      "button_text" : "Book a 30-min Custom demo",
+      "button_choice" : "second_btn"
+    },
+    "cta_box_shape" : {
+      "size_type" : "exact",
+      "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/Group%202147261571.svg",
+      "alt" : "Group 2147261571",
+      "loading" : "lazy",
+      "width" : 216,
+      "height" : 146,
+      "max_width" : 216,
+      "max_height" : 146
+    }
+  }, {
+    "select_box_layout" : "def_box",
+    "title" : "Deploy",
+    "text_field" : "Ship pre-configured devices to your employees worldwide.",
+    "learn_more_link" : {
+      "text_field_1" : "Learn more",
+      "learn_more_link" : {
+        "url" : {
+          "content_id" : null,
+          "type" : "EXTERNAL",
+          "href" : ""
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false
+      }
+    },
+    "icon" : {
+      "size_type" : "exact",
+      "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/International-Shipment%20Streamline%20Core%20(4).svg",
+      "alt" : "International-Shipment Streamline Core (4)",
+      "loading" : "lazy",
+      "width" : 32,
+      "height" : 32,
+      "max_width" : 32,
+      "max_height" : 32
+    },
+    "dot_image" : {
+      "size_type" : "exact",
+      "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/Group%202147261862.svg",
+      "alt" : "Group 2147261862",
+      "loading" : "lazy",
+      "width" : 400,
+      "height" : 64,
+      "max_width" : 400,
+      "max_height" : 64
+    },
+    "text_field_2" : "Workwize automates global ops from the ground up.",
+    "button" : {
+      "button_text" : "Book a 30-min Custom demo",
+      "button_choice" : "second_btn"
+    },
+    "cta_box_shape" : {
+      "size_type" : "exact",
+      "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/Group%202147261571.svg",
+      "alt" : "Group 2147261571",
+      "loading" : "lazy",
+      "width" : 216,
+      "height" : 146,
+      "max_width" : 216,
+      "max_height" : 146
+    }
+  }, {
+    "select_box_layout" : "def_box",
+    "title" : "Deploy",
+    "text_field" : "Ship pre-configured devices to your employees worldwide.",
+    "learn_more_link" : {
+      "text_field_1" : "Learn more",
+      "learn_more_link" : {
+        "url" : {
+          "content_id" : null,
+          "type" : "EXTERNAL",
+          "href" : ""
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false
+      }
+    },
+    "icon" : {
+      "size_type" : "exact",
+      "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/International-Shipment%20Streamline%20Core%20(4).svg",
+      "alt" : "International-Shipment Streamline Core (4)",
+      "loading" : "lazy",
+      "width" : 32,
+      "height" : 32,
+      "max_width" : 32,
+      "max_height" : 32
+    },
+    "dot_image" : {
+      "size_type" : "exact",
+      "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/Group%202147261862.svg",
+      "alt" : "Group 2147261862",
+      "loading" : "lazy",
+      "width" : 400,
+      "height" : 64,
+      "max_width" : 400,
+      "max_height" : 64
+    },
+    "text_field_2" : "Workwize automates global ops from the ground up.",
+    "button" : {
+      "button_text" : "Book a 30-min Custom demo",
+      "button_choice" : "second_btn"
+    },
+    "cta_box_shape" : {
+      "size_type" : "exact",
+      "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/Group%202147261571.svg",
+      "alt" : "Group 2147261571",
+      "loading" : "lazy",
+      "width" : 216,
+      "height" : 146,
+      "max_width" : 216,
+      "max_height" : 146
+    }
+  }, {
+    "select_box_layout" : "def_box",
+    "title" : "Deploy",
+    "text_field" : "Ship pre-configured devices to your employees worldwide.",
+    "learn_more_link" : {
+      "text_field_1" : "Learn more",
+      "learn_more_link" : {
+        "url" : {
+          "content_id" : null,
+          "type" : "EXTERNAL",
+          "href" : ""
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false
+      }
+    },
+    "icon" : {
+      "size_type" : "exact",
+      "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/International-Shipment%20Streamline%20Core%20(4).svg",
+      "alt" : "International-Shipment Streamline Core (4)",
+      "loading" : "lazy",
+      "width" : 32,
+      "height" : 32,
+      "max_width" : 32,
+      "max_height" : 32
+    },
+    "dot_image" : {
+      "size_type" : "exact",
+      "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/Group%202147261862.svg",
+      "alt" : "Group 2147261862",
+      "loading" : "lazy",
+      "width" : 400,
+      "height" : 64,
+      "max_width" : 400,
+      "max_height" : 64
+    },
+    "text_field_2" : "Workwize automates global ops from the ground up.",
+    "button" : {
+      "button_text" : "Book a 30-min Custom demo",
+      "button_choice" : "second_btn"
+    },
+    "cta_box_shape" : {
+      "size_type" : "exact",
+      "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/Group%202147261571.svg",
+      "alt" : "Group 2147261571",
+      "loading" : "lazy",
+      "width" : 216,
+      "height" : 146,
+      "max_width" : 216,
+      "max_height" : 146
+    }
+  }, {
+    "select_box_layout" : "def_box",
+    "title" : "Deploy",
+    "text_field" : "Ship pre-configured devices to your employees worldwide.",
+    "learn_more_link" : {
+      "text_field_1" : "Learn more",
+      "learn_more_link" : {
+        "url" : {
+          "content_id" : null,
+          "type" : "EXTERNAL",
+          "href" : ""
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false
+      }
+    },
+    "icon" : {
+      "size_type" : "exact",
+      "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/International-Shipment%20Streamline%20Core%20(4).svg",
+      "alt" : "International-Shipment Streamline Core (4)",
+      "loading" : "lazy",
+      "width" : 32,
+      "height" : 32,
+      "max_width" : 32,
+      "max_height" : 32
+    },
+    "dot_image" : {
+      "size_type" : "exact",
+      "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/Group%202147261862.svg",
+      "alt" : "Group 2147261862",
+      "loading" : "lazy",
+      "width" : 400,
+      "height" : 64,
+      "max_width" : 400,
+      "max_height" : 64
+    },
+    "text_field_2" : "Workwize automates global ops from the ground up.",
+    "button" : {
+      "button_text" : "Book a 30-min Custom demo",
+      "button_choice" : "second_btn"
+    },
+    "cta_box_shape" : {
+      "size_type" : "exact",
+      "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/Group%202147261571.svg",
+      "alt" : "Group 2147261571",
+      "loading" : "lazy",
+      "width" : 216,
+      "height" : 146,
+      "max_width" : 216,
+      "max_height" : 146
+    }
+  } ]
+}, {
+  "id" : "b6dc36f1-826f-64f5-e23f-1dfa9fc4492b",
+  "name" : "color_setting",
+  "label" : "Color Setting",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "ebdd37df-211c-6125-dbc4-f5a70db1d0d2",
+    "name" : "title_color",
+    "label" : "Title Color",
+    "required" : false,
+    "locked" : false,
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#050C14",
+      "opacity" : 100
+    }
+  }, {
+    "id" : "aed51554-a31e-3a11-93f0-4b6cf3b87324",
+    "name" : "title_span_color",
+    "label" : "Title Span Color",
+    "required" : false,
+    "locked" : false,
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#227AF7",
+      "opacity" : 100
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "title_color" : {
+      "color" : "#050C14",
+      "opacity" : 100
+    },
+    "title_span_color" : {
+      "color" : "#227AF7",
+      "opacity" : 100
+    }
+  }
+} ]

@@ -1,0 +1,219 @@
+{% if module.show_hide_ %}
+{% set moduleId = '#hs_cos_wrapper_{{ name }}' %}
+<div class="fullwidth pricing25-sec bgsec space-sec">
+ <div class="wrapper">
+  <div class="secinner pricing25-inner fullwidth">
+   {% if module.text or module.title %}   
+   <div class="secheader pricing25-header fullwidth">
+    {% if module.title %} 
+    <div class="sectitle pricing25-title">
+     <h2>{{ module.title }}</h2> 
+    </div>
+    {% endif %}
+    {% if module.text %}  
+    <div class="sectxt pricing25-text"> 
+     {{ module.text }} 
+    </div>
+    {% endif %} 
+   </div>
+   {% endif %} 
+   <div class="pricing25-cure-switcher-top fullwidth">
+     <h3>{{ module.pricing_comparision_title }}</h3>
+     <div class="pricing25-cure-switcher">
+       {% for item in module.table %}
+       <a data-value=".{{ item.currency_text|replace(" " , "-")|lower }}"><span>{{ item.curruncy_sign_text }} {{ item.currency_text }}</span></a>
+       {% endfor %}
+     </div>  
+   </div>  
+   <div class="pricing25-row fullwidth">
+     {% for item in module.table %}
+     <div class="pricing25-innertable flexwrap w-100 {{ item.currency_text|replace(" " , "-")|lower }}" style="display: none;">            
+      {% for item2 in item.content %}
+      <div class="pricing25-cols {% if item2.best_value %}pricing25cl-bestvalue{% endif %}">
+       {% if item2.best_value %} 
+       <div class="pricing25clbv">
+        <span class="pricing25clsvg">
+         <svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" enable-background="new 0 0 512 512" viewBox="0 0 512 512" id="electric-current">
+         <polygon fill="none" stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="20" stroke-width="20" points="259.579 234.712 304.605 16.829 121.368 311.551 245.999 274.883 162.736 496.124 391.602 202.657"/>
+         </svg>
+        </span> 
+        {{ item2.best_value_text }} 
+       </div>
+       {% endif %} 
+       <div class="pricing25cl-title">
+        <h3>{{ item2.title }}</h3> 
+       </div> 
+       {% if item2.title_text %} 
+       <div class="pricing25cl-subtitle txtcolor">{{ item2.title_text }}</div>
+       {% endif %} 
+       <div class="pricing25cl-cure-box">
+        <div class="pricing25cl-seatxt">{{ item2.usd_content.seat_text }}</div>
+        <div class="pricing25cl-platxt">{{ item2.usd_content.platform_text }}</div>
+       </div> 
+       {% if item2.button.button_text %} 
+       <div class="pricing25cl-btns secbtns">
+            <div class="pricing25cl-btn secbtn triggBtn {{ item2.button.button_choice }}">
+              {% set href = item2.button.button_link.url.href %}
+	            {% if item2.button.button_link.url.type is equalto "EMAIL_ADDRESS" %}
+		          {% set href = "mailto:" + href %}
+	            {% endif %}
+	            <a href="{{ href }}"
+		          {% if item2.button.button_link.open_in_new_tab %}target="_blank"{% endif %}
+		          {% if item2.button.button_link.rel %}rel="{{ item2.button.button_link.rel }}"{% endif %}
+		          >
+                {{ item2.button.button_text }}
+              </a> 
+            </div>      
+          </div>  
+       {% endif %}  
+       {% if item2.text %} 
+       <div class="pricing25cl-txt txtcolor">
+        {{ item2.text }} 
+       </div>
+       {% endif %} 
+       <div class="pricing25cl-list">
+        <ul>
+         {% for item3 in item2.list %} 
+         <li class="txtcolor">
+          {% if item3.text_icon.src %} 
+          <span class="prcngls-icon">
+           {% set sizeAttrs = 'width="{{ item3.text_icon.width|escape_attr }}" height="{{ item3.text_icon.height|escape_attr }}"' %}
+           {% if item3.text_icon.size_type == 'auto' %}
+           {% set sizeAttrs = 'width="{{ item3.text_icon.width|escape_attr }}" height="{{ item3.text_icon.height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+           {% elif item3.text_icon.size_type == 'auto_custom_max' %}
+           {% set sizeAttrs = 'width="{{ item3.text_icon.max_width|escape_attr }}" height="{{ item3.text_icon.max_height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+           {% endif %}
+           {% set loadingAttr = item3.text_icon.loading != 'disabled' ? 'loading="{{ item3.text_icon.loading|escape_attr }}"' : '' %}
+           <img src="{{ item3.text_icon.src|escape_url }}" alt="{{ item3.text_icon.alt|escape_attr }}" {{ loadingAttr }} {{ sizeAttrs }}> 
+          </span> 
+          {% endif %} 
+          <span class="prcngls-text">{{ item3.list_text }}</span>  
+         </li>
+         {% endfor %} 
+        </ul>  
+       </div> 
+      </div>
+      {% endfor %}
+     </div>
+     {% endfor %}
+   </div>
+  </div>    
+ </div>
+</div>
+
+
+{% require_css %}
+<style>
+  {{ moduleId }} .bgsec { {% if module.style.select_background == 'bg_color' %}
+    background-color: rgba({{ module.style.background_color.color|convert_rgb }},{{ module.style.background_color.opacity ~ '%' }});
+    {% elif module.style.select_background == 'bg_image' %}
+    {{ module.style.background_image.css }} background-repeat: no-repeat;
+    {% elif module.style.select_background == 'bg_gradient' %}
+    background: {{ module.style.background_gradient.css }};
+    {% endif %} }
+  
+  {{ moduleId }} .space-sec { {{ module.style.spacing.desktop.css }}; }
+  
+  {{ moduleId }} .sectitle h1,
+  {{ moduleId }} .sectitle h2 , 
+  {{ moduleId }} .sectitle h3 , 
+  {{ moduleId }} .sectitle h4 , 
+  {{ moduleId }} .sectitle h5 ,
+  {{ moduleId }} .sectitle h6 { color: rgba({{ module.color_settings.title_color.color|convert_rgb }},{{ module.color_settings.title_color.opacity ~ '%' }}); }
+  {{ moduleId }} .sectxt , {{ moduleId }} .sectxt * { color: rgba({{ module.color_settings.text_color.color|convert_rgb }},{{ module.color_settings.text_color.opacity ~ '%' }}); } 
+  
+  {% for item in module.table %}
+  {% set count = loop.index %}
+  {% for item2 in item.content %}  
+   {{ moduleId }} .pricing25-innertable:nth-child({{ count }}) .pricing25-cols:nth-child({{ loop.index }}) .pricing25clbv { background-color: rgba({{ item2.color_setting.best_value_background_color.color|convert_rgb }},{{ item2.color_setting.best_value_background_color.opacity ~ '%' }}); color: rgba({{ item2.color_setting.best_value_text_color.color|convert_rgb }},{{ item2.color_setting.best_value_text_color.opacity ~ '%' }}); }
+   {{ moduleId }} .pricing25-innertable:nth-child({{ count }}) .pricing25-cols:nth-child({{ loop.index }}) .pricing25clbv span.pricing25clsvg svg polygon { stroke: rgba({{ item2.color_setting.best_value_text_color.color|convert_rgb }},{{ item2.color_setting.best_value_text_color.opacity ~ '%' }}); } 
+   {{ moduleId }} .pricing25-innertable:nth-child({{ count }}) .pricing25-cols:nth-child({{ loop.index }}) { background-color: rgba({{ item2.color_setting.background_color.color|convert_rgb }},{{ item2.color_setting.background_color.opacity ~ '%' }}); }
+   {{ moduleId }} .pricing25-innertable:nth-child({{ count }}) .pricing25-cols:nth-child({{ loop.index }}) h3 , {{ moduleId }} .pricing25-innertable:nth-child({{ count }}) .pricing25-cols:nth-child({{ loop.index }}) .pricing25cl-platxt { color: rgba({{ item2.color_setting.title_color.color|convert_rgb }},{{ item2.color_setting.title_color.opacity ~ '%' }}); }
+   {{ moduleId }} .pricing25-innertable:nth-child({{ count }}) .pricing25-cols:nth-child({{ loop.index }}) .txtcolor { color: rgba({{ item2.color_setting.text_color.color|convert_rgb }},{{ item2.color_setting.text_color.opacity ~ '%' }}); }
+   {{ moduleId }} .pricing25-innertable:nth-child({{ count }}) .pricing25-cols:nth-child({{ loop.index }}) a { background-color: rgba({{ item2.button.background_color.color|convert_rgb }},{{ item2.button.background_color.opacity ~ '%' }}); border-color: rgba({{ item2.button.border_color.color|convert_rgb }},{{ item2.button.border_color.opacity ~ '%' }}); color: rgba({{ item2.button.text_color.color|convert_rgb }},{{ item2.button.text_color.opacity ~ '%' }}); }
+   {{ moduleId }} .pricing25-innertable:nth-child({{ count }}) .pricing25-cols:nth-child({{ loop.index }}) a:hover { background-color: rgba({{ item2.button.background_color_hover_.color|convert_rgb }},{{ item2.button.background_color_hover_.opacity ~ '%' }}); border-color: rgba({{ item2.button.border_color_hover_.color|convert_rgb }},{{ item2.button.border_color_hover_.opacity ~ '%' }}); color: rgba({{ item2.button.text_color_hover_.color|convert_rgb }},{{ item2.button.text_color_hover_.opacity ~ '%' }}); }  
+   {{ moduleId }} .pricing25-innertable:nth-child({{ count }}) .pricing25-cols:nth-child({{ loop.index }}) .pricing25cl-seatxt { color: rgba({{ item2.color_setting.pricing_text_color.color|convert_rgb }},{{ item2.color_setting.pricing_text_color.opacity ~ '%' }}); }
+  {% endfor %}
+  {% endfor %}
+  
+  @media(max-width: 991px){ {{ moduleId }} .space-sec { {{ module.style.spacing.tablet.css }}; } }
+  
+  @media(max-width: 767px){ {{ moduleId }} .space-sec { {{ module.style.spacing.mobile.css }}; } }
+  
+</style>
+{% end_require_css %}
+{% endif %}
+
+
+{% require_js %}
+  <script>
+    $(document).ready(function(){
+      $(".pricing25-cure-switcher a").on("click", (function (e) {
+        e.preventDefault();
+         $(".pricing25-cure-switcher a").removeClass("active");
+         $(this).addClass("active"); 
+         $(".pricing25-innertable").hide().removeClass("activetab");
+         $($(this).attr("data-value")).show().addClass("activetab");
+      }));  
+     // $('.pricing25-cure-switcher a:first-child').trigger('click');
+    });
+
+
+ // Function to add class to the body element based on location
+        function addLocationClass(location) {
+            const body = document.querySelector('body');
+            if (location === 'US') {
+                body.classList.add('USD');
+                $('.pricing25-cure-switcher a:first-child').trigger('click');
+                
+            } else if (location === 'GB') {
+                $('.pricing25-cure-switcher a:last-child').trigger('click');
+                
+                body.classList.add('UK');
+            } else if (location === 'DE' || location === 'FR' || location === 'NL' || location === 'ES' || location === 'PL' || location === 'IT' || location === 'BE' || location === 'IE') {
+                $('.pricing25-cure-switcher a:nth-child(2)').trigger('click');
+                
+                body.classList.add('Germany');
+            } else {
+               $('.pricing25-cure-switcher a:first-child').trigger('click');
+               
+            }
+        }
+
+        // Function to fetch IP address and determine location
+        async function fetchLocation() {
+            try {
+                const response = await fetch('https://ipapi.co/json/');
+                //const response = await fetch('https://api.db-ip.com/v2/free/self');
+                const data = await response.json();
+                const country = data.country;
+              console.log("country",country);
+                addLocationClass(country);
+            } catch (error) {
+                console.error('Error fetching IP location:', error);
+            }
+        }
+
+        // Call the function to fetch location when the page loads
+        fetchLocation();
+
+  </script>
+{% end_require_js %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,331 @@
+[ {
+  "id" : "f904cca8-4d01-7544-c91b-d79e710476d3",
+  "name" : "style",
+  "label" : "Style",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "bb6182f0-1f54-957b-efc6-fb72c6760e80",
+    "name" : "desktop_spacing",
+    "label" : "Desktop Spacing",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "ee2aae81-dffd-a424-bf54-c97b9474e7fb",
+      "name" : "spacing_field",
+      "label" : "Spacing",
+      "required" : false,
+      "locked" : false,
+      "type" : "spacing",
+      "display_width" : null,
+      "default" : {
+        "padding" : {
+          "top" : {
+            "value" : 50,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 50,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      }
+    } ],
+    "tab" : "STYLE",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : {
+      "spacing_field" : {
+        "padding" : {
+          "top" : {
+            "value" : 50,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 50,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      }
+    }
+  }, {
+    "id" : "0074895f-68e7-44c1-d4cf-bb93204e494d",
+    "name" : "tablet_spacing",
+    "label" : "Tablet Spacing",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "39a82443-5ec9-851b-8389-89ec0b13fb39",
+      "name" : "spacing_field",
+      "label" : "Spacing",
+      "required" : false,
+      "locked" : false,
+      "type" : "spacing",
+      "display_width" : null,
+      "default" : { }
+    } ],
+    "tab" : "STYLE",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : { }
+  }, {
+    "id" : "61e9cf70-254b-0ea8-ac17-d1f371c22aa3",
+    "name" : "mobile_spacing",
+    "label" : "Mobile Spacing",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "123cbef1-ea9c-1d67-1bde-20b1ae3198ba",
+      "name" : "spacing_field",
+      "label" : "Spacing",
+      "required" : false,
+      "locked" : false,
+      "type" : "spacing",
+      "display_width" : null,
+      "default" : { }
+    } ],
+    "tab" : "STYLE",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : { }
+  } ],
+  "tab" : "STYLE",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "desktop_spacing" : {
+      "spacing_field" : {
+        "padding" : {
+          "top" : {
+            "value" : 50,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 50,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      }
+    },
+    "tablet_spacing" : { },
+    "mobile_spacing" : { }
+  }
+}, {
+  "id" : "279ecdb2-09f2-3522-b7df-ec56e8e21ff3",
+  "name" : "default_content",
+  "label" : "Default Content",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "22753d55-275f-4af6-6fa8-960279c1722f",
+    "name" : "title",
+    "label" : "Title",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Top companies trust Zapier to automate work and free up time"
+  }, {
+    "id" : "75b2d9c0-8fbd-b058-c4de-136d2ffb0a54",
+    "name" : "logo_item",
+    "label" : "Logo Item",
+    "required" : false,
+    "locked" : false,
+    "occurrence" : {
+      "min" : null,
+      "max" : null,
+      "sorting_label_field" : null,
+      "default" : 5
+    },
+    "children" : [ {
+      "id" : "90fcf111-375d-c5cb-70f8-a88a809524c5",
+      "name" : "logo",
+      "label" : "Logo",
+      "required" : false,
+      "locked" : false,
+      "responsive" : true,
+      "resizable" : true,
+      "show_loading" : false,
+      "type" : "image",
+      "display_width" : null,
+      "default" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Integrations%20Icon/ADP%20Workforce%20Now_integrations_icon.jpg",
+        "alt" : "ADP Workforce Now_integrations_icon",
+        "loading" : "lazy",
+        "width" : 144,
+        "height" : 144,
+        "max_width" : 144,
+        "max_height" : 144
+      }
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : [ {
+      "logo" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Integrations%20Icon/ADP%20Workforce%20Now_integrations_icon.jpg",
+        "alt" : "ADP Workforce Now_integrations_icon",
+        "loading" : "lazy",
+        "width" : 144,
+        "height" : 144,
+        "max_width" : 144,
+        "max_height" : 144
+      }
+    }, {
+      "logo" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Integrations%20Icon/ADP%20Workforce%20Now_integrations_icon.jpg",
+        "alt" : "ADP Workforce Now_integrations_icon",
+        "loading" : "lazy",
+        "width" : 144,
+        "height" : 144,
+        "max_width" : 144,
+        "max_height" : 144
+      }
+    }, {
+      "logo" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Integrations%20Icon/ADP%20Workforce%20Now_integrations_icon.jpg",
+        "alt" : "ADP Workforce Now_integrations_icon",
+        "loading" : "lazy",
+        "width" : 144,
+        "height" : 144,
+        "max_width" : 144,
+        "max_height" : 144
+      }
+    }, {
+      "logo" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Integrations%20Icon/ADP%20Workforce%20Now_integrations_icon.jpg",
+        "alt" : "ADP Workforce Now_integrations_icon",
+        "loading" : "lazy",
+        "width" : 144,
+        "height" : 144,
+        "max_width" : 144,
+        "max_height" : 144
+      }
+    }, {
+      "logo" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Integrations%20Icon/ADP%20Workforce%20Now_integrations_icon.jpg",
+        "alt" : "ADP Workforce Now_integrations_icon",
+        "loading" : "lazy",
+        "width" : 144,
+        "height" : 144,
+        "max_width" : 144,
+        "max_height" : 144
+      }
+    } ]
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "title" : "Top companies trust Zapier to automate work and free up time",
+    "logo_item" : [ {
+      "logo" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Integrations%20Icon/ADP%20Workforce%20Now_integrations_icon.jpg",
+        "alt" : "ADP Workforce Now_integrations_icon",
+        "loading" : "lazy",
+        "width" : 144,
+        "height" : 144,
+        "max_width" : 144,
+        "max_height" : 144
+      }
+    }, {
+      "logo" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Integrations%20Icon/ADP%20Workforce%20Now_integrations_icon.jpg",
+        "alt" : "ADP Workforce Now_integrations_icon",
+        "loading" : "lazy",
+        "width" : 144,
+        "height" : 144,
+        "max_width" : 144,
+        "max_height" : 144
+      }
+    }, {
+      "logo" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Integrations%20Icon/ADP%20Workforce%20Now_integrations_icon.jpg",
+        "alt" : "ADP Workforce Now_integrations_icon",
+        "loading" : "lazy",
+        "width" : 144,
+        "height" : 144,
+        "max_width" : 144,
+        "max_height" : 144
+      }
+    }, {
+      "logo" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Integrations%20Icon/ADP%20Workforce%20Now_integrations_icon.jpg",
+        "alt" : "ADP Workforce Now_integrations_icon",
+        "loading" : "lazy",
+        "width" : 144,
+        "height" : 144,
+        "max_width" : 144,
+        "max_height" : 144
+      }
+    }, {
+      "logo" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Integrations%20Icon/ADP%20Workforce%20Now_integrations_icon.jpg",
+        "alt" : "ADP Workforce Now_integrations_icon",
+        "loading" : "lazy",
+        "width" : 144,
+        "height" : 144,
+        "max_width" : 144,
+        "max_height" : 144
+      }
+    } ]
+  }
+}, {
+  "id" : "a75872dc-8fe5-d0af-6ca4-bc20db75ed97",
+  "name" : "selction_show_hide_",
+  "label" : "Selction [show/Hide]",
+  "required" : false,
+  "locked" : false,
+  "display" : "toggle",
+  "type" : "boolean",
+  "display_width" : null,
+  "default" : true
+} ]

@@ -1,0 +1,1112 @@
+[ {
+  "id" : "e181e1ee-ef06-5ba8-0ad3-f63113a45d24",
+  "name" : "style",
+  "label" : "Style",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "36fd79d2-1107-4452-d226-d4c096723f16",
+    "name" : "select_background",
+    "label" : "Select Background",
+    "required" : false,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "bg_color", "Background Color" ], [ "bg_image", "Background Image" ], [ "bg_gradient", "Background Gradient" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : ""
+  }, {
+    "id" : "60d0ddef-fb34-a99a-73cb-bda8b10e0fc9",
+    "name" : "background_color",
+    "label" : "Background Color",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "style.select_background",
+      "controlling_value_regex" : "bg_color",
+      "property" : null,
+      "operator" : "MATCHES_REGEX",
+      "access" : null
+    },
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#002A5A",
+      "opacity" : 100
+    }
+  }, {
+    "id" : "19f0609d-595d-6ef3-f639-3f6006e095fb",
+    "name" : "background_image",
+    "label" : "Background Image",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "style.select_background",
+      "controlling_value_regex" : "bg_image",
+      "property" : null,
+      "operator" : "MATCHES_REGEX",
+      "access" : null
+    },
+    "type" : "backgroundimage",
+    "display_width" : null,
+    "default" : {
+      "src" : "",
+      "background_position" : "MIDDLE_CENTER",
+      "background_size" : "cover"
+    }
+  }, {
+    "id" : "0df6d4e0-395b-eda2-ec5a-1d08ad6c8d35",
+    "name" : "background_gradient",
+    "label" : "Background Gradient",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "style.select_background",
+      "controlling_value_regex" : "bg_gradient",
+      "property" : null,
+      "operator" : "MATCHES_REGEX",
+      "access" : null
+    },
+    "type" : "gradient",
+    "display_width" : null,
+    "default" : { }
+  }, {
+    "id" : "afeb177b-c31d-1412-5116-70d6f85c5565",
+    "name" : "spacing",
+    "label" : "Spacing",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "d59d9e4c-264e-54fa-99b7-0ff07897b867",
+      "name" : "desktop",
+      "label" : "Desktop",
+      "required" : false,
+      "locked" : false,
+      "type" : "spacing",
+      "display_width" : null,
+      "default" : {
+        "padding" : {
+          "top" : {
+            "value" : 40,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 140,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      }
+    }, {
+      "id" : "0c762a95-1339-05fa-721d-3d79f41b571e",
+      "name" : "tablet",
+      "label" : "Tablet",
+      "required" : false,
+      "locked" : false,
+      "type" : "spacing",
+      "display_width" : null,
+      "default" : {
+        "padding" : {
+          "top" : {
+            "value" : 40,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 80,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      }
+    }, {
+      "id" : "0a8a8c35-4008-f2aa-311a-12325d67b19c",
+      "name" : "mobile",
+      "label" : "Mobile",
+      "required" : false,
+      "locked" : false,
+      "type" : "spacing",
+      "display_width" : null,
+      "default" : {
+        "padding" : {
+          "top" : {
+            "value" : 30,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 60,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      }
+    } ],
+    "tab" : "STYLE",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : {
+      "desktop" : {
+        "padding" : {
+          "top" : {
+            "value" : 40,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 140,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      },
+      "tablet" : {
+        "padding" : {
+          "top" : {
+            "value" : 40,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 80,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      },
+      "mobile" : {
+        "padding" : {
+          "top" : {
+            "value" : 30,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 60,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      }
+    }
+  } ],
+  "tab" : "STYLE",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "select_background" : "",
+    "background_color" : {
+      "color" : "#002A5A",
+      "opacity" : 100
+    },
+    "background_image" : {
+      "src" : "",
+      "background_position" : "MIDDLE_CENTER",
+      "background_size" : "cover"
+    },
+    "background_gradient" : { },
+    "spacing" : {
+      "desktop" : {
+        "padding" : {
+          "top" : {
+            "value" : 40,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 140,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      },
+      "tablet" : {
+        "padding" : {
+          "top" : {
+            "value" : 40,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 80,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      },
+      "mobile" : {
+        "padding" : {
+          "top" : {
+            "value" : 30,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 60,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      }
+    }
+  }
+}, {
+  "id" : "55ccd3e2-31aa-4e79-9772-80facd954415",
+  "name" : "show_hide_",
+  "label" : "Section [Show/ Hide]",
+  "required" : false,
+  "locked" : false,
+  "display" : "toggle",
+  "type" : "boolean",
+  "display_width" : null,
+  "default" : true
+}, {
+  "id" : "7b18c478-576b-6b01-16d4-43695561b4f8",
+  "name" : "top_content",
+  "label" : "Title",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "496d4407-abd4-c6ea-6410-2a7f84894093",
+    "name" : "title",
+    "label" : "Title",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Workwize gives you predictability <span>today, at 500 employees, and at 5000.</span>"
+  }, {
+    "id" : "f135d4c1-5dba-d526-6250-a920b3f1ca66",
+    "name" : "max_width",
+    "label" : "Max Width",
+    "required" : false,
+    "locked" : false,
+    "display" : "text",
+    "step" : 1,
+    "suffix" : "px",
+    "type" : "number",
+    "display_width" : null,
+    "default" : 760
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "title" : "Workwize gives you predictability <span>today, at 500 employees, and at 5000.</span>",
+    "max_width" : 760
+  }
+}, {
+  "id" : "fa8d0ec7-6e30-ece2-c3bd-42252f647545",
+  "name" : "inner_content",
+  "label" : "Inner Content",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : null,
+    "max" : null,
+    "sorting_label_field" : null,
+    "default" : 4
+  },
+  "children" : [ {
+    "id" : "b9858cb6-c9f2-58cf-bc13-732a46afbd6f",
+    "name" : "title",
+    "label" : "Title",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Get full lifecycle automation that never fails."
+  }, {
+    "id" : "04c3e996-4089-8566-ce4e-5fd5e46d272b",
+    "name" : "title_max_width",
+    "label" : "Title Max Width",
+    "required" : false,
+    "locked" : false,
+    "display" : "text",
+    "step" : 1,
+    "suffix" : "px",
+    "type" : "number",
+    "display_width" : null,
+    "default" : 440
+  }, {
+    "id" : "bbc7bb5c-583b-481a-d6e5-03936b26fb5d",
+    "name" : "icon",
+    "label" : "Icon",
+    "required" : false,
+    "locked" : false,
+    "responsive" : true,
+    "resizable" : true,
+    "show_loading" : false,
+    "type" : "image",
+    "display_width" : null,
+    "default" : {
+      "size_type" : "auto",
+      "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/Convert-Pdf-1--Streamline-Core.svg",
+      "alt" : "Convert-Pdf-1--Streamline-Core",
+      "loading" : "lazy",
+      "width" : 24,
+      "height" : 24,
+      "max_width" : 24,
+      "max_height" : 24
+    }
+  }, {
+    "id" : "a180dff0-0a73-0231-6610-922ebb2a9d19",
+    "name" : "sub_text",
+    "label" : "Sub Text",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Workwize handles the entire device lifecycle from procurement to disposal."
+  }, {
+    "id" : "a9b8d96e-ba47-90a3-d132-b32d309338a5",
+    "name" : "show_hide_integrates",
+    "label" : "Show Hide Integrates",
+    "required" : false,
+    "locked" : false,
+    "display" : "toggle",
+    "type" : "boolean",
+    "display_width" : null,
+    "default" : true
+  }, {
+    "id" : "2ebbd6f4-f8f5-032d-1f73-c126353d0575",
+    "name" : "integrates_content",
+    "label" : "Integrates Content",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "inner_content.show_hide_integrates",
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "MATCHES_REGEX",
+      "access" : null
+    },
+    "children" : [ {
+      "id" : "9c0f7505-6282-d3e3-fac4-2c2db039fe38",
+      "name" : "text_field",
+      "label" : "Text",
+      "required" : false,
+      "locked" : false,
+      "allow_new_line" : false,
+      "type" : "text",
+      "display_width" : null,
+      "default" : "Workwize integrates deeply across:"
+    }, {
+      "id" : "a4e07e03-c7a0-599e-be86-ddd6eee35163",
+      "name" : "item",
+      "label" : "Item",
+      "required" : false,
+      "locked" : false,
+      "occurrence" : {
+        "min" : null,
+        "max" : null,
+        "sorting_label_field" : "71963aec-5cc7-6771-d4b6-dbad2f373221",
+        "default" : 4
+      },
+      "children" : [ {
+        "id" : "1e88a356-107a-895f-4288-963162b609ab",
+        "name" : "icon",
+        "label" : "Icon",
+        "required" : false,
+        "locked" : false,
+        "responsive" : true,
+        "resizable" : true,
+        "show_loading" : true,
+        "type" : "image",
+        "display_width" : null,
+        "default" : {
+          "size_type" : "exact",
+          "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/Optimization--Streamline-Core.svg",
+          "alt" : "Optimization--Streamline-Core",
+          "loading" : "lazy",
+          "width" : 24,
+          "height" : 24,
+          "max_width" : 24,
+          "max_height" : 24
+        }
+      }, {
+        "id" : "71963aec-5cc7-6771-d4b6-dbad2f373221",
+        "name" : "text_field_1",
+        "label" : "Text",
+        "required" : false,
+        "locked" : false,
+        "allow_new_line" : false,
+        "type" : "text",
+        "display_width" : null,
+        "default" : "HRIS"
+      } ],
+      "tab" : "CONTENT",
+      "expanded" : false,
+      "group_occurrence_meta" : null,
+      "type" : "group",
+      "display_width" : null,
+      "default" : [ {
+        "icon" : {
+          "size_type" : "exact",
+          "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/Optimization--Streamline-Core.svg",
+          "alt" : "Optimization--Streamline-Core",
+          "loading" : "lazy",
+          "width" : 24,
+          "height" : 24,
+          "max_width" : 24,
+          "max_height" : 24
+        },
+        "text_field_1" : "HRIS"
+      }, {
+        "icon" : {
+          "size_type" : "exact",
+          "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/Optimization--Streamline-Core.svg",
+          "alt" : "Optimization--Streamline-Core",
+          "loading" : "lazy",
+          "width" : 24,
+          "height" : 24,
+          "max_width" : 24,
+          "max_height" : 24
+        },
+        "text_field_1" : "HRIS"
+      }, {
+        "icon" : {
+          "size_type" : "exact",
+          "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/Optimization--Streamline-Core.svg",
+          "alt" : "Optimization--Streamline-Core",
+          "loading" : "lazy",
+          "width" : 24,
+          "height" : 24,
+          "max_width" : 24,
+          "max_height" : 24
+        },
+        "text_field_1" : "HRIS"
+      }, {
+        "icon" : {
+          "size_type" : "exact",
+          "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/Optimization--Streamline-Core.svg",
+          "alt" : "Optimization--Streamline-Core",
+          "loading" : "lazy",
+          "width" : 24,
+          "height" : 24,
+          "max_width" : 24,
+          "max_height" : 24
+        },
+        "text_field_1" : "HRIS"
+      } ]
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : {
+      "text_field" : "Workwize integrates deeply across:",
+      "item" : [ {
+        "icon" : {
+          "size_type" : "exact",
+          "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/Optimization--Streamline-Core.svg",
+          "alt" : "Optimization--Streamline-Core",
+          "loading" : "lazy",
+          "width" : 24,
+          "height" : 24,
+          "max_width" : 24,
+          "max_height" : 24
+        },
+        "text_field_1" : "HRIS"
+      }, {
+        "icon" : {
+          "size_type" : "exact",
+          "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/Optimization--Streamline-Core.svg",
+          "alt" : "Optimization--Streamline-Core",
+          "loading" : "lazy",
+          "width" : 24,
+          "height" : 24,
+          "max_width" : 24,
+          "max_height" : 24
+        },
+        "text_field_1" : "HRIS"
+      }, {
+        "icon" : {
+          "size_type" : "exact",
+          "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/Optimization--Streamline-Core.svg",
+          "alt" : "Optimization--Streamline-Core",
+          "loading" : "lazy",
+          "width" : 24,
+          "height" : 24,
+          "max_width" : 24,
+          "max_height" : 24
+        },
+        "text_field_1" : "HRIS"
+      }, {
+        "icon" : {
+          "size_type" : "exact",
+          "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/Optimization--Streamline-Core.svg",
+          "alt" : "Optimization--Streamline-Core",
+          "loading" : "lazy",
+          "width" : 24,
+          "height" : 24,
+          "max_width" : 24,
+          "max_height" : 24
+        },
+        "text_field_1" : "HRIS"
+      } ]
+    }
+  }, {
+    "id" : "dce2eedf-a52c-c3c6-f98f-c26e42663b75",
+    "name" : "bottom_text",
+    "label" : "Bottom Text",
+    "required" : false,
+    "locked" : false,
+    "type" : "richtext",
+    "display_width" : null,
+    "default" : "<p>That means:</p>\n<ul>\n<li>Easy access to chain-of-custody history</li>\n<li>Real-time lifecycle updates synced across systems</li>\n<li>Complete overview of retrieval rates and depreciation data</li>\n</ul>\n<p>No year-long data cleanup, no manual reconciliation.</p>"
+  }, {
+    "id" : "5c1f1e41-de2a-7848-9898-7c365eac340e",
+    "name" : "image_field",
+    "label" : "Image",
+    "required" : false,
+    "locked" : false,
+    "responsive" : true,
+    "resizable" : true,
+    "show_loading" : true,
+    "type" : "image",
+    "display_width" : null,
+    "default" : {
+      "size_type" : "exact",
+      "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/Frame%202147261395%20(2).png",
+      "alt" : "Frame 2147261395 (2)",
+      "loading" : "lazy",
+      "width" : 1980,
+      "height" : 1380,
+      "max_width" : 1980,
+      "max_height" : 1380
+    }
+  }, {
+    "id" : "9fea8230-9622-0207-a9c0-72994dad265b",
+    "name" : "list_icon_color",
+    "label" : "List Icon Color",
+    "required" : false,
+    "locked" : false,
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#227AF7",
+      "opacity" : 100
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : [ {
+    "title" : "Get full lifecycle automation that never fails.",
+    "title_max_width" : 440,
+    "icon" : {
+      "size_type" : "auto",
+      "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/Convert-Pdf-1--Streamline-Core.svg",
+      "alt" : "Convert-Pdf-1--Streamline-Core",
+      "loading" : "lazy",
+      "width" : 24,
+      "height" : 24,
+      "max_width" : 24,
+      "max_height" : 24
+    },
+    "sub_text" : "Workwize handles the entire device lifecycle from procurement to disposal.",
+    "show_hide_integrates" : true,
+    "integrates_content" : {
+      "text_field" : "Workwize integrates deeply across:",
+      "item" : [ {
+        "icon" : {
+          "size_type" : "exact",
+          "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/Optimization--Streamline-Core.svg",
+          "alt" : "Optimization--Streamline-Core",
+          "loading" : "lazy",
+          "width" : 24,
+          "height" : 24,
+          "max_width" : 24,
+          "max_height" : 24
+        },
+        "text_field_1" : "HRIS"
+      }, {
+        "icon" : {
+          "size_type" : "exact",
+          "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/Optimization--Streamline-Core.svg",
+          "alt" : "Optimization--Streamline-Core",
+          "loading" : "lazy",
+          "width" : 24,
+          "height" : 24,
+          "max_width" : 24,
+          "max_height" : 24
+        },
+        "text_field_1" : "HRIS"
+      }, {
+        "icon" : {
+          "size_type" : "exact",
+          "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/Optimization--Streamline-Core.svg",
+          "alt" : "Optimization--Streamline-Core",
+          "loading" : "lazy",
+          "width" : 24,
+          "height" : 24,
+          "max_width" : 24,
+          "max_height" : 24
+        },
+        "text_field_1" : "HRIS"
+      }, {
+        "icon" : {
+          "size_type" : "exact",
+          "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/Optimization--Streamline-Core.svg",
+          "alt" : "Optimization--Streamline-Core",
+          "loading" : "lazy",
+          "width" : 24,
+          "height" : 24,
+          "max_width" : 24,
+          "max_height" : 24
+        },
+        "text_field_1" : "HRIS"
+      } ]
+    },
+    "bottom_text" : "<p>That means:</p>\n<ul>\n<li>Easy access to chain-of-custody history</li>\n<li>Real-time lifecycle updates synced across systems</li>\n<li>Complete overview of retrieval rates and depreciation data</li>\n</ul>\n<p>No year-long data cleanup, no manual reconciliation.</p>",
+    "image_field" : {
+      "size_type" : "exact",
+      "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/Frame%202147261395%20(2).png",
+      "alt" : "Frame 2147261395 (2)",
+      "loading" : "lazy",
+      "width" : 1980,
+      "height" : 1380,
+      "max_width" : 1980,
+      "max_height" : 1380
+    },
+    "list_icon_color" : {
+      "color" : "#227AF7",
+      "opacity" : 100
+    }
+  }, {
+    "title" : "Get full lifecycle automation that never fails.",
+    "title_max_width" : 440,
+    "icon" : {
+      "size_type" : "auto",
+      "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/Convert-Pdf-1--Streamline-Core.svg",
+      "alt" : "Convert-Pdf-1--Streamline-Core",
+      "loading" : "lazy",
+      "width" : 24,
+      "height" : 24,
+      "max_width" : 24,
+      "max_height" : 24
+    },
+    "sub_text" : "Workwize handles the entire device lifecycle from procurement to disposal.",
+    "show_hide_integrates" : true,
+    "integrates_content" : {
+      "text_field" : "Workwize integrates deeply across:",
+      "item" : [ {
+        "icon" : {
+          "size_type" : "exact",
+          "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/Optimization--Streamline-Core.svg",
+          "alt" : "Optimization--Streamline-Core",
+          "loading" : "lazy",
+          "width" : 24,
+          "height" : 24,
+          "max_width" : 24,
+          "max_height" : 24
+        },
+        "text_field_1" : "HRIS"
+      }, {
+        "icon" : {
+          "size_type" : "exact",
+          "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/Optimization--Streamline-Core.svg",
+          "alt" : "Optimization--Streamline-Core",
+          "loading" : "lazy",
+          "width" : 24,
+          "height" : 24,
+          "max_width" : 24,
+          "max_height" : 24
+        },
+        "text_field_1" : "HRIS"
+      }, {
+        "icon" : {
+          "size_type" : "exact",
+          "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/Optimization--Streamline-Core.svg",
+          "alt" : "Optimization--Streamline-Core",
+          "loading" : "lazy",
+          "width" : 24,
+          "height" : 24,
+          "max_width" : 24,
+          "max_height" : 24
+        },
+        "text_field_1" : "HRIS"
+      }, {
+        "icon" : {
+          "size_type" : "exact",
+          "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/Optimization--Streamline-Core.svg",
+          "alt" : "Optimization--Streamline-Core",
+          "loading" : "lazy",
+          "width" : 24,
+          "height" : 24,
+          "max_width" : 24,
+          "max_height" : 24
+        },
+        "text_field_1" : "HRIS"
+      } ]
+    },
+    "bottom_text" : "<p>That means:</p>\n<ul>\n<li>Easy access to chain-of-custody history</li>\n<li>Real-time lifecycle updates synced across systems</li>\n<li>Complete overview of retrieval rates and depreciation data</li>\n</ul>\n<p>No year-long data cleanup, no manual reconciliation.</p>",
+    "image_field" : {
+      "size_type" : "exact",
+      "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/Frame%202147261395%20(2).png",
+      "alt" : "Frame 2147261395 (2)",
+      "loading" : "lazy",
+      "width" : 1980,
+      "height" : 1380,
+      "max_width" : 1980,
+      "max_height" : 1380
+    },
+    "list_icon_color" : {
+      "color" : "#227AF7",
+      "opacity" : 100
+    }
+  }, {
+    "title" : "Get full lifecycle automation that never fails.",
+    "title_max_width" : 440,
+    "icon" : {
+      "size_type" : "auto",
+      "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/Convert-Pdf-1--Streamline-Core.svg",
+      "alt" : "Convert-Pdf-1--Streamline-Core",
+      "loading" : "lazy",
+      "width" : 24,
+      "height" : 24,
+      "max_width" : 24,
+      "max_height" : 24
+    },
+    "sub_text" : "Workwize handles the entire device lifecycle from procurement to disposal.",
+    "show_hide_integrates" : true,
+    "integrates_content" : {
+      "text_field" : "Workwize integrates deeply across:",
+      "item" : [ {
+        "icon" : {
+          "size_type" : "exact",
+          "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/Optimization--Streamline-Core.svg",
+          "alt" : "Optimization--Streamline-Core",
+          "loading" : "lazy",
+          "width" : 24,
+          "height" : 24,
+          "max_width" : 24,
+          "max_height" : 24
+        },
+        "text_field_1" : "HRIS"
+      }, {
+        "icon" : {
+          "size_type" : "exact",
+          "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/Optimization--Streamline-Core.svg",
+          "alt" : "Optimization--Streamline-Core",
+          "loading" : "lazy",
+          "width" : 24,
+          "height" : 24,
+          "max_width" : 24,
+          "max_height" : 24
+        },
+        "text_field_1" : "HRIS"
+      }, {
+        "icon" : {
+          "size_type" : "exact",
+          "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/Optimization--Streamline-Core.svg",
+          "alt" : "Optimization--Streamline-Core",
+          "loading" : "lazy",
+          "width" : 24,
+          "height" : 24,
+          "max_width" : 24,
+          "max_height" : 24
+        },
+        "text_field_1" : "HRIS"
+      }, {
+        "icon" : {
+          "size_type" : "exact",
+          "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/Optimization--Streamline-Core.svg",
+          "alt" : "Optimization--Streamline-Core",
+          "loading" : "lazy",
+          "width" : 24,
+          "height" : 24,
+          "max_width" : 24,
+          "max_height" : 24
+        },
+        "text_field_1" : "HRIS"
+      } ]
+    },
+    "bottom_text" : "<p>That means:</p>\n<ul>\n<li>Easy access to chain-of-custody history</li>\n<li>Real-time lifecycle updates synced across systems</li>\n<li>Complete overview of retrieval rates and depreciation data</li>\n</ul>\n<p>No year-long data cleanup, no manual reconciliation.</p>",
+    "image_field" : {
+      "size_type" : "exact",
+      "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/Frame%202147261395%20(2).png",
+      "alt" : "Frame 2147261395 (2)",
+      "loading" : "lazy",
+      "width" : 1980,
+      "height" : 1380,
+      "max_width" : 1980,
+      "max_height" : 1380
+    },
+    "list_icon_color" : {
+      "color" : "#227AF7",
+      "opacity" : 100
+    }
+  }, {
+    "title" : "Get full lifecycle automation that never fails.",
+    "title_max_width" : 440,
+    "icon" : {
+      "size_type" : "auto",
+      "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/Convert-Pdf-1--Streamline-Core.svg",
+      "alt" : "Convert-Pdf-1--Streamline-Core",
+      "loading" : "lazy",
+      "width" : 24,
+      "height" : 24,
+      "max_width" : 24,
+      "max_height" : 24
+    },
+    "sub_text" : "Workwize handles the entire device lifecycle from procurement to disposal.",
+    "show_hide_integrates" : true,
+    "integrates_content" : {
+      "text_field" : "Workwize integrates deeply across:",
+      "item" : [ {
+        "icon" : {
+          "size_type" : "exact",
+          "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/Optimization--Streamline-Core.svg",
+          "alt" : "Optimization--Streamline-Core",
+          "loading" : "lazy",
+          "width" : 24,
+          "height" : 24,
+          "max_width" : 24,
+          "max_height" : 24
+        },
+        "text_field_1" : "HRIS"
+      }, {
+        "icon" : {
+          "size_type" : "exact",
+          "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/Optimization--Streamline-Core.svg",
+          "alt" : "Optimization--Streamline-Core",
+          "loading" : "lazy",
+          "width" : 24,
+          "height" : 24,
+          "max_width" : 24,
+          "max_height" : 24
+        },
+        "text_field_1" : "HRIS"
+      }, {
+        "icon" : {
+          "size_type" : "exact",
+          "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/Optimization--Streamline-Core.svg",
+          "alt" : "Optimization--Streamline-Core",
+          "loading" : "lazy",
+          "width" : 24,
+          "height" : 24,
+          "max_width" : 24,
+          "max_height" : 24
+        },
+        "text_field_1" : "HRIS"
+      }, {
+        "icon" : {
+          "size_type" : "exact",
+          "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/Optimization--Streamline-Core.svg",
+          "alt" : "Optimization--Streamline-Core",
+          "loading" : "lazy",
+          "width" : 24,
+          "height" : 24,
+          "max_width" : 24,
+          "max_height" : 24
+        },
+        "text_field_1" : "HRIS"
+      } ]
+    },
+    "bottom_text" : "<p>That means:</p>\n<ul>\n<li>Easy access to chain-of-custody history</li>\n<li>Real-time lifecycle updates synced across systems</li>\n<li>Complete overview of retrieval rates and depreciation data</li>\n</ul>\n<p>No year-long data cleanup, no manual reconciliation.</p>",
+    "image_field" : {
+      "size_type" : "exact",
+      "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/Frame%202147261395%20(2).png",
+      "alt" : "Frame 2147261395 (2)",
+      "loading" : "lazy",
+      "width" : 1980,
+      "height" : 1380,
+      "max_width" : 1980,
+      "max_height" : 1380
+    },
+    "list_icon_color" : {
+      "color" : "#227AF7",
+      "opacity" : 100
+    }
+  } ]
+}, {
+  "id" : "b6ac38ef-f94c-f9a5-6501-17f0b2a6214f",
+  "name" : "color_setting",
+  "label" : "Color Setting",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "ebdd37df-211c-6125-dbc4-f5a70db1d0d2",
+    "name" : "title_color",
+    "label" : "Title Color",
+    "required" : false,
+    "locked" : false,
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#050C14",
+      "opacity" : 100
+    }
+  }, {
+    "id" : "50a496a6-0404-8d2b-22b5-060a591fdb6a",
+    "name" : "title_span_color",
+    "label" : "Title Span Color",
+    "required" : false,
+    "locked" : false,
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#227AF7",
+      "opacity" : 100
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "title_color" : {
+      "color" : "#050C14",
+      "opacity" : 100
+    },
+    "title_span_color" : {
+      "color" : "#227AF7",
+      "opacity" : 100
+    }
+  }
+}, {
+  "id" : "aa3f5fcf-21d6-b971-38db-66c53c4b622f",
+  "name" : "button",
+  "label" : "Button",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "b700daab-cb25-a76e-a86f-5d764f72635b",
+    "name" : "button_choice",
+    "label" : "Button Choice",
+    "required" : false,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "button", "Primary Button" ], [ "second_btn", "Secondary Button" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "button"
+  }, {
+    "id" : "7e130500-3d58-7460-774f-93ce90c1996b",
+    "name" : "button_text",
+    "label" : "Button Text",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Book a 30-min demo"
+  }, {
+    "id" : "2ac1645a-c9e8-e8db-3787-60b4cbab726d",
+    "name" : "button_link",
+    "label" : "Button Link",
+    "required" : false,
+    "locked" : false,
+    "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG", "CALL_TO_ACTION", "PHONE_NUMBER", "WHATSAPP_NUMBER", "PAYMENT" ],
+    "show_advanced_rel_options" : false,
+    "type" : "link",
+    "display_width" : null,
+    "default" : {
+      "url" : {
+        "content_id" : 398634570982,
+        "href" : null,
+        "type" : "CONTENT"
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "button_choice" : "button",
+    "button_text" : "Book a 30-min demo",
+    "button_link" : {
+      "url" : {
+        "content_id" : 398634570982,
+        "href" : null,
+        "type" : "CONTENT"
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    }
+  }
+} ]

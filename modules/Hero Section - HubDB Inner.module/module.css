@@ -1,0 +1,10 @@
+.hrprocu-outer.flexwrap { align-items: flex-start; }
+.hrprocu-lf { padding-top: 0px; }
+
+@media(max-width:1280px){
+  .hrprocu-lf { padding-top: 90px; }
+}
+
+@media(max-width:991px){
+  .hrprocu-lf { padding-top: 0px; }
+}

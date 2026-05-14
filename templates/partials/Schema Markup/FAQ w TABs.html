@@ -1,0 +1,40 @@
+<!--
+  templateType: "page"
+  isAvailableForNewContent: false
+-->
+{% if module.show_hide_ and module.faq_content %}
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "@id": "{{ content.absolute_url }}/#faq",
+  "isPartOf":
+    {
+      "@id": "{{ content.absolute_url }}#webpage"
+    },
+  "mainEntity": [
+    {% set ns = namespace(i=0) %}
+
+    {% for tab in module.faq_content %}
+      {% if tab.faq_column %}
+        {% for item in tab.faq_column %}
+          {% if item.title and item.text %}
+            {% if ns.i > 0 %},{% endif %}
+            {
+              "@type": "Question",
+              "name": {{ item.title|striptags|tojson }},
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": {{ item.text|striptags|tojson }}
+              }
+            }
+            {% set ns.i = ns.i + 1 %}
+          {% endif %}
+        {% endfor %}
+      {% endif %}
+    {% endfor %}
+  ]
+}
+</script>
+{% endif %}

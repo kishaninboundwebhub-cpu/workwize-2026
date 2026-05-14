@@ -1,0 +1,40 @@
+<!--
+  templateType: page
+  isAvailableForNewContent: true
+  label: Contact
+  screenshotPath: ../images/template-previews/contact.png
+-->
+{% extends "./layouts/base.html" %}
+
+{# START - contactPage SchemaMarkup data include #}
+{% block custom_schema %}
+  {% include "/Workwize/templates/partials/Schema Markup/ContactPage.html" %}
+{% endblock %}
+{# END - contactPage SchemaMarkup data include #}
+
+{% block body %}
+{% dnd_area "dnd_area"
+  label="Main section",
+  class="body-container body-container--contact"
+%}
+
+  {# Hero Section - Procurement #}
+  {% dnd_section full_width='true', vertical_alignment='MIDDLE', padding= {'top': '0', 'bottom': '0', 'left': '0', 'right': '0',} %}
+    {% dnd_module "module_17085837572387" path="/Workwize/modules/Hero Section - Procurement", label="Hero Section - Procurement" %}
+    {% end_dnd_module %}  
+  {% end_dnd_section %}
+
+  {# Logo Section #}
+  {% dnd_section full_width='true', vertical_alignment='MIDDLE', padding= {'top': '0', 'bottom': '0', 'left': '0', 'right': '0',} %}
+    {% dnd_module "module_170867231176849" path="/Workwize/modules/Logo Section", label="Logo Section" %}
+    {% end_dnd_module %}  
+  {% end_dnd_section %}  
+
+ {# Cta Section Fullwidth #}
+  {% dnd_section full_width='true', vertical_alignment='MIDDLE', padding= {'top': '0', 'bottom': '0', 'left': '0', 'right': '0',} %}
+    {% dnd_module "module_170867237490555" path="/Workwize/modules/Cta Section Fullwidth", label="Cta Section Fullwidth" %}
+    {% end_dnd_module %}  
+  {% end_dnd_section %}
+
+{% end_dnd_area %}
+{% endblock body %}

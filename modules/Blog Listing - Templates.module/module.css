@@ -1,0 +1,30 @@
+.blglst-templat-rows { row-gap: 40px; width: calc(100% + 38.5px); margin-left: -19.25px; margin-right: -19.25px; }
+.blglst-templat-cols { width: calc(33.33% - 38.5px); margin-left: 19.25px; margin-right: 19.25px; }
+.blglst-templatimg a { margin-bottom: 15px; background-size: cover; background-repeat: no-repeat; background-position: center center; width: 100%; border-radius: 12px; padding-top: 64.124%; }
+.blglst-templat-cols h4 { margin-bottom: 10px; }
+.blglst-templabtn a { font-size: 15px; padding: 10px 15px 14px; background-color: #122750; border-color: #122750; }
+.blglst-title { margin-bottom: 70px; }
+.blglst-templat-inner:not(:last-child){ margin-bottom: 65px; }
+.blglst-templat-cols { position: static !important;    transform: none !important;    transition: none !important;    height: auto !important; }
+.blglst-templat-rows { height: auto !important; }
+.blglstFillter { margin: 0 0 100px; display: flex; flex-wrap: wrap; justify-content: center; }
+.blglstFilll.filters { width: 33.33%; position: relative; z-index: 1111; }
+.blglstFilll.filters label { position: relative; border: 1px solid #122750;    color: #122750;    border-radius: 100px;    padding: 12px 50px 12px 20px;    font-size: 16px;    letter-spacing: 0.25px;    line-height: 1.25;  font-weight: 600;   cursor: pointer;    width: 100%;    display: block; }
+.blglstFilll.filters ul.button-group { display: none; padding: 20px 0; position: absolute;   top: 100%;    width: 100%;    background-color: #F5F7F8;    border-radius: 10px;    margin: 20px 0 0; }
+.blglstFilll.filters ul.button-group li { padding: 7px 15px;    cursor: pointer;    transition: all .3s; } 
+.blglstFilll.filters ul.button-group li.is-checked {  background-color: rgba(34, 122, 247, 1.0); color:#fff; }
+.blglstFilll.filters label:before { content: "";    position: absolute;    top: 50%;    transform: translateY(-50%) rotate(135deg);    right: 22px;    width: 14px;    height: 14px;    border-top: 2px solid #122750;    border-right: 2px solid #122750;    margin-top: -3px; }
+
+
+
+@media(max-width: 991px){
+  .blglst-templat-cols { width: calc(50% - 38.5px); }
+}
+
+@media(max-width: 767px){
+  .blglst-templat-rows, .blglst-templat-cols { margin: 0; width: 100%; }
+  .blglst-templat-inner:not(:last-child){ margin-bottom: 45px; }
+  .blglst-title { margin-bottom: 30px; }
+  
+  
+}

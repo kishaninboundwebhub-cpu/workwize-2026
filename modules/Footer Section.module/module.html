@@ -1,0 +1,204 @@
+{% set moduleID = "#hs_cos_wrapper_{{ name }}" %}
+<div class="footer-sec bgsec bgspace fullwidth">
+ <div class="wrapper">
+  <div class="footer-outer fullwidth">
+   <div class="footer-row w-100 flexwrap">
+    <div class="footer-left">
+     <div class="footer-logo">
+      {% set href = module.logo_link.url.href %}
+      {% if module.logo_link.url.type is equalto "EMAIL_ADDRESS" %}
+      {% set href = "mailto:" + href %}
+      {% endif %}
+      <a href="{{ href }}"
+      {% if module.logo_link.open_in_new_tab %}target="_blank"{% endif %}
+      {% if module.logo_link.rel %}rel="{{ module.logo_link.rel }}"{% endif %}
+      >
+       {% if module.logo.src %}
+       {% set sizeAttrs = 'width="{{ module.logo.width }}" height="{{ module.logo.height }}"' %}
+       {% if module.logo.size_type == 'auto' %}
+       {% set sizeAttrs = 'width="{{ module.logo.width }}" height="{{ module.logo.height }}" style="max-width: 100%; height: auto;"' %}
+       {% elif module.logo.size_type == 'auto_custom_max' %}
+       {% set sizeAttrs = 'width="{{ module.logo.max_width }}" height="{{ module.logo.max_height }}" style="max-width: 100%; height: auto;"' %}
+       {% endif %}
+       {% set loadingAttr = module.logo.loading != 'disabled' ? 'loading="{{ module.logo.loading }}"' : '' %}
+       <img src="{{ module.logo.src }}" alt="{{ module.logo.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
+       {% endif %}
+      </a>   
+     </div>
+     <div class="footer-leftxt">
+       {{ module.text }}
+     </div>
+     
+    </div>
+    <div class="footer-right">
+      <div class="footer-right-inn">
+         {% for item in module.row %} 
+          <div class="footer-menurow">
+          {% for item2 in item.colum %} 
+          <div class="footer-cols">
+           <div class="footer-cltitle">
+            <h3 class="h6">{{ item2.title }}</h3> 
+           </div>
+           <div class="footer-clmenu">
+            {% simple_menu menu_tree="{{ item2.menu }}" %} 
+           </div> 
+          </div>
+          {% endfor %} 
+         </div>
+         {% endfor %}  
+      </div>  
+    </div>
+   </div>   
+    
+  <div class="footer-midd-sec d_flex space_between pt35">
+     <div class="footer-midd-left">
+       <div class="footer-form">
+        {% if module.form_title %}
+          <div class="footer-formtitle">
+           {{ module.form_title }}
+          </div>
+        {% endif %}
+        {% form
+        form_to_use="{{ module.form.form_id }}"
+        response_response_type="{{ module.form.response_type }}"
+        response_message="{{ module.form.message }}"
+        response_redirect_id="{{ module.form.redirect_id }}"
+        response_redirect_url="{{module.form.redirect_url}}"
+        gotowebinar_webinar_key="{{ module.form.gotowebinar_webinar_key }}"
+        %} 
+       </div> 
+    </div>
+    
+    <div class="footer-midd-right">
+       <div class="footer-midd-rinn">
+        <div class="footer-midd-soctt">
+         {{ module.follow_us_title }}
+        </div>
+         
+        <div class="footer-midd-socill d_flex">
+         {% for item in module.social_media %}
+          
+          
+          <div class="footer-midd-sociittt {% if item.social_text %} footer-midd-socii-diff {% endif %}">
+              {% set href = item.link.url.href %}
+              {% if item.link.url.type is equalto "EMAIL_ADDRESS" %}
+                {% set href = "mailto:" + href %}
+              {% elif item.link.url.type is equalto "PHONE_NUMBER" %}
+                {% set href = "tel:" + href %}
+              {% endif %}
+              <a
+                {% if item.link.url.type is equalto "CALL_TO_ACTION"  %}
+                  href="{{ href }}" {# The href here is not escaped as it is not editable and functions as a JavaScript call to the associated CTA #}
+                {% else %}
+                  href="{{ href|escape_url }}"
+                {% endif %}
+                {% if item.link.open_in_new_tab %}
+                  target="_blank"
+                {% endif %}
+                {% if item.link.rel %}
+                  rel="{{ item.link.rel|escape_attr }}"
+                {% endif %}
+                >
+                {% icon
+                name="{{ item.icon.name }}"
+                style="{{ item.icon.type }}"
+                unicode="{{ item.icon.unicode }}"
+                icon_set="{{ item.icon.icon_set }}"
+              %}
+                {{ item.social_text }}
+              </a>
+          </div>
+          {% endfor %}
+          
+          
+        </div>
+       
+       </div> 
+      
+      <div class="footer-bmlogo flexwrap alignCenter">
+        {% for item in module.bottom_logo %}
+        <div class="footer-bmlogoimg">
+        {% if item.link.url.href %}
+          {% set href = item.link.url.href %}
+        	{% if item.link.url.type is equalto "EMAIL_ADDRESS" %}
+        	  {% set href = "mailto:" + href %}
+        	{% endif %}
+        	<a
+        	  {% if item.link.url.type is equalto "CALL_TO_ACTION"  %} href="{{ href }}" {# The href here is not escaped as it is not editable and functions as a JavaScript call to the associated CTA #} {% else %} href="{{ href|escape_url }}" {% endif %}
+        	  {% if item.link.open_in_new_tab %} target="_blank" {% endif %}
+        	  {% if item.link.rel %} rel="{{ item.link.rel|escape_attr }}" {% endif %}
+        	  >
+        	    {% if item.image.src %}
+            		{% set sizeAttrs = 'width="{{ item.image.width|escape_attr }}" height="{{ item.image.height|escape_attr }}"' %}
+            		{% if item.image.size_type == 'auto' %}
+            		{% set sizeAttrs = 'width="{{ item.image.width|escape_attr }}" height="{{ item.image.height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+        		    {% elif item.image.size_type == 'auto_custom_max' %}
+            		{% set sizeAttrs = 'width="{{ item.image.max_width|escape_attr }}" height="{{ item.image.max_height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+            		{% endif %}
+            		{% set loadingAttr = item.image.loading != 'disabled' ? 'loading="{{ item.image.loading|escape_attr }}"' : '' %}
+        		    <img src="{{ item.image.src|escape_url }}" alt="{{ item.image.alt|escape_attr }}" {{ loadingAttr }} {{ sizeAttrs }}>
+            	{% endif %}
+        	</a>
+        {% else %}
+          {% if item.image.src %}
+        		{% set sizeAttrs = 'width="{{ item.image.width|escape_attr }}" height="{{ item.image.height|escape_attr }}"' %}
+        		{% if item.image.size_type == 'auto' %}
+        		{% set sizeAttrs = 'width="{{ item.image.width|escape_attr }}" height="{{ item.image.height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+        		{% elif item.image.size_type == 'auto_custom_max' %}
+        		{% set sizeAttrs = 'width="{{ item.image.max_width|escape_attr }}" height="{{ item.image.max_height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+        		{% endif %}
+        		{% set loadingAttr = item.image.loading != 'disabled' ? 'loading="{{ item.image.loading|escape_attr }}"' : '' %}
+        		<img src="{{ item.image.src|escape_url }}" alt="{{ item.image.alt|escape_attr }}" {{ loadingAttr }} {{ sizeAttrs }}>
+        	{% endif %}
+        {% endif %}
+      </div>        
+        {% endfor %}
+      </div>
+      
+      
+    </div>
+    
+    
+  </div>
+    
+    
+    
+    
+    
+    
+    
+   <div class="footer-copyrightrow w-100 flexwrap alignCenter">
+     <div class="footer-left-copp">  
+       <div class="footer-copyright">
+          {{ module.copy_right_text }}
+        </div>
+        <div class="footer-clang">
+          {% language_switcher display_mode='{{ module.display_mode }}' %}
+        </div>
+     </div>
+    <div class="footer-rght">      
+      {% simple_menu menu_tree="{{ module.menu_copy }}" %}
+    </div>
+   </div> 
+  </div> 
+ </div> 
+</div>
+
+
+{% require_css %}
+
+<style>
+  {% scope_css %}
+  .footer-sec { {{ module.style.spacing.desktop.css }} }
+  
+  
+ @media (max-width: 991px) {
+    .footer-sec { {{ module.style.spacing.tablet.css }} }
+ }
+  
+ @media (max-width: 767px) {
+    .footer-sec { {{ module.style.spacing.mobile.css }} }
+ } 
+  {% end_scope_css %}
+</style>
+{% end_require_css %}

@@ -1,0 +1,384 @@
+[ {
+  "id" : "c7e216d1-86ab-69c7-e416-e53a4768b0fc",
+  "name" : "style",
+  "label" : "Style",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "542c716f-3ddc-ce46-52af-61510d4aa073",
+    "name" : "spacing",
+    "label" : "Spacing",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "ea44dfc5-1e56-7a52-d821-957ee0ac552a",
+      "name" : "desktop",
+      "label" : "Desktop",
+      "required" : false,
+      "locked" : false,
+      "type" : "spacing",
+      "display_width" : null,
+      "default" : {
+        "padding" : {
+          "top" : {
+            "value" : 148,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 120,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      }
+    }, {
+      "id" : "25eeba74-ff37-fa93-7c6e-ad9d021b85f9",
+      "name" : "tablet",
+      "label" : "Tablet",
+      "required" : false,
+      "locked" : false,
+      "type" : "spacing",
+      "display_width" : null,
+      "default" : {
+        "padding" : {
+          "top" : {
+            "value" : 140,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 80,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      }
+    }, {
+      "id" : "74843e76-10bb-6439-0bd6-29d33b72b424",
+      "name" : "mobile",
+      "label" : "Mobile",
+      "required" : false,
+      "locked" : false,
+      "type" : "spacing",
+      "display_width" : null,
+      "default" : {
+        "padding" : {
+          "top" : {
+            "value" : 120,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 60,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        },
+        "margin" : {
+          "top" : {
+            "value" : null,
+            "units" : null
+          },
+          "bottom" : {
+            "value" : 0,
+            "units" : "px"
+          }
+        }
+      }
+    } ],
+    "tab" : "STYLE",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : {
+      "desktop" : {
+        "padding" : {
+          "top" : {
+            "value" : 148,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 120,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      },
+      "tablet" : {
+        "padding" : {
+          "top" : {
+            "value" : 140,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 80,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      },
+      "mobile" : {
+        "padding" : {
+          "top" : {
+            "value" : 120,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 60,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        },
+        "margin" : {
+          "top" : {
+            "value" : null,
+            "units" : null
+          },
+          "bottom" : {
+            "value" : 0,
+            "units" : "px"
+          }
+        }
+      }
+    }
+  } ],
+  "tab" : "STYLE",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "spacing" : {
+      "desktop" : {
+        "padding" : {
+          "top" : {
+            "value" : 148,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 120,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      },
+      "tablet" : {
+        "padding" : {
+          "top" : {
+            "value" : 140,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 80,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      },
+      "mobile" : {
+        "padding" : {
+          "top" : {
+            "value" : 120,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 60,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        },
+        "margin" : {
+          "top" : {
+            "value" : null,
+            "units" : null
+          },
+          "bottom" : {
+            "value" : 0,
+            "units" : "px"
+          }
+        }
+      }
+    }
+  }
+}, {
+  "id" : "bdfc5b40-fdef-6941-c7dd-d4fe2c0c84ab",
+  "name" : "content",
+  "label" : "Content",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "4a83f8e6-96e1-e70f-d041-bf07d58419f9",
+    "name" : "title",
+    "label" : "Title",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Benefit From Local IT Services in"
+  }, {
+    "id" : "3515da69-1bbf-d5b9-4cd3-fb51114c2bbc",
+    "name" : "text",
+    "label" : "Text",
+    "required" : false,
+    "locked" : false,
+    "type" : "richtext",
+    "display_width" : null,
+    "default" : "<p>Looking for a reliable IT outsourcing service in {{ dynamic_page_hubdb_row.hs_name }}?</p>\n<p>Workwize is an IT outsourcing company that reduces manual workload by handling the entire lifecycle management of global IT hardware.</p>\n<p>From IT equipment procurement, deployment, asset management, retrieval, and disposal across the {{ dynamic_page_hubdb_row.hs_name }} are streamlined through automated and centralized workflows.</p>\n<p>Here's why you need a dedicated team to manage your IT equipment lifecycle:</p>\n<p>1. If labor and operational costs, like customs fees, currency fluctuations, and shipping costs, are draining resources (add time difference to it!)</p>\n<p>2. If managing assets from repairs to replacements are showing up as hidden costs</p>\n<p>3. If retrieving assets from remote employees across the globe is a nightmare</p>\n<p>..then you need a third-party provider to streamline your IT hardware lifecycle and, eventually, business process.</p>"
+  }, {
+    "id" : "2866f932-8f95-2f6d-6740-60fd8eec1337",
+    "name" : "button_text",
+    "label" : "Button Text",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Request a Demo"
+  }, {
+    "id" : "a3224b2a-91c1-1ad4-ba87-914b6fd5fed2",
+    "name" : "button_link",
+    "label" : "Button Link",
+    "required" : false,
+    "locked" : false,
+    "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG", "CALL_TO_ACTION", "PHONE_NUMBER", "WHATSAPP_NUMBER", "PAYMENT" ],
+    "show_advanced_rel_options" : false,
+    "type" : "link",
+    "display_width" : null,
+    "default" : {
+      "url" : {
+        "content_id" : null,
+        "href" : "#requestdemo",
+        "type" : "EXTERNAL"
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    }
+  }, {
+    "id" : "0bea2676-f0e2-4825-7d0c-f6d2cf3765e8",
+    "name" : "select_image_option",
+    "label" : "Select Image Option",
+    "required" : false,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "flag", "Flag" ], [ "image", "Image" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "flag"
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "title" : "Benefit From Local IT Services in",
+    "text" : "<p>Looking for a reliable IT outsourcing service in {{ dynamic_page_hubdb_row.hs_name }}?</p>\n<p>Workwize is an IT outsourcing company that reduces manual workload by handling the entire lifecycle management of global IT hardware.</p>\n<p>From IT equipment procurement, deployment, asset management, retrieval, and disposal across the {{ dynamic_page_hubdb_row.hs_name }} are streamlined through automated and centralized workflows.</p>\n<p>Here's why you need a dedicated team to manage your IT equipment lifecycle:</p>\n<p>1. If labor and operational costs, like customs fees, currency fluctuations, and shipping costs, are draining resources (add time difference to it!)</p>\n<p>2. If managing assets from repairs to replacements are showing up as hidden costs</p>\n<p>3. If retrieving assets from remote employees across the globe is a nightmare</p>\n<p>..then you need a third-party provider to streamline your IT hardware lifecycle and, eventually, business process.</p>",
+    "button_text" : "Request a Demo",
+    "button_link" : {
+      "url" : {
+        "content_id" : null,
+        "href" : "#requestdemo",
+        "type" : "EXTERNAL"
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    },
+    "select_image_option" : "flag"
+  }
+}, {
+  "id" : "ed49b96e-d412-99cb-e322-a5ecc7161e49",
+  "name" : "styles",
+  "label" : "Styles",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "1fefaf1a-2725-526b-5cff-17532d2de935",
+    "name" : "background_color",
+    "label" : "Background Color",
+    "required" : false,
+    "locked" : false,
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#d2f7eb",
+      "opacity" : 100
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "background_color" : {
+      "color" : "#d2f7eb",
+      "opacity" : 100
+    }
+  }
+} ]

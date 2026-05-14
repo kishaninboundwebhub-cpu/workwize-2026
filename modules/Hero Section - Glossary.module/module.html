@@ -1,0 +1,160 @@
+{% if module.show_hide_ %}
+{% set moduleId = '#hs_cos_wrapper_{{ name }}' %} 
+
+{% set search_page = module.results.use_custom_search_results_template is truthy and module.results.path_id ? content_by_id(module.results.path_id).absolute_url : site_settings.content_search_results_page_path %}
+{% unless (search_page is string_containing "//") %}
+  {% set search_page = "/" ~ search_page %}
+{% endunless %}
+
+{% set search_page = search_page|regex_replace("http:", "") %}
+<div class="fullwidth hrpring-sec hrglossary-sec bgsec space-sec{% if module.add_shape_image %} hrshape{% endif %}">
+ <div class="wrapper">
+  <div class="secinner hrpring-inner hrglos-inner">
+   {% if module.text and module.title %}   
+   <div class="secheader hrpring-header text-center">
+    {% if module.title %} 
+    <div class="sectitle">
+     <h1>{{ module.title }}</h1> 
+    </div>
+    {% endif %}
+    {% if module.text %}  
+    <div class="sectxt hrpring-txt"> 
+     {{ module.text }} 
+    </div>
+    {% endif %} 
+   </div>
+   {% endif %} 
+   {% if module.button %} 
+   <div class="secbtns flexwrap justifyCenter">
+    {% for item in module.button %} 
+    <div class="secbtn {{ item.button_choice }}">
+     {% set href = item.button_link.url.href %}
+     {% if item.button_link.url.type is equalto "EMAIL_ADDRESS" %}
+     {% set href = "mailto:" + href %}
+     {% endif %}
+     <a href="{{ href }}"
+     {% if item.button_link.open_in_new_tab %}target="_blank"{% endif %}
+     {% if item.button_link.rel %}rel="{{ item.button_link.rel }}"{% endif %}
+     >
+      {{ item.button_text }}
+     </a> 
+    </div>
+    {% endfor %} 
+   </div>  
+   {% endif %} 
+   
+   <div class="hrglos-filter">
+     <div class="hrglossary-search">
+       <div class="hs-search-field">
+        <div class="hs-search-field__bar">
+          <form data-hs-do-not-collect="true" action="{{ search_page }}">
+            {% if module.field_label %}
+              <label for="term">{{ module.field_label }}</label>
+            {% endif %}
+            <input type="text" class="hs-search-field__input" name="term" autocomplete="off" aria-label="{{ module.field_label || "Search" }}" placeholder="{{ module.placeholder }}">
+
+            {% if module.content_types.website_pages %}
+              <input type="hidden" name="type" value="SITE_PAGE">
+            {% endif %}
+            {% if module.content_types.landing_pages %}
+              <input type="hidden" name="type" value="LANDING_PAGE">
+            {% endif %}
+            {% if module.content_types.blog_posts %}
+              <input type="hidden" name="type" value="BLOG_POST">
+              <input type="hidden" name="type" value="LISTING_PAGE">
+            {% endif %}
+            {% if module.content_types.knowledge_articles %}
+              <input type="hidden" name="type" value="KNOWLEDGE_ARTICLE">
+            {% endif %}
+
+            {% if module.include_search_button %}
+              <button aria-label="Search">
+                 {% icon name="search" style="solid" %}
+            </button>
+            {% endif %}
+          </form>
+        </div>
+        <ul class="hs-search-field__suggestions"></ul>
+        </div> 
+      </div>
+     <div class="hrroots-alphabet text-center">
+     <ul class="hrroots flexwrap">
+       <li><a href="#num">#</a></li>
+       <li><a href="#a">A</a></li>
+       <li><a href="#b">B</a></li>
+       <li><a href="#c">C</a></li>
+       <li><a href="#d">D</a></li>
+       <li><a href="#e">E</a></li>
+       <li><a href="#f">F</a></li>
+       <li><a href="#g">G</a></li>
+       <li><a href="#h">H</a></li>
+       <li><a href="#i">I</a></li>
+       <li><a href="#j">J</a></li>
+       <li><a href="#k">K</a></li>
+       <li><a href="#l">L</a></li>
+       <li><a href="#m">M</a></li>
+       <li><a href="#n">N</a></li>
+       <li><a href="#o">O</a></li>
+       <li><a href="#p">P</a></li>
+       <li><a href="#q">Q</a></li>
+       <li><a href="#r">R</a></li>
+       <li><a href="#s">S</a></li>
+       <li><a href="#t">T</a></li>
+       <li><a href="#u">U</a></li>
+       <li><a href="#v">V</a></li>
+       <li><a href="#w">W</a></li>
+       <li><a href="#x">X</a></li>
+       <li><a href="#y">Y</a></li>
+       <li><a href="#z">Z</a></li>
+     </ul>  
+   </div>
+   </div>
+  </div>    
+  
+ </div>
+</div>
+
+
+{% require_css %}
+<style>
+   
+  {{ moduleId }} .bgsec { {% if module.style.select_background == 'bg_color' %}
+    background-color: rgba({{ module.style.background_color.color|convert_rgb }},{{ module.style.background_color.opacity ~ '%' }});
+    {% elif module.style.select_background == 'bg_image' %}
+    {{ module.style.background_image.css }} background-repeat: no-repeat;
+    {% elif module.style.select_background == 'bg_gradient' %}
+    background: {{ module.style.background_gradient.css }};
+    {% endif %} }
+  
+  {{ moduleId }} .space-sec { {{ module.style.spacing.desktop.css }}; }
+  
+  {{ moduleId }} .sectitle h1,
+  {{ moduleId }} .sectitle h2 , 
+  {{ moduleId }} .sectitle h3 , 
+  {{ moduleId }} .sectitle h4 , 
+  {{ moduleId }} .sectitle h5 ,
+  {{ moduleId }} .sectitle h6 { color: rgba({{ module.color_settings.title_color.color|convert_rgb }},{{ module.color_settings.title_color.opacity ~ '%' }}); }
+  {{ moduleId }} .sectxt , {{ moduleId }} .sectxt * { color: rgba({{ module.color_settings.text_color.color|convert_rgb }},{{ module.color_settings.text_color.opacity ~ '%' }}); } 
+  
+  {% for item in module.button %} 
+   {{ moduleId }} .secbtn:nth-child({{ loop.index }}) a { background-color: rgba({{ item.background_color.color|convert_rgb }},{{ item.background_color.opacity ~ '%' }}); border-color: rgba({{ item.border_color.color|convert_rgb }},{{ item.border_color.opacity ~ '%' }}); color: rgba({{ item.text_color.color|convert_rgb }},{{ item.text_color.opacity ~ '%' }}); }
+   {{ moduleId }} .secbtn:nth-child({{ loop.index }}) a:hover { background-color: rgba({{ item.background_color_hover_.color|convert_rgb }},{{ item.background_color_hover_.opacity ~ '%' }}); border-color: rgba({{ item.border_color_hover_.color|convert_rgb }},{{ item.border_color_hover_.opacity ~ '%' }}); color: rgba({{ item.text_color_hover_.color|convert_rgb }},{{ item.text_color_hover_.opacity ~ '%' }}); }  
+  {% endfor %}
+  
+  {% if module.left_shape.src %}
+  {{ moduleId }} .hrpring-sec:before { content: ''; background-image: url({{ module.left_shape.src }}); }
+  {% endif %}
+  {% if module.right_shape.src %}
+  {{ moduleId }} .hrpring-sec:after { content: ''; background-image: url({{ module.right_shape.src }}); }
+  {% endif %}
+  {% if module.max_width %}
+   {{ moduleId }} .hrpring-header { max-width: {{ module.max_width }}px; }
+  {% endif %}
+  
+  @media(max-width: 991px){ {{ moduleId }} .space-sec { {{ module.style.spacing.tablet.css }}; } }
+  
+  @media(max-width: 767px){ {{ moduleId }} .space-sec { {{ module.style.spacing.mobile.css }}; } }
+  
+</style>
+{% end_require_css %}
+{% endif %}

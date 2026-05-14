@@ -1,0 +1,8 @@
+{
+  "global" : false,
+  "content_types" : [ "QUOTE", "CASE_STUDY", "LANDING_PAGE", "SITE_PAGE", "CUSTOMER_PORTAL", "BLOG_LISTING", "BLOG_POST" ],
+  "host_template_types" : [ "PAGE", "BLOG_LISTING", "BLOG_POST" ],
+  "module_id" : 392170757314,
+  "label" : "Calculate Slider Section",
+  "is_available_for_new_content" : true
+}

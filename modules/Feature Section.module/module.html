@@ -1,0 +1,119 @@
+{% if module.show_hide_ %}
+{% set moduleId = '#hs_cos_wrapper_{{ name }}' %}
+<div class="fullwidth bgsec space-sec FeatureSection">
+  <div class="wrapper">
+    <div class="secinner">
+      {% if module.text or module.title %}   
+      <div class="secheader FeatureInSec">
+        {% if module.title %} 
+        <div class="sectitle {% if not module.text %} removespace{% endif %}">
+          <h2>{{ module.title }}</h2> 
+        </div>
+        {% endif %}
+        {% if module.text %}  
+        <div class="sectxt"> 
+          {{ module.text }} 
+        </div>
+        {% endif %} 
+      </div>
+      {% endif %} 
+
+      <div class="FeatureBoxSec   {% if module.custom_box_group|length > "3" %} Featureslider {% endif %}  {% if module.feature_box_choice == "custom" %} {% elif module.feature_box_choice == "blog" %} Featureslider {% endif %}">
+        {% if module.feature_box_choice == "custom" %}
+        {% for item in module.custom_box_group %}
+        <div class="FeatureBox">
+          <div class="FeatureBoximg" style="background-image:url({{ item.box_image.src|escape_url }})"> 
+
+          </div>
+          <div class="FeatureBoxCntCol">
+            <div class="FeatureBoxTitle">
+              <h5>{{ item.box_title }}</h5>
+            </div>
+            <div class="FeatureBoxContent">
+              {{ item.box_content }}
+            </div>
+            <div class="FeatureBoxBtn">
+              {% set href = item.button_link.url.href %}
+              {% if item.button_link.url.type is equalto "EMAIL_ADDRESS" %}
+              {% set href = "mailto:" + href %}
+              {% endif %}
+              <a
+                 {% if item.button_link.url.type is equalto "CALL_TO_ACTION"  %}
+                 href="{{ href }}" {# The href here is not escaped as it is not editable and functions as a JavaScript call to the associated CTA #}
+                 {% else %}
+                 href="{{ href|escape_url }}"
+                 {% endif %}
+                 {% if item.button_link.open_in_new_tab %}
+                 target="_blank"
+                 {% endif %}
+                 {% if item.button_link.rel %}
+                 rel="{{ item.button_link.rel|escape_attr }}"
+                 {% endif %}
+                 >
+                {{ item.button_text }}
+              </a>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+        {% elif module.feature_box_choice == "blog" %}
+        {% set pop_posts = blog_recent_posts('module.select_blog', 10) %}
+            {% for pop_post in pop_posts %}
+        <div class="FeatureBox FeatureBlogpostBox">
+          <div class="FeatureBlogpostBoxIn">
+            
+          
+          <div class="FeatureBoximg" style="background-image:url({{ pop_post.featured_image }})"> 
+
+          </div>
+          <div class="FeatureBoxCntCol">
+            <div class="FeatureBoxTitle">
+              <h5> {{ pop_post.name }}</h5>
+            </div>
+            <div class="FeatureBoxContent">
+              {{ pop_post.post_list_content|striptags|truncatehtml(90, '..' , false)  }}
+            </div>
+            <div class="FeatureBoxBtn">
+              <a href="{{ pop_post.absolute_url }}">Learn More</a>
+            </div>
+          </div>
+            </div>
+        </div>
+      {% endfor %}
+
+        {% endif %}
+      </div>
+
+    </div>    
+  </div>
+</div>
+
+
+{% require_css %}
+<style>
+  {{ moduleId }} .bgsec { {% if module.style.select_background == 'bg_color' %}
+    background-color: rgba({{ module.style.background_color.color|convert_rgb }},{{ module.style.background_color.opacity ~ '%' }});
+    {% elif module.style.select_background == 'bg_image' %}
+    {{ module.style.background_image.css }} background-repeat: no-repeat;
+    {% elif module.style.select_background == 'bg_gradient' %}
+    background: {{ module.style.background_gradient.css }};
+    {% endif %} }
+
+  {{ moduleId }} .space-sec { {{ module.style.spacing.desktop.css }}; }
+
+  {{ moduleId }} .sectitle h1,
+  {{ moduleId }} .sectitle h2 , 
+  {{ moduleId }} .sectitle h3 , 
+  {{ moduleId }} .sectitle h4 , 
+  {{ moduleId }} .sectitle h5 ,
+  {{ moduleId }} .sectitle h6 { color: rgba({{ module.color_settings.title_color.color|convert_rgb }},{{ module.color_settings.title_color.opacity ~ '%' }}); }
+  {{ moduleId }} .sectxt , {{ moduleId }} .sectxt * { color: rgba({{ module.color_settings.text_color.color|convert_rgb }},{{ module.color_settings.text_color.opacity ~ '%' }}); } 
+
+
+  @media(max-width: 991px){ {{ moduleId }} .space-sec { {{ module.style.spacing.tablet.css }}; } }
+
+  @media(max-width: 767px){ {{ moduleId }} .space-sec { {{ module.style.spacing.mobile.css }}; } }
+
+</style>
+{% end_require_css %}
+{% endif %}

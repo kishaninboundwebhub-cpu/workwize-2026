@@ -1,0 +1,78 @@
+{% if module.show_hide_ %}
+{% set moduleId = '#hs_cos_wrapper_{{ name }}' %}
+<div class="{{name}} fullwidth bgsec space-sec multistepFormSec">
+  <div class="wrapper">
+    <div class="secinner multistepFormInner">
+      <div class="multistepFormLTCol">
+        {% if  module.tag  %}
+        <div class="MstepFormTag">
+          <p>{{ module.tag }}</p>
+        </div>
+        {% endif %}
+        {% if  module.title  %}
+        <div class="MstepFormTitle">
+          <h1>{{ module.title }}</h1>
+        </div>
+        {% endif %}
+        {% if  module.text  %}
+        <div class="MstepFormContent">
+          {{ module.text }}
+        </div>
+        {% endif %}
+        <div class="MstepFormBTN {{ module.button.button_choice }}">
+          {% set href = module.button.button_link.url.href %}
+          {% if module.button.button_link.url.type is equalto "EMAIL_ADDRESS" %}
+          {% set href = "mailto:" + href %}
+          {% endif %}
+          <a
+             {% if module.button.button_link.url.type is equalto "CALL_TO_ACTION"  %}
+             href="{{ href }}" {# The href here is not escaped as it is not editable and functions as a JavaScript call to the associated CTA #}
+             {% else %}
+             href="{{ href|escape_url }}"
+             {% endif %}
+             {% if module.button.button_link.open_in_new_tab %}
+             target="_blank"
+             {% endif %}
+             {% if module.button.button_link.rel %}
+             rel="{{ module.button.button_link.rel|escape_attr }}"
+             {% endif %} class="popupform"
+             >
+            {{ module.button.button_text }}
+          </a>
+        </div>
+      </div>
+      {% if module.right_col_image.src %}
+      <div class="multistepFormRTCol">
+        <img src="{{ module.right_col_image.src|escape_url }}" alt="{{ module.right_col_image.alt|escape_attr }}" style="border-radius : {{ module.image_corners }}px;">
+      </div>
+      {% endif %}
+
+    </div>    
+   
+  </div>
+</div>
+
+
+{% require_css %}
+<style>
+  {{ moduleId }} .bgsec { {% if module.style.select_background == 'bg_color' %}
+    background-color: rgba({{ module.style.background_color.color|convert_rgb }},{{ module.style.background_color.opacity ~ '%' }});
+    {% elif module.style.select_background == 'bg_image' %}
+    {{ module.style.background_image.css }} background-repeat: no-repeat;
+    {% elif module.style.select_background == 'bg_gradient' %}
+    background: {{ module.style.background_gradient.css }};
+    {% endif %} }
+
+  {{ moduleId }} .space-sec { {{ module.style.spacing.desktop.css }}; }
+
+
+
+
+  @media(max-width: 991px){ {{ moduleId }} .space-sec { {{ module.style.spacing.tablet.css }}; } }
+
+  @media(max-width: 767px){ {{ moduleId }} .space-sec { {{ module.style.spacing.mobile.css }}; } }
+
+</style>
+{% end_require_css %}
+{% endif %}
+

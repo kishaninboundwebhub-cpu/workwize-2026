@@ -1,0 +1,699 @@
+[ {
+  "id" : "f904cca8-4d01-7544-c91b-d79e710476d3",
+  "name" : "style",
+  "label" : "Style",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "bb6182f0-1f54-957b-efc6-fb72c6760e80",
+    "name" : "desktop_spacing",
+    "label" : "Desktop Spacing",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "ee2aae81-dffd-a424-bf54-c97b9474e7fb",
+      "name" : "spacing_field",
+      "label" : "Spacing",
+      "required" : false,
+      "locked" : false,
+      "type" : "spacing",
+      "display_width" : null,
+      "default" : {
+        "padding" : {
+          "top" : {
+            "value" : 50,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 50,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      }
+    } ],
+    "tab" : "STYLE",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : {
+      "spacing_field" : {
+        "padding" : {
+          "top" : {
+            "value" : 50,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 50,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      }
+    }
+  }, {
+    "id" : "0074895f-68e7-44c1-d4cf-bb93204e494d",
+    "name" : "tablet_spacing",
+    "label" : "Tablet Spacing",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "a543bb02-fc22-8b8c-c2df-5ac4668a1538",
+      "name" : "spacing_field",
+      "label" : "Spacing",
+      "required" : false,
+      "locked" : false,
+      "type" : "spacing",
+      "display_width" : null,
+      "default" : {
+        "padding" : {
+          "top" : {
+            "value" : 50,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 50,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      }
+    } ],
+    "tab" : "STYLE",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : {
+      "spacing_field" : {
+        "padding" : {
+          "top" : {
+            "value" : 50,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 50,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      }
+    }
+  }, {
+    "id" : "61e9cf70-254b-0ea8-ac17-d1f371c22aa3",
+    "name" : "mobile_spacing",
+    "label" : "Mobile Spacing",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "83e952a2-479e-29e8-58b2-f376b11cd41e",
+      "name" : "spacing_field",
+      "label" : "Spacing",
+      "required" : false,
+      "locked" : false,
+      "type" : "spacing",
+      "display_width" : null,
+      "default" : {
+        "padding" : {
+          "top" : {
+            "value" : 50,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 50,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      }
+    } ],
+    "tab" : "STYLE",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : {
+      "spacing_field" : {
+        "padding" : {
+          "top" : {
+            "value" : 50,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 50,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      }
+    }
+  } ],
+  "tab" : "STYLE",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "desktop_spacing" : {
+      "spacing_field" : {
+        "padding" : {
+          "top" : {
+            "value" : 50,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 50,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      }
+    },
+    "tablet_spacing" : {
+      "spacing_field" : {
+        "padding" : {
+          "top" : {
+            "value" : 50,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 50,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      }
+    },
+    "mobile_spacing" : {
+      "spacing_field" : {
+        "padding" : {
+          "top" : {
+            "value" : 50,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 50,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      }
+    }
+  }
+}, {
+  "id" : "17bace81-f129-2839-a8a9-f4d23c09ba7c",
+  "name" : "content",
+  "label" : "Default Content",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "22753d55-275f-4af6-6fa8-960279c1722f",
+    "name" : "title",
+    "label" : "Title",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Why Integrate {{ dynamic_page_hubdb_row.hs_name }} with Workwize?"
+  }, {
+    "id" : "98f07ff9-5fe8-2963-4e91-df330c2b85b3",
+    "name" : "col_box",
+    "label" : "Col Box",
+    "required" : false,
+    "locked" : false,
+    "occurrence" : {
+      "min" : null,
+      "max" : null,
+      "sorting_label_field" : null,
+      "default" : 3
+    },
+    "children" : [ {
+      "id" : "8a5ff83c-89ba-dff9-cc48-320a293a7444",
+      "name" : "title",
+      "label" : "Title",
+      "required" : false,
+      "locked" : false,
+      "allow_new_line" : false,
+      "type" : "text",
+      "display_width" : null,
+      "default" : "Automate Onboarding & Offboarding"
+    }, {
+      "id" : "7e977b0e-d547-d59f-cb5f-f07be92ae297",
+      "name" : "text",
+      "label" : "Text",
+      "required" : false,
+      "locked" : false,
+      "type" : "richtext",
+      "display_width" : null,
+      "default" : "<p>Easily link employee records with IT asset management workflows to ensure that employees are equipped with the right hardware from day one and that devices are securely retrieved when they leave.</p>"
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : [ {
+      "title" : "Automate Onboarding & Offboarding",
+      "text" : "<p>Easily link employee records with IT asset management workflows to ensure that employees are equipped with the right hardware from day one and that devices are securely retrieved when they leave.</p>"
+    }, {
+      "title" : "Automate Onboarding & Offboarding",
+      "text" : "<p>Easily link employee records with IT asset management workflows to ensure that employees are equipped with the right hardware from day one and that devices are securely retrieved when they leave.</p>"
+    }, {
+      "title" : "Automate Onboarding & Offboarding",
+      "text" : "<p>Easily link employee records with IT asset management workflows to ensure that employees are equipped with the right hardware from day one and that devices are securely retrieved when they leave.</p>"
+    } ]
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "title" : "Why Integrate {{ dynamic_page_hubdb_row.hs_name }} with Workwize?",
+    "col_box" : [ {
+      "title" : "Automate Onboarding & Offboarding",
+      "text" : "<p>Easily link employee records with IT asset management workflows to ensure that employees are equipped with the right hardware from day one and that devices are securely retrieved when they leave.</p>"
+    }, {
+      "title" : "Automate Onboarding & Offboarding",
+      "text" : "<p>Easily link employee records with IT asset management workflows to ensure that employees are equipped with the right hardware from day one and that devices are securely retrieved when they leave.</p>"
+    }, {
+      "title" : "Automate Onboarding & Offboarding",
+      "text" : "<p>Easily link employee records with IT asset management workflows to ensure that employees are equipped with the right hardware from day one and that devices are securely retrieved when they leave.</p>"
+    } ]
+  }
+}, {
+  "id" : "6b7ae7c0-f997-a960-3da9-dc13bb4231ff",
+  "name" : "mdm_content",
+  "label" : "MDM Content",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "2603b5b1-0254-cd29-a037-50a743574e72",
+    "name" : "title",
+    "label" : "Title",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Why Integrate {{ dynamic_page_hubdb_row.hs_name }} with Workwize?"
+  }, {
+    "id" : "de6882e7-586e-c2cd-60a1-c0635ebcc685",
+    "name" : "col_box",
+    "label" : "Col Box",
+    "required" : false,
+    "locked" : false,
+    "occurrence" : {
+      "min" : null,
+      "max" : null,
+      "sorting_label_field" : null,
+      "default" : 3
+    },
+    "children" : [ {
+      "id" : "57eb1568-493a-2846-65ae-b600097d8526",
+      "name" : "title",
+      "label" : "Title",
+      "required" : false,
+      "locked" : false,
+      "allow_new_line" : false,
+      "type" : "text",
+      "display_width" : null,
+      "default" : "Ensure employees receive pre-configured devices on day one"
+    }, {
+      "id" : "2fc01780-520d-a860-49a5-a499935cfacb",
+      "name" : "text",
+      "label" : "Text",
+      "required" : false,
+      "locked" : false,
+      "type" : "richtext",
+      "display_width" : null,
+      "default" : "<p>Devices are enrolled in Apple Business Manager (ABM) or Windows Autopilot, assigned to Jamf, and configured remotely before shipment.</p>"
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : [ {
+      "title" : "Ensure employees receive pre-configured devices on day one",
+      "text" : "<p>Devices are enrolled in Apple Business Manager (ABM) or Windows Autopilot, assigned to Jamf, and configured remotely before shipment.</p>"
+    }, {
+      "title" : "Ensure employees receive pre-configured devices on day one",
+      "text" : "<p>Devices are enrolled in Apple Business Manager (ABM) or Windows Autopilot, assigned to Jamf, and configured remotely before shipment.</p>"
+    }, {
+      "title" : "Ensure employees receive pre-configured devices on day one",
+      "text" : "<p>Devices are enrolled in Apple Business Manager (ABM) or Windows Autopilot, assigned to Jamf, and configured remotely before shipment.</p>"
+    } ]
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "title" : "Why Integrate {{ dynamic_page_hubdb_row.hs_name }} with Workwize?",
+    "col_box" : [ {
+      "title" : "Ensure employees receive pre-configured devices on day one",
+      "text" : "<p>Devices are enrolled in Apple Business Manager (ABM) or Windows Autopilot, assigned to Jamf, and configured remotely before shipment.</p>"
+    }, {
+      "title" : "Ensure employees receive pre-configured devices on day one",
+      "text" : "<p>Devices are enrolled in Apple Business Manager (ABM) or Windows Autopilot, assigned to Jamf, and configured remotely before shipment.</p>"
+    }, {
+      "title" : "Ensure employees receive pre-configured devices on day one",
+      "text" : "<p>Devices are enrolled in Apple Business Manager (ABM) or Windows Autopilot, assigned to Jamf, and configured remotely before shipment.</p>"
+    } ]
+  }
+}, {
+  "id" : "97fef2e8-26e6-a58a-ad55-05d181304e5f",
+  "name" : "productivity_content",
+  "label" : "Productivity Content",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "0f8198a5-169c-5270-7fdd-64414da9b5ab",
+    "name" : "title",
+    "label" : "Title",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Why Integrate {{ dynamic_page_hubdb_row.hs_name }} with Workwize?"
+  }, {
+    "id" : "3e5c5d59-a0d0-4497-d244-71b292a194dc",
+    "name" : "col_box",
+    "label" : "Col Box",
+    "required" : false,
+    "locked" : false,
+    "occurrence" : {
+      "min" : null,
+      "max" : null,
+      "sorting_label_field" : null,
+      "default" : 3
+    },
+    "children" : [ {
+      "id" : "b5b5281d-99d0-13e8-c4b8-7ebbf21cade0",
+      "name" : "title",
+      "label" : "Title",
+      "required" : false,
+      "locked" : false,
+      "allow_new_line" : false,
+      "type" : "text",
+      "display_width" : null,
+      "default" : "Slack-Based Notifications"
+    }, {
+      "id" : "fe5fbb08-8464-35e1-4fda-17358b13eb5a",
+      "name" : "text",
+      "label" : "Text",
+      "required" : false,
+      "locked" : false,
+      "type" : "richtext",
+      "display_width" : null,
+      "default" : "<p>Get real-time updates on orders, shipments, onboarding, and offboarding progress—all delivered directly in Slack.</p>"
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : [ {
+      "title" : "Slack-Based Notifications",
+      "text" : "<p>Get real-time updates on orders, shipments, onboarding, and offboarding progress—all delivered directly in Slack.</p>"
+    }, {
+      "title" : "Slack-Based Notifications",
+      "text" : "<p>Get real-time updates on orders, shipments, onboarding, and offboarding progress—all delivered directly in Slack.</p>"
+    }, {
+      "title" : "Slack-Based Notifications",
+      "text" : "<p>Get real-time updates on orders, shipments, onboarding, and offboarding progress—all delivered directly in Slack.</p>"
+    } ]
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "title" : "Why Integrate {{ dynamic_page_hubdb_row.hs_name }} with Workwize?",
+    "col_box" : [ {
+      "title" : "Slack-Based Notifications",
+      "text" : "<p>Get real-time updates on orders, shipments, onboarding, and offboarding progress—all delivered directly in Slack.</p>"
+    }, {
+      "title" : "Slack-Based Notifications",
+      "text" : "<p>Get real-time updates on orders, shipments, onboarding, and offboarding progress—all delivered directly in Slack.</p>"
+    }, {
+      "title" : "Slack-Based Notifications",
+      "text" : "<p>Get real-time updates on orders, shipments, onboarding, and offboarding progress—all delivered directly in Slack.</p>"
+    } ]
+  }
+}, {
+  "id" : "f9fa49a8-a1d5-c1fd-e78f-a84a286244cd",
+  "name" : "identity_content",
+  "label" : "Identity Content",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "f7bc3e08-a454-379c-1f0d-a704f19a1dbe",
+    "name" : "title",
+    "label" : "Title",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Why Integrate {{ dynamic_page_hubdb_row.hs_name }} with Workwize?"
+  }, {
+    "id" : "057d0b0a-c307-961e-bf57-ca5748a062c3",
+    "name" : "col_box",
+    "label" : "Col Box",
+    "required" : false,
+    "locked" : false,
+    "occurrence" : {
+      "min" : null,
+      "max" : null,
+      "sorting_label_field" : null,
+      "default" : 3
+    },
+    "children" : [ {
+      "id" : "f59a63eb-7e11-7a3f-cf9d-755640acbf45",
+      "name" : "title",
+      "label" : "Title",
+      "required" : false,
+      "locked" : false,
+      "allow_new_line" : false,
+      "type" : "text",
+      "display_width" : null,
+      "default" : "Automate Onboarding & Offboarding"
+    }, {
+      "id" : "a725d246-a823-ebca-d35d-249bd9dccbd2",
+      "name" : "text",
+      "label" : "Text",
+      "required" : false,
+      "locked" : false,
+      "type" : "richtext",
+      "display_width" : null,
+      "default" : "<p>Leverage Okta’s identity management capabilities to automatically trigger IT asset workflows in Workwize. Ensure employees are equipped with the right hardware on day one and that devices are securely retrieved during offboarding.</p>"
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : [ {
+      "title" : "Automate Onboarding & Offboarding",
+      "text" : "<p>Leverage Okta’s identity management capabilities to automatically trigger IT asset workflows in Workwize. Ensure employees are equipped with the right hardware on day one and that devices are securely retrieved during offboarding.</p>"
+    }, {
+      "title" : "Automate Onboarding & Offboarding",
+      "text" : "<p>Leverage Okta’s identity management capabilities to automatically trigger IT asset workflows in Workwize. Ensure employees are equipped with the right hardware on day one and that devices are securely retrieved during offboarding.</p>"
+    }, {
+      "title" : "Automate Onboarding & Offboarding",
+      "text" : "<p>Leverage Okta’s identity management capabilities to automatically trigger IT asset workflows in Workwize. Ensure employees are equipped with the right hardware on day one and that devices are securely retrieved during offboarding.</p>"
+    } ]
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "title" : "Why Integrate {{ dynamic_page_hubdb_row.hs_name }} with Workwize?",
+    "col_box" : [ {
+      "title" : "Automate Onboarding & Offboarding",
+      "text" : "<p>Leverage Okta’s identity management capabilities to automatically trigger IT asset workflows in Workwize. Ensure employees are equipped with the right hardware on day one and that devices are securely retrieved during offboarding.</p>"
+    }, {
+      "title" : "Automate Onboarding & Offboarding",
+      "text" : "<p>Leverage Okta’s identity management capabilities to automatically trigger IT asset workflows in Workwize. Ensure employees are equipped with the right hardware on day one and that devices are securely retrieved during offboarding.</p>"
+    }, {
+      "title" : "Automate Onboarding & Offboarding",
+      "text" : "<p>Leverage Okta’s identity management capabilities to automatically trigger IT asset workflows in Workwize. Ensure employees are equipped with the right hardware on day one and that devices are securely retrieved during offboarding.</p>"
+    } ]
+  }
+}, {
+  "id" : "5b18cf42-1053-6161-ba57-8c9f323c1233",
+  "name" : "hris_content",
+  "label" : "HRIS Content",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "41318ff9-7d97-861c-ef93-e83389944348",
+    "name" : "title",
+    "label" : "Title",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Why Integrate {{ dynamic_page_hubdb_row.hs_name }} with Workwize?"
+  }, {
+    "id" : "820f81f7-adde-d178-1275-3b33b79061b0",
+    "name" : "col_box",
+    "label" : "Col Box",
+    "required" : false,
+    "locked" : false,
+    "occurrence" : {
+      "min" : null,
+      "max" : null,
+      "sorting_label_field" : null,
+      "default" : 3
+    },
+    "children" : [ {
+      "id" : "e6a20f5a-1019-c283-4a8d-6e52ce95c873",
+      "name" : "title",
+      "label" : "Title",
+      "required" : false,
+      "locked" : false,
+      "allow_new_line" : false,
+      "type" : "text",
+      "display_width" : null,
+      "default" : "Automate Onboarding & Offboarding"
+    }, {
+      "id" : "36953595-c705-fef5-7702-4ec207fb4b49",
+      "name" : "text",
+      "label" : "Text",
+      "required" : false,
+      "locked" : false,
+      "type" : "richtext",
+      "display_width" : null,
+      "default" : "<p>Easily link employee records with IT asset management workflows to ensure that employees are equipped with the right hardware from day one and that devices are securely retrieved when they leave.</p>"
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : [ {
+      "title" : "Automate Onboarding & Offboarding",
+      "text" : "<p>Easily link employee records with IT asset management workflows to ensure that employees are equipped with the right hardware from day one and that devices are securely retrieved when they leave.</p>"
+    }, {
+      "title" : "Automate Onboarding & Offboarding",
+      "text" : "<p>Easily link employee records with IT asset management workflows to ensure that employees are equipped with the right hardware from day one and that devices are securely retrieved when they leave.</p>"
+    }, {
+      "title" : "Automate Onboarding & Offboarding",
+      "text" : "<p>Easily link employee records with IT asset management workflows to ensure that employees are equipped with the right hardware from day one and that devices are securely retrieved when they leave.</p>"
+    } ]
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "title" : "Why Integrate {{ dynamic_page_hubdb_row.hs_name }} with Workwize?",
+    "col_box" : [ {
+      "title" : "Automate Onboarding & Offboarding",
+      "text" : "<p>Easily link employee records with IT asset management workflows to ensure that employees are equipped with the right hardware from day one and that devices are securely retrieved when they leave.</p>"
+    }, {
+      "title" : "Automate Onboarding & Offboarding",
+      "text" : "<p>Easily link employee records with IT asset management workflows to ensure that employees are equipped with the right hardware from day one and that devices are securely retrieved when they leave.</p>"
+    }, {
+      "title" : "Automate Onboarding & Offboarding",
+      "text" : "<p>Easily link employee records with IT asset management workflows to ensure that employees are equipped with the right hardware from day one and that devices are securely retrieved when they leave.</p>"
+    } ]
+  }
+}, {
+  "id" : "9860c6c0-9f7d-306f-0694-9c3cf6d5e815",
+  "name" : "background_color",
+  "label" : "Background Color",
+  "required" : false,
+  "locked" : false,
+  "type" : "color",
+  "display_width" : null,
+  "default" : {
+    "color" : "#fff",
+    "opacity" : 100
+  }
+}, {
+  "id" : "5a4be04b-b07b-cdcf-281f-4fc92f25e930",
+  "name" : "section_show_hide_",
+  "label" : "Section[Show/Hide]",
+  "required" : false,
+  "locked" : false,
+  "display" : "toggle",
+  "type" : "boolean",
+  "display_width" : null,
+  "default" : true
+} ]

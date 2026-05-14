@@ -1,0 +1,10 @@
+[ {
+  "id" : "403cbc5e-55b4-3347-5ed5-771f2f8e3d4a",
+  "name" : "quote_text",
+  "label" : "Quote Text",
+  "required" : false,
+  "locked" : false,
+  "type" : "richtext",
+  "display_width" : null,
+  "default" : "<p><em>Shashank is an experienced writer for cybersecurity, IT, tech, HR, and productivity platforms. In love with writing, since childhood, Shashank enjoys penning impactful narratives that are conversion-driven and help brands talk to their audience in the best way possible. When he's not writing or reading, you can find Shashank engrossed in making travel plans, exploring new eateries, or catching up with friends.</em></p>\n<p>Shashank Mishra cybersecurity, IT, tech, HR</p>"
+} ]

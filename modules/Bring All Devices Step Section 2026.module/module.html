@@ -1,0 +1,172 @@
+{% if module.show_hide_ %}
+{% set moduleId = '#hs_cos_wrapper_{{ name }}' %}
+
+<div class="braadevstSec fullwidth bgsec space-sec">
+ <div class="wrapper">
+  {% if module.top_content.title %}
+   <div class="braadevstTitle pb80 sm_pb30 text-center wow fadeInUp">
+     <h2>{{ module.top_content.title }}</h2>
+   </div>
+   {% endif %}
+   
+   
+   <div class="braadevstOuter wow fadeInUp d_flex">
+     {% for item in module.step_item %}
+     <div class="braadevstInner  d_flex" data-line-color="rgba({{ item.line_color.color|convert_rgb }},{{ item.line_color.opacity }}%)">
+       
+       <div class="braadevstILeft">
+         <div class="braadevstIRIcon">
+           {% if item.icon.src %}
+                {% set sizeAttrs = 'width="{{ item.icon.width|escape_attr }}" height="{{ item.icon.height|escape_attr }}"' %}
+                {% if item.icon.size_type == 'auto' %}
+                  {% set sizeAttrs = 'width="{{ item.icon.width|escape_attr }}" height="{{ item.icon.height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+                {% elif item.icon.size_type == 'auto_custom_max' %}
+                  {% set sizeAttrs = 'width="{{ item.icon.max_width|escape_attr }}" height="{{ item.icon.max_height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+                {% endif %}
+                 {% set loadingAttr = item.icon.loading != 'disabled' ? 'loading="{{ item.icon.loading|escape_attr }}"' : '' %}
+                <img src="{{ item.icon.src|escape_url }}" alt="{{ item.icon.alt|escape_attr }}" {{ loadingAttr }} {{ sizeAttrs }}>
+              {% endif %}
+         </div>
+         <div class="braadevstIRlabel geist-mono uppercase font-medium pb8">
+           {{ item.step_label }}
+         </div>
+         <h2>{{ item.title }}</h2>
+         <div class="braadevstIRtext pt4">
+           {{ item.text }}
+         </div>
+       </div>
+       <div class="braadevstIRight">
+         <div class="braadevstIRimg">
+           {% if item.image_field.src %}
+              {% set sizeAttrs = 'width="{{ item.image_field.width|escape_attr }}" height="{{ item.image_field.height|escape_attr }}"' %}
+              {% if item.image_field.size_type == 'auto' %}
+                {% set sizeAttrs = 'width="{{ item.image_field.width|escape_attr }}" height="{{ item.image_field.height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+              {% elif item.image_field.size_type == 'auto_custom_max' %}
+                {% set sizeAttrs = 'width="{{ item.image_field.max_width|escape_attr }}" height="{{ item.image_field.max_height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+              {% endif %}
+               {% set loadingAttr = item.image_field.loading != 'disabled' ? 'loading="{{ item.image_field.loading|escape_attr }}"' : '' %}
+              <img src="{{ item.image_field.src|escape_url }}" alt="{{ item.image_field.alt|escape_attr }}" {{ loadingAttr }} {{ sizeAttrs }}>
+            {% endif %}
+         </div>
+       </div>
+       
+     </div>
+     {% endfor %}
+   </div> 
+   
+   <div class="braadevstIBtn wow fadeInUp pt80 sm_pt30 d_flex flex_center secbtn  set-btn-arrows-true {{ module.button.select_button }}">
+     
+     {% set href = module.button.button_link.url.href %}
+      {% if module.button.button_link.url.type is equalto "EMAIL_ADDRESS" %}
+        {% set href = "mailto:" + href %}
+      {% elif module.button.button_link.url.type is equalto "PHONE_NUMBER" %}
+        {% set href = "tel:" + href %}
+      {% endif %}
+      <a
+        {% if module.button.button_link.url.type is equalto "CALL_TO_ACTION"  %}
+          href="{{ href }}" {# The href here is not escaped as it is not editable and functions as a JavaScript call to the associated CTA #}
+        {% else %}
+          href="{{ href|escape_url }}"
+        {% endif %}
+        {% if module.button.button_link.open_in_new_tab %}
+          target="_blank"
+        {% endif %}
+        {% if module.button.button_link.rel %}
+          rel="{{ module.button.button_link.rel|escape_attr }}"
+        {% endif %}
+        >
+        {{ module.button.button_text }}
+      </a>
+     
+     
+   </div>
+   
+   
+   
+   
+ </div>
+</div>
+
+
+{% require_css %}
+<style>
+  {{ moduleId }} .bgsec { {% if module.style.select_background == 'bg_color' %}
+    background-color: rgba({{ module.style.background_color.color|convert_rgb }},{{ module.style.background_color.opacity ~ '%' }});
+    {% elif module.style.select_background == 'bg_image' %}
+    {{ module.style.background_image.css }} background-repeat: no-repeat;
+    {% elif module.style.select_background == 'bg_gradient' %}
+    background: {{ module.style.background_gradient.css }};
+    {% endif %} }
+  
+  {{ moduleId }} .space-sec { {{ module.style.spacing.desktop.css }}; }
+  
+  
+  {{ moduleId }} .braadevstTitle h2 { color:{{ module.color_setting.title_color.color }}; max-width:{{ module.top_content.title_max_width }}px;  margin: 0 auto; } 
+  {{ moduleId }} .braadevstTitle h2 span { color:{{ module.color_setting.title_span_color.color }}; } 
+  
+  {% for item in module.step_item %}
+  {{ moduleId }} .braadevstInner:nth-child({{ loop.index }}) .braadevstIRtext ul li:after {  background-color: rgba({{ item.list_icon_color.color|convert_rgb }},{{ item.list_icon_color.opacity }}%); }
+  {% endfor %}
+
+  {{ moduleId }} .braadevstIRtext {  color:rgba({{ module.color_setting.text_color.color|convert_rgb }},{{ module.color_setting.text_color.opacity }}%);  }
+  
+  
+ 
+  @media(max-width: 991px){ {{ moduleId }} .space-sec { {{ module.style.spacing.tablet.css }}; } }
+  
+  @media(max-width: 767px){ {{ moduleId }} .space-sec { {{ module.style.spacing.mobile.css }}; } }
+  
+</style>
+{% end_require_css %}
+
+
+{% require_js  %}
+  <script>
+$(window).on('scroll', function() {
+    const $outer = $('.braadevstOuter');
+    const $steps = $('.braadevstInner');
+    const windowHeight = $(window).height();
+    const scrollTop = $(window).scrollTop();
+    
+    // Using your trigger point (middle of the screen)
+    const triggerPoint = windowHeight / 2;
+
+    if ($outer.length) {
+        const outerOffset = $outer.offset().top;
+        const outerHeight = $outer.outerHeight();
+
+        // 1. Calculate Scroll Progress (Height)
+        // Subtracting 80 to align with your CSS 'top: 80px'
+        let progress = (scrollTop + triggerPoint - (outerOffset + 80)) / (outerHeight - 80);
+        progress = Math.max(0, Math.min(1, progress));
+        $outer.get(0).style.setProperty('--scroll-progress', progress);
+
+        // 2. Update Color based on the active step's data-line-color
+        $steps.each(function() {
+            const $this = $(this);
+            const stepTop = $this.offset().top;
+            const stepBottom = stepTop + $this.outerHeight();
+            
+            // Check if this specific step is crossing the trigger point
+            if (scrollTop + triggerPoint >= stepTop && scrollTop + triggerPoint <= stepBottom) {
+                const newColor = $this.attr('data-line-color'); // Gets color from HTML
+                if (newColor) {
+                    $outer.get(0).style.setProperty('--line-active-color', newColor);
+                }
+            }
+        });
+    }
+});
+
+
+  </script>
+
+
+{% end_require_js  %}
+
+
+
+
+
+{% endif %}
+

@@ -1,0 +1,29 @@
+[ {
+  "id" : "9d40ec85-13ee-3fc9-6d68-8202d7a963de",
+  "name" : "text_field",
+  "label" : "Text",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null
+}, {
+  "id" : "e6c161a9-b76d-c8b5-56e7-a6c3deddad7f",
+  "name" : "text_field_1",
+  "label" : "Text",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null
+}, {
+  "id" : "d6d4db12-e5e7-4ce2-0847-195d59a2724b",
+  "name" : "iframe",
+  "label" : "Iframe",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "<div class=\"hs-embed-wrapper\" data-responsive=\"true\" style=\"position: relative; overflow: hidden; width: 100%; height: 100%; padding: 0px; min-width: 256px; display: block; margin: 120px auto 0px; max-width: 1777.78px;\"><div class=\"hs-embed-content-wrapper\"><div style=\"position: relative; overflow: hidden; max-width: 100%; padding-bottom: 56.25%; margin: 0px;\"><iframe src=\"https://workwize-lifecycle-match.lovable.app/\" width=\"100%\" height=\"100%\" style=\"position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; border: none;\" xml=\"lang\" data-mce-src=\"https://ship-it-globally-calculator.lovable.app/\" data-mce-style=\"position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; border: none;\" frameborder=\"0\"></iframe></div></div></div><ul><li>&nbsp;</li></ul>"
+} ]

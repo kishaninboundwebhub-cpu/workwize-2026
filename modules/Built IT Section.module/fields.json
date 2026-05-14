@@ -1,0 +1,806 @@
+[ {
+  "id" : "e181e1ee-ef06-5ba8-0ad3-f63113a45d24",
+  "name" : "style",
+  "label" : "Style",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "36fd79d2-1107-4452-d226-d4c096723f16",
+    "name" : "select_background",
+    "label" : "Select Background",
+    "required" : false,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "bg_color", "Background Color" ], [ "bg_image", "Background Image" ], [ "bg_gradient", "Background Gradient" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "bg_color"
+  }, {
+    "id" : "60d0ddef-fb34-a99a-73cb-bda8b10e0fc9",
+    "name" : "background_color",
+    "label" : "Background Color",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "style.select_background",
+      "controlling_value_regex" : "bg_color",
+      "property" : null,
+      "operator" : "MATCHES_REGEX",
+      "access" : null
+    },
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#002A5A",
+      "opacity" : 100
+    }
+  }, {
+    "id" : "19f0609d-595d-6ef3-f639-3f6006e095fb",
+    "name" : "background_image",
+    "label" : "Background Image",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "style.select_background",
+      "controlling_value_regex" : "bg_image",
+      "property" : null,
+      "operator" : "MATCHES_REGEX",
+      "access" : null
+    },
+    "type" : "backgroundimage",
+    "display_width" : null,
+    "default" : {
+      "src" : "",
+      "background_position" : "MIDDLE_CENTER",
+      "background_size" : "cover"
+    }
+  }, {
+    "id" : "0df6d4e0-395b-eda2-ec5a-1d08ad6c8d35",
+    "name" : "background_gradient",
+    "label" : "Background Gradient",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "style.select_background",
+      "controlling_value_regex" : "bg_gradient",
+      "property" : null,
+      "operator" : "MATCHES_REGEX",
+      "access" : null
+    },
+    "type" : "gradient",
+    "display_width" : null,
+    "default" : { }
+  }, {
+    "id" : "afeb177b-c31d-1412-5116-70d6f85c5565",
+    "name" : "spacing",
+    "label" : "Spacing",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "d59d9e4c-264e-54fa-99b7-0ff07897b867",
+      "name" : "desktop",
+      "label" : "Desktop",
+      "required" : false,
+      "locked" : false,
+      "type" : "spacing",
+      "display_width" : null,
+      "default" : {
+        "padding" : {
+          "top" : {
+            "value" : 100,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 80,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      }
+    }, {
+      "id" : "0c762a95-1339-05fa-721d-3d79f41b571e",
+      "name" : "tablet",
+      "label" : "Tablet",
+      "required" : false,
+      "locked" : false,
+      "type" : "spacing",
+      "display_width" : null,
+      "default" : {
+        "padding" : {
+          "top" : {
+            "value" : 80,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 80,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      }
+    }, {
+      "id" : "0a8a8c35-4008-f2aa-311a-12325d67b19c",
+      "name" : "mobile",
+      "label" : "Mobile",
+      "required" : false,
+      "locked" : false,
+      "type" : "spacing",
+      "display_width" : null,
+      "default" : {
+        "padding" : {
+          "top" : {
+            "value" : 60,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 60,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      }
+    } ],
+    "tab" : "STYLE",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : {
+      "desktop" : {
+        "padding" : {
+          "top" : {
+            "value" : 100,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 80,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      },
+      "tablet" : {
+        "padding" : {
+          "top" : {
+            "value" : 80,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 80,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      },
+      "mobile" : {
+        "padding" : {
+          "top" : {
+            "value" : 60,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 60,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      }
+    }
+  } ],
+  "tab" : "STYLE",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "select_background" : "bg_color",
+    "background_color" : {
+      "color" : "#002A5A",
+      "opacity" : 100
+    },
+    "background_image" : {
+      "src" : "",
+      "background_position" : "MIDDLE_CENTER",
+      "background_size" : "cover"
+    },
+    "background_gradient" : { },
+    "spacing" : {
+      "desktop" : {
+        "padding" : {
+          "top" : {
+            "value" : 100,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 80,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      },
+      "tablet" : {
+        "padding" : {
+          "top" : {
+            "value" : 80,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 80,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      },
+      "mobile" : {
+        "padding" : {
+          "top" : {
+            "value" : 60,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 60,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      }
+    }
+  }
+}, {
+  "id" : "55ccd3e2-31aa-4e79-9772-80facd954415",
+  "name" : "show_hide_",
+  "label" : "Section [Show/ Hide]",
+  "required" : false,
+  "locked" : false,
+  "display" : "toggle",
+  "type" : "boolean",
+  "display_width" : null,
+  "default" : true
+}, {
+  "id" : "496d4407-abd4-c6ea-6410-2a7f84894093",
+  "name" : "title",
+  "label" : "Title",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "<span>Built for all IT asset management.</span> Even the edge cases."
+}, {
+  "id" : "90a68aef-7302-50f0-1454-7796665ac4fd",
+  "name" : "box_item",
+  "label" : "Box Item",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : null,
+    "max" : null,
+    "sorting_label_field" : "21906cfa-7085-7aff-87aa-dcc48fa673fb",
+    "default" : 3
+  },
+  "children" : [ {
+    "id" : "7c9af02b-d235-7e61-bf3b-a55e5c2a8229",
+    "name" : "select_option_title_or_logo",
+    "label" : "Select Option Title OR Logo",
+    "required" : false,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "title", "Title" ], [ "logo", "Logo" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "title"
+  }, {
+    "id" : "21906cfa-7085-7aff-87aa-dcc48fa673fb",
+    "name" : "title",
+    "label" : "Title",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "box_item.select_option_title_or_logo",
+      "controlling_value_regex" : "title",
+      "property" : null,
+      "operator" : "MATCHES_REGEX",
+      "access" : null
+    },
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Traditional ITAM"
+  }, {
+    "id" : "d3fc672d-67f0-39cc-a75e-839625389fef",
+    "name" : "logo",
+    "label" : "Logo",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "box_item.select_option_title_or_logo",
+      "controlling_value_regex" : "logo",
+      "property" : null,
+      "operator" : "MATCHES_REGEX",
+      "access" : null
+    },
+    "responsive" : true,
+    "resizable" : true,
+    "show_loading" : true,
+    "type" : "image",
+    "display_width" : null,
+    "default" : {
+      "size_type" : "exact",
+      "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize/Image/Workwize%20Logo%20White.svg",
+      "alt" : "Workwize Logo White",
+      "loading" : "lazy",
+      "width" : 196,
+      "height" : 30,
+      "max_width" : 196,
+      "max_height" : 30
+    }
+  }, {
+    "id" : "3dc71d6f-5416-5e1a-0486-d741e0b82bbf",
+    "name" : "text_field",
+    "label" : "Text",
+    "required" : false,
+    "locked" : false,
+    "type" : "richtext",
+    "display_width" : null,
+    "default" : "<ul>\n<li>Don’t always cover the entire hardware lifecycle</li>\n<li>Automation gaps have to be fixed manually</li>\n<li>Audit trails are incomplete and need to be updated frequently</li>\n<li>Pricing can be unpredictable as your fleet grows</li>\n<li>Growing organizations have complex needs beyond the scope of basic ITAMs</li>\n</ul>"
+  }, {
+    "id" : "1314c7af-4a6d-7845-4f5e-4d1c45458c68",
+    "name" : "box_bg_color",
+    "label" : "Box BG Color",
+    "required" : false,
+    "locked" : false,
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "",
+      "opacity" : 100
+    }
+  }, {
+    "id" : "6a884bde-1025-7074-f256-572e6e46f244",
+    "name" : "title_color",
+    "label" : "Title Color",
+    "required" : false,
+    "locked" : false,
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#fff",
+      "opacity" : 100
+    }
+  }, {
+    "id" : "6a884bde-1025-7074-f256-572e6e46f183",
+    "name" : "text_color",
+    "label" : "Text Color",
+    "required" : false,
+    "locked" : false,
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#fff",
+      "opacity" : 75
+    }
+  }, {
+    "id" : "9d06d1c5-fa5a-0edc-1117-ec2524bf2dd2",
+    "name" : "list_icon",
+    "label" : "List Icon",
+    "required" : false,
+    "locked" : false,
+    "responsive" : true,
+    "resizable" : true,
+    "show_loading" : true,
+    "type" : "image",
+    "display_width" : null,
+    "default" : {
+      "size_type" : "exact",
+      "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/Group%202147261734%20(1).svg",
+      "alt" : "Group 2147261734 (1)",
+      "loading" : "lazy",
+      "width" : 24,
+      "height" : 24,
+      "max_width" : 24,
+      "max_height" : 24
+    }
+  }, {
+    "id" : "f34f81fc-a674-41db-fc49-a0d7d4598150",
+    "name" : "border_left",
+    "label" : "Border Left",
+    "required" : false,
+    "locked" : false,
+    "display" : "toggle",
+    "type" : "boolean",
+    "display_width" : null,
+    "default" : false
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : [ {
+    "select_option_title_or_logo" : "title",
+    "title" : "Traditional ITAM",
+    "logo" : {
+      "size_type" : "exact",
+      "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize/Image/Workwize%20Logo%20White.svg",
+      "alt" : "HighLevel 2",
+      "loading" : "lazy",
+      "width" : 196,
+      "height" : 30,
+      "max_width" : 196,
+      "max_height" : 30
+    },
+    "text_field" : "<ul>\n<li>Don’t always cover the entire hardware lifecycle</li>\n<li>Automation gaps have to be fixed manually</li>\n<li>Audit trails are incomplete and need to be updated frequently</li>\n<li>Pricing can be unpredictable as your fleet grows</li>\n<li>Growing organizations have complex needs beyond the scope of basic ITAMs</li>\n</ul>",
+    "box_bg_color" : {
+      "color" : "",
+      "opacity" : 100
+    },
+    "title_color" : {
+      "color" : "#fff",
+      "opacity" : 100
+    },
+    "text_color" : {
+      "color" : "#fff",
+      "opacity" : 75
+    },
+    "list_icon" : {
+      "size_type" : "exact",
+      "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/Group%202147261734%20(1).svg",
+      "alt" : "Group 2147261734 (1)",
+      "loading" : "lazy",
+      "width" : 24,
+      "height" : 24,
+      "max_width" : 24,
+      "max_height" : 24
+    },
+    "boolean_field" : false
+  }, {
+    "select_option_title_or_logo" : "title",
+    "title" : "Traditional ITAM",
+    "logo" : {
+      "size_type" : "exact",
+      "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize/Image/Workwize%20Logo%20White.svg",
+      "alt" : "HighLevel 2",
+      "loading" : "lazy",
+      "width" : 196,
+      "height" : 30,
+      "max_width" : 196,
+      "max_height" : 30
+    },
+    "text_field" : "<ul>\n<li>Don’t always cover the entire hardware lifecycle</li>\n<li>Automation gaps have to be fixed manually</li>\n<li>Audit trails are incomplete and need to be updated frequently</li>\n<li>Pricing can be unpredictable as your fleet grows</li>\n<li>Growing organizations have complex needs beyond the scope of basic ITAMs</li>\n</ul>",
+    "box_bg_color" : {
+      "color" : "",
+      "opacity" : 100
+    },
+    "title_color" : {
+      "color" : "#fff",
+      "opacity" : 100
+    },
+    "text_color" : {
+      "color" : "#FFFFFF",
+      "opacity" : 75
+    },
+    "list_icon" : {
+      "size_type" : "exact",
+      "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/Group%202147261734%20(1).svg",
+      "alt" : "Group 2147261734 (1)",
+      "loading" : "lazy",
+      "width" : 24,
+      "height" : 24,
+      "max_width" : 24,
+      "max_height" : 24
+    },
+    "boolean_field" : false
+  }, {
+    "select_option_title_or_logo" : "title",
+    "title" : "Traditional ITAM",
+    "logo" : {
+      "size_type" : "exact",
+      "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize/Image/Workwize%20Logo%20White.svg",
+      "alt" : "HighLevel 2",
+      "loading" : "lazy",
+      "width" : 196,
+      "height" : 30,
+      "max_width" : 196,
+      "max_height" : 30
+    },
+    "text_field" : "<ul>\n<li>Don’t always cover the entire hardware lifecycle</li>\n<li>Automation gaps have to be fixed manually</li>\n<li>Audit trails are incomplete and need to be updated frequently</li>\n<li>Pricing can be unpredictable as your fleet grows</li>\n<li>Growing organizations have complex needs beyond the scope of basic ITAMs</li>\n</ul>",
+    "box_bg_color" : {
+      "color" : "",
+      "opacity" : 100
+    },
+    "title_color" : {
+      "color" : "#fff",
+      "opacity" : 100
+    },
+    "text_color" : {
+      "color" : "#FFFFFF",
+      "opacity" : 75
+    },
+    "list_icon" : {
+      "size_type" : "exact",
+      "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/Group%202147261734%20(1).svg",
+      "alt" : "Group 2147261734 (1)",
+      "loading" : "lazy",
+      "width" : 24,
+      "height" : 24,
+      "max_width" : 24,
+      "max_height" : 24
+    },
+    "boolean_field" : false
+  } ]
+}, {
+  "id" : "b6ac38ef-f94c-f9a5-6501-17f0b2a6214f",
+  "name" : "color_setting",
+  "label" : "Color Setting",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "ebdd37df-211c-6125-dbc4-f5a70db1d0d2",
+    "name" : "title_color",
+    "label" : "Title Color",
+    "required" : false,
+    "locked" : false,
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#fff",
+      "opacity" : 100
+    }
+  }, {
+    "id" : "50a496a6-0404-8d2b-22b5-060a591fdb6a",
+    "name" : "title_span_color",
+    "label" : "Title Span Color",
+    "required" : false,
+    "locked" : false,
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#F6DE45",
+      "opacity" : 100
+    }
+  }, {
+    "id" : "31237948-8311-a72d-44e2-59eee3c3b3a5",
+    "name" : "text_color",
+    "label" : "Text Color",
+    "required" : false,
+    "locked" : false,
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#FFFFFF",
+      "opacity" : 75
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "title_color" : {
+      "color" : "#fff",
+      "opacity" : 100
+    },
+    "title_span_color" : {
+      "color" : "#F6DE45",
+      "opacity" : 100
+    },
+    "text_color" : {
+      "color" : "#FFFFFF",
+      "opacity" : 75
+    }
+  }
+}, {
+  "id" : "0437dcc3-fae9-82e7-a306-230826ce676c",
+  "name" : "button",
+  "label" : "Button",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "0d32fd49-1a20-7d3a-b2e9-e37263d44fc1",
+    "name" : "button_choice",
+    "label" : "Button Choice",
+    "required" : false,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "button", "Primary Button" ], [ "second_btn", "Secondary Button" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "second_btn"
+  }, {
+    "id" : "e537db92-73e3-ea8c-679e-339fe306a4b4",
+    "name" : "button_text",
+    "label" : "Button Text",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Book a 30 min demo"
+  }, {
+    "id" : "42d9a9a6-a1d5-f508-3b56-a05fdafa7070",
+    "name" : "button_link",
+    "label" : "Button Link",
+    "required" : false,
+    "locked" : false,
+    "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG", "CALL_TO_ACTION", "PHONE_NUMBER", "WHATSAPP_NUMBER", "PAYMENT" ],
+    "show_advanced_rel_options" : false,
+    "type" : "link",
+    "display_width" : null,
+    "default" : {
+      "url" : {
+        "content_id" : null,
+        "type" : "EXTERNAL",
+        "href" : ""
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "button_choice" : "second_btn",
+    "button_text" : "Book a 30 min demo",
+    "button_link" : {
+      "url" : {
+        "content_id" : null,
+        "type" : "EXTERNAL",
+        "href" : ""
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    }
+  }
+}, {
+  "id" : "9aa81cb6-4d7e-c90f-33ba-90fd1a67da23",
+  "name" : "title_max_width",
+  "label" : "Title Max Width",
+  "required" : false,
+  "locked" : false,
+  "display" : "text",
+  "step" : 1,
+  "suffix" : "px",
+  "type" : "number",
+  "display_width" : null,
+  "default" : 730
+}, {
+  "id" : "82a7d981-8393-42f9-ba90-431e6b1abb8a",
+  "name" : "image_field",
+  "label" : "Image",
+  "required" : false,
+  "locked" : false,
+  "responsive" : true,
+  "resizable" : true,
+  "show_loading" : false,
+  "type" : "image",
+  "display_width" : null,
+  "default" : {
+    "size_type" : "auto",
+    "src" : "",
+    "alt" : null,
+    "loading" : "lazy"
+  }
+}, {
+  "id" : "4f144763-2920-d341-6c81-e65bbebeded5",
+  "name" : "top_shape",
+  "label" : "Top Shape",
+  "required" : false,
+  "locked" : false,
+  "responsive" : true,
+  "resizable" : true,
+  "show_loading" : false,
+  "type" : "image",
+  "display_width" : null,
+  "default" : {
+    "size_type" : "exact",
+    "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/top-shape.svg",
+    "alt" : "top-shape",
+    "loading" : "lazy",
+    "width" : 302,
+    "height" : 479,
+    "max_width" : 302,
+    "max_height" : 479
+  }
+}, {
+  "id" : "db81c548-45ff-b854-d7fe-5d1971ef54c6",
+  "name" : "bottom_shape",
+  "label" : "Bottom Shape",
+  "required" : false,
+  "locked" : false,
+  "responsive" : true,
+  "resizable" : true,
+  "show_loading" : false,
+  "type" : "image",
+  "display_width" : null,
+  "default" : {
+    "size_type" : "exact",
+    "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/bottom-shape.svg",
+    "alt" : "bottom-shape",
+    "loading" : "lazy",
+    "width" : 476,
+    "height" : 492,
+    "max_width" : 476,
+    "max_height" : 492
+  }
+} ]

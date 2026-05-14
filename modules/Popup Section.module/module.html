@@ -1,0 +1,89 @@
+{% if module.show_hide_ %}
+{% set moduleId = '#hs_cos_wrapper_{{ name }}' %}
+<div class="ebookpop-sec fullwidth bgsec space-sec">
+ {% if module.wrapper_show_hide %}<div class="wrapper">{% endif %}
+   
+   {% if module.select_button_type %} 
+   <div class="secbtns flexwrap w-100">
+    {% if module.select_button_type == 'cta' %}
+     <div class="secbtn">
+        {{ module.cta }} 
+     </div>      
+    {% else %}
+    <div class="secbtn {{ module.button.button_choice }} ebookbtn">
+     {% if module.button.add_popup %}
+      <a>{{ module.button.button_text }}</a> 
+     {% else %} 
+     {% set href = module.button.button_link.url.href %}
+     {% if module.button.button_link.url.type is equalto "EMAIL_ADDRESS" %}
+       {% set href = "mailto:" + href %}
+     {% endif %}
+     <a
+       {% if module.button.button_link.url.type is equalto "CALL_TO_ACTION"  %}
+         href="{{ href }}" {# The href here is not escaped as it is not editable and functions as a JavaScript call to the associated CTA #}
+       {% else %} href="{{ href|escape_url }}" {% endif %}
+       {% if module.button.button_link.open_in_new_tab %} target="_blank" {% endif %}
+       {% if module.button.button_link.rel %} rel="{{ module.button.button_link.rel|escape_attr }}" {% endif %}
+       >
+      {{ module.button.button_text }}
+     </a> 
+      {% endif %} 
+    </div>
+    {% endif %} 
+   </div>  
+   {% endif %}
+   
+   <div class="ebook_popup">
+     <div class="ebook_inner">
+       <div class="ebook_close"></div>
+       <div class="ebook_img">
+          {% if module.popup_content.image.src %}
+          	{% set sizeAttrs = 'width="{{ module.popup_content.image.width|escape_attr }}" height="{{ module.popup_content.image.height|escape_attr }}"' %}
+          	{% if module.popup_content.image.size_type == 'auto' %}
+        		{% set sizeAttrs = 'width="{{ module.popup_content.image.width|escape_attr }}" height="{{ module.popup_content.image.height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+          	{% elif module.popup_content.image.size_type == 'auto_custom_max' %}
+        		{% set sizeAttrs = 'width="{{ module.popup_content.image.max_width|escape_attr }}" height="{{ module.popup_content.image.max_height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+        	  {% endif %}
+        	  {% set loadingAttr = module.popup_content.image.loading != 'disabled' ? 'loading="{{ module.popup_content.image.loading|escape_attr }}"' : '' %}
+        	  <img src="{{ module.popup_content.image.src|escape_url }}" alt="{{ module.popup_content.image.alt|escape_attr }}" {{ loadingAttr }} {{ sizeAttrs }}>        
+          {% endif %}
+       </div>
+     </div>
+   </div>
+  {% if module.wrapper_show_hide %}</div>{% endif %}
+</div>
+
+
+{% require_css %}
+<style>
+  {{ moduleId }} .bgsec { {% if module.style.select_background == 'bg_color' %}
+    background-color: rgba({{ module.style.background_color.color|convert_rgb }},{{ module.style.background_color.opacity ~ '%' }});
+    {% elif module.style.select_background == 'bg_image' %}
+    {{ module.style.background_image.css }} background-repeat: no-repeat;
+    {% elif module.style.select_background == 'bg_gradient' %}
+    background: {{ module.style.background_gradient.css }};
+    {% endif %} }
+  
+  {{ moduleId }} .space-sec { {{ module.style.spacing.desktop.css }}; }
+  
+  {{ moduleId }} .sectitle h1,
+  {{ moduleId }} .sectitle h2 , 
+  {{ moduleId }} .sectitle h3 , 
+  {{ moduleId }} .sectitle h4 , 
+  {{ moduleId }} .sectitle h5 ,
+  {{ moduleId }} .sectitle h6 { color: rgba({{ module.color_settings.title_color.color|convert_rgb }},{{ module.color_settings.title_color.opacity ~ '%' }}); }
+  {{ moduleId }} .sectxt , {{ moduleId }} .sectxt * { color: rgba({{ module.color_settings.text_color.color|convert_rgb }},{{ module.color_settings.text_color.opacity ~ '%' }}); } 
+  
+  
+   {{ moduleId }} .secbtn:nth-child({{ loop.index }}) a { background-color: rgba({{ module.button.background_color.color|convert_rgb }},{{ module.button.background_color.opacity ~ '%' }}); border-color: rgba({{ module.button.border_color.color|convert_rgb }},{{ module.button.border_color.opacity ~ '%' }}); color: rgba({{ module.button.text_color.color|convert_rgb }},{{ module.button.text_color.opacity ~ '%' }}); }
+   {{ moduleId }} .secbtn:nth-child({{ loop.index }}) a:hover { background-color: rgba({{ module.button.background_color_hover_.color|convert_rgb }},{{ module.button.background_color_hover_.opacity ~ '%' }}); border-color: rgba({{ module.button.border_color_hover_.color|convert_rgb }},{{ module.button.border_color_hover_.opacity ~ '%' }}); color: rgba({{ module.button.text_color_hover_.color|convert_rgb }},{{ module.button.text_color_hover_.opacity ~ '%' }}); }  
+  
+  
+  
+  @media(max-width: 991px){ {{ moduleId }} .space-sec { {{ module.style.spacing.tablet.css }}; } }
+  
+  @media(max-width: 767px){ {{ moduleId }} .space-sec { {{ module.style.spacing.mobile.css }}; } }
+  
+</style>
+{% end_require_css %}
+{% endif %}

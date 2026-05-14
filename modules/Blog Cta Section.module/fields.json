@@ -1,0 +1,329 @@
+[ {
+  "id" : "be573a02-bc00-50b0-a4b1-bbca6b001fe8",
+  "name" : "show_hide_",
+  "label" : "Section [Show/Hide] ",
+  "required" : false,
+  "locked" : false,
+  "display" : "toggle",
+  "type" : "boolean",
+  "display_width" : null,
+  "default" : true
+}, {
+  "id" : "04e098cc-3e0d-931d-5eb3-65f72c0ee1b9",
+  "name" : "content",
+  "label" : "Content",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : null,
+    "max" : null,
+    "sorting_label_field" : null,
+    "default" : 1
+  },
+  "children" : [ {
+    "id" : "e0d46e16-ae29-b880-952d-d80e53943e32",
+    "name" : "title",
+    "label" : "Title",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Simplify IT operations with Workwize"
+  }, {
+    "id" : "7ae0447b-1dd9-746d-eb5e-9c3f0197d7e4",
+    "name" : "text",
+    "label" : "Text",
+    "required" : false,
+    "locked" : false,
+    "type" : "richtext",
+    "display_width" : null,
+    "default" : "<p><span>Learn how Workwize makes IT asset management easier and more efficient. Schedule a custom demo today and see the difference.</span></p>"
+  }, {
+    "id" : "695d2ddb-31fc-976d-2061-81a37d18553b",
+    "name" : "button",
+    "label" : "Button",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "572e34ae-e7cd-ae19-bf7f-03379a9e13cb",
+      "name" : "button_choice",
+      "label" : "Button Choice",
+      "required" : false,
+      "locked" : false,
+      "display" : "select",
+      "choices" : [ [ "button", "Primary Button" ], [ "second_btn", "Secondary Button" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "preset" : null,
+      "type" : "choice",
+      "display_width" : null,
+      "default" : "button"
+    }, {
+      "id" : "338dccf8-c885-6464-8350-4d84db8a0d04",
+      "name" : "text",
+      "label" : "Text",
+      "required" : false,
+      "locked" : false,
+      "allow_new_line" : false,
+      "type" : "text",
+      "display_width" : null,
+      "default" : "Request a Demo"
+    }, {
+      "id" : "b90815d7-0941-d125-3ae0-e44e16b51444",
+      "name" : "link",
+      "label" : "Link",
+      "required" : false,
+      "locked" : false,
+      "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG", "CALL_TO_ACTION", "PHONE_NUMBER", "WHATSAPP_NUMBER", "PAYMENT" ],
+      "show_advanced_rel_options" : false,
+      "type" : "link",
+      "display_width" : null,
+      "default" : {
+        "url" : {
+          "content_id" : 97002402260,
+          "href" : null,
+          "type" : "CONTENT"
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false
+      }
+    }, {
+      "id" : "fc0fa301-ed2b-ef22-c222-57596df78de0",
+      "name" : "background_color",
+      "label" : "Background Color",
+      "required" : false,
+      "locked" : false,
+      "type" : "color",
+      "display_width" : null,
+      "default" : {
+        "color" : null,
+        "opacity" : null
+      }
+    }, {
+      "id" : "6e9ab5fe-0f5e-6336-4d2e-b62899486366",
+      "name" : "border_color",
+      "label" : "Border Color",
+      "required" : false,
+      "locked" : false,
+      "type" : "color",
+      "display_width" : null,
+      "default" : {
+        "color" : null,
+        "opacity" : null
+      }
+    }, {
+      "id" : "0ff117ef-74a6-132b-d53d-9d59f0318eb1",
+      "name" : "text_color",
+      "label" : "Text Color",
+      "required" : false,
+      "locked" : false,
+      "type" : "color",
+      "display_width" : null,
+      "default" : {
+        "color" : null,
+        "opacity" : null
+      }
+    }, {
+      "id" : "12de5860-ed74-3a69-663d-d8c6de87affb",
+      "name" : "background_color_hover_",
+      "label" : "Background Color [Hover]",
+      "required" : false,
+      "locked" : false,
+      "type" : "color",
+      "display_width" : null,
+      "default" : {
+        "color" : null,
+        "opacity" : null
+      }
+    }, {
+      "id" : "162c2f8d-0c22-34c3-b5f3-c949a514a871",
+      "name" : "border_color_hover_",
+      "label" : "Border Color [Hover]",
+      "required" : false,
+      "locked" : false,
+      "type" : "color",
+      "display_width" : null,
+      "default" : {
+        "color" : null,
+        "opacity" : null
+      }
+    }, {
+      "id" : "600d50f5-3ea3-4a85-a033-e569d4031123",
+      "name" : "text_color_hover_",
+      "label" : "Text Color [Hover]",
+      "required" : false,
+      "locked" : false,
+      "type" : "color",
+      "display_width" : null,
+      "default" : {
+        "color" : null,
+        "opacity" : null
+      }
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : {
+      "button_choice" : "button",
+      "text" : "Request a Demo",
+      "link" : {
+        "url" : {
+          "content_id" : 97002402260,
+          "href" : null,
+          "type" : "CONTENT"
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false
+      },
+      "background_color" : {
+        "color" : null,
+        "opacity" : null
+      },
+      "border_color" : {
+        "color" : null,
+        "opacity" : null
+      },
+      "text_color" : {
+        "color" : null,
+        "opacity" : null
+      },
+      "background_color_hover_" : {
+        "color" : null,
+        "opacity" : null
+      },
+      "border_color_hover_" : {
+        "color" : null,
+        "opacity" : null
+      },
+      "text_color_hover_" : {
+        "color" : null,
+        "opacity" : null
+      }
+    }
+  }, {
+    "id" : "f49f5cd7-57c5-0a86-b40b-54a843db346d",
+    "name" : "color_settings",
+    "label" : "Color Settings",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "0ea7214b-f149-a33c-4b1f-5ce3b91e9152",
+      "name" : "box_background_color",
+      "label" : "Box Background Color",
+      "required" : false,
+      "locked" : false,
+      "type" : "color",
+      "display_width" : null,
+      "default" : {
+        "color" : "#122750",
+        "opacity" : 100
+      }
+    }, {
+      "id" : "58b48d82-4304-1e85-9c35-ffb7e7fd693f",
+      "name" : "title_color",
+      "label" : "Title Color",
+      "required" : false,
+      "locked" : false,
+      "type" : "color",
+      "display_width" : null,
+      "default" : {
+        "color" : "#fff",
+        "opacity" : 100
+      }
+    }, {
+      "id" : "0f7f884e-9f0a-c9c9-1eab-945a8b758687",
+      "name" : "text_color",
+      "label" : "Text Color",
+      "required" : false,
+      "locked" : false,
+      "type" : "color",
+      "display_width" : null,
+      "default" : {
+        "color" : "#fff",
+        "opacity" : 100
+      }
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : {
+      "box_background_color" : {
+        "color" : "#122750",
+        "opacity" : 100
+      },
+      "title_color" : {
+        "color" : "#fff",
+        "opacity" : 100
+      },
+      "text_color" : {
+        "color" : "#fff",
+        "opacity" : 100
+      }
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : [ {
+    "title" : "Simplify IT operations with Workwize",
+    "text" : "<p><span>Learn how Workwize makes IT asset management easier and more efficient. Schedule a custom demo today and see the difference.</span></p>",
+    "button" : {
+      "button_choice" : "button",
+      "text" : "Request a Demo",
+      "link" : {
+        "url" : {
+          "content_id" : 97002402260,
+          "href" : null,
+          "type" : "CONTENT"
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false
+      },
+      "background_color" : {
+        "color" : null,
+        "opacity" : null
+      },
+      "border_color" : {
+        "color" : null,
+        "opacity" : null
+      },
+      "text_color" : {
+        "color" : null,
+        "opacity" : null
+      },
+      "background_color_hover_" : {
+        "color" : null,
+        "opacity" : null
+      },
+      "border_color_hover_" : {
+        "color" : null,
+        "opacity" : null
+      },
+      "text_color_hover_" : {
+        "color" : null,
+        "opacity" : null
+      }
+    },
+    "color_settings" : {
+      "box_background_color" : {
+        "color" : "#122750",
+        "opacity" : 100
+      },
+      "title_color" : {
+        "color" : "#fff",
+        "opacity" : 100
+      },
+      "text_color" : {
+        "color" : "#fff",
+        "opacity" : 100
+      }
+    }
+  } ]
+} ]

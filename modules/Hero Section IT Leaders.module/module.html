@@ -1,0 +1,105 @@
+{% if module.show_hide_ %}
+{% set moduleId = '#hs_cos_wrapper_{{ name }}' %}
+<div class="heroitlSec fullwidth bgsec space-sec">
+ <div class="wrapper-left">
+   <div class="heroprocInner d_flex">
+     <div class="heroprocLeft">
+       <div class="heroprocSub geist-mono uppercase font-medium pb16">{{ module.sub_title }}</div>
+        <h1 class="secondh1">{{ module.title }}</h1>
+        <div class="heroprocStext sectxt">
+            {{ module.text }}
+        </div>
+       {% if module.button %} 
+          <div class="heroprocSbtn pt40 secbtns flexwrap wow fadeInUp">
+          {% for item in module.button %}
+          <div class="herobtn secbtn {{ item.button_choice }} set-btn-arrows-{{ item.set_arrow_ }}">
+             {% set href = item.button_link.url.href %}
+             {% if item.button_link.url.type is equalto "EMAIL_ADDRESS" %}
+             {% set href = "mailto:" + href %}
+             {% endif %}
+             <a href="{{ href }}"
+             {% if item.button_link.open_in_new_tab %}target="_blank"{% endif %}
+             {% if item.button_link.rel %}rel="{{ item.button_link.rel }}"{% endif %}
+             >
+              {{ item.button_text }}
+             </a>  
+          </div>
+          {% endfor %} 
+         </div>  
+         {% endif %} 
+     </div>
+     
+     <div class="heroprocRight">
+       <div class="heroprocRimage">
+          {% if module.main_image.src %}
+          {% set sizeAttrs = 'width="{{ module.main_image.width|escape_attr }}" height="{{ module.main_image.height|escape_attr }}"' %}
+          {% if module.main_image.size_type == 'auto' %}
+          {% set sizeAttrs = 'width="{{ module.main_image.width|escape_attr }}" height="{{ module.main_image.height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+          {% elif module.main_image.size_type == 'auto_custom_max' %}
+          {% set sizeAttrs = 'width="{{ module.main_image.max_width|escape_attr }}" height="{{ module.main_image.max_height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+          {% endif %}
+          {% set loadingAttr = module.main_image.loading != 'disabled' ? 'loading="{{ module.main_image.loading|escape_attr }}"' : '' %}
+          <img src="{{ module.main_image.src|escape_url }}" alt="{{ module.main_image.alt|escape_attr }}" {{ loadingAttr }} {{ sizeAttrs }}>
+          {% endif %}
+         
+          {% if module.right_image.src %}
+          {% set sizeAttrs = 'width="{{ module.right_image.width|escape_attr }}" height="{{ module.right_image.height|escape_attr }}"' %}
+          {% if module.right_image.size_type == 'auto' %}
+          {% set sizeAttrs = 'width="{{ module.right_image.width|escape_attr }}" height="{{ module.right_image.height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+          {% elif module.right_image.size_type == 'auto_custom_max' %}
+          {% set sizeAttrs = 'width="{{ module.right_image.max_width|escape_attr }}" height="{{ module.right_image.max_height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+          {% endif %}
+          {% set loadingAttr = module.right_image.loading != 'disabled' ? 'loading="{{ module.right_image.loading|escape_attr }}"' : '' %}
+          <img class="heroitlcmmight" src="{{ module.right_image.src|escape_url }}" alt="{{ module.right_image.alt|escape_attr }}" {{ loadingAttr }} {{ sizeAttrs }}>
+          {% endif %}
+
+
+         
+         
+           
+         
+       </div>
+     </div>
+     
+     
+   </div>
+ </div>
+</div>
+
+
+
+
+
+{% require_css %}
+<style>
+  {{ moduleId }} .bgsec { {% if module.style.select_background == 'bg_color' %}
+    background-color: rgba({{ module.style.background_color.color|convert_rgb }},{{ module.style.background_color.opacity ~ '%' }});
+    {% elif module.style.select_background == 'bg_image' %}
+    {{ module.style.background_image.css }} background-repeat: no-repeat;
+    {% elif module.style.select_background == 'bg_gradient' %}
+    background: {{ module.style.background_gradient.css }};
+    {% endif %} }
+  
+  {{ moduleId }} .space-sec { {{ module.style.spacing.desktop.css }}; }
+  
+  {{ moduleId }} .heroprocLeft h1 { color: rgba({{ module.color_settings.title_color.color|convert_rgb }},{{ module.color_settings.title_color.opacity ~ '%' }}); }
+  {{ moduleId }} .heroprocLeft h1 span { color: rgba({{ module.color_settings.title_span_color.color|convert_rgb }},{{ module.color_settings.title_span_color.opacity ~ '%' }}); }
+  {{ moduleId }} .sectxt , {{ moduleId }} .sectxt * { color: rgba({{ module.color_settings.text_color.color|convert_rgb }},{{ module.color_settings.text_color.opacity ~ '%' }}); } 
+  {{ moduleId }} .heroprocSub { color: rgba({{ module.color_settings.sub_title_color.color|convert_rgb }},{{ module.color_settings.sub_title_color.opacity ~ '%' }}); }
+  
+  
+  
+  @media(max-width: 991px){ {{ moduleId }} .space-sec { {{ module.style.spacing.tablet.css }}; } }
+  
+  @media(max-width: 767px){ {{ moduleId }} .space-sec { {{ module.style.spacing.mobile.css }}; } }
+  
+</style>
+{% end_require_css %}
+
+
+
+
+{% endif %}
+
+
+

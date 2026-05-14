@@ -1,0 +1,31 @@
+.glrevieInner.flexwrap { row-gap: 20px; margin: 0 -10px; justify-content: center; -webkit-justify-content: center; }
+.glrevieItem { width: 33.33%; padding: 0 10px; } 
+.glrevieItInn { background-color: #fff; height: 100%;  border-radius: 20px;    box-shadow: 0 -2px 12px rgba(0, 0, 0, .2);    padding: 30px 25px; }
+.glrevieItIAvatar { width: 65px;    height: 65px;   border-radius: 50%;    overflow: hidden; }
+.glrevieItIPlatic { width: 40px; }
+.glrevieItIAbio { width: calc(100% - 150px); font-size: 14px; line-height: 1.5; }
+.glrevieIt-name { display: block; }
+.glrevieIt-designation span { color: rgba(34, 122, 247, 100%); }
+.glrevieItStar img { vertical-align: middle; }
+.glrevieItStar ul.flexwrap { gap: 1px;   align-items: center;    margin: 16px 0; } 
+.glrevieIttext { letter-spacing: 0.25px; }
+.glrevieItBtn.button { margin: 30px 0 0; }
+.review-load-more-btn { text-align: center; margin: 50px 0 0; }
+.review-load-more-btn button { cursor: pointer; }
+.glrevieTitle h2 { margin: 0 0 70px; }
+.glrevieItTop.flexwrap { justify-content: space-between; -webkit-justify-content: space-between; }
+
+
+@media(max-width:991px){
+ .glrevieItem { width: 50%; } 
+}
+
+
+@media(max-width:767px){
+ .glrevieItem { width: 100%; } 
+ .glrevieTitle h2 { margin: 0 0 40px; } 
+  
+  
+  
+  
+}

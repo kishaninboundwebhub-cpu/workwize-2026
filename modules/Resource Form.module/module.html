@@ -1,0 +1,57 @@
+<div class="resource-form-fixed">
+  <div class="resource-form-overlay"></div>
+  <div class="resource-form-mod-inn">
+    <div class="resource-form-mod">
+      <div class="resource-form-close hide">
+        <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium mui-vubbuv" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="CloseIcon"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+      </div>
+    <h3>
+      <span class="resource-tt-icon">
+        <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium mui-vubbuv" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="ArrowDownwardIcon"><path d="m20 12-1.41-1.41L13 16.17V4h-2v12.17l-5.58-5.59L4 12l8 8z"></path></svg>
+      </span>
+      {{ module.title }}
+    </h3>
+    <div class="resource-form-conte">
+      {% form
+      form_to_use="{{ module.form_field.form_id }}"
+      response_response_type="{{ module.form_field.response_type }}"
+      response_message="{{ module.form_field.message }}"
+      response_redirect_id="{{ module.form_field.redirect_id }}"
+      response_redirect_url="{{module.form_field.redirect_url}}"
+      gotowebinar_webinar_key="{{ module.form_field.gotowebinar_webinar_key }}"
+    %}
+    </div>
+  </div>
+ </div>
+</div>
+
+
+<div class="resource-fix-btn-small hide">
+  <div class="resource-fix-btn hs-button">
+    {{ module.button_text }}
+  </div>
+</div>
+
+
+{% require_js %}
+  <script>
+    $(function(){
+        
+       $('.resource-fix-btn').on('click',function(){
+          $('.resource-form-fixed').addClass('active');
+       });
+      
+        $('.resource-form-overlay, .resource-form-close').on('click',function(){
+          $('.resource-form-fixed').removeClass('active');
+       });
+      
+      
+    });
+  </script>
+{% end_require_js %}
+
+
+
+
+
+

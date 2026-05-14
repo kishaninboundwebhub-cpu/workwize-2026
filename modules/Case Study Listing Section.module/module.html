@@ -1,0 +1,62 @@
+{% if module.show_hide_ %}
+{% set moduleId = '#hs_cos_wrapper_{{ name }}' %}
+<div class="fullwidth cs-lsiting-sec bgsec space-sec{% if module.add_shape_image %} hrshape{% endif %}">
+ <div class="wrapper">
+      <div class="cs-lsiting-inner">
+         <div class="chsh-header">
+        <h2>
+          {{ module.title }}
+        </h2>
+        </div>
+        <div class="casestudy-lsiting-main">
+         
+           {% for content in contents %}  
+              <div class="casestudy-article">
+                <div class="casestudy-article-feature" style="background-image: url('{{ content.featured_image }}');">
+
+                </div>
+                <div class="casestudy-article-content">
+                  {% if content.widgets.whitepaper_image and content.widgets.whitepaper_image.body and content.widgets.whitepaper_image.body.src %}
+                  <div class="casestudy-circle">
+                     <img src="{{content.widgets.whitepaper_image.body.src}}" alt="article-logo">
+                  </div>
+                   {% endif %}
+                  <h4>
+                    {{ content.name }}
+                  </h4>
+                </div>
+               
+
+                <a href="{% if content.widgets.text_link.body.value %}{{ content.widgets.text_link.body.value }}{% else %}{{ content.absolute_url }}{% endif %}" class="fullcover-link"></a>
+              </div>
+              {% endfor %}
+         
+         
+        </div>  
+        
+      </div>
+ </div>
+</div>
+
+
+{% require_css %}
+<style>
+   
+  {{ moduleId }} .bgsec { {% if module.style.select_background == 'bg_color' %}
+    background-color: rgba({{ module.style.background_color.color|convert_rgb }},{{ module.style.background_color.opacity ~ '%' }});
+    {% elif module.style.select_background == 'bg_image' %}
+    {{ module.style.background_image.css }} background-repeat: no-repeat;
+    {% elif module.style.select_background == 'bg_gradient' %}
+    background: {{ module.style.background_gradient.css }};
+    {% endif %} }
+  
+  {{ moduleId }} .space-sec { {{ module.style.spacing.desktop.css }}; }
+   
+  
+  @media(max-width: 991px){ {{ moduleId }} .space-sec { {{ module.style.spacing.tablet.css }}; } }
+  
+  @media(max-width: 767px){ {{ moduleId }} .space-sec { {{ module.style.spacing.mobile.css }}; } }
+  
+</style>
+{% end_require_css %}
+{% endif %}

@@ -1,0 +1,179 @@
+{% if module.show_hide_ %}
+{% set moduleId = 'hs_cos_wrapper_{{ name }}' %}
+<div id="{{ module.section_id }}" class="fullwidth formtext-sec hrprocu-sec bgsec space-sec {% if module.style.add_right_shape_image %}hrprocu-shapesc{% endif %}">
+{% if module.add_section_background_shape %}
+	<span class="frmtxt-lfshape">
+    {% if module.left_shape.src %}
+	  {% set sizeAttrs = 'width="{{ module.left_shape.width|escape_attr }}" height="{{ module.left_shape.height|escape_attr }}"' %}
+	  {% if module.left_shape.size_type == 'auto' %}
+		{% set sizeAttrs = 'width="{{ module.left_shape.width|escape_attr }}" height="{{ module.left_shape.height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+	  {% elif module.left_shape.size_type == 'auto_custom_max' %}
+		{% set sizeAttrs = 'width="{{ module.left_shape.max_width|escape_attr }}" height="{{ module.left_shape.max_height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+	  {% endif %}
+	  {% set loadingAttr = module.left_shape.loading != 'disabled' ? 'loading="{{ module.left_shape.loading|escape_attr }}"' : '' %}
+	  <img src="{{ module.left_shape.src|escape_url }}" alt="{{ module.left_shape.alt|escape_attr }}" {{ loadingAttr }} {{ sizeAttrs }}>
+    {% endif %}
+  </span>
+  <span class="frmtxt-rghtshape">
+    {% if module.right_shape.src %}
+	  {% set sizeAttrs = 'width="{{ module.right_shape.width|escape_attr }}" height="{{ module.right_shape.height|escape_attr }}"' %}
+	  {% if module.right_shape.size_type == 'auto' %}
+		{% set sizeAttrs = 'width="{{ module.right_shape.width|escape_attr }}" height="{{ module.right_shape.height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+	  {% elif module.right_shape.size_type == 'auto_custom_max' %}
+		{% set sizeAttrs = 'width="{{ module.right_shape.max_width|escape_attr }}" height="{{ module.right_shape.max_height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+	  {% endif %}
+	  {% set loadingAttr = module.right_shape.loading != 'disabled' ? 'loading="{{ module.right_shape.loading|escape_attr }}"' : '' %}
+	  <img src="{{ module.right_shape.src|escape_url }}" alt="{{ module.right_shape.alt|escape_attr }}" {{ loadingAttr }} {{ sizeAttrs }}>
+    {% endif %}
+  </span>
+{% endif %}
+  <div class="wrapper">
+    <div class="hrprocu-outer flexwrap{% if module.vertical_align_top %} removepd-tp{% endif %} {{ module.text_large_or_image_large }}">
+      <div class="hrprocu-lf">
+        {% if module.title %}<div class="tilecolor"><h2 class="{{ module.heading_choice }}">{{ module.title }}</h2></div>{% endif %}
+        {% if module.text %}<div class="hrprocu-txt sectxt">{{ module.text }}</div>{% endif %}
+        {% if module.left_bottom_text %}
+        <div class="hrprocu-bm">
+          {% for item in module.left_bottom_text %}
+            <div class="hrprocu-bmcol">
+              <div class="hrprocu-bmtxt sectxt"><strong>{{ item.title }}</strong>{{ item.text }}</div>
+            </div>
+          {% endfor %}
+        </div>
+        {% endif %}
+        {% if module.button_text %}
+        <div class="hrprocu-btn {{ module.select_button }}">
+          {% set href = module.button_link.url.href %}
+          {% if module.button_link.url.type is equalto "EMAIL_ADDRESS" %}
+	          {% set href = "mailto:" + href %}
+          {% endif %}
+          <a href="{{ href }}" 
+	          {% if module.button_link.open_in_new_tab %}target="_blank"{% endif %}
+	          {% if module.button_link.rel %}rel="{{ module.button_link.rel }}"{% endif %}
+	          >
+	          {{ module.button_text }}
+          </a>
+        </div>
+        {% endif %}
+      </div>
+      <div class="hrprocu-rght">
+        {% if module.image_form == 'image' %}
+        <div class="hrprocu-img">
+          {% if module.image.src %}
+	          {% set sizeAttrs = 'width="{{ module.image.width }}" height="{{ module.image.height }}"' %}
+	          {% if module.image.size_type == 'auto' %}
+		        {% set sizeAttrs = 'width="{{ module.image.width }}" height="{{ module.image.height }}" style="max-width: 100%; height: auto;"' %}
+	          {% elif module.image.size_type == 'auto_custom_max' %}
+		        {% set sizeAttrs = 'width="{{ module.image.max_width }}" height="{{ module.image.max_height }}" style="max-width: 100%; height: auto;"' %}
+	          {% endif %}
+	          {% set loadingAttr = module.image.loading != 'disabled' ? 'loading="{{ module.image.loading }}"' : '' %}
+	          <img src="{{ module.image.src }}" alt="{{ module.image.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
+          {% endif %}
+           {% if module.style.add_right_shape_image %}   
+            {% if module.style.right_first_image.src %} 
+              <span class="hrp-topleft">    
+                {% set sizeAttrs = 'width="{{ module.style.right_first_image.width }}" height="{{ module.style.right_first_image.height }}"' %}
+                {% if module.style.right_first_image.size_type == 'auto' %}
+                {% set sizeAttrs = 'width="{{ module.style.right_first_image.width }}" height="{{ module.style.right_first_image.height }}" style="max-width: 100%; height: auto;"' %}
+                {% elif module.style.right_first_image.size_type == 'auto_custom_max' %}
+                {% set sizeAttrs = 'width="{{ module.style.right_first_image.max_width }}" height="{{ module.style.right_first_image.max_height }}" style="max-width: 100%; height: auto;"' %}
+                {% endif %}
+                {% set loadingAttr = module.style.right_first_image.loading != 'disabled' ? 'loading="{{ module.style.right_first_image.loading }}"' : '' %}
+                <img src="{{ module.style.right_first_image.src }}" alt="{{ module.style.right_first_image.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>  
+              </span>
+            {% endif %} 
+            {% if module.style.right_second_image.src %} 
+              <span class="hrp-topright">   
+                {% set sizeAttrs = 'width="{{ module.style.right_second_image.width }}" height="{{ module.style.right_second_image.height }}"' %}
+                {% if module.style.right_second_image.size_type == 'auto' %}
+                {% set sizeAttrs = 'width="{{ module.style.right_second_image.width }}" height="{{ module.style.right_second_image.height }}" style="max-width: 100%; height: auto;"' %}
+                {% elif module.style.right_second_image.size_type == 'auto_custom_max' %}
+                {% set sizeAttrs = 'width="{{ module.style.right_second_image.max_width }}" height="{{ module.style.right_second_image.max_height }}" style="max-width: 100%; height: auto;"' %}
+                {% endif %}
+                {% set loadingAttr = module.style.right_second_image.loading != 'disabled' ? 'loading="{{ module.style.right_second_image.loading }}"' : '' %}
+                <img src="{{ module.style.right_second_image.src }}" alt="{{ module.style.right_second_image.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>  
+              </span>
+            {% endif %}    
+          {% endif %}
+        </div>
+        {% elif module.image_form == 'meeting' %}
+        <div class="emb-meeting">
+         <!-- Start of Meetings Embed Script -->
+        <div class="meetings-iframe-container" data-src="{{ module.meeting_link }}?embed=true"></div>
+        <script type="text/javascript" src="https://static.hsappstatic.net/MeetingsEmbed/ex/MeetingsEmbedCode.js"></script>
+      <!-- End of Meetings Embed Script -->
+          </div>
+        {% elif module.image_form == 'form' %}
+        <div class="hrprocu-frm" id="download_guide">
+          <{{ module.select_form_title }}>{{ module.form_title }}</{{ module.select_form_title }}>
+          {% form
+	          form_to_use="{{ module.form.form_id }}"
+	          response_response_type="{{ module.form.response_type }}"
+	          response_message="{{ module.form.message }}"
+	          response_redirect_id="{{ module.form.redirect_id }}"
+	          response_redirect_url="{{module.form.redirect_url}}"
+	          gotowebinar_webinar_key="{{ module.form.gotowebinar_webinar_key }}"
+          %}
+        </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+
+
+{% require_css %}
+<style>
+  #{{ moduleId }} .tilecolor h1, #{{ moduleId }} .tilecolor h2, #{{ moduleId }} .tilecolor h3, #{{ moduleId }} .tilecolor h4, #{{ moduleId }} .tilecolor h5, #{{ moduleId }} .tilecolor h6 { color: rgba({{ module.color_setting.title_color.color|convert_rgb }},{{ module.color_setting.title_color.opacity ~ '%' }}); }
+  #{{ moduleId }} .sectxt { color: rgba({{ module.color_setting.text_color.color|convert_rgb }},{{ module.color_setting.text_color.opacity ~ '%' }}); }
+  #{{ moduleId }} .hrprocu-frm h4 { color: rgba({{ module.color_setting.form_title_color.color|convert_rgb }},{{ module.color_setting.form_title_color.opacity ~ '%' }}); }
+  #{{ moduleId }} .hrprocu-bmtxt { color: rgba({{ module.color_setting.bottom_text_color.color|convert_rgb }},{{ module.color_setting.bottom_text_color.opacity ~ '%' }}); }
+ 
+  
+  #{{ moduleId }} .hrprocu-btn a { color: rgba({{ module.button_style.text_color.color|convert_rgb }},{{ module.button_style.text_color.opacity ~ '%' }});
+  background-color: rgba({{ module.button_style.background_color.color|convert_rgb }},{{ module.button_style.background_color.opacity ~ '%' }});
+  border-color: rgba({{ module.button_style.border_color.color|convert_rgb }},{{ module.button_style.border_color.opacity ~ '%' }}); }
+  
+  #{{ moduleId }} .hrprocu-btn a:hover { color: rgba({{ module.button_style.text_hover_color.color|convert_rgb }},{{ module.button_style.text_hover_color.opacity ~ '%' }});
+  background-color: rgba({{ module.button_style.background_hover_color.color|convert_rgb }},{{ module.button_style.background_hover_color.opacity ~ '%' }});
+  border-color: rgba({{ module.button_style.border_hover_color.color|convert_rgb }},{{ module.button_style.border_hover_color.opacity ~ '%' }}); }
+  
+  
+  #{{ moduleId }} .bgsec { {% if module.style.select_background == 'bg_color' %}
+    background-color: rgba({{ module.style.background_color.color|convert_rgb }},{{ module.style.background_color.opacity ~ '%' }});
+    {% elif module.style.select_background == 'bg_image' %}
+    {{ module.style.background_image.css }} background-repeat: no-repeat;
+    {% elif module.style.select_background == 'bg_gradient' %}
+    background: {{ module.style.background_gradient.css }};
+    {% endif %} }
+  
+  #{{ moduleId }} .space-sec { {{ module.style.spacing.desktop.css }}; }
+  
+  #{{ moduleId }} .hrprocu-img { min-height: {{ module.color_setting.image_background_min_height }}px; background-color: rgba({{ module.color_setting.image_background_color.color|convert_rgb }},{{ module.color_setting.image_background_color.opacity ~ '%' }}); }
+   {% if module.image_form == 'meeting' %}
+    .hrprocu-sec { margin-bottom: -150px;}
+    {% endif %}
+  @media(max-width: 1280px){ 
+   #{{ moduleId }} .hrprocu-img { min-height: {{ module.color_setting.image_background_min_height_laptop_ }}px; }
+  }
+  
+  @media(max-width: 1080px){ 
+   #{{ moduleId }} .hrprocu-img { min-height: {{ module.color_setting.image_background_min_height_tablet_ }}px; }
+  }
+  
+  
+  @media(max-width: 991px){ #{{ moduleId }} .space-sec { {{ module.style.spacing.tablet.css }}; } 
+   #{{ moduleId }} .hrprocu-img { min-height: auto; }
+   
+  }
+  
+  
+  @media(max-width: 767px){ #{{ moduleId }} .space-sec { {{ module.style.spacing.mobile.css }}; } 
+  {% if module.image_form == 'meeting' %}
+    .hrprocu-rght { padding-top: 30px;}
+    {% endif %}
+  }
+  
+</style>
+{% end_require_css %}
+{% endif %}

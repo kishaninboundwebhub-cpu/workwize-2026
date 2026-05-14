@@ -1,0 +1,128 @@
+<div class="glrevieSec specSec fullwidth">
+  <div class="wrapper">
+    {% if module.title %}
+      <div class="glrevieTitle text-center">
+        <h2>{{ module.title }}</h2>
+    </div>
+    {% endif %}
+    
+    <div class="glrevieInner flexwrap">
+      {% for item in module.review_item %}
+      <div class="glrevieItem">
+        <div class="glrevieItInn">
+          <div class="glrevieItTop flexwrap alignCenter">
+            <div class="glrevieItIAvatar"> 
+              {% if item.image_field.src %}
+              {% set sizeAttrs = 'width="{{ item.image_field.width|escape_attr }}" height="{{ item.image_field.height|escape_attr }}"' %}
+              {% if item.image_field.size_type == 'auto' %}
+              {% set sizeAttrs = 'width="{{ item.image_field.width|escape_attr }}" height="{{ item.image_field.height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+              {% elif item.image_field.size_type == 'auto_custom_max' %}
+              {% set sizeAttrs = 'width="{{ item.image_field.max_width|escape_attr }}" height="{{ item.image_field.max_height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+              {% endif %}
+              {% set loadingAttr = item.image_field.loading != 'disabled' ? 'loading="{{ item.image_field.loading|escape_attr }}"' : '' %}
+              <img src="{{ item.image_field.src|escape_url }}" alt="{{ item.image_field.alt|escape_attr }}" {{ loadingAttr }} {{ sizeAttrs }}>
+              {% endif %}
+            </div>
+            <div class="glrevieItIAbio"> 
+              <span class="glrevieIt-name"><strong>{{ item.person_name }}</strong></span>
+              <span class="glrevieIt-designation">{{ item.job_title }} <span>{{ item.company_name }}</span></span>
+            </div>
+            <div class="glrevieItIPlatic"> 
+                {% if item.platform_image.src %}
+                {% set sizeAttrs = 'width="{{ item.platform_image.width|escape_attr }}" height="{{ item.platform_image.height|escape_attr }}"' %}
+                {% if item.platform_image.size_type == 'auto' %}
+                {% set sizeAttrs = 'width="{{ item.platform_image.width|escape_attr }}" height="{{ item.platform_image.height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+                {% elif item.platform_image.size_type == 'auto_custom_max' %}
+                {% set sizeAttrs = 'width="{{ item.platform_image.max_width|escape_attr }}" height="{{ item.platform_image.max_height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+                {% endif %}
+                {% set loadingAttr = item.platform_image.loading != 'disabled' ? 'loading="{{ item.platform_image.loading|escape_attr }}"' : '' %}
+                <img src="{{ item.platform_image.src|escape_url }}" alt="{{ item.platform_image.alt|escape_attr }}" {{ loadingAttr }} {{ sizeAttrs }}>
+                {% endif %}
+            </div>
+          </div>
+          <div class="glrevieItStar">
+            <ul class="flexwrap">
+              {% for item2 in item.rating.star %}
+                <li>
+                  {% if item2.src %}
+                  {% set sizeAttrs = 'width="{{ item2.width|escape_attr }}" height="{{ item2.height|escape_attr }}"' %}
+                  {% if item2.size_type == 'auto' %}
+                  {% set sizeAttrs = 'width="{{ item2.width|escape_attr }}" height="{{ item2.height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+                  {% elif item2.size_type == 'auto_custom_max' %}
+                  {% set sizeAttrs = 'width="{{ item2.max_width|escape_attr }}" height="{{ item2.max_height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+                  {% endif %}
+                  {% set loadingAttr = item2.loading != 'disabled' ? 'loading="{{ item2.loading|escape_attr }}"' : '' %}
+                  <img src="{{ item2.src|escape_url }}" alt="{{ item2.alt|escape_attr }}" {{ loadingAttr }} {{ sizeAttrs }}>
+                  {% endif %}
+                </li>
+              {% endfor %}
+            </ul>
+          </div>
+          
+          <div class="glrevieIttext">
+            {{ item.review_comment }}
+          </div>
+          {% if item.hide_show_button %}
+            <div class="glrevieItBtn button">
+              {% set href = item.button.button_link.url.href %}
+              {% if item.button.button_link.url.type is equalto "EMAIL_ADDRESS" %}
+              {% set href = "mailto:" + href %}
+              {% endif %}
+              <a
+                {% if item.button.button_link.url.type is equalto "CALL_TO_ACTION"  %}
+                  href="{{ href }}" {# The href here is not escaped as it is not editable and functions as a JavaScript call to the associated CTA #}
+                {% else %}
+                  href="{{ href|escape_url }}"
+                {% endif %}
+                {% if item.button.button_link.open_in_new_tab %}
+                  target="_blank"
+                {% endif %}
+                {% if item.button.button_link.rel %}
+                  rel="{{ item.button.button_link.rel|escape_attr }}"
+                {% endif %}
+                >
+                {{ item.button.button_text }}
+              </a>
+            </div>
+          {% endif %}
+        </div>
+      </div>
+      {% endfor %}
+      
+    </div>
+    
+    <div class="review-load-more-btn button">
+      <button>Load More</button>
+    </div>
+    
+    
+    
+  </div>
+</div>
+
+
+{% require_css %}
+  <style>
+    {% scope_css %}
+    
+    .specSec { {{ module.style.spacing.desktop.css }} }    
+    
+    @media(max-width:991px){
+      .specSec { {{ module.style.spacing.tablet.css }} } 
+    }
+    
+    @media(max-width:767px){
+      .specSec { {{ module.style.spacing.mobile.css }} } 
+    }
+    
+    {% end_scope_css %}
+  </style>
+{% end_require_css %}
+
+
+
+
+
+
+
+

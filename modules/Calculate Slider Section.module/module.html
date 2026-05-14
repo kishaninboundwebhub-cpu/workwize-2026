@@ -1,0 +1,166 @@
+<div class="calcusllSec spaceSec">
+  <div class="wrapper">
+    <div class="calcusllInner flexwrap">
+      <div class="calcusllILeft">
+        <h2>{{ module.left_content.title }}</h2>
+        <div class="calcusllIText">
+          {{ module.left_content.text }}
+        </div>
+        
+        <div class="calcusllIButton flexwrap">
+          {% for item in module.left_content.button %}
+            <div class="calcusllIBtns {{ item.button_style }}">
+                {% set href = item.button_link.url.href %}
+                {% if item.button_link.url.type is equalto "EMAIL_ADDRESS" %}
+                  {% set href = "mailto:" + href %}
+                {% elif item.button_link.url.type is equalto "PHONE_NUMBER" %}
+                  {% set href = "tel:" + href %}
+                {% endif %}
+                <a
+                  {% if item.button_link.url.type is equalto "CALL_TO_ACTION"  %}
+                    href="{{ href }}" {# The href here is not escaped as it is not editable and functions as a JavaScript call to the associated CTA #}
+                  {% else %}
+                    href="{{ href|escape_url }}"
+                  {% endif %}
+                  {% if item.button_link.open_in_new_tab %}
+                    target="_blank"
+                  {% endif %}
+                  {% if item.button_link.rel %}
+                    rel="{{ item.button_link.rel|escape_attr }}"
+                  {% endif %}
+                  >
+                  {{ item.button_text }}
+                </a>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+      <div class="calcusllIRight">
+       <div class="roi-calculator">
+         <h3>{{ module.slider_content.top_content.title }}</h3>
+         <div class="roi-caltexttt">
+          {{ module.slider_content.top_content.prev_text_of_multiplier }} <strong id="roi-multiplier">5.9x</strong> {{ module.slider_content.top_content.next_text_of_multiplier_copy }}
+         </div>
+         <div class="roi-caltextttb">
+          {{ module.slider_content.top_content.sub_text }}
+         </div>
+        <div class="slider-row">
+          <span>{{ module.slider_content.calculation_settings.min_value }}</span>
+          <input type="range" id="employeeRange" min="{{ module.slider_content.calculation_settings.min_value }}" max="{{ module.slider_content.calculation_settings.max_value }}" value="{{ module.slider_content.calculation_settings.default_value }}" step="1">
+          <span>{{ module.slider_content.calculation_settings.max_value }}+</span>
+        </div>
+        <div class="slider-value"><span id="employeeValue">{{ module.slider_content.calculation_settings.default_value }}</span></div>
+
+        <div class="roi-results">
+            <div class="roi-item">
+              <h4>{{ module.slider_content.calculation_settings.roi_multiplier_title }}</h4>
+              <div class="roivalue"><span id="roiValue">5.9x</span></div>
+            </div>
+            <div class="roi-item">
+              <h4>{{ module.slider_content.calculation_settings.monthly_savings_title }}</h4>
+              <div class="roivalue"><span id="savingsValue">$29k</span></div>
+            </div>
+          </div>
+        <div class="calcusllChart">
+          {% if module.slider_content.chart_image.image_field.src %}
+          {% set sizeAttrs = 'width="{{ module.slider_content.chart_image.image_field.width|escape_attr }}" height="{{ module.slider_content.chart_image.image_field.height|escape_attr }}"' %}
+          {% if module.slider_content.chart_image.image_field.size_type == 'auto' %}
+          {% set sizeAttrs = 'width="{{ module.slider_content.chart_image.image_field.width|escape_attr }}" height="{{ module.slider_content.chart_image.image_field.height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+          {% elif module.slider_content.chart_image.image_field.size_type == 'auto_custom_max' %}
+          {% set sizeAttrs = 'width="{{ module.slider_content.chart_image.image_field.max_width|escape_attr }}" height="{{ module.slider_content.chart_image.image_field.max_height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+          {% endif %}
+          {% set loadingAttr = module.slider_content.chart_image.image_field.loading != 'disabled' ? 'loading="{{ module.slider_content.chart_image.image_field.loading|escape_attr }}"' : '' %}
+          <img src="{{ module.slider_content.chart_image.image_field.src|escape_url }}" alt="{{ module.slider_content.chart_image.image_field.alt|escape_attr }}" {{ loadingAttr }} {{ sizeAttrs }}>
+          {% endif %}
+        </div>
+      </div>
+     </div>
+    </div>
+  </div>
+</div>
+
+{% require_css %}
+  <style>
+    {% scope_css %}
+      .spaceSec { {{ module.style.desktop.css }}  } 
+    
+    
+    @media(max-width:991px){
+      .spaceSec { {{ module.style.tablet.css }}  } 
+    }
+    
+    @media(max-width:767px){
+      .spaceSec { {{ module.style.mobile.css }}  } 
+    }
+    
+    {% end_scope_css %}
+  </style>
+{% end_require_css %}
+
+
+{% require_js %}
+<script>
+$(function() {
+
+  const roiData = [
+    { employees: 3, roi: 1.4 },
+    { employees: 5, roi: 2.2 },
+    { employees: 10, roi: 3.4 },
+    { employees: 15, roi: 4.4 },
+    { employees: 30, roi: 5.9 },
+    { employees: 80, roi: 9.1 },
+    { employees: 150, roi: 12.3 }
+  ];
+
+  const baseSavings = {{ module.slider_content.calculation_settings.vase_savings_value }};     // base monthly savings when ROI = 1.4x
+  const defaultEmployees = {{ module.slider_content.calculation_settings.default_value }};  // default slider position when loaded
+
+  /* ===== CALCULATOR LOGIC ===== */
+  const $range = $('#employeeRange');
+  const $roiVal = $('#roiValue');
+  const $roiMultiplier = $('#roi-multiplier');
+  const $savingsVal = $('#savingsValue');
+  const $employeeVal = $('#employeeValue');
+
+  $range.val(defaultEmployees);
+
+  // interpolate ROI between known points
+  function interpolateROI(employees) {
+    for (let i = 0; i < roiData.length - 1; i++) {
+      const p1 = roiData[i];
+      const p2 = roiData[i + 1];
+      if (employees >= p1.employees && employees <= p2.employees) {
+        const ratio = (employees - p1.employees) / (p2.employees - p1.employees);
+        return (p1.roi + ratio * (p2.roi - p1.roi)).toFixed(1);
+      }
+    }
+    return employees < roiData[0].employees
+      ? roiData[0].roi
+      : roiData[roiData.length - 1].roi;
+  }
+
+  function updateGradient(value) {
+    const percentage = ((value - $range.attr('min')) / ($range.attr('max') - $range.attr('min'))) * 100;
+    $range.css('background', `linear-gradient(to right, #227af7 ${percentage}%, #ddd ${percentage}%)`);
+  }
+
+  function updateValues() {
+    const employees = parseInt($range.val());
+    const roi = interpolateROI(employees);
+    const savings = (baseSavings * (roi / roiData[0].roi)).toFixed(0);
+
+    // Update visible values
+    $employeeVal.text(employees);
+    $roiVal.text(roi + 'x');
+    $roiMultiplier.text(roi + 'x');
+    $savingsVal.text('$' + (savings / 1000).toFixed(1) + 'k');
+
+    updateGradient(employees);
+  }
+
+  // Initialize and listen for input
+  updateValues();
+  $range.on('input', updateValues);
+});
+</script>
+{% end_require_js %}

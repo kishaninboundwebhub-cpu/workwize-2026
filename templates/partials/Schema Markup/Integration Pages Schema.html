@@ -1,0 +1,41 @@
+<!--
+  templateType: "page"
+  isAvailableForNewContent: false
+-->
+<script type="application/ld+json">
+{
+	"@context": "https://schema.org",
+	"@type": "SoftwareApplication",
+	"@id": "{{ content.absolute_url }}#integration",
+	"name": {{ content.name|striptags|tojson }},
+	"applicationCategory": "BusinessApplication",
+	"operatingSystem": "Web",
+	"applicationSuite": "Workwize",
+	"description": {{ page_meta.meta_description|default(content.meta_description)|striptags|tojson }},
+	"provider": 
+		{
+			"@type": "Organization",
+			"name": "Workwize",
+			"url": "https://www.goworkwize.com"
+		},
+	"featureList": 
+		[
+			"Pre-configured device delivery",
+			"Apple Business Manager enrollment",
+			"Windows Autopilot provisioning",
+			"Self-service equipment requests",
+			"Real-time device sync",
+			"Automated offboarding and retrieval",
+			"Security and compliance enforcement"
+		],
+	"audience": 
+		{
+			"@type": "BusinessAudience",
+			"audienceType": "IT teams, HR teams, distributed companies"
+		},
+	"mainEntityOfPage": 
+		{
+			"@id": "{{ content.absolute_url }}#webpage"
+		}
+}
+</script>

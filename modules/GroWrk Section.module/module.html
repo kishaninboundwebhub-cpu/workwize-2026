@@ -1,0 +1,155 @@
+{% if module.show_hide_ %}
+{% set moduleId = '#hs_cos_wrapper_{{ name }}' %}
+
+<div class="growrklsec fullwidth bgsec space-sec">
+  
+  <div class="growrkImg">
+    {% if module.top_shape.src %}
+      {% set sizeAttrs = 'width="{{ module.top_shape.width|escape_attr }}" height="{{ module.top_shape.height|escape_attr }}"' %}
+      {% if module.top_shape.size_type == 'auto' %}
+        {% set sizeAttrs = 'width="{{ module.top_shape.width|escape_attr }}" height="{{ module.top_shape.height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+      {% elif module.top_shape.size_type == 'auto_custom_max' %}
+        {% set sizeAttrs = 'width="{{ module.top_shape.max_width|escape_attr }}" height="{{ module.top_shape.max_height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+      {% endif %}
+       {% set loadingAttr = module.top_shape.loading != 'disabled' ? 'loading="{{ module.top_shape.loading|escape_attr }}"' : '' %}
+      <img src="{{ module.top_shape.src|escape_url }}" alt="{{ module.top_shape.alt|escape_attr }}" {{ loadingAttr }} {{ sizeAttrs }}>
+    {% endif %}
+  </div>
+  <div class="growrkRImg">
+    {% if module.bottom_shape.src %}
+        {% set sizeAttrs = 'width="{{ module.bottom_shape.width|escape_attr }}" height="{{ module.bottom_shape.height|escape_attr }}"' %}
+        {% if module.bottom_shape.size_type == 'auto' %}
+          {% set sizeAttrs = 'width="{{ module.bottom_shape.width|escape_attr }}" height="{{ module.bottom_shape.height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+        {% elif module.bottom_shape.size_type == 'auto_custom_max' %}
+          {% set sizeAttrs = 'width="{{ module.bottom_shape.max_width|escape_attr }}" height="{{ module.bottom_shape.max_height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+        {% endif %}
+         {% set loadingAttr = module.bottom_shape.loading != 'disabled' ? 'loading="{{ module.bottom_shape.loading|escape_attr }}"' : '' %}
+        <img src="{{ module.bottom_shape.src|escape_url }}" alt="{{ module.bottom_shape.alt|escape_attr }}" {{ loadingAttr }} {{ sizeAttrs }}>
+      {% endif %}
+  </div>
+ <div class="wrapper">
+   <div class="growrkTop pb80 text-center wow fadeInUp">
+     <h2>{{ module.top_content.title }}</h2>
+     <div class="growrkstext">
+      {{ module.top_content.text }}
+     </div>
+     {% if module.top_content.sub_title %}
+     <div class="growrkTtt pt20 pb16 d_flex align_center flex_center gap8">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M10.7501 14.1704C10.5474 14.3731 10.2724 14.4871 9.98574 14.4871H6.01694C5.73026 14.4871 5.45531 14.3731 5.2526 14.1704L1.83223 10.7501C1.62951 10.5474 1.51562 10.2724 1.51562 9.98574V6.01694C1.51562 5.73026 1.62951 5.45531 1.83223 5.2526L5.2526 1.83223C5.45531 1.62951 5.73026 1.51562 6.01694 1.51562H9.98574C10.2724 1.51562 10.5474 1.62951 10.7501 1.83223L14.1704 5.2526C14.3731 5.45531 14.4871 5.73026 14.4871 6.01694V9.98574C14.4871 10.2724 14.3731 10.5474 14.1704 10.7501L10.7501 14.1704Z" fill="#FFEBE5"/>
+      <path d="M10.7501 14.1704C10.5474 14.3731 10.2724 14.4871 9.98574 14.4871H6.01694C5.73026 14.4871 5.45531 14.3731 5.2526 14.1704L1.83223 10.7501C1.62951 10.5474 1.51562 10.2724 1.51562 9.98574V6.01694C1.51562 5.73026 1.62951 5.45531 1.83223 5.2526L5.2526 1.83223C5.45531 1.62951 5.73026 1.51562 6.01694 1.51562H9.98574C10.2724 1.51562 10.5474 1.62951 10.7501 1.83223L14.1704 5.2526C14.3731 5.45531 14.4871 5.73026 14.4871 6.01694V9.98574C14.4871 10.2724 14.3731 10.5474 14.1704 10.7501L10.7501 14.1704Z" stroke="#FC5528" stroke-width="0.866667" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M8 4.75781V8.27091" stroke="#FC5528" stroke-width="0.866667" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M7.9968 11.2436C7.84755 11.2436 7.72656 11.1226 7.72656 10.9734C7.72656 10.8241 7.84755 10.7031 7.9968 10.7031" stroke="#FC5528" stroke-width="0.866667" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M8 11.2436C8.14925 11.2436 8.27024 11.1226 8.27024 10.9734C8.27024 10.8241 8.14925 10.7031 8 10.7031" stroke="#FC5528" stroke-width="0.866667" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      {{ module.top_content.sub_title }}
+     </div>
+     {% endif %}
+     {% if module.top_content.sub_text %}
+     <div class="growrksubtext">
+      {{ module.top_content.sub_text }}
+     </div>
+     {% endif %}
+   </div>
+   
+   
+   <div class="itteadhlIBttIcon">
+       <span class="itteadhicout">
+       <span class="itteadhic">
+            
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <g clip-path="url(#clip0_3003_25448)">
+          <path d="M1.375 9.99679C1.375 12.2834 2.28336 14.4764 3.90026 16.0933C5.51716 17.7102 7.71015 18.6186 9.99679 18.6186C12.2834 18.6186 14.4764 17.7102 16.0933 16.0933C17.7102 14.4764 18.6186 12.2834 18.6186 9.99679C18.6186 7.71015 17.7102 5.51716 16.0933 3.90026C14.4764 2.28336 12.2834 1.375 9.99679 1.375C7.71015 1.375 5.51716 2.28336 3.90026 3.90026C2.28336 5.51716 1.375 7.71015 1.375 9.99679Z" fill="#FFEBE5"/>
+          <path d="M10 1.375V11.9864" stroke="#FC5528" stroke-width="1.43" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M7.34375 9.33594L9.99661 11.9888L12.6495 9.33594" stroke="#FC5528" stroke-width="1.43" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M14.6393 2.73438C16.2106 3.73847 17.414 5.22493 18.0692 6.97084C18.7242 8.71674 18.7955 10.628 18.2725 12.4178C17.7494 14.2077 16.6602 15.7798 15.1681 16.8983C13.676 18.0167 11.8615 18.6213 9.99679 18.6213C8.13204 18.6213 6.31757 18.0167 4.82548 16.8983C3.33339 15.7798 2.24416 14.2077 1.72111 12.4178C1.19806 10.628 1.26942 8.71674 1.92447 6.97084C2.57952 5.22494 3.78296 3.73847 5.35429 2.73438" stroke="#FC5528" stroke-width="1.43" stroke-linecap="round" stroke-linejoin="round"/>
+          </g>
+          <defs>
+          <clipPath id="clip0_3003_25448">
+          <rect width="20" height="20" fill="white"/>
+          </clipPath>
+          </defs>
+          </svg>
+
+         </span>
+         </span>
+     </div>
+   
+     <div class="growrkBottt pt80 sm_pt60">
+       <h2 class="wow fadeInUp {% if module.bottom_content.sub_text  %} pb28 {% else %} pb60 sm_pb30 {% endif %}">{{ module.bottom_content.title }}</h2>
+       
+       {% if module.bottom_content.sub_text  %}
+         <div class="growrkBotext color75 text-center pb40 wow fadeInUp">
+          {{ module.bottom_content.sub_text }}
+         </div>
+     {% endif %}
+       
+       <div class="growrkBoInner  d_flex">
+       {% for item in module.bottom_content.card_item %}
+             <div class="problItem wow fadeInUp">
+               <div class="problInn">
+                 <div class="problImage">
+                      {% if item.image_field.src %}
+                      {% set sizeAttrs = 'width="{{ item.image_field.width|escape_attr }}" height="{{ item.image_field.height|escape_attr }}"' %}
+                      {% if item.image_field.size_type == 'auto' %}
+                        {% set sizeAttrs = 'width="{{ item.image_field.width|escape_attr }}" height="{{ item.image_field.height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+                      {% elif item.image_field.size_type == 'auto_custom_max' %}
+                        {% set sizeAttrs = 'width="{{ item.image_field.max_width|escape_attr }}" height="{{ item.image_field.max_height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+                      {% endif %}
+                       {% set loadingAttr = item.image_field.loading != 'disabled' ? 'loading="{{ item.image_field.loading|escape_attr }}"' : '' %}
+                      <img src="{{ item.image_field.src|escape_url }}" alt="{{ item.image_field.alt|escape_attr }}" {{ loadingAttr }} {{ sizeAttrs }}>
+                    {% endif %}
+                 </div>
+                 <div class="problItit">
+                    <h3>{{ item.title }}</h3>
+                 </div>
+                 <div class="problbtext">
+                  {{ item.text }}
+                 </div>
+               </div>
+             </div>
+       {% endfor %}
+       
+       </div>
+     </div>
+   
+   
+   
+   
+   
+   
+   
+   
+   
+ </div>
+</div>
+
+
+{% require_css %}
+<style>
+  {{ moduleId }} .bgsec { {% if module.style.select_background == 'bg_color' %}
+    background-color: rgba({{ module.style.background_color.color|convert_rgb }},{{ module.style.background_color.opacity ~ '%' }});
+    {% elif module.style.select_background == 'bg_image' %}
+    {{ module.style.background_image.css }} background-repeat: no-repeat;
+    {% elif module.style.select_background == 'bg_gradient' %}
+    background: {{ module.style.background_gradient.css }};
+    {% endif %} }
+  
+  {{ moduleId }} .space-sec { {{ module.style.spacing.desktop.css }}; position: relative; z-index: 1; }
+  
+  {{ moduleId }} .growrkTop {  max-width:{{ module.top_content.max_width }}px; } 
+  
+  
+  
+  
+  @media(max-width: 991px){ {{ moduleId }} .space-sec { {{ module.style.spacing.tablet.css }}; } }
+  
+  @media(max-width: 767px){ {{ moduleId }} .space-sec { {{ module.style.spacing.mobile.css }}; } }
+  
+</style>
+{% end_require_css %}
+
+
+
+{% endif %}
+

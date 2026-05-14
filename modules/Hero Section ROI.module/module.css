@@ -1,0 +1,222 @@
+.PricingForm form .legal-consent-container .hs-dependent-field > div > .hs-error-msgs  { display : none !important}
+.PricingForm form .legal-consent-container .hs-dependent-field ul.inputs-list label { display: flex; flex-wrap: wrap;}
+.PricingForm form .legal-consent-container .hs-dependent-field ul.inputs-list label .hs-error-msgs {  order: 3;  width: 100%;}
+.PricingForm form fieldset.form-columns-0 + fieldset.form-columns-1 { margin-top: 0 !important;}
+.ResultPageCTA { display : none }
+.PricingForm .submit_btn:after { display: none; }
+.PricingForm .loader {display: flex;}
+.PricingForm .next-btn:after { margin-top: -2px; content: "\f054"; font-family: "Font Awesome 7 Free"; font-weight: 900; font-size: 14px; line-height: normal; margin-left: 10px; }
+.PricingForm .prev-btn:before { margin-top: -2px; content: "\f054"; font-family: "Font Awesome 7 Free"; font-weight: 900; font-size: 14px; line-height: normal; margin-right: 10px; }
+.stepcta a.hs-button.primary.prev-btn { background-color: #fff; border: 1px solid #fff; color: #050C14; }
+.stepcta a.hs-button.primary.prev-btn:before { content: "\f053"; }
+.form-step-content {  display: none;}
+fieldset.form-columns-0.wrapper-point {display: none;}
+.PricingForm form input[type="submit"] {   display: none;}
+.PricingForm .submitted-message { font-size: 0;    opacity: 0;    visibility: hidden; }
+span.visiblesteplast { color: #FFFFFF99; }
+
+.PricingForm form label.hs-error-msg,
+.PricingForm form ul.no-list.hs-error-msgs li label { font-size: 14px; color: #fff; font-weight: 700; text-transform: uppercase; }
+.PricingForm form ul.no-list.hs-error-msgs li { min-height: auto; width: 100%; background-color: transparent; border: unset; padding: unset; margin-top: 5px;}
+.PricingForm form input.invalid.error { border-color: #FC5528 !important; background: #FFEBE5; color: #FC5528; }
+.PricingForm form input.invalid.error::placeholder,
+.PricingForm form .hs-form-field.parent-error-class .input:before  { color: #FC5528 !important; }
+
+.loader { width: 100px; height: 100px; border-radius: 100%; position: relative; margin: 0 auto;}
+#loader-4 span { display: inline-block; width: 20px; height: 20px; border-radius: 100%;  background-color: #227af7; margin: 35px 5px; opacity: 0;}
+#loader-4 span:nth-child(1) { animation: opacitychange 1s ease-in-out infinite;}
+#loader-4 span:nth-child(2) {  animation: opacitychange 1s ease-in-out 0.33s infinite;}
+#loader-4 span:nth-child(3) {  animation: opacitychange 1s ease-in-out 0.66s infinite;}
+@keyframes opacitychange{
+  0%, 100%{
+  }
+
+  60%{
+    opacity: 1;
+  }
+}
+.PricingForm .FormLoader { position: absolute; width: 100%; height: 100%; top: 0; left: 0; background: rgb(255 255 255 / 60%); z-index: 99; border-radius: 0; display: flex; align-items: center;justify-content: center;}
+.PricingForm .FormLoader.Darkwhite { background-color : #fff }
+.PricingForm { color: #fff; background: #227AF7; width: 100%; max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; justify-content: center; border-radius: 6px; position: relative; padding: 32px 30px 120px; }
+.stepcta { background: #227AF7; position: absolute; width: 100%; left: 0; bottom: 0; border-radius: 0 0 6px 6px; display: flex; align-items: center; justify-content: space-between; padding: 10px 40px 40px; }
+.stepcta a.hs-button { display: inline-block; text-align: center; vertical-align: middle; border: 1px solid #fff; background: #FFFFFF; padding: 15px 27px; color: #333333; font-family: 'Geist Mono', monospace !important; font-weight: 500; font-size: 14px; line-height: 20px; letter-spacing: 1.58px; text-transform: uppercase; border-radius: 2px; }
+
+.stepcta span.allsteps {  width: 100%; letter-spacing: .2px; font-size: 14px; max-width: 115px; border-radius: 10px; display: flex; align-items: center; justify-content: center; min-height: 35px; color: #fff;  font-weight: 500;}
+.PricingForm form input { width: 100%; float: left; padding: 12px 20px; transition: .3s; position: relative; min-height: 55px; border-radius: 6px; color: #050c14; margin: 0 !important; border: 1px solid #FFFFFF38; background: #fff; font-family: 'Geist Mono', monospace !important; font-weight: 400; font-size: 14px; line-height: 20px; letter-spacing: 1.58px; vertical-align: middle; text-transform: uppercase; }
+.PricingForm form input::placeholder {  color: rgb(5 12 20 / 60%); }
+.PricingForm .input {  margin-top: 16px;}
+.PricingForm form fieldset {  margin-top: 30px;}
+.PricingForm form  .form-step-content fieldset:first-child,.PricingForm form  .form-step-content fieldset:nth-child(2) {  margin-top: 0;}
+
+.PricingForm .hs_how_many_employees_do_you_currently_have_ .input {  position: relative;min-height: 55px;}
+.PricingForm .hs_how_many_employees_do_you_currently_have_ .input:before { content: 'FTE'; position: absolute; width: 80px; height: 100%; z-index: 1; display: flex; align-items: center; justify-content: center; top: 50%; transform: translateY(-50%); right: 0; font-size: 14px; color: #050c14; line-height: 1; border-left: 1px solid #050C140F; }
+.PricingForm .hs_how_many_employees_do_you_currently_have_ .input input {  padding-right: 90px;}
+
+.PricingForm .hs_what_is_your_yearly_employee_turnover_rate_ .input {  position: relative;min-height: 55px;}
+.PricingForm .hs_what_is_your_yearly_employee_turnover_rate_ .input:before { content: '%'; position: absolute; width: 80px; height: 100%; z-index: 1; display: flex; align-items: center; justify-content: center; top: 50%; transform: translateY(-50%); right: 0; font-size: 14px; color: #050c14; line-height: 1; border-left: 1px solid #050C140F; }
+.PricingForm .hs_what_is_your_yearly_employee_turnover_rate_ .input input {  padding-right: 90px;}
+
+.PricingForm .hs_what_is_your_yearly_employee_growth_rate_ .input {  position: relative;min-height: 55px;}
+.PricingForm .hs_what_is_your_yearly_employee_growth_rate_ .input:before { content: '%'; position: absolute; width: 80px; height: 100%; z-index: 1; display: flex; align-items: center; justify-content: center; top: 50%; transform: translateY(-50%); right: 0; font-size: 14px; color: #050c14; line-height: 1; border-left: 1px solid #050C140F; }
+.PricingForm .hs_what_is_your_yearly_employee_growth_rate_ .input input {  padding-right: 90px;}
+
+.PricingForm .hs_what_is_the_average_lifespan_of_your_assets_ .input {  position: relative;min-height: 55px;}
+.PricingForm .hs_what_is_the_average_lifespan_of_your_assets_ .input:before { content: 'Years'; position: absolute; width: 80px; height: 100%; z-index: 1; display: flex; align-items: center; justify-content: center; top: 50%; transform: translateY(-50%); right: 0; font-size: 14px; color: #050c14; line-height: 1; border-left: 1px solid #050C140F; }
+.PricingForm .hs_what_is_the_average_lifespan_of_your_assets_ .input input {  padding-right: 90px;}
+
+body .PricingForm form .hs-fieldtype-checkbox ul li label input+span { color: #050c14; font-weight: 500;}
+
+.heoRoiSec .PricingForm form .form-step-content.step1 .prev-btn { opacity: 0; visibility: hidden; display: none; }
+.PricingForm form .hs-fieldtype-checkbox ul { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; }
+.PricingForm form .hs-fieldtype-checkbox ul li { width: calc(25% - 6px); border: none; margin: 0; cursor: pointer; word-break: break-word; padding: 17px 24px 17px 56px; min-height: 50px; border-width: 1px; border-style: solid; border-radius: 6px; position: relative; background: #fff; border-color: transparent; font-family: 'Geist Mono', monospace !important; font-weight: 400; font-size: 14px; line-height: 20px; letter-spacing: 1.58px; vertical-align: middle; text-transform: uppercase; }
+.PricingForm form .form-columns-2 .hs-form-field { margin-right: 0; width: calc(50% - 10px) !important; }
+.PricingForm form .form-columns-2 { display: flex; justify-content: space-between; flex-wrap: wrap; }
+.PricingForm form .hs-fieldtype-checkbox ul li.hs-form-checkbox.active { border-color: rgb(255 255 255 / 22%); }
+body .PricingForm form .hs-fieldtype-checkbox ul li label input {  opacity: 0; min-height: auto;  position: absolute;  width: 100% !important; height: 100%;  z-index: 1;  top: 0; left: 0;}
+.PricingForm form .hs-fieldtype-checkbox ul li label { position: static; display: flex;align-items: center;line-height: 1;}
+body .PricingForm form .hs-fieldtype-checkbox ul li label input + span {position: relative;margin-top: -2px;}
+body .PricingForm form .hs-fieldtype-checkbox ul li label input + span:before { position: absolute; width: 20px; height: 20px; content: ''; border: 2px solid #a7cafc; left: -36px; top: calc(50%); transform: translateY(-50%); transition: all ease-in-out 0.3s; border-radius: 50%; }
+body .PricingForm form .hs-fieldtype-checkbox ul li label input + span:after { content: ''; background-color: #227af7; height: 10px; width: 10px; border-radius: 50%; position: absolute; top: 2.1px; left: -31px; transition: all .4s; opacity: 0; }
+body .PricingForm form .hs-fieldtype-checkbox ul li label input:checked + span:after {  opacity:1; }
+.PricingForm form .hs-richtext p { margin: 0; font-size: 20px;}
+.PricingForm form .hs-richtext {  margin: 0;}
+.PricingForm form label { display: flex; position: relative; font-weight: 500; color: #fff; font-family: Inter; font-size: 14px; line-height: 20px; letter-spacing: -0.2%; }
+
+.PricingForm .form-step-content.step2 .hs-form-field .input {  position: relative;min-height: 55px;}
+.PricingForm .form-step-content.step2 .hs-form-field .input:before { content: 'Hours'; position: absolute; width: 80px; height: 100%; z-index: 1; display: flex; align-items: center; justify-content: center; top: 50%; transform: translateY(-50%); right: 0; font-size: 14px; color: #fff; line-height: 1; border-left: 1px solid #FFFFFF0F; }
+.PricingForm .form-step-content.step2 .hs-form-field .input input {  padding-right: 90px;}
+
+.hs_submit.hs-submit.stepcta .actions { width: 100%; display: flex; align-items: center;    justify-content: space-between;}
+.hs_submit.hs-submit.stepcta .actions input[type="submit"] {  background: rgba(0, 0, 0, .1);  letter-spacing: .2px; border-radius: 8px; font-size: 16px; padding: 3px 15px; min-width: 115px; color: #fff;  gap: 4px; display: inline-block; text-align: center; vertical-align: middle; line-height: 1.6; border: 1px solid #fff !important;  width: 115px; min-height: auto;}
+
+div#TotalPrice { text-align: center;}
+div#TotalPrice h2 {  font-size: 32px;    float: left; width: 100%; margin: 0; text-align: center; line-height: 1.4; word-break: break-word; font-family: 'Okta Neue Normal'; font-weight: 400;}
+.PricingResultSection { max-width: 800px;  width: 100%; margin: 0 auto;}
+div#TotalPrice h2 span { font-weight: 700;}
+.PricingResultContent {  text-align: center;}
+.ResultBoxGroups { margin-top: 50px;  display: flex; flex-wrap: wrap; align-items: flex-start;  gap: 30px; justify-content: center;}
+.ResultBoxGroups .ResultBox {  max-width: calc(50% - 15px);  width: 100%; background-color: rgba(255, 255, 255, 100%); box-shadow: 0 4px 30px #0000000d; border-radius: 10px; padding: 20px;}
+.ResultBoxGroups .ResultBox .ResultBoxTitle h3 {  font-size: 22px; font-weight: 500; display: flex; align-items: center;  gap: 10px;}
+.ResultBoxGroups .ResultBox .ResultBoxTitle h3 span {  font-weight: 700;}
+.ResultBtContent {  text-align: center;  margin-top: 50px;}
+.ResultBtContent p { font-size: 20px;  font-weight: 500;}
+.ResultBtContent a {  width: auto; min-width: 130px;  border-width: 2px; border-style: solid;  text-align: center; min-height: 45px; font-size: 14px; display: inline-flex;  padding: 12px 15px;
+  word-break: break-word; gap: 5px; border: 0px solid rgb(34, 122, 247);  border-radius: 0px; box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 1px; color: #fff !important; background: rgb(34, 122, 247);
+  line-height: 1.4; margin-top: 20px;}
+.PricingResultTitle h2 {text-align: center; font-size: 30px; line-height: 1.2;}
+.PricingResultContent { display: flex; align-items: center; font-size: 22px; font-weight: 400; gap: 20px;    justify-content: center;}
+.PricingResultContent p { display: inline-block; width: auto; margin: 0;}
+.PricingResultContent span.Price { font-weight: 700;}
+span.Price {width: max-content;white-space: nowrap;}
+.PricingForm form .hs-form-field label span.extratext { visibility: hidden; font-size: 13px; line-height: normal; font-weight: 400; margin-top: 10px; position: absolute; width: 280px; top: 100%; right: 0; background-color: #fff; color: #050C14; z-index: 11; padding: 10px; border-radius: 3px; transition: all .4s; opacity: 0; }
+.PricingForm form .hs_what_is_your_yearly_employee_growth_rate_ > label:hover span.extratext,
+.PricingForm form .hs_what_is_your_yearly_employee_turnover_rate_ > label:hover span.extratext { opacity: 1; visibility: visible; }
+.PricingForm form .hs_what_is_your_yearly_employee_growth_rate_ > label:after,
+.PricingForm form .hs_what_is_your_yearly_employee_turnover_rate_ > label:after {  cursor: pointer; content: "\f05a"; font-family: "Font Awesome 7 Free"; font-weight: 900; font-size: 14px; line-height: normal; margin-left: 5px; margin-top: 4px; }
+
+
+.PricingForm form .form-step-content.step1 .input,.PricingForm form .form-step-content.step2 .input {  max-width: 100%;}
+
+.PricingForm form  .form-step-content.step3 fieldset { margin-top: 0;}
+.PricingForm form .form-step-content.step3 fieldset.form-columns-2 { margin-top: 30px;}
+.PricingForm form .form-step-content.step3  .legal-consent-container {  margin-top: 30px;}
+.PricingForm form  .form-step-content.step3  .legal-consent-container label {  font-weight: 400;}
+.PricingForm form .form-step-content.step3 .legal-consent-container label input { min-height: auto;}
+.PricingForm form .form-step-content.step3 .legal-consent-container label span p {  color: #fff; margin-left: 0 !important; }
+.PricingForm form .form-step-content.step3 .legal-consent-container .hs-richtext p { font-size: 16px; letter-spacing: .25px;  line-height: 24px;}
+.PricingForm form .form-step-content.step3 .legal-consent-container .hs-richtext p a { color: #fff;font-weight: 700; vertical-align: inherit;}
+
+body .PricingForm form ul li:before { display:none; } 
+
+.PricingTop { max-width: 760px; }
+.PricingTop h2 { font-weight: 500; font-size: 44px; line-height: 100%; letter-spacing: -1.5%; margin: 0 0 24px; }
+.PricingTtext { color: rgb(5 12 20 / 80%); max-width: 460px; }
+.PricingiRinn { background-color: #fff; overflow: hidden; border-radius: 10px;  }
+.PricingiRConte { text-align: center; background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #FFFFFF 19.92%); margin-top: -250px; position: relative; z-index: 1; padding: 66px 40px 40px; }
+.PricingiRConte h3 { margin: 0 0 12px; font-weight: 500; font-size: 20px; line-height: 26px; letter-spacing: -1.5%; text-align:center;}
+.PricingiRitext { color: rgb(5 12 20 / 80%); max-width: 312px; margin: 0 auto; }
+.form-step-content.active:last-child span.visiblesteplast { color: #fff; }
+
+
+.heoRoiSec { position: relative; z-index: 1; }
+.heoRoiRight { width: 58%; }
+.heoRoiLerft { width: 42%; padding-right: 50px; }
+.heoRoiStt { color: rgba(215, 63, 175, 100%); }
+.heoRoiLerft h2 span { color: #227AF7; }
+.heoRoiLerft h2 { font-weight: 500; font-size: 48px; line-height: 52px; letter-spacing: -1.5%; margin: 0 0 20px; }
+.heoRoitext { color: rgb(5 12 20 / 75%); max-width: 420px; }
+.heoRoiShape { position: absolute; right: 0; z-index: -1; bottom: -30px; }
+
+
+
+@media (max-width : 991px){ 
+    .heoRoiLerft { padding: 0 0 30px; width: 100%; }
+    .heoRoiRight { width: 100%; }
+    .heoRoiLerft h2 {  font-size: 36px; line-height: 44px; }
+  
+  
+}
+@media (max-width : 767px){
+  .ResultBoxGroups .ResultBox .ResultBoxTitle h3 { flex-wrap: wrap; display: inline-block;}
+  .ResultBoxGroups .ResultBox .ResultBoxTitle h3 span { position: relative;}
+  .ResultBoxGroups .ResultBox .ResultBoxTitle h3 span:before {  content: ":"; margin-left: 1px; padding-right: 5px;}
+
+  .PricingForm { padding: 30px 30px 100px;}
+  .PricingForm form .hs-richtext p {  font-size: .875rem;}
+  .PricingForm form fieldset > div:not(:first-child) {  margin-top: 15px; display : inline-block }
+  .PricingForm form .hs-richtext p {  font-size: .875rem;}
+  .PricingForm form .hs-fieldtype-checkbox ul li { width: 100%; }
+  .PricingForm form .hs-fieldtype-checkbox ul { gap: 20px; }
+  .PricingForm form .form-columns-2 .hs-form-field { width: 100% !important; }
+  .heoRoiLerft h2 {  font-size: 28px; line-height: 34px; }
+  
+  
+}
+
+@media (max-width : 640px){
+  .ResultBoxGroups .ResultBox { max-width: 100%;}
+  .ResultBoxGroups .ResultBox .ResultBoxTitle h3 { display: flex; flex-wrap: nowrap; font-size: 20px; justify-content: space-between;}
+  .ResultBoxGroups .ResultBox .ResultBoxTitle h3 span:before { display: none;}
+  .ResultBtContent p {  font-size: 16px;}
+  .PricingResultContent {  font-size: 20px;}
+  div#TotalPrice {  text-align: left;}
+  .PricingResultTitle h2 {  font-size: 24px;}
+}
+
+@media (max-width : 480px){
+  .PricingResultContent {font-size: 18px;}
+  .ResultBoxGroups .ResultBox .ResultBoxTitle h3  { font-size: 18px; }
+
+  .PricingResultTitle h2 { font-size: 22px;}
+  
+  .ResultBtContent p br {  display: none;}
+  .PricingForm { padding: 30px 15px 240px;}
+  .PricingForm form input { font-size: 16px; min-height: 45px;  padding: 9px 12px;}
+  .PricingForm .hs_what_is_your_yearly_employee_turnover_rate_ .input,.PricingForm .hs_how_many_employees_do_you_currently_have_ .input {  min-height: 45px;}
+  .PricingForm .hs_what_is_your_yearly_employee_turnover_rate_ .input:before,.PricingForm .hs_how_many_employees_do_you_currently_have_ .input:before { font-size: 14px;}
+  .PricingForm .hs_what_is_your_yearly_employee_growth_rate_ .input {  min-height: 45px;}
+  .PricingForm .hs_what_is_your_yearly_employee_growth_rate_ .input:before {  font-size: 14px;}
+  .PricingForm .hs_what_is_the_average_lifespan_of_your_assets_ .input,.PricingForm .form-step-content.step2 .hs-form-field .input {  min-height: 45px;}
+  .PricingForm .hs_what_is_the_average_lifespan_of_your_assets_ .input:before,.PricingForm .form-step-content.step2 .hs-form-field .input:before {  font-size: 14px;}
+  .PricingForm form fieldset > div:not(:first-child) { margin-top : 15px; }
+
+  
+  .PricingForm .stepcta {   flex-wrap: wrap;   padding: 10px 20px 30px; gap: 15px;}
+.heoRoiSec  .PricingForm .stepcta a.hs-button.prev-btn {    order: 2;}
+.heoRoiSec  .PricingForm .stepcta a.hs-button.next-btn {  order: 2;}
+.heoRoiSec  .PricingForm .stepcta span.allsteps {  max-width: 100%;}
+
+.heoRoiSec .PricingForm {  padding: 30px 15px 150px;}
+.stepcta a.hs-button { padding: 15px 17px; }  
+  
+  
+  
+  
+}
+
+
+
+
+
+
+

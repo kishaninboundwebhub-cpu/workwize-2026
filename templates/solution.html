@@ -1,0 +1,64 @@
+<!--
+  templateType: page
+  isAvailableForNewContent: true
+  label: Solution
+  screenshotPath: ../images/template-previews/contact.png
+-->
+{% extends "./layouts/base.html" %}
+
+{# START - SchemaMarkup data include #}
+    {% block custom_schema %}
+    {% include "/Workwize/templates/partials/Schema Markup/Solution Schema Markup.html" %}
+    {% endblock %}
+{# END - SchemaMarkup data include #}
+
+{% block body %}
+{% dnd_area "dnd_area"
+  label="Main section",
+  class="body-container body-container--contact"
+%}
+
+  {# Hero Section - Procurement #}
+  {% dnd_section full_width='true', vertical_alignment='MIDDLE', padding= {'top': '0', 'bottom': '0', 'left': '0', 'right': '0',} %}
+    {% dnd_module "module_17085837572387" path="/Workwize/modules/Hero Section - Procurement", label="Hero Section - Procurement" %}
+    {% end_dnd_module %}  
+  {% end_dnd_section %}
+  
+  {# Logo Section - Solution #}
+  {% dnd_section full_width='true', vertical_alignment='MIDDLE', padding= {'top': '0', 'bottom': '0', 'left': '0', 'right': '0',} %}
+   {% dnd_module "module_17092928527328" path="/Workwize/modules/Logo Section - Solution", label="Logo Section - Solution" %}
+   {% end_dnd_module %}  
+  {% end_dnd_section %}
+
+  {# Who is Workwize Section #}
+  {% dnd_section full_width='true', vertical_alignment='MIDDLE', padding= {'top': '0', 'bottom': '0', 'left': '0', 'right': '0',} %}
+   {% dnd_module "module_170929696744442" path="/Workwize/modules/Who is Workwize Section", label="Who is Workwize Section" %}
+   {% end_dnd_module %}  
+  {% end_dnd_section %}
+
+  {# Who is Workwize Section #}
+  {% dnd_section full_width='true', vertical_alignment='MIDDLE', padding= {'top': '0', 'bottom': '0', 'left': '0', 'right': '0',} %}
+   {% dnd_module "module_170929871815759" path="/Workwize/modules/IT Asset Management Section", label="IT Asset Management Section" %}
+   {% end_dnd_module %}  
+  {% end_dnd_section %}
+     
+  {# Testimonial Section - Image #}
+  {#{% dnd_section full_width='true', vertical_alignment='MIDDLE', padding= {'top': '0', 'bottom': '0', 'left': '0', 'right': '0',} %}
+   {% dnd_module "module_170867235478753" path="/Workwize/modules/Testimonial Section - Image", label="Testimonial Section - Image" %}
+   {% end_dnd_module %}  
+  {% end_dnd_section %} #}
+
+  {# Testimonial Section - Image Global #}
+  {% dnd_section full_width='true', vertical_alignment='MIDDLE', padding= {'top': '0', 'bottom': '0', 'left': '0', 'right': '0',} %}
+    {% dnd_module "module_173891412305573" path="/Workwize/modules/Testimonial Section - Image Global", label="Testimonial Section - Image Global" %}
+    {% end_dnd_module %}  
+  {% end_dnd_section %}
+
+{# Cta Section #}
+  {% dnd_section full_width='true', vertical_alignment='MIDDLE', padding= {'top': '0', 'bottom': '0', 'left': '0', 'right': '0',} %}
+    {% dnd_module "module_170860075643044" path="/Workwize/modules/Cta Section", label="Cta Section" %}
+    {% end_dnd_module %}  
+  {% end_dnd_section %}
+
+{% end_dnd_area %}
+{% endblock body %}

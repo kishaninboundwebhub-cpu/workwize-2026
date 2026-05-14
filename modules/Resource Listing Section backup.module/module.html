@@ -1,0 +1,208 @@
+{% if module.show_hide_ %}
+{% set moduleId = '#hs_cos_wrapper_{{ name }}' %}
+
+{% set search_page = module.results.use_custom_search_results_template is truthy and module.results.path_id ? content_by_id(module.results.path_id).absolute_url : site_settings.content_search_results_page_path %}
+{% unless (search_page is string_containing "//") %}
+  {% set search_page = "/" ~ search_page %}
+{% endunless %}
+{% set search_page = search_page|regex_replace("http:", "") %}
+<div class="blglisting-sec fullwidth bgsec space-sec">
+ <div class="wrapper">
+  <div class="secinner blglisting-inner">
+   {% if module.text or module.title %}   
+   <div class="blglistingheader secheader">
+    {% if module.title %} 
+    <div class="sectitle {% if not module.text %} removespace{% endif %}">
+     <h2>{{ module.title }}</h2> 
+    </div>
+    {% endif %}
+    {% if module.text %}  
+    <div class="sectxt"> 
+     {{ module.text }} 
+    </div>
+    {% endif %}
+   {% endif %} 
+   
+   <div class="blglisting-toprow w-100 flexwrap {% if module.update_top_style %} blglistingStyletop {% endif %}">
+     
+     {% if module.show_blog_tag %}
+     <div class="blglisting-tags fillDrops {% if module.blog_tag_center %}blgtag-center{% endif %}">
+       {% if module.update_top_style %}
+        <label>Topics <svg xmlns="http://www.w3.org/2000/svg" width="16" height="9" viewBox="0 0 16 9" aria-label="chevron-down" role="img" class="icon"><path fill-rule="evenodd" clip-rule="evenodd" d="M0.292893 0.292893C0.683417 -0.0976309 1.31658 -0.0976309 1.70711 0.292893L8 6.58579L14.2929 0.292896C14.6834 -0.0976286 15.3166 -0.0976283 15.7071 0.292896C16.0976 0.683421 16.0976 1.31659 15.7071 1.70711L8.70711 8.70711C8.31658 9.09763 7.68342 9.09763 7.29289 8.70711L0.292893 1.70711C-0.0976312 1.31658 -0.0976312 0.683418 0.292893 0.292893Z" fill="currentColor"></path></svg></label>
+       {% endif %}
+      
+      {% set my_tags = blog_tags(module.select_blog, 250) %}
+      <ul>
+        {#
+      {% set allowed_tags = ["Compliance", "ITAM", "Miscellaneous", "AI & Machine Learning", "IT Services", "Security", "Workforce Management", "Procurement", "Remote Work", "Automation", "Offboarding", "Onboarding", "Retrieval", "Recycling", "Workplace Productivity"] %}
+      {% if item in allowed_tags %}{% endif %}
+#}
+      {% for item in my_tags %}  
+          <li><a href="{{ blog_tag_url(group.id, item.slug) }}">{{ item }}</a></li>
+      {% endfor %}
+
+      </ul> 
+     </div>
+     {% endif %}
+     {% if module.update_top_style %}
+     <div class="blglisting-contetype fillDrops">
+       
+       <label>Content Types <svg xmlns="http://www.w3.org/2000/svg" width="16" height="9" viewBox="0 0 16 9" aria-label="chevron-down" role="img" class="icon"><path fill-rule="evenodd" clip-rule="evenodd" d="M0.292893 0.292893C0.683417 -0.0976309 1.31658 -0.0976309 1.70711 0.292893L8 6.58579L14.2929 0.292896C14.6834 -0.0976286 15.3166 -0.0976283 15.7071 0.292896C16.0976 0.683421 16.0976 1.31659 15.7071 1.70711L8.70711 8.70711C8.31658 9.09763 7.68342 9.09763 7.29289 8.70711L0.292893 1.70711C-0.0976312 1.31658 -0.0976312 0.683418 0.292893 0.292893Z" fill="currentColor"></path></svg></label>
+       
+       
+       <ul>
+         {% for item in module.content_type %}
+         <li>
+           
+            {% set href = item.link_field.url.href %}
+            {% if item.link_field.url.type is equalto "EMAIL_ADDRESS" %}
+              {% set href = "mailto:" + href %}
+            {% elif item.link_field.url.type is equalto "PHONE_NUMBER" %}
+              {% set href = "tel:" + href %}
+            {% endif %}
+            <a
+              {% if item.link_field.url.type is equalto "CALL_TO_ACTION"  %}
+                href="{{ href }}" {# The href here is not escaped as it is not editable and functions as a JavaScript call to the associated CTA #}
+              {% else %}
+                href="{{ href|escape_url }}"
+              {% endif %}
+              {% if item.link_field.open_in_new_tab %}
+                target="_blank"
+              {% endif %}
+              {% if item.link_field.rel %}
+                rel="{{ item.link_field.rel|escape_attr }}"
+              {% endif %}
+              >
+              {{ item.text_field }}
+            </a>
+         </li>
+         {% endfor %}
+         
+       </ul>
+       
+     </div>
+     {% endif %}
+     
+     <div class="blglisting-search">
+      <div class="hs-search-field">
+       <div class="hs-search-field__bar">
+       <form data-hs-do-not-collect="true" action="{{ search_page }}">
+        {% if module.field_label %}
+        <label for="term">{{ module.field_label }}</label>
+        {% endif %}
+        <input type="text" class="hs-search-field__input" name="term" autocomplete="off" aria-label="{{ module.field_label || "Search" }}" placeholder="{{ module.placeholder }}">
+        
+        {% if module.content_types.website_pages %}
+         <input type="hidden" name="type" value="SITE_PAGE">
+        {% endif %}
+        {% if module.content_types.landing_pages %}
+         <input type="hidden" name="type" value="LANDING_PAGE">
+        {% endif %}
+        {% if module.content_types.blog_posts %}
+         <input type="hidden" name="type" value="BLOG_POST">
+         <input type="hidden" name="type" value="LISTING_PAGE">
+        {% endif %}
+        {% if module.content_types.knowledge_articles %}
+         <input type="hidden" name="type" value="KNOWLEDGE_ARTICLE">
+        {% endif %}
+
+        {% if module.include_search_button %}
+         <button aria-label="Search">{% icon name="search" style="solid" %}</button>
+        {% endif %}
+       </form>
+       </div>
+       <ul class="hs-search-field__suggestions"></ul>
+      </div> 
+     </div> 
+    </div>
+   
+  <div class="blglisting-box flexwrap w-100">    
+  {# Blog author/tag header #}
+  {% if blog_author || tag %}
+  <div class="blog-subheader">
+   {% if blog_author %}    
+    <h3>{{ blog_author.display_name }}</h3>       
+   {% elif tag %}    
+    <h3>{{ page_meta.html_title|split(" | ")|last }}</h3>
+   {% endif %}
+  </div>
+  {% endif %}
+  {# End blog author/tag header #}
+ <div class="blglisting-row flexwrap w-100">     
+  {% for content in contents %}   
+  <div class="blglisting-cols {% if content.widgets.hide_blog_post.body.value == True %} hide-post {% endif  %}">
+  
+   <a href="{{ content.absolute_url }}" class="blglisting-climg" style="background-image: url('{{ content.featured_image }}');">     
+   </a>        
+  
+   <div class="blglisting-content">     
+     {% if content.widgets.add_resource_type.body.value %}
+     <div class="blglisting-tags">
+      {{ content.widgets.add_resource_type.body.value }}
+     </div>
+     {% endif %}     
+    
+     <h4 class="blglisting-cltitle"><a href="{{ content.absolute_url }}">{{ content.name }}</a></h4>          
+     
+     {% if module.add_publish_date %}   
+     <time class="blog-index__post-date blog-index__post-date--{{ list_type }}" datetime="{{ content.publish_date }}">{{ content.publish_date|datetimeformat('%B %e, %Y') }}</time>
+     {% endif %}
+     {# End date #}
+     
+     {% if module.add_box_content %}   
+     <div class="blglisting-cltxt">
+      {{ content.post_list_content|truncatehtml(94 , '...') }}    
+     </div>
+     {% endif %}
+     
+     
+   </div>      
+  </div>    
+  {% endfor %}
+  </div>  
+ </div> 
+     
+     <div class="blog-load-more button">
+       <button>Load More</button>
+     </div>
+     
+     
+   
+  </div>    
+ </div>
+</div>
+
+
+{% require_css %}
+<style>
+  {{ moduleId }} .bgsec { {% if module.style.select_background == 'bg_color' %}
+    background-color: rgba({{ module.style.background_color.color|convert_rgb }},{{ module.style.background_color.opacity ~ '%' }});
+    {% elif module.style.select_background == 'bg_image' %}
+    {{ module.style.background_image.css }} background-repeat: no-repeat;
+    {% elif module.style.select_background == 'bg_gradient' %}
+    background: {{ module.style.background_gradient.css }};
+    {% endif %} }
+  
+  {{ moduleId }} .space-sec { {{ module.style.spacing.desktop.css }}; }
+  
+  {{ moduleId }} .sectitle h1,
+  {{ moduleId }} .sectitle h2 , 
+  {{ moduleId }} .sectitle h3 , 
+  {{ moduleId }} .sectitle h4 , 
+  {{ moduleId }} .sectitle h5 ,
+  {{ moduleId }} .sectitle h6 { color: rgba({{ module.color_settings.title_color.color|convert_rgb }},{{ module.color_settings.title_color.opacity ~ '%' }}); }
+  {{ moduleId }} .sectxt , {{ moduleId }} .sectxt * { color: rgba({{ module.color_settings.text_color.color|convert_rgb }},{{ module.color_settings.text_color.opacity ~ '%' }}); } 
+  
+ {# {% for item in module.button %} 
+   {{ moduleId }} .secbtn:nth-child({{ loop.index }}) a { background-color: rgba({{ item.background_color.color|convert_rgb }},{{ item.background_color.opacity ~ '%' }}); border-color: rgba({{ item.border_color.color|convert_rgb }},{{ item.border_color.opacity ~ '%' }}); color: rgba({{ item.text_color.color|convert_rgb }},{{ item.text_color.opacity ~ '%' }}); }
+   {{ moduleId }} .secbtn:nth-child({{ loop.index }}) a:hover { background-color: rgba({{ item.background_color_hover_.color|convert_rgb }},{{ item.background_color_hover_.opacity ~ '%' }}); border-color: rgba({{ item.border_color_hover_.color|convert_rgb }},{{ item.border_color_hover_.opacity ~ '%' }}); color: rgba({{ item.text_color_hover_.color|convert_rgb }},{{ item.text_color_hover_.opacity ~ '%' }}); }  
+  {% endfor %} #}
+  
+  
+  @media(max-width: 991px){ {{ moduleId }} .space-sec { {{ module.style.spacing.tablet.css }}; } }
+  
+  @media(max-width: 767px){ {{ moduleId }} .space-sec { {{ module.style.spacing.mobile.css }}; } }
+  
+</style>
+{% end_require_css %}
+{% endif %}

@@ -1,0 +1,235 @@
+{% if module.show_hide_ %}
+{% set moduleId = '#hs_cos_wrapper_{{ name }}' %}
+<div class="explkeywrkSec fullwidth bgsec space-sec">
+  <div class="wrapper">
+   <div class="explkeywrkTop d_flex align_end space_between gap10 wow fadeInUp pb60 sm_pb30"> 
+     <div class="explkeywrkTitle">
+       <h2>{{ module.content.title }}</h2> 
+       <div class="explkeywrkTtext">
+         {{ module.content.sub_text }}
+       </div>
+     </div>
+     
+    <div class="explkeywrkArrow  d_flex gap16">
+     <div class="explkeywrkPrev d_flex align_center flex_center">
+        <svg width="7" height="12" viewBox="0 0 7 12" fill="none" xmlns="https://www.w3.org/2000/svg">
+         <path d="M5.96774 10.9678L0.967743 5.96777L5.96774 0.967773" stroke="#002A5A" stroke-width="1.93548" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+     </div>
+     <div class="explkeywrkNext d_flex align_center flex_center">
+        <svg width="7" height="12" viewBox="0 0 7 12" fill="none" xmlns="https://www.w3.org/2000/svg">
+        <path d="M0.967742 10.9678L5.96774 5.96777L0.967743 0.967773" stroke="white" stroke-width="1.93548" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+     </div>
+   </div>
+  </div>
+   
+  <div class="explkeywrkSOuter wow fadeInUp">  
+    <div class="explkeywrkSlider">
+      {% for item in module.content.slide %}
+      <div class="explkeywrkSlide">
+        <div class="explkeywrkSlinn">
+          {% if item.select_image_or_video == 'image' %}
+          <div class="explkeywrkSlimvg">
+              {% if item.image_field.src %}
+              {% set sizeAttrs = 'width="{{ item.image_field.width|escape_attr }}" height="{{ item.image_field.height|escape_attr }}"' %}
+              {% if item.image_field.size_type == 'auto' %}
+              {% set sizeAttrs = 'width="{{ item.image_field.width|escape_attr }}" height="{{ item.image_field.height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+              {% elif item.image_field.size_type == 'auto_custom_max' %}
+              {% set sizeAttrs = 'width="{{ item.image_field.max_width|escape_attr }}" height="{{ item.image_field.max_height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+              {% endif %}
+              {% set loadingAttr = item.image_field.loading != 'disabled' ? 'loading="{{ item.image_field.loading|escape_attr }}"' : '' %}
+              <img src="{{ item.image_field.src|escape_url }}" alt="{{ item.image_field.alt|escape_attr }}" {{ loadingAttr }} {{ sizeAttrs }}>
+              {% endif %}
+          </div>
+          {% elif item.select_image_or_video == 'video' %}
+            <div class="explkeywrkSlVids">
+              {% if item.video.select_option == 'hubl_video' %}
+                <video width="320" height="240" controls>
+                  <source src="{{ item.video.hubl_video }}" type="video/mp4">
+                  <source src="{{ item.video.hubl_video }}" type="video/ogg">
+                </video>
+              {% elif item.video.select_option == 'youtube_video' %}
+                <iframe 
+                    width="560" 
+                    height="315" 
+                    src="{{ item.video.youtube_url|replace('watch?v=','embed/')|replace('//youtu.be','//www.youtube.com/embed/') }}?enablejsapi=1&mute=1" 
+                    title="YouTube video player" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    allowfullscreen>
+                </iframe>
+              {% endif %}
+            </div>
+          {% endif %}
+          <div class="explkeywrkStext pt20">
+            {{ item.text_field }}
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>  
+  </div>   
+    
+   <div class="explkeywrkBotttom pt30 wow fadeInUp">
+     <div class="explkeywrkBoinn d_flex align_center space_between gap20">
+       <div class="explkeywrkBTConte d_flex align_center space_between gap20">
+         <div class="explkeywrkBIcon d_flex align_center flex_center">
+           {% if module.content.bottom_left.icon.src %}
+              {% set sizeAttrs = 'width="{{ module.content.bottom_left.icon.width|escape_attr }}" height="{{ module.content.bottom_left.icon.height|escape_attr }}"' %}
+              {% if module.content.bottom_left.icon.size_type == 'auto' %}
+                {% set sizeAttrs = 'width="{{ module.content.bottom_left.icon.width|escape_attr }}" height="{{ module.content.bottom_left.icon.height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+              {% elif module.content.bottom_left.icon.size_type == 'auto_custom_max' %}
+                {% set sizeAttrs = 'width="{{ module.content.bottom_left.icon.max_width|escape_attr }}" height="{{ module.content.bottom_left.icon.max_height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+              {% endif %}
+               {% set loadingAttr = module.content.bottom_left.icon.loading != 'disabled' ? 'loading="{{ module.content.bottom_left.icon.loading|escape_attr }}"' : '' %}
+              <img src="{{ module.content.bottom_left.icon.src|escape_url }}" alt="{{ module.content.bottom_left.icon.alt|escape_attr }}" {{ loadingAttr }} {{ sizeAttrs }}>
+            {% endif %}
+         </div>
+         <div class="explkeywrkBtext">
+           {{ module.content.bottom_left.text_field_1 }}
+         </div>         
+       </div>
+       {% if module.content.show_button %}
+         <div class="explkeywrkBtn d_flex flex_center secbtn  set-btn-arrows-true {{ module.content.button.button_choice }}">
+          {% set href = module.content.button.button_link.url.href %}
+          {% if module.content.button.button_link.url.type is equalto "EMAIL_ADDRESS" %}
+            {% set href = "mailto:" + href %}
+          {% elif module.content.button.button_link.url.type is equalto "PHONE_NUMBER" %}
+            {% set href = "tel:" + href %}
+          {% endif %}
+          <a
+            {% if module.content.button.button_link.url.type is equalto "CALL_TO_ACTION"  %}
+              href="{{ href }}" {# The href here is not escaped as it is not editable and functions as a JavaScript call to the associated CTA #}
+            {% else %}
+              href="{{ href|escape_url }}"
+            {% endif %}
+            {% if module.content.button.button_link.open_in_new_tab %}
+              target="_blank"
+            {% endif %}
+            {% if module.content.button.button_link.rel %}
+              rel="{{ module.content.button.button_link.rel|escape_attr }}"
+            {% endif %}
+            >
+            {{ module.content.button.button_text }}
+          </a>
+         </div>  
+       {% endif %}     
+       
+       
+       
+     </div>
+   </div>
+    
+    
+    
+    
+ </div>    
+</div>
+
+
+
+
+
+{% require_css %}
+<style>
+  {{ moduleId }} .bgsec { {% if module.style.select_background == 'bg_color' %}
+    background-color: rgba({{ module.style.background_color.color|convert_rgb }},{{ module.style.background_color.opacity ~ '%' }});
+    {% elif module.style.select_background == 'bg_image' %}
+    {{ module.style.background_image.css }} background-repeat: no-repeat;
+    {% elif module.style.select_background == 'bg_gradient' %}
+    background: {{ module.style.background_gradient.css }};
+    {% endif %} }
+  
+  {{ moduleId }} .space-sec { {{ module.style.spacing.desktop.css }}; }
+ 
+  
+  {{ moduleId }} .explkeywrkTitle h2 { color:rgba({{ module.color_settings.title_color.color|convert_rgb }},{{ module.color_settings.title_color.opacity }}%);  }
+  {{ moduleId }} .explkeywrkTitle h2 span { color:rgba({{ module.color_settings.title_span_color.color|convert_rgb }},{{ module.color_settings.title_span_color.opacity }}%);  }
+  {{ moduleId }} .explkeywrkTtext { color:rgba({{ module.color_settings.sub_text_color.color|convert_rgb }},{{ module.color_settings.sub_text_color.opacity }}%);  }
+  {{ moduleId }} .explkeywrkStext { color:rgba({{ module.color_settings.box_text_color.color|convert_rgb }},{{ module.color_settings.box_text_color.opacity }}%);  }
+  
+  
+  
+  
+  
+  
+  @media(max-width: 991px){ {{ moduleId }} .space-sec { {{ module.style.spacing.tablet.css }}; } }
+  
+  @media(max-width: 767px){ {{ moduleId }} .space-sec { {{ module.style.spacing.mobile.css }}; } }
+  
+</style>
+{% end_require_css %}
+
+
+{% require_js %}
+  <script>
+ 
+$(document).ready(function() {
+    var $slider = $(".explkeywrkSlider");
+
+    $slider.slick({
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        arrows: true,
+        infinite: false,
+        prevArrow: $('.explkeywrkPrev'),
+        nextArrow: $('.explkeywrkNext'),
+        // Responsive settings start here
+        responsive: [
+            {
+                breakpoint: 1024, // Tablets and small desktops
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 1
+                }
+            },
+            {
+                breakpoint: 768, // Mobile landscape
+                settings: {
+                    slidesToShow: 1,
+                }
+            }
+        ]
+    });
+
+    function stopMedia(exclude) {
+        $('.explkeywrkSlider video').each(function() {
+            if (this !== exclude) this.pause();
+        });
+        $('.explkeywrkSlider iframe[src*="youtube.com"]').each(function() {
+            if (this !== exclude) this.contentWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
+        });
+    }
+
+    $('.explkeywrkSlider video').on('play', function() { stopMedia(this); });
+
+    $(window).on('message', function(e) {
+        try {
+            var data = JSON.parse(e.originalEvent.data);
+            if (data.event === 'infoDelivery' && data.info?.playerState === 1) {
+                var active = $("iframe").filter(function() { return this.contentWindow === e.originalEvent.source; })[0];
+                stopMedia(active);
+            }
+        } catch (err) {}
+    });
+
+    $slider.on('beforeChange', function() { stopMedia(); });
+});
+
+
+  </script>
+{% end_require_js %}
+
+
+
+
+
+
+
+
+
+{% endif %}
+
+
+

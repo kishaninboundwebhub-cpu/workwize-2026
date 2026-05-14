@@ -1,0 +1,140 @@
+{% if module.show_hide_ %}
+{% set moduleId = '#hs_cos_wrapper_{{ name }}' %}
+
+<div class="repladdpusec fullwidth bgsec space-sec">
+ <div class="wrapper">
+   <div class="repladdpuTitle text-center pb80 wow fadeInUp">
+     <h2>{{ module.title }}</h2>
+   </div>
+   
+   <div class="repladdpuTabs wow fadeInUp">
+     {% for item in module.tab_item %}
+       <div class="repladdpuTab geist-mono uppercase font-medium" data-value=".repladdpuTab{{  loop.index }}">
+          {{ item.tab_text }}
+       </div>
+     {% endfor %}
+   </div>
+   
+   <div class="repladdpuCOut wow fadeInUp">
+     
+     {% for item in module.tab_item %}
+     <div class="repladdpuConte repladdpuTab{{  loop.index }}">
+       <div class="repladdpuCoinn d_flex align_center">
+         <div class="repladdpuCLeft">
+           <div class="repladdpuCInfo geist-mono d_flex gap10">
+              <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <g clip-path="url(#clip0_1943_22031)">
+              <path d="M14 24.5C19.799 24.5 24.5 19.799 24.5 14C24.5 8.20101 19.799 3.5 14 3.5C8.20101 3.5 3.5 8.20101 3.5 14C3.5 19.799 8.20101 24.5 14 24.5Z" fill="#FC5528"/>
+              <path d="M14 14.8828V8.75781" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M14 20.125C14.7249 20.125 15.3125 19.5374 15.3125 18.8125C15.3125 18.0876 14.7249 17.5 14 17.5C13.2751 17.5 12.6875 18.0876 12.6875 18.8125C12.6875 19.5374 13.2751 20.125 14 20.125Z" fill="white"/>
+              </g>
+              <defs>
+              <clipPath id="clip0_1943_22031">
+              <rect width="28" height="28" fill="white"/>
+              </clipPath>
+              </defs>
+              </svg>
+              {{ item.top_text }}
+           </div>
+         
+         <h2>{{ item.title }}</h2>
+         <div class="repladdpuCtext">
+           {{ item.text }}
+         </div>
+         </div>
+         
+         <div class="repladdpuCRight"> 
+           <div class="repladdpuCRinn {% if item.show_country_flag %} repladdpuCflag {% else %} repladdpuCfoth {% endif %}">
+             
+             {% if item.show_country_flag %}
+    
+             {% if item.top_flag.src %}
+              {% set sizeAttrs = 'width="{{ item.top_flag.width|escape_attr }}" height="{{ item.top_flag.height|escape_attr }}"' %}
+              {% if item.top_flag.size_type == 'auto' %}
+                {% set sizeAttrs = 'width="{{ item.top_flag.width|escape_attr }}" height="{{ item.top_flag.height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+              {% elif item.top_flag.size_type == 'auto_custom_max' %}
+                {% set sizeAttrs = 'width="{{ item.top_flag.max_width|escape_attr }}" height="{{ item.top_flag.max_height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+              {% endif %}
+               {% set loadingAttr = item.top_flag.loading != 'disabled' ? 'loading="{{ item.top_flag.loading|escape_attr }}"' : '' %}
+              <img class="repladdpuflTop" src="{{ item.top_flag.src|escape_url }}" alt="{{ item.top_flag.alt|escape_attr }}" {{ loadingAttr }} {{ sizeAttrs }}>
+            {% endif %}
+             
+            {% if item.bottom_flag.src %}
+              {% set sizeAttrs = 'width="{{ item.bottom_flag.width|escape_attr }}" height="{{ item.bottom_flag.height|escape_attr }}"' %}
+              {% if item.bottom_flag.size_type == 'auto' %}
+                {% set sizeAttrs = 'width="{{ item.bottom_flag.width|escape_attr }}" height="{{ item.bottom_flag.height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+              {% elif item.bottom_flag.size_type == 'auto_custom_max' %}
+                {% set sizeAttrs = 'width="{{ item.bottom_flag.max_width|escape_attr }}" height="{{ item.bottom_flag.max_height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+              {% endif %}
+               {% set loadingAttr = item.bottom_flag.loading != 'disabled' ? 'loading="{{ item.bottom_flag.loading|escape_attr }}"' : '' %}
+              <img class="repladdpuflBott" src="{{ item.bottom_flag.src|escape_url }}" alt="{{ item.bottom_flag.alt|escape_attr }}" {{ loadingAttr }} {{ sizeAttrs }}>
+            {% endif %}
+             
+             
+             
+             {% endif %}
+             
+             
+              {% if item.image_field.src %}
+              {% set sizeAttrs = 'width="{{ item.image_field.width|escape_attr }}" height="{{ item.image_field.height|escape_attr }}"' %}
+              {% if item.image_field.size_type == 'auto' %}
+              {% set sizeAttrs = 'width="{{ item.image_field.width|escape_attr }}" height="{{ item.image_field.height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+              {% elif item.image_field.size_type == 'auto_custom_max' %}
+              {% set sizeAttrs = 'width="{{ item.image_field.max_width|escape_attr }}" height="{{ item.image_field.max_height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+              {% endif %}
+              {% set loadingAttr = item.image_field.loading != 'disabled' ? 'loading="{{ item.image_field.loading|escape_attr }}"' : '' %}
+              <img src="{{ item.image_field.src|escape_url }}" alt="{{ item.image_field.alt|escape_attr }}" {{ loadingAttr }} {{ sizeAttrs }}>
+              {% endif %}
+             
+             
+             
+           </div>
+         </div>
+         
+         
+         
+       </div>
+     </div>
+     {% endfor %}
+     
+     
+   </div>
+ </div>
+</div>
+
+
+{% require_css %}
+<style>
+  {{ moduleId }} .bgsec { {% if module.style.select_background == 'bg_color' %}
+    background-color: rgba({{ module.style.background_color.color|convert_rgb }},{{ module.style.background_color.opacity ~ '%' }});
+    {% elif module.style.select_background == 'bg_image' %}
+    {{ module.style.background_image.css }} background-repeat: no-repeat;
+    {% elif module.style.select_background == 'bg_gradient' %}
+    background: {{ module.style.background_gradient.css }};
+    {% endif %} }
+  
+  {{ moduleId }} .space-sec { {{ module.style.spacing.desktop.css }}; }
+  
+  {{ moduleId }} .repladdpuTitle h2 { color:{{ module.color_setting.title_color.color }}; } 
+  {{ moduleId }} .repladdpuTitle h2 span { color:{{ module.color_setting.title_span_color.color }}; } 
+  
+  
+  {% for item in module.tab_item %}
+    {{ moduleId }} .repladdpuConte:nth-child({{  loop.index }}) .repladdpuCtext ul li:after { background-color:rgba({{ item.icon_color.color|convert_rgb }},{{ item.icon_color.opacity }}%);  }
+    {{ moduleId }} .repladdpuConte:nth-child({{  loop.index }}) .repladdpuCRinn { background-color:rgba({{ item.box_background_color.color|convert_rgb }},{{ item.box_background_color.opacity }}%);  }
+    {{ moduleId }} .repladdpuTab:nth-child({{  loop.index }}).active  {  color:rgba({{ item.tab_active_color.color|convert_rgb }},{{ item.tab_active_color.opacity }}%); }
+    {{ moduleId }} .repladdpuTab:nth-child({{  loop.index }}).active:after  {  background-color:rgba({{ item.tab_active_color.color|convert_rgb }},{{ item.tab_active_color.opacity }}%); }
+  
+  {% endfor %}
+  
+  @media(max-width: 991px){ {{ moduleId }} .space-sec { {{ module.style.spacing.tablet.css }}; } }
+  
+  @media(max-width: 767px){ {{ moduleId }} .space-sec { {{ module.style.spacing.mobile.css }}; } }
+  
+</style>
+{% end_require_css %}
+
+
+
+{% endif %}
+

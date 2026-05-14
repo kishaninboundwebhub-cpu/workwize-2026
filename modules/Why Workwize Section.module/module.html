@@ -1,0 +1,75 @@
+{% if module.show_hide_ %}
+{% set moduleId = '#hs_cos_wrapper_{{ name }}' %}
+<div class="whyworwzsec fullwidth bgsec space-sec">
+  <div class="wrapper">
+    <div class="whyworwzInner flexwrap alignCenter">
+      <div class="whyworwzLeft">
+        <div class="sectitle">
+          <h2>{{ module.content.title }}</h2>  
+        </div>
+        <div class="whyworwzText sectxt">
+          {{ module.content.text }}
+        </div>
+      </div>
+      <div class="whyworwzRight">
+        <div class="whyworwzRows flexwrap">
+           {% for item in module.content.column_item %}
+          <div class="whyworwzRCols flexwrap">
+            <div class="whyworwzRIcon">
+                {% if item.icon.src %}
+                {% set sizeAttrs = 'width="{{ item.icon.width|escape_attr }}" height="{{ item.icon.height|escape_attr }}"' %}
+                {% if item.icon.size_type == 'auto' %}
+                {% set sizeAttrs = 'width="{{ item.icon.width|escape_attr }}" height="{{ item.icon.height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+                {% elif item.icon.size_type == 'auto_custom_max' %}
+                {% set sizeAttrs = 'width="{{ item.icon.max_width|escape_attr }}" height="{{ item.icon.max_height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+                {% endif %}
+                {% set loadingAttr = item.icon.loading != 'disabled' ? 'loading="{{ item.icon.loading|escape_attr }}"' : '' %}
+                <img src="{{ item.icon.src|escape_url }}" alt="{{ item.icon.alt|escape_attr }}" {{ loadingAttr }} {{ sizeAttrs }}>
+                {% endif %}
+            </div>
+            <div class="whyworwzRICont">
+              <h3>{{ item.title }}</h3>  
+              <div class="whyworwzRtxt">
+                {{ item.text }}
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+{% require_css %}
+<style>
+  {{ moduleId }} .bgsec { {% if module.style.select_background == 'bg_color' %}
+    background-color: rgba({{ module.style.background_color.color|convert_rgb }},{{ module.style.background_color.opacity ~ '%' }});
+    {% elif module.style.select_background == 'bg_image' %}
+    {{ module.style.background_image.css }} background-repeat: no-repeat;
+    {% elif module.style.select_background == 'bg_gradient' %}
+    background: {{ module.style.background_gradient.css }};
+    {% endif %} }
+  
+  {{ moduleId }} .space-sec { {{ module.style.spacing.desktop.css }}; }
+  {{ moduleId }} .sectitle h2.h1 ,
+  {{ moduleId }} .sectitle h1 ,
+  {{ moduleId }} .sectitle h2 , 
+  {{ moduleId }} .sectitle h3 , 
+  {{ moduleId }} .sectitle h4 , 
+  {{ moduleId }} .sectitle h5 ,
+  {{ moduleId }} .sectitle h6 { color: rgba({{ module.color_settings.title_color.color|convert_rgb }},{{ module.color_settings.title_color.opacity ~ '%' }}); }
+  {{ moduleId }} .sectxt , {{ moduleId }} .sectxt * { color: rgba({{ module.color_settings.text_color.color|convert_rgb }},{{ module.color_settings.text_color.opacity ~ '%' }}); } 
+  
+  {{ moduleId }} .whyworwzRICont h3 { color:{{ module.color_settings.column_title.color }}; }   
+  {{ moduleId }} .whyworwzRtxt { color:{{ module.color_settings.column_text.color }}; }   
+  
+  
+  @media(max-width: 991px){ {{ moduleId }} .space-sec { {{ module.style.spacing.tablet.css }}; } }
+  
+  @media(max-width: 767px){ {{ moduleId }} .space-sec { {{ module.style.spacing.mobile.css }}; } }
+  
+</style>
+{% end_require_css %}
+{% endif %}

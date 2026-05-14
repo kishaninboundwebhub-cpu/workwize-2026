@@ -1,0 +1,19 @@
+.hrprocu-txt table tr td { border: 0; }
+.hrprocuSliInn { background-color: #f5f7f8; padding: 40px; border-radius: 24px; cursor: grab; }
+.hrprocuSliInn-rating ul.flexwrap { gap: 1px;    align-items: center;    margin-bottom: 16px; } 
+.hrprocuSli-text { letter-spacing: 0.25px; margin-bottom: 30px; }
+.hrprocuSlider .slick-slide { margin: 0 10px; }
+.hrprocu-testimon { margin: 0 0 30px; }
+.hrprocu-testi-sec .hrprocu-lf { padding-top: 0; }
+.hrprocuSlider .tr-designation span { color: rgba(34, 122, 247, 100%); }
+.hrprocuSlider.slick-slider { margin: 0 -10px; }
+.hrprocuSlider .testimonial-clogo img { max-height: 40px; object-fit: contain; object-position: center left; }
+.hrprocuSliInn .testimonial-clogo { margin: 0 0 32px; }
+
+
+
+
+@media(max-width:350px){
+.emb-meeting iframe { position: relative; left: -16px;}
+  
+}

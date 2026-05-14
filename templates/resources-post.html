@@ -1,0 +1,94 @@
+<!--
+  templateType: "blog_post"
+  label: "Resources Post - Workwize"
+  screenshotPath: "../images/template-previews/blog-post.png"
+  isAvailableForNewContent: true
+-->
+
+{% set template_css = "../../css/templates/blog.css" %}
+{% extends "./layouts/base.html" %}
+
+{# START - BlogPosting SchemaMarkup data include #}
+{% block custom_schema %}
+    {% include "/Workwize/templates/partials/Schema Markup/Blog Posts.html" %}
+{% endblock %}
+{# END - BlogPosting SchemaMarkup data include #}
+
+{% block body %}
+
+ {% boolean "hide_blog_post" label="Hide Blog Post In Listing", value="False", export_to_template_context=True %}
+ {% text "add_tool_type" label="Add Tool Type", export_to_template_context=True %} 
+ {% text "add_short_text" label="Add Short Text", export_to_template_context=True %} 
+ {% color "add_listing_title_color" label="Add Listing Title Color", color="#f6a36d", export_to_template_context=True %}
+
+<div class="body-container body-container--blog-post">
+
+  {# Blog post #}
+
+  <div class="resou-post-sec fullwidth">
+    <div class="wrapperno">
+      <div class="resou-post-inner flexwrap">
+        <div class="resou-post-left">
+          <div class="resou-post-top">
+            {#
+            <div class="resou-post-type">
+              {{ widget_data.add_resource_type.value }}
+            </div>
+            <h1> {{ content.name  }} </h1>
+            {% if content.tag_list %}
+            <div class="resou-post-tag">
+              {% for tag in content.tag_list %}
+                <a  href="{{ blog_tag_url(group.id, tag.slug)|escape_url }}">{{ tag.name|sanitize_html }}</a>{% if not loop.last %}<span>, </span>{% endif %}
+              {% endfor %}
+            </div>
+            {% endif %}
+         #}
+            {% module "module_17731242533884" path="/Workwize/modules/Tools Iframe", label="Tools Iframe" %}
+            
+          </div>
+          {#
+      
+          <div class="resou-post-body-text hide">
+              {{ content.post_body }}
+          </div>
+         #}
+        </div>
+        
+        {#
+        <div class="resou-post-right"> 
+          <div class="resou-post-rinner">
+            {% module "module_17716007285323" path="/Workwize/modules/Resource Form", label="Resource Form" %}            
+          </div>
+        </div>
+        #}
+        
+        
+      </div>
+    </div>
+  </div>
+  
+  
+  
+  {#
+  
+  {% module "module_177166651593416" path="/Workwize/modules/Related Post Section Resources", label="Related Post Section Resources" %}
+  {% module "module_1708606831113123" path="/Workwize/modules/Cta Section Fullwidth", label="Cta Section Fullwidth" %}
+  #}
+    
+
+  
+</div>
+
+
+{% endblock body %}
+
+{% require_js %}
+    <script>
+	     $(document).ready(function(){
+				 $('.header-logo').removeClass('hlogowhite-text-with-sky-blue-logo'); 
+         $('.header-logo').addClass('hlogodark-blue-text-with-blue-logo'); 
+         $('.header-sec').removeClass('headerwhite-text-with-sky-blue-logo'); 
+         $('.header-sec').addClass('headerdark-blue-text-with-blue-logo'); 
+			 });
+	   </script>
+    {% end_require_js %}

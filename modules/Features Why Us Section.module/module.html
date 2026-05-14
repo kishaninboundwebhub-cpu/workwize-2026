@@ -1,0 +1,601 @@
+{% if module.show_hide_ %}
+{% set moduleId = '#hs_cos_wrapper_{{ name }}' %}
+
+<div class="featuressec featurnewnSec   fullwidth bgsec space-sec">
+ <div class="wrapper">
+   
+   <div class="featuresInner d_flex wow fadeInUp">
+     <div class="featuresLeft">
+       <div class="featuresLinns">
+       <div class="featuresTabs">
+         {% for item in module.content.feature_tab %}
+         <div class="featuresTabn" data-value=".tabs{{  loop.index }}">
+           <span>{{ item.select_content_option|replace('_',' ') }}</span>
+           {{ item.tab_text }}
+         </div>
+         {% endfor %}
+       </div>
+       {% if module.content.button.button_text %}
+       <div class="featuresTbtn pt20 d_flex secbtn set-btn-arrows-true {{ module.content.button.button_choice }}">
+       {% set href = module.content.button.button_link.url.href %}
+        {% if module.content.button.button_link.url.type is equalto "EMAIL_ADDRESS" %}
+          {% set href = "mailto:" + href %}
+        {% elif module.content.button.button_link.url.type is equalto "PHONE_NUMBER" %}
+          {% set href = "tel:" + href %}
+        {% endif %}
+        <a
+          {% if module.content.button.button_link.url.type is equalto "CALL_TO_ACTION"  %}
+            href="{{ href }}" {# The href here is not escaped as it is not editable and functions as a JavaScript call to the associated CTA #}
+          {% else %}
+            href="{{ href|escape_url }}"
+          {% endif %}
+          {% if module.content.button.button_link.open_in_new_tab %}
+            target="_blank"
+          {% endif %}
+          {% if module.content.button.button_link.rel %}
+            rel="{{ module.content.button.button_link.rel|escape_attr }}"
+          {% endif %}
+          >
+          {{ module.content.button.button_text }}
+        </a>
+       
+       </div>
+       {% endif %}
+      </div>  
+     </div>
+     <div class="featuresRight">
+       <div class="featuresLinn">
+         {% for item in module.content.feature_tab %}
+         <div class="featuresRiConnew tabs{{  loop.index }}">
+           
+           <div class="featuresRineTop pb40 d_flex">
+               <div class="featuresRiCoticon">
+                  {% if item.icon.src %}
+                    {% set sizeAttrs = 'width="{{ item.icon.width|escape_attr }}" height="{{ item.icon.height|escape_attr }}"' %}
+                    {% if item.icon.size_type == 'auto' %}
+                      {% set sizeAttrs = 'width="{{ item.icon.width|escape_attr }}" height="{{ item.icon.height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+                    {% elif item.icon.size_type == 'auto_custom_max' %}
+                      {% set sizeAttrs = 'width="{{ item.icon.max_width|escape_attr }}" height="{{ item.icon.max_height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+                    {% endif %}
+                     {% set loadingAttr = item.icon.loading != 'disabled' ? 'loading="{{ item.icon.loading|escape_attr }}"' : '' %}
+                    <img src="{{ item.icon.src|escape_url }}" alt="{{ item.icon.alt|escape_attr }}" {{ loadingAttr }} {{ sizeAttrs }}>
+                  {% endif %}
+               </div>
+               <div class="featuresRiCottext">
+                 <h3>{{ item.title }}</h3>
+               </div> 
+             </div>
+           
+           
+           <div class="featuresRiCoInner">
+             {% if item.select_content_option == 'reason_1' %}
+        <!--   Reason #1 -->
+             
+           <!-- box item -->
+             
+             <div class="featuresRinner d_flex pb16">
+              {% for item2 in item.box_item %}
+               <div class="featuresRBox">
+                 <div class="featuresRBinn">
+                   <div class="featuresRBTop d_flex align_center gap12 pb10">
+                     <div class="featuresRBIcon">
+                        {% if item2.icon.src %}
+                        {% set sizeAttrs = 'width="{{ item2.icon.width|escape_attr }}" height="{{ item2.icon.height|escape_attr }}"' %}
+                        {% if item2.icon.size_type == 'auto' %}
+                        {% set sizeAttrs = 'width="{{ item2.icon.width|escape_attr }}" height="{{ item2.icon.height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+                        {% elif item2.icon.size_type == 'auto_custom_max' %}
+                        {% set sizeAttrs = 'width="{{ item2.icon.max_width|escape_attr }}" height="{{ item2.icon.max_height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+                        {% endif %}
+                        {% set loadingAttr = item2.icon.loading != 'disabled' ? 'loading="{{ item2.icon.loading|escape_attr }}"' : '' %}
+                        <img src="{{ item2.icon.src|escape_url }}" alt="{{ item2.icon.alt|escape_attr }}" {{ loadingAttr }} {{ sizeAttrs }}>
+                        {% endif %}
+                     </div>
+                     <div class="featuresRBTitle" style="color:{{ item2.color_style.title_color.color }};">
+                       {{ item2.title }}
+                     </div>
+                   </div>
+                   <div class="featuresRBText">
+                       {{ item2.text_field }}
+                   </div>
+                   
+                   
+                 </div>
+               </div>
+               {% endfor %}  
+             </div>
+            <!-- end box item --> 
+             
+             
+             <!-- testimonial box -->
+             
+             
+             
+             <div class="feattestiInner d_flex">
+              {% for item2 in item.testimonial_box %}
+               <div class="feattestiBox">
+                 <div class="feattestiBinn">
+                   <div class="feattestiLTop">
+                     <div class="feattestiLogo">
+                         {% if item2.logo.src %}
+                          {% set sizeAttrs = 'width="{{ item2.logo.width|escape_attr }}" height="{{ item2.logo.height|escape_attr }}"' %}
+                          {% if item2.logo.size_type == 'auto' %}
+                            {% set sizeAttrs = 'width="{{ item2.logo.width|escape_attr }}" height="{{ item2.logo.height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+                          {% elif item2.logo.size_type == 'auto_custom_max' %}
+                            {% set sizeAttrs = 'width="{{ item2.logo.max_width|escape_attr }}" height="{{ item2.logo.max_height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+                          {% endif %}
+                           {% set loadingAttr = item2.logo.loading != 'disabled' ? 'loading="{{ item2.logo.loading|escape_attr }}"' : '' %}
+                          <img src="{{ item2.logo.src|escape_url }}" alt="{{ item2.logo.alt|escape_attr }}" {{ loadingAttr }} {{ sizeAttrs }}>
+                        {% endif %}
+                     </div>
+                   
+                     <div class="feattestiText pt16 pb32">
+                         {{ item2.text }}
+                     </div>
+                   </div>
+                   <div class="feattestiBname d_flex gap14">
+                     <div class="feattestiBAvtar">
+                        {% if item2.avtar_image.src %}
+                        {% set sizeAttrs = 'width="{{ item2.avtar_image.width|escape_attr }}" height="{{ item2.avtar_image.height|escape_attr }}"' %}
+                        {% if item2.avtar_image.size_type == 'auto' %}
+                        {% set sizeAttrs = 'width="{{ item2.avtar_image.width|escape_attr }}" height="{{ item2.avtar_image.height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+                        {% elif item2.avtar_image.size_type == 'auto_custom_max' %}
+                        {% set sizeAttrs = 'width="{{ item2.avtar_image.max_width|escape_attr }}" height="{{ item2.avtar_image.max_height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+                        {% endif %}
+                        {% set loadingAttr = item2.avtar_image.loading != 'disabled' ? 'loading="{{ item2.avtar_image.loading|escape_attr }}"' : '' %}
+                        <img src="{{ item2.avtar_image.src|escape_url }}" alt="{{ item2.avtar_image.alt|escape_attr }}" {{ loadingAttr }} {{ sizeAttrs }}>
+                        {% endif %}
+                     </div>
+                     
+                     <div class="feattestiBAper">
+                       <div class="feattestiBAname">
+                         {{ item2.names }}
+                       </div>
+                       <div class="feattestiBDesig">
+                         {{ item2.designation }}
+                       </div>
+                     </div>
+                   </div>
+                   
+                   
+                 </div>
+               </div>
+               {% endfor %}  
+             </div>
+             
+             
+             
+             
+             
+             <!-- end testimonial box -->
+             
+             
+             
+        <!--    End Reason #1 -->  
+             
+             
+           <!--   Reason #2 -->  
+             
+            {% elif item.select_content_option == 'reason_2' %} 
+             
+             <div class="featre2Inner">
+               <div class="featre2Title">
+                 {{ item.feature_2_content.title }}
+               </div>
+               <div class="featre2Topimg pt32 pb32">
+                  {% if item.feature_2_content.top_image.src %}
+                  {% set sizeAttrs = 'width="{{ item.feature_2_content.top_image.width|escape_attr }}" height="{{ item.feature_2_content.top_image.height|escape_attr }}"' %}
+                  {% if item.feature_2_content.top_image.size_type == 'auto' %}
+                  {% set sizeAttrs = 'width="{{ item.feature_2_content.top_image.width|escape_attr }}" height="{{ item.feature_2_content.top_image.height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+                  {% elif item.feature_2_content.top_image.size_type == 'auto_custom_max' %}
+                  {% set sizeAttrs = 'width="{{ item.feature_2_content.top_image.max_width|escape_attr }}" height="{{ item.feature_2_content.top_image.max_height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+                  {% endif %}
+                  {% set loadingAttr = item.feature_2_content.top_image.loading != 'disabled' ? 'loading="{{ item.feature_2_content.top_image.loading|escape_attr }}"' : '' %}
+                  <img src="{{ item.feature_2_content.top_image.src|escape_url }}" alt="{{ item.feature_2_content.top_image.alt|escape_attr }}" {{ loadingAttr }} {{ sizeAttrs }}>
+                  {% endif %}
+               </div>
+               <div class="featre2Ttext sectext">
+                 {{ item.feature_2_content.text }}
+               </div>
+               {% if item.feature_2_content.button.button_text %}
+               <div class="featre2Btn pt40 d_flex secbtn set-btn-arrows-true {{ item.feature_2_content.button.button_choice }}">
+                 {% set href = item.feature_2_content.button.button_link.url.href %}
+                    {% if item.feature_2_content.button.button_link.url.type is equalto "EMAIL_ADDRESS" %}
+                      {% set href = "mailto:" + href %}
+                    {% elif item.feature_2_content.button.button_link.url.type is equalto "PHONE_NUMBER" %}
+                      {% set href = "tel:" + href %}
+                    {% endif %}
+                    <a
+                      {% if item.feature_2_content.button.button_link.url.type is equalto "CALL_TO_ACTION"  %}
+                        href="{{ href }}" {# The href here is not escaped as it is not editable and functions as a JavaScript call to the associated CTA #}
+                      {% else %}
+                        href="{{ href|escape_url }}"
+                      {% endif %}
+                      {% if item.feature_2_content.button.button_link.open_in_new_tab %}
+                        target="_blank"
+                      {% endif %}
+                      {% if item.feature_2_content.button.button_link.rel %}
+                        rel="{{ item.feature_2_content.button.button_link.rel|escape_attr }}"
+                      {% endif %}
+                      >
+                      {{ item.feature_2_content.button.button_text }}
+                    </a>
+               </div>
+               {% endif %}
+               
+               <div class="featre2Botimg" style="background-color:rgba({{ item.feature_2_content.bottom_image_background_color.color|convert_rgb }},{{ item.feature_2_content.bottom_image_background_color.opacity }}%);">
+                  {% if item.feature_2_content.bottom_image.src %}
+                  {% set sizeAttrs = 'width="{{ item.feature_2_content.bottom_image.width|escape_attr }}" height="{{ item.feature_2_content.bottom_image.height|escape_attr }}"' %}
+                  {% if item.feature_2_content.bottom_image.size_type == 'auto' %}
+                  {% set sizeAttrs = 'width="{{ item.feature_2_content.bottom_image.width|escape_attr }}" height="{{ item.feature_2_content.bottom_image.height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+                  {% elif item.feature_2_content.bottom_image.size_type == 'auto_custom_max' %}
+                  {% set sizeAttrs = 'width="{{ item.feature_2_content.bottom_image.max_width|escape_attr }}" height="{{ item.feature_2_content.bottom_image.max_height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+                  {% endif %}
+                  {% set loadingAttr = item.feature_2_content.bottom_image.loading != 'disabled' ? 'loading="{{ item.feature_2_content.bottom_image.loading|escape_attr }}"' : '' %}
+                  <img src="{{ item.feature_2_content.bottom_image.src|escape_url }}" alt="{{ item.feature_2_content.bottom_image.alt|escape_attr }}" {{ loadingAttr }} {{ sizeAttrs }}>
+                  {% endif %}
+               </div>
+               
+               
+               
+               
+             </div>
+            
+             <!--    End Reason #2 -->
+             
+             <!-- Reason #3 -->
+             
+             {% elif item.select_content_option == 'reason_3' %} 
+             
+             <div class="featre3Inner">
+               <div class="featre2Ttext sectext">
+                 {{ item.feature_3_content.text }}
+               </div>
+               {% if item.feature_3_content.button.button_text %}
+               <div class="featre2Btn pt25 d_flex secbtn set-btn-arrows-true {{ item.feature_3_content.button.button_choice }}">
+                 {% set href = item.feature_3_content.button.button_link.url.href %}
+                    {% if item.feature_3_content.button.button_link.url.type is equalto "EMAIL_ADDRESS" %}
+                      {% set href = "mailto:" + href %}
+                    {% elif item.feature_3_content.button.button_link.url.type is equalto "PHONE_NUMBER" %}
+                      {% set href = "tel:" + href %}
+                    {% endif %}
+                    <a
+                      {% if item.feature_3_content.button.button_link.url.type is equalto "CALL_TO_ACTION"  %}
+                        href="{{ href }}" {# The href here is not escaped as it is not editable and functions as a JavaScript call to the associated CTA #}
+                      {% else %}
+                        href="{{ href|escape_url }}"
+                      {% endif %}
+                      {% if item.feature_3_content.button.button_link.open_in_new_tab %}
+                        target="_blank"
+                      {% endif %}
+                      {% if item.feature_3_content.button.button_link.rel %}
+                        rel="{{ item.feature_3_content.button.button_link.rel|escape_attr }}"
+                      {% endif %}
+                      >
+                      {{ item.feature_3_content.button.button_text }}
+                    </a>
+               </div>
+               {% endif %}
+               
+               <div class="featre3Botimg {% if item.feature_3_content.set_left_side_more %}featre3Blftimg{% endif %}" style="background-color:rgba({{ item.feature_3_content.bottom_image_background_color.color|convert_rgb }},{{ item.feature_3_content.bottom_image_background_color.opacity }}%);">
+                 
+                 
+                 <div class="featre3BotSlider">
+                   {% for item2 in item.feature_3_content.bottom_image %}
+                   <div class="featre3BotSlide">
+                     <div class="featre3BotSlin">
+                      {% if item2.src %}
+                      {% set sizeAttrs = 'width="{{ item2.width|escape_attr }}" height="{{ item2.height|escape_attr }}"' %}
+                      {% if item2.size_type == 'auto' %}
+                      {% set sizeAttrs = 'width="{{ item2.width|escape_attr }}" height="{{ item2.height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+                      {% elif item2.size_type == 'auto_custom_max' %}
+                      {% set sizeAttrs = 'width="{{ item2.max_width|escape_attr }}" height="{{ item2.max_height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+                      {% endif %}
+                      {% set loadingAttr = item2.loading != 'disabled' ? 'loading="{{ item2.loading|escape_attr }}"' : '' %}
+                      <img src="{{ item2.src|escape_url }}" alt="{{ item2.alt|escape_attr }}" {{ loadingAttr }} {{ sizeAttrs }}>
+                      {% endif %}
+                     </div>
+                   </div>
+                   {% endfor %}
+                   
+                 </div>
+                 
+                 
+                  
+               </div>
+               
+             </div>
+             <!-- End Reason #3 -->
+             
+             
+             <!-- Reason #4 -->
+             
+             
+              
+             {% elif item.select_content_option == 'reason_4' %} 
+             
+             <div class="featre4Inner">
+               <div class="featre4ITop d_flex">
+               <div class="featre4ITleft">  
+                 <div class="featre4Ttext sectext">
+                   {{ item.feature_4_content.text }}
+                 </div>
+                 {% if item.feature_4_content.button.button_text %}
+                 <div class="featre2Btn pt25 d_flex secbtn set-btn-arrows-true {{ item.feature_4_content.button.button_choice }}">
+                   {% set href = item.feature_4_content.button.button_link.url.href %}
+                    {% if item.feature_4_content.button.button_link.url.type is equalto "EMAIL_ADDRESS" %}
+                      {% set href = "mailto:" + href %}
+                    {% elif item.feature_4_content.button.button_link.url.type is equalto "PHONE_NUMBER" %}
+                      {% set href = "tel:" + href %}
+                    {% endif %}
+                    <a
+                      {% if item.feature_4_content.button.button_link.url.type is equalto "CALL_TO_ACTION"  %}
+                        href="{{ href }}" {# The href here is not escaped as it is not editable and functions as a JavaScript call to the associated CTA #}
+                      {% else %}
+                        href="{{ href|escape_url }}"
+                      {% endif %}
+                      {% if item.feature_4_content.button.button_link.open_in_new_tab %}
+                        target="_blank"
+                      {% endif %}
+                      {% if item.feature_4_content.button.button_link.rel %}
+                        rel="{{ item.feature_4_content.button.button_link.rel|escape_attr }}"
+                      {% endif %}
+                      >
+                      {{ item.feature_4_content.button.button_text }}
+                    </a>
+                 </div>
+                 {% endif %}
+               </div>
+               <div class="featre4ITright"> 
+                 
+                 <div class="featre4Slider">
+                   {% for item2 in item.feature_4_content.logo %}
+                   <div class="featre4Slide">
+                     <div class="featre4SlLogo">
+                        {% if item2.logo.src %}
+                        {% set sizeAttrs = 'width="{{ item2.logo.width|escape_attr }}" height="{{ item2.logo.height|escape_attr }}"' %}
+                        {% if item2.logo.size_type == 'auto' %}
+                        {% set sizeAttrs = 'width="{{ item2.logo.width|escape_attr }}" height="{{ item2.logo.height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+                        {% elif item2.logo.size_type == 'auto_custom_max' %}
+                        {% set sizeAttrs = 'width="{{ item2.logo.max_width|escape_attr }}" height="{{ item2.logo.max_height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+                        {% endif %}
+                        {% set loadingAttr = item2.logo.loading != 'disabled' ? 'loading="{{ item2.logo.loading|escape_attr }}"' : '' %}
+                        <img src="{{ item2.logo.src|escape_url }}" alt="{{ item2.logo.alt|escape_attr }}" {{ loadingAttr }} {{ sizeAttrs }}>
+                        {% endif %}
+                     </div>
+                   </div>
+                   {% endfor %}
+                 </div>
+                 
+               </div>  
+                 
+               </div>
+               <div class="featre4Botimg" style="background-color:rgba({{ item.feature_4_content.bottom_image_background_color.color|convert_rgb }},{{ item.feature_4_content.bottom_image_background_color.opacity }}%);">
+                  {% if item.feature_4_content.bottom_image.src %}
+                  {% set sizeAttrs = 'width="{{ item.feature_4_content.bottom_image.width|escape_attr }}" height="{{ item.feature_4_content.bottom_image.height|escape_attr }}"' %}
+                  {% if item.feature_4_content.bottom_image.size_type == 'auto' %}
+                    {% set sizeAttrs = 'width="{{ item.feature_4_content.bottom_image.width|escape_attr }}" height="{{ item.feature_4_content.bottom_image.height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+                  {% elif item.feature_4_content.bottom_image.size_type == 'auto_custom_max' %}
+                    {% set sizeAttrs = 'width="{{ item.feature_4_content.bottom_image.max_width|escape_attr }}" height="{{ item.feature_4_content.bottom_image.max_height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+                  {% endif %}
+                   {% set loadingAttr = item.feature_4_content.bottom_image.loading != 'disabled' ? 'loading="{{ item.feature_4_content.bottom_image.loading|escape_attr }}"' : '' %}
+                  <img src="{{ item.feature_4_content.bottom_image.src|escape_url }}" alt="{{ item.feature_4_content.bottom_image.alt|escape_attr }}" {{ loadingAttr }} {{ sizeAttrs }}>
+                {% endif %}
+               </div>
+               
+             </div>
+             
+             
+             <!-- End Reason #4 -->
+             
+             
+             <!-- Reason #5 -->
+             
+             {% elif item.select_content_option == 'reason_5' %} 
+             
+             <div class="featre5Inner">
+               
+                <div class="featre5Title">
+                  {{ item.feature_5_content.title }}
+                </div>
+               
+                 {% if item.feature_5_content.button.button_text %}
+                 <div class="featre2Btn pt25 d_flex secbtn set-btn-arrows-true {{ item.feature_5_content.button.button_choice }}">
+                   {% set href = item.feature_5_content.button.button_link.url.href %}
+                    {% if item.feature_5_content.button.button_link.url.type is equalto "EMAIL_ADDRESS" %}
+                      {% set href = "mailto:" + href %}
+                    {% elif item.feature_5_content.button.button_link.url.type is equalto "PHONE_NUMBER" %}
+                      {% set href = "tel:" + href %}
+                    {% endif %}
+                    <a
+                      {% if item.feature_5_content.button.button_link.url.type is equalto "CALL_TO_ACTION"  %}
+                        href="{{ href }}" {# The href here is not escaped as it is not editable and functions as a JavaScript call to the associated CTA #}
+                      {% else %}
+                        href="{{ href|escape_url }}"
+                      {% endif %}
+                      {% if item.feature_5_content.button.button_link.open_in_new_tab %}
+                        target="_blank"
+                      {% endif %}
+                      {% if item.feature_5_content.button.button_link.rel %}
+                        rel="{{ item.feature_5_content.button.button_link.rel|escape_attr }}"
+                      {% endif %}
+                      >
+                      {{ item.feature_5_content.button.button_text }}
+                    </a>
+                 </div>
+                 {% endif %}
+               
+                 <div class="featre5Innnn pt32 d_flex"> 
+                  {% for item2 in item.feature_5_content.box_item %}
+                   <div class="featre5iBox">
+                     <div class="featre5iBinn">
+                       <div class="featre5iTop" style="background-color:rgba({{ item2.top_background_color.color|convert_rgb }},{{ item2.top_background_color.opacity }}%);">
+                         <div class="featre5iTDot">
+                              {% if item2.dot_image.src %}
+                              {% set sizeAttrs = 'width="{{ item2.dot_image.width|escape_attr }}" height="{{ item2.dot_image.height|escape_attr }}"' %}
+                              {% if item2.dot_image.size_type == 'auto' %}
+                              {% set sizeAttrs = 'width="{{ item2.dot_image.width|escape_attr }}" height="{{ item2.dot_image.height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+                              {% elif item2.dot_image.size_type == 'auto_custom_max' %}
+                              {% set sizeAttrs = 'width="{{ item2.dot_image.max_width|escape_attr }}" height="{{ item2.dot_image.max_height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+                              {% endif %}
+                              {% set loadingAttr = item2.dot_image.loading != 'disabled' ? 'loading="{{ item2.dot_image.loading|escape_attr }}"' : '' %}
+                              <img src="{{ item2.dot_image.src|escape_url }}" alt="{{ item2.dot_image.alt|escape_attr }}" {{ loadingAttr }} {{ sizeAttrs }}>
+                              {% endif %}
+                         </div>
+                         {% if item2.icon.src %}
+                            {% set sizeAttrs = 'width="{{ item2.icon.width|escape_attr }}" height="{{ item2.icon.height|escape_attr }}"' %}
+                            {% if item2.icon.size_type == 'auto' %}
+                              {% set sizeAttrs = 'width="{{ item2.icon.width|escape_attr }}" height="{{ item2.icon.height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+                            {% elif item2.icon.size_type == 'auto_custom_max' %}
+                              {% set sizeAttrs = 'width="{{ item2.icon.max_width|escape_attr }}" height="{{ item2.icon.max_height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+                            {% endif %}
+                             {% set loadingAttr = item2.icon.loading != 'disabled' ? 'loading="{{ item2.icon.loading|escape_attr }}"' : '' %}
+                            <img class="featre5icons" src="{{ item2.icon.src|escape_url }}" alt="{{ item2.icon.alt|escape_attr }}" {{ loadingAttr }} {{ sizeAttrs }}>
+                          {% endif %}
+                       </div>
+                       
+                      <div class="featre5iTt">
+                          {{ item2.title }}
+                      </div>
+                       
+                      <div class="featre5itetxt">
+                          {{ item2.text }}
+                      </div>
+                       
+                     </div>
+                   </div>
+                  {% endfor %}
+                 </div>  
+                 
+               </div>
+               
+             <!-- End Reason #5 -->
+             
+             
+             
+             <!-- Reason #6 -->
+             
+             {% elif item.select_content_option == 'reason_6' %} 
+             
+             <div class="featre6Inner">
+               
+                <div class="featre6tText">
+                  {{ item.feature_6_content.top_text }}
+                </div>
+               
+                 {% if item.feature_6_content.button.button_text %}
+                 <div class="featre2Btn pt25 d_flex secbtn set-btn-arrows-true {{ item.feature_6_content.button.button_choice }}">
+                   {% set href = item.feature_6_content.button.button_link.url.href %}
+                    {% if item.feature_6_content.button.button_link.url.type is equalto "EMAIL_ADDRESS" %}
+                      {% set href = "mailto:" + href %}
+                    {% elif item.feature_6_content.button.button_link.url.type is equalto "PHONE_NUMBER" %}
+                      {% set href = "tel:" + href %}
+                    {% endif %}
+                    <a
+                      {% if item.feature_6_content.button.button_link.url.type is equalto "CALL_TO_ACTION"  %}
+                        href="{{ href }}" {# The href here is not escaped as it is not editable and functions as a JavaScript call to the associated CTA #}
+                      {% else %}
+                        href="{{ href|escape_url }}"
+                      {% endif %}
+                      {% if item.feature_6_content.button.button_link.open_in_new_tab %}
+                        target="_blank"
+                      {% endif %}
+                      {% if item.feature_6_content.button.button_link.rel %}
+                        rel="{{ item.feature_6_content.button.button_link.rel|escape_attr }}"
+                      {% endif %}
+                      >
+                      {{ item.feature_6_content.button.button_text }}
+                    </a>
+                 </div>
+                 {% endif %}
+               
+                 <div class="featre6Imgs"> 
+                  {% if item.feature_6_content.bottom_image.src %}
+                  {% set sizeAttrs = 'width="{{ item.feature_6_content.bottom_image.width|escape_attr }}" height="{{ item.feature_6_content.bottom_image.height|escape_attr }}"' %}
+                  {% if item.feature_6_content.bottom_image.size_type == 'auto' %}
+                    {% set sizeAttrs = 'width="{{ item.feature_6_content.bottom_image.width|escape_attr }}" height="{{ item.feature_6_content.bottom_image.height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+                  {% elif item.feature_6_content.bottom_image.size_type == 'auto_custom_max' %}
+                    {% set sizeAttrs = 'width="{{ item.feature_6_content.bottom_image.max_width|escape_attr }}" height="{{ item.feature_6_content.bottom_image.max_height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+                  {% endif %}
+                   {% set loadingAttr = item.feature_6_content.bottom_image.loading != 'disabled' ? 'loading="{{ item.feature_6_content.bottom_image.loading|escape_attr }}"' : '' %}
+                  <img src="{{ item.feature_6_content.bottom_image.src|escape_url }}" alt="{{ item.feature_6_content.bottom_image.alt|escape_attr }}" {{ loadingAttr }} {{ sizeAttrs }}>
+                {% endif %}
+                   
+                   
+                   
+                 </div>  
+                 
+               </div>
+               
+       
+             
+             
+             
+             
+             
+             
+             
+             <!-- End Reason #6 -->
+             
+             
+             {% endif %}
+             
+           </div>
+         </div>
+         {% endfor %}
+       </div>
+     </div>
+   </div>
+  </div>
+</div>
+
+
+{% require_css %}
+<style>
+  {{ moduleId }} .bgsec { {% if module.style.select_background == 'bg_color' %}
+    background-color: rgba({{ module.style.background_color.color|convert_rgb }},{{ module.style.background_color.opacity ~ '%' }});
+    {% elif module.style.select_background == 'bg_image' %}
+    {{ module.style.background_image.css }} background-repeat: no-repeat;
+    {% elif module.style.select_background == 'bg_gradient' %}
+    background: {{ module.style.background_gradient.css }};
+    {% endif %} }
+  
+  {{ moduleId }} .space-sec { {{ module.style.spacing.desktop.css }}; }
+  
+  {{ moduleId }} .featuresTitle h2 { color:rgba({{ module.color_setting.title_color.color|convert_rgb }},{{ module.color_setting.title_color.opacity }}%);  }
+  
+  /* box item */
+  
+   {% for item in module.content.feature_tab %}
+    {% set parent_index = loop.index %}
+    {% for item2 in item.box_item %}
+      {{ moduleId }} .featuresRiConte:nth-child({{ parent_index }}) .featuresRBox:nth-child({{ loop.index }}) .featuresRBTitle {  color: {{ item2.color_style.title_color.color }};  }
+      {{ moduleId }} .featuresRiConte:nth-child({{ parent_index }}) .featuresRBox:nth-child({{ loop.index }}) .featuresRBText {  color: {{ item2.color_style.text_color.color }}; }
+    {% endfor %}
+   {% endfor %}
+  
+  /* end box item */
+  
+  
+  
+  {% for item in module.content.feature_tab %}
+    {{ moduleId }} .featuresTabn:nth-child({{ loop.index }}).active {  color:rgba({{ item.tab_text_active_color.color|convert_rgb }},{{ item.tab_text_active_color.opacity }}%);  }
+    {{ moduleId }} .featuresTabn:nth-child({{ loop.index }}):before {  background-color:rgba({{ item.tab_text_active_color.color|convert_rgb }},{{ item.tab_text_active_color.opacity }}%);  }
+  {% endfor %}
+  
+  
+  
+  
+  
+  
+  
+  @media(max-width: 991px){ {{ moduleId }} .space-sec { {{ module.style.spacing.tablet.css }}; } }
+  
+  @media(max-width: 767px){ {{ moduleId }} .space-sec { {{ module.style.spacing.mobile.css }}; } }
+  
+</style>
+{% end_require_css %}
+
+
+
+{% endif %}
+

@@ -1,0 +1,344 @@
+{% set dynamic_page_hubdb_table_id = module.select_hubdb_table %}
+{% if dynamic_page_hubdb_row %}
+
+{% else dynamic_page_hubdb_table_id %}
+
+
+
+<div class="hrisinteSection fullwidth specSec">
+  <div class="wrapper">
+    <div class="hrisinteTitle text-center">
+      <h1>{{ module.title }}</h1>
+    </div>
+    <div class="hrisintefeatu flexwrap">
+      {% for row in hubdb_table_rows(dynamic_page_hubdb_table_id) %}
+       {% if row.set_featured == 1 %}
+      <div class="hrisintefItem">
+        <div class="hrisintefInn">
+          <div class="hrisinteIcon text-center">
+            <img src="{{ row.logo.url }}" alt="{{ row.hs_name }}" loading="lazy" width="300" height="300">
+          </div>
+          <div class="hrisintefCont">
+            <div class="hrisinteftag">
+              {{ module.featured }}
+            </div>
+            <h4>{{  row.hs_name }}</h4>
+            <div class="hrisinteLink button">
+              <a href="/{{ content.slug }}/{{ row.hs_path }}">{{ module.link_text }}</a>
+            </div>
+          </div>
+          <a href="/{{ content.slug }}/{{ row.hs_path }}" class="hrisinteLfl"></a>
+        </div>
+      </div>
+      {% endif %}
+      {% endfor %}
+    </div>
+    <div class="hrisintebInner flexwrap">
+      <div class="hrisintebLeft">
+        <h3>{{ module.categories_title }}</h3>
+        <div class="hrisintebFill filters">
+          <ul class="button-group" data-filter-group="categories">
+            <li data-filter="*" class="is-checked hrisinteball">All</li>
+            {% for row in hubdb_table_rows(dynamic_page_hubdb_table_id) %}
+               {% for item in row.categories %}  
+                 <li data-filter=".{{ item.name|replace(" ","-")|replace("/","-")|replace("&","-")|lower }}" data-url="{{ item.label|replace(" ","-")|replace("/","-")|replace("&","-")|lower }}">{{ item.label }}</li>
+               {% endfor %}
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+      <div class="hrisintebRight">
+        <div class="hrisintebrTop flexwrap alignCenter">
+          <div class="hrisintebRSearch">
+            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="26" fill="none" viewBox="0 0 25 26" class="sc-b550a1a2-0 VFpQO"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.527" d="M11.197 20.125a8.143 8.143 0 1 0 0-16.286 8.143 8.143 0 0 0 0 16.286ZM21.376 22.161l-4.428-4.428"></path></svg>
+            <input type="text" class="quicksearch" placeholder="Search for an integration"/>
+          </div>
+          <div class="hrisintebRStr">
+            <div class="hrisintebRScou">
+              <span class="filter-view-txt">Viewing:</span>
+              <span class="filter-count">0</span>
+              <span class="filter-text">All</span>
+            </div>
+            <div class="hrisintebRStrfBtn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                  <path fill="#006BFF" d="M21 3H5a1 1 0 0 0-1 1v2.59c0 .523.213 1.037.583 1.407L10 13.414V21a1.002 1.002 0 0 0 1.447.895l4-2c.339-.17.553-.516.553-.895v-5.586l5.417-5.417c.37-.37.583-.884.583-1.407V4a1 1 0 0 0-1-1Zm-6.707 9.293A.997.997 0 0 0 14 13v5.382l-2 1V13a.996.996 0 0 0-.293-.707L6 6.59V5h14.001l.002 1.583-5.71 5.71Z"></path>
+                </svg>
+                <div class="hrisintebRsfdtxt">Filter</div>
+            </div>
+          </div>
+          
+        </div>
+        <div class="hrisintebrListing flexwrap">
+          {% for row in hubdb_table_rows(dynamic_page_hubdb_table_id) %}
+          <div class="hrisinteItem {% for item in row.categories %} {{ item.name|replace(" ","-")|replace("/","-")|replace("&","-")|lower }} {% endfor %}">
+            <div class="hrisintefInn">
+                <div class="hrisinteIcon text-center">
+                  <img src="{{ row.logo.url }}" alt="{{ row.hs_name }}" loading="lazy" width="300" height="300">
+                </div>
+                <div class="hrisintefCont">
+                  <h4>{{  row.hs_name }}</h4>
+                  <div class="hrisinteLink button">
+                    <a href="/{{ content.slug }}/{{ row.hs_path }}">{{ module.link_text }}</a>
+                  </div>
+                </div>
+                <a href="/{{ content.slug }}/{{ row.hs_path }}" class="hrisinteLfl"></a>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+        <div class="noResult"> No Results Found! </div>
+        <div class="hrisintebrLoad">
+          <div id="loadMore"> Load More </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% require_css %}
+  <style>
+    {% scope_css %}
+       .specSec {  {{ module.style.desktop_spacing.spacing_field.css }} }
+    
+       @media(max-width:1200px){
+        .specSec {  {{ module.style.tablet_spacing.spacing_field.css }} }
+       }
+    
+       @media(max-width:767px){
+        .specSec {  {{ module.style.mobile_spacing.spacing_field.css }} }
+       }
+    
+    
+    
+    
+    {% end_scope_css %}
+  </style>
+{% end_require_css %}
+
+{% require_js %}
+  <script>
+   
+    
+    
+  if ($('.hrisinteItem').length > 0) {
+  $(document).ready(function () {
+    var buttonFilters = {};
+    var buttonFilter;
+    var qsRegex;
+    var $filterCount = $('.filter-count');
+    var $filterText = $('.filter-text');
+    var $loadMore = $('#loadMore').parent();
+    var $quicksearch = $('.quicksearch');
+
+    var $grid = $('.hrisintebrListing').isotope({
+      itemSelector: '.hrisinteItem',
+      layoutMode: 'fitRows',
+      filter: function () {
+        var $this = $(this);
+
+        // Search across all items
+        var searchResult = qsRegex ? $this.text().match(qsRegex) : true;
+
+        // Apply filter only if no search is active
+        var buttonResult = qsRegex ? true : (buttonFilter ? $this.is(buttonFilter) : true);
+
+        return searchResult && buttonResult;
+      },
+      visibleStyle: { transform: 'translateY(0)', opacity: 1 },
+      hiddenStyle: { transform: 'translateY(100px)', opacity: 0 },
+    });
+      var itemReveal = Isotope.Item.prototype.reveal;
+      Isotope.Item.prototype.reveal = function() {
+        itemReveal.apply( this, arguments );
+        $( this.element ).removeClass('isotope-hidden');
+      };
+
+      var itemHide = Isotope.Item.prototype.hide;
+      Isotope.Item.prototype.hide = function() {
+        itemHide.apply( this, arguments );
+        $( this.element ).addClass('isotope-hidden');
+      };
+    var iso = $grid.data('isotope');
+    var initShow = 9;
+    var counter = initShow;
+
+    function updateFilterCount() {
+      var count = iso.filteredItems.length;
+      $filterCount.text(`${count}`);
+      if (count === 0) {
+        $('.noResult').show();
+        $loadMore.hide();
+      } else {
+        $('.noResult').hide();
+        if (count <= initShow) {
+          $loadMore.hide();
+        } else {
+          $loadMore.show();
+        }
+      }
+    }
+    
+
+
+    // Existing filter click handler
+   $('.filters').on('click', 'li', function () {
+      var $this = $(this);
+      var $buttonGroup = $this.parents('.button-group');
+      var filterGroup = $buttonGroup.attr('data-filter-group');
+
+      // Check if the clicked item has the .hrisinteball class
+      if ($this.hasClass('hrisinteball')) {
+        // Use the current URL without any changes
+        var currentUrl = window.location.href.split('#')[0];
+        history.pushState(null, null, currentUrl); // Update URL with current URL
+        
+      }
+
+      // Clear search when filter is clicked
+      $quicksearch.val('');
+      qsRegex = null;
+
+      // Update filters
+      buttonFilters[filterGroup] = $this.attr('data-filter');
+      buttonFilter = concatValues(buttonFilters);
+
+      // Update filter text
+      $filterText.text($this.text());
+
+      // Only run the URL update logic if the .hrisinteball class is NOT present
+      if (!$this.hasClass('hrisinteball')) {
+        // Get the current URL and base path (before the hash)
+        var currentUrl = window.location.href.split('#')[0];
+
+        // Append the new filter after the hash
+        var newUrl = currentUrl + '#' + $this.attr('data-url').replace('/', '');
+
+        // Update the URL without reloading the page
+        history.pushState(null, null, newUrl);
+      }
+
+      $grid.isotope();
+      updateFilterCount();
+      loadMore(initShow); // Reset load more for filtered items
+    });
+
+    $quicksearch.keyup(debounce(function () {
+      qsRegex = new RegExp($quicksearch.val(), 'gi');
+      $grid.isotope();
+      updateFilterCount();
+      loadMore(initShow); // Adjust load more for search results
+      $('.filters .is-checked').removeClass('is-checked');
+      $('.filters li:first-child').addClass('is-checked');
+    }));
+    updateFilterCount();
+    $('.button-group').each(function (i, buttonGroup) {
+      var $buttonGroup = $(buttonGroup);
+      $buttonGroup.on('click', 'li', function () {
+        $buttonGroup.find('.is-checked').removeClass('is-checked');
+        $(this).addClass('is-checked');
+      });
+    });
+
+    function concatValues(obj) {
+      var value = '';
+      for (var prop in obj) {
+        value += obj[prop];
+      }
+      return value;
+    }
+
+    function debounce(fn, threshold) {
+      var timeout;
+      threshold = threshold || 100;
+      return function debounced() {
+        clearTimeout(timeout);
+        var args = arguments;
+        var _this = this;
+        function delayed() {
+          fn.apply(_this, args);
+        }
+        timeout = setTimeout(delayed, threshold);
+      };
+    }
+
+    loadMore(initShow);
+
+    function loadMore(toShow) {
+      $grid.find(".hidden").removeClass("hidden");
+      var hiddenElems = iso.filteredItems.slice(toShow, iso.filteredItems.length).map(function (item) {
+        return item.element;
+      });
+      $(hiddenElems).addClass('hidden');
+      $grid.isotope('layout');
+
+      if (iso.filteredItems.length <= toShow) {
+        $loadMore.hide();
+      } else {
+        $loadMore.show();
+      }
+    }
+
+    $loadMore.click(function () {
+      counter += initShow;
+      loadMore(counter);
+    });
+
+    $(".filters").click(function () {
+      loadMore(initShow);
+      updateFilterCount();
+    });
+
+    var seen = {};
+    $('.hrisintebFill ul li').each(function () {
+      var txt = $(this).text();
+      if (seen[txt]) {
+        $(this).remove();
+      } else {
+        seen[txt] = true;
+      }
+    });
+    
+    $(".hrisintebRStrfBtn").on("click", (function () {
+		  $('.hrisintebLeft').toggleClass("active-fill");
+	  }));
+    
+    $(".hrisintebFill ul li").on("click", (function () {
+		  $('.hrisintebLeft').removeClass("active-fill");
+	  }));
+    
+    
+    
+    
+    
+    
+  });
+}
+
+    $(document).ready(function () {
+      // Check if there's a hash in the URL and trigger a click on the matching filter after a timeout
+      var currentHash = window.location.hash.replace('#', ''); // Get the hash part from the URL
+      if (currentHash) {
+        // Set a timeout to delay the filter click for a few milliseconds
+        setTimeout(function () {
+          // Find the matching filter element based on the hash
+          var $matchingFilter = $('.filters li[data-url="' + currentHash + '"]');
+
+          // Trigger a click event on the matching filter if found
+          if ($matchingFilter.length) {
+            $matchingFilter.trigger('click');
+          }
+        }, 500); // Timeout delay of 500 milliseconds (you can adjust this as needed)
+      }
+    });
+    
+    
+    
+
+
+
+
+
+  </script>
+{% end_require_js %}
+
+{% endif %}

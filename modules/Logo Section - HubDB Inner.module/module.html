@@ -1,0 +1,65 @@
+{% if dynamic_page_hubdb_row %}
+{% set moduleId = '#hs_cos_wrapper_{{ name }}' %}
+<div class="solutionlogosec fullwidth bgsec space-sec">
+   <div class="wrapper">
+      <div class="solutionlogoinner secinner w-100">
+         <div class="solutionlogotitle sectitle">
+            <h5>{{ module.content.title }}</h5>
+         </div>
+         <div class="solutionlogorow">
+           {% for item in module.content.logo_item %}
+            <div class="solutionlogocols">
+                {% if item.logo.src %}
+                {% set sizeAttrs = 'width="{{ item.logo.width|escape_attr }}" height="{{ item.logo.height|escape_attr }}"' %}
+                {% if item.logo.size_type == 'auto' %}
+                {% set sizeAttrs = 'width="{{ item.logo.width|escape_attr }}" height="{{ item.logo.height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+                {% elif item.logo.size_type == 'auto_custom_max' %}
+                {% set sizeAttrs = 'width="{{ item.logo.max_width|escape_attr }}" height="{{ item.logo.max_height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+                {% endif %}
+                {% set loadingAttr = item.logo.loading != 'disabled' ? 'loading="{{ item.logo.loading|escape_attr }}"' : '' %}
+                <img src="{{ item.logo.src|escape_url }}" alt="{{ item.logo.alt|escape_attr }}" {{ loadingAttr }} {{ sizeAttrs }}>
+                {% endif %}
+            </div>
+            {% endfor %}
+         </div>
+      </div>
+   </div>
+</div>
+
+
+{% require_css %}
+<style>
+  {{ moduleId }} .bgsec {  background-color:rgba({{ module.styles.background_color.color|convert_rgb }},{{ module.styles.background_color.opacity }}%); }
+  
+  {{ moduleId }} .space-sec { {{ module.style.spacing.desktop.css }}; }
+ 
+  {% for item in module.button %} 
+   {{ moduleId }} .secbtn:nth-child({{ loop.index }}) a { background-color: rgba({{ item.background_color.color|convert_rgb }},{{ item.background_color.opacity ~ '%' }}); border-color: rgba({{ item.border_color.color|convert_rgb }},{{ item.border_color.opacity ~ '%' }}); color: rgba({{ item.text_color.color|convert_rgb }},{{ item.text_color.opacity ~ '%' }}); }
+   {{ moduleId }} .secbtn:nth-child({{ loop.index }}) a:hover { background-color: rgba({{ item.background_color_hover_.color|convert_rgb }},{{ item.background_color_hover_.opacity ~ '%' }}); border-color: rgba({{ item.border_color_hover_.color|convert_rgb }},{{ item.border_color_hover_.opacity ~ '%' }}); color: rgba({{ item.text_color_hover_.color|convert_rgb }},{{ item.text_color_hover_.opacity ~ '%' }}); }  
+  {% endfor %}
+  
+  {% if module.shape_image.src %}
+   {{ moduleId }} .heroinner:before { background-image: url({{ module.shape_image.src }}); }
+  {% endif %}
+  
+  {{ moduleId }} .heroheader { max-width: {{ module.header_max_width }}px; }
+  {{ moduleId }} .hero-flage-img { text-align: center;   width: 100%;    margin: 0 0 20px; }
+  {{ moduleId }} .hero-flage-img img { max-width: 250px; }
+  
+  {{ moduleId }} .solutionlogotitle.sectitle { width: 26%; }
+  {{ moduleId }} .solutionlogorow { width: 74%; justify-content: flex-end; }
+  
+  
+  @media(max-width: 991px){ 
+    {{ moduleId }} .space-sec { {{ module.style.spacing.tablet.css }}; }
+    {{ moduleId }} .solutionlogotitle.sectitle { width: 100%; }
+    {{ moduleId }} .solutionlogorow { width: 100%; justify-content: center; }
+   }
+  
+  @media(max-width: 767px){ {{ moduleId }} .space-sec { {{ module.style.spacing.mobile.css }}; } }
+  
+</style>
+{% end_require_css %}
+
+
+{% endif %}

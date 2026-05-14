@@ -1,0 +1,13 @@
+.body-container--landing-page .row-fluid-wrapper>.row-fluid>.span3.widget-span.widget-type-cell>.row-fluid-wrapper, .body-container--landing-page .row-fluid-wrapper>.row-fluid>.span3.widget-span.widget-type-cell>.row-fluid-wrapper>.row-fluid, .body-container--landing-page .row-fluid-wrapper>.row-fluid>.span3.widget-span.widget-type-cell>.row-fluid-wrapper>.row-fluid>.span12>div {
+    height: 100%;
+}
+@media(min-width:992px){
+  .blgpst-list.newtoc{padding-bottom: 100px}
+}
+@media(max-width:991px){
+.blgpst-list.newtoc h4 {font-size: 18px;}
+.blgpst-list.newtoc{padding-bottom: 100px}
+}
+@media(max-width:767px){
+.blgpst-list.newtoc{padding-bottom: 0px}
+}

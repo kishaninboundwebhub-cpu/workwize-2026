@@ -1,0 +1,108 @@
+{% set moduleID = "#hs_cos_wrapper_{{ name }}" %}
+<div class="footer-sec footer-ldsec bgsec bgspace fullwidth">
+ <div class="wrapper-1257">
+  <div class="footer-outer fullwidth">
+   <div class="footer-row w-100 flexwrap">
+    <div class="footer-left">
+     <div class="footer-logo">
+      {% set href = module.logo_link.url.href %}
+      {% if module.logo_link.url.type is equalto "EMAIL_ADDRESS" %}
+      {% set href = "mailto:" + href %}
+      {% endif %}
+      <a href="{{ href }}"
+      {% if module.logo_link.open_in_new_tab %}target="_blank"{% endif %}
+      {% if module.logo_link.rel %}rel="{{ module.logo_link.rel }}"{% endif %}
+      >
+       {% if module.logo.src %}
+       {% set sizeAttrs = 'width="{{ module.logo.width }}" height="{{ module.logo.height }}"' %}
+       {% if module.logo.size_type == 'auto' %}
+       {% set sizeAttrs = 'width="{{ module.logo.width }}" height="{{ module.logo.height }}" style="max-width: 100%; height: auto;"' %}
+       {% elif module.logo.size_type == 'auto_custom_max' %}
+       {% set sizeAttrs = 'width="{{ module.logo.max_width }}" height="{{ module.logo.max_height }}" style="max-width: 100%; height: auto;"' %}
+       {% endif %}
+       {% set loadingAttr = module.logo.loading != 'disabled' ? 'loading="{{ module.logo.loading }}"' : '' %}
+       <img src="{{ module.logo.src }}" alt="{{ module.logo.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
+       {% endif %}
+      </a>
+     </div>
+     <div class="footer-leftxt">
+       {{ module.text }}
+     </div>
+     {#<div class="footer-form">
+      <div class="footer-formtitle">
+       {{ module.form_title }}
+      </div>
+      {% form
+      form_to_use="{{ module.form.form_id }}"
+      response_response_type="{{ module.form.response_type }}"
+      response_message="{{ module.form.message }}"
+      response_redirect_id="{{ module.form.redirect_id }}"
+      response_redirect_url="{{module.form.redirect_url}}"
+      gotowebinar_webinar_key="{{ module.form.gotowebinar_webinar_key }}"
+      %} 
+     </div> #}
+    </div>
+    <div class="footer-right">
+      {% if module.show_hide_form %}
+      <div class="footer-form">
+      <div class="footer-formtitle">
+       {{ module.form_title }}
+      </div>
+      {% form
+      form_to_use="{{ module.form.form_id }}"
+      response_response_type="{{ module.form.response_type }}"
+      response_message="{{ module.form.message }}"
+      response_redirect_id="{{ module.form.redirect_id }}"
+      response_redirect_url="{{module.form.redirect_url}}"
+      gotowebinar_webinar_key="{{ module.form.gotowebinar_webinar_key }}"
+      %} 
+     </div>  
+      {% endif %}
+    </div>
+   </div>   
+   <div class="footer-copyrightrow w-100 flexwrap alignCenter">
+    <div class="footer-copyright">
+      {{ module.copy_right_text }}
+    </div>
+    <div class="footer-followus">
+     <h6>{{ module.follow_us_title }}</h6> 
+     <ul>
+      {% for item in module.social_media %} 
+      <li>
+       {% set href = item.link.url.href %}
+       {% if item.link.url.type is equalto "EMAIL_ADDRESS" %}
+       {% set href = "mailto:" + href %}
+       {% endif %}
+       <a href="{{ href }}"
+       {% if item.link.open_in_new_tab %}target="_blank"{% endif %}
+       {% if item.link.rel %}rel="{{ item.link.rel }}"{% endif %}
+       >
+        {% icon
+        name="{{ item.icon.name }}"
+        style="{{ item.icon.type }}"
+        unicode="{{ item.icon.unicode }}"
+        icon_set="{{ item.icon.icon_set }}"
+        %} 
+       </a> 
+      </li>
+      {% endfor %} 
+     </ul> 
+    </div> 
+   </div> 
+  </div> 
+ </div> 
+</div>
+
+
+<style>
+  {{ moduleID }} .footer-sec { {{ module.style.spacing.desktop.css }} }
+  
+  
+ @media (max-width: 991px) {
+   {{ moduleID }} .footer-sec { {{ module.style.spacing.tablet.css }} }
+ }
+  
+ @media (max-width: 767px) {
+   {{ moduleID }} .footer-sec { {{ module.style.spacing.mobile.css }} }
+ } 
+</style>

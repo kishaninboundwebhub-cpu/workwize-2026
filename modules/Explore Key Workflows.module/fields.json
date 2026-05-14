@@ -1,0 +1,903 @@
+[ {
+  "id" : "e181e1ee-ef06-5ba8-0ad3-f63113a45d24",
+  "name" : "style",
+  "label" : "Style",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "36fd79d2-1107-4452-d226-d4c096723f16",
+    "name" : "select_background",
+    "label" : "Select Background",
+    "required" : false,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "bg_color", "Background Color" ], [ "bg_image", "Background Image" ], [ "bg_gradient", "Background Gradient" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : ""
+  }, {
+    "id" : "60d0ddef-fb34-a99a-73cb-bda8b10e0fc9",
+    "name" : "background_color",
+    "label" : "Background Color",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "style.select_background",
+      "controlling_value_regex" : "bg_color",
+      "property" : null,
+      "operator" : "MATCHES_REGEX",
+      "access" : null
+    },
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : null,
+      "opacity" : 100
+    }
+  }, {
+    "id" : "19f0609d-595d-6ef3-f639-3f6006e095fb",
+    "name" : "background_image",
+    "label" : "Background Image",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "style.select_background",
+      "controlling_value_regex" : "bg_image",
+      "property" : null,
+      "operator" : "MATCHES_REGEX",
+      "access" : null
+    },
+    "type" : "backgroundimage",
+    "display_width" : null,
+    "default" : {
+      "background_position" : "TOP_CENTER",
+      "background_size" : "cover",
+      "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/Group%202147262867.png"
+    }
+  }, {
+    "id" : "0df6d4e0-395b-eda2-ec5a-1d08ad6c8d35",
+    "name" : "background_gradient",
+    "label" : "Background Gradient",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "style.select_background",
+      "controlling_value_regex" : "bg_gradient",
+      "property" : null,
+      "operator" : "MATCHES_REGEX",
+      "access" : null
+    },
+    "type" : "gradient",
+    "display_width" : null,
+    "default" : { }
+  }, {
+    "id" : "afeb177b-c31d-1412-5116-70d6f85c5565",
+    "name" : "spacing",
+    "label" : "Spacing",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "d59d9e4c-264e-54fa-99b7-0ff07897b867",
+      "name" : "desktop",
+      "label" : "Desktop",
+      "required" : false,
+      "locked" : false,
+      "type" : "spacing",
+      "display_width" : null,
+      "default" : {
+        "padding" : {
+          "top" : {
+            "value" : 120,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 120,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      }
+    }, {
+      "id" : "0c762a95-1339-05fa-721d-3d79f41b571e",
+      "name" : "tablet",
+      "label" : "Tablet",
+      "required" : false,
+      "locked" : false,
+      "type" : "spacing",
+      "display_width" : null,
+      "default" : {
+        "padding" : {
+          "top" : {
+            "value" : 80,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 80,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      }
+    }, {
+      "id" : "0a8a8c35-4008-f2aa-311a-12325d67b19c",
+      "name" : "mobile",
+      "label" : "Mobile",
+      "required" : false,
+      "locked" : false,
+      "type" : "spacing",
+      "display_width" : null,
+      "default" : {
+        "padding" : {
+          "top" : {
+            "value" : 60,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 60,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      }
+    } ],
+    "tab" : "STYLE",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : {
+      "desktop" : {
+        "padding" : {
+          "top" : {
+            "value" : 120,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 120,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      },
+      "tablet" : {
+        "padding" : {
+          "top" : {
+            "value" : 80,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 80,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      },
+      "mobile" : {
+        "padding" : {
+          "top" : {
+            "value" : 60,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 60,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      }
+    }
+  } ],
+  "tab" : "STYLE",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "select_background" : "",
+    "background_color" : {
+      "color" : null,
+      "opacity" : 100
+    },
+    "background_image" : {
+      "background_position" : "TOP_CENTER",
+      "background_size" : "cover",
+      "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/Group%202147262867.png"
+    },
+    "background_gradient" : { },
+    "spacing" : {
+      "desktop" : {
+        "padding" : {
+          "top" : {
+            "value" : 120,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 120,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      },
+      "tablet" : {
+        "padding" : {
+          "top" : {
+            "value" : 80,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 80,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      },
+      "mobile" : {
+        "padding" : {
+          "top" : {
+            "value" : 60,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 60,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      }
+    }
+  }
+}, {
+  "id" : "55ccd3e2-31aa-4e79-9772-80facd954415",
+  "name" : "show_hide_",
+  "label" : "Section [Show/ Hide]",
+  "required" : false,
+  "locked" : false,
+  "display" : "toggle",
+  "type" : "boolean",
+  "display_width" : null,
+  "default" : true
+}, {
+  "id" : "a8a7b7b8-5ad1-1e53-8cfb-de35621c6e1b",
+  "name" : "content",
+  "label" : "Content",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "8f751bbc-1771-a2f4-ac55-156e6216608e",
+    "name" : "title",
+    "label" : "Title",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Explore Key Workflows in <span>60 Seconds</span>"
+  }, {
+    "id" : "1a170b32-6298-c855-cfbe-b9c8d3f5bc4b",
+    "name" : "sub_text",
+    "label" : "Sub Text",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Go step by step with our product expert."
+  }, {
+    "id" : "7f87c2e3-f683-f812-d570-a0a5f0cdcf5e",
+    "name" : "slide",
+    "label" : "Slide",
+    "required" : false,
+    "locked" : false,
+    "occurrence" : {
+      "min" : null,
+      "max" : null,
+      "sorting_label_field" : null,
+      "default" : 4
+    },
+    "children" : [ {
+      "id" : "8084171a-6a6a-b109-66f2-f58403730f1c",
+      "name" : "text_field",
+      "label" : "Text",
+      "required" : false,
+      "locked" : false,
+      "allow_new_line" : false,
+      "type" : "text",
+      "display_width" : null,
+      "default" : "Bring global purchasing under one central hub."
+    }, {
+      "id" : "c06ac057-50cd-d2be-cd85-fd723db39df7",
+      "name" : "select_image_or_video",
+      "label" : "Select Image or Video",
+      "required" : false,
+      "locked" : false,
+      "display" : "select",
+      "choices" : [ [ "image", "Image" ], [ "video", "Video" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "preset" : null,
+      "type" : "choice",
+      "display_width" : null,
+      "default" : "video"
+    }, {
+      "id" : "2e2da5ec-dd93-bfa5-e773-ce17fcf6028a",
+      "name" : "image_field",
+      "label" : "Image",
+      "required" : false,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : null,
+        "controlling_field_path" : "content.slide.select_image_or_video",
+        "controlling_value_regex" : "image",
+        "property" : null,
+        "operator" : "MATCHES_REGEX",
+        "access" : null
+      },
+      "responsive" : true,
+      "resizable" : true,
+      "show_loading" : true,
+      "type" : "image",
+      "display_width" : null,
+      "default" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/2-1.jpg",
+        "alt" : "2-1",
+        "loading" : "lazy",
+        "width" : 600,
+        "height" : 600,
+        "max_width" : 600,
+        "max_height" : 600
+      }
+    }, {
+      "id" : "15be7555-f9b8-ef01-d153-4aa4ad81df1c",
+      "name" : "video",
+      "label" : "Video",
+      "required" : false,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : null,
+        "controlling_field_path" : "content.slide.select_image_or_video",
+        "controlling_value_regex" : "video",
+        "property" : null,
+        "operator" : "MATCHES_REGEX",
+        "access" : null
+      },
+      "children" : [ {
+        "id" : "749a5b76-5611-92c2-f93c-9da5a87a6d04",
+        "name" : "select_option",
+        "label" : "Select Option",
+        "required" : false,
+        "locked" : false,
+        "display" : "select",
+        "choices" : [ [ "hubl_video", "HubSpot Video" ], [ "youtube_video", "YouTube Video" ] ],
+        "multiple" : false,
+        "reordering_enabled" : true,
+        "preset" : null,
+        "type" : "choice",
+        "display_width" : null,
+        "default" : "youtube_video"
+      }, {
+        "id" : "ea336628-eaa2-ec11-be3f-557459d9914d",
+        "name" : "youtube_url",
+        "label" : "Youtube URL",
+        "required" : false,
+        "locked" : false,
+        "visibility" : {
+          "controlling_field" : null,
+          "controlling_field_path" : "content.slide.video.select_option",
+          "controlling_value_regex" : "youtube_video",
+          "property" : null,
+          "operator" : "MATCHES_REGEX",
+          "access" : null
+        },
+        "allow_new_line" : false,
+        "type" : "text",
+        "display_width" : null,
+        "default" : "https://www.youtube.com/watch?v=QKJPEtPB1tE"
+      }, {
+        "picker" : "video",
+        "id" : "0e8097f4-b52c-af98-9e2a-86446d3d762d",
+        "name" : "hubl_video",
+        "label" : "HubSpot Video",
+        "required" : false,
+        "locked" : false,
+        "visibility" : {
+          "controlling_field" : null,
+          "controlling_field_path" : "content.slide.video.select_option",
+          "controlling_value_regex" : "hubl_video",
+          "property" : null,
+          "operator" : "MATCHES_REGEX",
+          "access" : null
+        },
+        "type" : "file",
+        "display_width" : null,
+        "default" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Videos/Workwize.mp4"
+      } ],
+      "tab" : "CONTENT",
+      "expanded" : false,
+      "group_occurrence_meta" : null,
+      "type" : "group",
+      "display_width" : null,
+      "default" : {
+        "select_option" : "youtube_video",
+        "youtube_url" : "https://www.youtube.com/watch?v=QKJPEtPB1tE",
+        "hubl_video" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Videos/Workwize.mp4"
+      }
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : [ {
+      "text_field" : "Bring global purchasing under one central hub.",
+      "select_image_or_video" : "video",
+      "video" : {
+        "select_option" : "youtube_video",
+        "youtube_url" : "https://www.youtube.com/watch?v=QKJPEtPB1tE",
+        "hubl_video" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Videos/Workwize.mp4"
+      },
+      "image_field" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/2-1.jpg",
+        "alt" : "2-1",
+        "loading" : "lazy",
+        "width" : 600,
+        "height" : 600,
+        "max_width" : 600,
+        "max_height" : 600
+      }
+    }, {
+      "text_field" : "Bring global purchasing under one central hub.",
+      "select_image_or_video" : "video",
+      "video" : {
+        "select_option" : "youtube_video",
+        "youtube_url" : "https://www.youtube.com/watch?v=QKJPEtPB1tE",
+        "hubl_video" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Videos/Workwize.mp4"
+      },
+      "image_field" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/2-1.jpg",
+        "alt" : "2-1",
+        "loading" : "lazy",
+        "width" : 600,
+        "height" : 600,
+        "max_width" : 600,
+        "max_height" : 600
+      }
+    }, {
+      "text_field" : "Bring global purchasing under one central hub.",
+      "select_image_or_video" : "video",
+      "video" : {
+        "select_option" : "youtube_video",
+        "youtube_url" : "https://www.youtube.com/watch?v=QKJPEtPB1tE",
+        "hubl_video" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Videos/Workwize.mp4"
+      },
+      "image_field" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/2-1.jpg",
+        "alt" : "2-1",
+        "loading" : "lazy",
+        "width" : 600,
+        "height" : 600,
+        "max_width" : 600,
+        "max_height" : 600
+      }
+    }, {
+      "text_field" : "Bring global purchasing under one central hub.",
+      "select_image_or_video" : "video",
+      "video" : {
+        "select_option" : "youtube_video",
+        "youtube_url" : "https://www.youtube.com/watch?v=QKJPEtPB1tE",
+        "hubl_video" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Videos/Workwize.mp4"
+      },
+      "image_field" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/2-1.jpg",
+        "alt" : "2-1",
+        "loading" : "lazy",
+        "width" : 600,
+        "height" : 600,
+        "max_width" : 600,
+        "max_height" : 600
+      }
+    } ]
+  }, {
+    "id" : "f4c529fc-5399-6a1c-410f-f1360634730c",
+    "name" : "bottom_left",
+    "label" : "Bottom Left",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "e497f53b-cc7b-e929-5e35-2c7897d4dfbf",
+      "name" : "icon",
+      "label" : "Icon",
+      "required" : false,
+      "locked" : false,
+      "responsive" : true,
+      "resizable" : true,
+      "show_loading" : false,
+      "type" : "image",
+      "display_width" : null,
+      "default" : {
+        "size_type" : "auto",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/Horizontal-Slider-Square--Streamline-Core.svg",
+        "alt" : "Horizontal-Slider-Square--Streamline-Core",
+        "loading" : "lazy",
+        "width" : 30,
+        "height" : 30,
+        "max_width" : 30,
+        "max_height" : 30
+      }
+    }, {
+      "id" : "9e34eb47-15b2-dfd6-951b-ab459493520a",
+      "name" : "text_field_1",
+      "label" : "Text",
+      "required" : false,
+      "locked" : false,
+      "allow_new_line" : false,
+      "type" : "text",
+      "display_width" : null,
+      "default" : "Want a personalized walkthrough?"
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : {
+      "icon" : {
+        "size_type" : "auto",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/Horizontal-Slider-Square--Streamline-Core.svg",
+        "alt" : "Horizontal-Slider-Square--Streamline-Core",
+        "loading" : "lazy",
+        "width" : 30,
+        "height" : 30,
+        "max_width" : 30,
+        "max_height" : 30
+      },
+      "text_field_1" : "Want a personalized walkthrough?"
+    }
+  }, {
+    "id" : "e5d2ca7d-92a8-7bef-f2eb-71a84af84c42",
+    "name" : "show_button",
+    "label" : "Show Button",
+    "required" : false,
+    "locked" : false,
+    "display" : "toggle",
+    "type" : "boolean",
+    "display_width" : null,
+    "default" : true
+  }, {
+    "id" : "670a5a27-4c47-90b8-9f05-23efa627263f",
+    "name" : "button",
+    "label" : "Button",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "content.show_button",
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "MATCHES_REGEX",
+      "access" : null
+    },
+    "children" : [ {
+      "id" : "bf2cbb72-89a2-023f-2be4-9fb7b0ae5b2e",
+      "name" : "button_choice",
+      "label" : "Button Choice",
+      "required" : false,
+      "locked" : false,
+      "display" : "select",
+      "choices" : [ [ "button", "Primary Button" ], [ "second_btn", "Secondary Button" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "preset" : null,
+      "type" : "choice",
+      "display_width" : null,
+      "default" : "button"
+    }, {
+      "id" : "3f65a311-444b-b8d2-25fa-df2ab11d15f1",
+      "name" : "button_text",
+      "label" : "Button Text",
+      "required" : false,
+      "locked" : false,
+      "allow_new_line" : false,
+      "type" : "text",
+      "display_width" : null,
+      "default" : "Book a 30-min demo"
+    }, {
+      "id" : "dff0c626-cd6c-0d97-0b0d-0fdc3a4f183a",
+      "name" : "button_link",
+      "label" : "Button Link",
+      "required" : false,
+      "locked" : false,
+      "supported_types" : [ "EXTERNAL", "FILE", "CONTENT", "BLOG", "CALL_TO_ACTION", "PAYMENT", "EMAIL_ADDRESS", "PHONE_NUMBER", "WHATSAPP_NUMBER" ],
+      "show_advanced_rel_options" : false,
+      "type" : "link",
+      "display_width" : null,
+      "default" : {
+        "url" : {
+          "content_id" : null,
+          "type" : "EXTERNAL",
+          "href" : ""
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false
+      }
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : {
+      "button_choice" : "button",
+      "button_text" : "Book a 30-min demo",
+      "button_link" : {
+        "url" : {
+          "content_id" : null,
+          "type" : "EXTERNAL",
+          "href" : ""
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false
+      }
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "title" : "Explore Key Workflows in <span>60 Seconds</span>",
+    "sub_text" : "Go step by step with our product expert.",
+    "slide" : [ {
+      "text_field" : "Bring global purchasing under one central hub.",
+      "select_image_or_video" : "video",
+      "video" : {
+        "select_option" : "youtube_video",
+        "youtube_url" : "https://www.youtube.com/watch?v=QKJPEtPB1tE",
+        "hubl_video" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Videos/Workwize.mp4"
+      },
+      "image_field" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/2-1.jpg",
+        "alt" : "2-1",
+        "loading" : "lazy",
+        "width" : 600,
+        "height" : 600,
+        "max_width" : 600,
+        "max_height" : 600
+      }
+    }, {
+      "text_field" : "Bring global purchasing under one central hub.",
+      "select_image_or_video" : "video",
+      "video" : {
+        "select_option" : "youtube_video",
+        "youtube_url" : "https://www.youtube.com/watch?v=QKJPEtPB1tE",
+        "hubl_video" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Videos/Workwize.mp4"
+      },
+      "image_field" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/2-1.jpg",
+        "alt" : "2-1",
+        "loading" : "lazy",
+        "width" : 600,
+        "height" : 600,
+        "max_width" : 600,
+        "max_height" : 600
+      }
+    }, {
+      "text_field" : "Bring global purchasing under one central hub.",
+      "select_image_or_video" : "video",
+      "video" : {
+        "select_option" : "youtube_video",
+        "youtube_url" : "https://www.youtube.com/watch?v=QKJPEtPB1tE",
+        "hubl_video" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Videos/Workwize.mp4"
+      },
+      "image_field" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/2-1.jpg",
+        "alt" : "2-1",
+        "loading" : "lazy",
+        "width" : 600,
+        "height" : 600,
+        "max_width" : 600,
+        "max_height" : 600
+      }
+    }, {
+      "text_field" : "Bring global purchasing under one central hub.",
+      "select_image_or_video" : "video",
+      "video" : {
+        "select_option" : "youtube_video",
+        "youtube_url" : "https://www.youtube.com/watch?v=QKJPEtPB1tE",
+        "hubl_video" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Videos/Workwize.mp4"
+      },
+      "image_field" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/2-1.jpg",
+        "alt" : "2-1",
+        "loading" : "lazy",
+        "width" : 600,
+        "height" : 600,
+        "max_width" : 600,
+        "max_height" : 600
+      }
+    } ],
+    "bottom_left" : {
+      "icon" : {
+        "size_type" : "auto",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/Horizontal-Slider-Square--Streamline-Core.svg",
+        "alt" : "Horizontal-Slider-Square--Streamline-Core",
+        "loading" : "lazy",
+        "width" : 30,
+        "height" : 30,
+        "max_width" : 30,
+        "max_height" : 30
+      },
+      "text_field_1" : "Want a personalized walkthrough?"
+    },
+    "show_button" : true,
+    "button" : {
+      "button_choice" : "button",
+      "button_text" : "Book a 30-min demo",
+      "button_link" : {
+        "url" : {
+          "content_id" : null,
+          "type" : "EXTERNAL",
+          "href" : ""
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false
+      }
+    }
+  }
+}, {
+  "id" : "f34178d3-2f76-2c34-58ec-dd4c0182a830",
+  "name" : "color_settings",
+  "label" : "Color Settings",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "709b7960-0a1c-b736-67b5-6bcf337534f3",
+    "name" : "title_color",
+    "label" : "Title Color",
+    "required" : false,
+    "locked" : false,
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#050C14",
+      "opacity" : 100
+    }
+  }, {
+    "id" : "a397a1ed-4666-6644-c88f-4204007615dc",
+    "name" : "title_span_color",
+    "label" : "Title Span Color",
+    "required" : false,
+    "locked" : false,
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#D73FAF",
+      "opacity" : 100
+    }
+  }, {
+    "id" : "f343b411-b1db-556b-ce90-4b97d6ce3b02",
+    "name" : "sub_text_color",
+    "label" : "Sub Text Color",
+    "required" : false,
+    "locked" : false,
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#050C14",
+      "opacity" : 75
+    }
+  }, {
+    "id" : "409b1a2e-0c63-6bff-b2c2-de3f0c5c2d70",
+    "name" : "box_text_color",
+    "label" : "Box Text Color",
+    "required" : false,
+    "locked" : false,
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#050c14",
+      "opacity" : 100
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "title_color" : {
+      "color" : "#050C14",
+      "opacity" : 100
+    },
+    "title_span_color" : {
+      "color" : "#D73FAF",
+      "opacity" : 100
+    },
+    "sub_text_color" : {
+      "color" : "#050C14",
+      "opacity" : 75
+    },
+    "box_text_color" : {
+      "color" : "#050c14",
+      "opacity" : 100
+    }
+  }
+} ]

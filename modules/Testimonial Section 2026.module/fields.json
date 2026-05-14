@@ -1,0 +1,888 @@
+[ {
+  "id" : "e181e1ee-ef06-5ba8-0ad3-f63113a45d24",
+  "name" : "style",
+  "label" : "Style",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "36fd79d2-1107-4452-d226-d4c096723f16",
+    "name" : "select_background",
+    "label" : "Select Background",
+    "required" : false,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "bg_color", "Background Color" ], [ "bg_image", "Background Image" ], [ "bg_gradient", "Background Gradient" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : ""
+  }, {
+    "id" : "60d0ddef-fb34-a99a-73cb-bda8b10e0fc9",
+    "name" : "background_color",
+    "label" : "Background Color",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "style.select_background",
+      "controlling_value_regex" : "bg_color",
+      "property" : null,
+      "operator" : "MATCHES_REGEX",
+      "access" : null
+    },
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#122750",
+      "opacity" : 100
+    }
+  }, {
+    "id" : "19f0609d-595d-6ef3-f639-3f6006e095fb",
+    "name" : "background_image",
+    "label" : "Background Image",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "style.select_background",
+      "controlling_value_regex" : "bg_image",
+      "property" : null,
+      "operator" : "MATCHES_REGEX",
+      "access" : null
+    },
+    "type" : "backgroundimage",
+    "display_width" : null,
+    "default" : {
+      "src" : "",
+      "background_position" : "MIDDLE_CENTER",
+      "background_size" : "cover"
+    }
+  }, {
+    "id" : "0df6d4e0-395b-eda2-ec5a-1d08ad6c8d35",
+    "name" : "background_gradient",
+    "label" : "Background Gradient",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "style.select_background",
+      "controlling_value_regex" : "bg_gradient",
+      "property" : null,
+      "operator" : "MATCHES_REGEX",
+      "access" : null
+    },
+    "type" : "gradient",
+    "display_width" : null,
+    "default" : { }
+  }, {
+    "id" : "afeb177b-c31d-1412-5116-70d6f85c5565",
+    "name" : "spacing",
+    "label" : "Spacing",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "d59d9e4c-264e-54fa-99b7-0ff07897b867",
+      "name" : "desktop",
+      "label" : "Desktop",
+      "required" : false,
+      "locked" : false,
+      "type" : "spacing",
+      "display_width" : null,
+      "default" : {
+        "padding" : {
+          "top" : {
+            "value" : 100,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 30,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      }
+    }, {
+      "id" : "0c762a95-1339-05fa-721d-3d79f41b571e",
+      "name" : "tablet",
+      "label" : "Tablet",
+      "required" : false,
+      "locked" : false,
+      "type" : "spacing",
+      "display_width" : null,
+      "default" : {
+        "padding" : {
+          "top" : {
+            "value" : 80,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 30,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      }
+    }, {
+      "id" : "0a8a8c35-4008-f2aa-311a-12325d67b19c",
+      "name" : "mobile",
+      "label" : "Mobile",
+      "required" : false,
+      "locked" : false,
+      "type" : "spacing",
+      "display_width" : null,
+      "default" : {
+        "padding" : {
+          "top" : {
+            "value" : 30,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 30,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      }
+    } ],
+    "tab" : "STYLE",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : {
+      "desktop" : {
+        "padding" : {
+          "top" : {
+            "value" : 100,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 30,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      },
+      "tablet" : {
+        "padding" : {
+          "top" : {
+            "value" : 80,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 30,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      },
+      "mobile" : {
+        "padding" : {
+          "top" : {
+            "value" : 30,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 30,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      }
+    }
+  } ],
+  "tab" : "STYLE",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "select_background" : "",
+    "background_color" : {
+      "color" : "#122750",
+      "opacity" : 100
+    },
+    "background_image" : {
+      "src" : "",
+      "background_position" : "MIDDLE_CENTER",
+      "background_size" : "cover"
+    },
+    "background_gradient" : { },
+    "spacing" : {
+      "desktop" : {
+        "padding" : {
+          "top" : {
+            "value" : 100,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 30,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      },
+      "tablet" : {
+        "padding" : {
+          "top" : {
+            "value" : 80,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 30,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      },
+      "mobile" : {
+        "padding" : {
+          "top" : {
+            "value" : 30,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 30,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      }
+    }
+  }
+}, {
+  "id" : "55ccd3e2-31aa-4e79-9772-80facd954415",
+  "name" : "show_hide_",
+  "label" : "Section [Show/ Hide]",
+  "required" : false,
+  "locked" : false,
+  "display" : "toggle",
+  "type" : "boolean",
+  "display_width" : null,
+  "default" : true
+}, {
+  "id" : "074c4f36-b9e5-ed27-bd45-233e88d2d207",
+  "name" : "top_content",
+  "label" : "Top Content",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "496d4407-abd4-c6ea-6410-2a7f84894093",
+    "name" : "title",
+    "label" : "Title",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Here’s what happens to hardware ops when tools talk to each other."
+  }, {
+    "id" : "5835c155-8974-01a8-efb3-2ccff6579042",
+    "name" : "title_max_width",
+    "label" : "Title Max Width",
+    "required" : false,
+    "locked" : false,
+    "display" : "text",
+    "step" : 1,
+    "suffix" : "px",
+    "type" : "number",
+    "display_width" : null,
+    "default" : 530
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "title" : "Here’s what happens to hardware ops when tools talk to each other.",
+    "title_max_width" : 530
+  }
+}, {
+  "id" : "90a68aef-7302-50f0-1454-7796665ac4fd",
+  "name" : "slide",
+  "label" : "Testimonial Slide",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : null,
+    "max" : null,
+    "sorting_label_field" : "bc0f6621-29c4-fe0e-d8e2-c117a14e5856",
+    "default" : 3
+  },
+  "children" : [ {
+    "id" : "3997a904-d4bc-b51e-4aaa-7e7d213aa84e",
+    "name" : "left_box",
+    "label" : "Left Box",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "bc54c138-fd06-3684-5d01-f8cbaa0ad8b4",
+      "name" : "value",
+      "label" : "Value",
+      "required" : false,
+      "locked" : false,
+      "allow_new_line" : false,
+      "type" : "text",
+      "display_width" : null,
+      "default" : "$1.4M"
+    }, {
+      "id" : "f314bd6d-9bf4-35e1-5cf4-064bca4b7c24",
+      "name" : "text_field",
+      "label" : "Text",
+      "required" : false,
+      "locked" : false,
+      "allow_new_line" : false,
+      "type" : "text",
+      "display_width" : null,
+      "default" : "Saved per year in IT Hardware Management"
+    }, {
+      "id" : "071cbb37-e290-7147-865c-8c2be3e9c863",
+      "name" : "button",
+      "label" : "Button",
+      "required" : false,
+      "locked" : false,
+      "children" : [ {
+        "id" : "1b175ee3-1ff2-42cb-3bad-08bbd83b944e",
+        "name" : "button_text",
+        "label" : "Button text",
+        "required" : false,
+        "locked" : false,
+        "allow_new_line" : false,
+        "type" : "text",
+        "display_width" : null,
+        "default" : "Read the case study"
+      }, {
+        "id" : "3a80eb9d-03e1-8003-382b-9776868af3d2",
+        "name" : "button_link",
+        "label" : "Button Link",
+        "required" : false,
+        "locked" : false,
+        "supported_types" : [ "EXTERNAL", "FILE", "CONTENT", "BLOG", "CALL_TO_ACTION", "PAYMENT", "EMAIL_ADDRESS", "PHONE_NUMBER", "WHATSAPP_NUMBER" ],
+        "show_advanced_rel_options" : false,
+        "type" : "link",
+        "display_width" : null,
+        "default" : {
+          "url" : {
+            "content_id" : null,
+            "type" : "EXTERNAL",
+            "href" : ""
+          },
+          "open_in_new_tab" : false,
+          "no_follow" : false
+        }
+      } ],
+      "tab" : "CONTENT",
+      "expanded" : false,
+      "group_occurrence_meta" : null,
+      "type" : "group",
+      "display_width" : null,
+      "default" : {
+        "button_text" : "Read the case study",
+        "button_link" : {
+          "url" : {
+            "content_id" : null,
+            "type" : "EXTERNAL",
+            "href" : ""
+          },
+          "open_in_new_tab" : false,
+          "no_follow" : false
+        }
+      }
+    }, {
+      "id" : "62b257eb-d11b-43d1-c760-d8010f7c9eea",
+      "name" : "style",
+      "label" : "Style",
+      "required" : false,
+      "locked" : false,
+      "children" : [ {
+        "id" : "2fc2b05b-0d29-8ade-a563-50ebe9ee8b26",
+        "name" : "background_color",
+        "label" : "Background Color",
+        "required" : false,
+        "locked" : false,
+        "type" : "color",
+        "display_width" : null,
+        "default" : {
+          "color" : "#D8E7FD",
+          "opacity" : 100
+        }
+      }, {
+        "id" : "bf57c44e-2e40-e8eb-e886-4dd972a3a344",
+        "name" : "value_color",
+        "label" : "Value Color",
+        "required" : false,
+        "locked" : false,
+        "type" : "color",
+        "display_width" : null,
+        "default" : {
+          "color" : "#227AF7",
+          "opacity" : 100
+        }
+      }, {
+        "id" : "b56d3a76-e044-2ba9-0a39-f79841e8ddb2",
+        "name" : "text_color",
+        "label" : "Text Color",
+        "required" : false,
+        "locked" : false,
+        "type" : "color",
+        "display_width" : null,
+        "default" : {
+          "color" : "#227AF7",
+          "opacity" : 100
+        }
+      } ],
+      "tab" : "CONTENT",
+      "expanded" : false,
+      "group_occurrence_meta" : null,
+      "type" : "group",
+      "display_width" : null,
+      "default" : {
+        "background_color" : {
+          "color" : "#D8E7FD",
+          "opacity" : 100
+        },
+        "value_color" : {
+          "color" : "#227AF7",
+          "opacity" : 100
+        },
+        "text_color" : {
+          "color" : "#227AF7",
+          "opacity" : 100
+        }
+      }
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : {
+      "value" : "$1.4M",
+      "text_field" : "Saved per year in IT Hardware Management",
+      "button" : {
+        "button_text" : "Read the case study",
+        "button_link" : {
+          "url" : {
+            "content_id" : null,
+            "type" : "EXTERNAL",
+            "href" : ""
+          },
+          "open_in_new_tab" : false,
+          "no_follow" : false
+        }
+      },
+      "style" : {
+        "background_color" : {
+          "color" : "#D8E7FD",
+          "opacity" : 100
+        },
+        "value_color" : {
+          "color" : "#227AF7",
+          "opacity" : 100
+        },
+        "text_color" : {
+          "color" : "#227AF7",
+          "opacity" : 100
+        }
+      }
+    }
+  }, {
+    "id" : "66b81b61-8fa8-34c6-e08f-4bffaef34945",
+    "name" : "right_content",
+    "label" : "Right Content",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "23d1082a-b5ab-6628-f49c-58de068746b1",
+      "name" : "logo",
+      "label" : "Logo",
+      "required" : false,
+      "locked" : false,
+      "responsive" : true,
+      "resizable" : true,
+      "show_loading" : true,
+      "type" : "image",
+      "display_width" : null,
+      "default" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/HighLevel%202%20(2).svg",
+        "alt" : "HighLevel 2 (2)",
+        "loading" : "lazy",
+        "width" : 142,
+        "height" : 32,
+        "max_width" : 142,
+        "max_height" : 32
+      }
+    }, {
+      "id" : "626a954d-e5e2-4226-0e8e-c77bc77beffe",
+      "name" : "quote_text",
+      "label" : "Quote Text",
+      "required" : false,
+      "locked" : false,
+      "type" : "richtext",
+      "display_width" : null,
+      "default" : "<span>“<strong>Workwize helps us reduce the time we waste ordering equipment.</strong> It also allows us to remove the previously relied-on MSPs to procure assets and will enable us to move IT services entirely in-house to save money on the IT budget.</span>"
+    }, {
+      "id" : "02e90405-b350-a2d2-52c2-ea068566084d",
+      "name" : "image_field",
+      "label" : "Avtar Image",
+      "required" : false,
+      "locked" : false,
+      "responsive" : true,
+      "resizable" : true,
+      "show_loading" : false,
+      "type" : "image",
+      "display_width" : null,
+      "default" : {
+        "size_type" : "auto",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/Group%202147261402%20(1).png",
+        "alt" : "Group 2147261402 (1)",
+        "loading" : "lazy",
+        "width" : 44,
+        "height" : 44,
+        "max_width" : 44,
+        "max_height" : 44
+      }
+    }, {
+      "id" : "70980fed-7b2f-db3e-74ae-5cb9a8d97c78",
+      "name" : "names",
+      "label" : "Name",
+      "required" : false,
+      "locked" : false,
+      "allow_new_line" : false,
+      "type" : "text",
+      "display_width" : null,
+      "default" : "Evan Jost"
+    }, {
+      "id" : "9e5a1f36-1187-9256-d88b-b56c3a1cec33",
+      "name" : "designation",
+      "label" : "Designation",
+      "required" : false,
+      "locked" : false,
+      "allow_new_line" : false,
+      "type" : "text",
+      "display_width" : null,
+      "default" : "IT Manager"
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : {
+      "logo" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/HighLevel%202%20(2).svg",
+        "alt" : "HighLevel 2 (2)",
+        "loading" : "lazy",
+        "width" : 142,
+        "height" : 32,
+        "max_width" : 142,
+        "max_height" : 32
+      },
+      "quote_text" : "<span>“<strong>Workwize helps us reduce the time we waste ordering equipment.</strong> It also allows us to remove the previously relied-on MSPs to procure assets and will enable us to move IT services entirely in-house to save money on the IT budget.</span>",
+      "image_field" : {
+        "size_type" : "auto",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/Group%202147261402%20(1).png",
+        "alt" : "Group 2147261402 (1)",
+        "loading" : "lazy",
+        "width" : 44,
+        "height" : 44,
+        "max_width" : 44,
+        "max_height" : 44
+      },
+      "names" : "Evan Jost",
+      "designation" : "IT Manager"
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : [ {
+    "left_box" : {
+      "value" : "$1.4M",
+      "text_field" : "Saved per year in IT Hardware Management",
+      "button" : {
+        "button_text" : "Read the case study",
+        "button_link" : {
+          "url" : {
+            "content_id" : null,
+            "type" : "EXTERNAL",
+            "href" : ""
+          },
+          "open_in_new_tab" : false,
+          "no_follow" : false
+        }
+      },
+      "style" : {
+        "background_color" : {
+          "color" : "#D8E7FD",
+          "opacity" : 100
+        },
+        "value_color" : {
+          "color" : "#227AF7",
+          "opacity" : 100
+        }
+      }
+    },
+    "right_content" : {
+      "logo" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/HighLevel%202%20(2).svg",
+        "alt" : "HighLevel 2 (2)",
+        "loading" : "lazy",
+        "width" : 142,
+        "height" : 32,
+        "max_width" : 142,
+        "max_height" : 32
+      },
+      "quote_text" : "<span>“<strong>Workwize helps us reduce the time we waste ordering equipment.</strong> It also allows us to remove the previously relied-on MSPs to procure assets and will enable us to move IT services entirely in-house to save money on the IT budget.</span>",
+      "image_field" : {
+        "size_type" : "auto",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/Group%202147261402%20(1).png",
+        "alt" : "Group 2147261402 (1)",
+        "loading" : "lazy",
+        "width" : 44,
+        "height" : 44,
+        "max_width" : 44,
+        "max_height" : 44
+      },
+      "names" : "Evan Jost",
+      "designation" : "IT Manager"
+    }
+  }, {
+    "left_box" : {
+      "value" : "$1.4M",
+      "text_field" : "Saved per year in IT Hardware Management",
+      "button" : {
+        "button_text" : "Read the case study",
+        "button_link" : {
+          "url" : {
+            "content_id" : null,
+            "type" : "EXTERNAL",
+            "href" : ""
+          },
+          "open_in_new_tab" : false,
+          "no_follow" : false
+        }
+      },
+      "style" : {
+        "background_color" : {
+          "color" : "#D8E7FD",
+          "opacity" : 100
+        },
+        "value_color" : {
+          "color" : "#227AF7",
+          "opacity" : 100
+        }
+      }
+    },
+    "right_content" : {
+      "logo" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/HighLevel%202%20(2).svg",
+        "alt" : "HighLevel 2 (2)",
+        "loading" : "lazy",
+        "width" : 142,
+        "height" : 32,
+        "max_width" : 142,
+        "max_height" : 32
+      },
+      "quote_text" : "<span>“<strong>Workwize helps us reduce the time we waste ordering equipment.</strong> It also allows us to remove the previously relied-on MSPs to procure assets and will enable us to move IT services entirely in-house to save money on the IT budget.</span>",
+      "image_field" : {
+        "size_type" : "auto",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/Group%202147261402%20(1).png",
+        "alt" : "Group 2147261402 (1)",
+        "loading" : "lazy",
+        "width" : 44,
+        "height" : 44,
+        "max_width" : 44,
+        "max_height" : 44
+      },
+      "names" : "Evan Jost",
+      "designation" : "IT Manager"
+    }
+  }, {
+    "left_box" : {
+      "value" : "$1.4M",
+      "text_field" : "Saved per year in IT Hardware Management",
+      "button" : {
+        "button_text" : "Read the case study",
+        "button_link" : {
+          "url" : {
+            "content_id" : null,
+            "type" : "EXTERNAL",
+            "href" : ""
+          },
+          "open_in_new_tab" : false,
+          "no_follow" : false
+        }
+      },
+      "style" : {
+        "background_color" : {
+          "color" : "#D8E7FD",
+          "opacity" : 100
+        },
+        "value_color" : {
+          "color" : "#227AF7",
+          "opacity" : 100
+        }
+      }
+    },
+    "right_content" : {
+      "logo" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/HighLevel%202%20(2).svg",
+        "alt" : "HighLevel 2 (2)",
+        "loading" : "lazy",
+        "width" : 142,
+        "height" : 32,
+        "max_width" : 142,
+        "max_height" : 32
+      },
+      "quote_text" : "<span>“<strong>Workwize helps us reduce the time we waste ordering equipment.</strong> It also allows us to remove the previously relied-on MSPs to procure assets and will enable us to move IT services entirely in-house to save money on the IT budget.</span>",
+      "image_field" : {
+        "size_type" : "auto",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/Group%202147261402%20(1).png",
+        "alt" : "Group 2147261402 (1)",
+        "loading" : "lazy",
+        "width" : 44,
+        "height" : 44,
+        "max_width" : 44,
+        "max_height" : 44
+      },
+      "names" : "Evan Jost",
+      "designation" : "IT Manager"
+    }
+  } ]
+}, {
+  "id" : "b6ac38ef-f94c-f9a5-6501-17f0b2a6214f",
+  "name" : "color_setting",
+  "label" : "Color Setting",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "ebdd37df-211c-6125-dbc4-f5a70db1d0d2",
+    "name" : "title_color",
+    "label" : "Title Color",
+    "required" : false,
+    "locked" : false,
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#050C14",
+      "opacity" : 100
+    }
+  }, {
+    "id" : "50a496a6-0404-8d2b-22b5-060a591fdb6a",
+    "name" : "title_span_color",
+    "label" : "Title Span Color",
+    "required" : false,
+    "locked" : false,
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#227AF7",
+      "opacity" : 100
+    }
+  }, {
+    "id" : "27c8af34-3fc3-b15d-1c80-f60e2b27cf96",
+    "name" : "text_color",
+    "label" : "Text Color",
+    "required" : false,
+    "locked" : false,
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#050C14",
+      "opacity" : 75
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "title_color" : {
+      "color" : "#050C14",
+      "opacity" : 100
+    },
+    "title_span_color" : {
+      "color" : "#227AF7",
+      "opacity" : 100
+    },
+    "text_color" : {
+      "color" : "#050C14",
+      "opacity" : 75
+    }
+  }
+} ]

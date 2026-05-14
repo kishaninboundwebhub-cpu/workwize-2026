@@ -1,0 +1,929 @@
+[ {
+  "id" : "e181e1ee-ef06-5ba8-0ad3-f63113a45d24",
+  "name" : "style",
+  "label" : "Style",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "36fd79d2-1107-4452-d226-d4c096723f16",
+    "name" : "select_background",
+    "label" : "Select Background",
+    "required" : false,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "bg_color", "Background Color" ], [ "bg_image", "Background Image" ], [ "bg_gradient", "Background Gradient" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : ""
+  }, {
+    "id" : "60d0ddef-fb34-a99a-73cb-bda8b10e0fc9",
+    "name" : "background_color",
+    "label" : "Background Color",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "style.select_background",
+      "controlling_value_regex" : "bg_color",
+      "property" : null,
+      "operator" : "MATCHES_REGEX",
+      "access" : null
+    },
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : null,
+      "opacity" : 100
+    }
+  }, {
+    "id" : "19f0609d-595d-6ef3-f639-3f6006e095fb",
+    "name" : "background_image",
+    "label" : "Background Image",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "style.select_background",
+      "controlling_value_regex" : "bg_image",
+      "property" : null,
+      "operator" : "MATCHES_REGEX",
+      "access" : null
+    },
+    "type" : "backgroundimage",
+    "display_width" : null,
+    "default" : {
+      "background_position" : "TOP_CENTER",
+      "background_size" : "cover",
+      "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/Group%202147262867.png"
+    }
+  }, {
+    "id" : "0df6d4e0-395b-eda2-ec5a-1d08ad6c8d35",
+    "name" : "background_gradient",
+    "label" : "Background Gradient",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "style.select_background",
+      "controlling_value_regex" : "bg_gradient",
+      "property" : null,
+      "operator" : "MATCHES_REGEX",
+      "access" : null
+    },
+    "type" : "gradient",
+    "display_width" : null,
+    "default" : { }
+  }, {
+    "id" : "afeb177b-c31d-1412-5116-70d6f85c5565",
+    "name" : "spacing",
+    "label" : "Spacing",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "d59d9e4c-264e-54fa-99b7-0ff07897b867",
+      "name" : "desktop",
+      "label" : "Desktop",
+      "required" : false,
+      "locked" : false,
+      "type" : "spacing",
+      "display_width" : null,
+      "default" : {
+        "padding" : {
+          "top" : {
+            "value" : 80,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 80,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      }
+    }, {
+      "id" : "0c762a95-1339-05fa-721d-3d79f41b571e",
+      "name" : "tablet",
+      "label" : "Tablet",
+      "required" : false,
+      "locked" : false,
+      "type" : "spacing",
+      "display_width" : null,
+      "default" : {
+        "padding" : {
+          "top" : {
+            "value" : 0,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 0,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      }
+    }, {
+      "id" : "0a8a8c35-4008-f2aa-311a-12325d67b19c",
+      "name" : "mobile",
+      "label" : "Mobile",
+      "required" : false,
+      "locked" : false,
+      "type" : "spacing",
+      "display_width" : null,
+      "default" : {
+        "padding" : {
+          "top" : {
+            "value" : 0,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 0,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      }
+    } ],
+    "tab" : "STYLE",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : {
+      "desktop" : {
+        "padding" : {
+          "top" : {
+            "value" : 80,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 80,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      },
+      "tablet" : {
+        "padding" : {
+          "top" : {
+            "value" : 0,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 0,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      },
+      "mobile" : {
+        "padding" : {
+          "top" : {
+            "value" : 0,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 0,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      }
+    }
+  } ],
+  "tab" : "STYLE",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "select_background" : "",
+    "background_color" : {
+      "color" : null,
+      "opacity" : 100
+    },
+    "background_image" : {
+      "background_position" : "TOP_CENTER",
+      "background_size" : "cover",
+      "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/Group%202147262867.png"
+    },
+    "background_gradient" : { },
+    "spacing" : {
+      "desktop" : {
+        "padding" : {
+          "top" : {
+            "value" : 80,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 80,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      },
+      "tablet" : {
+        "padding" : {
+          "top" : {
+            "value" : 0,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 0,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      },
+      "mobile" : {
+        "padding" : {
+          "top" : {
+            "value" : 0,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 0,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      }
+    }
+  }
+}, {
+  "id" : "55ccd3e2-31aa-4e79-9772-80facd954415",
+  "name" : "show_hide_",
+  "label" : "Section [Show/ Hide]",
+  "required" : false,
+  "locked" : false,
+  "display" : "toggle",
+  "type" : "boolean",
+  "display_width" : null,
+  "default" : true
+}, {
+  "id" : "54f3aad8-d468-a006-083d-d61fe34c0f38",
+  "name" : "reverse_content",
+  "label" : "Reverse Content",
+  "required" : false,
+  "locked" : false,
+  "display" : "toggle",
+  "type" : "boolean",
+  "display_width" : null,
+  "default" : false
+}, {
+  "id" : "789ed720-75df-3783-79a5-f67004ecb2b9",
+  "name" : "autoplay_tab",
+  "label" : "Set Autoplay Accordion",
+  "required" : false,
+  "locked" : false,
+  "display" : "toggle",
+  "type" : "boolean",
+  "display_width" : null,
+  "default" : true
+}, {
+  "id" : "a8a7b7b8-5ad1-1e53-8cfb-de35621c6e1b",
+  "name" : "content",
+  "label" : "Content",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "8184ecd2-54bf-37ed-de11-a4d415ca340f",
+    "name" : "top_text",
+    "label" : "Top Text",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "350986cf-e1f1-ff24-7b08-0cbb03b5da69",
+      "name" : "text",
+      "label" : "Text",
+      "required" : false,
+      "locked" : false,
+      "allow_new_line" : false,
+      "type" : "text",
+      "display_width" : null,
+      "default" : "Procure"
+    }, {
+      "id" : "2536c11a-dceb-a756-f4c0-63acaba51ce1",
+      "name" : "icon",
+      "label" : "Icon",
+      "required" : false,
+      "locked" : false,
+      "responsive" : true,
+      "resizable" : true,
+      "show_loading" : true,
+      "type" : "image",
+      "display_width" : null,
+      "default" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/warehouse-1--delivery-warehouse-shipping-fulfillment.svg",
+        "alt" : "warehouse-1--delivery-warehouse-shipping-fulfillment",
+        "loading" : "lazy",
+        "width" : 24,
+        "height" : 24,
+        "max_width" : 21,
+        "max_height" : 21
+      }
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : {
+      "text" : "Procure",
+      "icon" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/warehouse-1--delivery-warehouse-shipping-fulfillment.svg",
+        "alt" : "warehouse-1--delivery-warehouse-shipping-fulfillment",
+        "loading" : "lazy",
+        "width" : 24,
+        "height" : 24,
+        "max_width" : 21,
+        "max_height" : 21
+      }
+    }
+  }, {
+    "id" : "8f751bbc-1771-a2f4-ac55-156e6216608e",
+    "name" : "title",
+    "label" : "Title",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Bring global purchasing under one central hub."
+  }, {
+    "id" : "0ce0cf85-b3cc-de17-a7dd-f069663f2346",
+    "name" : "tab_item",
+    "label" : "Tab Item",
+    "required" : false,
+    "locked" : false,
+    "occurrence" : {
+      "min" : null,
+      "max" : null,
+      "sorting_label_field" : null,
+      "default" : 5
+    },
+    "children" : [ {
+      "id" : "003aff11-b3fe-d679-a6b2-0171dda0de37",
+      "name" : "title",
+      "label" : "Title",
+      "required" : false,
+      "locked" : false,
+      "allow_new_line" : false,
+      "type" : "text",
+      "display_width" : null,
+      "default" : "Local-to-local vendor network"
+    }, {
+      "id" : "5a68ca23-b7a3-2021-5714-33bff0e9bbe7",
+      "name" : "icon",
+      "label" : "Icon",
+      "required" : false,
+      "locked" : false,
+      "responsive" : true,
+      "resizable" : true,
+      "show_loading" : true,
+      "type" : "image",
+      "display_width" : null,
+      "default" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/Convert-Pdf-1--Streamline-Core.svg",
+        "alt" : "Convert-Pdf-1--Streamline-Core",
+        "loading" : "lazy",
+        "width" : 24,
+        "height" : 24,
+        "max_width" : 24,
+        "max_height" : 24
+      }
+    }, {
+      "id" : "7bb6b84b-99c4-7fdb-42e2-0cf23f92847b",
+      "name" : "text",
+      "label" : "Text",
+      "required" : false,
+      "locked" : false,
+      "type" : "richtext",
+      "display_width" : null,
+      "default" : "<p><span>Source devices through a local-to-local vendor network to avoid cross-border shipping and tariffs.</span>&nbsp;</p>"
+    }, {
+      "id" : "32d598fe-e15b-58df-1fb3-9df2711f2d8f",
+      "name" : "select_option_video_or_image",
+      "label" : "Select Option Video OR Image",
+      "required" : false,
+      "locked" : false,
+      "display" : "select",
+      "choices" : [ [ "image", "Image" ], [ "video", "Video" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "preset" : null,
+      "type" : "choice",
+      "display_width" : null,
+      "default" : "image"
+    }, {
+      "id" : "762272a8-6352-0b16-8059-1357987e07fc",
+      "name" : "image_field",
+      "label" : "Image",
+      "required" : false,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : null,
+        "controlling_field_path" : "content.tab_item.select_option_video_or_image",
+        "controlling_value_regex" : "image",
+        "property" : null,
+        "operator" : "MATCHES_REGEX",
+        "access" : null
+      },
+      "responsive" : true,
+      "resizable" : true,
+      "show_loading" : false,
+      "type" : "image",
+      "display_width" : null,
+      "default" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/Feaute_%201%20Visuals%20(1).png",
+        "alt" : "Feaute_ 1 Visuals (1)",
+        "loading" : "lazy",
+        "width" : 1176,
+        "height" : 760,
+        "max_width" : 1176,
+        "max_height" : 760
+      }
+    }, {
+      "picker" : "video",
+      "id" : "164fddc5-70c8-1e70-30a1-7f5eb382873d",
+      "name" : "video",
+      "label" : "Video",
+      "required" : false,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : null,
+        "controlling_field_path" : "content.tab_item.select_option_video_or_image",
+        "controlling_value_regex" : "video",
+        "property" : null,
+        "operator" : "MATCHES_REGEX",
+        "access" : null
+      },
+      "type" : "file",
+      "display_width" : null,
+      "default" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Videos/Workwize.mp4"
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : [ {
+      "title" : "Local-to-local vendor network",
+      "icon" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/Convert-Pdf-1--Streamline-Core.svg",
+        "alt" : "Convert-Pdf-1--Streamline-Core",
+        "loading" : "lazy",
+        "width" : 24,
+        "height" : 24,
+        "max_width" : 24,
+        "max_height" : 24
+      },
+      "text" : "<p><span>Source devices through a local-to-local vendor network to avoid cross-border shipping and tariffs.</span>&nbsp;</p>",
+      "select_option_video_or_image" : "image",
+      "image_field" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/Feaute_%201%20Visuals%20(1).png",
+        "alt" : "Feaute_ 1 Visuals (1)",
+        "loading" : "lazy",
+        "width" : 1176,
+        "height" : 760,
+        "max_width" : 1176,
+        "max_height" : 760
+      },
+      "video" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Videos/Workwize.mp4"
+    }, {
+      "title" : "Local-to-local vendor network",
+      "icon" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/Convert-Pdf-1--Streamline-Core.svg",
+        "alt" : "Convert-Pdf-1--Streamline-Core",
+        "loading" : "lazy",
+        "width" : 24,
+        "height" : 24,
+        "max_width" : 24,
+        "max_height" : 24
+      },
+      "text" : "<p><span>Source devices through a local-to-local vendor network to avoid cross-border shipping and tariffs.</span>&nbsp;</p>",
+      "select_option_video_or_image" : "image",
+      "image_field" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/Feaute_%201%20Visuals%20(1).png",
+        "alt" : "Feaute_ 1 Visuals (1)",
+        "loading" : "lazy",
+        "width" : 1176,
+        "height" : 760,
+        "max_width" : 1176,
+        "max_height" : 760
+      },
+      "video" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Videos/Workwize.mp4"
+    }, {
+      "title" : "Local-to-local vendor network",
+      "icon" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/Convert-Pdf-1--Streamline-Core.svg",
+        "alt" : "Convert-Pdf-1--Streamline-Core",
+        "loading" : "lazy",
+        "width" : 24,
+        "height" : 24,
+        "max_width" : 24,
+        "max_height" : 24
+      },
+      "text" : "<p><span>Source devices through a local-to-local vendor network to avoid cross-border shipping and tariffs.</span>&nbsp;</p>",
+      "select_option_video_or_image" : "image",
+      "image_field" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/Feaute_%201%20Visuals%20(1).png",
+        "alt" : "Feaute_ 1 Visuals (1)",
+        "loading" : "lazy",
+        "width" : 1176,
+        "height" : 760,
+        "max_width" : 1176,
+        "max_height" : 760
+      },
+      "video" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Videos/Workwize.mp4"
+    }, {
+      "title" : "Local-to-local vendor network",
+      "icon" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/Convert-Pdf-1--Streamline-Core.svg",
+        "alt" : "Convert-Pdf-1--Streamline-Core",
+        "loading" : "lazy",
+        "width" : 24,
+        "height" : 24,
+        "max_width" : 24,
+        "max_height" : 24
+      },
+      "text" : "<p><span>Source devices through a local-to-local vendor network to avoid cross-border shipping and tariffs.</span>&nbsp;</p>",
+      "select_option_video_or_image" : "image",
+      "image_field" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/Feaute_%201%20Visuals%20(1).png",
+        "alt" : "Feaute_ 1 Visuals (1)",
+        "loading" : "lazy",
+        "width" : 1176,
+        "height" : 760,
+        "max_width" : 1176,
+        "max_height" : 760
+      },
+      "video" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Videos/Workwize.mp4"
+    }, {
+      "title" : "Local-to-local vendor network",
+      "icon" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/Convert-Pdf-1--Streamline-Core.svg",
+        "alt" : "Convert-Pdf-1--Streamline-Core",
+        "loading" : "lazy",
+        "width" : 24,
+        "height" : 24,
+        "max_width" : 24,
+        "max_height" : 24
+      },
+      "text" : "<p><span>Source devices through a local-to-local vendor network to avoid cross-border shipping and tariffs.</span>&nbsp;</p>",
+      "select_option_video_or_image" : "image",
+      "image_field" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/Feaute_%201%20Visuals%20(1).png",
+        "alt" : "Feaute_ 1 Visuals (1)",
+        "loading" : "lazy",
+        "width" : 1176,
+        "height" : 760,
+        "max_width" : 1176,
+        "max_height" : 760
+      },
+      "video" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Videos/Workwize.mp4"
+    } ]
+  }, {
+    "id" : "3b8d3295-bf33-86cb-30b8-a2ff009fdcdb",
+    "name" : "background_color",
+    "label" : "Background Color",
+    "required" : false,
+    "locked" : false,
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#D8E7FD",
+      "opacity" : 100
+    }
+  }, {
+    "id" : "13aa2a56-29f7-4fea-ee04-1b49f3aafae5",
+    "name" : "active_line_background_color",
+    "label" : "Active Line Background Color",
+    "required" : false,
+    "locked" : false,
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#3B82F6",
+      "opacity" : 100
+    }
+  }, {
+    "id" : "e5d2ca7d-92a8-7bef-f2eb-71a84af84c42",
+    "name" : "show_button",
+    "label" : "Show Button",
+    "required" : false,
+    "locked" : false,
+    "display" : "toggle",
+    "type" : "boolean",
+    "display_width" : null,
+    "default" : false
+  }, {
+    "id" : "670a5a27-4c47-90b8-9f05-23efa627263f",
+    "name" : "button",
+    "label" : "Button",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "content.show_button",
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "MATCHES_REGEX",
+      "access" : null
+    },
+    "children" : [ {
+      "id" : "3f65a311-444b-b8d2-25fa-df2ab11d15f1",
+      "name" : "button_text",
+      "label" : "Button Text",
+      "required" : false,
+      "locked" : false,
+      "allow_new_line" : false,
+      "type" : "text",
+      "display_width" : null,
+      "default" : "Book a 30-min demo"
+    }, {
+      "id" : "dff0c626-cd6c-0d97-0b0d-0fdc3a4f183a",
+      "name" : "button_link",
+      "label" : "Button Link",
+      "required" : false,
+      "locked" : false,
+      "supported_types" : [ "EXTERNAL", "FILE", "CONTENT", "BLOG", "CALL_TO_ACTION", "PAYMENT", "EMAIL_ADDRESS", "PHONE_NUMBER", "WHATSAPP_NUMBER" ],
+      "show_advanced_rel_options" : false,
+      "type" : "link",
+      "display_width" : null,
+      "default" : {
+        "url" : {
+          "content_id" : null,
+          "type" : "EXTERNAL",
+          "href" : ""
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false
+      }
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : {
+      "button_text" : "Book a 30-min demo",
+      "button_link" : {
+        "url" : {
+          "content_id" : null,
+          "type" : "EXTERNAL",
+          "href" : ""
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false
+      }
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "top_text" : {
+      "text" : "Procure",
+      "icon" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/warehouse-1--delivery-warehouse-shipping-fulfillment.svg",
+        "alt" : "warehouse-1--delivery-warehouse-shipping-fulfillment",
+        "loading" : "lazy",
+        "width" : 24,
+        "height" : 24,
+        "max_width" : 21,
+        "max_height" : 21
+      }
+    },
+    "title" : "Bring global purchasing under one central hub.",
+    "tab_item" : [ {
+      "title" : "Local-to-local vendor network",
+      "icon" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/Convert-Pdf-1--Streamline-Core.svg",
+        "alt" : "Convert-Pdf-1--Streamline-Core",
+        "loading" : "lazy",
+        "width" : 24,
+        "height" : 24,
+        "max_width" : 24,
+        "max_height" : 24
+      },
+      "text" : "<p><span>Source devices through a local-to-local vendor network to avoid cross-border shipping and tariffs.</span>&nbsp;</p>",
+      "select_option_video_or_image" : "image",
+      "image_field" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/Feaute_%201%20Visuals%20(1).png",
+        "alt" : "Feaute_ 1 Visuals (1)",
+        "loading" : "lazy",
+        "width" : 1176,
+        "height" : 760,
+        "max_width" : 1176,
+        "max_height" : 760
+      },
+      "video" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Videos/Workwize.mp4"
+    }, {
+      "title" : "Local-to-local vendor network",
+      "icon" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/Convert-Pdf-1--Streamline-Core.svg",
+        "alt" : "Convert-Pdf-1--Streamline-Core",
+        "loading" : "lazy",
+        "width" : 24,
+        "height" : 24,
+        "max_width" : 24,
+        "max_height" : 24
+      },
+      "text" : "<p><span>Source devices through a local-to-local vendor network to avoid cross-border shipping and tariffs.</span>&nbsp;</p>",
+      "select_option_video_or_image" : "image",
+      "image_field" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/Feaute_%201%20Visuals%20(1).png",
+        "alt" : "Feaute_ 1 Visuals (1)",
+        "loading" : "lazy",
+        "width" : 1176,
+        "height" : 760,
+        "max_width" : 1176,
+        "max_height" : 760
+      },
+      "video" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Videos/Workwize.mp4"
+    }, {
+      "title" : "Local-to-local vendor network",
+      "icon" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/Convert-Pdf-1--Streamline-Core.svg",
+        "alt" : "Convert-Pdf-1--Streamline-Core",
+        "loading" : "lazy",
+        "width" : 24,
+        "height" : 24,
+        "max_width" : 24,
+        "max_height" : 24
+      },
+      "text" : "<p><span>Source devices through a local-to-local vendor network to avoid cross-border shipping and tariffs.</span>&nbsp;</p>",
+      "select_option_video_or_image" : "image",
+      "image_field" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/Feaute_%201%20Visuals%20(1).png",
+        "alt" : "Feaute_ 1 Visuals (1)",
+        "loading" : "lazy",
+        "width" : 1176,
+        "height" : 760,
+        "max_width" : 1176,
+        "max_height" : 760
+      },
+      "video" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Videos/Workwize.mp4"
+    }, {
+      "title" : "Local-to-local vendor network",
+      "icon" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/Convert-Pdf-1--Streamline-Core.svg",
+        "alt" : "Convert-Pdf-1--Streamline-Core",
+        "loading" : "lazy",
+        "width" : 24,
+        "height" : 24,
+        "max_width" : 24,
+        "max_height" : 24
+      },
+      "text" : "<p><span>Source devices through a local-to-local vendor network to avoid cross-border shipping and tariffs.</span>&nbsp;</p>",
+      "select_option_video_or_image" : "image",
+      "image_field" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/Feaute_%201%20Visuals%20(1).png",
+        "alt" : "Feaute_ 1 Visuals (1)",
+        "loading" : "lazy",
+        "width" : 1176,
+        "height" : 760,
+        "max_width" : 1176,
+        "max_height" : 760
+      },
+      "video" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Videos/Workwize.mp4"
+    }, {
+      "title" : "Local-to-local vendor network",
+      "icon" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/Convert-Pdf-1--Streamline-Core.svg",
+        "alt" : "Convert-Pdf-1--Streamline-Core",
+        "loading" : "lazy",
+        "width" : 24,
+        "height" : 24,
+        "max_width" : 24,
+        "max_height" : 24
+      },
+      "text" : "<p><span>Source devices through a local-to-local vendor network to avoid cross-border shipping and tariffs.</span>&nbsp;</p>",
+      "select_option_video_or_image" : "image",
+      "image_field" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/Feaute_%201%20Visuals%20(1).png",
+        "alt" : "Feaute_ 1 Visuals (1)",
+        "loading" : "lazy",
+        "width" : 1176,
+        "height" : 760,
+        "max_width" : 1176,
+        "max_height" : 760
+      },
+      "video" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Videos/Workwize.mp4"
+    } ],
+    "background_color" : {
+      "color" : "#D8E7FD",
+      "opacity" : 100
+    },
+    "active_line_background_color" : {
+      "color" : "#3B82F6",
+      "opacity" : 100
+    },
+    "show_button" : false,
+    "button" : {
+      "button_text" : "Book a 30-min demo",
+      "button_link" : {
+        "url" : {
+          "content_id" : null,
+          "type" : "EXTERNAL",
+          "href" : ""
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false
+      }
+    }
+  }
+} ]

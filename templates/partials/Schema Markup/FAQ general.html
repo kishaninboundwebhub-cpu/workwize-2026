@@ -1,0 +1,38 @@
+<!--
+  templateType: "page"
+  isAvailableForNewContent: false
+-->
+{% if module.faq_column and module.faq_column|length > 0 %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "@id": "{{ content.absolute_url }}/#faq",
+  "isPartOf":
+    {
+      "@id": "{{ content.absolute_url }}#webpage"
+    },
+  "mainEntity": [
+    {% for item in module.faq_column %}
+    {
+      "@type": "Question",
+      "name": {{ item.title|striptags|trim|tojson }},
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": {{ item.text
+                    |regex_replace('<span[^>]*>', '')
+                    |regex_replace('</span>', '')
+                    |regex_replace('\\sdata-[^=]+="[^"]*"', '')
+                    |regex_replace('\\saria-[^=]+="[^"]*"', '')
+                    |regex_replace('\\sstyle="[^"]*"', '')
+                    |regex_replace('\\sclass="[^"]*"', '')
+                    |trim
+                    |tojson }}
+      }
+    }{% if not loop.last %},{% endif %}
+    {% endfor %}
+  ]
+}
+</script>
+
+{% endif %}

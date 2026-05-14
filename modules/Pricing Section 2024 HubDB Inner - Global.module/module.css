@@ -1,0 +1,37 @@
+.pricing-cure-box { display: none; }
+.pricing-cure-box:first-child { display: block; }
+.pricing-cure-switcher-top { margin: 0 0 50px; text-align: center; }
+.pricing-cure-switcher { display: flex; flex-wrap: wrap; justify-content: center; row-gap: 10px; column-gap: 10px; }
+.pricing-cure-switcher a { border: 1px solid #12275066; border-radius: 100px; color: #122750; font-family: Okta Neue; font-size: 14px; font-weight: 400; line-height: normal; padding: 6px 16px; }
+.pricing-cure-switcher a.active, .pricing-cure-switcher a:hover { background-color: #122750; border-color: #122750; color: #FFFFFF; }
+.pricing-cure-switcher-top h3 { margin: 0 0 16px; font-size: 18px; line-height: normal; }
+.pricing-cure-switcher a span { vertical-align: text-top; }
+.secinner.pricing-inner .secheader { margin: 0 0 40px; }
+.pricingpopu svg { width: 30px; height: 30px; vertical-align: middle; }
+.pricingpopu { text-transform: uppercase;   letter-spacing: 2px;    position: absolute;    bottom: 100%;    background-color: #122750;    width: 100%;    left: 0;    border-top-left-radius: 20px;    border-top-right-radius: 20px;    color: #FFF;    text-align: center;    padding: 14px 20px;    font-weight: 700;    font-size: 22px;    line-height: 1;    display: flex;    flex-wrap: wrap;    align-items: center;    justify-content: center; }
+.pricing-col.pricing-col-tspace-cl .pricing-content { height: 100%; position: relative;  padding: 40px 30px; }
+.pricing-col.pricing-col-tspace-cl { margin-top: 58px; }
+.pricing-col-tspace .pricing-content {  border-radius: 0 0 24px 24px; }
+.pricing-col.pricing-col-tspace-cl .pricing-seatxt { margin: 20px 0 0; letter-spacing: -.15px; line-height: 1.25; font-weight: 700; font-size: 26px; }
+.pricing-col.pricing-col-tspace-cl .pricing-platxt { margin: 3px auto 0; max-width: 200px; }
+.pricing-col.pricing-col-tspace-cl .secbtns { margin: 20px 0 0; }
+.pricingssnote { font-size: 14px; line-height: normal; margin-top: -10px; }
+.pricing-col.pricing-col-tspace-cl .pricing-txt { margin: 20px 0 0; }
+.pricing-txt-list ul li { padding: 0; display: flex; flex-wrap: wrap; margin-bottom: 10px !important; }
+.pricing-txt-list ul li:before { display:none; }
+.pricing-txt-list ul li span.pricingss-icon { display: inline-block; max-width: 30px; margin-right: 10px; }
+.pricing-txt-list ul li span.pricingss-text { display: inline-block; width: calc(100% - 40px); }
+.pricing-tiletxt { font-weight: 500; font-size: 16px; line-height: 1.2; }
+
+    
+
+
+@media(max-width:767px){
+  .pricing-col.pricing-col-tspace-cl {  margin-top:0; }
+  .pricing-col.pricing-col-tspace-cl.pricing-col-tspace { margin-top: 58px; }
+  .pricingssnote {  margin:0; }
+  
+  
+  
+}
+

@@ -1,0 +1,99 @@
+[ {
+  "id" : "72044a81-8a67-4295-6c5a-7194ec90a207",
+  "name" : "select_hubdb_table",
+  "label" : "Select HubDB table",
+  "required" : false,
+  "locked" : false,
+  "type" : "hubdbtable",
+  "display_width" : null,
+  "default" : 59539424
+}, {
+  "id" : "c915b8b9-584a-c7ac-2286-3a51c659dd95",
+  "name" : "hero_section",
+  "label" : "Hero Section",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "669aaf4a-380b-637f-14cc-7d42deb5194d",
+    "name" : "background",
+    "label" : "Background",
+    "required" : false,
+    "locked" : false,
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#d2f7eb",
+      "opacity" : 100
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "background" : {
+      "color" : "#d2f7eb",
+      "opacity" : 100
+    }
+  }
+}, {
+  "id" : "38c45e1b-7178-9c46-91cc-a265ba36a2cc",
+  "name" : "form_section",
+  "label" : "Form Section",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "98fb190b-58da-6ff6-fff5-d02e0831adec",
+    "name" : "form_field",
+    "label" : "Form",
+    "required" : false,
+    "locked" : false,
+    "embed_versions" : [ "v2", "v4" ],
+    "type" : "form",
+    "display_width" : null,
+    "default" : {
+      "form_id" : "fa443763-d33c-4fc8-a4d8-af2e2886b47a",
+      "response_type" : "redirect",
+      "redirect_url" : "https://meetings-eu1.hubspot.com/boudewijn-dekker/intro-call-inbound",
+      "redirect_id" : null,
+      "gotowebinar_webinar_key" : null,
+      "form_type" : "HUBSPOT"
+    }
+  }, {
+    "id" : "7c6d79d8-66cd-8b84-05d5-624b52f0040f",
+    "name" : "form_right_",
+    "label" : "Form Right ",
+    "required" : false,
+    "locked" : false,
+    "type" : "richtext",
+    "display_width" : null,
+    "default" : "<p style=\"text-align: center;\">&nbsp;</p>\n<p style=\"text-align: center;\"><img src=\"https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Monday%20Dark.svg\" loading=\"lazy\" alt=\"Monday Dark\" style=\"margin: 3px 0px;\"></p>\n<p style=\"text-align: center;\"><img src=\"https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Hello%20Fresh%20Dark.svg\" loading=\"lazy\" alt=\"Hello Fresh Dark\" style=\"margin: 3px 0px;\"><br><br><img src=\"https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Ingenico%20Dark.svg\" loading=\"lazy\" alt=\"Ingenico Dark\" style=\"margin: 3px 0px;\"><br><br><img src=\"https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Mollie%20Dark.svg\" loading=\"lazy\" alt=\"Mollie Dark\" style=\"margin: 3px 0px;\"><br><br><img src=\"https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Embraer.svg\" loading=\"lazy\" alt=\"Embraer\" style=\"margin: 3px 0px;\"><br><br><img src=\"https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Eqt%20Dark.svg\" loading=\"lazy\" alt=\"Eqt Dark\" style=\"margin: 3px 0px;\"></p>\n<p style=\"text-align: center;\"><br>Brands worldwide trust Workwize</p>\n<p>&nbsp;</p>"
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "form_field" : {
+      "form_id" : "fa443763-d33c-4fc8-a4d8-af2e2886b47a",
+      "response_type" : "redirect",
+      "redirect_url" : "https://meetings-eu1.hubspot.com/boudewijn-dekker/intro-call-inbound",
+      "redirect_id" : null,
+      "gotowebinar_webinar_key" : null,
+      "form_type" : "HUBSPOT"
+    },
+    "form_right_" : "<p style=\"text-align: center;\">&nbsp;</p>\n<p style=\"text-align: center;\"><img src=\"https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Monday%20Dark.svg\" loading=\"lazy\" alt=\"Monday Dark\" style=\"margin: 3px 0px;\"></p>\n<p style=\"text-align: center;\"><img src=\"https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Hello%20Fresh%20Dark.svg\" loading=\"lazy\" alt=\"Hello Fresh Dark\" style=\"margin: 3px 0px;\"><br><br><img src=\"https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Ingenico%20Dark.svg\" loading=\"lazy\" alt=\"Ingenico Dark\" style=\"margin: 3px 0px;\"><br><br><img src=\"https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Mollie%20Dark.svg\" loading=\"lazy\" alt=\"Mollie Dark\" style=\"margin: 3px 0px;\"><br><br><img src=\"https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Embraer.svg\" loading=\"lazy\" alt=\"Embraer\" style=\"margin: 3px 0px;\"><br><br><img src=\"https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Eqt%20Dark.svg\" loading=\"lazy\" alt=\"Eqt Dark\" style=\"margin: 3px 0px;\"></p>\n<p style=\"text-align: center;\"><br>Brands worldwide trust Workwize</p>\n<p>&nbsp;</p>"
+  }
+}, {
+  "id" : "b4a963af-33b7-23bd-0693-da9bd23ae47f",
+  "name" : "title",
+  "label" : "Title",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "Discover Workwize IT Services Worldwide"
+} ]

@@ -1,0 +1,30 @@
+[ {
+  "id" : "72044a81-8a67-4295-6c5a-7194ec90a207",
+  "name" : "select_hubdb_table",
+  "label" : "Select HubDB table",
+  "required" : false,
+  "locked" : false,
+  "type" : "hubdbtable",
+  "display_width" : null,
+  "default" : 59539424
+}, {
+  "id" : "b4a963af-33b7-23bd-0693-da9bd23ae47f",
+  "name" : "title",
+  "label" : "Title",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "Discover Workwize IT Services Worldwide"
+}, {
+  "id" : "a244cc98-29ad-7367-a314-e46ab4af0ce3",
+  "name" : "box_starting_text",
+  "label" : "Box Starting Text",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "Workwize Offers Laptop Procurement  in"
+} ]

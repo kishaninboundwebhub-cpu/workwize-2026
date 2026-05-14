@@ -1,0 +1,149 @@
+{% if module.section_show_hide_ %}
+	
+{% if dynamic_page_hubdb_row %}
+
+{% if dynamic_page_hubdb_row.categories.name == 'mdm' %}
+{% if module.mdm_content.title and module.mdm_content.col_box %}
+<div class="hrisit-colbo-Sec specSec specBg">
+  <div class="wrapper">
+    {% if module.mdm_content.title %}
+      <h2>{{ module.mdm_content.title }}</h2>
+    {% endif %}
+     <div class="hrisit-colbo-inner flexwrap">
+      {% for item in module.mdm_content.col_box %}
+      <div class="hrisit-colbo-col">
+        <div class="hrisit-colbo-inn">
+          <h4>{{ item.title }}</h4>
+          <div class="hrisit-colbo-text">
+            {{ item.text }}
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+     </div>
+   </div>
+</div>
+{% endif %}
+
+{% elif dynamic_page_hubdb_row.categories.name == 'productivity' %}
+{% if module.productivity_content.title and module.productivity_content.col_box %}
+<div class="hrisit-colbo-Sec specSec specBg">
+  <div class="wrapper">
+    {% if module.productivity_content.title %}
+      <h2>{{ module.productivity_content.title }}</h2>
+    {% endif %}
+     <div class="hrisit-colbo-inner flexwrap">
+      {% for item in module.productivity_content.col_box %}
+      <div class="hrisit-colbo-col">
+        <div class="hrisit-colbo-inn">
+          <h4>{{ item.title }}</h4>
+          <div class="hrisit-colbo-text">
+            {{ item.text }}
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+     </div>
+   </div>
+</div>
+{% endif %}
+
+{% elif dynamic_page_hubdb_row.categories.name == 'identity' %}
+{% if module.identity_content.title and module.identity_content.col_box %}
+<div class="hrisit-colbo-Sec specSec specBg">
+  <div class="wrapper">
+    {% if module.identity_content.title %}
+      <h2>{{ module.identity_content.title }}</h2>
+    {% endif %}
+     <div class="hrisit-colbo-inner flexwrap">
+      {% for item in module.identity_content.col_box %}
+      <div class="hrisit-colbo-col">
+        <div class="hrisit-colbo-inn">
+          <h4>{{ item.title }}</h4>
+          <div class="hrisit-colbo-text">
+            {{ item.text }}
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+     </div>
+   </div>
+</div>
+{% endif %}
+
+{% elif dynamic_page_hubdb_row.categories.name == 'hris' %}
+{% if module.hris_content.title and module.hris_content.col_box %}
+<div class="hrisit-colbo-Sec specSec specBg">
+  <div class="wrapper">
+    {% if module.hris_content.title %}
+      <h2>{{ module.hris_content.title }}</h2>
+    {% endif %}
+     <div class="hrisit-colbo-inner flexwrap">
+      {% for item in module.hris_content.col_box %}
+      <div class="hrisit-colbo-col">
+        <div class="hrisit-colbo-inn">
+          <h4>{{ item.title }}</h4>
+          <div class="hrisit-colbo-text">
+            {{ item.text }}
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+     </div>
+   </div>
+</div>
+{% endif %}
+
+{% else %}
+{% if module.content.title and module.content.col_box %}
+<div class="hrisit-colbo-Sec specSec specBg">
+  <div class="wrapper">
+    {% if module.content.title %}
+      <h2>{{ module.content.title }}</h2>
+    {% endif %}
+     <div class="hrisit-colbo-inner flexwrap">
+      {% for item in module.content.col_box %}
+      <div class="hrisit-colbo-col">
+        <div class="hrisit-colbo-inn">
+          <h4>{{ item.title }}</h4>
+          <div class="hrisit-colbo-text">
+            {{ item.text }}
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+     </div>
+   </div>
+</div>
+{% endif %}
+{% endif %}
+
+
+
+
+{% require_css %}
+  <style>
+    {% scope_css %}
+       .specSec {  {{ module.style.desktop_spacing.spacing_field.css }} }
+       .specBg {  background-color:rgba({{ module.background_color.color|convert_rgb }},{{ module.background_color.opacity }}%); }
+    
+    
+    
+       @media(max-width:1200px){
+        .specSec {  {{ module.style.tablet_spacing.spacing_field.css }} }
+       }
+    
+       @media(max-width:767px){
+        .specSec {  {{ module.style.mobile_spacing.spacing_field.css }} }
+       }
+    
+    
+    
+    
+    {% end_scope_css %}
+  </style>
+{% end_require_css %}
+
+{% endif %}
+
+{% endif %}

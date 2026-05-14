@@ -1,0 +1,134 @@
+{% if module.show_hide_ %}
+{% if dynamic_page_hubdb_row %}
+{% set moduleId = '#hs_cos_wrapper_{{ name }}' %}
+<div class="keyfeature-sec fullwidth bgsec space-sec">
+ {% if module.style.add_shape_image %}
+	<span class="wztopshape-solution">
+    {% if module.style.left_shape_image.src %}
+	  {% set sizeAttrs = 'width="{{ module.style.left_shape_image.width|escape_attr }}" height="{{ module.style.left_shape_image.height|escape_attr }}"' %}
+	  {% if module.style.left_shape_image.size_type == 'auto' %}
+		{% set sizeAttrs = 'width="{{ module.style.left_shape_image.width|escape_attr }}" height="{{ module.style.left_shape_image.height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+	  {% elif module.style.left_shape_image.size_type == 'auto_custom_max' %}
+		{% set sizeAttrs = 'width="{{ module.style.left_shape_image.max_width|escape_attr }}" height="{{ module.style.left_shape_image.max_height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+	  {% endif %}
+	  {% set loadingAttr = module.style.left_shape_image.loading != 'disabled' ? 'loading="{{ module.style.left_shape_image.loading|escape_attr }}"' : '' %}
+	  <img src="{{ module.style.left_shape_image.src|escape_url }}" alt="{{ module.style.left_shape_image.alt|escape_attr }}" {{ loadingAttr }} {{ sizeAttrs }}>
+    {% endif %}
+  </span>
+  <span class="keyrght-shape">
+    {% if module.style.right_shape_image.src %}
+	  {% set sizeAttrs = 'width="{{ module.style.right_shape_image.width|escape_attr }}" height="{{ module.style.right_shape_image.height|escape_attr }}"' %}
+	  {% if module.style.right_shape_image.size_type == 'auto' %}
+		{% set sizeAttrs = 'width="{{ module.style.right_shape_image.width|escape_attr }}" height="{{ module.style.right_shape_image.height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+	  {% elif module.style.right_shape_image.size_type == 'auto_custom_max' %}
+		{% set sizeAttrs = 'width="{{ module.style.right_shape_image.max_width|escape_attr }}" height="{{ module.style.right_shape_image.max_height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+	  {% endif %}
+	  {% set loadingAttr = module.style.right_shape_image.loading != 'disabled' ? 'loading="{{ module.style.right_shape_image.loading|escape_attr }}"' : '' %}
+	  <img src="{{ module.style.right_shape_image.src|escape_url }}" alt="{{ module.style.right_shape_image.alt|escape_attr }}" {{ loadingAttr }} {{ sizeAttrs }}>
+    {% endif %}  
+  </span>
+ {% endif %}
+ <div class="wrapper">
+  <div class="secinner keyfeature-inn text-center">
+   {% if module.text or module.title %}   
+   <div class="secheader keyfeature-header">
+     {% if module.sub_title %} 
+    <div class="secsubtitle keyfeature-subtile">
+      {{ module.sub_title }}
+    </div>
+    {% endif %}
+    {% if module.title %} 
+    <div class="sectitle {% if not module.text %} removespace{% endif %}">
+     <{{ module.heading_choice }}>{{ module.title }}</{{ module.heading_choice }}> 
+    </div>
+    {% endif %}
+    {% if module.text %}  
+    <div class="sectxt"> 
+     {{ module.text }} 
+    </div>
+    {% endif %} 
+   </div>
+   {% endif %} 
+   {% if module.content %}
+   <div class="keyfeature-rw flexwrap">
+     {% for item in module.content %}
+     <div class="keyfeature-col">
+       <div class="keyfeature-content">
+       {% if item.number %}
+       <div class="keyfeature-num">{{ item.number }}</div>
+       {% endif %}
+       {% if item.text %}
+       <div class="keyfeature-text">{{ item.text }}</div>
+       {% endif %}
+       </div>
+     </div>
+     {% endfor %}
+   </div>
+   {% endif %}
+   {% if module.bottom_text %}  
+   <div class="sectxt keyfeature-bmtxt">{{ module.bottom_text }}</div>
+   {% endif %} 
+   {% if module.button %} 
+   <div class="secbtns triggBtn flexwrap justifyCenter w-100">
+    {% for item in module.button %} 
+    <div class="secbtn {{ item.button_choice }} {% if module.make_trigger %} triggBtn {% endif %}">
+     {% set href = item.button_link.url.href %}
+     {% if item.button_link.url.type is equalto "EMAIL_ADDRESS" %}
+     {% set href = "mailto:" + href %}
+     {% endif %}
+     <a href="{{ href }}"
+     {% if item.button_link.open_in_new_tab %}target="_blank"{% endif %}
+     {% if item.button_link.rel %}rel="{{ item.button_link.rel }}"{% endif %}
+     >
+      {{ item.button_text }}
+     </a> 
+    </div>
+    {% endfor %} 
+   </div>  
+   {% endif %} 
+  </div>    
+ </div>
+</div>
+
+
+{% require_css %}
+<style>
+  {{ moduleId }} .bgsec { {% if module.style.select_background == 'bg_color' %}
+    background-color: rgba({{ module.style.background_color.color|convert_rgb }},{{ module.style.background_color.opacity ~ '%' }});
+    {% elif module.style.select_background == 'bg_image' %}
+    {{ module.style.background_image.css }} background-repeat: no-repeat;
+    {% elif module.style.select_background == 'bg_gradient' %}
+    background: {{ module.style.background_gradient.css }};
+    {% endif %} }
+  
+  {{ moduleId }} .space-sec { {{ module.style.spacing.desktop.css }}; }
+  
+  {% if module.header_max_width %}
+  {{ moduleId }} .keyfeature-header { max-width: {{ module.header_max_width }}px }
+  {% endif %}
+  
+  {{ moduleId }} .sectitle h1,
+  {{ moduleId }} .sectitle h2 , 
+  {{ moduleId }} .sectitle h3 , 
+  {{ moduleId }} .sectitle h4 , 
+  {{ moduleId }} .sectitle h5 ,
+  {{ moduleId }} .sectitle h6 { color: rgba({{ module.color_settings.title_color.color|convert_rgb }},{{ module.color_settings.title_color.opacity ~ '%' }}); }
+  {{ moduleId }} .secsubtitle { color: rgba({{ module.color_settings.sub_title_color.color|convert_rgb }},{{ module.color_settings.sub_title_color.opacity ~ '%' }}); } 
+  {{ moduleId }} .sectxt , {{ moduleId }} .sectxt * { color: rgba({{ module.color_settings.text_color.color|convert_rgb }},{{ module.color_settings.text_color.opacity ~ '%' }}); } 
+  
+  {% for item in module.button %} 
+   {{ moduleId }} .secbtn:nth-child({{ loop.index }}) a { background-color: rgba({{ item.background_color.color|convert_rgb }},{{ item.background_color.opacity ~ '%' }}); border-color: rgba({{ item.border_color.color|convert_rgb }},{{ item.border_color.opacity ~ '%' }}); color: rgba({{ item.text_color.color|convert_rgb }},{{ item.text_color.opacity ~ '%' }}); }
+   {{ moduleId }} .secbtn:nth-child({{ loop.index }}) a:hover { background-color: rgba({{ item.background_color_hover_.color|convert_rgb }},{{ item.background_color_hover_.opacity ~ '%' }}); border-color: rgba({{ item.border_color_hover_.color|convert_rgb }},{{ item.border_color_hover_.opacity ~ '%' }}); color: rgba({{ item.text_color_hover_.color|convert_rgb }},{{ item.text_color_hover_.opacity ~ '%' }}); }  
+  {% endfor %}
+  
+  {{ moduleId }} .keyfeature-col { background-color: rgba({{ module.color_settings.box_background_color.color|convert_rgb }},{{ module.color_settings.box_background_color.opacity ~ '%' }}); }
+  {{ moduleId }} .keyfeature-num, {{ moduleId }} .keyfeature-text { color: rgba({{ module.color_settings.box_text_color.color|convert_rgb }},{{ module.color_settings.box_text_color.opacity ~ '%' }}); }
+  
+  @media(max-width: 991px){ {{ moduleId }} .space-sec { {{ module.style.spacing.tablet.css }}; } }
+  
+  @media(max-width: 767px){ {{ moduleId }} .space-sec { {{ module.style.spacing.mobile.css }}; } }
+  
+</style>
+{% end_require_css %}
+{% endif %}
+{% endif %}

@@ -1,0 +1,90 @@
+{% set dynamic_page_hubdb_table_id = module.select_hubdb_table %}
+{% if dynamic_page_hubdb_row %}
+{% elif dynamic_page_hubdb_table_id %}
+
+{% set table = hubdb_table_rows(module.select_hubdb_table) %}
+{% set continent_name = hubdb_table_column(module.select_hubdb_table, "continent").options %}
+
+<div class="dynamic-data-outer fullwidth countrydynamicsection">
+  <div class="wrapper">
+    <div class="globalheader">           
+      {% if module.title %}  
+      <h2 class="globalheader-title sectitle">{{ module.title }}</h2>
+      {% endif %}  
+      {% if module.text %} 
+      <div class="globalheader-text sectxt">
+        {{ module.text }}
+      </div>
+      {% endif %} 
+    </div>   
+
+    <div class="globalrowMainParent">
+      <div class="globalrowInparentSec">
+        {% for item in continent_name %}
+        {% set data = hubdb_table_rows(module.select_hubdb_table, "&continent=" ~ item.name) %}
+        
+        {% if item.name == "europe" %}
+        {% else %}
+        <div class="globalrowInBoxSec">
+          <div class="globalrowInBoxSecTitle">
+            <h3>{{ item.label }}
+            </h3>
+          </div>
+
+          <div class="globalrowInBoxInnerSection">
+            {% for item2 in data %}
+            <div class="globalrowInBox">
+              <div class="globalrowInBoxLogo">
+                <img src="{{ item2.country_flag.url }}" alt="{{ item2.country_flag.altText }}">
+              </div>
+              <div class="globalrowInBoxTitle">
+                <h4>
+                  {{ item2.name }}
+                </h4>
+              </div>
+              <a href="{{ request.path }}/{{ item2.hs_path }}"  class="inpagelink"></a>
+              <span class="globalrowInBoxbg" style="background-color : {{ item2.background_color_hover }}"></span>
+            </div>
+            {% endfor %}
+          </div>
+
+        </div>
+        {% endif %}
+        {% endfor %}
+      </div>
+      <div class="globalrowInparentSec">
+        {% for item in continent_name %}
+          {% set data = hubdb_table_rows(module.select_hubdb_table, "&continent=" ~ item.name) %}
+        {% if item.name == "europe" %}
+        <div class="globalrowInBoxSec">
+          <div class="globalrowInBoxSecTitle">
+            <h3>{{ item.label }}
+            </h3>
+          </div>
+            <div class="globalrowInBoxInnerSection">
+            {% for item2 in data %}
+            <div class="globalrowInBox">
+              <div class="globalrowInBoxLogo">
+                <img src="{{ item2.country_flag.url }}" alt="{{ item2.country_flag.altText }}">
+              </div>
+              <div class="globalrowInBoxTitle">
+                <h4>
+                  {{ item2.name }}
+                </h4>
+              </div>
+                   <a href="{{ request.path }}/{{ item2.hs_path }}"  class="inpagelink"></a>
+              <span class="globalrowInBoxbg" style="background-color : {{ item2.background_color_hover }}"></span>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+        {% endif %}
+        {% endfor %}
+      </div>
+
+    </div>
+  </div>
+</div>
+{% endif %}
+
+

@@ -1,0 +1,180 @@
+{% if dynamic_page_hubdb_row %}
+
+{% if dynamic_page_hubdb_row.categories.name == 'mdm' %}
+<div class="hrisit-ttt-Sec text-center specSec specBg">
+  <div class="wrapper">
+    {% if module.mdm_content.title %}
+      <h2>{{ module.mdm_content.title }}</h2>
+    {% endif %}
+    <div class="hrisit-ttt-text">
+      {{ module.mdm_content.text }}
+    </div>
+    {% if module.mdm_content.button.button_text %}
+    <div class="hrisit-btn triggBtn button">
+      {% set href = module.mdm_content.button.button_link.url.href %}
+      {% if module.mdm_content.button.button_link.url.type is equalto "EMAIL_ADDRESS" %}
+        {% set href = "mailto:" + href %}
+      {% endif %}
+      <a
+        {% if module.mdm_content.button.button_link.url.type is equalto "CALL_TO_ACTION"  %} href="{{ href }}" {# The href here is not escaped as it is not editable and functions as a JavaScript call to the associated CTA #} {% else %} href="{{ href|escape_url }}" {% endif %}
+        {% if module.mdm_content.button.button_link.open_in_new_tab %} target="_blank" {% endif %}
+        {% if module.mdm_content.button.button_link.rel %} rel="{{ module.mdm_content.button.button_link.rel|escape_attr }}" {% endif %}
+        >
+          {{ module.mdm_content.button.button_text }}
+        </a>
+      </div>
+    {% endif %}
+   </div>
+</div>
+
+{% elif dynamic_page_hubdb_row.categories.name == 'productivity' %}
+<div class="hrisit-ttt-Sec text-center specSec specBg">
+  <div class="wrapper">
+    {% if module.productivity_content.title %}
+      <h2>{{ module.productivity_content.title }}</h2>
+    {% endif %}
+    <div class="hrisit-ttt-text">
+      {{ module.productivity_content.text }}
+    </div>
+    {% if module.productivity_content.button.button_text %}
+    <div class="hrisit-btn triggBtn button">
+      {% set href = module.productivity_content.button.button_link.url.href %}
+      {% if module.productivity_content.button.button_link.url.type is equalto "EMAIL_ADDRESS" %}
+        {% set href = "mailto:" + href %}
+      {% endif %}
+      <a
+        {% if module.productivity_content.button.button_link.url.type is equalto "CALL_TO_ACTION"  %}
+          href="{{ href }}" {# The href here is not escaped as it is not editable and functions as a JavaScript call to the associated CTA #}
+        {% else %} href="{{ href|escape_url }}" {% endif %}
+        {% if module.productivity_content.button.button_link.open_in_new_tab %} target="_blank" {% endif %}
+        {% if module.productivity_content.button.button_link.rel %} rel="{{ module.productivity_content.button.button_link.rel|escape_attr }}" {% endif %}
+        >
+          {{ module.productivity_content.button.button_text }}
+        </a>
+      </div>
+    {% endif %}
+   </div>
+</div>
+
+{% elif dynamic_page_hubdb_row.categories.name == 'identity' %}
+<div class="hrisit-ttt-Sec text-center specSec specBg">
+  <div class="wrapper">
+    {% if module.identity_content.title %}
+      <h2>{{ module.identity_content.title }}</h2>
+    {% endif %}
+    <div class="hrisit-ttt-text">
+      {{ module.identity_content.text }}
+    </div>
+    {% if module.identity_content.button.button_text %}
+    <div class="hrisit-btn triggBtn button">
+      {% set href = module.identity_content.button.button_link.url.href %}
+      {% if module.identity_content.button.button_link.url.type is equalto "EMAIL_ADDRESS" %}
+        {% set href = "mailto:" + href %}
+      {% endif %}
+      <a
+        {% if module.identity_content.button.button_link.url.type is equalto "CALL_TO_ACTION"  %}
+          href="{{ href }}" {# The href here is not escaped as it is not editable and functions as a JavaScript call to the associated CTA #}
+        {% else %} href="{{ href|escape_url }}" {% endif %}
+        {% if module.identity_content.button.button_link.open_in_new_tab %} target="_blank" {% endif %}
+        {% if module.identity_content.button.button_link.rel %} rel="{{ module.identity_content.button.button_link.rel|escape_attr }}" {% endif %}
+        >
+          {{ module.identity_content.button.button_text }}
+        </a>
+      </div>
+    {% endif %}
+   </div>
+</div>
+
+{% elif dynamic_page_hubdb_row.categories.name == 'hris' %}
+<div class="hrisit-ttt-Sec text-center specSec specBg">
+  <div class="wrapper">
+    {% if module.hris_content.title %}
+      <h2>{{ module.hris_content.title }}</h2>
+    {% endif %}
+    <div class="hrisit-ttt-text">
+      {{ module.hris_content.text }}
+    </div>
+    {% if module.hris_content.button.button_text %}
+    <div class="hrisit-btn triggBtn button">
+      {% set href = module.hris_content.button.button_link.url.href %}
+      {% if module.hris_content.button.button_link.url.type is equalto "EMAIL_ADDRESS" %}
+        {% set href = "mailto:" + href %}
+      {% endif %}
+      <a
+        {% if module.hris_content.button.button_link.url.type is equalto "CALL_TO_ACTION"  %}
+          href="{{ href }}" {# The href here is not escaped as it is not editable and functions as a JavaScript call to the associated CTA #}
+        {% else %} href="{{ href|escape_url }}" {% endif %}
+        {% if module.hris_content.button.button_link.open_in_new_tab %} target="_blank" {% endif %}
+        {% if module.hris_content.button.button_link.rel %} rel="{{ module.hris_content.button.button_link.rel|escape_attr }}" {% endif %}
+        >
+          {{ module.hris_content.button.button_text }}
+        </a>
+      </div>
+    {% endif %}
+   </div>
+</div>
+
+{% else %}
+<div class="hrisit-ttt-Sec text-center specSec specBg">
+  <div class="wrapper">
+    {% if module.content.title %}
+      <h2>{{ module.content.title }}</h2>
+    {% endif %}
+    <div class="hrisit-ttt-text">
+      {{ module.content.text }}
+    </div>
+    {% if module.content.button.button_text %}
+    <div class="hrisit-btn triggBtn button">
+      {% set href = module.content.button.button_link.url.href %}
+        {% if module.content.button.button_link.url.type is equalto "EMAIL_ADDRESS" %}
+          {% set href = "mailto:" + href %}
+        {% endif %}
+        <a
+          {% if module.content.button.button_link.url.type is equalto "CALL_TO_ACTION"  %}
+            href="{{ href }}" {# The href here is not escaped as it is not editable and functions as a JavaScript call to the associated CTA #}
+          {% else %}
+            href="{{ href|escape_url }}"
+          {% endif %}
+          {% if module.content.button.button_link.open_in_new_tab %}
+            target="_blank"
+          {% endif %}
+          {% if module.content.button.button_link.rel %}
+            rel="{{ module.content.button.button_link.rel|escape_attr }}"
+          {% endif %}
+          >
+          {{ module.content.button.button_text }}
+        </a>
+      </div>
+    {% endif %}
+   </div>
+</div>
+
+{% endif %}
+
+
+{% require_css %}
+  <style>
+    {% scope_css %}
+       .specSec {  {{ module.style.desktop_spacing.spacing_field.css }} }
+       .specBg {  background-color:rgba({{ module.styles.background_color.color|convert_rgb }},{{ module.styles.background_color.opacity }}%);  }
+       .hrisit-ttt-Sec h2 {  color:{{ module.styles.title_color.color }}; } 
+       .hrisit-ttt-text {  color:{{ module.styles.text_color.color }}; } 
+    
+    
+       @media(max-width:1200px){
+        .specSec {  {{ module.style.tablet_spacing.spacing_field.css }} }
+       }
+    
+       @media(max-width:767px){
+        .specSec {  {{ module.style.mobile_spacing.spacing_field.css }} }
+       }
+    
+    
+    
+    
+    {% end_scope_css %}
+  </style>
+{% end_require_css %}
+
+{% endif %}
+

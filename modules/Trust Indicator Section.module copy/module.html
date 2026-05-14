@@ -1,0 +1,181 @@
+<!--
+  templateType: "none"
+  isAvailableForNewContent: false
+-->
+{% if module.show_hide_ %}
+{% set moduleId = '#hs_cos_wrapper_{{ name }}' %}
+
+<div class="trusindsec  trusly{{ module.layout_style }}  fullwidth bgsec space-sec">
+  {% if module.image_field.src %}
+  <div class="trusindImg">
+    
+	{% set sizeAttrs = 'width="{{ module.image_field.width|escape_attr }}" height="{{ module.image_field.height|escape_attr }}"' %}
+	{% if module.image_field.size_type == 'auto' %}
+		{% set sizeAttrs = 'width="{{ module.image_field.width|escape_attr }}" height="{{ module.image_field.height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+	{% elif module.image_field.size_type == 'auto_custom_max' %}
+		{% set sizeAttrs = 'width="{{ module.image_field.max_width|escape_attr }}" height="{{ module.image_field.max_height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+	{% endif %}
+	 {% set loadingAttr = module.image_field.loading != 'disabled' ? 'loading="{{ module.image_field.loading|escape_attr }}"' : '' %}
+	<img src="{{ module.image_field.src|escape_url }}" alt="{{ module.image_field.alt|escape_attr }}" {{ loadingAttr }} {{ sizeAttrs }}>
+
+  </div>
+{% endif %}  
+  
+ <div class="wrapper">
+   {% if module.sub_title %}
+   <div class="trusindsubTitle text-center pb20 wow fadeInUp geist-mono uppercase font-medium pb16">
+     {{ module.sub_title }}
+   </div>
+   {% endif %}
+   <div class="trusindTitle text-center {% if module.text %} {% else %} pb44 {% endif %} wow fadeInUp">
+     <h2>{{ module.title }}</h2>
+   </div>
+   {% if module.text %}
+   <div class="trusindTtext pb60 text-center  wow fadeInUp">
+     {{ module.text }}
+   </div>
+   {% endif %}
+   
+   <div class="trusindInner d_flex">
+    {% for item in module.box_item %}
+     <div class="trusindIBox trusindI{{ item.set_top_image }} wow fadeInUp">
+       <div class="trusindIBinn">
+         <div class="trusindItShape">
+           <div class="trusindItSss">
+             <span></span><span></span><span></span><span></span><span></span><span></span>
+           </div>
+           <div class="trusindItSss">
+             <span></span><span></span><span></span><span></span><span></span><span></span>
+           </div>
+           <div class="trusindItSss">
+             <span></span><span></span><span></span><span></span><span></span><span></span>
+           </div>
+           <div class="trusindItSss">
+             <span></span><span></span><span></span><span></span><span></span><span></span>
+           </div>
+         </div>
+         <div class="trusindIBTop d_flex align_center space_between gap20 pb52">
+           <div class="trusindIBValue">
+             {{ item.value }}
+           </div>
+           <div class="trusindIBLogo {% if item.extra_logo.src %} trusindIBLFull {% endif %} d_flex space_between gap10">
+             {% if item.logo.src %}
+              {% set sizeAttrs = 'width="{{ item.logo.width|escape_attr }}" height="{{ item.logo.height|escape_attr }}"' %}
+              {% if item.logo.size_type == 'auto' %}
+                {% set sizeAttrs = 'width="{{ item.logo.width|escape_attr }}" height="{{ item.logo.height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+              {% elif item.logo.size_type == 'auto_custom_max' %}
+                {% set sizeAttrs = 'width="{{ item.logo.max_width|escape_attr }}" height="{{ item.logo.max_height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+              {% endif %}
+               {% set loadingAttr = item.logo.loading != 'disabled' ? 'loading="{{ item.logo.loading|escape_attr }}"' : '' %}
+              <img src="{{ item.logo.src|escape_url }}" alt="{{ item.logo.alt|escape_attr }}" {{ loadingAttr }} {{ sizeAttrs }}>
+            {% endif %}
+             
+             
+              {% if item.extra_logo.src %}
+              {% set sizeAttrs = 'width="{{ item.extra_logo.width|escape_attr }}" height="{{ item.extra_logo.height|escape_attr }}"' %}
+              {% if item.extra_logo.size_type == 'auto' %}
+              {% set sizeAttrs = 'width="{{ item.extra_logo.width|escape_attr }}" height="{{ item.extra_logo.height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+              {% elif item.extra_logo.size_type == 'auto_custom_max' %}
+              {% set sizeAttrs = 'width="{{ item.extra_logo.max_width|escape_attr }}" height="{{ item.extra_logo.max_height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+              {% endif %}
+              {% set loadingAttr = item.extra_logo.loading != 'disabled' ? 'loading="{{ item.extra_logo.loading|escape_attr }}"' : '' %}
+              <img class="trusindIExra" src="{{ item.extra_logo.src|escape_url }}" alt="{{ item.extra_logo.alt|escape_attr }}" {{ loadingAttr }} {{ sizeAttrs }}>
+              {% endif %}
+             
+             
+           </div>
+         </div>
+         <div class="trusindIBtext">
+             {{ item.text_field }}
+         </div>
+         
+         {% if item.learn_more_button.learn_more_text %}
+         <div class="trusindIBLink pt24">
+             {% set href = item.learn_more_button.learn_more_link.url.href %}
+              {% if item.learn_more_button.learn_more_link.url.type is equalto "EMAIL_ADDRESS" %}
+                {% set href = "mailto:" + href %}
+              {% elif item.learn_more_button.learn_more_link.url.type is equalto "PHONE_NUMBER" %}
+                {% set href = "tel:" + href %}
+              {% endif %}
+              <a
+                {% if item.learn_more_button.learn_more_link.url.type is equalto "CALL_TO_ACTION"  %}
+                  href="{{ href }}" {# The href here is not escaped as it is not editable and functions as a JavaScript call to the associated CTA #}
+                {% else %}
+                  href="{{ href|escape_url }}"
+                {% endif %}
+                {% if item.learn_more_button.learn_more_link.open_in_new_tab %}
+                  target="_blank"
+                {% endif %}
+                {% if item.learn_more_button.learn_more_link.rel %}
+                  rel="{{ item.learn_more_button.learn_more_link.rel|escape_attr }}"
+                {% endif %}
+                >
+                {{ item.learn_more_button.learn_more_text }}
+                
+                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g clip-path="url(#clip0_1943_29190)">
+                <g clip-path="url(#clip1_1943_29190)">
+                <path d="M4.875 2.25L8.625 6L4.875 9.75" stroke="#050C14" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </g>
+                </g>
+                <defs>
+                <clipPath id="clip0_1943_29190">
+                <rect width="12" height="12" fill="white" transform="translate(5.24538e-07 12) rotate(-90)"/>
+                </clipPath>
+                <clipPath id="clip1_1943_29190">
+                <rect width="12" height="12" fill="white" transform="translate(0.375001 12) rotate(-90)"/>
+                </clipPath>
+                </defs>
+                </svg>
+
+              </a>
+         </div>
+         {% endif %}
+       </div>
+     </div>
+    {% endfor %} 
+   </div>
+  
+ </div>
+</div>
+
+
+{% require_css %}
+<style>
+  {{ moduleId }} .bgsec { {% if module.style.select_background == 'bg_color' %}
+    background-color: rgba({{ module.style.background_color.color|convert_rgb }},{{ module.style.background_color.opacity ~ '%' }});
+    {% elif module.style.select_background == 'bg_image' %}
+    {{ module.style.background_image.css }} background-repeat: no-repeat;
+    {% elif module.style.select_background == 'bg_gradient' %}
+    background: {{ module.style.background_gradient.css }};
+    {% endif %} }
+  
+  {{ moduleId }} .space-sec { {{ module.style.spacing.desktop.css }}; }
+  
+  {{ moduleId }} .trusindsubTitle { color:{{ module.color_setting.sub_title_color.color }};  } 
+  {{ moduleId }} .trusindTitle {  max-width:{{ module.title_max_width }}px; margin: 0 auto; }
+  {{ moduleId }} .trusindTitle h2 { color:{{ module.color_setting.title_color.color }}; } 
+  {{ moduleId }} .trusindTitle h2 span { color:{{ module.color_setting.title_span_color.color }}; } 
+  {{ moduleId }} .trusindTtext { color:rgba({{ module.color_setting.text_color.color|convert_rgb }},{{ module.color_setting.text_color.opacity }}%); } 
+  
+  {% for item in module.box_item %}
+    {{ moduleId }} .trusindIBox:nth-child({{  loop.index }}) .trusindIBValue { color:rgba({{ item.box_value_color.color|convert_rgb }},{{ item.box_value_color.opacity }}%);  }
+    {{ moduleId }} .trusindIBox:nth-child({{  loop.index }}) .trusindIBtext { color:rgba({{ item.text_color.color|convert_rgb }},{{ item.text_color.opacity }}%); max-width:{{  item.text_max_width }}px;   }
+    {{ moduleId }} .trusindIBox:nth-child({{  loop.index }}) .trusindIBinn:before { background: repeating-linear-gradient(45deg, var(--color-azure-2030, rgba({{ item.box_main_color.color|convert_rgb }},{{ item.box_main_color.opacity }}%) ) 0, var(--color-azure-2030, rgba({{ item.box_main_color.color|convert_rgb }},{{ item.box_main_color.opacity }}%)) 5px, transparent 5px, transparent 8px);   }   
+
+    {{ moduleId }} .trusindIBox:nth-child({{  loop.index }}) .trusindItSss span { background:{{ item.box_main_color.color }};  }   
+   {{ moduleId }} .trusindIBox:nth-child({{  loop.index }}) .trusindIBLink a:hover { color: {{ item.box_main_color.color }}; }
+   {{ moduleId }} .trusindIBox:nth-child({{  loop.index }}) .trusindIBLink a:hover svg path { stroke: {{ item.box_main_color.color }}; }
+  {% endfor %}
+  
+  @media(max-width: 991px){ {{ moduleId }} .space-sec { {{ module.style.spacing.tablet.css }}; } }
+  
+  @media(max-width: 767px){ {{ moduleId }} .space-sec { {{ module.style.spacing.mobile.css }}; } }
+  
+</style>
+{% end_require_css %}
+
+
+
+{% endif %}
+

@@ -1,0 +1,11 @@
+.ebook_popup { display: none; position: fixed; width: 100%; height: 100%; top: 0; left: 0; z-index: 11; padding: 20px; }
+.ebook_inner { position: absolute; left: 20px; max-width: 500px; background: #122750; padding: 25px; border-radius: 20px; bottom: 20px; }
+.ebook_close { height: 20px; width: 20px; position: absolute; top: 8px; left: 8px; cursor: pointer; }
+.ebook_close:before, .ebook_close:after { content: ''; position: absolute; width: 16px; height: 2px; background: #fff; top: 50%; left: 50%; transform: translate(-50%, -50%) rotate(45deg); }
+.ebook_close:after { transform: translate(-50%, -50%) rotate(-45deg); }
+
+@media(max-width: 767px){
+  .ebook_inner { bottom: 10px; left: 10px; padding: 18px; border-radius: 10px; }
+  .ebook_img { max-width: 200px !important; }
+  .ebook_close { top: 3px; left: 3px; }
+}

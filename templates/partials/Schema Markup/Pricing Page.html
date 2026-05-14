@@ -1,0 +1,45 @@
+<!--
+  templateType: "page"
+  isAvailableForNewContent: false
+-->
+{% if module.content and module.content|length > 0 %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": 
+	[
+{
+	"@type": "OfferCatalog",
+	"name": "Workwize Pricing Plans",
+	"itemListElement": 
+		[
+		{% for item in module.content %}
+			{
+			"@type": "Offer",
+			"name": {{ item.title|striptags|tojson }},
+			"itemOffered": {
+				"@type": "Service",
+				"name": {{ item.title|striptags|tojson }},
+				"description": {{ item.title_text|striptags|tojson }},
+				"additionalProperty": [
+				{% for feature in item.list %}
+				{
+					"@type": "PropertyValue",
+					"name": "Feature",
+					"value": {{ feature.text_field|striptags|tojson }}
+				}{% if not loop.last %},{% endif %}
+				{% endfor %}
+				]
+			}
+		}{% if not loop.last %},{% endif %}
+		{% endfor %}
+	],
+  "mainEntityOfPage":
+    { 
+      "@id": "{{ content.absolute_url }}#webpage"
+    }
+}
+	]
+}
+</script>
+{% endif %}

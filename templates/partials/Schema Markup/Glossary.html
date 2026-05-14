@@ -1,0 +1,32 @@
+<!--
+  templateType: "page"
+  isAvailableForNewContent: false
+-->
+{% set clean_content = content.post_body|striptags %}
+{% set word_count = clean_content|split(" ")|length %}
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "DefinedTerm",
+  "@id": "{{ content.absolute_url }}#term",
+  "name": {{ content.name|striptags|tojson }},
+  "description": {{ content.meta_description|default(content.post_summary)|striptags|truncate(300)|tojson }},
+  "termCode": "{{ content.slug }}",
+  "inDefinedTermSet": 
+    {
+      "@type": "DefinedTermSet",
+      "name": "Workwize IT Glossary",
+      "url": "{{ group.absolute_url }}"
+    },
+  "mainEntityOfPage": 
+    {
+      "@id": "{{ content.absolute_url }}#webpage"
+    },
+  "about":
+  	{
+    	"@type": "Thing",
+        "name": {{ content.name|striptags|tojson }}
+    }
+}
+</script>

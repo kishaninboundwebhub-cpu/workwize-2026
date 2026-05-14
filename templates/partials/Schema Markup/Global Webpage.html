@@ -1,0 +1,55 @@
+<!--
+  templateType: "page"
+  isAvailableForNewContent: false
+-->
+{% set slug = content.slug %}
+
+{% if slug != "" 
+   and slug != "about"
+   and slug != "contact-us" %}
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "{{ content.absolute_url }}#webpage",
+      "url": "{{ content.absolute_url }}",
+      "name": {{ content.name|striptags|tojson }},
+      "breadcrumb": {
+        "@id": "{{ content.absolute_url }}#breadcrumb"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "{{ content.absolute_url }}#breadcrumb",
+      "itemListElement": [
+        {% set path_parts = request.path|trim("/")|split("/") %}
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.goworkwize.com/"
+        }
+
+        {% if path_parts and path_parts[0] != "" %}
+          {% set current_path_build = "" %}
+          {% for part in path_parts %}
+            {% set current_path_build = current_path_build + "/" + part %}
+            ,
+            {
+              "@type": "ListItem",
+              "position": {{ loop.index + 1 }},
+              "name": "{{ part|replace('-', ' ')|title }}"{% if not loop.last %},
+              "item": "https://www.goworkwize.com{{ current_path_build }}"{% endif %}
+            }
+          {% endfor %}
+        {% endif %}
+      ]
+    }
+  ]
+}
+</script>
+
+{% endif %}

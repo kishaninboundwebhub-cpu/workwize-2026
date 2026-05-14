@@ -1,0 +1,135 @@
+{% if module.show_hide_ %}
+{% set moduleId = '#hs_cos_wrapper_{{ name }}' %}
+<div class="why-chooose-sec fullwidth bgsec space-sec {% if module.style.add_shape %}wcshpsec{% endif %}">
+ {% if module.style.add_shape %}
+ {% if module.style.first_shape_image.src %}
+ <span class="wcshapeleft">  
+	{% set sizeAttrs = 'width="{{ module.style.first_shape_image.width }}" height="{{ module.style.first_shape_image.height }}"' %}
+	{% if module.style.first_shape_image.size_type == 'auto' %}
+	{% set sizeAttrs = 'width="{{ module.style.first_shape_image.width }}" height="{{ module.style.first_shape_image.height }}" style="max-width: 100%; height: auto;"' %}
+	{% elif module.style.first_shape_image.size_type == 'auto_custom_max' %}
+	{% set sizeAttrs = 'width="{{ module.style.first_shape_image.max_width }}" height="{{ module.style.first_shape_image.max_height }}" style="max-width: 100%; height: auto;"' %}
+	{% endif %}
+	{% set loadingAttr = module.style.first_shape_image.loading != 'disabled' ? 'loading="{{ module.style.first_shape_image.loading }}"' : '' %}
+	<img src="{{ module.style.first_shape_image.src }}" alt="{{ module.style.first_shape_image.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
+ </span>
+ {% endif %}
+ {% if module.style.second_shape_image.src %} 
+ <span class="wcshaperight"> 
+	{% set sizeAttrs = 'width="{{ module.style.second_shape_image.width }}" height="{{ module.style.second_shape_image.height }}"' %}
+	{% if module.style.second_shape_image.size_type == 'auto' %}
+	{% set sizeAttrs = 'width="{{ module.style.second_shape_image.width }}" height="{{ module.style.second_shape_image.height }}" style="max-width: 100%; height: auto;"' %}
+	{% elif module.style.second_shape_image.size_type == 'auto_custom_max' %}
+	{% set sizeAttrs = 'width="{{ module.style.second_shape_image.max_width }}" height="{{ module.style.second_shape_image.max_height }}" style="max-width: 100%; height: auto;"' %}
+	{% endif %}
+	{% set loadingAttr = module.style.second_shape_image.loading != 'disabled' ? 'loading="{{ module.style.second_shape_image.loading }}"' : '' %}
+	<img src="{{ module.style.second_shape_image.src }}" alt="{{ module.style.second_shape_image.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
+ </span> 
+ {% endif %} 
+ {% endif %} 
+ <div class="wrapper">
+  <div class="secinner why-chooose-inner">
+   {% if module.text or module.title %}   
+   <div class="why-chooose-header secheader w-100 text-center">
+    {% if module.title %} 
+    <div class="sectitle {% if not module.text %} removespace{% endif %}">
+     <h2>{{ module.title }}</h2> 
+    </div>
+    {% endif %}
+    {% if module.text %}  
+    <div class="sectxt"> 
+     {{ module.text }} 
+    </div>
+    {% endif %} 
+   </div>
+   {% endif %} 
+   <div class="why-chooose-box w-100">
+    <div class="why-chooose-row w-100 flexwrap">
+     {% for item in module.column %} 
+     <div class="why-chooose-cols">
+      {% if item.image.src %} 
+      <div class="why-chooose-colsimg">        
+       {% set sizeAttrs = 'width="{{ item.image.width }}" height="{{ item.image.height }}"' %}
+		   {% if item.image.size_type == 'auto' %}
+			 {% set sizeAttrs = 'width="{{ item.image.width }}" height="{{ item.image.height }}" style="max-width: 100%; height: auto;"' %}
+		   {% elif item.image.size_type == 'auto_custom_max' %}
+			 {% set sizeAttrs = 'width="{{ item.image.max_width }}" height="{{ item.image.max_height }}" style="max-width: 100%; height: auto;"' %}
+		   {% endif %}
+		   {% set loadingAttr = item.image.loading != 'disabled' ? 'loading="{{ item.image.loading }}"' : '' %}
+		   <img src="{{ item.image.src }}" alt="{{ item.image.alt }}" {{ loadingAttr }} {{ sizeAttrs }}> 
+      </div>
+      {% endif %} 
+      <div class="why-chooose-cntxt">
+       <h3 class="h4">{{ item.title }}</h3> 
+       <div class="wc-colstxt">
+        {{ item.text }}
+       </div> 
+      </div> 
+     </div>
+     {% endfor %} 
+    </div>  
+   </div> 
+   {% if module.button %} 
+   <div class="why-chooose-btns secbtns flexwrap w-100 justifyCenter text-center">
+    {% for item in module.button %} 
+    <div class="why-chooose-btn secbtn {{ item.button_choice }}">
+     {% set href = item.button_link.url.href %}
+     {% if item.button_link.url.type is equalto "EMAIL_ADDRESS" %}
+     {% set href = "mailto:" + href %}
+     {% endif %}
+     <a href="{{ href }}"
+     {% if item.button_link.open_in_new_tab %}target="_blank"{% endif %}
+     {% if item.button_link.rel %}rel="{{ item.button_link.rel }}"{% endif %}
+     >
+      {{ item.button_text }}
+     </a> 
+    </div>
+    {% endfor %} 
+   </div>  
+   {% endif %} 
+  </div>    
+ </div>
+</div>
+
+
+{% require_css %}
+<style>
+  {{ moduleId }} .bgsec { {% if module.style.select_background == 'bg_color' %}
+    background-color: rgba({{ module.style.background_color.color|convert_rgb }},{{ module.style.background_color.opacity ~ '%' }});
+    {% elif module.style.select_background == 'bg_image' %}
+    {{ module.style.background_image.css }} background-repeat: no-repeat;
+    {% elif module.style.select_background == 'bg_gradient' %}
+    background: {{ module.style.background_gradient.css }};
+    {% endif %} }
+  
+  {{ moduleId }} .space-sec { {{ module.style.spacing.desktop.css }}; }
+  
+  {{ moduleId }} .sectitle h1,
+  {{ moduleId }} .sectitle h2 , 
+  {{ moduleId }} .sectitle h3 , 
+  {{ moduleId }} .sectitle h4 , 
+  {{ moduleId }} .sectitle h5 ,
+  {{ moduleId }} .sectitle h6 { color: rgba({{ module.color_settings.title_color.color|convert_rgb }},{{ module.color_settings.title_color.opacity ~ '%' }}); }
+  {{ moduleId }} .sectxt , {{ moduleId }} .sectxt * { color: rgba({{ module.color_settings.text_color.color|convert_rgb }},{{ module.color_settings.text_color.opacity ~ '%' }}); } 
+  
+  {% for item in module.button %} 
+   {{ moduleId }} .secbtn:nth-child({{ loop.index }}) a { background-color: rgba({{ item.background_color.color|convert_rgb }},{{ item.background_color.opacity ~ '%' }}); border-color: rgba({{ item.border_color.color|convert_rgb }},{{ item.border_color.opacity ~ '%' }}); color: rgba({{ item.text_color.color|convert_rgb }},{{ item.text_color.opacity ~ '%' }}); }
+   {{ moduleId }} .secbtn:nth-child({{ loop.index }}) a:hover { background-color: rgba({{ item.background_color_hover_.color|convert_rgb }},{{ item.background_color_hover_.opacity ~ '%' }}); border-color: rgba({{ item.border_color_hover_.color|convert_rgb }},{{ item.border_color_hover_.opacity ~ '%' }}); color: rgba({{ item.text_color_hover_.color|convert_rgb }},{{ item.text_color_hover_.opacity ~ '%' }}); }  
+  {% endfor %}
+  
+  {% for item in module.column %} 
+   {{ moduleId }} .why-chooose-cols:nth-child({{ loop.index }}) ,
+   {{ moduleId }} .why-chooose-cols:nth-child({{ loop.index }}) h4 ,
+   {{ moduleId }} .why-chooose-cols:nth-child({{ loop.index }}) .wc-colstxt { color: rgba({{ item.text_color.color|convert_rgb }},{{ item.text_color.opacity ~ '%' }}); }
+   {{ moduleId }} .why-chooose-cols:nth-child({{ loop.index }}) .why-chooose-colsimg { background-color: rgba({{ item.image_background_color.color|convert_rgb }},{{ item.image_background_color.opacity ~ '%' }}); }  
+  {% endfor %}
+  
+  {{ moduleId }} .why-chooose-box { background-color: rgba({{ module.color_settings.box_background_color.color|convert_rgb }},{{ module.color_settings.box_background_color.opacity ~ '%' }}); }
+  
+  @media(max-width: 991px){ {{ moduleId }} .space-sec { {{ module.style.spacing.tablet.css }}; } }
+  
+  @media(max-width: 767px){ {{ moduleId }} .space-sec { {{ module.style.spacing.mobile.css }}; } }
+  
+</style>
+{% end_require_css %}
+{% endif %}

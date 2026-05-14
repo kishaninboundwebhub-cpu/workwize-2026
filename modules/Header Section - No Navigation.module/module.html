@@ -1,0 +1,90 @@
+{% set moduleID = "#hs_cos_wrapper_{{ name }}" %}
+<div class="header-sec headld-sec bgsec bgspace fullwidth header{{ widget_data.header_design.value|replace(" ", "-")|lower }}">
+ <div class="wrapper-1310">
+  <div class="header-outer fullwidth">
+   <div class="header-row flexwrap w-100 alignCenter">
+    <div class="header-logo hlogo{{ widget_data.header_design.value|replace(" ", "-")|lower }}">
+     {% set href = module.logo_link.url.href %}
+     {% if module.logo_link.url.type is equalto "EMAIL_ADDRESS" %}
+     {% set href = "mailto:" + href %}
+     {% endif %}
+     <a href="{{ href }}"
+     {% if module.logo_link.open_in_new_tab %}target="_blank"{% endif %}
+     {% if module.logo_link.rel %}rel="{{ module.logo_link.rel }}"{% endif %}
+     >       
+      {% if module.logo_for_white_.src %}
+      {% set sizeAttrs = 'width="{{ module.logo_for_white_.width }}" height="{{ module.logo_for_white_.height }}"' %}
+      {% if module.logo_for_white_.size_type == 'auto' %}
+      {% set sizeAttrs = 'width="{{ module.logo_for_white_.width }}" height="{{ module.logo_for_white_.height }}" style="max-width: 100%; height: auto;"' %}
+      {% elif module.logo_for_white_.size_type == 'auto_custom_max' %}
+      {% set sizeAttrs = 'width="{{ module.logo_for_white_.max_width }}" height="{{ module.logo_for_white_.max_height }}" style="max-width: 100%; height: auto;"' %}
+      {% endif %}
+      {% set loadingAttr = module.logo_for_white_.loading != 'disabled' ? 'loading="{{ module.logo_for_white_.loading }}"' : '' %}
+      <img class="header-lfwhite" src="{{ module.logo_for_white_.src }}" alt="{{ module.logo_for_white_.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
+      {% endif %}   
+       
+      {% if module.logo_for_sky_blue_.src %}
+      {% set sizeAttrs = 'width="{{ module.logo_for_sky_blue_.width }}" height="{{ module.logo_for_sky_blue_.height }}"' %}
+      {% if module.logo_for_sky_blue_.size_type == 'auto' %}
+      {% set sizeAttrs = 'width="{{ module.logo_for_sky_blue_.width }}" height="{{ module.logo_for_sky_blue_.height }}" style="max-width: 100%; height: auto;"' %}
+      {% elif module.logo_for_sky_blue_.size_type == 'auto_custom_max' %}
+      {% set sizeAttrs = 'width="{{ module.logo_for_sky_blue_.max_width }}" height="{{ module.logo_for_sky_blue_.max_height }}" style="max-width: 100%; height: auto;"' %}
+      {% endif %}
+      {% set loadingAttr = module.logo_for_sky_blue_.loading != 'disabled' ? 'loading="{{ module.logo_for_sky_blue_.loading }}"' : '' %}
+      <img class="header-lfdarkblue" src="{{ module.logo_for_sky_blue_.src }}" alt="{{ module.logo_for_sky_blue_.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
+      {% endif %} 
+       
+       {% if module.logo_for_dark_blue_.src %}
+      {% set sizeAttrs = 'width="{{ module.logo_for_dark_blue_.width }}" height="{{ module.logo_for_dark_blue_.height }}"' %}
+      {% if module.logo_for_dark_blue_.size_type == 'auto' %}
+      {% set sizeAttrs = 'width="{{ module.logo_for_dark_blue_.width }}" height="{{ module.logo_for_dark_blue_.height }}" style="max-width: 100%; height: auto;"' %}
+      {% elif module.logo_for_dark_blue_.size_type == 'auto_custom_max' %}
+      {% set sizeAttrs = 'width="{{ module.logo_for_dark_blue_.max_width }}" height="{{ module.logo_for_dark_blue_.max_height }}" style="max-width: 100%; height: auto;"' %}
+      {% endif %}
+      {% set loadingAttr = module.logo_for_dark_blue_.loading != 'disabled' ? 'loading="{{ module.logo_for_dark_blue_.loading }}"' : '' %}
+      <img class="header-lfskublue" src="{{ module.logo_for_dark_blue_.src }}" alt="{{ module.logo_for_dark_blue_.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
+      {% endif %} 
+     </a> 
+    </div> 
+    <div class="header-rght">
+     {% if module.button_group %} 
+     <div class="header-btns triggBtn hbtn{{ widget_data.header_design.value|replace(" ", "-")|lower }}">
+      {% for item in module.button_group %}
+      {% if item.button_text %} 
+      <div class="header-btn {{ item.link_or_button }}">
+       {% set href = item.button_link.url.href %}
+       {% if item.button_link.url.type is equalto "EMAIL_ADDRESS" %}
+       {% set href = "mailto:" + href %}
+       {% endif %}
+       <a href="{{ href }}"
+       {% if item.button_link.open_in_new_tab %}target="_blank"{% endif %}
+       {% if item.button_link.rel %}rel="{{ item.button_link.rel }}"{% endif %}
+       >
+        {{ item.button_text }} 
+       </a>  
+      </div>
+      {% endif %} 
+      {% endfor %}
+     </div> 
+     {% endif %}
+    </div> 
+   </div>
+  </div>  
+ </div> 
+</div>
+
+
+
+
+<style>
+  {{ moduleID }} .header-sec { {{ module.style.spacing.desktop.css }} }
+  
+  
+ @media (max-width: 991px) {
+   {{ moduleID }} .header-sec { {{ module.style.spacing.tablet.css }} }
+ }
+  
+ @media (max-width: 767px) {
+   {{ moduleID }} .header-sec { {{ module.style.spacing.mobile.css }} }
+ } 
+</style>

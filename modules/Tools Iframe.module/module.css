@@ -1,0 +1,15 @@
+.resou-post-iframe { position: relative; min-height: 6440px; margin: 0; }    
+.resou-post-iframe iframe { border: 0; width: 100%; height: 100%; position: absolute; }
+
+@media(max-width:991px){
+
+.resou-post-iframe { min-height: 6740px; }
+
+}
+
+
+@media(max-width:991px){
+
+.resou-post-iframe { min-height: 8080px; }
+
+}

@@ -1,0 +1,117 @@
+{% if module.show_hide_ %}
+{% set moduleId = '#hs_cos_wrapper_{{ name }}' %}
+
+<div class="demitttssec fullwidth bgsec space-sec">
+  <div class="demitttsImage">
+      {% if module.content.image_field.src %}
+      {% set sizeAttrs = 'width="{{ module.content.image_field.width|escape_attr }}" height="{{ module.content.image_field.height|escape_attr }}"' %}
+      {% if module.content.image_field.size_type == 'auto' %}
+      {% set sizeAttrs = 'width="{{ module.content.image_field.width|escape_attr }}" height="{{ module.content.image_field.height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+      {% elif module.content.image_field.size_type == 'auto_custom_max' %}
+      {% set sizeAttrs = 'width="{{ module.content.image_field.max_width|escape_attr }}" height="{{ module.content.image_field.max_height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+      {% endif %}
+      {% set loadingAttr = module.content.image_field.loading != 'disabled' ? 'loading="{{ module.content.image_field.loading|escape_attr }}"' : '' %}
+      <img src="{{ module.content.image_field.src|escape_url }}" alt="{{ module.content.image_field.alt|escape_attr }}" {{ loadingAttr }} {{ sizeAttrs }}>
+      {% endif %}
+  </div>
+ <div class="wrapper">
+   <div class="demitttsInner text-center">
+     <h2>{{ module.content.title }}</h2>
+     <div class="demitttsIstetx pb24">
+       {{ module.content.sub_text }}
+     </div>
+     {% if module.content.text %}
+     <div class="demitttsIssstetx pb24">
+       {{ module.content.text }}
+     </div>
+     {% endif %}
+     <div class="demitttsIstLiout">
+       {% if module.content.text_item %}
+       <div class="demitttsIstListe d_flex">
+         {% for item in module.content.text_item %}
+         <div class="demitttsIstLitext">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g clip-path="url(#clip0_1861_6869)">
+            <path d="M10.0022 18.7076C14.8101 18.7076 18.7076 14.8101 18.7076 10.0022C18.7076 5.1944 14.8101 1.29688 10.0022 1.29688C5.1944 1.29688 1.29688 5.1944 1.29688 10.0022C1.29688 14.8101 5.1944 18.7076 10.0022 18.7076Z" fill="white" fill-opacity="0.2"/>
+            <path d="M10.0022 18.7076C14.8101 18.7076 18.7076 14.8101 18.7076 10.0022C18.7076 5.1944 14.8101 1.29688 10.0022 1.29688C5.1944 1.29688 1.29688 5.1944 1.29688 10.0022C1.29688 14.8101 5.1944 18.7076 10.0022 18.7076Z" stroke="white" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M13.9107 6.98438L8.55357 13.6808L5.875 11.6719" stroke="white" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+            </g>
+            <defs>
+            <clipPath id="clip0_1861_6869">
+            <rect width="20" height="20" fill="white"/>
+            </clipPath>
+            </defs>
+            </svg>
+           <div class="demitttsIstLitxt">
+              {{ item.text }}
+           </div>
+         </div>
+         {% endfor %}
+
+       </div>
+       {% endif %}
+     </div>
+     <div class="demitttsIVtbtn pt40 d_flex flex_center secbtn  set-btn-arrows-true {{ module.content.button.button_choice }}">
+       {% set href = module.content.button.button_link.url.href %}
+        {% if module.content.button.button_link.url.type is equalto "EMAIL_ADDRESS" %}
+          {% set href = "mailto:" + href %}
+        {% elif module.content.button.button_link.url.type is equalto "PHONE_NUMBER" %}
+          {% set href = "tel:" + href %}
+        {% endif %}
+        <a
+          {% if module.content.button.button_link.url.type is equalto "CALL_TO_ACTION"  %}
+            href="{{ href }}" {# The href here is not escaped as it is not editable and functions as a JavaScript call to the associated CTA #}
+          {% else %}
+            href="{{ href|escape_url }}"
+          {% endif %}
+          {% if module.content.button.button_link.open_in_new_tab %}
+            target="_blank"
+          {% endif %}
+          {% if module.content.button.button_link.rel %}
+            rel="{{ module.content.button.button_link.rel|escape_attr }}"
+          {% endif %}
+          >
+          {{ module.content.button.button_text }}
+        </a>
+     </div>
+   </div>
+  </div>
+</div>
+
+  
+
+
+
+
+{% require_css %}
+<style>
+  {{ moduleId }} .bgsec { {% if module.style.select_background == 'bg_color' %}
+    background-color: rgba({{ module.style.background_color.color|convert_rgb }},{{ module.style.background_color.opacity ~ '%' }});
+    {% elif module.style.select_background == 'bg_image' %}
+    {{ module.style.background_image.css }} background-repeat: no-repeat;
+    {% elif module.style.select_background == 'bg_gradient' %}
+    background: {{ module.style.background_gradient.css }};
+    {% endif %} }
+  
+  {{ moduleId }} .space-sec { {{ module.style.spacing.desktop.css }}; }
+  
+  {{ moduleId }} .demitttsInner h2 { color:rgba({{ module.color_setting.title_color.color|convert_rgb }},{{ module.color_setting.title_color.opacity }}%); max-width:{{ module.content.title_max_width }}px;  }
+  {{ moduleId }} .demitttsInner h2 span { color:rgba({{ module.color_setting.title_span_color.color|convert_rgb }},{{ module.color_setting.title_span_color.opacity }}%);  }
+  {{ moduleId }} .demitttsIstetx { margin: 0 auto; max-width:{{ module.content.sub_text_max_width }}px; color:rgba({{ module.color_setting.sub_text_color.color|convert_rgb }},{{ module.color_setting.sub_text_color.opacity }}%);  }
+  {{ moduleId }} .demitttsIssstetx { color:rgba({{ module.color_setting.text_color.color|convert_rgb }},{{ module.color_setting.text_color.opacity }}%);  }
+  {{ moduleId }} .demitttsIstLitext { color:rgba({{ module.color_setting.list_text_color.color|convert_rgb }},{{ module.color_setting.list_text_color.opacity }}%);  }
+  {{ moduleId }} .demitttsIstLitext span { color:rgba({{ module.color_setting.list_text_span_color.color|convert_rgb }},{{ module.color_setting.list_text_span_color.opacity }}%);  }
+  {{ moduleId }} .demitttsIstLiout {  max-width:{{ module.content.list_text_max_width }}px; margin: 0 auto; }
+
+  
+  @media(max-width: 991px){ {{ moduleId }} .space-sec { {{ module.style.spacing.tablet.css }}; } }
+  
+  @media(max-width: 767px){ {{ moduleId }} .space-sec { {{ module.style.spacing.mobile.css }}; } }
+  
+</style>
+{% end_require_css %}
+
+
+
+{% endif %}
+

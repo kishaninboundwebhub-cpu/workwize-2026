@@ -1,0 +1,393 @@
+[ {
+  "id" : "55ccd3e2-31aa-4e79-9772-80facd954415",
+  "name" : "show_hide_",
+  "label" : "Section [Show/ Hide]",
+  "required" : false,
+  "locked" : false,
+  "display" : "toggle",
+  "type" : "boolean",
+  "display_width" : null,
+  "default" : true
+}, {
+  "id" : "a06887a2-7976-9955-573f-1b34cfeb2c29",
+  "name" : "images",
+  "label" : "Images",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "879aa52c-41f2-3791-5834-0f7371169e5e",
+    "name" : "image_1",
+    "label" : "Total Employees Section",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "3d4c091b-edab-8c1d-1d8a-829a65643b64",
+      "name" : "image",
+      "label" : "Image",
+      "required" : false,
+      "locked" : false,
+      "responsive" : true,
+      "resizable" : true,
+      "show_loading" : true,
+      "type" : "image",
+      "display_width" : null,
+      "default" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize/Image/Total%20Employees_section.svg",
+        "alt" : "Total Employees_section",
+        "loading" : "lazy",
+        "width" : 850,
+        "height" : 134,
+        "max_width" : 2000,
+        "max_height" : 315.0492264416315
+      }
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : {
+      "image" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize/Image/Total%20Employees_section.svg",
+        "alt" : "Total Employees_section",
+        "loading" : "lazy",
+        "width" : 850,
+        "height" : 134,
+        "max_width" : 2000,
+        "max_height" : 315.0492264416315
+      }
+    }
+  }, {
+    "id" : "c16d1f22-79ff-6058-11f8-fb15ce714d26",
+    "name" : "image_2",
+    "label" : "Employee Management Section",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "71a44a42-f750-6d9b-5ff0-4652d3b30523",
+      "name" : "image",
+      "label" : "Image",
+      "required" : false,
+      "locked" : false,
+      "responsive" : true,
+      "resizable" : true,
+      "show_loading" : true,
+      "type" : "image",
+      "display_width" : null,
+      "default" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize/Image/Employee%20Management_section.svg",
+        "alt" : "Employee Management_section",
+        "loading" : "lazy",
+        "width" : 1000,
+        "height" : 507,
+        "max_width" : 100,
+        "max_height" : 51
+      }
+    }, {
+      "id" : "d211e3c0-5dd9-daaf-d5f2-639d244851ed",
+      "name" : "mobile_image",
+      "label" : "Mobile Image",
+      "required" : false,
+      "locked" : false,
+      "responsive" : true,
+      "resizable" : true,
+      "show_loading" : true,
+      "type" : "image",
+      "display_width" : null,
+      "default" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize/Image/Employee%20Management_section_phone%201.png",
+        "alt" : "Employee Management_section_phone 1",
+        "loading" : "lazy",
+        "width" : 339,
+        "height" : 132,
+        "max_width" : 339,
+        "max_height" : 132
+      }
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : {
+      "image" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize/Image/Employee%20Management_section.svg",
+        "alt" : "Employee Management_section",
+        "loading" : "lazy",
+        "width" : 1000,
+        "height" : 507,
+        "max_width" : 100,
+        "max_height" : 51
+      },
+      "mobile_image" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize/Image/Employee%20Management_section_phone%201.png",
+        "alt" : "Employee Management_section_phone 1",
+        "loading" : "lazy",
+        "width" : 339,
+        "height" : 132,
+        "max_width" : 339,
+        "max_height" : 132
+      }
+    }
+  }, {
+    "id" : "a94d970f-4505-b7fd-df42-97ca04175bf9",
+    "name" : "image_3",
+    "label" : "In Transit Element",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "c780cad3-f1ce-bc2c-2a9c-7dd3d9f326f5",
+      "name" : "image",
+      "label" : "Image",
+      "required" : false,
+      "locked" : false,
+      "responsive" : true,
+      "resizable" : true,
+      "show_loading" : true,
+      "type" : "image",
+      "display_width" : null,
+      "default" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize/Image/In%20Transit_Element_2.svg",
+        "alt" : "In Transit_Element_2",
+        "loading" : "lazy",
+        "width" : 670,
+        "height" : 187,
+        "max_width" : 1831,
+        "max_height" : 511
+      }
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : {
+      "image" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize/Image/In%20Transit_Element_2.svg",
+        "alt" : "In Transit_Element_2",
+        "loading" : "lazy",
+        "width" : 670,
+        "height" : 187,
+        "max_width" : 1831,
+        "max_height" : 511
+      }
+    }
+  }, {
+    "id" : "c9bdd242-a9dd-97c9-b129-07b0a8933276",
+    "name" : "image_4",
+    "label" : "Delivery Status Element",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "44106b30-f99a-9e46-bf8a-8d56b8b9aade",
+      "name" : "image",
+      "label" : "Image",
+      "required" : false,
+      "locked" : false,
+      "responsive" : true,
+      "resizable" : true,
+      "show_loading" : true,
+      "type" : "image",
+      "display_width" : null,
+      "default" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize/Image/Delivery%20Status_Element.svg",
+        "alt" : "Delivery Status_Element",
+        "loading" : "lazy",
+        "width" : 500,
+        "height" : 176,
+        "max_width" : 1282,
+        "max_height" : 452
+      }
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : {
+      "image" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize/Image/Delivery%20Status_Element.svg",
+        "alt" : "Delivery Status_Element",
+        "loading" : "lazy",
+        "width" : 500,
+        "height" : 176,
+        "max_width" : 1282,
+        "max_height" : 452
+      }
+    }
+  }, {
+    "id" : "5d376100-4670-35cb-45f3-9842b2ebe514",
+    "name" : "image_5",
+    "label" : "Delivery Notification",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "81ecc6ad-daf1-784a-7014-e54fc245ff69",
+      "name" : "image",
+      "label" : "Image",
+      "required" : false,
+      "locked" : false,
+      "responsive" : true,
+      "resizable" : true,
+      "show_loading" : true,
+      "type" : "image",
+      "display_width" : null,
+      "default" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize/Image/Delivery_Notification.svg",
+        "alt" : "Delivery_Notification",
+        "loading" : "lazy",
+        "width" : 721,
+        "height" : 182,
+        "max_width" : 721,
+        "max_height" : 182
+      }
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : {
+      "image" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize/Image/Delivery_Notification.svg",
+        "alt" : "Delivery_Notification",
+        "loading" : "lazy",
+        "width" : 721,
+        "height" : 182,
+        "max_width" : 721,
+        "max_height" : 182
+      }
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "image_1" : {
+      "image" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize/Image/Total%20Employees_section.svg",
+        "alt" : "Total Employees_section",
+        "loading" : "lazy",
+        "width" : 850,
+        "height" : 134,
+        "max_width" : 2000,
+        "max_height" : 315.0492264416315
+      }
+    },
+    "image_2" : {
+      "image" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize/Image/Employee%20Management_section.svg",
+        "alt" : "Employee Management_section",
+        "loading" : "lazy",
+        "width" : 1000,
+        "height" : 507,
+        "max_width" : 100,
+        "max_height" : 51
+      },
+      "mobile_image" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize/Image/Employee%20Management_section_phone%201.png",
+        "alt" : "Employee Management_section_phone 1",
+        "loading" : "lazy",
+        "width" : 339,
+        "height" : 132,
+        "max_width" : 339,
+        "max_height" : 132
+      }
+    },
+    "image_3" : {
+      "image" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize/Image/In%20Transit_Element_2.svg",
+        "alt" : "In Transit_Element_2",
+        "loading" : "lazy",
+        "width" : 670,
+        "height" : 187,
+        "max_width" : 1831,
+        "max_height" : 511
+      }
+    },
+    "image_4" : {
+      "image" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize/Image/Delivery%20Status_Element.svg",
+        "alt" : "Delivery Status_Element",
+        "loading" : "lazy",
+        "width" : 500,
+        "height" : 176,
+        "max_width" : 1282,
+        "max_height" : 452
+      }
+    },
+    "image_5" : {
+      "image" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize/Image/Delivery_Notification.svg",
+        "alt" : "Delivery_Notification",
+        "loading" : "lazy",
+        "width" : 721,
+        "height" : 182,
+        "max_width" : 721,
+        "max_height" : 182
+      }
+    }
+  }
+}, {
+  "id" : "4615efe5-23a7-c107-1e3c-adca6ab774a1",
+  "name" : "background_image",
+  "label" : "Background Image",
+  "required" : false,
+  "locked" : false,
+  "responsive" : true,
+  "resizable" : true,
+  "show_loading" : false,
+  "type" : "image",
+  "display_width" : null,
+  "default" : {
+    "size_type" : "auto_custom_max",
+    "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize/Image/website-header-backgroundCompressed.jpg",
+    "alt" : "website-header-backgroundCompressed",
+    "loading" : "lazy",
+    "width" : 5385,
+    "height" : 3030,
+    "max_width" : 2000,
+    "max_height" : 1125.3481894150418
+  }
+}, {
+  "id" : "df411bfe-a4a2-fac4-4f1d-bb0ff7b35aa5",
+  "name" : "background_image_person",
+  "label" : "Background Image Person",
+  "required" : false,
+  "locked" : false,
+  "responsive" : true,
+  "resizable" : true,
+  "show_loading" : false,
+  "type" : "image",
+  "display_width" : null,
+  "default" : {
+    "size_type" : "exact",
+    "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize/Image/website-header-crop-foregroundCompressed.png",
+    "alt" : "website-header-crop-foregroundCompressed",
+    "loading" : "lazy",
+    "width" : 5385,
+    "height" : 3030,
+    "max_width" : 2000,
+    "max_height" : 1125.3481894150418
+  }
+} ]

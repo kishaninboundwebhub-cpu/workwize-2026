@@ -1,0 +1,85 @@
+[ {
+  "id" : "48cc78f8-ad70-5503-6148-c3f4300c8562",
+  "name" : "select_hubdb_table",
+  "label" : "Select HubDB table",
+  "required" : false,
+  "locked" : false,
+  "type" : "hubdbtable",
+  "display_width" : null,
+  "default" : 59539424
+}, {
+  "id" : "d3c52cce-a24d-b0ec-f2e8-bd6f09c2e47e",
+  "name" : "box_starting_text",
+  "label" : "Box Starting Text",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "Workwize Offers Laptop Procurement in"
+}, {
+  "id" : "92ddc3bd-2a57-b084-ed5c-2f0b299f0637",
+  "name" : "hide_show_section",
+  "label" : "Hide Show Section",
+  "required" : false,
+  "locked" : false,
+  "display" : "toggle",
+  "type" : "boolean",
+  "display_width" : null,
+  "default" : false
+}, {
+  "id" : "c4c78d03-c665-ad58-7a10-ea78fd546990",
+  "name" : "show_cta_only",
+  "label" : "Show CTA Only",
+  "required" : false,
+  "locked" : false,
+  "display" : "toggle",
+  "type" : "boolean",
+  "display_width" : null,
+  "default" : true
+}, {
+  "id" : "7d86f034-c27c-ef00-98bc-fd2e126f1ffd",
+  "name" : "button_text",
+  "label" : "Button Text",
+  "required" : false,
+  "locked" : false,
+  "visibility" : {
+    "controlling_field" : null,
+    "controlling_field_path" : "show_cta_only",
+    "controlling_value_regex" : "true",
+    "property" : null,
+    "operator" : "MATCHES_REGEX",
+    "access" : null
+  },
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "Book a Demo"
+}, {
+  "id" : "72eb481d-eda4-4e89-35ad-5886953fbbfb",
+  "name" : "button_link",
+  "label" : "Button Link",
+  "required" : false,
+  "locked" : false,
+  "visibility" : {
+    "controlling_field" : null,
+    "controlling_field_path" : "show_cta_only",
+    "controlling_value_regex" : "true",
+    "property" : null,
+    "operator" : "MATCHES_REGEX",
+    "access" : null
+  },
+  "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG", "CALL_TO_ACTION", "PHONE_NUMBER", "WHATSAPP_NUMBER", "PAYMENT" ],
+  "show_advanced_rel_options" : false,
+  "type" : "link",
+  "display_width" : null,
+  "default" : {
+    "url" : {
+      "content_id" : null,
+      "href" : "#requestdemo",
+      "type" : "EXTERNAL"
+    },
+    "open_in_new_tab" : false,
+    "no_follow" : false
+  }
+} ]

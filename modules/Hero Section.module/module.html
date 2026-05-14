@@ -1,0 +1,233 @@
+{% if module.show_hide_ %}
+{% set moduleId = '#hs_cos_wrapper_{{ name }}' %}
+<div class="herosec fullwidth bgsec space-sec">
+  
+  <div class="hero-lmLottie">
+        <dotlottie-player 
+          src="{{ module.select_lottie_file }}" 
+          background="transparent" 
+          speed="1" 
+          style="width: 100%; height: auto;" 
+          preserveAspectRatio="xMidYMid meet"
+          loop 
+          autoplay>
+        </dotlottie-player>
+    </div>
+    
+    <div class="hero-lrimgs">
+    
+    <div class="hero-lmouseimg">
+      {% if module.left_mouse_image.src %}
+      {% set sizeAttrs = 'width="{{ module.left_mouse_image.width|escape_attr }}" height="{{ module.left_mouse_image.height|escape_attr }}"' %}
+      {% if module.left_mouse_image.size_type == 'auto' %}
+        {% set sizeAttrs = 'width="{{ module.left_mouse_image.width|escape_attr }}" height="{{ module.left_mouse_image.height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+      {% elif module.left_mouse_image.size_type == 'auto_custom_max' %}
+        {% set sizeAttrs = 'width="{{ module.left_mouse_image.max_width|escape_attr }}" height="{{ module.left_mouse_image.max_height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+      {% endif %}
+       {% set loadingAttr = module.left_mouse_image.loading != 'disabled' ? 'loading="{{ module.left_mouse_image.loading|escape_attr }}"' : '' %}
+      <img src="{{ module.left_mouse_image.src|escape_url }}" alt="{{ module.left_mouse_image.alt|escape_attr }}" {{ loadingAttr }} {{ sizeAttrs }}>
+    {% endif %}
+    </div>
+    
+    <div class="hero-lkeyimg">
+      {% if module.left_image.src %}
+      {% set sizeAttrs = 'width="{{ module.left_image.width|escape_attr }}" height="{{ module.left_image.height|escape_attr }}"' %}
+      {% if module.left_image.size_type == 'auto' %}
+        {% set sizeAttrs = 'width="{{ module.left_image.width|escape_attr }}" height="{{ module.left_image.height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+      {% elif module.left_image.size_type == 'auto_custom_max' %}
+        {% set sizeAttrs = 'width="{{ module.left_image.max_width|escape_attr }}" height="{{ module.left_image.max_height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+      {% endif %}
+       {% set loadingAttr = module.left_image.loading != 'disabled' ? 'loading="{{ module.left_image.loading|escape_attr }}"' : '' %}
+      <img src="{{ module.left_image.src|escape_url }}" alt="{{ module.left_image.alt|escape_attr }}" {{ loadingAttr }} {{ sizeAttrs }}>
+    {% endif %}
+    </div>
+    <div class="hero-laprimg">
+      {% if module.right_image.src %}
+      {% set sizeAttrs = 'width="{{ module.right_image.width|escape_attr }}" height="{{ module.right_image.height|escape_attr }}"' %}
+      {% if module.right_image.size_type == 'auto' %}
+        {% set sizeAttrs = 'width="{{ module.right_image.width|escape_attr }}" height="{{ module.right_image.height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+      {% elif module.right_image.size_type == 'auto_custom_max' %}
+        {% set sizeAttrs = 'width="{{ module.right_image.max_width|escape_attr }}" height="{{ module.right_image.max_height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+      {% endif %}
+       {% set loadingAttr = module.right_image.loading != 'disabled' ? 'loading="{{ module.right_image.loading|escape_attr }}"' : '' %}
+      <img src="{{ module.right_image.src|escape_url }}" alt="{{ module.right_image.alt|escape_attr }}" {{ loadingAttr }} {{ sizeAttrs }}>
+    {% endif %}
+    </div>
+  </div>
+  
+  
+ <div class="wrapper">
+  <div class="heroinner secinner fullwidth">
+   <div class="heroheader secheader w-100 text-center"> 
+   
+     {% if module.top_logo.src %}
+      <div class="herotlogo flex align_center flex_center  text-center pb12 wow fadeInUp">
+        {% set sizeAttrs = 'width="{{ module.top_logo.width|escape_attr }}" height="{{ module.top_logo.height|escape_attr }}"' %}
+        {% if module.top_logo.size_type == 'auto' %}
+          {% set sizeAttrs = 'width="{{ module.top_logo.width|escape_attr }}" height="{{ module.top_logo.height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+        {% elif module.top_logo.size_type == 'auto_custom_max' %}
+          {% set sizeAttrs = 'width="{{ module.top_logo.max_width|escape_attr }}" height="{{ module.top_logo.max_height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+        {% endif %}
+         {% set loadingAttr = module.top_logo.loading != 'disabled' ? 'loading="{{ module.top_logo.loading|escape_attr }}"' : '' %}
+        <img src="{{ module.top_logo.src|escape_url }}" alt="{{ module.top_logo.alt|escape_attr }}" {{ loadingAttr }} {{ sizeAttrs }}>
+      </div>
+    {% endif %}
+     
+     
+    {% if module.title %}  
+    <div class="herotitle sectitle wow fadeInUp">
+     <h1>{{ module.title }}</h1> 
+    </div>
+    {% endif %}
+    {% if module.text %}
+    <div class="herotxt sectxt wow fadeInUp"> 
+     {{ module.text }} 
+    </div>
+    {% endif %} 
+    {% if module.button %} 
+    <div class="herobtns secbtns flexwrap triggBtn justifyCenter w-100 wow fadeInUp">
+    {% for item in module.button %}
+    <div class="herobtn secbtn {{ item.button_choice }} set-btn-arrows-{{ item.set_arrow_ }}">
+       {% set href = item.button_link.url.href %}
+       {% if item.button_link.url.type is equalto "EMAIL_ADDRESS" %}
+       {% set href = "mailto:" + href %}
+       {% endif %}
+       <a href="{{ href }}"
+       {% if item.button_link.open_in_new_tab %}target="_blank"{% endif %}
+       {% if item.button_link.rel %}rel="{{ item.button_link.rel }}"{% endif %}
+       >
+        {{ item.button_text }}
+       </a>  
+    </div>
+    {% endfor %} 
+   </div>  
+   {% endif %}  
+  
+   </div>
+   
+    
+  </div>    
+ </div>
+</div>
+
+
+
+
+
+{% require_css %}
+<style>
+  {{ moduleId }} .bgsec { {% if module.style.select_background == 'bg_color' %}
+    background-color: rgba({{ module.style.background_color.color|convert_rgb }},{{ module.style.background_color.opacity ~ '%' }});
+    {% elif module.style.select_background == 'bg_image' %}
+    {{ module.style.background_image.css }} background-repeat: no-repeat;
+    {% elif module.style.select_background == 'bg_gradient' %}
+    background: {{ module.style.background_gradient.css }};
+    {% endif %} }
+  
+  {{ moduleId }} .space-sec { {{ module.style.spacing.desktop.css }}; }
+  
+  {{ moduleId }} .sectitle h1 { color: rgba({{ module.color_settings.title_color.color|convert_rgb }},{{ module.color_settings.title_color.opacity ~ '%' }}); }
+  {{ moduleId }} .sectitle h1 span { color: rgba({{ module.color_settings.title_span_color.color|convert_rgb }},{{ module.color_settings.title_span_color.opacity ~ '%' }}); }
+  {{ moduleId }} .sectxt , {{ moduleId }} .sectxt * { color: rgba({{ module.color_settings.text_color.color|convert_rgb }},{{ module.color_settings.text_color.opacity ~ '%' }}); } 
+  {{ moduleId }} .herotxt { max-width:{{ module.text_max_width }}px;  }
+  
+  
+  {% for item in module.button %} 
+   {{ moduleId }} .secbtn:nth-child({{ loop.index }}) a { background-color: rgba({{ item.background_color.color|convert_rgb }},{{ item.background_color.opacity ~ '%' }}); border-color: rgba({{ item.border_color.color|convert_rgb }},{{ item.border_color.opacity ~ '%' }}); color: rgba({{ item.text_color.color|convert_rgb }},{{ item.text_color.opacity ~ '%' }}); }
+   {{ moduleId }} .secbtn:nth-child({{ loop.index }}) a:hover { background-color: rgba({{ item.background_color_hover_.color|convert_rgb }},{{ item.background_color_hover_.opacity ~ '%' }}); border-color: rgba({{ item.border_color_hover_.color|convert_rgb }},{{ item.border_color_hover_.opacity ~ '%' }}); color: rgba({{ item.text_color_hover_.color|convert_rgb }},{{ item.text_color_hover_.opacity ~ '%' }}); }  
+  {% endfor %}
+  
+  {% if module.shape_image.src %}
+   {{ moduleId }} .heroinner:before { background-image: url({{ module.shape_image.src }}); }
+  {% endif %}
+  
+  {{ moduleId }} .heroheader { max-width: {{ module.header_max_width }}px; }
+  
+  
+  @media(max-width: 991px){ {{ moduleId }} .space-sec { {{ module.style.spacing.tablet.css }}; } }
+  
+  @media(max-width: 767px){ {{ moduleId }} .space-sec { {{ module.style.spacing.mobile.css }}; } }
+  
+</style>
+{% end_require_css %}
+
+
+{% require_js %}
+  <script>
+ 
+//   $(document).ready(function() {
+//   function loadIframeOnScroll() {
+//     $('.lazy-iframe').each(function() {
+//       var $this = $(this);
+//       if ($this.hasClass('iframe-loaded')) return;
+
+//       var windowBottom = $(window).scrollTop() + $(window).height();
+//       var elementTop = $this.offset().top;
+
+//       if (windowBottom + 200 >= elementTop) {  // load 200px before reaching it
+//         var iframeCode = $this.attr('data-iframe');
+//         $this.html(iframeCode);
+//         $this.addClass('iframe-loaded');
+//       }
+//     });
+//   }
+
+//   // On page load and scroll
+//   $(window).on('scroll load', loadIframeOnScroll);
+// });
+    
+    
+    
+    
+    $(document).ready(function() {
+  // Open popup & load video dynamically
+  $('a.open-popup').click(function(e) {
+    e.preventDefault();
+
+    var targetPopup = $(this).attr('href');
+    $(targetPopup).addClass('openpopup');
+    $('body').addClass('over-hidden');
+
+    var videoWrapper = $(targetPopup).find('.popp-vids-inn');
+    var videoElement = videoWrapper.find('video')[0];
+    var videoUrl = videoWrapper.data('video');
+
+    if (videoElement && videoUrl) {
+      // Set the source dynamically
+      $(videoElement).attr('src', videoUrl);
+      videoElement.load();  // Load new source
+      videoElement.play();
+    }
+  });
+
+  // Close popup and stop video
+  $('.close-popp, .popp-vids-over').click(function() {
+    var popup = $(this).closest('.popp-vids-over');
+    popup.removeClass('openpopup');
+    $('body').removeClass('over-hidden');
+
+    var videoElement = popup.find('video')[0];
+    if (videoElement) {
+      videoElement.pause();
+      videoElement.currentTime = 0;
+      $(videoElement).attr('src', ''); // Remove src for cleanup
+    }
+  });
+
+  // Prevent closing when clicking inside the video area
+  $('.popp-vids-inn').click(function(e) {
+    e.stopPropagation();
+  });
+});
+
+
+
+
+  </script>
+{% end_require_js %}
+
+
+{% endif %}
+
+
+

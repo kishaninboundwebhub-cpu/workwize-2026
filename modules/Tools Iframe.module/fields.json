@@ -1,0 +1,12 @@
+[ {
+  "id" : "ca5637ca-60e6-20a8-8ca1-6ec9be4678bd",
+  "name" : "add_iframe_here",
+  "label" : "Add Iframe Here",
+  "inline_help_text" : "Add Iframe Here:",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "<iframe   src=\"https://employee-equipment-policy-generator.lovable.app/\"  width=\"100%\"   height=\"800\"   style=\"border:0;\"></iframe>"
+} ]

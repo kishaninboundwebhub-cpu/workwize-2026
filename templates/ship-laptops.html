@@ -1,0 +1,66 @@
+<!--
+  templateType: page
+  isAvailableForNewContent: true
+  label: Ship Laptops - 2024
+-->
+{% extends "./layouts/base.html" %}
+
+{% block body %}
+
+{# All templates are recommended to have an h1 present for both accessibility and SEO best practice. This should be at the top of the template before any other textual content. The h1 element below is within a dnd area to allow content editors the ability to adjust the content and alignment of the text. #}
+<main class="body-container-wrapper">
+{% dnd_area "dnd_area" label="Listing Section", class="body-container body-container--hubdb" %}
+
+ 
+   
+  {% dnd_section full_width="true" padding={'default': { 'top': 0 , 'right': 0 , 'left': 0 , 'bottom': 0 } } %}
+    {% dnd_module "module_17189652417965" path="/Workwize/modules/Updated HUBDB Combine Country - 2024", label="Updated HUBDB Combine Country - 2024" %}
+    {% end_dnd_module %}
+  {% end_dnd_section %}
+  
+
+
+{% end_dnd_area %}
+
+ 
+ {% module "module_173262651576612" path="/Workwize/modules/Ship Laptops Content - HubDB Inner", label="Ship Laptops Content - HubDB Inner" %} 
+  
+ {% module "module_17229367273834" path="/Workwize/modules/FAQ Section - HubDB Inner", label="FAQ Section - HubDB Inner" %}
+  
+ 
+ 
+  
+   
+  
+</main>
+
+
+
+
+
+{% endblock body %}
+
+{% require_head %}
+{% if dynamic_page_hubdb_row %}
+
+
+{% else %}
+ <meta name="robots" content="noindex,nofollow">
+{% endif %}
+{% end_require_head %}
+
+{#
+{% if dynamic_page_hubdb_row %}
+   {% require_js %}
+    <script>
+	     $(document).ready(function(){
+				 $('body').addClass('hs-hubdb-post');
+				 $('.header-logo').addClass('hlogowhite-text-with-sky-blue-logo'); 
+         $('.header-logo').removeClass('hlogodark-blue-text-and-logo'); 
+         $('.header-sec').addClass('headerwhite-text-with-sky-blue-logo'); 
+         $('.header-sec').removeClass('headerdark-blue-text-and-logo'); 
+         
+			 });
+	   </script>
+    {% end_require_js %}
+{% endif %} #}

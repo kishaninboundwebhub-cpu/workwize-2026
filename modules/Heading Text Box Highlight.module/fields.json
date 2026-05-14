@@ -1,0 +1,10 @@
+[ {
+  "id" : "a404dbda-cc21-5068-a484-2460237fd028",
+  "name" : "heading_and_text",
+  "label" : "Heading And Text",
+  "required" : false,
+  "locked" : false,
+  "type" : "richtext",
+  "display_width" : null,
+  "default" : "<h3 id=\"The-why--why-is-iTSM-software-important-for-your-business\">The<span>&nbsp;</span><em>Why</em>: Why Is ITSM Software Important For Your Business</h3>\n<p>An ITSM solution helps organizations deal with IT issues, prevent outages, resolve issues quickly, and enable employees to work uninterrupted.</p>\n<p>Before you buy, it’s important to understand why you are looking for an ITSM tool in the first place.</p>"
+} ]

@@ -1,0 +1,340 @@
+{% if module.show_hide_ %}
+{% set moduleId = '#hs_cos_wrapper_{{ name }}' %}
+<div class="{{name}}">
+
+
+  <div class="multistepformpopupbox mfp-hide  {% if module.update_style %} multistepformpopUpdate {% endif %}" id="multisteppopup">
+    <div class="" id="{{ module.form_id }}">
+
+
+      <div class="multistepformBox" >
+        <div id="progress-bar">
+          <ul class="progress-steps">
+            <li class="step active" data-step="1"><span class="step-icon">✓</span></li>
+            <li class="step" data-step="2"><span class="step-icon">2</span></li>
+            <li class="step" data-step="3"><span class="step-icon">3</span></li>
+            <li class="step" data-step="4"><span class="step-icon">4</span></li>
+          </ul>
+        </div>
+
+        {% form
+	         form_to_use="{{ module.form.form_id }}"
+	         response_response_type="{{ module.form.response_type }}"
+	         response_message="{{ module.form.message }}"
+	         response_redirect_id="{{ module.form.redirect_id }}"
+	         response_redirect_url="{{module.form.redirect_url}}"
+	         gotowebinar_webinar_key="{{ module.form.gotowebinar_webinar_key }}"
+         %}
+
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+{% endif %}
+
+
+{% require_js %}
+<script>
+  $(".FormLoader").show()
+
+
+
+  function loadForm12(){
+    console.log('test','test');
+    if($(`#{{ module.form_id }}`).find('form').length){
+      var formid = `#{{ module.form_id }}`;
+
+      $(formid).addClass('form-loaded');
+      //$(formid + ' .hs-richtext').parent().addClass('wrapper-point');
+      $(formid + ' .hs-richtext.hs-main-font-element').each(function(){
+        if($(this).find('img').length){
+          $(this).parent().addClass('wrapper-point');
+        }
+      });
+
+      $(document).on("keypress", formid+" form", function(event) { 
+        return event.keyCode != 13;
+      });
+
+
+      $(formid+' .multistepformBox .wrapper-point').each(function (index) {
+
+        if($(this).find(formid+' .hs-richtext.hs-main-font-element > img').length){
+          console.log("check lenght")
+          return;
+        }
+        else{
+
+
+          var dataStep = "step"+(index+1);
+          var stepnumber = index+1;
+          console.log(stepnumber,"check lenght")
+          $(this).nextUntil(".wrapper-point").addBack().wrapAll('<div data-filter=".' + dataStep + '" data-number='+ stepnumber +' class="form-step-content ' + dataStep + '" />');
+        }
+
+      });
+      var totalSteps  = $(formid + ' .form-step-content').length;
+      console.log(totalSteps,"totalSteps")
+      var progressSteps = $('.progress-steps');
+      progressSteps.empty(); // Clear any existing steps
+      for (let i = 1; i <= totalSteps; i++) {
+        progressSteps.append(`
+        <li class="step ${i === 1 ? 'active' : ''}" data-step="${i}">
+          <span class="step-icon">${i === 1 ? i : i}</span>
+  </li>
+      `);
+      }
+
+
+      function updateProgressBar(currentStep) {
+        $('.progress-steps .step[data-step='+currentStep+']').addClass('active').removeClass('completed').prevAll(".step").addClass('completed').removeClass('active');
+     $('.progress-steps .step[data-step='+currentStep+']').siblings('.step').removeClass('active')
+
+      }
+
+      updateProgressBar(1);
+
+
+      $(formid+' .form-step-content').each(function () {
+        if(!$(this).find('.hs-button.primary').length > 0){
+
+          $(this).append('<div class="stepcta"><a class="hs-button disable primary prev-btn">Previous</a><span class="allsteps"></span><a class="hs-button disable primary next-btn">Next</a></div>'); 
+
+
+        }
+        else{
+          //           $(this).find('.hs_submit').addClass('stepcta');
+          $(this).find('.actions').prepend('<div class="stepcta"><a class="hs-button disable primary prev-btn">Previous</a><span class="allsteps"></span><a class="hs-button  primary next-btn submit_btn">Submit</a></div>');
+          //           $(this).find('.hs_submit .actions').prepend('<a class="hs-button disable primary prev-btn">Previous</a><span class="allsteps"></span>'); 
+        } 
+      });
+
+      $(formid+' .form-step-content.step1,.ms-form-steps .from-step-outer:first-child').addClass('active');
+      $(formid+' .form-step-content.step1,.ms-form-steps .from-step-outer:first-child').show();
+      var validity = false; 
+
+
+      $(document).on('click', '.multistepformBox .next-btn',function(){
+        var el = $(this);
+        var element =  $(this).closest('.form-step-content').find('[required]');
+        var elementtwo =  $(this).closest('.form-step-content').find('ul[required]');
+        var file =  $(this).closest('.form-step-content').find('input[type="file"]');
+        var elcount = 0;
+        var currentStep = parseInt($('.visiblestep').text()) || 1;
+
+
+
+
+        var getRel = $(this).closest('.form-step-content').attr('data-filter');
+        if(!element.hasClass('invalid')){
+
+          validity = true;
+        }
+        else{
+          setTimeout(function() {
+            $(".FormLoader").fadeIn(250)
+          },500)
+          validity = false;
+        }
+
+        element.each(function () {
+          var elnew = $(this);
+          $(this).focus();
+          elnew.blur();
+          setTimeout(function(){ 
+            if(elnew.hasClass('invalid')){
+
+              validity=false;
+            }
+          }, 500);
+        });
+
+        elementtwo.each(function () {
+          var elnew = $(this).find('input');
+          elnew.each(function(){
+            var el = $(this);
+            if (el.is(':checked')) {
+              elcount = elcount+1;
+            }
+          });
+
+          if(elcount < 1){
+            validity=false;
+            $(this).after('<ul class="no-list hs-error-msgs inputs-list" ><li><label >Please complete this required field.</label></li></ul>')
+          }
+          else{
+            $(this).next('.hs-error-msgs').remove();
+          }
+
+          elcount=0;
+        });
+
+        file.each(function(){
+          if($(this).closest('.hs_file_upload').find('.hs-form-required').length > 0){
+            var getid = $(this).attr('id'); 
+
+            if ($(this).get(0).files.length === 0) {
+              validity=false;
+              $(this).closest('.hs-form-field').after('<ul class="no-list hs-error-msgs inputs-list" ><li><label >Please complete this required field.</label></li></ul>');
+            }
+            else{
+              $(this).closest('.hs-form-field').next('.hs-error-msgs').remove();
+            }
+          }
+        });
+
+
+        $(formid).click()
+
+        // Update progress bar on successful navigation
+        if (validity) {
+//           var nextStep = currentStep + 1;
+//           $('.visiblestep').text(nextStep);
+//           updateProgressBar(nextStep);
+//           console.log(nextStep,"nextStep next click")
+        }
+
+        setTimeout(function(){ 
+          if(validity){
+
+//           var nextStep = currentStep + 1;
+        
+            
+            $(".FormLoader").fadeIn(250);
+
+            $(formid+' .from-step-outer'+getRel).removeClass('active').addClass('completed');
+            $(formid+' .from-step-outer'+getRel).next().addClass('active');
+
+            var nextstepnumber = el.closest('.form-step-content').next().attr('data-number');
+            console.log(nextstepnumber,"nextstepnumber")
+            $('.visiblestep').text(nextstepnumber)
+
+              $('.visiblestep').text(nextstepnumber);
+          updateProgressBar(nextstepnumber);
+          console.log(nextstepnumber,"nextStep next click")
+            
+            
+            el.closest('.form-step-content').removeClass('active invalid').fadeOut('500',function(){
+              el.closest('.form-step-content').next().addClass('active').fadeIn(500);  
+
+              validity = false;
+            });
+            setTimeout(function() {
+              $(".FormLoader").fadeOut(250)
+            },1000)
+            if(el.hasClass('submit_btn')){
+              $(".FormLoader").fadeIn(250);
+              $(".FormLoader").addClass("Darkwhite")
+              //$(this).next('input[type="submit"]').click();
+              setTimeout(function() {
+                $(".FormLoader").fadeOut(250)
+              },4000)
+              $(formid+' input[type="submit"]').click()
+            }
+          }else{
+            el.closest('.form-step-content').addClass('invalid'); 
+          }
+
+          elcount=0
+        }, 500);
+      });
+
+
+
+      var btnval = $(' .submit_btn').next('input[type="submit"]').val();
+      $(' .submit_btn').text(btnval);
+
+
+
+      $(document).on('click','.multistepformBox .prev-btn',function(){
+        var el = $(this);
+        var getRel = $(this).closest('.form-step-content').attr('data-filter');
+        console.log(getRel,"getRel")
+
+
+
+        $(' .form-step-content'+getRel).removeClass('active').removeClass('completed');
+        $(' .form-step-content'+getRel).prev().addClass('active').removeClass('completed');;
+        el.closest(' .form-step-content').removeClass('active').fadeOut('500',function(){
+          el.closest(' .form-step-content').prev().addClass('active').fadeIn();
+          var nextstepnumber = $('.form-step-content:visible').attr('data-number');
+          console.log(nextstepnumber,"nextstepnumber")
+          $('.visiblestep').text(nextstepnumber)
+
+
+          var currentStep = $(this).closest('.form-step-content').attr('data-number');;
+          console.log(currentStep,"currentStep")
+          var prevStep = currentStep - 1;
+
+          if (currentStep > 1) {
+            var prevStep = currentStep - 1;
+            $('.visiblestep').text(prevStep);
+            updateProgressBar(prevStep);
+          }
+
+        });
+      });
+
+      $(' .page-center').show(); 
+      $(' .form-loader').hide();
+    }
+
+    //     function updateProgressBar(current, total) {
+    //       var progressPercentage = (current / total) * 100;
+    //       $('.current-step').text(current);
+    //       $('.progress-fill').css('width', progressPercentage + '%');
+    //     }
+  }
+
+
+
+  window.addEventListener('message', function(event) {
+    if(event.data.type === 'hsFormCallback' && event.data.eventName === 'onFormReady'  && event.data.id == $(`.{{name}} #multisteppopup`).find('form').data('form-id')) {
+      setTimeout(function() {
+        $(".FormLoader").fadeOut(250)
+      },500)
+      if($(".multistepformBox form .hs-richtext img").length > "0"){
+      loadForm12();
+      } else {
+      $('#progress-bar').hide()
+      }
+
+
+      function formshouldLoad(){
+        if($(`.{{name}} #multisteppopup`).hasClass('form-loaded')){
+
+          console.log("jquery start here")
+
+        } else {
+          //                             loadForm()
+        }
+      }
+    }
+  });
+
+
+  //   Form Submit event
+  window.addEventListener('message', function(event) {
+    if (event.data.type === 'hsFormCallback' && event.data.eventName === 'onFormSubmit' && event.data.id == $(`#{{ module.form_id }}`).find('form').data('form-id')) {
+      console.log("form is submitted")
+      $(".FormLoader").fadeIn(250);
+      setTimeout(function() {
+        $('#multisteppopup').find('button.mfp-close').trigger('click');
+
+        location.reload();
+      },2000)
+    }
+  });
+
+
+
+
+</script>
+
+{% end_require_js %}

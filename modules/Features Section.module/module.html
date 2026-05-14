@@ -1,0 +1,305 @@
+{% if module.show_hide_ %}
+{% set moduleId = '#hs_cos_wrapper_{{ name }}' %}
+
+<div class="featuressec featurnewn{{ module.content.select_layout }} fullwidth bgsec space-sec">
+ <div class="wrapper">
+   <div class="featuresTitle pb44 wow fadeInUp">
+     <h2>{{ module.content.title }}</h2>
+   </div>
+   <div class="featuresInner d_flex wow fadeInUp">
+     <div class="featuresLeft">
+       <div class="featuresLinns">
+       <div class="featuresTabs">
+         {% for item in module.content.feature_tab %}
+         <div class="featuresTab d_flex align_center gap12" data-value=".tabs{{  loop.index }}">
+          {% if item.feature_tab_icon.src %}
+            {% set sizeAttrs = 'width="{{ item.feature_tab_icon.width|escape_attr }}" height="{{ item.feature_tab_icon.height|escape_attr }}"' %}
+            {% if item.feature_tab_icon.size_type == 'auto' %}
+              {% set sizeAttrs = 'width="{{ item.feature_tab_icon.width|escape_attr }}" height="{{ item.feature_tab_icon.height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+            {% elif item.feature_tab_icon.size_type == 'auto_custom_max' %}
+              {% set sizeAttrs = 'width="{{ item.feature_tab_icon.max_width|escape_attr }}" height="{{ item.feature_tab_icon.max_height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+            {% endif %}
+             {% set loadingAttr = item.feature_tab_icon.loading != 'disabled' ? 'loading="{{ item.feature_tab_icon.loading|escape_attr }}"' : '' %}
+            <img class="featuresTDef" src="{{ item.feature_tab_icon.src|escape_url }}" alt="{{ item.feature_tab_icon.alt|escape_attr }}" {{ loadingAttr }} {{ sizeAttrs }}>
+          {% endif %}
+           
+           {% if item.feature_tab_active_icon.src %}
+              {% set sizeAttrs = 'width="{{ item.feature_tab_active_icon.width|escape_attr }}" height="{{ item.feature_tab_active_icon.height|escape_attr }}"' %}
+              {% if item.feature_tab_active_icon.size_type == 'auto' %}
+                {% set sizeAttrs = 'width="{{ item.feature_tab_active_icon.width|escape_attr }}" height="{{ item.feature_tab_active_icon.height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+              {% elif item.feature_tab_active_icon.size_type == 'auto_custom_max' %}
+                {% set sizeAttrs = 'width="{{ item.feature_tab_active_icon.max_width|escape_attr }}" height="{{ item.feature_tab_active_icon.max_height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+              {% endif %}
+               {% set loadingAttr = item.feature_tab_active_icon.loading != 'disabled' ? 'loading="{{ item.feature_tab_active_icon.loading|escape_attr }}"' : '' %}
+              <img class="featuresTActive" src="{{ item.feature_tab_active_icon.src|escape_url }}" alt="{{ item.feature_tab_active_icon.alt|escape_attr }}" {{ loadingAttr }} {{ sizeAttrs }}>
+            {% endif %}
+           
+           {{ item.feature_tab_text }}
+         </div>
+         {% endfor %}
+       </div>
+       
+         {% if module.content.button.button_text %}
+       <div class="featuresTbtn pt20 d_flex secbtn set-btn-arrows-true {{ module.content.button.button_choice }}">
+       {% set href = module.content.button.button_link.url.href %}
+      {% if module.content.button.button_link.url.type is equalto "EMAIL_ADDRESS" %}
+        {% set href = "mailto:" + href %}
+      {% elif module.content.button.button_link.url.type is equalto "PHONE_NUMBER" %}
+        {% set href = "tel:" + href %}
+      {% endif %}
+      <a
+        {% if module.content.button.button_link.url.type is equalto "CALL_TO_ACTION"  %}
+          href="{{ href }}" {# The href here is not escaped as it is not editable and functions as a JavaScript call to the associated CTA #}
+        {% else %}
+          href="{{ href|escape_url }}"
+        {% endif %}
+        {% if module.content.button.button_link.open_in_new_tab %}
+          target="_blank"
+        {% endif %}
+        {% if module.content.button.button_link.rel %}
+          rel="{{ module.content.button.button_link.rel|escape_attr }}"
+        {% endif %}
+        >
+        {{ module.content.button.button_text }}
+      </a>
+       
+       </div>
+       {% endif %}
+         
+         
+         
+         
+       </div>
+     </div>
+     <div class="featuresRight">
+       <div class="featuresRinns">
+         {% for item in module.content.feature_tab %}
+         <div class="featuresRiConte tabs{{  loop.index }}">
+           <div class="featuresRiCoInner">
+             <div class="featuresRiCoITop d_flex">
+                {% if module.content.select_layout == 'style_2'  %}
+               {% else %}
+               <div class="featuresRiCoticon">
+                  {% if item.feature_content_icon.src %}
+                    {% set sizeAttrs = 'width="{{ item.feature_content_icon.width|escape_attr }}" height="{{ item.feature_content_icon.height|escape_attr }}"' %}
+                    {% if item.feature_content_icon.size_type == 'auto' %}
+                      {% set sizeAttrs = 'width="{{ item.feature_content_icon.width|escape_attr }}" height="{{ item.feature_content_icon.height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+                    {% elif item.feature_content_icon.size_type == 'auto_custom_max' %}
+                      {% set sizeAttrs = 'width="{{ item.feature_content_icon.max_width|escape_attr }}" height="{{ item.feature_content_icon.max_height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+                    {% endif %}
+                     {% set loadingAttr = item.feature_content_icon.loading != 'disabled' ? 'loading="{{ item.feature_content_icon.loading|escape_attr }}"' : '' %}
+                    <img src="{{ item.feature_content_icon.src|escape_url }}" alt="{{ item.feature_content_icon.alt|escape_attr }}" {{ loadingAttr }} {{ sizeAttrs }}>
+                  {% endif %}
+               </div>
+               {% endif %}
+               <div class="featuresRiCottext">
+                 {% if module.content.select_layout == 'style_2'  %}
+                   <div class="featuresRiSub">
+                     {{ item.feature_tab_text }}
+                   </div>
+                 {% endif %}
+                 <h3>{{ item.title }}</h3>
+                 <div class="featuresRiCottxxxt">
+                  {{ item.text }}
+                 </div>
+               </div> 
+             </div>
+             
+             {% if item.select_option_image_lottie == 'lottie'  %}
+             <div class="featuresRiCotlottie pt40" lottie-file-url="{{ item.select_lottie_file }}">
+                    <dotlottie-player 
+                        src="{{ item.select_lottie_file }}" 
+                        background="transparent" 
+                        speed="1" 
+                        style="width: 100%; height: auto;" 
+                        loop 
+                        autoplay>
+                    </dotlottie-player>
+                </div>
+              {% else  %}
+             <div class="featuresRiCotImage pt40">
+                  {% if item.image_field.src %}
+                  {% set sizeAttrs = 'width="{{ item.image_field.width|escape_attr }}" height="{{ item.image_field.height|escape_attr }}"' %}
+                  {% if item.image_field.size_type == 'auto' %}
+                  {% set sizeAttrs = 'width="{{ item.image_field.width|escape_attr }}" height="{{ item.image_field.height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+                  {% elif item.image_field.size_type == 'auto_custom_max' %}
+                  {% set sizeAttrs = 'width="{{ item.image_field.max_width|escape_attr }}" height="{{ item.image_field.max_height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+                  {% endif %}
+                  {% set loadingAttr = item.image_field.loading != 'disabled' ? 'loading="{{ item.image_field.loading|escape_attr }}"' : '' %}
+                  <img src="{{ item.image_field.src|escape_url }}" alt="{{ item.image_field.alt|escape_attr }}" {{ loadingAttr }} {{ sizeAttrs }}>
+                  {% endif %}
+             </div>
+             {% endif %}
+           </div>
+         </div>
+         {% endfor %}
+       </div>
+     </div>
+   </div>
+  </div>
+</div>
+
+
+{% require_css %}
+<style>
+  {{ moduleId }} .bgsec { {% if module.style.select_background == 'bg_color' %}
+    background-color: rgba({{ module.style.background_color.color|convert_rgb }},{{ module.style.background_color.opacity ~ '%' }});
+    {% elif module.style.select_background == 'bg_image' %}
+    {{ module.style.background_image.css }} background-repeat: no-repeat;
+    {% elif module.style.select_background == 'bg_gradient' %}
+    background: {{ module.style.background_gradient.css }};
+    {% endif %} }
+  
+  {{ moduleId }} .space-sec { {{ module.style.spacing.desktop.css }}; }
+  {{ moduleId }} .featuresTitle { max-width:{{ module.content.title_max_width }}px;  } 
+  {{ moduleId }} .featuresTitle h2 { color:rgba({{ module.color_setting.title_color.color|convert_rgb }},{{ module.color_setting.title_color.opacity }}%);  }
+  {{ moduleId }} .featuresTitle h2 span { color:rgba({{ module.color_setting.title_span_color.color|convert_rgb }},{{ module.color_setting.title_span_color.opacity }}%);  }
+  
+  {% for item in module.content.feature_tab %}
+    {{ moduleId }} .featuresTab:nth-child({{ loop.index }}).active {  color:rgba({{ item.tab_active_color.color|convert_rgb }},{{ item.tab_active_color.opacity }}%);  }
+    {{ moduleId }} .featuresTab:nth-child({{ loop.index }}):before {  background-color:rgba({{ item.tab_active_color.color|convert_rgb }},{{ item.tab_active_color.opacity }}%);  }
+    {{ moduleId }} .featuresRiConte:nth-child({{ loop.index }}) .featuresRiSub {  color:rgba({{ item.tab_active_color.color|convert_rgb }},{{ item.tab_active_color.opacity }}%);  }
+  
+  
+  
+  
+  {% endfor %}
+  
+  
+  
+  @media(max-width: 991px){ {{ moduleId }} .space-sec { {{ module.style.spacing.tablet.css }}; } }
+  
+  @media(max-width: 767px){ {{ moduleId }} .space-sec { {{ module.style.spacing.mobile.css }}; } }
+  
+</style>
+{% end_require_css %}
+
+
+
+{% endif %}
+
+
+
+{% require_js %}
+
+<script>
+
+
+function updateTabPosition(isResizing = false) {
+        var $activeTabBtn = $(".featuresTab.active");
+        if (!$activeTabBtn.length) return;
+
+        var targetSelector = $activeTabBtn.attr("data-value");
+        var $targetContent = $(targetSelector);
+        var $wrapper = $(".featuresRinns");
+        var gap = 32;
+        var totalOffset = 0;
+
+        // 1. Calculate vertical scroll offset
+        $targetContent.prevAll(".featuresRiConte").each(function() {
+            totalOffset += $(this).outerHeight() + gap;
+        });
+
+        // 2. Logic for Dynamic vs Fixed Height
+        var isLastTab = $targetContent.is(":last-child");
+        var windowWidth = $(window).width();
+        var defaultHeight = (windowWidth > 1300) ? 868 : 780;
+
+        // If it's the last tab, use its natural height. Otherwise, use default.
+        var finalHeight = isLastTab ? $targetContent.outerHeight() : defaultHeight;
+
+        if (isResizing) {
+            $(".featuresRiConte, .featuresRinns").css("transition", "none");
+        }
+
+        // 3. Apply moves
+        $(".featuresRiConte").css({
+            "transform": "translateY(-" + totalOffset + "px)"
+        });
+
+        $wrapper.css({
+            "height": finalHeight + "px"
+        });
+
+        if (isResizing) {
+            $wrapper[0].offsetHeight; 
+            $(".featuresRiConte").css("transition", "transform 0.6s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.4s ease");
+            $wrapper.css("transition", "height 0.6s cubic-bezier(0.25, 1, 0.5, 1)");
+        }
+    }
+
+    $(".featuresTab").on("click", function (e) {
+        e.preventDefault();
+        $(".featuresTab").removeClass("active");
+        $(this).addClass("active"); 
+
+        var targetId = $(this).attr("data-value");
+        var $activeContent = $(targetId);
+
+        $(".featuresRiConte").removeClass('active');
+        $activeContent.addClass("active");
+      
+      // Find the player element
+    var player = $activeContent.find('dotlottie-player')[0];
+    
+    if (player) {
+        // Use the dotLottie instance if available, otherwise use the element methods
+        try {
+            if (player.getLottie) {
+                // For standard lottie-player
+                player.seek(0);
+                player.play();
+            } else if (player.stop) {
+                // For dotlottie-player: stop() resets to frame 0
+                player.stop();
+                player.play();
+            }
+        } catch (err) {
+            console.log("Player not ready yet: ", err);
+        }
+    }
+
+      
+      
+      
+        updateTabPosition();
+    });
+
+    var resizeTimer;
+    $(window).on("resize", function() {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(function() {
+            updateTabPosition(true);
+        }, 50);
+    });
+
+    $(".featuresTab:first-child").trigger("click");
+
+
+
+
+
+</script>
+
+{% end_require_js %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

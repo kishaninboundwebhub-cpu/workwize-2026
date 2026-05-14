@@ -1,0 +1,109 @@
+<!--
+  templateType: page
+  isAvailableForNewContent: true
+  label: Global - 2025
+-->
+{% extends "./layouts/base.html" %}
+
+{% block body %}
+
+{# All templates are recommended to have an h1 present for both accessibility and SEO best practice. This should be at the top of the template before any other textual content. The h1 element below is within a dnd area to allow content editors the ability to adjust the content and alignment of the text. #}
+<main class="body-container-wrapper">
+  {% dnd_area "dnd_area" label="Listing Section", class="body-container body-container--hubdb" %}
+
+  {% dnd_section full_width="true" padding={'default': { 'top': 0 , 'right': 0 , 'left': 0 , 'bottom': 0 } } %}
+  {% dnd_module "module_17540575451191" path="/Workwize/modules/Hero Section - Platform", label="Hero Section - Platform" %}
+  {% end_dnd_module %}
+  {% end_dnd_section %}
+
+  {% dnd_section full_width="true" padding={'default': { 'top': 0 , 'right': 0 , 'left': 0 , 'bottom': 0 } } %}
+  {% dnd_module "module_175405824279110" path="/Workwize/modules/Country Section - HubDB", label="Country Section - HubDB" %}
+  {% end_dnd_module %}
+  {% end_dnd_section %}
+
+
+
+  {% end_dnd_area %}
+
+  {% dnd_area "In_dnd_area" label="Inner Section", class="Innerpage" %}
+
+  {% dnd_section full_width="true" padding={'default': { 'top': 0 , 'right': 0 , 'left': 0 , 'bottom': 0 } } %}
+  {% dnd_module "module_175430118942729" path="/video", label="video" %}
+  {% end_dnd_module %}
+  {% end_dnd_section %}
+
+  {% dnd_section full_width="true" padding={'default': { 'top': 0 , 'right': 0 , 'left': 0 , 'bottom': 0 } } %}
+  {% dnd_module "module_175430132302733" path="/Workwize/modules/Table Section - Workwize HUBDB", label="Table Section - Workwize HUBDB" %}
+  {% end_dnd_module %}
+  {% end_dnd_section %}
+
+  {% dnd_section full_width="true" padding={'default': { 'top': 0 , 'right': 0 , 'left': 0 , 'bottom': 0 } } %}
+  {% dnd_module "module_175430139045037" path="/Workwize/modules/two-column-content-section-new-hubdb", label="two-column-content-section-new-hubdb" %}
+  {% end_dnd_module %}
+  {% end_dnd_section %}
+
+  {% dnd_section full_width="true" padding={'default': { 'top': 0 , 'right': 0 , 'left': 0 , 'bottom': 0 } } %}
+  {% dnd_module "module_175430139045037" path="/Workwize/modules/two-column-content-section-new-hubdb", label="two-column-content-section-new-hubdb" %}
+  {% end_dnd_module %}
+  {% end_dnd_section %}
+
+  {% dnd_section full_width="true" padding={'default': { 'top': 0 , 'right': 0 , 'left': 0 , 'bottom': 0 } } %}
+  {% dnd_module "module_175430139045037" path="/Workwize/modules/two-column-content-section-new-hubdb", label="two-column-content-section-new-hubdb" %}
+ {% end_dnd_module %}
+  {% end_dnd_section %}
+
+  
+    {% dnd_section full_width="true" padding={'default': { 'top': 0 , 'right': 0 , 'left': 0 , 'bottom': 0 } } %}
+  {% dnd_module "module_175430139045037" path="/Workwize/modules/two-column-content-section-new-hubdb", label="two-column-content-section-new-hubdb" %}
+ {% end_dnd_module %}
+  {% end_dnd_section %}
+
+  {% dnd_section full_width="true" padding={'default': { 'top': 0 , 'right': 0 , 'left': 0 , 'bottom': 0 } } %}  
+  {% dnd_module "module_175430139045037" path="/Workwize/modules/two-column-content-section-new-hubdb", label="two-column-content-section-new-hubdb" %}
+ {% end_dnd_module %}
+  {% end_dnd_section %}
+
+  {% dnd_section full_width="true" padding={'default': { 'top': 0 , 'right': 0 , 'left': 0 , 'bottom': 0 } } %}  
+  {% dnd_module "module_175430151992741" path="/Workwize/modules/Cta Section Fullwidth HUBDB", label="Cta Section Fullwidth HUBDB" %}
+   {% end_dnd_module %}
+  {% end_dnd_section %}
+
+    {% dnd_section full_width="true" padding={'default': { 'top': 0 , 'right': 0 , 'left': 0 , 'bottom': 0 } } %}
+  {% dnd_module "module_175430159893245" path="/Workwize/modules/Who is Workwize Section HubDB Inner", label="Who is Workwize Section HubDB Inner" %}
+   {% end_dnd_module %}
+  {% end_dnd_section %}
+  
+  {% dnd_section full_width="true" padding={'default': { 'top': 0 , 'right': 0 , 'left': 0 , 'bottom': 0 } } %}
+  {% dnd_module "module_175430165871449" path="/Workwize/modules/Review Section Global HUBDB", label="Review Section Global HUBDB" %}
+   {% end_dnd_module %}
+  {% end_dnd_section %}
+
+    {% dnd_section full_width="true" padding={'default': { 'top': 0 , 'right': 0 , 'left': 0 , 'bottom': 0 } } %}
+  {% dnd_module "module_175430169440253" path="/Workwize/modules/Cta Section - HUBDB", label="Cta Section - HUBDB" %}
+ {% end_dnd_module %}
+  {% end_dnd_section %}
+
+  {% end_dnd_area %}
+
+
+</main>
+
+
+
+
+
+{% endblock body %}
+{% if dynamic_page_hubdb_row %}
+{% require_js %}
+<script>
+  $(document).ready(function(){
+    $('body').addClass('hs-hubdb-post');
+    $('.header-logo').addClass('hlogowhite-text-with-sky-blue-logo'); 
+    $('.header-logo').removeClass('hlogodark-blue-text-and-logo'); 
+    $('.header-sec').addClass('headerwhite-text-with-sky-blue-logo'); 
+    $('.header-sec').removeClass('headerdark-blue-text-and-logo'); 
+
+  });
+</script>
+{% end_require_js %}
+{% endif %}

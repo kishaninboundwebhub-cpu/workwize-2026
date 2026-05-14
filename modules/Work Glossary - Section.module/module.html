@@ -1,0 +1,216 @@
+{% if module.show_hide_ %}
+{% set moduleId = '#hs_cos_wrapper_{{ name }}' %}
+<div class="fullwidth wrkglos-sec bgsec space-sec">
+ <div class="wrapper">
+  <div class="secinner wrkglos-inn">
+   {% if module.text or module.title %}   
+   <div class="secheader">
+    {% if module.title %} 
+    <div class="sectitle {% if not module.text %} removespace{% endif %}">
+     <h2>{{ module.title }}</h2> 
+    </div>
+    {% endif %}
+    {% if module.text %}  
+    <div class="sectxt"> 
+     {{ module.text }} 
+    </div>
+    {% endif %} 
+   </div>
+   {% endif %} 
+   {% if module.button %} 
+   <div class="secbtns flexwrap w-100">
+    {% for item in module.button %} 
+    <div class="secbtn {{ item.button_choice }}">
+     {% set href = item.button_link.url.href %}
+     {% if item.button_link.url.type is equalto "EMAIL_ADDRESS" %}
+     {% set href = "mailto:" + href %}
+     {% endif %}
+     <a href="{{ href }}"
+     {% if item.button_link.open_in_new_tab %}target="_blank"{% endif %}
+     {% if item.button_link.rel %}rel="{{ item.button_link.rel }}"{% endif %}
+     >
+      {{ item.button_text }}
+     </a> 
+    </div>
+    {% endfor %} 
+   </div>  
+   {% endif %}
+    
+   <div class="wrkglos-root flexwrap">
+     <div class="wrkglos-cols" id="num">     
+       <div class="wrkalph"><h3>#</h3></div>
+       <div class="wrkglos-content"> </div>
+     </div>
+     <div class="wrkglos-cols" id="a">     
+       <div class="wrkalph"><h3>A</h3></div>
+       <div class="wrkglos-content"> </div>
+     </div>
+     <div class="wrkglos-cols" id="b">     
+       <div class="wrkalph"><h3>B</h3></div>
+       <div class="wrkglos-content"> </div>
+     </div>
+     <div class="wrkglos-cols" id="c">     
+       <div class="wrkalph"><h3>C</h3></div>
+       <div class="wrkglos-content"> </div>
+     </div>
+     <div class="wrkglos-cols" id="d">     
+       <div class="wrkalph"><h3>D</h3></div>
+       <div class="wrkglos-content"> </div>
+     </div>
+     <div class="wrkglos-cols" id="e">     
+       <div class="wrkalph"><h3>E</h3></div>
+       <div class="wrkglos-content"> </div>
+     </div>
+     <div class="wrkglos-cols" id="f">     
+       <div class="wrkalph"><h3>F</h3></div>
+       <div class="wrkglos-content"> </div>
+     </div>
+     <div class="wrkglos-cols" id="g">     
+       <div class="wrkalph"><h3>G</h3></div>
+       <div class="wrkglos-content"> </div>
+     </div>
+     <div class="wrkglos-cols" id="h">     
+       <div class="wrkalph"><h3>H</h3></div>
+       <div class="wrkglos-content"> </div>
+     </div>
+     <div class="wrkglos-cols" id="i">     
+       <div class="wrkalph"><h3>I</h3></div>
+       <div class="wrkglos-content"> </div>
+     </div>
+     <div class="wrkglos-cols" id="j">     
+       <div class="wrkalph"><h3>J</h3></div>
+       <div class="wrkglos-content"> </div>
+     </div>
+     <div class="wrkglos-cols" id="k">     
+       <div class="wrkalph"><h3>K</h3></div>
+       <div class="wrkglos-content"> </div>
+     </div>
+     <div class="wrkglos-cols" id="l">     
+       <div class="wrkalph"><h3>L</h3></div>
+       <div class="wrkglos-content"> </div>
+     </div>
+     <div class="wrkglos-cols" id="m">     
+       <div class="wrkalph"><h3>M</h3></div>
+       <div class="wrkglos-content"> </div>
+     </div>
+     <div class="wrkglos-cols" id="n">     
+       <div class="wrkalph"><h3>N</h3></div>
+       <div class="wrkglos-content"> </div>
+     </div>
+     <div class="wrkglos-cols" id="o">     
+       <div class="wrkalph"><h3>O</h3></div>
+       <div class="wrkglos-content"> </div>
+     </div>
+     <div class="wrkglos-cols" id="p">     
+       <div class="wrkalph"><h3>P</h3></div>
+       <div class="wrkglos-content"> </div>
+     </div>
+     <div class="wrkglos-cols" id="q">     
+       <div class="wrkalph"><h3>Q</h3></div>
+       <div class="wrkglos-content"> </div>
+     </div>
+     <div class="wrkglos-cols" id="r">     
+       <div class="wrkalph"><h3>R</h3></div>
+       <div class="wrkglos-content"> </div>
+     </div>
+     <div class="wrkglos-cols" id="s">     
+       <div class="wrkalph"><h3>S</h3></div>
+       <div class="wrkglos-content"> </div>
+     </div>
+     <div class="wrkglos-cols" id="t">     
+       <div class="wrkalph"><h3>T</h3></div>
+       <div class="wrkglos-content"> </div>
+     </div>
+     <div class="wrkglos-cols" id="u">     
+       <div class="wrkalph"><h3>U</h3></div>
+       <div class="wrkglos-content"> </div>
+     </div>
+     <div class="wrkglos-cols" id="v">     
+       <div class="wrkalph"><h3>V</h3></div>
+       <div class="wrkglos-content"> </div>
+     </div>
+     <div class="wrkglos-cols" id="w">     
+       <div class="wrkalph"><h3>W</h3></div>
+       <div class="wrkglos-content"> </div>
+     </div>
+     <div class="wrkglos-cols" id="x">     
+       <div class="wrkalph"><h3>X</h3></div>
+       <div class="wrkglos-content"> </div>
+     </div>
+     <div class="wrkglos-cols" id="y">     
+       <div class="wrkalph"><h3>Y</h3></div>
+       <div class="wrkglos-content"> </div>
+     </div>
+     <div class="wrkglos-cols" id="z">     
+       <div class="wrkalph"><h3>Z</h3></div>
+       <div class="wrkglos-content"> </div>
+     </div>
+   </div> 
+    
+   {% if module.select_content == 'blog' %}
+   {% set blog_list = blog_recent_posts(module.select_blog, 100) %}
+   <div class="wrkglos-rw">    
+    {% for blog_post in blog_list %}       
+     {% if blog_post.widgets.whitepaper_text.body.value %}
+     <h4 class="blglisting-cltitle" data-text="{{ blog_post.name }}"><a href="{{ blog_post.widgets.whitepaper_text.body.value }}">{{ blog_post.name }}</a></h4>          
+     {% else %}
+     <h4 class="blglisting-cltitle" data-text="{{ blog_post.name }}"><a href="{{ blog_post.absolute_url }}">{{ blog_post.name }}</a></h4>          
+     {% endif %}      
+    {% endfor %} 
+   </div>
+   {% else %}
+   <div class="wrkglos-rw">    
+    {% for item in module.content %}
+     <h4 class="blglisting-cltitle" data-text="{{ item.text }}">
+       {% set href = item.link.url.href %}
+	      {% if item.link.url.type is equalto "EMAIL_ADDRESS" %}
+		      {% set href = "mailto:" + href %}
+	      {% endif %}
+	      <a href="{{ href|escape_url }}"
+		      {% if item.link.open_in_new_tab %}target="_blank"{% endif %}
+		      {% if item.link.rel %}rel="{{ item.link.rel|escape_attr }}"{% endif %}
+		      >
+		      {{ item.text }}
+	      </a>
+     </h4>      
+    {% endfor %} 
+   </div> 
+   {% endif %}
+  </div>    
+ </div>
+</div>
+
+
+{% require_css %}
+<style>
+  {{ moduleId }} .bgsec { {% if module.style.select_background == 'bg_color' %}
+    background-color: rgba({{ module.style.background_color.color|convert_rgb }},{{ module.style.background_color.opacity ~ '%' }});
+    {% elif module.style.select_background == 'bg_image' %}
+    {{ module.style.background_image.css }} background-repeat: no-repeat;
+    {% elif module.style.select_background == 'bg_gradient' %}
+    background: {{ module.style.background_gradient.css }};
+    {% endif %} }
+  
+  {{ moduleId }} .space-sec { {{ module.style.spacing.desktop.css }}; }
+  
+  {{ moduleId }} .sectitle h1,
+  {{ moduleId }} .sectitle h2 , 
+  {{ moduleId }} .sectitle h3 , 
+  {{ moduleId }} .sectitle h4 , 
+  {{ moduleId }} .sectitle h5 ,
+  {{ moduleId }} .sectitle h6 { color: rgba({{ module.color_settings.title_color.color|convert_rgb }},{{ module.color_settings.title_color.opacity ~ '%' }}); }
+  {{ moduleId }} .sectxt , {{ moduleId }} .sectxt * { color: rgba({{ module.color_settings.text_color.color|convert_rgb }},{{ module.color_settings.text_color.opacity ~ '%' }}); } 
+  
+  {% for item in module.button %} 
+   {{ moduleId }} .secbtn:nth-child({{ loop.index }}) a { background-color: rgba({{ item.background_color.color|convert_rgb }},{{ item.background_color.opacity ~ '%' }}); border-color: rgba({{ item.border_color.color|convert_rgb }},{{ item.border_color.opacity ~ '%' }}); color: rgba({{ item.text_color.color|convert_rgb }},{{ item.text_color.opacity ~ '%' }}); }
+   {{ moduleId }} .secbtn:nth-child({{ loop.index }}) a:hover { background-color: rgba({{ item.background_color_hover_.color|convert_rgb }},{{ item.background_color_hover_.opacity ~ '%' }}); border-color: rgba({{ item.border_color_hover_.color|convert_rgb }},{{ item.border_color_hover_.opacity ~ '%' }}); color: rgba({{ item.text_color_hover_.color|convert_rgb }},{{ item.text_color_hover_.opacity ~ '%' }}); }  
+  {% endfor %}
+  
+  
+  @media(max-width: 991px){ {{ moduleId }} .space-sec { {{ module.style.spacing.tablet.css }}; } }
+  
+  @media(max-width: 767px){ {{ moduleId }} .space-sec { {{ module.style.spacing.mobile.css }}; } }
+  
+</style>
+{% end_require_css %}
+{% endif %}

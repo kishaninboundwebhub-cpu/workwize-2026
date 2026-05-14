@@ -1,0 +1,52 @@
+.ThreeColBoxGrpMain { display: flex; align-items: flex-start; flex-wrap: wrap; gap: 30px;}
+.ThreeColBoxGrpMain .ThreeColBox {max-width: calc(33.33% - 20px);width: 100%;background-color: #fff;border-radius: 15px;box-shadow: 0 -2px 12px rgba(0, 0, 0, .2);padding: 30px 25px;position: relative;overflow: hidden;}
+.ThreeColBoxLogo {  width: 50px; height: 50px;  border-radius: 10px; background: rgba(34, 122, 247,10%); display: flex; align-items: center;  justify-content: center;}
+.ThreeColBoxLogo img {  width: 24px; height: 24px; object-fit: contain;}
+.ThreeColBoxTitleSec {  display: flex; align-items: center; gap: 15px; flex-wrap: wrap;}
+.ThreeColBoxTitle * {  margin: 0;}
+.ThreeColBoxTitleSec .ThreeColBoxTitle { width: calc(100% - 65px);}
+.ThreeColBoxGrpMain .ThreeColBox:before {  position: absolute; width: 100%;    height: 5px;    content: '';    background: rgba(34, 122, 247,100%); bottom: 0;  left: 0;}
+.ThreeColBoxSubTitle {  margin-top: 15px;}
+
+.ThreeColBoxImg {  margin: 20px 0; border-radius: 10px; width: 100%; height: 180px; overflow: hidden;}
+.ThreeColBoxImg img {  width: 100%; height: 100%;    object-fit: cover;}
+.ThreeColBoxImg.ThreeColBoxIgcontain img { object-fit: contain; }
+.ThreeColBoxBtCnt ul li:before {background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' width='512' height='512' x='0' y='0' viewBox='0 0 512 512' style='enable-background:new 0 0 512 512' xml:space='preserve' class=''%3E%3Cg%3E%3Cpath d='M497.36 69.995c-7.532-7.545-19.753-7.558-27.285-.032L238.582 300.845l-83.522-90.713c-7.217-7.834-19.419-8.342-27.266-1.126-7.841 7.217-8.343 19.425-1.126 27.266l97.126 105.481a19.273 19.273 0 0 0 13.784 6.22c.141.006.277.006.412.006a19.317 19.317 0 0 0 13.623-5.628L497.322 97.286c7.551-7.525 7.564-19.746.038-27.291z' fill='%23227af7' opacity='1' data-original='%23000000' class=''%3E%3C/path%3E%3Cpath d='M492.703 236.703c-10.658 0-19.296 8.638-19.296 19.297 0 119.883-97.524 217.407-217.407 217.407-119.876 0-217.407-97.524-217.407-217.407 0-119.876 97.531-217.407 217.407-217.407 10.658 0 19.297-8.638 19.297-19.296C275.297 8.638 266.658 0 256 0 114.84 0 0 114.84 0 256c0 141.154 114.84 256 256 256 141.154 0 256-114.846 256-256 0-10.658-8.638-19.297-19.297-19.297z' fill='%23227af7' opacity='1' data-original='%23000000' class=''%3E%3C/path%3E%3C/g%3E%3C/svg%3E");display:block;content:"";background-repeat: no-repeat;background-size: contain;background-position: center left;width: 20px;height: 20px;}
+.ThreeColBoxBtCnt ul li.ThreeColCntrmIcon:before { display : none }
+.ThreeColBoxBtCnt ul li {  display: flex; align-items: flex-start;  gap: 10px;  flex-wrap: wrap;}
+.ThreeColBoxBtCnt ul li+* {  margin-top: 20px;}
+
+.ThreeColBoxBtCnt ul li .threelistcnt { width: calc(100% - 30px);}
+.ThreeColBoxBtCnt ul li.ThreeColCntrmIcon .threelistcnt { width : 100% }
+.ThreeColBoxBtCnt ul li .threelistcnt h6 { font-weight : 600; margin-bottom : 15px; }
+.ThreeColBoxBtCnt ul li .threelistcnt p  {  font-size: smaller; margin : 0 }
+.ThreeColBoxGrpMain .ThreeColBox {  cursor: grab; transition: all ease-in-out 0.3s;}
+.ThreeColBoxGrpMain .ThreeColBox:hover {  transform: translateY(-20px);}
+.ThreeColBoxGrpMain .ThreeColBox:hover .ThreeColBoxLogo {  background: rgba(34,122,247,1);}
+.ThreeColBoxGrpMain .ThreeColBox:hover .ThreeColBoxLogo img { filter: brightness(0) invert(1);}
+.ThreeColBoxLogo {  transition: all ease-in-out 0.3s;}
+.ThreeColBoxLogo img { transition: all ease-in-out 0.3s;}
+
+
+
+
+
+
+
+@media (max-width : 1230px){
+.ThreeColBoxGrpMain .ThreeColBox {padding: 30px 15px 40px;}
+}
+
+@media (max-width : 1080px){
+.ThreeColBoxGrpMain .ThreeColBox {  max-width: calc(50% - 15px);}
+}
+
+@media (max-width : 767px){
+.ThreeColBoxGrpMain .ThreeColBox { max-width: 100%;}
+}
+
+
+
+
+
+

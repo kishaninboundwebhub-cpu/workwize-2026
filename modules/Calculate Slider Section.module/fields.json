@@ -1,0 +1,544 @@
+[ {
+  "id" : "998717c5-1407-8a7f-b563-980424a0ffe4",
+  "name" : "style",
+  "label" : "Style",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "04980da4-abbc-399c-f2bd-a1355e0e2110",
+    "name" : "desktop",
+    "label" : "Desktop",
+    "required" : false,
+    "locked" : false,
+    "type" : "spacing",
+    "display_width" : null,
+    "default" : {
+      "padding" : {
+        "top" : {
+          "value" : 60,
+          "units" : "px"
+        },
+        "bottom" : {
+          "value" : 60,
+          "units" : "px"
+        },
+        "left" : {
+          "value" : null,
+          "units" : null
+        },
+        "right" : {
+          "value" : null,
+          "units" : null
+        }
+      }
+    }
+  }, {
+    "id" : "27f379a2-073a-0fc0-3573-1cc616afb649",
+    "name" : "tablet",
+    "label" : "Tablet",
+    "required" : false,
+    "locked" : false,
+    "type" : "spacing",
+    "display_width" : null,
+    "default" : {
+      "padding" : {
+        "top" : {
+          "value" : 60,
+          "units" : "px"
+        },
+        "bottom" : {
+          "value" : 60,
+          "units" : "px"
+        },
+        "left" : {
+          "value" : null,
+          "units" : null
+        },
+        "right" : {
+          "value" : null,
+          "units" : null
+        }
+      }
+    }
+  }, {
+    "id" : "4b945731-8a8a-5b5c-d331-a7d3f0df388b",
+    "name" : "mobile",
+    "label" : "Mobile",
+    "required" : false,
+    "locked" : false,
+    "type" : "spacing",
+    "display_width" : null,
+    "default" : {
+      "padding" : {
+        "top" : {
+          "value" : 60,
+          "units" : "px"
+        },
+        "bottom" : {
+          "value" : 60,
+          "units" : "px"
+        },
+        "left" : {
+          "value" : null,
+          "units" : null
+        },
+        "right" : {
+          "value" : null,
+          "units" : null
+        }
+      }
+    }
+  } ],
+  "tab" : "STYLE",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "desktop" : {
+      "padding" : {
+        "top" : {
+          "value" : 60,
+          "units" : "px"
+        },
+        "bottom" : {
+          "value" : 60,
+          "units" : "px"
+        },
+        "left" : {
+          "value" : null,
+          "units" : null
+        },
+        "right" : {
+          "value" : null,
+          "units" : null
+        }
+      }
+    },
+    "tablet" : {
+      "padding" : {
+        "top" : {
+          "value" : 60,
+          "units" : "px"
+        },
+        "bottom" : {
+          "value" : 60,
+          "units" : "px"
+        },
+        "left" : {
+          "value" : null,
+          "units" : null
+        },
+        "right" : {
+          "value" : null,
+          "units" : null
+        }
+      }
+    },
+    "mobile" : {
+      "padding" : {
+        "top" : {
+          "value" : 60,
+          "units" : "px"
+        },
+        "bottom" : {
+          "value" : 60,
+          "units" : "px"
+        },
+        "left" : {
+          "value" : null,
+          "units" : null
+        },
+        "right" : {
+          "value" : null,
+          "units" : null
+        }
+      }
+    }
+  }
+}, {
+  "id" : "00112d6d-5c24-9f15-7461-35ae74bc704b",
+  "name" : "left_content",
+  "label" : "Left Content",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "b265a2db-a4ea-bea1-3b8a-25b02529450b",
+    "name" : "title",
+    "label" : "Title",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Automate lengthy on- and offboardings"
+  }, {
+    "id" : "0a1abbe3-9d40-b470-6295-b6ef6ac57f5e",
+    "name" : "text",
+    "label" : "Text",
+    "required" : false,
+    "locked" : false,
+    "type" : "richtext",
+    "display_width" : null,
+    "default" : "<p>The business case is clear: even with minimal monthly on- and offboardings, Workwize delivers a significant ROI.</p>\n<ul>\n<li>Zero-touch deployment: from procurement to retrieval, create workflows to automate manual tasks.</li>\n<li>Increase productivity with efficient, scheduled pick-ups upon offboarding.</li>\n<li>Repurpose phased-out IT equipment or monetize through our marketplace.</li>\n</ul>"
+  }, {
+    "id" : "031fa71c-064b-9b7e-012c-128902a048cd",
+    "name" : "button",
+    "label" : "Button",
+    "required" : false,
+    "locked" : false,
+    "occurrence" : {
+      "min" : null,
+      "max" : null,
+      "sorting_label_field" : null,
+      "default" : 2
+    },
+    "children" : [ {
+      "id" : "a05e16e0-3dfb-0991-8be2-5b5d23a8e81e",
+      "name" : "button_style",
+      "label" : "Button Style",
+      "required" : false,
+      "locked" : false,
+      "display" : "select",
+      "choices" : [ [ "button", "Primary Button" ], [ "second_btn", "Secondary Button" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "preset" : null,
+      "type" : "choice",
+      "display_width" : null,
+      "default" : "button"
+    }, {
+      "id" : "cb50efc0-32c4-0850-b61c-cda79c53b306",
+      "name" : "button_text",
+      "label" : "Button Text",
+      "required" : false,
+      "locked" : false,
+      "allow_new_line" : false,
+      "type" : "text",
+      "display_width" : null,
+      "default" : "Talk to an expert"
+    }, {
+      "id" : "d6b1f515-316d-d400-84e7-b760c30e730a",
+      "name" : "button_link",
+      "label" : "Button Link",
+      "required" : false,
+      "locked" : false,
+      "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG", "CALL_TO_ACTION", "PHONE_NUMBER", "WHATSAPP_NUMBER", "PAYMENT" ],
+      "show_advanced_rel_options" : false,
+      "type" : "link",
+      "display_width" : null,
+      "default" : {
+        "url" : {
+          "content_id" : 97002402260,
+          "href" : null,
+          "type" : "CONTENT"
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false
+      }
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : [ {
+      "button_style" : "button",
+      "button_text" : "Talk to an expert",
+      "button_link" : {
+        "url" : {
+          "content_id" : 97002402260,
+          "href" : null,
+          "type" : "CONTENT"
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false
+      }
+    }, {
+      "button_style" : "button",
+      "button_text" : "Talk to an expert",
+      "button_link" : {
+        "url" : {
+          "content_id" : 97002402260,
+          "href" : null,
+          "type" : "CONTENT"
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false
+      }
+    } ]
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "title" : "Automate lengthy on- and offboardings",
+    "text" : "<p>The business case is clear: even with minimal monthly on- and offboardings, Workwize delivers a significant ROI.</p>\n<ul>\n<li>Zero-touch deployment: from procurement to retrieval, create workflows to automate manual tasks.</li>\n<li>Increase productivity with efficient, scheduled pick-ups upon offboarding.</li>\n<li>Repurpose phased-out IT equipment or monetize through our marketplace.</li>\n</ul>",
+    "button" : [ {
+      "button_style" : "button",
+      "button_text" : "Talk to an expert",
+      "button_link" : {
+        "url" : {
+          "content_id" : 97002402260,
+          "href" : null,
+          "type" : "CONTENT"
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false
+      }
+    }, {
+      "button_style" : "button",
+      "button_text" : "Talk to an expert",
+      "button_link" : {
+        "url" : {
+          "content_id" : 97002402260,
+          "href" : null,
+          "type" : "CONTENT"
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false
+      }
+    } ]
+  }
+}, {
+  "id" : "d70628de-151c-01bd-d12d-c8c53f1b66e9",
+  "name" : "slider_content",
+  "label" : "Slider Content",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "a0f34adc-31fe-4832-0629-45f03e941366",
+    "name" : "top_content",
+    "label" : "Top Content",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "7d38fbd0-96a9-d10c-7723-a6b635f551d4",
+      "name" : "title",
+      "label" : "Title",
+      "required" : false,
+      "locked" : false,
+      "allow_new_line" : false,
+      "type" : "text",
+      "display_width" : null,
+      "default" : "Calculate Your Savings"
+    }, {
+      "id" : "7b548250-6e4a-6b32-2f7a-b556ac2ce45c",
+      "name" : "prev_text_of_multiplier",
+      "label" : "Prev Text Of Multiplier",
+      "required" : false,
+      "locked" : false,
+      "allow_new_line" : false,
+      "type" : "text",
+      "display_width" : null,
+      "default" : "Companies with 50+ onboardings/month see up to"
+    }, {
+      "id" : "e7278126-83da-bbc6-fc9e-558269f7ab77",
+      "name" : "next_text_of_multiplier_copy",
+      "label" : "Next Text Of Multiplier copy",
+      "required" : false,
+      "locked" : false,
+      "allow_new_line" : false,
+      "type" : "text",
+      "display_width" : null,
+      "default" : "ROI"
+    }, {
+      "id" : "ab9f3923-1616-973d-e5e3-2aab46eee6f9",
+      "name" : "sub_text",
+      "label" : "Sub Text",
+      "required" : false,
+      "locked" : false,
+      "allow_new_line" : false,
+      "type" : "text",
+      "display_width" : null,
+      "default" : "How many employees do you onboard monthly?"
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : {
+      "title" : "Calculate Your Savings",
+      "prev_text_of_multiplier" : "Companies with 50+ onboardings/month see up to",
+      "next_text_of_multiplier_copy" : "ROI",
+      "sub_text" : "How many employees do you onboard monthly?"
+    }
+  }, {
+    "id" : "558a7a2a-05be-34a6-f4de-eba4e263af22",
+    "name" : "calculation_settings",
+    "label" : "Calculation Settings",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "79e13d08-8b7c-a149-bbca-870f641306ca",
+      "name" : "roi_multiplier_title",
+      "label" : "ROI Multiplier Title",
+      "help_text" : "ROI Multiplier Title",
+      "inline_help_text" : "ROI Multiplier Title",
+      "required" : false,
+      "locked" : false,
+      "allow_new_line" : false,
+      "type" : "text",
+      "display_width" : null,
+      "default" : "ROI Multiplier"
+    }, {
+      "id" : "29ce370a-a8c7-8e8b-8fd0-d07b7d1470ca",
+      "name" : "monthly_savings_title",
+      "label" : "Monthly Savings Title",
+      "help_text" : "Monthly Savings Title",
+      "inline_help_text" : "Monthly Savings Title",
+      "required" : false,
+      "locked" : false,
+      "allow_new_line" : false,
+      "type" : "text",
+      "display_width" : null,
+      "default" : "Monthly Savings"
+    }, {
+      "id" : "88781629-69e7-cefb-41af-86ded5fc6dcf",
+      "name" : "min_value",
+      "label" : "Min Value",
+      "help_text" : "** Set Min Value **",
+      "inline_help_text" : "** Set Min Value **",
+      "required" : false,
+      "locked" : false,
+      "display" : "text",
+      "step" : 1,
+      "type" : "number",
+      "display_width" : null,
+      "default" : 3
+    }, {
+      "id" : "7f763349-e85e-cad5-0a1e-dddd465c1b0d",
+      "name" : "max_value",
+      "label" : "Max Value",
+      "help_text" : "** Set Max Value **",
+      "inline_help_text" : "** Set Max Value **",
+      "required" : false,
+      "locked" : false,
+      "display" : "text",
+      "step" : 1,
+      "type" : "number",
+      "display_width" : null,
+      "default" : 150
+    }, {
+      "id" : "538683bd-5901-6fb0-602e-56954d635331",
+      "name" : "default_value",
+      "label" : "Default Value",
+      "help_text" : "** Default slider position when loaded **",
+      "inline_help_text" : "** Default slider position when loaded **",
+      "required" : false,
+      "locked" : false,
+      "display" : "text",
+      "step" : 1,
+      "type" : "number",
+      "display_width" : null,
+      "default" : 30
+    }, {
+      "id" : "2380dc81-52bb-137c-ed5a-2aa70bad750d",
+      "name" : "vase_savings_value",
+      "label" : "Base Savings Value",
+      "help_text" : "** Base monthly savings when ROI = 1.4x **",
+      "inline_help_text" : "** Base monthly savings when ROI = 1.4x **",
+      "required" : false,
+      "locked" : false,
+      "display" : "text",
+      "step" : 1,
+      "type" : "number",
+      "display_width" : null,
+      "default" : 5000
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : {
+      "roi_multiplier_title" : "ROI Multiplier",
+      "monthly_savings_title" : "Monthly Savings",
+      "min_value" : 3,
+      "max_value" : 150,
+      "default_value" : 30,
+      "vase_savings_value" : 5000
+    }
+  }, {
+    "id" : "edc73981-9220-cb7a-2cf3-16955e65cb23",
+    "name" : "chart_image",
+    "label" : "Chart Image",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "c03242ad-879c-7bed-c6fa-9531721af781",
+      "name" : "image_field",
+      "label" : "Image",
+      "required" : false,
+      "locked" : false,
+      "responsive" : true,
+      "resizable" : true,
+      "show_loading" : false,
+      "type" : "image",
+      "display_width" : null,
+      "default" : {
+        "size_type" : "auto",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/and%20many%20more!%20(3).svg",
+        "alt" : "and many more! (3)",
+        "loading" : "lazy",
+        "width" : 1080,
+        "height" : 1080,
+        "max_width" : 1080,
+        "max_height" : 1080
+      }
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : {
+      "image_field" : {
+        "size_type" : "auto",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/and%20many%20more!%20(3).svg",
+        "alt" : "and many more! (3)",
+        "loading" : "lazy",
+        "width" : 1080,
+        "height" : 1080,
+        "max_width" : 1080,
+        "max_height" : 1080
+      }
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "top_content" : {
+      "title" : "Calculate Your Savings",
+      "prev_text_of_multiplier" : "Companies with 50+ onboardings/month see up to",
+      "next_text_of_multiplier_copy" : "ROI",
+      "sub_text" : "How many employees do you onboard monthly?"
+    },
+    "calculation_settings" : {
+      "roi_multiplier_title" : "ROI Multiplier",
+      "monthly_savings_title" : "Monthly Savings",
+      "min_value" : 3,
+      "max_value" : 150,
+      "default_value" : 30,
+      "vase_savings_value" : 5000
+    },
+    "chart_image" : {
+      "image_field" : {
+        "size_type" : "auto",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/and%20many%20more!%20(3).svg",
+        "alt" : "and many more! (3)",
+        "loading" : "lazy",
+        "width" : 1080,
+        "height" : 1080,
+        "max_width" : 1080,
+        "max_height" : 1080
+      }
+    }
+  }
+} ]

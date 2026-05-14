@@ -1,0 +1,163 @@
+{% if module.show_hide_ %}
+{% set moduleId = '#hs_cos_wrapper_{{ name }}' %}
+
+<div class="woprocesec fullwidth bgsec space-sec">
+ <div class="wrapper">
+   <div class="woproceTitle pb44 wow fadeInUp">
+     <h2>{{ module.title }}</h2>
+   </div>
+   
+   <div class="woproceInner d_flex wow fadeInUp">
+     {% for item in module.box_item %}
+     <div class="woproceItem">
+       {% if item.select_box_layout == 'def_box' %}
+         <div class="woproceIdef_box">
+           <div class="woproceDots">
+                {% if item.dot_image.src %}
+                {% set sizeAttrs = 'width="{{ item.dot_image.width|escape_attr }}" height="{{ item.dot_image.height|escape_attr }}"' %}
+                {% if item.dot_image.size_type == 'auto' %}
+                {% set sizeAttrs = 'width="{{ item.dot_image.width|escape_attr }}" height="{{ item.dot_image.height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+                {% elif item.dot_image.size_type == 'auto_custom_max' %}
+                {% set sizeAttrs = 'width="{{ item.dot_image.max_width|escape_attr }}" height="{{ item.dot_image.max_height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+                {% endif %}
+                {% set loadingAttr = item.dot_image.loading != 'disabled' ? 'loading="{{ item.dot_image.loading|escape_attr }}"' : '' %}
+                <img src="{{ item.dot_image.src|escape_url }}" alt="{{ item.dot_image.alt|escape_attr }}" {{ loadingAttr }} {{ sizeAttrs }}>
+                {% endif %}
+           </div>
+           
+           <div class="woproceTt d_flex align_center gap16">
+             <div class="woproceTicon">
+                {% if item.icon.src %}
+                {% set sizeAttrs = 'width="{{ item.icon.width|escape_attr }}" height="{{ item.icon.height|escape_attr }}"' %}
+                {% if item.icon.size_type == 'auto' %}
+                {% set sizeAttrs = 'width="{{ item.icon.width|escape_attr }}" height="{{ item.icon.height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+                {% elif item.icon.size_type == 'auto_custom_max' %}
+                {% set sizeAttrs = 'width="{{ item.icon.max_width|escape_attr }}" height="{{ item.icon.max_height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+                {% endif %}
+                {% set loadingAttr = item.icon.loading != 'disabled' ? 'loading="{{ item.icon.loading|escape_attr }}"' : '' %}
+                <img src="{{ item.icon.src|escape_url }}" alt="{{ item.icon.alt|escape_attr }}" {{ loadingAttr }} {{ sizeAttrs }}>
+                {% endif %}
+             </div>
+             <div class="woproceTitext">
+                {{ item.title }}
+             </div>
+           </div>
+           <div class="woproceItext pt20 pb28">
+             {{ item.text_field }}
+           </div>
+           
+           <div class="woproceILink">
+             {% set href = item.learn_more_link.learn_more_link.url.href %}
+              {% if item.learn_more_link.learn_more_link.url.type is equalto "EMAIL_ADDRESS" %}
+                {% set href = "mailto:" + href %}
+              {% elif item.learn_more_link.learn_more_link.url.type is equalto "PHONE_NUMBER" %}
+                {% set href = "tel:" + href %}
+              {% endif %}
+              <a
+                {% if item.learn_more_link.learn_more_link.url.type is equalto "CALL_TO_ACTION"  %}
+                  href="{{ href }}" {# The href here is not escaped as it is not editable and functions as a JavaScript call to the associated CTA #}
+                {% else %}
+                  href="{{ href|escape_url }}"
+                {% endif %}
+                {% if item.learn_more_link.learn_more_link.open_in_new_tab %}
+                  target="_blank"
+                {% endif %}
+                {% if item.learn_more_link.learn_more_link.rel %}
+                  rel="{{ item.learn_more_link.learn_more_link.rel|escape_attr }}"
+                {% endif %}
+                >
+                {{ item.learn_more_link.text_field_1 }}
+                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M4.5 2.25L8.25 6L4.5 9.75" stroke="#050C14" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </a>
+           </div>
+           
+           
+         </div>
+       {% elif item.select_box_layout == 'cta_box' %}
+         <div class="woproceIcta_box">
+           <div class="woproceIShape">
+             {% if item.cta_box_shape.src %}
+              {% set sizeAttrs = 'width="{{ item.cta_box_shape.width|escape_attr }}" height="{{ item.cta_box_shape.height|escape_attr }}"' %}
+              {% if item.cta_box_shape.size_type == 'auto' %}
+                {% set sizeAttrs = 'width="{{ item.cta_box_shape.width|escape_attr }}" height="{{ item.cta_box_shape.height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+              {% elif item.cta_box_shape.size_type == 'auto_custom_max' %}
+                {% set sizeAttrs = 'width="{{ item.cta_box_shape.max_width|escape_attr }}" height="{{ item.cta_box_shape.max_height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+              {% endif %}
+               {% set loadingAttr = item.cta_box_shape.loading != 'disabled' ? 'loading="{{ item.cta_box_shape.loading|escape_attr }}"' : '' %}
+              <img src="{{ item.cta_box_shape.src|escape_url }}" alt="{{ item.cta_box_shape.alt|escape_attr }}" {{ loadingAttr }} {{ sizeAttrs }}>
+            {% endif %}
+           </div>
+           <div class="woproceItext pb45">
+             {{ item.text_field_2 }}
+           </div>
+           
+           <div class="woproceIbtn d_flex secbtn {{ item.button.button_choice }} set-btn-arrows-true">
+             {% set href = item.button.button_link.url.href %}
+              {% if item.button.button_link.url.type is equalto "EMAIL_ADDRESS" %}
+                {% set href = "mailto:" + href %}
+              {% elif item.button.button_link.url.type is equalto "PHONE_NUMBER" %}
+                {% set href = "tel:" + href %}
+              {% endif %}
+              <a
+                {% if item.button.button_link.url.type is equalto "CALL_TO_ACTION"  %}
+                  href="{{ href }}" {# The href here is not escaped as it is not editable and functions as a JavaScript call to the associated CTA #}
+                {% else %}
+                  href="{{ href|escape_url }}"
+                {% endif %}
+                {% if item.button.button_link.open_in_new_tab %}
+                  target="_blank"
+                {% endif %}
+                {% if item.button.button_link.rel %}
+                  rel="{{ item.button.button_link.rel|escape_attr }}"
+                {% endif %}
+                >
+                {{ item.button.button_text }}
+                
+                
+
+              </a>
+           </div>
+         </div>
+       {% endif %}
+     </div>
+     {% endfor %}
+   </div>
+   
+   
+   
+   
+   
+ </div>
+</div>
+
+
+{% require_css %}
+<style>
+  {{ moduleId }} .bgsec { {% if module.style.select_background == 'bg_color' %}
+    background-color: rgba({{ module.style.background_color.color|convert_rgb }},{{ module.style.background_color.opacity ~ '%' }});
+    {% elif module.style.select_background == 'bg_image' %}
+    {{ module.style.background_image.css }} background-repeat: no-repeat;
+    {% elif module.style.select_background == 'bg_gradient' %}
+    background: {{ module.style.background_gradient.css }};
+    {% endif %} }
+  
+  {{ moduleId }} .space-sec { {{ module.style.spacing.desktop.css }}; }
+  
+  {{ moduleId }} .woproceTitle h2 { color:{{ module.color_setting.title_color.color }}; } 
+  {{ moduleId }} .woproceTitle h2 span { color:{{ module.color_setting.title_span_color.color }}; } 
+  
+  
+  
+  @media(max-width: 991px){ {{ moduleId }} .space-sec { {{ module.style.spacing.tablet.css }}; } }
+  
+  @media(max-width: 767px){ {{ moduleId }} .space-sec { {{ module.style.spacing.mobile.css }}; } }
+  
+</style>
+{% end_require_css %}
+
+
+
+{% endif %}
+

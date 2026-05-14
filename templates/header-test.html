@@ -1,0 +1,71 @@
+<!--
+  templateType: page
+  isAvailableForNewContent: true
+  label: Header Test
+  screenshotPath: ../images/template-previews/home.png
+-->
+{% extends "./layouts/base.html" %}
+
+ {% block header %}
+   {% global_partial path="./partials/header-megamenu.html" %}
+ {% endblock header %}
+
+{% block body %}
+
+{# All templates are recommended to have an h1 present for both accessibility and SEO best practice. This should be at the top of the template before any other textual content. The h1 element below is within a dnd area to allow content editors the ability to adjust the content and alignment of the text. #}
+
+{% dnd_area "dnd_area" label="Main section", class="body-container body-container--home" %}
+
+  {% dnd_section full_width="true" padding={'default': { 'top': 0 , 'right': 0 , 'left': 0 , 'bottom': 0 } } %}
+    {% dnd_module "module_170859220832833" path="/Workwize/modules/Hero Section", label="Hero Section" %}
+    {% end_dnd_module %}
+  {% end_dnd_section %}
+   
+  {% dnd_section full_width="true" padding={'default': { 'top': 0 , 'right': 0 , 'left': 0 , 'bottom': 0 } } %}
+    {% dnd_module "module_170859725454341" path="/Workwize/modules/Logo Section", label="Logo Section" %}
+    {% end_dnd_module %}
+  {% end_dnd_section %}
+
+  {% dnd_section full_width="true" padding={'default': { 'top': 0 , 'right': 0 , 'left': 0 , 'bottom': 0 } } %}
+    {% dnd_module "module_173113386850222" path="/Workwize/modules/Remote Workforce Section - Tabbing", label="Remote Workforce Section - Tabbing" %}
+    {% end_dnd_module %}
+  {% end_dnd_section %}
+
+  {% dnd_section full_width="true" padding={'default': { 'top': 0 , 'right': 0 , 'left': 0 , 'bottom': 0 } } %}
+    {% dnd_module "module_170860162214672" path="/Workwize/modules/Zig Zag Section - Home", label="Zig Zag Section - Home" %}
+    {% end_dnd_module %}
+  {% end_dnd_section %}
+
+  {% dnd_section full_width="true" padding={'default': { 'top': 0 , 'right': 0 , 'left': 0 , 'bottom': 0 } } %}
+    {% dnd_module "module_1708608436864148" path="/Workwize/modules/Testimonial Section", label="Testimonial Section" %}
+    {% end_dnd_module %}
+  {% end_dnd_section %}
+
+  {% dnd_section full_width="true" padding={'default': { 'top': 0 , 'right': 0 , 'left': 0 , 'bottom': 0 } } %}
+    {% dnd_module "module_170860162214672" path="/Workwize/modules/Zig Zag Section - Home", label="Zig Zag Section - Home" %}
+    {% end_dnd_module %}
+  {% end_dnd_section %}
+  
+  {% dnd_section full_width="true" padding={'default': { 'top': 0 , 'right': 0 , 'left': 0 , 'bottom': 0 } } %}
+    {% dnd_module "module_170860162214672" path="/Workwize/modules/Zig Zag Section - Home", label="Zig Zag Section - Home" %}
+    {% end_dnd_module %}
+  {% end_dnd_section %}
+  
+  {% dnd_section full_width="true" padding={'default': { 'top': 0 , 'right': 0 , 'left': 0 , 'bottom': 0 } } %}
+    {% dnd_module "module_170860162214672" path="/Workwize/modules/Zig Zag Section - Home", label="Zig Zag Section - Home" %}
+    {% end_dnd_module %}
+  {% end_dnd_section %}
+          
+  {% dnd_section full_width="true" padding={'default': { 'top': 0 , 'right': 0 , 'left': 0 , 'bottom': 0 } } %}
+    {% dnd_module "module_1708604611025106" path="/Workwize/modules/FAQ Section", label="FAQ Section" %}
+    {% end_dnd_module %}
+  {% end_dnd_section %}
+  
+ {% dnd_section full_width="true" padding={'default': { 'top': 0 , 'right': 0 , 'left': 0 , 'bottom': 0 } } %}
+  {% dnd_module "module_1708606831113123" path="/Workwize/modules/Cta Section Fullwidth", label="Cta Section Fullwidth" %}
+  {% end_dnd_module %}
+ {% end_dnd_section %}
+
+
+{% end_dnd_area %}
+{% endblock body %}

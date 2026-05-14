@@ -1,0 +1,52 @@
+<!--
+  templateType: page
+  isAvailableForNewContent: true
+  label: Platform Overview
+-->
+{% extends "./layouts/base.html" %}
+
+
+{% block body %}
+
+{# All templates are recommended to have an h1 present for both accessibility and SEO best practice. This should be at the top of the template before any other textual content. The h1 element below is within a dnd area to allow content editors the ability to adjust the content and alignment of the text. #}
+
+{% dnd_area "dnd_area" label="Main section", class="body-container body-container--home" %}
+
+  {% dnd_section full_width="true" padding={'default': { 'top': 0 , 'right': 0 , 'left': 0 , 'bottom': 0 } } %}
+    {% dnd_module "module_170859220832833" path="./../modules/Hero Section Platform Overview", label="Hero Section Platform Overview" %}
+    {% end_dnd_module %}
+  {% end_dnd_section %}
+
+  {% dnd_section full_width="true" padding={'default': { 'top': 0 , 'right': 0 , 'left': 0 , 'bottom': 0 } } %}
+    {% dnd_module "module_170859220832833" path="./../modules/Trust Indicator Section", label="Trust Indicator Section" %}
+    {% end_dnd_module %}
+  {% end_dnd_section %}
+
+
+  {% dnd_section full_width="true" padding={'default': { 'top': 0 , 'right': 0 , 'left': 0 , 'bottom': 0 } } %}
+    {% dnd_module "module_170859220832833" path="./../modules/Zig Zag Section Platform Overview", label="Zig Zag Section Platform Overview" %}
+    {% end_dnd_module %}
+  {% end_dnd_section %}
+
+
+  {% dnd_section full_width="true" padding={'default': { 'top': 0 , 'right': 0 , 'left': 0 , 'bottom': 0 } } %}
+    {% dnd_module "module_170859220832833" path="./../modules/Zig Zag Section Platform Overview", label="Zig Zag Section Platform Overview" %}
+    {% end_dnd_module %}
+  {% end_dnd_section %}
+
+
+
+ {% dnd_section full_width="true" padding={'default': { 'top': 0 , 'right': 0 , 'left': 0 , 'bottom': 0 } } %}
+    {% dnd_module "module_170859220832833" path="./../modules/Testimonials Section", label="Testimonials Section" %}
+    {% end_dnd_module %}
+  {% end_dnd_section %}
+
+
+  
+
+
+{% end_dnd_area %}
+{% endblock body %}
+
+
+

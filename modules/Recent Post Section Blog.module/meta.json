@@ -1,0 +1,13 @@
+{
+  "content_tags" : [ {
+    "name" : "SEARCH",
+    "source" : "USER"
+  } ],
+  "global" : false,
+  "content_types" : [ "KNOWLEDGE_BASE", "QUOTE_TEMPLATE", "LANDING_PAGE", "SITE_PAGE", "SUBSCRIPTION", "CUSTOMER_PORTAL", "BLOG_LISTING", "WEB_INTERACTIVE", "BLOG_POST" ],
+  "categories" : [ "FUNCTIONALITY" ],
+  "host_template_types" : [ "PAGE", "BLOG_LISTING", "BLOG_POST" ],
+  "module_id" : 392174214330,
+  "label" : "Recent Post Section Blog",
+  "is_available_for_new_content" : true
+}

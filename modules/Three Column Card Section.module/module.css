@@ -1,0 +1,34 @@
+.ThreeColumnCardIn {  display: flex;  align-items: stretch; gap: 30px; flex-wrap: wrap;}
+.ThreeColumnCardIn .ThreeColumnCardBox {  max-width: calc(33.33% - 20px); width: 100%; padding: 20px; background: #fff; border-radius: 20px; box-shadow: 0 -2px 12px rgba(0,0,0,.2); transition: all ease-in-out 0.3s; }
+.ThreeColumnCTitleSec {  display: flex; align-items: center; gap: 10px;}
+.ThreeColumnCTitleSec .ThreeColumnCardBoxLogo { width: 50px; height: 50px; border-radius: 50%; background: rgba(34,122,247,.1); display: flex; align-items: center; justify-content: center;}
+.ThreeColumnCTitleSec .ThreeColumnCardBoxLogo img {  width: 24px;  height: 24px;  object-fit: contain;}
+.ThreeColumnCTitleSec .ThreeColumnCardBoxTitle * { margin: 0;}
+.ThreeColumnCTitleSec .ThreeColumnCardBoxTitle { width: calc(100% - 60px);}
+.ThreeColumnCardBoxCnt { margin-top: 20px;}
+.moretext {  display: none;}
+.ThreeColumnCardBoxCnt a { color: #122750; font-weight: 600; font-size: 16px;}
+.ThreeColumnCardBoxTitle * {  color: #122750; font-weight: 600;}
+.ThreeColumnCardBoxCnt a svg { width: 30px; height: 27px; line-height: 0;}
+.ThreeColumnCardBoxCnt a {  width: 100%; display: flex; align-items: center; justify-content: center;}
+.ThreeColumnCardBox.Hideshowmorearrow .moreless-button { display : none }
+@keyframes bounce {
+50% {
+    transform: translatey(10px);
+  }
+}
+
+
+.ThreeColumnCardBoxCnt a {
+    animation: bounce 1600ms infinite cubic-bezier(0.445, 0.05, 0.55, 0.95);
+}
+
+
+
+@media (max-width : 1080px){
+.ThreeColumnCardIn .ThreeColumnCardBox {  max-width: calc(50% - 15px);}
+}
+
+@media (max-width : 767px){
+.ThreeColumnCardIn .ThreeColumnCardBox {  max-width: 100%;}
+}

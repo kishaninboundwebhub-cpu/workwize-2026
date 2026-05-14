@@ -1,0 +1,205 @@
+{% if module.show_hide_ %}
+{% set moduleId = '#hs_cos_wrapper_{{ name }}' %}
+
+<div class="platdiffsec over-hidden fullwidth bgsec space-sec">
+  {% if module.top_left_shape.src %}
+  <div class="platdiffimg1">
+    
+      {% set sizeAttrs = 'width="{{ module.top_left_shape.width|escape_attr }}" height="{{ module.top_left_shape.height|escape_attr }}"' %}
+      {% if module.top_left_shape.size_type == 'auto' %}
+        {% set sizeAttrs = 'width="{{ module.top_left_shape.width|escape_attr }}" height="{{ module.top_left_shape.height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+      {% elif module.top_left_shape.size_type == 'auto_custom_max' %}
+        {% set sizeAttrs = 'width="{{ module.top_left_shape.max_width|escape_attr }}" height="{{ module.top_left_shape.max_height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+      {% endif %}
+       {% set loadingAttr = module.top_left_shape.loading != 'disabled' ? 'loading="{{ module.top_left_shape.loading|escape_attr }}"' : '' %}
+      <img src="{{ module.top_left_shape.src|escape_url }}" alt="{{ module.top_left_shape.alt|escape_attr }}" {{ loadingAttr }} {{ sizeAttrs }}>
+    
+  </div>
+  {% endif %}
+  {% if module.bottom_right_shape.src %}
+  <div class="platdiffimg2">
+    
+	{% set sizeAttrs = 'width="{{ module.bottom_right_shape.width|escape_attr }}" height="{{ module.bottom_right_shape.height|escape_attr }}"' %}
+	{% if module.bottom_right_shape.size_type == 'auto' %}
+		{% set sizeAttrs = 'width="{{ module.bottom_right_shape.width|escape_attr }}" height="{{ module.bottom_right_shape.height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+	{% elif module.bottom_right_shape.size_type == 'auto_custom_max' %}
+		{% set sizeAttrs = 'width="{{ module.bottom_right_shape.max_width|escape_attr }}" height="{{ module.bottom_right_shape.max_height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+	{% endif %}
+	 {% set loadingAttr = module.bottom_right_shape.loading != 'disabled' ? 'loading="{{ module.bottom_right_shape.loading|escape_attr }}"' : '' %}
+	<img src="{{ module.bottom_right_shape.src|escape_url }}" alt="{{ module.bottom_right_shape.alt|escape_attr }}" {{ loadingAttr }} {{ sizeAttrs }}>
+
+  </div>
+{% endif %}  
+  
+  
+ <div class="wrapper">
+   <div class="platdifftitle pb60  sm_pb30 text-center wow fadeInUp">
+     <h2>{{ module.top_content.title }}</h2>
+   </div>
+   
+   <div class="platdiffOuter wow fadeInUp">
+     <div class="trusindItShape">
+           <div class="trusindItSss">
+             <span></span><span></span><span></span><span></span><span></span><span></span>
+           </div>
+           <div class="trusindItSss">
+             <span></span><span></span><span></span><span></span><span></span><span></span>
+           </div>
+           <div class="trusindItSss">
+             <span></span><span></span><span></span><span></span><span></span><span></span>
+           </div>
+           <div class="trusindItSss">
+             <span></span><span></span><span></span><span></span><span></span><span></span>
+           </div>
+         </div>
+     <div class="platdiffOInner d_flex">
+       {% for item in module.inner_content %}
+       <div class="platdiffOICol">
+         <div class="platdiffOICTt platdiffOIHeadCTt d_flex align_center gap12">
+           
+           {% if item.select_head_text_or_logo == 'text' %}
+            {{ item.title }}
+           {% elif item.select_head_text_or_logo == 'logo' %}
+                {% if item.logo.src %}
+                {% set sizeAttrs = 'width="{{ item.logo.width|escape_attr }}" height="{{ item.logo.height|escape_attr }}"' %}
+                {% if item.logo.size_type == 'auto' %}
+                  {% set sizeAttrs = 'width="{{ item.logo.width|escape_attr }}" height="{{ item.logo.height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+                {% elif item.logo.size_type == 'auto_custom_max' %}
+                  {% set sizeAttrs = 'width="{{ item.logo.max_width|escape_attr }}" height="{{ item.logo.max_height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+                {% endif %}
+                 {% set loadingAttr = item.logo.loading != 'disabled' ? 'loading="{{ item.logo.loading|escape_attr }}"' : '' %}
+                <img src="{{ item.logo.src|escape_url }}" alt="{{ item.logo.alt|escape_attr }}" {{ loadingAttr }} {{ sizeAttrs }}>
+                {% endif %}
+           {% endif %}
+           
+           
+         </div>
+         {% for item2 in item.text_item %}
+         <div class="platdiffOICTt d_flex align_center gap12">
+           {% if item2.select_icon == 'checkmark' %}
+             <div class="platdiffOcheck">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g clip-path="url(#clip0_3003_25683)">
+                <path d="M10 17.5C14.1421 17.5 17.5 14.1421 17.5 10C17.5 5.85786 14.1421 2.5 10 2.5C5.85786 2.5 2.5 5.85786 2.5 10C2.5 14.1421 5.85786 17.5 10 17.5Z" fill="white"/>
+                <path d="M6.875 10.625L8.75 12.5L13.125 8.125" stroke="#227AF7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </g>
+                <defs>
+                <clipPath id="clip0_3003_25683">
+                <rect width="20" height="20" fill="white"/>
+                </clipPath>
+                </defs>
+                </svg>
+             </div>
+           {% elif item2.select_icon == 'uncheckmark' %}
+             <div class="platdiffOcheck">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g clip-path="url(#clip0_3003_25767)">
+                <path d="M10 17.5C14.1421 17.5 17.5 14.1421 17.5 10C17.5 5.85786 14.1421 2.5 10 2.5C5.85786 2.5 2.5 5.85786 2.5 10C2.5 14.1421 5.85786 17.5 10 17.5Z" fill="white" fill-opacity="0.3"/>
+                <path d="M7 10H9.125H13.625" stroke="white" stroke-opacity="0.8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </g>
+                <defs>
+                <clipPath id="clip0_3003_25767">
+                <rect width="20" height="20" fill="white"/>
+                </clipPath>
+                </defs>
+                </svg>
+             </div>
+           {% endif %}
+           {{ item2.text_field }}  
+           
+           
+         </div>
+         {% endfor %}
+       </div>
+       {% endfor %}
+     </div>
+   </div>
+   
+   
+   <div class="platdiffDescla pt24  text-center wow fadeInUp">
+     {{ module.disclaimer_text }}
+   </div>
+   
+   
+ </div>
+</div>
+
+
+{% require_css %}
+<style>
+  {{ moduleId }} .bgsec { {% if module.style.select_background == 'bg_color' %}
+    background-color: rgba({{ module.style.background_color.color|convert_rgb }},{{ module.style.background_color.opacity ~ '%' }});
+    {% elif module.style.select_background == 'bg_image' %}
+    {{ module.style.background_image.css }} background-repeat: no-repeat;
+    {% elif module.style.select_background == 'bg_gradient' %}
+    background: {{ module.style.background_gradient.css }};
+    {% endif %} }
+  
+  {{ moduleId }} .space-sec { {{ module.style.spacing.desktop.css }}; position: relative; z-index: 1; }
+  {{ moduleId }} .platdifftitle h2 { max-width:{{ module.top_content.max_width }}px; margin:0 auto; color:rgba({{ module.color_setting.title_color.color|convert_rgb }},{{ module.color_setting.title_color.opacity }}%);  }
+  {{ moduleId }} .platdifftitle h2 span { color:rgba({{ module.color_setting.title_span_color.color|convert_rgb }},{{ module.color_setting.title_span_color.opacity }}%);  }
+  
+  {% for item in module.inner_content %}
+  {{ moduleId }} .workpredInner:nth-child({{  loop.index }}) .workpredILtit h3 { max-width:{{ item.title_max_width }}px; }
+  {{ moduleId }} .workpredInner:nth-child({{  loop.index }}) .workpredIbotttext ul li:after { background:{{ item.list_icon_color.color }}; }
+  
+  {% endfor %}
+  
+  
+  
+  @media(max-width: 991px){ {{ moduleId }} .space-sec { {{ module.style.spacing.tablet.css }}; } }
+  
+  @media(max-width: 767px){ {{ moduleId }} .space-sec { {{ module.style.spacing.mobile.css }}; } }
+  
+</style>
+{% end_require_css %}
+
+
+{% require_js %}
+
+  <script>
+$(document).ready(function() {
+    function matchRowHeights() {
+        // Reset heights first to allow recalculation on window resize
+        $('.platdiffOICTt').css('height', 'auto');
+
+        // Get the number of items in the first column to know how many rows there are
+        var rowCount = $('.platdiffOICol').first().find('.platdiffOICTt').length;
+
+        for (var i = 0; i < rowCount; i++) {
+            var maxHeight = 0;
+
+            // Find the tallest .platdiffOICTt at index [i] across all columns
+            $('.platdiffOICol').each(function() {
+                var currentCell = $(this).find('.platdiffOICTt').eq(i);
+                var currentHeight = currentCell.outerHeight();
+                
+                if (currentHeight > maxHeight) {
+                    maxHeight = currentHeight;
+                }
+            });
+
+            // Set all cells in that "row" to the maxHeight
+            $('.platdiffOICol').each(function() {
+                $(this).find('.platdiffOICTt').eq(i).css('height', maxHeight + 'px');
+            });
+        }
+    }
+
+    // Run on load
+    matchRowHeights();
+
+    // Run on resize to keep it responsive
+    $(window).on('resize', function() {
+        matchRowHeights();
+    });
+});
+
+
+  </script>
+
+{% end_require_js %}
+
+
+{% endif %}
+

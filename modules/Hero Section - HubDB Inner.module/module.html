@@ -1,0 +1,84 @@
+{% if dynamic_page_hubdb_row %}
+{% set moduleId = '#hs_cos_wrapper_{{ name }}' %}
+<div class="fullwidth hrprocu-sec bgsec space-sec hrprocu-shapesc">
+   <div class="wrapper">
+      <div class="hrprocu-outer flexwrap txt-large">
+         <div class="hrprocu-lf">
+            <div class="tilecolor">
+               <h1 class="h2">{{ module.content.title }} {{ dynamic_page_hubdb_row.hs_name }}</h1>
+            </div>
+            <div class="hrprocu-txt sectxt">
+              {{ module.content.text }}
+            </div>
+            <div class="hrprocu-btn button triggBtn">
+               {% set href = module.content.button_link.url.href %}
+                {% if module.content.button_link.url.type is equalto "EMAIL_ADDRESS" %}
+                  {% set href = "mailto:" + href %}
+                {% endif %}
+                <a
+                  {% if module.content.button_link.url.type is equalto "CALL_TO_ACTION"  %}
+                    href="{{ href }}" {# The href here is not escaped as it is not editable and functions as a JavaScript call to the associated CTA #}
+                  {% else %}
+                    href="{{ href|escape_url }}"
+                  {% endif %}
+                  {% if module.content.button_link.open_in_new_tab %}
+                    target="_blank"
+                  {% endif %}
+                  {% if module.content.button_link.rel %}
+                    rel="{{ module.content.button_link.rel|escape_attr }}"
+                  {% endif %}
+                  >
+                  {{ module.content.button_text }}
+                </a>
+            </div>
+         </div>
+         <div class="hrprocu-rght">
+            <div class="hrprocu-img">
+              {% if module.content.select_image_option == 'flag' %}
+               <img src="{{ dynamic_page_hubdb_row.flag.url }}" alt="{{ dynamic_page_hubdb_row.hs_name }}" loading="lazy">
+              {% elif module.content.select_image_option == 'image' %}
+                <img src="{{ dynamic_page_hubdb_row.country_img.url }}" alt="{{ dynamic_page_hubdb_row.hs_name }}" loading="lazy">
+              {% else %}
+                <img src="{{ dynamic_page_hubdb_row.country_img.url }}" alt="{{ dynamic_page_hubdb_row.hs_name }}" loading="lazy">
+              {% endif %}
+              
+               <span class="hrp-topleft">    
+               <img src="https://www.goworkwize.com/hs-fs/hubfs/Workwize/Image/Hero-BgImage.png?width=635&amp;height=1231&amp;name=Hero-BgImage.png" alt="Hero-BgImage" loading="lazy" width="635" height="1231" style="max-width: 100%; height: auto;" srcset="https://www.goworkwize.com/hs-fs/hubfs/Workwize/Image/Hero-BgImage.png?width=318&amp;height=616&amp;name=Hero-BgImage.png 318w, https://www.goworkwize.com/hs-fs/hubfs/Workwize/Image/Hero-BgImage.png?width=635&amp;height=1231&amp;name=Hero-BgImage.png 635w, https://www.goworkwize.com/hs-fs/hubfs/Workwize/Image/Hero-BgImage.png?width=953&amp;height=1847&amp;name=Hero-BgImage.png 953w, https://www.goworkwize.com/hs-fs/hubfs/Workwize/Image/Hero-BgImage.png?width=1270&amp;height=2462&amp;name=Hero-BgImage.png 1270w, https://www.goworkwize.com/hs-fs/hubfs/Workwize/Image/Hero-BgImage.png?width=1588&amp;height=3078&amp;name=Hero-BgImage.png 1588w, https://www.goworkwize.com/hs-fs/hubfs/Workwize/Image/Hero-BgImage.png?width=1905&amp;height=3693&amp;name=Hero-BgImage.png 1905w" sizes="(max-width: 635px) 100vw, 635px">  
+               </span>
+               <span class="hrp-topright">   
+               <img src="https://www.goworkwize.com/hs-fs/hubfs/Workwize/Image/Hero-BgImage-White.png?width=789&amp;height=1449&amp;name=Hero-BgImage-White.png" alt="Hero-BgImage-White" loading="lazy" width="789" height="1449" style="max-width: 100%; height: auto;" srcset="https://www.goworkwize.com/hs-fs/hubfs/Workwize/Image/Hero-BgImage-White.png?width=395&amp;height=725&amp;name=Hero-BgImage-White.png 395w, https://www.goworkwize.com/hs-fs/hubfs/Workwize/Image/Hero-BgImage-White.png?width=789&amp;height=1449&amp;name=Hero-BgImage-White.png 789w, https://www.goworkwize.com/hs-fs/hubfs/Workwize/Image/Hero-BgImage-White.png?width=1184&amp;height=2174&amp;name=Hero-BgImage-White.png 1184w, https://www.goworkwize.com/hs-fs/hubfs/Workwize/Image/Hero-BgImage-White.png?width=1578&amp;height=2898&amp;name=Hero-BgImage-White.png 1578w, https://www.goworkwize.com/hs-fs/hubfs/Workwize/Image/Hero-BgImage-White.png?width=1973&amp;height=3623&amp;name=Hero-BgImage-White.png 1973w, https://www.goworkwize.com/hs-fs/hubfs/Workwize/Image/Hero-BgImage-White.png?width=2367&amp;height=4347&amp;name=Hero-BgImage-White.png 2367w" sizes="(max-width: 789px) 100vw, 789px">  
+               </span>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+
+
+{% require_css %}
+<style>
+  {{ moduleId }} .bgsec {  background-color:rgba({{ module.styles.background_color.color|convert_rgb }},{{ module.styles.background_color.opacity }}%); }
+  
+  {{ moduleId }} .space-sec { {{ module.style.spacing.desktop.css }}; }
+ 
+  {% for item in module.button %} 
+   {{ moduleId }} .secbtn:nth-child({{ loop.index }}) a { background-color: rgba({{ item.background_color.color|convert_rgb }},{{ item.background_color.opacity ~ '%' }}); border-color: rgba({{ item.border_color.color|convert_rgb }},{{ item.border_color.opacity ~ '%' }}); color: rgba({{ item.text_color.color|convert_rgb }},{{ item.text_color.opacity ~ '%' }}); }
+   {{ moduleId }} .secbtn:nth-child({{ loop.index }}) a:hover { background-color: rgba({{ item.background_color_hover_.color|convert_rgb }},{{ item.background_color_hover_.opacity ~ '%' }}); border-color: rgba({{ item.border_color_hover_.color|convert_rgb }},{{ item.border_color_hover_.opacity ~ '%' }}); color: rgba({{ item.text_color_hover_.color|convert_rgb }},{{ item.text_color_hover_.opacity ~ '%' }}); }  
+  {% endfor %}
+  
+  {% if module.shape_image.src %}
+   {{ moduleId }} .heroinner:before { background-image: url({{ module.shape_image.src }}); }
+  {% endif %}
+  
+  {{ moduleId }} .heroheader { max-width: {{ module.header_max_width }}px; }
+  {{ moduleId }} .hero-flage-img { text-align: center;   width: 100%;    margin: 0 0 20px; }
+  {{ moduleId }} .hero-flage-img img { max-width: 250px; }
+  @media(max-width: 991px){ {{ moduleId }} .space-sec { {{ module.style.spacing.tablet.css }}; } }
+  
+  @media(max-width: 767px){ {{ moduleId }} .space-sec { {{ module.style.spacing.mobile.css }}; } }
+  
+</style>
+{% end_require_css %}
+
+
+{% endif %}

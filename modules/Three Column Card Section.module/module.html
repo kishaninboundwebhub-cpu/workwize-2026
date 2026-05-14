@@ -1,0 +1,57 @@
+{% if module.show_hide_ %}
+{% set moduleId = '#hs_cos_wrapper_{{ name }}' %}
+<div class="fullwidth bgsec space-sec ThreeColumnCardSec">
+  <div class="wrapper">
+    <div class="secinner ThreeColumnCardInSec">
+      <div class="ThreeColumnCardIn">
+        {% for item in module.box_group %}
+        <div class="ThreeColumnCardBox {% if item.want_to_remove_icon_ %} Hideshowmorearrow {% endif %}">
+          <div class="ThreeColumnCTitleSec">
+            {% if item.box_logo.src %}
+            <div class="ThreeColumnCardBoxLogo"> 
+              	<img src="{{ item.box_logo.src|escape_url }}" alt="{{ item.box_logo.alt|escape_attr }}">
+            </div>
+            {% endif %}
+            {% if item.box_title %}
+            <div class="ThreeColumnCardBoxTitle">
+              <h5>
+                {{ item.box_title }}
+              </h5>
+            </div>
+            {% endif %}
+          </div>
+          {% if item.box_content %}
+          <div class="ThreeColumnCardBoxCnt"> 
+            {{ item.box_content }}
+          </div>
+          {% endif %}
+        </div>
+        {% endfor %}
+      </div> 
+
+
+    </div>    
+  </div>
+</div>
+
+
+{% require_css %}
+<style>
+  {{ moduleId }} .bgsec { {% if module.style.select_background == 'bg_color' %}
+    background-color: rgba({{ module.style.background_color.color|convert_rgb }},{{ module.style.background_color.opacity ~ '%' }});
+    {% elif module.style.select_background == 'bg_image' %}
+    {{ module.style.background_image.css }} background-repeat: no-repeat;
+    {% elif module.style.select_background == 'bg_gradient' %}
+    background: {{ module.style.background_gradient.css }};
+    {% endif %} }
+
+  {{ moduleId }} .space-sec { {{ module.style.spacing.desktop.css }}; }
+
+
+  @media(max-width: 991px){ {{ moduleId }} .space-sec { {{ module.style.spacing.tablet.css }}; } }
+
+  @media(max-width: 767px){ {{ moduleId }} .space-sec { {{ module.style.spacing.mobile.css }}; } }
+
+</style>
+{% end_require_css %}
+{% endif %}

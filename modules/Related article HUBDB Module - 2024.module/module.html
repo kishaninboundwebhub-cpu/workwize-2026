@@ -1,0 +1,65 @@
+
+	
+{% if dynamic_page_hubdb_row %}
+{% set dynamic_page_hubdb_table_id = module.select_hubdb_table  %}
+<div class="dynamic-data-outer {% if module.show_cta_only %} dynamic-data-cta-only {% endif %} fullwidth">  
+   <div class="wrapper">
+     {% if module.hide_show_section %}    
+     <h2 class="dd-list-top-title"> Related articles </h2>   
+     <div class="dd-list fullwidth">   
+      {% for row in hubdb_table_rows(dynamic_page_hubdb_table_id) %}
+        
+        {% if loop.index < 4 %}
+        {% if dynamic_page_hubdb_row.hs_name != row.hs_name %} 
+         <div class="dynamic-data-box">
+           <div class="ddb-img">
+             {% if row.country_img.url %}
+               <img src="{{ row.country_img.url }}" alt="{{ row.hs_name }}" loading="lazy">
+              {% else %}
+              <img src="https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize/Image/photo-icon-picture-icon-image-sign-symbol-vector-illustration_64749-4409.png" alt="{{ dynamic_page_hubdb_row.hs_name }}" loading="lazy">
+              {% endif %}
+           </div>
+           <div class="ddb-info">
+             <h4>{{ module.box_starting_text }} {{ row.hs_name }}</h4>
+             <div class="dd-read-more button">
+            <a href="/{{ content.slug }}/{{ row.hs_path }}">Read More</a>  
+           </div>
+           </div>
+         </div>
+        {% endif %}
+        {% endif %}
+     {% endfor %} 
+      </div>
+     {% endif %}
+     {% if module.show_cta_only %}
+	    <div class="ddlbtn triggBtn text-center button">      
+       {% set href = module.button_link.url.href %}
+        {% if module.button_link.url.type is equalto "EMAIL_ADDRESS" %}
+          {% set href = "mailto:" + href %}
+        {% endif %}
+        <a
+          {% if module.button_link.url.type is equalto "CALL_TO_ACTION"  %}
+            href="{{ href }}" {# The href here is not escaped as it is not editable and functions as a JavaScript call to the associated CTA #}
+          {% else %}
+            href="{{ href|escape_url }}"
+          {% endif %}
+          {% if module.button_link.open_in_new_tab %}
+            target="_blank"
+          {% endif %}
+          {% if module.button_link.rel %}
+            rel="{{ module.button_link.rel|escape_attr }}"
+          {% endif %}
+          >
+          {{ module.button_text }}
+        </a>
+      </div>
+     {% endif %}
+     
+     
+     
+   </div>
+</div>
+{% endif %}
+
+
+

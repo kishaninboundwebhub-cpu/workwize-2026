@@ -1,0 +1,410 @@
+{% if module.show_hide_ %}
+{% set moduleId = '#hs_cos_wrapper_{{ name }}' %}
+{% if dynamic_page_hubdb_row %}
+
+{% if dynamic_page_hubdb_row.categories.name == 'mdm' %}
+<div id="{{ module.mdm_content.section_id }}" class="faqsec fullwidth bgsec space-sec">
+ <div class="wrapper">
+  <div class="faqinner secinner">
+   {% if module.mdm_content.text or module.mdm_content.title %}   
+   <div class="faqheader secheader w-100 text-center">
+    {% if module.mdm_content.title %} 
+    <div class="faqtitle sectitle {% if not module.mdm_content.text %} removespace{% endif %}">
+     <h2 class="h1">{{ module.mdm_content.title }}</h2> 
+    </div>
+    {% endif %}
+    {% if module.mdm_content.text %}  
+    <div class="faqtxt"> 
+     {{ module.mdm_content.text }}
+    </div>
+    {% endif %} 
+   </div>
+   {% endif %}
+   <div class="faqrow w-100">
+    {% for item in module.mdm_content.faq_column %}
+    <div class="faqcols">
+     <div class="faqcolstitle">{{ item.title }}</div>
+     <div class="faqcolstxt">{{ item.text }}
+     {% if item.button_text %}
+     <div class="faqcolsbtn button">
+       {% set href = item.button_link.url.href %}
+       {% if item.button_link.url.type is equalto "EMAIL_ADDRESS" %}
+         {% set href = "mailto:" + href %}
+       {% endif %}
+       <a
+         {% if item.button_link.url.type is equalto "CALL_TO_ACTION"  %}
+           href="{{ href }}" {# The href here is not escaped as it is not editable and functions as a JavaScript call to the associated CTA #}
+         {% else %} href="{{ href|escape_url }}" {% endif %}
+         {% if item.button_link.open_in_new_tab %} target="_blank" {% endif %}
+         {% if item.button_link.rel %} rel="{{ item.button_link.rel|escape_attr }}" {% endif %}
+         >
+         {{ item.button_text }}
+       </a>
+     </div> 
+     {% endif %} 
+     </div> 
+     
+    </div>  
+    {% endfor %} 
+   </div> 
+   {% if module.mdm_content.button %} 
+   <div class="faqbtns secbtns flexwrap w-100 justifyCenter">
+    {% for item in module.mdm_content.button %} 
+    <div class="faqbtn secbtn {{ item.button_choice }}">
+     {% set href = item.button_link.url.href %}
+     {% if item.button_link.url.type is equalto "EMAIL_ADDRESS" %}
+     {% set href = "mailto:" + href %}
+     {% endif %}
+     <a href="{{ href }}"
+     {% if item.button_link.open_in_new_tab %}target="_blank"{% endif %}
+     {% if item.button_link.rel %}rel="{{ item.button_link.rel }}"{% endif %}
+     >
+      {{ item.button_text }}
+     </a> 
+    </div>
+    {% endfor %} 
+   </div>  
+   {% endif %} 
+  </div>    
+ </div>
+</div>
+
+{% elif dynamic_page_hubdb_row.categories.name == 'productivity' %}
+<div id="{{ module.productivity_content.section_id }}" class="faqsec fullwidth bgsec space-sec">
+ <div class="wrapper">
+  <div class="faqinner secinner">
+   {% if module.productivity_content.text or module.productivity_content.title %}   
+   <div class="faqheader secheader w-100 text-center">
+    {% if module.productivity_content.title %} 
+    <div class="faqtitle sectitle {% if not module.productivity_content.text %} removespace{% endif %}">
+     <h2 class="h1">{{ module.productivity_content.title }}</h2> 
+    </div>
+    {% endif %}
+    {% if module.productivity_content.text %}  
+    <div class="faqtxt"> 
+     {{ module.productivity_content.text }}
+    </div>
+    {% endif %} 
+   </div>
+   {% endif %}
+   <div class="faqrow w-100">
+    {% for item in module.productivity_content.faq_column %}
+    <div class="faqcols">
+     <div class="faqcolstitle">{{ item.title }}</div>
+     <div class="faqcolstxt">{{ item.text }}
+     {% if item.button_text %}
+     <div class="faqcolsbtn button">
+       {% set href = item.button_link.url.href %}
+       {% if item.button_link.url.type is equalto "EMAIL_ADDRESS" %}
+         {% set href = "mailto:" + href %}
+       {% endif %}
+       <a
+         {% if item.button_link.url.type is equalto "CALL_TO_ACTION"  %}
+           href="{{ href }}" {# The href here is not escaped as it is not editable and functions as a JavaScript call to the associated CTA #}
+         {% else %} href="{{ href|escape_url }}" {% endif %}
+         {% if item.button_link.open_in_new_tab %} target="_blank" {% endif %}
+         {% if item.button_link.rel %} rel="{{ item.button_link.rel|escape_attr }}" {% endif %}
+         >
+         {{ item.button_text }}
+       </a>
+     </div> 
+     {% endif %}
+     </div>
+    </div>  
+    {% endfor %} 
+   </div> 
+   {% if module.productivity_content.button %} 
+   <div class="faqbtns secbtns flexwrap w-100 justifyCenter">
+    {% for item in module.productivity_content.button %} 
+    <div class="faqbtn secbtn {{ item.button_choice }}">
+     {% set href = item.button_link.url.href %}
+     {% if item.button_link.url.type is equalto "EMAIL_ADDRESS" %}
+     {% set href = "mailto:" + href %}
+     {% endif %}
+     <a href="{{ href }}"
+     {% if item.button_link.open_in_new_tab %}target="_blank"{% endif %}
+     {% if item.button_link.rel %}rel="{{ item.button_link.rel }}"{% endif %}
+     >
+      {{ item.button_text }}
+     </a> 
+    </div>
+    {% endfor %} 
+   </div>  
+   {% endif %} 
+  </div>    
+ </div>
+</div>
+
+{% elif dynamic_page_hubdb_row.categories.name == 'identity' %}
+<div id="{{ module.identity_content.section_id }}" class="faqsec fullwidth bgsec space-sec">
+ <div class="wrapper">
+  <div class="faqinner secinner">
+   {% if module.identity_content.text or module.identity_content.title %}   
+   <div class="faqheader secheader w-100 text-center">
+    {% if module.identity_content.title %} 
+    <div class="faqtitle sectitle {% if not module.identity_content.text %} removespace{% endif %}">
+     <h2 class="h1">{{ module.identity_content.title }}</h2> 
+    </div>
+    {% endif %}
+    {% if module.identity_content.text %}  
+    <div class="faqtxt"> 
+     {{ module.identity_content.text }}
+    </div>
+    {% endif %} 
+   </div>
+   {% endif %}
+   <div class="faqrow w-100">
+    {% for item in module.identity_content.faq_column %}
+    <div class="faqcols">
+     <div class="faqcolstitle">{{ item.title }}</div>
+     <div class="faqcolstxt">{{ item.text }}
+     {% if item.button_text %}
+     <div class="faqcolsbtn button">
+       {% set href = item.button_link.url.href %}
+       {% if item.button_link.url.type is equalto "EMAIL_ADDRESS" %}
+         {% set href = "mailto:" + href %}
+       {% endif %}
+       <a
+         {% if item.button_link.url.type is equalto "CALL_TO_ACTION"  %}
+           href="{{ href }}" {# The href here is not escaped as it is not editable and functions as a JavaScript call to the associated CTA #}
+         {% else %} href="{{ href|escape_url }}" {% endif %}
+         {% if item.button_link.open_in_new_tab %} target="_blank" {% endif %}
+         {% if item.button_link.rel %} rel="{{ item.button_link.rel|escape_attr }}" {% endif %}
+         >
+         {{ item.button_text }}
+       </a>
+     </div> 
+     {% endif %}
+     </div>
+    </div>  
+    {% endfor %} 
+   </div> 
+   {% if module.identity_content.button %} 
+   <div class="faqbtns secbtns flexwrap w-100 justifyCenter">
+    {% for item in module.identity_content.button %} 
+    <div class="faqbtn secbtn {{ item.button_choice }}">
+     {% set href = item.button_link.url.href %}
+     {% if item.button_link.url.type is equalto "EMAIL_ADDRESS" %}
+     {% set href = "mailto:" + href %}
+     {% endif %}
+     <a href="{{ href }}"
+     {% if item.button_link.open_in_new_tab %}target="_blank"{% endif %}
+     {% if item.button_link.rel %}rel="{{ item.button_link.rel }}"{% endif %}
+     >
+      {{ item.button_text }}
+     </a> 
+    </div>
+    {% endfor %} 
+   </div>  
+   {% endif %} 
+  </div>    
+ </div>
+</div>
+
+{% elif dynamic_page_hubdb_row.categories.name == 'hris' %}
+<div id="{{ module.hris_content.section_id }}" class="faqsec fullwidth bgsec space-sec">
+ <div class="wrapper">
+  <div class="faqinner secinner">
+   {% if module.hris_content.text or module.hris_content.title %}   
+   <div class="faqheader secheader w-100 text-center">
+    {% if module.hris_content.title %} 
+    <div class="faqtitle sectitle {% if not module.hris_content.text %} removespace{% endif %}">
+     <h2 class="h1">{{ module.hris_content.title }}</h2> 
+    </div>
+    {% endif %}
+    {% if module.hris_content.text %}  
+    <div class="faqtxt"> 
+     {{ module.hris_content.text }}
+    </div>
+    {% endif %} 
+   </div>
+   {% endif %}
+   <div class="faqrow w-100">
+    {% for item in module.hris_content.faq_column %}
+    <div class="faqcols">
+     <div class="faqcolstitle">{{ item.title }}</div>
+     <div class="faqcolstxt">{{ item.text }}
+     {% if item.button_text %}
+     <div class="faqcolsbtn button">
+       {% set href = item.button_link.url.href %}
+       {% if item.button_link.url.type is equalto "EMAIL_ADDRESS" %}
+         {% set href = "mailto:" + href %}
+       {% endif %}
+       <a
+         {% if item.button_link.url.type is equalto "CALL_TO_ACTION"  %}
+           href="{{ href }}" {# The href here is not escaped as it is not editable and functions as a JavaScript call to the associated CTA #}
+         {% else %} href="{{ href|escape_url }}" {% endif %}
+         {% if item.button_link.open_in_new_tab %} target="_blank" {% endif %}
+         {% if item.button_link.rel %} rel="{{ item.button_link.rel|escape_attr }}" {% endif %}
+         >
+         {{ item.button_text }}
+       </a>
+     </div> 
+     {% endif %}
+     </div>
+    </div>  
+    {% endfor %} 
+   </div> 
+   {% if module.hris_content.button %} 
+   <div class="faqbtns secbtns flexwrap w-100 justifyCenter">
+    {% for item in module.hris_content.button %} 
+    <div class="faqbtn secbtn {{ item.button_choice }}">
+     {% set href = item.button_link.url.href %}
+     {% if item.button_link.url.type is equalto "EMAIL_ADDRESS" %}
+     {% set href = "mailto:" + href %}
+     {% endif %}
+     <a href="{{ href }}"
+     {% if item.button_link.open_in_new_tab %}target="_blank"{% endif %}
+     {% if item.button_link.rel %}rel="{{ item.button_link.rel }}"{% endif %}
+     >
+      {{ item.button_text }}
+     </a> 
+    </div>
+    {% endfor %} 
+   </div>  
+   {% endif %} 
+  </div>    
+ </div>
+</div>
+
+
+{% else %}
+<div id="{{ module.default_content.section_id }}" class="faqsec fullwidth bgsec space-sec">
+ <div class="wrapper">
+  <div class="faqinner secinner">
+   {% if module.default_content.text or module.default_content.title %}   
+   <div class="faqheader secheader w-100 text-center">
+    {% if module.default_content.title %} 
+    <div class="faqtitle sectitle {% if not module.default_content.text %} removespace{% endif %}">
+     <h2 class="h1">{{ module.default_content.title }}</h2> 
+    </div>
+    {% endif %}
+    {% if module.default_content.text %}  
+    <div class="faqtxt"> 
+     {{ module.default_content.text }}
+    </div>
+    {% endif %} 
+   </div>
+   {% endif %}
+   <div class="faqrow w-100">
+    {% for item in module.default_content.faq_column %}
+    <div class="faqcols">
+     <div class="faqcolstitle">{{ item.title }}</div>
+     <div class="faqcolstxt">{{ item.text }}
+     {% if item.button_text %}
+     <div class="faqcolsbtn button">
+       {% set href = item.button_link.url.href %}
+       {% if item.button_link.url.type is equalto "EMAIL_ADDRESS" %}
+         {% set href = "mailto:" + href %}
+       {% endif %}
+       <a
+         {% if item.button_link.url.type is equalto "CALL_TO_ACTION"  %}
+           href="{{ href }}" {# The href here is not escaped as it is not editable and functions as a JavaScript call to the associated CTA #}
+         {% else %} href="{{ href|escape_url }}" {% endif %}
+         {% if item.button_link.open_in_new_tab %} target="_blank" {% endif %}
+         {% if item.button_link.rel %} rel="{{ item.button_link.rel|escape_attr }}" {% endif %}
+         >
+         {{ item.button_text }}
+       </a>
+     </div> 
+     {% endif %}
+     </div>
+    </div>  
+    {% endfor %} 
+   </div> 
+   {% if module.default_content.button %} 
+   <div class="faqbtns secbtns flexwrap w-100 justifyCenter">
+    {% for item in module.default_content.button %} 
+    <div class="faqbtn secbtn {{ item.button_choice }}">
+     {% set href = item.button_link.url.href %}
+     {% if item.button_link.url.type is equalto "EMAIL_ADDRESS" %}
+     {% set href = "mailto:" + href %}
+     {% endif %}
+     <a href="{{ href }}"
+     {% if item.button_link.open_in_new_tab %}target="_blank"{% endif %}
+     {% if item.button_link.rel %}rel="{{ item.button_link.rel }}"{% endif %}
+     >
+      {{ item.button_text }}
+     </a> 
+    </div>
+    {% endfor %} 
+   </div>  
+   {% endif %} 
+  </div>    
+ </div>
+</div>
+
+{% endif %}
+
+{% require_css %}
+<style>
+  {{ moduleId }} .bgsec { {% if module.style.select_background == 'bg_color' %}
+    background-color: rgba({{ module.style.background_color.color|convert_rgb }},{{ module.style.background_color.opacity ~ '%' }});
+    {% elif module.style.select_background == 'bg_image' %}
+    {{ module.style.background_image.css }} background-repeat: no-repeat;
+    {% elif module.style.select_background == 'bg_gradient' %}
+    background: {{ module.style.background_gradient.css }};
+    {% endif %} }
+  
+  {{ moduleId }} .space-sec { {{ module.style.spacing.desktop.css }}; }
+  {{ moduleId }} .sectitle h2.h1 ,
+  {{ moduleId }} .sectitle h1 ,
+  {{ moduleId }} .sectitle h2 , 
+  {{ moduleId }} .sectitle h3 , 
+  {{ moduleId }} .sectitle h4 , 
+  {{ moduleId }} .sectitle h5 ,
+  {{ moduleId }} .sectitle h6 { color: rgba({{ module.color_settings.title_color.color|convert_rgb }},{{ module.color_settings.title_color.opacity ~ '%' }}); }
+  {{ moduleId }} .sectxt , {{ moduleId }} .sectxt * { color: rgba({{ module.color_settings.text_color.color|convert_rgb }},{{ module.color_settings.text_color.opacity ~ '%' }}); } 
+  
+  
+  
+  
+  {% if dynamic_page_hubdb_row.categories.name == 'mdm' %}
+  {% for item in module.mdm_content.button %} 
+   {{ moduleId }} .secbtn:nth-child({{ loop.index }}) a { background-color: rgba({{ item.background_color.color|convert_rgb }},{{ item.background_color.opacity ~ '%' }}); border-color: rgba({{ item.border_color.color|convert_rgb }},{{ item.border_color.opacity ~ '%' }}); color: rgba({{ item.text_color.color|convert_rgb }},{{ item.text_color.opacity ~ '%' }}); }
+   {{ moduleId }} .secbtn:nth-child({{ loop.index }}) a:hover { background-color: rgba({{ item.background_color_hover_.color|convert_rgb }},{{ item.background_color_hover_.opacity ~ '%' }}); border-color: rgba({{ item.border_color_hover_.color|convert_rgb }},{{ item.border_color_hover_.opacity ~ '%' }}); color: rgba({{ item.text_color_hover_.color|convert_rgb }},{{ item.text_color_hover_.opacity ~ '%' }}); }  
+  {% endfor %}
+  
+  {% elif dynamic_page_hubdb_row.categories.name == 'productivity' %}
+  {% for item in module.productivity_content.button %} 
+   {{ moduleId }} .secbtn:nth-child({{ loop.index }}) a { background-color: rgba({{ item.background_color.color|convert_rgb }},{{ item.background_color.opacity ~ '%' }}); border-color: rgba({{ item.border_color.color|convert_rgb }},{{ item.border_color.opacity ~ '%' }}); color: rgba({{ item.text_color.color|convert_rgb }},{{ item.text_color.opacity ~ '%' }}); }
+   {{ moduleId }} .secbtn:nth-child({{ loop.index }}) a:hover { background-color: rgba({{ item.background_color_hover_.color|convert_rgb }},{{ item.background_color_hover_.opacity ~ '%' }}); border-color: rgba({{ item.border_color_hover_.color|convert_rgb }},{{ item.border_color_hover_.opacity ~ '%' }}); color: rgba({{ item.text_color_hover_.color|convert_rgb }},{{ item.text_color_hover_.opacity ~ '%' }}); }  
+  {% endfor %}
+  
+  {% elif dynamic_page_hubdb_row.categories.name == 'identity' %}
+  {% for item in module.identity_content.button %} 
+   {{ moduleId }} .secbtn:nth-child({{ loop.index }}) a { background-color: rgba({{ item.background_color.color|convert_rgb }},{{ item.background_color.opacity ~ '%' }}); border-color: rgba({{ item.border_color.color|convert_rgb }},{{ item.border_color.opacity ~ '%' }}); color: rgba({{ item.text_color.color|convert_rgb }},{{ item.text_color.opacity ~ '%' }}); }
+   {{ moduleId }} .secbtn:nth-child({{ loop.index }}) a:hover { background-color: rgba({{ item.background_color_hover_.color|convert_rgb }},{{ item.background_color_hover_.opacity ~ '%' }}); border-color: rgba({{ item.border_color_hover_.color|convert_rgb }},{{ item.border_color_hover_.opacity ~ '%' }}); color: rgba({{ item.text_color_hover_.color|convert_rgb }},{{ item.text_color_hover_.opacity ~ '%' }}); }  
+  {% endfor %}  
+  
+  {% elif dynamic_page_hubdb_row.categories.name == 'hris' %}
+  {% for item in module.hris_content.button %} 
+   {{ moduleId }} .secbtn:nth-child({{ loop.index }}) a { background-color: rgba({{ item.background_color.color|convert_rgb }},{{ item.background_color.opacity ~ '%' }}); border-color: rgba({{ item.border_color.color|convert_rgb }},{{ item.border_color.opacity ~ '%' }}); color: rgba({{ item.text_color.color|convert_rgb }},{{ item.text_color.opacity ~ '%' }}); }
+   {{ moduleId }} .secbtn:nth-child({{ loop.index }}) a:hover { background-color: rgba({{ item.background_color_hover_.color|convert_rgb }},{{ item.background_color_hover_.opacity ~ '%' }}); border-color: rgba({{ item.border_color_hover_.color|convert_rgb }},{{ item.border_color_hover_.opacity ~ '%' }}); color: rgba({{ item.text_color_hover_.color|convert_rgb }},{{ item.text_color_hover_.opacity ~ '%' }}); }  
+  {% endfor %}  
+  
+  {% else %}
+  {% for item in module.default_content.button %} 
+   {{ moduleId }} .secbtn:nth-child({{ loop.index }}) a { background-color: rgba({{ item.background_color.color|convert_rgb }},{{ item.background_color.opacity ~ '%' }}); border-color: rgba({{ item.border_color.color|convert_rgb }},{{ item.border_color.opacity ~ '%' }}); color: rgba({{ item.text_color.color|convert_rgb }},{{ item.text_color.opacity ~ '%' }}); }
+   {{ moduleId }} .secbtn:nth-child({{ loop.index }}) a:hover { background-color: rgba({{ item.background_color_hover_.color|convert_rgb }},{{ item.background_color_hover_.opacity ~ '%' }}); border-color: rgba({{ item.border_color_hover_.color|convert_rgb }},{{ item.border_color_hover_.opacity ~ '%' }}); color: rgba({{ item.text_color_hover_.color|convert_rgb }},{{ item.text_color_hover_.opacity ~ '%' }}); }  
+  {% endfor %}
+  
+  {#{% for item in module.default_content.faq_column %}
+  {{ moduleId }} .faqcols:nth-child({{ loop.index }}) { background-color: rgba({{ item.background_color.color|convert_rgb }},{{ item.background_color.opacity ~ '%' }}); }
+  {{ moduleId }} .faqcols:nth-child({{ loop.index }}) .faqcolstitle:before , {{ moduleId }} .faqcols:nth-child({{ loop.index }}) .faqcolstitle:after { background-color: rgba({{ item.title_color.color|convert_rgb }}, 50%);}
+  {{ moduleId }} .faqcols:nth-child({{ loop.index }}) .faqcolstitle { color: rgba({{ item.title_color.color|convert_rgb }},{{ item.title_color.opacity ~ '%' }}); }
+  {{ moduleId }} .faqcols:nth-child({{ loop.index }}) .faqcolstxt { color: rgba({{ item.text_color.color|convert_rgb }},{{ item.text_color.opacity ~ '%' }}); }
+  {% endfor %}#}
+  
+  {% endif %}
+  
+  
+  @media(max-width: 991px){ {{ moduleId }} .space-sec { {{ module.style.spacing.tablet.css }}; } }
+  
+  @media(max-width: 767px){ {{ moduleId }} .space-sec { {{ module.style.spacing.mobile.css }}; } }
+  
+</style>
+{% end_require_css %}
+{% endif %}
+
+{% endif %}

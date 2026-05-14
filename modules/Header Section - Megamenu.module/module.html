@@ -1,0 +1,475 @@
+<div class="header-outer-sec">
+<div class="mm header-sec bgsec bgspace fullwidth header{{ widget_data.header_design.value|replace(" ", "-")|lower }}">
+ <div class="wrapper-1310">
+  <div class="header-outer fullwidth">
+   <div class="header-row flexwrap w-100 alignCenter">
+    <div class="header-logo hlogo{{ widget_data.header_design.value|replace(" ", "-")|lower }}">
+     {% set href = module.logo_link.url.href %}
+     {% if module.logo_link.url.type is equalto "EMAIL_ADDRESS" %}
+     {% set href = "mailto:" + href %}
+     {% endif %}
+     <a href="{{ href }}"
+     {% if module.logo_link.open_in_new_tab %}target="_blank"{% endif %}
+     {% if module.logo_link.rel %}rel="{{ module.logo_link.rel }}"{% endif %}
+     >       
+      {% if module.logo_for_white_.src %}
+      {% set sizeAttrs = 'width="{{ module.logo_for_white_.width }}" height="{{ module.logo_for_white_.height }}"' %}
+      {% if module.logo_for_white_.size_type == 'auto' %}
+      {% set sizeAttrs = 'width="{{ module.logo_for_white_.width }}" height="{{ module.logo_for_white_.height }}" style="max-width: 100%; height: auto;"' %}
+      {% elif module.logo_for_white_.size_type == 'auto_custom_max' %}
+      {% set sizeAttrs = 'width="{{ module.logo_for_white_.max_width }}" height="{{ module.logo_for_white_.max_height }}" style="max-width: 100%; height: auto;"' %}
+      {% endif %}
+      {% set loadingAttr = module.logo_for_white_.loading != 'disabled' ? 'loading="{{ module.logo_for_white_.loading }}"' : '' %}
+      <img class="header-lfwhite" src="{{ module.logo_for_white_.src }}" alt="{{ module.logo_for_white_.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
+      {% endif %}   
+       
+      {% if module.logo_for_sky_blue_.src %}
+      {% set sizeAttrs = 'width="{{ module.logo_for_sky_blue_.width }}" height="{{ module.logo_for_sky_blue_.height }}"' %}
+      {% if module.logo_for_sky_blue_.size_type == 'auto' %}
+      {% set sizeAttrs = 'width="{{ module.logo_for_sky_blue_.width }}" height="{{ module.logo_for_sky_blue_.height }}" style="max-width: 100%; height: auto;"' %}
+      {% elif module.logo_for_sky_blue_.size_type == 'auto_custom_max' %}
+      {% set sizeAttrs = 'width="{{ module.logo_for_sky_blue_.max_width }}" height="{{ module.logo_for_sky_blue_.max_height }}" style="max-width: 100%; height: auto;"' %}
+      {% endif %}
+      {% set loadingAttr = module.logo_for_sky_blue_.loading != 'disabled' ? 'loading="{{ module.logo_for_sky_blue_.loading }}"' : '' %}
+      <img class="header-lfdarkblue" src="{{ module.logo_for_sky_blue_.src }}" alt="{{ module.logo_for_sky_blue_.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
+      {% endif %} 
+       
+       {% if module.logo_for_dark_blue_.src %}
+      {% set sizeAttrs = 'width="{{ module.logo_for_dark_blue_.width }}" height="{{ module.logo_for_dark_blue_.height }}"' %}
+      {% if module.logo_for_dark_blue_.size_type == 'auto' %}
+      {% set sizeAttrs = 'width="{{ module.logo_for_dark_blue_.width }}" height="{{ module.logo_for_dark_blue_.height }}" style="max-width: 100%; height: auto;"' %}
+      {% elif module.logo_for_dark_blue_.size_type == 'auto_custom_max' %}
+      {% set sizeAttrs = 'width="{{ module.logo_for_dark_blue_.max_width }}" height="{{ module.logo_for_dark_blue_.max_height }}" style="max-width: 100%; height: auto;"' %}
+      {% endif %}
+      {% set loadingAttr = module.logo_for_dark_blue_.loading != 'disabled' ? 'loading="{{ module.logo_for_dark_blue_.loading }}"' : '' %}
+      <img class="header-lfskublue" src="{{ module.logo_for_dark_blue_.src }}" alt="{{ module.logo_for_dark_blue_.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
+      {% endif %} 
+     </a> 
+    </div> 
+    <div class="mobileTrigger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div> 
+    <div class="header-right">
+     <div class="mobileTrigger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>  
+     <div class="header-menu">
+      {% menu id="{{ module.menu }}" %}
+     </div>  
+     {% if module.button_group %} 
+     <div class="header-btns hbtn{{ widget_data.header_design.value|replace(" ", "-")|lower }}">
+      {% for item in module.button_group %}
+      {% if item.button_text %} 
+      <div class="header-btn {{ item.link_or_button }}">
+       {% set href = item.button_link.url.href %}
+       {% if item.button_link.url.type is equalto "EMAIL_ADDRESS" %}
+       {% set href = "mailto:" + href %}
+       {% endif %}
+       <a href="{{ href }}"
+       {% if item.button_link.open_in_new_tab %}target="_blank"{% endif %}
+       {% if item.button_link.rel %}rel="{{ item.button_link.rel }}"{% endif %}
+       >
+        {{ item.button_text }} 
+       </a>  
+      </div>
+      {% endif %} 
+      {% endfor %}
+     </div> 
+     {% endif %}
+    </div> 
+   </div>
+  </div>  
+ </div> 
+</div>
+
+</div>
+
+{% for item in module.mega_menu %}
+{% if item.column_choice == 'headermmtabbing' %}
+
+<div data-value="{{ item.assign_mega_menu_in_top_level_main_menu }}" class="hmegaMenu {{ item.column_choice }}">
+ <div class="hmegaMenuInn">
+  {% if is_in_editor %}
+
+  {% else %}
+    <div class="hmegaMenutab-Left" id="dynamic-mega-menu">
+   
+   {% for item2 in item.tabbing.tab_column %}
+   <div class="hmegaMenutabcols" data-tab="{{ item2.title|replace(" ", "-")|replace("&", "-")|lower }}-{{ loop.index }}">
+    <span class="hmmicon">
+      {% if item2.icon.src %}
+			{% set sizeAttrs = 'width="{{ item2.icon.width|escape_attr }}" height="{{ item2.icon.height|escape_attr }}"' %}
+			{% if item2.icon.size_type == 'auto' %}
+			{% set sizeAttrs = 'width="{{ item2.icon.width|escape_attr }}" height="{{ item2.icon.height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+			{% elif item2.icon.size_type == 'auto_custom_max' %}
+		  {% set sizeAttrs = 'width="{{ item2.icon.max_width|escape_attr }}" height="{{ item2.icon.max_height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+			{% endif %}
+			{% set loadingAttr = item2.icon.loading != 'disabled' ? 'loading="{{ item2.icon.loading|escape_attr }}"' : '' %}
+			<img src="{{ item2.icon.src|escape_url }}" alt="{{ item2.icon.alt|escape_attr }}" {{ loadingAttr }} {{ sizeAttrs }}>
+		  {% endif %} 
+    </span> 
+    
+    <span class="hmmtitle">{{ item2.title }}</span>  
+    <span class="hmmarrowicon">
+      <svg xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="iconify iconify--ic" width="100%" height="100%" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path fill="currentColor" d="M6.23 20.23L8 22l10-10L8 2L6.23 3.77L14.46 12z"></path></svg> 
+    </span> 
+     
+   </div>
+   {% endfor %}   
+    
+   {% if item.tabbing.platform_feature_button_text %} 
+   <div class="hmegaMenutabbtn">
+    {% set href = item.tabbing.platform_feature_button_link.url.href %}
+    {% if item.tabbing.platform_feature_button_link.url.type is equalto "EMAIL_ADDRESS" %}
+    {% set href = "mailto:" + href %}
+    {% endif %}
+    <a
+    {% if item.tabbing.platform_feature_button_link.url.type is equalto "CALL_TO_ACTION"  %} href="{{ href }}" {% else %} href="{{ href|escape_url }}" {% endif %}
+    {% if item.tabbing.platform_feature_button_link.open_in_new_tab %} target="_blank" {% endif %}
+    {% if item.tabbing.platform_feature_button_link.rel %} rel="{{ item.tabbing.platform_feature_button_link.rel|escape_attr }}" {% endif %}
+    >
+      {{ item.tabbing.platform_feature_button_text }} 
+      <span class="hmpb-icon">
+       <svg xmlns="https://www.w3.org/2000/svg" fill="#0065f7" viewBox="0 0 512 512">
+         <path d="M505 273c9.4-9.4 9.4-24.6 0-33.9L369 103c-9.4-9.4-24.6-9.4-33.9 0s-9.4 24.6 0 33.9l95 95L24 232c-13.3 0-24 10.7-24 24s10.7 24 24 24l406.1 0-95 95c-9.4 9.4-9.4 24.6 0 33.9s24.6 9.4 33.9 0L505 273z"></path>
+       </svg> 
+      </span>
+    </a>
+   </div> 
+   {% endif %} 
+  </div>
+    <div class="hmegaMenutab-Right">
+   <div class="hmegaMenutabr-row">
+    {% for item2 in item.tabbing.tab_column %} 
+    <div class="hmegaMenutab-cols" id="{{ item2.title|replace(" ", "-")|replace("&", "-")|lower }}-{{ loop.index }}">
+     <div class="hmmrc-top">
+      <div class="hmmrc-title">{{ item2.title }}</div>
+      {% if item2.button_text %} 
+      <div class="hmmrc-btn button ">
+       {% set href = item2.button_link.url.href %}
+       {% if item2.button_link.url.type is equalto "EMAIL_ADDRESS" %}
+       {% set href = "mailto:" + href %}
+       {% endif %}
+       <a
+       {% if item2.button_link.url.type is equalto "CALL_TO_ACTION"  %} href="{{ href }}" {% else %} href="{{ href|escape_url }}" {% endif %}
+       {% if item2.button_link.open_in_new_tab %} target="_blank" {% endif %}
+       {% if item2.button_link.rel %} rel="{{ item2.button_link.rel|escape_attr }}" {% endif %}
+       >
+        {{ item2.button_text }}  
+       </a> 
+      </div>
+      {% endif %} 
+     </div>       
+     <div class="hmmrc-row">
+      {% for item3 in item2.column %} 
+      <div class="hmmrc-cols">
+       <div class="hmmrc-cols-title">
+        {% set href = item3.link.url.href %}
+        {% if item3.link.url.type is equalto "EMAIL_ADDRESS" %} {% set href = "mailto:" + href %} {% endif %}
+        <a
+        {% if item3.link.url.type is equalto "CALL_TO_ACTION"  %}
+        href="{{ href }}" {% else %} href="{{ href|escape_url }}" {% endif %}
+        {% if item3.link.open_in_new_tab %} target="_blank" {% endif %}
+        {% if item3.link.rel %} rel="{{ item3.link.rel|escape_attr }}" {% endif %}
+        >
+          {{ item3.title }}
+        </a>         
+       </div>
+       <div class="hmmrc-cols-text">
+        {{ item3.text }} 
+       </div>
+        
+        {% set href = item3.link.url.href %}
+        {% if item3.link.url.type is equalto "EMAIL_ADDRESS" %} {% set href = "mailto:" + href %} {% endif %}
+        <a class="hmmrc-cols-links"
+        {% if item3.link.url.type is equalto "CALL_TO_ACTION"  %}
+        href="{{ href }}" {% else %} href="{{ href|escape_url }}" {% endif %}
+        {% if item3.link.open_in_new_tab %} target="_blank" {% endif %}
+        {% if item3.link.rel %} rel="{{ item3.link.rel|escape_attr }}" {% endif %}
+        >
+        </a> 
+        
+      </div>  
+      {% endfor %} 
+     </div> 
+    </div>  
+    {% endfor %} 
+   </div> 
+  </div> 
+  {% endif %}
+ </div>
+</div>
+{% else %} 
+<div data-value="{{ item.assign_mega_menu_in_top_level_main_menu }}" class="hmegaMenu {{ item.column_choice }}">  
+ <div class="hmegaMenuInn">
+  {% for item2 in item.column %} 
+  {% if item2.content_choice == 'hc-list' %}  
+  <div class="hmegaMenucols {{ item2.content_choice }}">
+   {% if item2.list.title %}<div class="hlistitle">{{ item2.list.title }}</div>{% endif %}
+   {% if item2.list.list %}
+   <div class="hlistrow">
+    {% for item3 in item2.list.list %}
+    <div class="hlistcol"> 
+     <a href="{{ item3.link.url.href|escape_url }}" > 
+      {% if item3.icon.src %} 
+      <div class="hlistiocn">      
+			{% set sizeAttrs = 'width="{{ item3.icon.width }}" height="{{ item3.icon.height }}"' %}
+			{% if item3.icon.size_type == 'auto' %}
+			{% set sizeAttrs = 'width="{{ item3.icon.width }}" height="{{ item3.icon.height }}" style="max-width: 100%; height: auto;"' %}
+			{% elif item3.icon.size_type == 'auto_custom_max' %}
+			{% set sizeAttrs = 'width="{{ item3.icon.max_width }}" height="{{ item3.icon.max_height }}" style="max-width: 100%; height: auto;"' %}
+			{% endif %}
+			{% set loadingAttr = item3.icon.loading != 'disabled' ? 'loading="{{ item3.icon.loading }}"' : '' %}
+			<img src="{{ item3.icon.src }}" alt="{{ item3.icon.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>		 
+     </div>
+      {% endif %} 
+      <div class="hlistcntn">
+       {% if item3.title %}<div class="hlistctitle">{{ item3.title }}</div>{% endif %}
+       {% if item3.text %}<div class="hlistctxt">{{ item3.text }}</div>{% endif %} 
+      </div>
+     </a>
+    </div>
+    {% endfor %} 
+   </div> 
+   {% endif %}  
+  </div>
+  {% elif item2.content_choice == 'hc-blog' %}  
+  <div class="hmegaMenucols {{ item2.content_choice }}">
+   {% if item2.blog.blog_or_custom_content == 'select_blog' %} 
+   <div class="hdrblog">
+    {% set rec_posts = blog_recent_posts(item2.blog.blog_Group.blog, item2.blog.blog_Group.number_of_post) %}
+    {% for rec_post in rec_posts %} 
+    <div class="hdrblogcols"> 
+     {% if rec_post.featured_image %} 
+     <a href="{{ rec_post.absolute_url }}" class="hdrblogimg" style="background-image: url('{{ rec_post.featured_image }}');"> 
+     </a>
+      {% endif %}
+     <div class="hdrblogcntn">
+      {% if rec_post.tag_list %} 
+      <div class="hdrblogtag">
+       {% for tag in rec_post.tag_list %}
+        <a class="hs-blog-post-listing__post-tag" href="{{ blog_tag_url(group.id, tag.slug) }}">{{ tag.name }}</a>
+       {% endfor %}        
+      </div>
+      {% endif %} 
+      {% if rec_post.title %}  
+      <div class="hdrblogtitle">
+       <a href="{{ rec_post.absolute_url }}" >{{ rec_post.name }}</a>
+      </div> 
+      {% endif %} 
+     </div> 
+    </div> 
+    {% endfor %} 
+   </div>
+   {% else %}
+   <div class="hdrblog">
+    {% for item3 in item2.blog.custom_content %}
+    <div class="hdrblogcols"> 
+     {% if item3.image.src %} 
+     <a href="{{ item3.link.url.href }}" class="hdrblogimg" style="background-image: url('{{ item3.image.src }}');"> 
+     </a>
+      {% endif %}
+     <div class="hdrblogcntn">
+      {% if item3.tag %} 
+      <div class="hdrblogtag">
+       {{ item3.tag }}
+      </div>
+      {% endif %} 
+      {% if item3.title %}  
+      <div class="hdrblogtitle">
+       <a href="{{ item3.link.url.href }}" >{{ item3.title }}</a>
+      </div> 
+      {% endif %} 
+     </div> 
+    </div>
+    {% endfor %} 
+   </div>
+   {% endif %} 
+  </div>
+  {% else %}
+  <div class="hmegaMenucols {{ item2.content_choice }}">
+   {% if item2.text.title %}<div class="hmm-title">{{ item2.text.title }}</div>{% endif %}
+   {% if item2.text.text %}<div class="hmm-text">{{ item2.text.text }}</div>{% endif %}
+   {% if item2.text.button_text %}
+   <div class="hmm-btn">
+		{% set href = item2.text.button_link.url.href %}
+		{% if item2.text.button_link.url.type is equalto "EMAIL_ADDRESS" %}
+		{% set href = "mailto:" + href %}
+		{% endif %}
+		<a href="{{ href }}"
+		{% if item2.text.button_link.open_in_new_tab %}target="_blank"{% endif %}
+		{% if item2.text.button_link.rel %}rel="{{ item2.text.button_link.rel }}"{% endif %}
+		>
+     {{ item2.text.button_text }}
+    </a>  
+   </div>{% endif %}
+  </div> 
+  {% endif %}
+  {% endfor %} 
+ </div>
+</div>
+{% endif %}
+{% endfor %}
+
+
+
+{% require_css %}
+
+<style>
+  {% scope_css %}
+   .header-sec { {{ module.style.spacing.desktop.css }} }
+  
+  .headermmtabbing .hmegaMenuInn { column-gap: 0; max-width: 100%; }
+.hmegaMenutab-Left { width: 35%; padding-right: 20px; border-right: 1px solid #dfdfdf; }
+.hmegaMenutab-Right { width: 65%; padding-left: 20px; }
+
+.hmegaMenutabcols { margin-bottom: 5px; border: 1px solid transparent; cursor: pointer; padding: 16px; border-radius: 12px; color: #122750; display: flex; flex-wrap: wrap; align-items: center; }
+.hmegaMenutabcols:last-child { margin-bottom: 0; }
+.hmegaMenutabcols > .hmmtitle { display: inline-block; }
+.hmmicon { margin-right: 12px; background-color: rgba(245, 247, 248, 100%); border-radius: 8px; width: 32px; height: 32px; padding: 5px; display: flex; flex-wrap: wrap; align-items: center; justify-content: center; }
+.hmmicon img { max-width: 20px !important; }
+.hmmtitle { letter-spacing: -0.15px; font-size: 16px; line-height: 1.2; font-weight: 500; width: calc(100% - 66px); }
+.hmmarrowicon { display: inline-block; }
+.hmmarrowicon svg { width: 14px; margin-left: 8px; }
+.hmegaMenutabcols:hover , .hmegaMenutabcols.current { background-color: #e1ecfe; border-color: #227AF7; }
+.hmegaMenutabcols:hover .hmmicon , .hmegaMenutabcols.current .hmmicon { background-color: #fff; }
+.hmegaMenutabbtn { margin-top: 20px;  }
+.hmegaMenutabbtn a { font-weight: 500; display: inline-block; color: #227af7; line-height: 1.2; }
+.hmegaMenutabbtn a .hmpb-icon { transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); -webkit-transition: all ease 0.5s; -moz-transition: all ease 0.5s; transition: all ease 0.5s; display: inline-block; margin-left: 5px; line-height: 1.2; vertical-align: middle; }
+.hmegaMenutabbtn a svg { width: 20px; fill: currentcolor; }
+.hmegaMenutabbtn a:hover .hmpb-icon { transform: translate3d(6px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); }
+.hmegaMenutab-cols { display: none; line-height: 1.2; width: 100%; }
+.hmegaMenutab-cols.current { display: block; }
+.hmmrc-top { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; row-gap: 10px; padding-bottom: 16px; border-bottom: 1px solid #dfdfdf; }
+.hmmrc-title { padding-right: 20px; font-family: 'Aeonik'; font-size: 20px; font-weight: 500; line-height: 1.5; }
+.hmmrc-row { width: 100%; display: flex; flex-wrap: wrap; }
+.hmmrc-cols { position: relative; cursor: pointer; border-radius: 12px; width: 49%; padding: 20px; margin-right: 2%; margin-top: 20px; }
+.hmmrc-cols:nth-child(2n) { margin-right: 0; }
+.hmmrc-cols-title a { font-family: "Geist Mono", monospace; line-height: 1; letter-spacing: -0.15px; font-size: 18px; margin-bottom: 8px; font-weight: 500; }
+.hmmrc-cols-text {  font-size: 16px; line-height: 1.5; letter-spacing: 0px; }
+.hmmrc-cols:hover { background-color: #f5f7f8; }
+.hmmrc-cols:hover .hmmrc-cols-title a , .hmmrc-cols-title a:hover { color: #227af7; }
+.hmegaMenu.headermmtabbing { max-height: 630px; overflow: auto; }
+.hmegaMenu.headermmtabbing::-webkit-scrollbar-track {	border-radius: 14px; background-color: #f5f7f8; }
+.hmegaMenu.headermmtabbing::-webkit-scrollbar { width: 12px; background-color: #f5f7f8; }
+.hmegaMenu.headermmtabbing::-webkit-scrollbar-thumb { border-radius: 14px; background-color: #e1ecfe; }
+a.hmmrc-cols-links { position: absolute;   top: 0;   left: 0;    right: 0;    bottom: 0; }
+
+
+@media (max-width: 1080px) {
+  
+  .hmegaMenutabcols { padding: 12px; border-radius: 8px; }
+  .hmmrc-cols { border-radius: 8px; padding: 15px; }
+  
+}
+
+
+@media (max-width: 991px) {
+  
+ .hmegaMenu.headermmtabbing { max-height: initial; overflow: initial; }
+ .hmmrc-cols { width: 100%; margin-right: 0;  margin-top: 10px; }
+ .hmegaMenutab-Left { width: 42%; }
+ .hmegaMenutab-Right { width: 58%; } 
+ .hmmrc-btn.button a { padding: 12px 12px 15px; font-size: 16px; border-radius: 8px; } 
+  
+
+}
+
+@media (max-width: 767px) {
+
+ .hmegaMenutab-Left { width: 100%; border-right: 0; padding-right: 0; }
+ .hmegaMenutab-Right { width: 100%; padding-left: 0; } 
+  
+ .hmmicon { margin-right: 8px; }
+ .hmmarrowicon svg { margin-left: 5px; }
+ .hmmtitle { width: calc(100% - 59px); } 
+ .hmmrc-title { font-size: 18px; }  
+
+
+}
+
+ @media (max-width: 991px) {
+    .header-sec { {{ module.style.spacing.tablet.css }} }
+ }
+  
+ @media (max-width: 767px) {
+    .header-sec { {{ module.style.spacing.mobile.css }} }
+ } 
+  {% end_scope_css %}
+  
+  
+  
+  
+</style>
+
+{% end_require_css %}
+
+
+{% require_js %}
+  <script>
+$(document).ready(function(){
+  
+  $('.hmegaMenu').each(function(){
+    var getv = $(this).attr('data-value');
+    $('.header-menu .hs-menu-wrapper > ul > li:nth-child('+getv+')').addClass('megaChildMenu');
+    $(this).insertAfter($('.header-menu .hs-menu-wrapper > ul li.megaChildMenu:nth-child('+getv+') > a'));  
+  });
+  
+  $('.header-menu .megaChildMenu > a').after('<div class="childTrigger"></div>'); 
+  $('.mobileTrigger').on('click',function(){
+    $('body').toggleClass('menuOpen');
+  });
+  $('.childTrigger').on('click',function(){
+    $(this).parent().siblings().find('.childTrigger').removeClass('childOpen');
+    $(this).toggleClass('childOpen');
+    $(this).parent().siblings().find('.hmegaMenu').slideUp(200);
+    $(this).next('.hmegaMenu').slideToggle(200);
+  });
+  
+  /**/
+  
+  $('.headermmtabbing .hmegaMenutab-Left .hmegaMenutabcols').on('click', function(){
+    // get the data attribute
+    var tab_id = $(this).attr('data-tab');
+    // remove the default classes
+    $('.headermmtabbing .hmegaMenutab-Left .hmegaMenutabcols').removeClass('current');
+    $('.hmegaMenutab-cols').removeClass('current');
+    // add new classes on mouse click
+    $(this).addClass('current');
+    $('#'+tab_id).addClass('current');
+  });
+  $('.headermmtabbing .hmegaMenutab-Left .hmegaMenutabcols:first-child').trigger('click');
+  
+ 
+  
+});
+
+
+  </script>
+{% end_require_js %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

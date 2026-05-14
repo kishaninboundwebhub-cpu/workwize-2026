@@ -1,0 +1,1130 @@
+[ {
+  "id" : "e181e1ee-ef06-5ba8-0ad3-f63113a45d24",
+  "name" : "style",
+  "label" : "Style",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "36fd79d2-1107-4452-d226-d4c096723f16",
+    "name" : "select_background",
+    "label" : "Select Background",
+    "required" : false,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "bg_color", "Background Color" ], [ "bg_image", "Background Image" ], [ "bg_gradient", "Background Gradient" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : ""
+  }, {
+    "id" : "60d0ddef-fb34-a99a-73cb-bda8b10e0fc9",
+    "name" : "background_color",
+    "label" : "Background Color",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "style.select_background",
+      "controlling_value_regex" : "bg_color",
+      "property" : null,
+      "operator" : "MATCHES_REGEX",
+      "access" : null
+    },
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#122750",
+      "opacity" : 100
+    }
+  }, {
+    "id" : "19f0609d-595d-6ef3-f639-3f6006e095fb",
+    "name" : "background_image",
+    "label" : "Background Image",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "style.select_background",
+      "controlling_value_regex" : "bg_image",
+      "property" : null,
+      "operator" : "MATCHES_REGEX",
+      "access" : null
+    },
+    "type" : "backgroundimage",
+    "display_width" : null,
+    "default" : {
+      "src" : "",
+      "background_position" : "MIDDLE_CENTER",
+      "background_size" : "cover"
+    }
+  }, {
+    "id" : "0df6d4e0-395b-eda2-ec5a-1d08ad6c8d35",
+    "name" : "background_gradient",
+    "label" : "Background Gradient",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "style.select_background",
+      "controlling_value_regex" : "bg_gradient",
+      "property" : null,
+      "operator" : "MATCHES_REGEX",
+      "access" : null
+    },
+    "type" : "gradient",
+    "display_width" : null,
+    "default" : { }
+  }, {
+    "id" : "afeb177b-c31d-1412-5116-70d6f85c5565",
+    "name" : "spacing",
+    "label" : "Spacing",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "d59d9e4c-264e-54fa-99b7-0ff07897b867",
+      "name" : "desktop",
+      "label" : "Desktop",
+      "required" : false,
+      "locked" : false,
+      "type" : "spacing",
+      "display_width" : null,
+      "default" : {
+        "padding" : {
+          "top" : {
+            "value" : 120,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 120,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      }
+    }, {
+      "id" : "0c762a95-1339-05fa-721d-3d79f41b571e",
+      "name" : "tablet",
+      "label" : "Tablet",
+      "required" : false,
+      "locked" : false,
+      "type" : "spacing",
+      "display_width" : null,
+      "default" : {
+        "padding" : {
+          "top" : {
+            "value" : 80,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 80,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      }
+    }, {
+      "id" : "0a8a8c35-4008-f2aa-311a-12325d67b19c",
+      "name" : "mobile",
+      "label" : "Mobile",
+      "required" : false,
+      "locked" : false,
+      "type" : "spacing",
+      "display_width" : null,
+      "default" : {
+        "padding" : {
+          "top" : {
+            "value" : 60,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 60,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      }
+    } ],
+    "tab" : "STYLE",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : {
+      "desktop" : {
+        "padding" : {
+          "top" : {
+            "value" : 120,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 120,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      },
+      "tablet" : {
+        "padding" : {
+          "top" : {
+            "value" : 80,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 80,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      },
+      "mobile" : {
+        "padding" : {
+          "top" : {
+            "value" : 60,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 60,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      }
+    }
+  } ],
+  "tab" : "STYLE",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "select_background" : "",
+    "background_color" : {
+      "color" : "#122750",
+      "opacity" : 100
+    },
+    "background_image" : {
+      "src" : "",
+      "background_position" : "MIDDLE_CENTER",
+      "background_size" : "cover"
+    },
+    "background_gradient" : { },
+    "spacing" : {
+      "desktop" : {
+        "padding" : {
+          "top" : {
+            "value" : 120,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 120,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      },
+      "tablet" : {
+        "padding" : {
+          "top" : {
+            "value" : 80,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 80,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      },
+      "mobile" : {
+        "padding" : {
+          "top" : {
+            "value" : 60,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 60,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      }
+    }
+  }
+}, {
+  "id" : "55ccd3e2-31aa-4e79-9772-80facd954415",
+  "name" : "show_hide_",
+  "label" : "Section [Show/ Hide]",
+  "required" : false,
+  "locked" : false,
+  "display" : "toggle",
+  "type" : "boolean",
+  "display_width" : null,
+  "default" : true
+}, {
+  "id" : "a63da953-ab67-1cd5-959d-cb474d11047e",
+  "name" : "layout_style",
+  "label" : "Layout Style",
+  "required" : false,
+  "locked" : false,
+  "display" : "select",
+  "choices" : [ [ "default", "Default" ], [ "style_1", "Layout 1" ], [ "style_2", "Layout 2" ], [ "style_3", "Layout 3" ], [ "style_4", "Layout 4" ], [ "style_5", "Layout 5" ] ],
+  "multiple" : false,
+  "reordering_enabled" : true,
+  "preset" : null,
+  "type" : "choice",
+  "display_width" : null,
+  "default" : "default"
+}, {
+  "id" : "92261aa4-e47d-0f52-9357-15c102550a16",
+  "name" : "sub_title",
+  "label" : "Sub Title",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : ""
+}, {
+  "id" : "496d4407-abd4-c6ea-6410-2a7f84894093",
+  "name" : "title",
+  "label" : "Title",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "100,000+ devices. Zero operational chaos."
+}, {
+  "id" : "0b7785ad-7e87-358f-7ffb-b5ac4f130d14",
+  "name" : "text",
+  "label" : "Text",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : ""
+}, {
+  "id" : "90a68aef-7302-50f0-1454-7796665ac4fd",
+  "name" : "box_item",
+  "label" : "Box Item",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : null,
+    "max" : null,
+    "sorting_label_field" : null,
+    "default" : 3
+  },
+  "children" : [ {
+    "id" : "21906cfa-7085-7aff-87aa-dcc48fa673fb",
+    "name" : "value",
+    "label" : "Value",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "box_item.set_text_cta_box",
+      "controlling_value_regex" : "false",
+      "property" : null,
+      "operator" : "MATCHES_REGEX",
+      "access" : null
+    },
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "$1.4M"
+  }, {
+    "id" : "d3fc672d-67f0-39cc-a75e-839625389fef",
+    "name" : "logo",
+    "label" : "Logo",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "box_item.set_text_cta_box",
+      "controlling_value_regex" : "false",
+      "property" : null,
+      "operator" : "MATCHES_REGEX",
+      "access" : null
+    },
+    "responsive" : true,
+    "resizable" : true,
+    "show_loading" : true,
+    "type" : "image",
+    "display_width" : null,
+    "default" : {
+      "size_type" : "exact",
+      "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/HighLevel%202.svg",
+      "alt" : "HighLevel 2",
+      "loading" : "lazy",
+      "width" : 108,
+      "height" : 25,
+      "max_width" : 108,
+      "max_height" : 25
+    }
+  }, {
+    "id" : "50d3e42e-216c-f350-3094-70649b7b5879",
+    "name" : "extra_logo",
+    "label" : "Extra Logo",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "box_item.set_text_cta_box",
+      "controlling_value_regex" : "false",
+      "property" : null,
+      "operator" : "MATCHES_REGEX",
+      "access" : null
+    },
+    "responsive" : true,
+    "resizable" : true,
+    "show_loading" : true,
+    "type" : "image",
+    "display_width" : null,
+    "default" : {
+      "src" : ""
+    }
+  }, {
+    "id" : "3dc71d6f-5416-5e1a-0486-d741e0b82bbf",
+    "name" : "text_field",
+    "label" : "Text",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "box_item.set_text_cta_box",
+      "controlling_value_regex" : "false",
+      "property" : null,
+      "operator" : "MATCHES_REGEX",
+      "access" : null
+    },
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Saved per year in IT Hardware Management"
+  }, {
+    "id" : "0dab04dd-1ef3-59bd-db1d-26d986ff846f",
+    "name" : "learn_more_button",
+    "label" : "Learn More Button",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "box_item.set_text_cta_box",
+      "controlling_value_regex" : "false",
+      "property" : null,
+      "operator" : "MATCHES_REGEX",
+      "access" : null
+    },
+    "children" : [ {
+      "id" : "c35ee161-6b21-4e1b-136f-4c6dcdc3fcd3",
+      "name" : "learn_more_text",
+      "label" : "Learn More Text",
+      "required" : false,
+      "locked" : false,
+      "allow_new_line" : false,
+      "type" : "text",
+      "display_width" : null,
+      "default" : ""
+    }, {
+      "id" : "294e75b0-e1ae-a913-dc15-96b6f55d6e5b",
+      "name" : "learn_more_link",
+      "label" : "Learn More Link",
+      "required" : false,
+      "locked" : false,
+      "supported_types" : [ "EXTERNAL", "FILE", "CONTENT", "BLOG", "CALL_TO_ACTION", "PAYMENT", "EMAIL_ADDRESS", "PHONE_NUMBER", "WHATSAPP_NUMBER" ],
+      "show_advanced_rel_options" : false,
+      "type" : "link",
+      "display_width" : null,
+      "default" : {
+        "url" : {
+          "content_id" : null,
+          "type" : "EXTERNAL",
+          "href" : ""
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false
+      }
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : {
+      "learn_more_text" : "",
+      "learn_more_link" : {
+        "url" : {
+          "content_id" : null,
+          "type" : "EXTERNAL",
+          "href" : ""
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false
+      }
+    }
+  }, {
+    "id" : "1314c7af-4a6d-7845-4f5e-4d1c45458c68",
+    "name" : "box_main_color",
+    "label" : "Box Border Color",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "box_item.set_text_cta_box",
+      "controlling_value_regex" : "false",
+      "property" : null,
+      "operator" : "MATCHES_REGEX",
+      "access" : null
+    },
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#227af7",
+      "opacity" : 40
+    }
+  }, {
+    "id" : "5756b9d4-dff8-c644-157f-d00d98704779",
+    "name" : "box_value_color",
+    "label" : "Box Value Color",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "box_item.set_text_cta_box",
+      "controlling_value_regex" : "false",
+      "property" : null,
+      "operator" : "MATCHES_REGEX",
+      "access" : null
+    },
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#227af7",
+      "opacity" : 100
+    }
+  }, {
+    "id" : "6a884bde-1025-7074-f256-572e6e46f183",
+    "name" : "text_color",
+    "label" : "Text Color",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "box_item.set_text_cta_box",
+      "controlling_value_regex" : "false",
+      "property" : null,
+      "operator" : "MATCHES_REGEX",
+      "access" : null
+    },
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#050C14",
+      "opacity" : 75
+    }
+  }, {
+    "id" : "9cce2401-cc32-6170-ce89-1aff5d278b8c",
+    "name" : "text_max_width",
+    "label" : "Text Max Width",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "box_item.set_text_cta_box",
+      "controlling_value_regex" : "false",
+      "property" : null,
+      "operator" : "MATCHES_REGEX",
+      "access" : null
+    },
+    "display" : "text",
+    "step" : 1,
+    "suffix" : "px",
+    "type" : "number",
+    "display_width" : null
+  }, {
+    "id" : "4a37b0c3-48bb-cba6-fdb6-df98a98b9623",
+    "name" : "set_top_image",
+    "label" : "Set Top Image",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "box_item.set_text_cta_box",
+      "controlling_value_regex" : "false",
+      "property" : null,
+      "operator" : "MATCHES_REGEX",
+      "access" : null
+    },
+    "display" : "toggle",
+    "type" : "boolean",
+    "display_width" : null,
+    "default" : false
+  }, {
+    "id" : "b4595fc7-cc2a-9cc8-aaf2-70535efdac34",
+    "name" : "set_text_cta_box",
+    "label" : "Set Text CTA Box",
+    "required" : false,
+    "locked" : false,
+    "display" : "toggle",
+    "type" : "boolean",
+    "display_width" : null,
+    "default" : false
+  }, {
+    "id" : "94fb2e0b-577d-bcd2-99ba-4a73a03b60f5",
+    "name" : "text_cta_box",
+    "label" : "Text CTA Box",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "box_item.set_text_cta_box",
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "MATCHES_REGEX",
+      "access" : null
+    },
+    "children" : [ {
+      "id" : "bf493641-b9e1-adc7-fe76-ea2bf600cc20",
+      "name" : "text_field_1",
+      "label" : "Text",
+      "required" : false,
+      "locked" : false,
+      "allow_new_line" : false,
+      "type" : "text",
+      "display_width" : null,
+      "default" : "Workwize automates global ops from the ground up."
+    }, {
+      "id" : "bed6b2d3-0fad-7009-9665-3710387f1a3a",
+      "name" : "button",
+      "label" : "Button",
+      "required" : false,
+      "locked" : false,
+      "children" : [ {
+        "id" : "991ddc0c-2de3-0f1a-ba2e-40a40e8fcfa5",
+        "name" : "button_choice",
+        "label" : "Button Choice",
+        "required" : false,
+        "locked" : false,
+        "display" : "select",
+        "choices" : [ [ "button", "Primary Button" ], [ "second_btn", "Secondary Button" ] ],
+        "multiple" : false,
+        "reordering_enabled" : true,
+        "preset" : null,
+        "type" : "choice",
+        "display_width" : null,
+        "default" : "second_btn"
+      }, {
+        "id" : "58820283-e4b2-a476-a51d-26ed7f926b2b",
+        "name" : "button_text",
+        "label" : "Button Text",
+        "required" : false,
+        "locked" : false,
+        "allow_new_line" : false,
+        "type" : "text",
+        "display_width" : null,
+        "default" : "Book a 30-min Custom demo"
+      }, {
+        "id" : "b1286d72-0247-78d8-acd4-cc0df8a9521f",
+        "name" : "button_link",
+        "label" : "Button Link",
+        "required" : false,
+        "locked" : false,
+        "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG", "CALL_TO_ACTION", "PHONE_NUMBER", "WHATSAPP_NUMBER", "PAYMENT" ],
+        "show_advanced_rel_options" : false,
+        "type" : "link",
+        "display_width" : null,
+        "default" : {
+          "url" : {
+            "content_id" : 398634570982,
+            "href" : null,
+            "type" : "CONTENT"
+          },
+          "open_in_new_tab" : false,
+          "no_follow" : false
+        }
+      } ],
+      "tab" : "CONTENT",
+      "expanded" : false,
+      "group_occurrence_meta" : null,
+      "type" : "group",
+      "display_width" : null,
+      "default" : {
+        "button_choice" : "second_btn",
+        "button_text" : "Book a 30-min Custom demo",
+        "button_link" : {
+          "url" : {
+            "content_id" : 398634570982,
+            "href" : null,
+            "type" : "CONTENT"
+          },
+          "open_in_new_tab" : false,
+          "no_follow" : false
+        }
+      }
+    }, {
+      "id" : "1e81e6b0-92a2-ee08-db39-727ff8e82014",
+      "name" : "background_color",
+      "label" : "Background Color",
+      "required" : false,
+      "locked" : false,
+      "type" : "color",
+      "display_width" : null,
+      "default" : {
+        "color" : "#002A5A",
+        "opacity" : 100
+      }
+    }, {
+      "id" : "b0417d74-9341-2f1e-b5dd-4ed8c3989fc1",
+      "name" : "text_color",
+      "label" : "Text Color",
+      "required" : false,
+      "locked" : false,
+      "type" : "color",
+      "display_width" : null,
+      "default" : {
+        "color" : "#fff",
+        "opacity" : 100
+      }
+    }, {
+      "id" : "979c6a30-d575-970a-603d-bf8234bd884c",
+      "name" : "shape_image",
+      "label" : "Shape Image",
+      "required" : false,
+      "locked" : false,
+      "responsive" : true,
+      "resizable" : true,
+      "show_loading" : true,
+      "type" : "image",
+      "display_width" : null,
+      "default" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/Group%202147257672.png",
+        "alt" : "Group 2147257672",
+        "loading" : "lazy",
+        "width" : 416,
+        "height" : 295,
+        "max_width" : 416,
+        "max_height" : 295
+      }
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : {
+      "text_field_1" : "Workwize automates global ops from the ground up.",
+      "button" : {
+        "button_choice" : "second_btn",
+        "button_text" : "Book a 30-min Custom demo",
+        "button_link" : {
+          "url" : {
+            "content_id" : 398634570982,
+            "href" : null,
+            "type" : "CONTENT"
+          },
+          "open_in_new_tab" : false,
+          "no_follow" : false
+        }
+      },
+      "background_color" : {
+        "color" : "#002A5A",
+        "opacity" : 100
+      },
+      "text_color" : {
+        "color" : "#fff",
+        "opacity" : 100
+      },
+      "shape_image" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/Group%202147257672.png",
+        "alt" : "Group 2147257672",
+        "loading" : "lazy",
+        "width" : 416,
+        "height" : 295,
+        "max_width" : 416,
+        "max_height" : 295
+      }
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : [ {
+    "value" : "$1.4M",
+    "logo" : {
+      "size_type" : "exact",
+      "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/HighLevel%202.svg",
+      "alt" : "HighLevel 2",
+      "loading" : "lazy",
+      "width" : 108,
+      "height" : 25,
+      "max_width" : 108,
+      "max_height" : 25
+    },
+    "extra_logo" : {
+      "src" : ""
+    },
+    "text_field" : "Saved per year in IT Hardware Management",
+    "learn_more_button" : {
+      "learn_more_text" : ""
+    },
+    "box_main_color" : {
+      "color" : "#227af7",
+      "opacity" : 40
+    },
+    "box_value_color" : {
+      "color" : "#227af7",
+      "opacity" : 100
+    },
+    "text_color" : {
+      "color" : "#050C14",
+      "opacity" : 75
+    },
+    "set_top_image" : false,
+    "set_text_cta_box" : false,
+    "text_cta_box" : {
+      "text_field_1" : "Workwize automates global ops from the ground up.",
+      "button" : {
+        "button_choice" : "second_btn",
+        "button_text" : "Book a 30-min Custom demo",
+        "button_link" : {
+          "url" : {
+            "content_id" : 398634570982,
+            "href" : null,
+            "type" : "CONTENT"
+          },
+          "open_in_new_tab" : false,
+          "no_follow" : false
+        }
+      },
+      "background_color" : {
+        "color" : "#002A5A",
+        "opacity" : 100
+      },
+      "text_color" : {
+        "color" : "#fff",
+        "opacity" : 100
+      },
+      "shape_image" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/Group%202147257672.png",
+        "alt" : "Group 2147257672",
+        "loading" : "lazy",
+        "width" : 416,
+        "height" : 295,
+        "max_width" : 416,
+        "max_height" : 295
+      }
+    }
+  }, {
+    "value" : "$1.4M",
+    "logo" : {
+      "size_type" : "exact",
+      "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/HighLevel%202.svg",
+      "alt" : "HighLevel 2",
+      "loading" : "lazy",
+      "width" : 108,
+      "height" : 25,
+      "max_width" : 108,
+      "max_height" : 25
+    },
+    "extra_logo" : {
+      "src" : ""
+    },
+    "text_field" : "Saved per year in IT Hardware Management",
+    "learn_more_button" : {
+      "learn_more_text" : ""
+    },
+    "box_main_color" : {
+      "color" : "#227af7",
+      "opacity" : 40
+    },
+    "box_value_color" : {
+      "color" : "#227af7",
+      "opacity" : 100
+    },
+    "text_color" : {
+      "color" : "#050C14",
+      "opacity" : 75
+    },
+    "set_top_image" : false,
+    "set_text_cta_box" : false,
+    "text_cta_box" : {
+      "text_field_1" : "Workwize automates global ops from the ground up.",
+      "button" : {
+        "button_choice" : "second_btn",
+        "button_text" : "Book a 30-min Custom demo",
+        "button_link" : {
+          "url" : {
+            "content_id" : 398634570982,
+            "href" : null,
+            "type" : "CONTENT"
+          },
+          "open_in_new_tab" : false,
+          "no_follow" : false
+        }
+      },
+      "background_color" : {
+        "color" : "#002A5A",
+        "opacity" : 100
+      },
+      "text_color" : {
+        "color" : "#fff",
+        "opacity" : 100
+      },
+      "shape_image" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/Group%202147257672.png",
+        "alt" : "Group 2147257672",
+        "loading" : "lazy",
+        "width" : 416,
+        "height" : 295,
+        "max_width" : 416,
+        "max_height" : 295
+      }
+    }
+  }, {
+    "value" : "$1.4M",
+    "logo" : {
+      "size_type" : "exact",
+      "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/HighLevel%202.svg",
+      "alt" : "HighLevel 2",
+      "loading" : "lazy",
+      "width" : 108,
+      "height" : 25,
+      "max_width" : 108,
+      "max_height" : 25
+    },
+    "extra_logo" : {
+      "src" : ""
+    },
+    "text_field" : "Saved per year in IT Hardware Management",
+    "learn_more_button" : {
+      "learn_more_text" : ""
+    },
+    "box_main_color" : {
+      "color" : "#227af7",
+      "opacity" : 40
+    },
+    "box_value_color" : {
+      "color" : "#227af7",
+      "opacity" : 100
+    },
+    "text_color" : {
+      "color" : "#050C14",
+      "opacity" : 75
+    },
+    "set_top_image" : false,
+    "set_text_cta_box" : false,
+    "text_cta_box" : {
+      "text_field_1" : "Workwize automates global ops from the ground up.",
+      "button" : {
+        "button_choice" : "second_btn",
+        "button_text" : "Book a 30-min Custom demo",
+        "button_link" : {
+          "url" : {
+            "content_id" : 398634570982,
+            "href" : null,
+            "type" : "CONTENT"
+          },
+          "open_in_new_tab" : false,
+          "no_follow" : false
+        }
+      },
+      "background_color" : {
+        "color" : "#002A5A",
+        "opacity" : 100
+      },
+      "text_color" : {
+        "color" : "#fff",
+        "opacity" : 100
+      },
+      "shape_image" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/Group%202147257672.png",
+        "alt" : "Group 2147257672",
+        "loading" : "lazy",
+        "width" : 416,
+        "height" : 295,
+        "max_width" : 416,
+        "max_height" : 295
+      }
+    }
+  } ]
+}, {
+  "id" : "b6ac38ef-f94c-f9a5-6501-17f0b2a6214f",
+  "name" : "color_setting",
+  "label" : "Color Setting",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "ebdd37df-211c-6125-dbc4-f5a70db1d0d2",
+    "name" : "title_color",
+    "label" : "Title Color",
+    "required" : false,
+    "locked" : false,
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#050C14",
+      "opacity" : 100
+    }
+  }, {
+    "id" : "50a496a6-0404-8d2b-22b5-060a591fdb6a",
+    "name" : "title_span_color",
+    "label" : "Title Span Color",
+    "required" : false,
+    "locked" : false,
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#227AF7",
+      "opacity" : 100
+    }
+  }, {
+    "id" : "59f0a218-39a4-ae38-c76c-59b4fed49e76",
+    "name" : "sub_title_color",
+    "label" : "Sub Title Color",
+    "required" : false,
+    "locked" : false,
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#227AF7",
+      "opacity" : 100
+    }
+  }, {
+    "id" : "31237948-8311-a72d-44e2-59eee3c3b3a5",
+    "name" : "text_color",
+    "label" : "Text Color",
+    "required" : false,
+    "locked" : false,
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#050C14",
+      "opacity" : 75
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "title_color" : {
+      "color" : "#050C14",
+      "opacity" : 100
+    },
+    "title_span_color" : {
+      "color" : "#227AF7",
+      "opacity" : 100
+    },
+    "sub_title_color" : {
+      "color" : "#227AF7",
+      "opacity" : 100
+    },
+    "text_color" : {
+      "color" : "#050C14",
+      "opacity" : 75
+    }
+  }
+}, {
+  "id" : "9aa81cb6-4d7e-c90f-33ba-90fd1a67da23",
+  "name" : "title_max_width",
+  "label" : "Title Max Width",
+  "required" : false,
+  "locked" : false,
+  "display" : "text",
+  "step" : 1,
+  "suffix" : "px",
+  "type" : "number",
+  "display_width" : null
+}, {
+  "id" : "82a7d981-8393-42f9-ba90-431e6b1abb8a",
+  "name" : "image_field",
+  "label" : "Image",
+  "required" : false,
+  "locked" : false,
+  "responsive" : true,
+  "resizable" : true,
+  "show_loading" : false,
+  "type" : "image",
+  "display_width" : null,
+  "default" : {
+    "size_type" : "auto",
+    "src" : "",
+    "alt" : null,
+    "loading" : "lazy"
+  }
+} ]

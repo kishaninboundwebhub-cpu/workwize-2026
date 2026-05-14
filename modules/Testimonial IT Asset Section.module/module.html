@@ -1,0 +1,184 @@
+{% if module.show_hide_ %}
+{% set moduleId = '#hs_cos_wrapper_{{ name }}' %}
+
+<div class="testsec {{ module.layout_style }} fullwidth bgsec space-sec">
+
+  <div class="wrapper">
+
+    <!-- Section Title -->
+    {% if module.content.title %}
+    <div class="testTitle text-center pb45 wow fadeInUp">
+      <h2>{{ module.content.title }}</h2>
+    </div>
+    {% endif %}
+
+    <!-- Cards Grid (repeating) -->
+    <div class="testOuter">
+      <div class="testInner d_flex">
+        {% for item in module.content.cards %}
+        <div class="testBox wow fadeInUp">
+          <div class="testBinn">
+
+          <!-- Stat block with dashed border + pixel corners -->
+          <div class="testStat">
+
+            <!-- Pixel corners -->
+            <div class="trusindItShape">
+               <div class="trusindItSss">
+                 <span></span><span></span><span></span><span></span><span></span><span></span>
+               </div>
+               <div class="trusindItSss">
+                 <span></span><span></span><span></span><span></span><span></span><span></span>
+               </div>
+               <div class="trusindItSss">
+                 <span></span><span></span><span></span><span></span><span></span><span></span>
+               </div>
+               <div class="trusindItSss">
+                 <span></span><span></span><span></span><span></span><span></span><span></span>
+               </div>
+            </div>
+              
+            
+            <div class="testStop d_flex space_between align_center gap10 pb12">
+              
+            <!-- Stat number -->
+            <div class="testStatNum">{{ item.stat_number }}</div>
+              
+            <!-- Company logo (top right) -->
+            {% if item.logo.src %}
+            <div class="testLogo">
+              {% if item.logo.src %}
+                {% set sizeAttrs = 'width="{{ item.logo.width|escape_attr }}" height="{{ item.logo.height|escape_attr }}"' %}
+                {% if item.logo.size_type == 'auto' %}
+                  {% set sizeAttrs = 'width="{{ item.logo.width|escape_attr }}" height="{{ item.logo.height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+                {% elif item.logo.size_type == 'auto_custom_max' %}
+                  {% set sizeAttrs = 'width="{{ item.logo.max_width|escape_attr }}" height="{{ item.logo.max_height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+                {% endif %}
+                 {% set loadingAttr = item.logo.loading != 'disabled' ? 'loading="{{ item.logo.loading|escape_attr }}"' : '' %}
+                <img src="{{ item.logo.src|escape_url }}" alt="{{ item.logo.alt|escape_attr }}" {{ loadingAttr }} {{ sizeAttrs }}>
+              {% endif %}
+            </div>
+            {% endif %}
+
+
+            </div>
+            <!-- Stat description -->
+            <div class="testStatDesc">{{ item.text_field }}</div>
+
+            <!-- CTA button -->
+            {% if item.button.button_text %}
+            <div class="testCta pt16 d_flex secbtn button set-btn-arrows-true">
+              {% set href = item.button.button_link.url.href %}
+              {% if item.button.button_link.url.type is equalto "EMAIL_ADDRESS" %}
+                {% set href = "mailto:" + href %}
+              {% elif item.button.button_link.url.type is equalto "PHONE_NUMBER" %}
+                {% set href = "tel:" + href %}
+              {% endif %}
+              <a
+                {% if item.button.button_link.url.type is equalto "CALL_TO_ACTION"  %}
+                  href="{{ href }}" {# The href here is not escaped as it is not editable and functions as a JavaScript call to the associated CTA #}
+                {% else %}
+                  href="{{ href|escape_url }}"
+                {% endif %}
+                {% if item.button.button_link.open_in_new_tab %}
+                  target="_blank"
+                {% endif %}
+                {% if item.button.button_link.rel %}
+                  rel="{{ item.button.button_link.rel|escape_attr }}"
+                {% endif %}
+                >
+                {{ item.button.button_text }}
+              </a>
+            </div>
+            {% endif %}
+
+          </div>
+
+          <!-- Quote + Author -->
+          <div class="testQuoteWrap">
+
+            <!-- Quote text -->
+            <div class="testQuote pb24">{{ item.quote_text }}</div>
+
+            <!-- Author -->
+            <div class="testAuthor d_flex align_center gap14">
+              {% if item.avtar_image.src %}
+              <div class="testAuthorAvatar">
+                {% if item.avtar_image.src %}
+                    {% set sizeAttrs = 'width="{{ item.avtar_image.width|escape_attr }}" height="{{ item.avtar_image.height|escape_attr }}"' %}
+                    {% if item.avtar_image.size_type == 'auto' %}
+                      {% set sizeAttrs = 'width="{{ item.avtar_image.width|escape_attr }}" height="{{ item.avtar_image.height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+                    {% elif item.avtar_image.size_type == 'auto_custom_max' %}
+                      {% set sizeAttrs = 'width="{{ item.avtar_image.max_width|escape_attr }}" height="{{ item.avtar_image.max_height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+                    {% endif %}
+                     {% set loadingAttr = item.avtar_image.loading != 'disabled' ? 'loading="{{ item.avtar_image.loading|escape_attr }}"' : '' %}
+                    <img src="{{ item.avtar_image.src|escape_url }}" alt="{{ item.avtar_image.alt|escape_attr }}" {{ loadingAttr }} {{ sizeAttrs }}>
+                  {% endif %}
+              </div>
+              {% endif %}
+              <div class="testAuthorInfo">
+                <div class="testAuthorName pb4">{{ item.author_name }}</div>
+                <div class="testAuthorRole">{{ item.author_role }}</div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+       </div>
+        {% endfor %}
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+  
+
+
+
+
+{% require_css %}
+<style>
+  {{ moduleId }} .bgsec { {% if module.style.select_background == 'bg_color' %}
+    background-color: rgba({{ module.style.background_color.color|convert_rgb }},{{ module.style.background_color.opacity ~ '%' }});
+    {% elif module.style.select_background == 'bg_image' %}
+    {{ module.style.background_image.css }} background-repeat: no-repeat;
+    {% elif module.style.select_background == 'bg_gradient' %}
+    background: {{ module.style.background_gradient.css }};
+    {% endif %} }
+  
+  {{ moduleId }} .space-sec { {{ module.style.spacing.desktop.css }}; }
+  
+  {{ moduleId }} .testTitle h2 { color:rgba({{ module.color_setting.title_color.color|convert_rgb }},{{ module.color_setting.title_color.opacity }}%); max-width:{{ module.content.title_max_width }}px;  }
+  {{ moduleId }} .testTitle h2 span { color:rgba({{ module.color_setting.title_span_color.color|convert_rgb }},{{ module.color_setting.title_span_color.opacity }}%);  }
+
+  
+  {% for item in module.content.cards %}
+  .testBox:nth-child({{  loop.index }}) .testStat:before {  background: repeating-linear-gradient(45deg, var(--color-azure-2030, rgba({{ item.style.border_color.color|convert_rgb }},{{ item.style.border_color.opacity }}%)) 0, var(--color-azure-2030, rgba({{ item.style.border_color.color|convert_rgb }},{{ item.style.border_color.opacity }}%)) 5px, transparent 5px, transparent 8px); }
+  .testBox:nth-child({{  loop.index }}) .trusindItSss span {  background: rgba({{ item.style.border_corner_color.color|convert_rgb }},{{ item.style.border_corner_color.opacity }}%); }
+  .testBox:nth-child({{  loop.index }}) .testStatNum { color:rgba({{ item.style.stat_number_color.color|convert_rgb }},{{ item.style.stat_number_color.opacity }}%); }
+  .testBox:nth-child({{  loop.index }}) .testStatDesc { color:rgba({{ item.style.text_color.color|convert_rgb }},{{ item.style.text_color.opacity }}%); }
+  .testBox:nth-child({{  loop.index }}) .testQuote { color:rgba({{ item.style.quote_text_color.color|convert_rgb }},{{ item.style.quote_text_color.opacity }}%); }
+  .testBox:nth-child({{  loop.index }}) .testAuthorName { color:rgba({{ item.style.author_name_color.color|convert_rgb }},{{ item.style.author_name_color.opacity }}%); }
+  .testBox:nth-child({{  loop.index }}) .testAuthorRole { color:rgba({{ item.style.author_role_color.color|convert_rgb }},{{ item.style.author_role_color.opacity }}%); }
+  
+  
+  
+  {% endfor %}
+  
+  
+  
+  
+  @media(max-width: 991px){ {{ moduleId }} .space-sec { {{ module.style.spacing.tablet.css }}; } }
+  
+  @media(max-width: 767px){ {{ moduleId }} .space-sec { {{ module.style.spacing.mobile.css }}; } }
+  
+</style>
+{% end_require_css %}
+
+
+
+{% endif %}
+

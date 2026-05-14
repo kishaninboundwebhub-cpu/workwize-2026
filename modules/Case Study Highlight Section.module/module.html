@@ -1,0 +1,145 @@
+{% if module.show_hide_ %}
+{% set moduleId = '#hs_cos_wrapper_{{ name }}' %}
+<div class="fullwidth cshs-sec bgsec space-sec{% if module.add_shape_image %} hrshape{% endif %}">
+ <div class="wrapper">
+      <div class="chsh-inner">
+         <div class="chsh-header">
+        <h2>
+          {{ module.title }}
+        </h2>
+        </div>
+        <div class="chch-top">
+          <div class="chch-left">
+            
+            {% if module.select_post_option == 'blog' %}
+            
+              {% set rec_posts = blog_recent_posts(module.select_blog, 1) %}
+              {% for rec_post in rec_posts %}
+              <div class="casestudy-article">
+                <div class="casestudy-article-feature" style="background-image: url('{{ rec_post.featured_image }}');"></div>
+                <div class="casestudy-article-content">
+                  {% if rec_post.widgets.whitepaper_image and rec_post.widgets.whitepaper_image.body and rec_post.widgets.whitepaper_image.body.src %}
+                  <div class="casestudy-circle">
+                     <img src="{{rec_post.widgets.whitepaper_image.body.src}}" alt="article-logo">
+                  </div>
+                   {% endif %}
+                  <h4>{{ rec_post.name }}</h4>
+                </div>               
+                <a href="{% if rec_post.widgets.text_link.body.value %}{{ rec_post.widgets.text_link.body.value }}{% else %}{{ rec_post.absolute_url }}{% endif %}" class="fullcover-link"></a>
+              </div>
+              {% endfor %}
+            
+            {% elif module.select_post_option == 'custom' %}
+            
+            <div class="casestudy-article">
+                <div class="casestudy-article-feature" style="background-image: url('{{ module.custom_post.image_field_1.src }}');"></div>
+                <div class="casestudy-article-content">
+                  {% if module.custom_post.logo.src %}
+                  <div class="casestudy-circle">
+                     {% if module.custom_post.logo.src %}
+                      {% set sizeAttrs = 'width="{{ module.custom_post.logo.width|escape_attr }}" height="{{ module.custom_post.logo.height|escape_attr }}"' %}
+                      {% if module.custom_post.logo.size_type == 'auto' %}
+                        {% set sizeAttrs = 'width="{{ module.custom_post.logo.width|escape_attr }}" height="{{ module.custom_post.logo.height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+                      {% elif module.custom_post.logo.size_type == 'auto_custom_max' %}
+                        {% set sizeAttrs = 'width="{{ module.custom_post.logo.max_width|escape_attr }}" height="{{ module.custom_post.logo.max_height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+                      {% endif %}
+                       {% set loadingAttr = module.custom_post.logo.loading != 'disabled' ? 'loading="{{ module.custom_post.logo.loading|escape_attr }}"' : '' %}
+                      <img src="{{ module.custom_post.logo.src|escape_url }}" alt="{{ module.custom_post.logo.alt|escape_attr }}" {{ loadingAttr }} {{ sizeAttrs }}>
+                    {% endif %}
+                  </div>
+                   {% endif %}
+                  <h4>{{ module.custom_post.text }}</h4>
+                </div>               
+                
+               {% set href = module.custom_post.link_field.url.href %}
+                {% if module.custom_post.link_field.url.type is equalto "EMAIL_ADDRESS" %}
+                  {% set href = "mailto:" + href %}
+                {% endif %}
+                <a class="fullcover-link"
+                  {% if module.custom_post.link_field.url.type is equalto "CALL_TO_ACTION"  %}
+                    href="{{ href }}" {# The href here is not escaped as it is not editable and functions as a JavaScript call to the associated CTA #}
+                  {% else %}
+                    href="{{ href|escape_url }}"
+                  {% endif %}
+                  {% if module.custom_post.link_field.open_in_new_tab %}
+                    target="_blank"
+                  {% endif %}
+                  {% if module.custom_post.link_field.rel %}
+                    rel="{{ module.custom_post.link_field.rel|escape_attr }}"
+                  {% endif %}
+                  >
+                </a>
+              
+              </div>
+            
+            
+            
+            {% endif %}
+          </div>
+          <div class="chch-right">
+            <div class="casestudy-quote">
+             <div class="testimg-col tc1 ">
+            
+            <div class="testi-quote">
+		            {% if module.auote.image_field.src %}
+                  {% set sizeAttrs = 'width="{{ module.auote.image_field.width|escape_attr }}" height="{{ module.auote.image_field.height|escape_attr }}"' %}
+                  {% if module.auote.image_field.size_type == 'auto' %}
+                    {% set sizeAttrs = 'width="{{ module.auote.image_field.width|escape_attr }}" height="{{ module.auote.image_field.height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+                  {% elif module.auote.image_field.size_type == 'auto_custom_max' %}
+                    {% set sizeAttrs = 'width="{{ module.auote.image_field.max_width|escape_attr }}" height="{{ module.auote.image_field.max_height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+                  {% endif %}
+                   {% set loadingAttr = module.auote.image_field.loading != 'disabled' ? 'loading="{{ module.auote.image_field.loading|escape_attr }}"' : '' %}
+                  <img src="{{ module.auote.image_field.src|escape_url }}" alt="{{ module.auote.image_field.alt|escape_attr }}" {{ loadingAttr }} {{ sizeAttrs }}>
+                {% endif %}
+            </div>
+            
+           <div class="testimg-txt">{{ module.auote.text }}</div>
+            <div class="testi-author flexwrap">
+              <div class="testi-img" style="background-image: url({{ module.auote.author_image.src|escape_url }});"></div>
+              <div class="testi-content">
+                <div class="testi-position"><strong>{{ module.auote.tname }}</strong> {{ module.auote.designation }}</div>
+              </div>
+            </div>
+          </div>
+              
+            </div>
+          </div>
+        </div>  
+        <div class="chch-bottom">
+          {% for item in module.box %}
+          <div class="chch-box-counter">
+            <h4>
+             {% if item.tname %}{{ item.tname }}{% endif %}<span class="counter">{{ item.number }}</span>{% if item.sign_after %}{{ item.sign_after }}{% endif %}
+            </h4>
+            <div class="chch-box-desc">
+              {{ item.text }}
+            </div>
+          </div>
+          {% endfor %}
+        </div>  
+      </div>
+ </div>
+</div>
+
+
+{% require_css %}
+<style>
+   
+  {{ moduleId }} .bgsec { {% if module.style.select_background == 'bg_color' %}
+    background-color: rgba({{ module.style.background_color.color|convert_rgb }},{{ module.style.background_color.opacity ~ '%' }});
+    {% elif module.style.select_background == 'bg_image' %}
+    {{ module.style.background_image.css }} background-repeat: no-repeat;
+    {% elif module.style.select_background == 'bg_gradient' %}
+    background: {{ module.style.background_gradient.css }};
+    {% endif %} }
+  
+  {{ moduleId }} .space-sec { {{ module.style.spacing.desktop.css }}; }
+   
+  
+  @media(max-width: 991px){ {{ moduleId }} .space-sec { {{ module.style.spacing.tablet.css }}; } }
+  
+  @media(max-width: 767px){ {{ moduleId }} .space-sec { {{ module.style.spacing.mobile.css }}; } }
+  
+</style>
+{% end_require_css %}
+{% endif %}

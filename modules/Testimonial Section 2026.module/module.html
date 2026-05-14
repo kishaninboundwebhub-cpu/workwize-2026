@@ -1,0 +1,145 @@
+{% if module.show_hide_ %}
+{% set moduleId = '#hs_cos_wrapper_{{ name }}' %}
+
+<div class="intetestisec fullwidth bgsec space-sec">
+ <div class="wrapper">
+  {% if module.top_content.title %}
+   <div class="intetestiTitle pb60 text-center wow fadeInUp">
+     <h2>{{ module.top_content.title }}</h2>
+   </div>
+   {% endif %}
+   
+   <div class="intetestInner wow fadeInUp">
+   <div class="trusindItShape">
+           <div class="trusindItSss">
+             <span></span><span></span><span></span><span></span><span></span><span></span>
+           </div>
+           <div class="trusindItSss">
+             <span></span><span></span><span></span><span></span><span></span><span></span>
+           </div>
+           <div class="trusindItSss">
+             <span></span><span></span><span></span><span></span><span></span><span></span>
+           </div>
+           <div class="trusindItSss">
+             <span></span><span></span><span></span><span></span><span></span><span></span>
+           </div>
+         </div>
+     <div class="intetestSlider">
+       {% for item in module.slide %}
+       <div class="intetestSlide" data-bg-color="{{ item.left_box.style.value_color.color }}">
+         <div class="intetestSlinn d_flex align_center">
+           
+           <div class="intetestLeft">
+             <div class="intetestLinn" style="background-color:{{ item.left_box.style.background_color.color }};">
+               <h3 style="color:{{ item.left_box.style.value_color.color }};">
+                 {{ item.left_box.value }}
+               </h3>
+               <div class="intetestLtext" style="color:{{ item.left_box.style.text_color.color }};">
+                 {{ item.left_box.text_field }}
+               </div>
+               <div class="intetestbtn secbtn second_btn set-btn-arrows-true">
+                    {% set href = item.left_box.button.button_link.url.href %}
+                    {% if item.left_box.button.button_link.url.type is equalto "EMAIL_ADDRESS" %}
+                      {% set href = "mailto:" + href %}
+                    {% elif item.left_box.button.button_link.url.type is equalto "PHONE_NUMBER" %}
+                      {% set href = "tel:" + href %}
+                    {% endif %}
+                    <a
+                      {% if item.left_box.button.button_link.url.type is equalto "CALL_TO_ACTION"  %}
+                        href="{{ href }}" {# The href here is not escaped as it is not editable and functions as a JavaScript call to the associated CTA #}
+                      {% else %}
+                        href="{{ href|escape_url }}"
+                      {% endif %}
+                      {% if item.left_box.button.button_link.open_in_new_tab %}
+                        target="_blank"
+                      {% endif %}
+                      {% if item.left_box.button.button_link.rel %}
+                        rel="{{ item.left_box.button.button_link.rel|escape_attr }}"
+                      {% endif %}
+                      >
+                      {{ item.left_box.button.button_text }}
+                    </a>
+               </div>
+             </div>
+           </div>
+           <div class="intetestRight"> 
+             <div class="intetestRLogo">
+               {% if item.right_content.logo.src %}
+                    {% set sizeAttrs = 'width="{{ item.right_content.logo.width|escape_attr }}" height="{{ item.right_content.logo.height|escape_attr }}"' %}
+                    {% if item.right_content.logo.size_type == 'auto' %}
+                      {% set sizeAttrs = 'width="{{ item.right_content.logo.width|escape_attr }}" height="{{ item.right_content.logo.height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+                    {% elif item.right_content.logo.size_type == 'auto_custom_max' %}
+                      {% set sizeAttrs = 'width="{{ item.right_content.logo.max_width|escape_attr }}" height="{{ item.right_content.logo.max_height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+                    {% endif %}
+                     {% set loadingAttr = item.right_content.logo.loading != 'disabled' ? 'loading="{{ item.right_content.logo.loading|escape_attr }}"' : '' %}
+                    <img src="{{ item.right_content.logo.src|escape_url }}" alt="{{ item.right_content.logo.alt|escape_attr }}" {{ loadingAttr }} {{ sizeAttrs }}>
+                  {% endif %}
+             </div>
+             <div class="intetestRText pt20 pb32">{{ item.right_content.quote_text }} </div>
+             <div class="intetestRman d_flex align_center gap14">
+               <div class="intetestRimage">
+                 {% if item.right_content.image_field.src %}
+                  {% set sizeAttrs = 'width="{{ item.right_content.image_field.width|escape_attr }}" height="{{ item.right_content.image_field.height|escape_attr }}"' %}
+                  {% if item.right_content.image_field.size_type == 'auto' %}
+                    {% set sizeAttrs = 'width="{{ item.right_content.image_field.width|escape_attr }}" height="{{ item.right_content.image_field.height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+                  {% elif item.right_content.image_field.size_type == 'auto_custom_max' %}
+                    {% set sizeAttrs = 'width="{{ item.right_content.image_field.max_width|escape_attr }}" height="{{ item.right_content.image_field.max_height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+                  {% endif %}
+                   {% set loadingAttr = item.right_content.image_field.loading != 'disabled' ? 'loading="{{ item.right_content.image_field.loading|escape_attr }}"' : '' %}
+                  <img src="{{ item.right_content.image_field.src|escape_url }}" alt="{{ item.right_content.image_field.alt|escape_attr }}" {{ loadingAttr }} {{ sizeAttrs }}>
+                {% endif %}
+               </div>
+               <div class="intetestRitext">
+                 <span class="intetestRname">{{ item.right_content.names }}</span>
+                 <span class="intetestRDesig">{{ item.right_content.designation }}</span>
+               </div>
+             </div>
+           </div>
+         </div>
+       </div>
+       {% endfor %}
+     </div>
+     
+     
+     
+   </div>
+
+ </div>
+</div>
+
+
+{% require_css %}
+<style>
+  {{ moduleId }} .bgsec { {% if module.style.select_background == 'bg_color' %}
+    background-color: rgba({{ module.style.background_color.color|convert_rgb }},{{ module.style.background_color.opacity ~ '%' }});
+    {% elif module.style.select_background == 'bg_image' %}
+    {{ module.style.background_image.css }} background-repeat: no-repeat;
+    {% elif module.style.select_background == 'bg_gradient' %}
+    background: {{ module.style.background_gradient.css }};
+    {% endif %} }
+  
+  {{ moduleId }} .space-sec { {{ module.style.spacing.desktop.css }}; }
+  
+  
+  {{ moduleId }} .intetestiTitle h2 { color:{{ module.color_setting.title_color.color }}; max-width:{{ module.top_content.title_max_width }}px;  margin: 0 auto; } 
+  {{ moduleId }} .intetestiTitle h2 span { color:{{ module.color_setting.title_span_color.color }}; } 
+  
+
+  
+ 
+  @media(max-width: 991px){ {{ moduleId }} .space-sec { {{ module.style.spacing.tablet.css }}; } }
+  
+  @media(max-width: 767px){ {{ moduleId }} .space-sec { {{ module.style.spacing.mobile.css }}; } }
+  
+</style>
+{% end_require_css %}
+
+
+
+
+
+
+
+
+{% endif %}
+

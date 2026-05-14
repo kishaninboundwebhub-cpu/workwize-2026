@@ -1,0 +1,746 @@
+[ {
+  "id" : "8e211d34-fc1f-c0a3-df6b-d30fb1656d3b",
+  "name" : "style",
+  "label" : "Style",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "d841c7a3-dddf-86b0-bd68-bc94a0a7f10e",
+    "name" : "spacing",
+    "label" : "Spacing",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "5b32f2f4-5b23-6bc3-42ca-df8e8295033e",
+      "name" : "desktop",
+      "label" : "Desktop",
+      "required" : false,
+      "locked" : false,
+      "type" : "spacing",
+      "display_width" : null,
+      "default" : {
+        "padding" : {
+          "top" : {
+            "value" : 50,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 50,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      }
+    }, {
+      "id" : "1afebbf6-2b65-bb96-42b3-463cd168c9ee",
+      "name" : "tablet",
+      "label" : "Tablet",
+      "required" : false,
+      "locked" : false,
+      "type" : "spacing",
+      "display_width" : null,
+      "default" : {
+        "padding" : {
+          "top" : {
+            "value" : 50,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 50,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      }
+    }, {
+      "id" : "39006718-8515-f9d7-ceff-f60106caa1f5",
+      "name" : "mobile",
+      "label" : "Mobile",
+      "required" : false,
+      "locked" : false,
+      "type" : "spacing",
+      "display_width" : null,
+      "default" : {
+        "padding" : {
+          "top" : {
+            "value" : 50,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 50,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      }
+    } ],
+    "tab" : "STYLE",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : {
+      "desktop" : {
+        "padding" : {
+          "top" : {
+            "value" : 50,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 50,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      },
+      "tablet" : {
+        "padding" : {
+          "top" : {
+            "value" : 50,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 50,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      },
+      "mobile" : {
+        "padding" : {
+          "top" : {
+            "value" : 50,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 50,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      }
+    }
+  } ],
+  "tab" : "STYLE",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "spacing" : {
+      "desktop" : {
+        "padding" : {
+          "top" : {
+            "value" : 50,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 50,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      },
+      "tablet" : {
+        "padding" : {
+          "top" : {
+            "value" : 50,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 50,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      },
+      "mobile" : {
+        "padding" : {
+          "top" : {
+            "value" : 50,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 50,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      }
+    }
+  }
+}, {
+  "id" : "2479004f-17e0-1464-6a62-2ac7b561cc3f",
+  "name" : "hide_show_section",
+  "label" : "Hide Show Section",
+  "required" : false,
+  "locked" : false,
+  "display" : "toggle",
+  "type" : "boolean",
+  "display_width" : null,
+  "default" : true
+}, {
+  "id" : "f9532847-cb24-2b78-a963-8584c185f51f",
+  "name" : "content",
+  "label" : "Content",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "93b8a17f-28da-47e5-a9b2-8a79d51d5287",
+    "name" : "left_content",
+    "label" : "Left Content",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "63d4e3ad-2153-8b32-fd41-9a152d51d21d",
+      "name" : "select_background_style",
+      "label" : "Select Background Style",
+      "required" : false,
+      "locked" : false,
+      "display" : "select",
+      "choices" : [ [ "#EBFBFF", "Light Blue" ], [ "#D2F7EB", "Light Green" ], [ "#FEF6DD", "Light Yellow" ], [ "#FEDFE1", "Light Red" ], [ "#ECDFF7", "Light Purple" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "preset" : null,
+      "type" : "choice",
+      "display_width" : null,
+      "default" : "#EBFBFF"
+    }, {
+      "id" : "8b3d386c-f223-4d8a-6eee-2f0338391f41",
+      "name" : "icon",
+      "label" : "Icon",
+      "required" : false,
+      "locked" : false,
+      "responsive" : true,
+      "resizable" : true,
+      "show_loading" : true,
+      "type" : "image",
+      "display_width" : null,
+      "default" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Capterra%20icon.png",
+        "alt" : "Capterra icon",
+        "loading" : "lazy",
+        "width" : 240,
+        "height" : 240,
+        "max_width" : 240,
+        "max_height" : 240
+      }
+    }, {
+      "id" : "482dfdb0-b14d-c7d5-2194-18f7de1c737b",
+      "name" : "title",
+      "label" : "Title",
+      "required" : false,
+      "locked" : false,
+      "allow_new_line" : false,
+      "type" : "text",
+      "display_width" : null,
+      "default" : "Procure"
+    }, {
+      "id" : "5bb18c8c-af7c-c7fd-3388-20f816b705bd",
+      "name" : "text",
+      "label" : "Text",
+      "required" : false,
+      "locked" : false,
+      "type" : "richtext",
+      "display_width" : null,
+      "default" : "<p>Empower employees to get help and answers, when they need it, in the flow of their work. <a href=\"#\">Learn more.</a></p>"
+    }, {
+      "id" : "a0140d4e-16b9-e065-9cb3-1f42fc869bf4",
+      "name" : "chat_image",
+      "label" : "Chat Image",
+      "required" : false,
+      "locked" : false,
+      "responsive" : true,
+      "resizable" : true,
+      "show_loading" : true,
+      "type" : "image",
+      "display_width" : null,
+      "default" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/original-8fcafff2700fe41f481353572a7533ef.png",
+        "alt" : "original-8fcafff2700fe41f481353572a7533ef",
+        "loading" : "lazy",
+        "width" : 1200,
+        "height" : 900,
+        "max_width" : 1200,
+        "max_height" : 900
+      }
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : {
+      "select_background_style" : "#EBFBFF",
+      "icon" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Capterra%20icon.png",
+        "alt" : "Capterra icon",
+        "loading" : "lazy",
+        "width" : 240,
+        "height" : 240,
+        "max_width" : 240,
+        "max_height" : 240
+      },
+      "title" : "Procure",
+      "text" : "<p>Empower employees to get help and answers, when they need it, in the flow of their work. <a href=\"#\">Learn more.</a></p>",
+      "chat_image" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/original-8fcafff2700fe41f481353572a7533ef.png",
+        "alt" : "original-8fcafff2700fe41f481353572a7533ef",
+        "loading" : "lazy",
+        "width" : 1200,
+        "height" : 900,
+        "max_width" : 1200,
+        "max_height" : 900
+      }
+    }
+  }, {
+    "id" : "d918200a-6e46-5bd7-a1ba-5a98a19caf55",
+    "name" : "right_content",
+    "label" : "Right Content",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "baa7bd20-4651-41ea-1172-b3e5dfffad78",
+      "name" : "select_background_style",
+      "label" : "Select Background Style",
+      "required" : false,
+      "locked" : false,
+      "display" : "select",
+      "choices" : [ [ "#EBFBFF", "Light Blue" ], [ "#D2F7EB", "Light Green" ], [ "#FEF6DD", "Light Yellow" ], [ "#FEDFE1", "Light Red" ], [ "#ECDFF7", "Light Purple" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "preset" : null,
+      "type" : "choice",
+      "display_width" : null,
+      "default" : "#D2F7EB"
+    }, {
+      "id" : "f2985960-5b34-7abc-8d63-bdd3a057630c",
+      "name" : "title",
+      "label" : "Title",
+      "required" : false,
+      "locked" : false,
+      "allow_new_line" : false,
+      "type" : "text",
+      "display_width" : null,
+      "default" : "One platform to equip your team around the world"
+    }, {
+      "id" : "d7a8381c-a637-c83f-d4fb-206dcd8509cf",
+      "name" : "text",
+      "label" : "Text",
+      "required" : false,
+      "locked" : false,
+      "type" : "richtext",
+      "display_width" : null,
+      "default" : "<span>Empower employees and service teams with intuitive, real-time assistance for enterprise information access, fast resolutions, and automating repetitive tasks.</span>"
+    }, {
+      "id" : "3db4102a-60b4-47b8-8332-bf4776c0cfbf",
+      "name" : "column_item",
+      "label" : "Column Item",
+      "required" : false,
+      "locked" : false,
+      "occurrence" : {
+        "min" : null,
+        "max" : null,
+        "sorting_label_field" : null,
+        "default" : 6
+      },
+      "children" : [ {
+        "id" : "32adc76e-14c6-c38c-1c20-7123bfddcd3d",
+        "name" : "icon",
+        "label" : "Icon",
+        "required" : false,
+        "locked" : false,
+        "responsive" : true,
+        "resizable" : true,
+        "show_loading" : false,
+        "type" : "image",
+        "display_width" : null,
+        "default" : {
+          "size_type" : "auto",
+          "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/question%20icon%20-%20flaticon.png",
+          "alt" : "question icon - flaticon",
+          "loading" : "lazy",
+          "width" : 512,
+          "height" : 512,
+          "max_width" : 512,
+          "max_height" : 512
+        }
+      }, {
+        "id" : "e479f662-09b1-2dc8-6b82-5fa323e50114",
+        "name" : "title",
+        "label" : "Title",
+        "required" : false,
+        "locked" : false,
+        "allow_new_line" : false,
+        "type" : "text",
+        "display_width" : null,
+        "default" : "Coverage in 100+ countries"
+      }, {
+        "id" : "2f6a2fa1-8b30-0652-bca8-b89236d96dea",
+        "name" : "text",
+        "label" : "Text",
+        "required" : false,
+        "locked" : false,
+        "type" : "richtext",
+        "display_width" : null,
+        "default" : "<p><span>Answer any kind of employee question at any time right inside Microsoft Teams or Slack.</span></p>"
+      } ],
+      "tab" : "CONTENT",
+      "expanded" : false,
+      "group_occurrence_meta" : null,
+      "type" : "group",
+      "display_width" : null,
+      "default" : [ {
+        "icon" : {
+          "size_type" : "auto",
+          "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/question%20icon%20-%20flaticon.png",
+          "alt" : "question icon - flaticon",
+          "loading" : "lazy",
+          "width" : 512,
+          "height" : 512,
+          "max_width" : 512,
+          "max_height" : 512
+        },
+        "title" : "Coverage in 100+ countries",
+        "text" : "<p><span>Answer any kind of employee question at any time right inside Microsoft Teams or Slack.</span></p>"
+      }, {
+        "icon" : {
+          "size_type" : "auto",
+          "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/question%20icon%20-%20flaticon.png",
+          "alt" : "question icon - flaticon",
+          "loading" : "lazy",
+          "width" : 512,
+          "height" : 512,
+          "max_width" : 512,
+          "max_height" : 512
+        },
+        "title" : "Coverage in 100+ countries",
+        "text" : "<p><span>Answer any kind of employee question at any time right inside Microsoft Teams or Slack.</span></p>"
+      }, {
+        "icon" : {
+          "size_type" : "auto",
+          "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/question%20icon%20-%20flaticon.png",
+          "alt" : "question icon - flaticon",
+          "loading" : "lazy",
+          "width" : 512,
+          "height" : 512,
+          "max_width" : 512,
+          "max_height" : 512
+        },
+        "title" : "Coverage in 100+ countries",
+        "text" : "<p><span>Answer any kind of employee question at any time right inside Microsoft Teams or Slack.</span></p>"
+      }, {
+        "icon" : {
+          "size_type" : "auto",
+          "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/question%20icon%20-%20flaticon.png",
+          "alt" : "question icon - flaticon",
+          "loading" : "lazy",
+          "width" : 512,
+          "height" : 512,
+          "max_width" : 512,
+          "max_height" : 512
+        },
+        "title" : "Coverage in 100+ countries",
+        "text" : "<p><span>Answer any kind of employee question at any time right inside Microsoft Teams or Slack.</span></p>"
+      }, {
+        "icon" : {
+          "size_type" : "auto",
+          "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/question%20icon%20-%20flaticon.png",
+          "alt" : "question icon - flaticon",
+          "loading" : "lazy",
+          "width" : 512,
+          "height" : 512,
+          "max_width" : 512,
+          "max_height" : 512
+        },
+        "title" : "Coverage in 100+ countries",
+        "text" : "<p><span>Answer any kind of employee question at any time right inside Microsoft Teams or Slack.</span></p>"
+      }, {
+        "icon" : {
+          "size_type" : "auto",
+          "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/question%20icon%20-%20flaticon.png",
+          "alt" : "question icon - flaticon",
+          "loading" : "lazy",
+          "width" : 512,
+          "height" : 512,
+          "max_width" : 512,
+          "max_height" : 512
+        },
+        "title" : "Coverage in 100+ countries",
+        "text" : "<p><span>Answer any kind of employee question at any time right inside Microsoft Teams or Slack.</span></p>"
+      } ]
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : {
+      "select_background_style" : "#D2F7EB",
+      "title" : "One platform to equip your team around the world",
+      "text" : "<span>Empower employees and service teams with intuitive, real-time assistance for enterprise information access, fast resolutions, and automating repetitive tasks.</span>",
+      "column_item" : [ {
+        "icon" : {
+          "size_type" : "auto",
+          "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/question%20icon%20-%20flaticon.png",
+          "alt" : "question icon - flaticon",
+          "loading" : "lazy",
+          "width" : 512,
+          "height" : 512,
+          "max_width" : 512,
+          "max_height" : 512
+        },
+        "title" : "Coverage in 100+ countries",
+        "text" : "<p><span>Answer any kind of employee question at any time right inside Microsoft Teams or Slack.</span></p>"
+      }, {
+        "icon" : {
+          "size_type" : "auto",
+          "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/question%20icon%20-%20flaticon.png",
+          "alt" : "question icon - flaticon",
+          "loading" : "lazy",
+          "width" : 512,
+          "height" : 512,
+          "max_width" : 512,
+          "max_height" : 512
+        },
+        "title" : "Coverage in 100+ countries",
+        "text" : "<p><span>Answer any kind of employee question at any time right inside Microsoft Teams or Slack.</span></p>"
+      }, {
+        "icon" : {
+          "size_type" : "auto",
+          "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/question%20icon%20-%20flaticon.png",
+          "alt" : "question icon - flaticon",
+          "loading" : "lazy",
+          "width" : 512,
+          "height" : 512,
+          "max_width" : 512,
+          "max_height" : 512
+        },
+        "title" : "Coverage in 100+ countries",
+        "text" : "<p><span>Answer any kind of employee question at any time right inside Microsoft Teams or Slack.</span></p>"
+      }, {
+        "icon" : {
+          "size_type" : "auto",
+          "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/question%20icon%20-%20flaticon.png",
+          "alt" : "question icon - flaticon",
+          "loading" : "lazy",
+          "width" : 512,
+          "height" : 512,
+          "max_width" : 512,
+          "max_height" : 512
+        },
+        "title" : "Coverage in 100+ countries",
+        "text" : "<p><span>Answer any kind of employee question at any time right inside Microsoft Teams or Slack.</span></p>"
+      }, {
+        "icon" : {
+          "size_type" : "auto",
+          "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/question%20icon%20-%20flaticon.png",
+          "alt" : "question icon - flaticon",
+          "loading" : "lazy",
+          "width" : 512,
+          "height" : 512,
+          "max_width" : 512,
+          "max_height" : 512
+        },
+        "title" : "Coverage in 100+ countries",
+        "text" : "<p><span>Answer any kind of employee question at any time right inside Microsoft Teams or Slack.</span></p>"
+      }, {
+        "icon" : {
+          "size_type" : "auto",
+          "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/question%20icon%20-%20flaticon.png",
+          "alt" : "question icon - flaticon",
+          "loading" : "lazy",
+          "width" : 512,
+          "height" : 512,
+          "max_width" : 512,
+          "max_height" : 512
+        },
+        "title" : "Coverage in 100+ countries",
+        "text" : "<p><span>Answer any kind of employee question at any time right inside Microsoft Teams or Slack.</span></p>"
+      } ]
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "left_content" : {
+      "select_background_style" : "#EBFBFF",
+      "icon" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Capterra%20icon.png",
+        "alt" : "Capterra icon",
+        "loading" : "lazy",
+        "width" : 240,
+        "height" : 240,
+        "max_width" : 240,
+        "max_height" : 240
+      },
+      "title" : "Procure",
+      "text" : "<p>Empower employees to get help and answers, when they need it, in the flow of their work. <a href=\"#\">Learn more.</a></p>",
+      "chat_image" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/original-8fcafff2700fe41f481353572a7533ef.png",
+        "alt" : "original-8fcafff2700fe41f481353572a7533ef",
+        "loading" : "lazy",
+        "width" : 1200,
+        "height" : 900,
+        "max_width" : 1200,
+        "max_height" : 900
+      }
+    },
+    "right_content" : {
+      "select_background_style" : "#D2F7EB",
+      "title" : "One platform to equip your team around the world",
+      "text" : "<span>Empower employees and service teams with intuitive, real-time assistance for enterprise information access, fast resolutions, and automating repetitive tasks.</span>",
+      "column_item" : [ {
+        "icon" : {
+          "size_type" : "auto",
+          "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/question%20icon%20-%20flaticon.png",
+          "alt" : "question icon - flaticon",
+          "loading" : "lazy",
+          "width" : 512,
+          "height" : 512,
+          "max_width" : 512,
+          "max_height" : 512
+        },
+        "title" : "Coverage in 100+ countries",
+        "text" : "<p><span>Answer any kind of employee question at any time right inside Microsoft Teams or Slack.</span></p>"
+      }, {
+        "icon" : {
+          "size_type" : "auto",
+          "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/question%20icon%20-%20flaticon.png",
+          "alt" : "question icon - flaticon",
+          "loading" : "lazy",
+          "width" : 512,
+          "height" : 512,
+          "max_width" : 512,
+          "max_height" : 512
+        },
+        "title" : "Coverage in 100+ countries",
+        "text" : "<p><span>Answer any kind of employee question at any time right inside Microsoft Teams or Slack.</span></p>"
+      }, {
+        "icon" : {
+          "size_type" : "auto",
+          "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/question%20icon%20-%20flaticon.png",
+          "alt" : "question icon - flaticon",
+          "loading" : "lazy",
+          "width" : 512,
+          "height" : 512,
+          "max_width" : 512,
+          "max_height" : 512
+        },
+        "title" : "Coverage in 100+ countries",
+        "text" : "<p><span>Answer any kind of employee question at any time right inside Microsoft Teams or Slack.</span></p>"
+      }, {
+        "icon" : {
+          "size_type" : "auto",
+          "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/question%20icon%20-%20flaticon.png",
+          "alt" : "question icon - flaticon",
+          "loading" : "lazy",
+          "width" : 512,
+          "height" : 512,
+          "max_width" : 512,
+          "max_height" : 512
+        },
+        "title" : "Coverage in 100+ countries",
+        "text" : "<p><span>Answer any kind of employee question at any time right inside Microsoft Teams or Slack.</span></p>"
+      }, {
+        "icon" : {
+          "size_type" : "auto",
+          "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/question%20icon%20-%20flaticon.png",
+          "alt" : "question icon - flaticon",
+          "loading" : "lazy",
+          "width" : 512,
+          "height" : 512,
+          "max_width" : 512,
+          "max_height" : 512
+        },
+        "title" : "Coverage in 100+ countries",
+        "text" : "<p><span>Answer any kind of employee question at any time right inside Microsoft Teams or Slack.</span></p>"
+      }, {
+        "icon" : {
+          "size_type" : "auto",
+          "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/question%20icon%20-%20flaticon.png",
+          "alt" : "question icon - flaticon",
+          "loading" : "lazy",
+          "width" : 512,
+          "height" : 512,
+          "max_width" : 512,
+          "max_height" : 512
+        },
+        "title" : "Coverage in 100+ countries",
+        "text" : "<p><span>Answer any kind of employee question at any time right inside Microsoft Teams or Slack.</span></p>"
+      } ]
+    }
+  }
+} ]

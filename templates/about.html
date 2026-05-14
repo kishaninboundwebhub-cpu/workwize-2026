@@ -1,0 +1,50 @@
+<!--
+  templateType: page
+  isAvailableForNewContent: true
+  label: About
+  screenshotPath: ../images/template-previews/about.png
+-->
+{% extends "./layouts/base.html" %}
+
+{# START - AboutPage SchemaMarkup data include #}
+{% block custom_schema %}
+  {% if content.absolute_url == "https://www.goworkwize.com/about" %}
+    {% include "/Workwize/templates/partials/Schema Markup/AboutPage.html" %}
+  {% endif %}
+{% endblock %}
+{# END - AboutPage SchemaMarkup data include #}
+
+{% block body %}
+{% dnd_area "dnd_area"
+  label="Main section",
+  class="body-container body-container--about"
+%}
+
+
+  {# Hero Section #}
+  {% dnd_section full_width="true" padding={'default': { 'top': 0 , 'right': 0 , 'left': 0 , 'bottom': 0 } } %}
+    {% dnd_module "module_170859220832833" path="/Workwize/modules/Hero Section", label="Hero Section" %}
+    {% end_dnd_module %}
+  {% end_dnd_section %}
+
+  {# Counter Section #}
+  {% dnd_section full_width="true" padding={'default': { 'top': 0 , 'right': 0 , 'left': 0 , 'bottom': 0 } } %}
+    {% dnd_module "module_170895284970045" path="/Workwize/modules/Counter Section", label="Counter Section" %}
+    {% end_dnd_module %}
+  {% end_dnd_section %}
+
+  {# Our Leadership Section #}
+  {% dnd_section full_width="true" padding={'default': { 'top': 0 , 'right': 0 , 'left': 0 , 'bottom': 0 } } %}
+    {% dnd_module "module_170895588577563" path="/Workwize/modules/Our Leadership Section", label="Our Leadership Section" %}
+    {% end_dnd_module %}
+  {% end_dnd_section %}
+  
+  {# Cta Section Fullwidth #}
+  {% dnd_section full_width="true" padding={'default': { 'top': 0 , 'right': 0 , 'left': 0 , 'bottom': 0 } } %}
+   {% dnd_module "module_1708606831113123" path="/Workwize/modules/Cta Section Fullwidth", label="Cta Section Fullwidth" %}
+   {% end_dnd_module %}
+  {% end_dnd_section %}
+
+
+{% end_dnd_area %}
+{% endblock body %}

@@ -1,0 +1,213 @@
+{% set moduleID = "#hs_cos_wrapper_{{ name }}" %}
+<div class="header-sec bgsec bgspace fullwidth header{{ widget_data.header_design.value|replace(" ", "-")|lower }}">
+ <div class="wrapper-1310">
+  <div class="header-outer fullwidth">
+   <div class="header-row flexwrap w-100 alignCenter">
+    <div class="header-logo hlogo{{ widget_data.header_design.value|replace(" ", "-")|lower }}">
+     {% set href = module.logo_link.url.href %}
+     {% if module.logo_link.url.type is equalto "EMAIL_ADDRESS" %}
+     {% set href = "mailto:" + href %}
+     {% endif %}
+     <a href="{{ href }}"
+     {% if module.logo_link.open_in_new_tab %}target="_blank"{% endif %}
+     {% if module.logo_link.rel %}rel="{{ module.logo_link.rel }}"{% endif %}
+     >       
+      {% if module.logo_for_white_.src %}
+      {% set sizeAttrs = 'width="{{ module.logo_for_white_.width }}" height="{{ module.logo_for_white_.height }}"' %}
+      {% if module.logo_for_white_.size_type == 'auto' %}
+      {% set sizeAttrs = 'width="{{ module.logo_for_white_.width }}" height="{{ module.logo_for_white_.height }}" style="max-width: 100%; height: auto;"' %}
+      {% elif module.logo_for_white_.size_type == 'auto_custom_max' %}
+      {% set sizeAttrs = 'width="{{ module.logo_for_white_.max_width }}" height="{{ module.logo_for_white_.max_height }}" style="max-width: 100%; height: auto;"' %}
+      {% endif %}
+      {% set loadingAttr = module.logo_for_white_.loading != 'disabled' ? 'loading="{{ module.logo_for_white_.loading }}"' : '' %}
+      <img class="header-lfwhite" src="{{ module.logo_for_white_.src }}" alt="{{ module.logo_for_white_.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
+      {% endif %}   
+       
+      {% if module.logo_for_sky_blue_.src %}
+      {% set sizeAttrs = 'width="{{ module.logo_for_sky_blue_.width }}" height="{{ module.logo_for_sky_blue_.height }}"' %}
+      {% if module.logo_for_sky_blue_.size_type == 'auto' %}
+      {% set sizeAttrs = 'width="{{ module.logo_for_sky_blue_.width }}" height="{{ module.logo_for_sky_blue_.height }}" style="max-width: 100%; height: auto;"' %}
+      {% elif module.logo_for_sky_blue_.size_type == 'auto_custom_max' %}
+      {% set sizeAttrs = 'width="{{ module.logo_for_sky_blue_.max_width }}" height="{{ module.logo_for_sky_blue_.max_height }}" style="max-width: 100%; height: auto;"' %}
+      {% endif %}
+      {% set loadingAttr = module.logo_for_sky_blue_.loading != 'disabled' ? 'loading="{{ module.logo_for_sky_blue_.loading }}"' : '' %}
+      <img class="header-lfdarkblue" src="{{ module.logo_for_sky_blue_.src }}" alt="{{ module.logo_for_sky_blue_.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
+      {% endif %} 
+       
+       {% if module.logo_for_dark_blue_.src %}
+      {% set sizeAttrs = 'width="{{ module.logo_for_dark_blue_.width }}" height="{{ module.logo_for_dark_blue_.height }}"' %}
+      {% if module.logo_for_dark_blue_.size_type == 'auto' %}
+      {% set sizeAttrs = 'width="{{ module.logo_for_dark_blue_.width }}" height="{{ module.logo_for_dark_blue_.height }}" style="max-width: 100%; height: auto;"' %}
+      {% elif module.logo_for_dark_blue_.size_type == 'auto_custom_max' %}
+      {% set sizeAttrs = 'width="{{ module.logo_for_dark_blue_.max_width }}" height="{{ module.logo_for_dark_blue_.max_height }}" style="max-width: 100%; height: auto;"' %}
+      {% endif %}
+      {% set loadingAttr = module.logo_for_dark_blue_.loading != 'disabled' ? 'loading="{{ module.logo_for_dark_blue_.loading }}"' : '' %}
+      <img class="header-lfskublue" src="{{ module.logo_for_dark_blue_.src }}" alt="{{ module.logo_for_dark_blue_.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
+      {% endif %} 
+     </a> 
+    </div> 
+    <div class="mobileTrigger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div> 
+    <div class="header-right">
+     <div class="mobileTrigger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>  
+     <div class="header-menu">
+      {% menu id="{{ module.menu }}" %}
+     </div>  
+     {% if module.button_group %} 
+     <div class="header-btns hbtn{{ widget_data.header_design.value|replace(" ", "-")|lower }}">
+      {% for item in module.button_group %}
+      {% if item.button_text %} 
+      <div class="header-btn {{ item.link_or_button }}">
+       {% set href = item.button_link.url.href %}
+       {% if item.button_link.url.type is equalto "EMAIL_ADDRESS" %}
+       {% set href = "mailto:" + href %}
+       {% endif %}
+       <a href="{{ href }}"
+       {% if item.button_link.open_in_new_tab %}target="_blank"{% endif %}
+       {% if item.button_link.rel %}rel="{{ item.button_link.rel }}"{% endif %}
+       >
+        {{ item.button_text }} 
+       </a>  
+      </div>
+      {% endif %} 
+      {% endfor %}
+     </div> 
+     {% endif %}
+    </div> 
+   </div>
+  </div>  
+ </div> 
+</div>
+
+
+{% for item in module.mega_menu %}
+<div data-value="{{ item.assign_mega_menu_in_top_level_main_menu }}" class="hmegaMenu {{ item.column_choice }}">  
+ <div class="hmegaMenuInn">
+  {% for item2 in item.column %} 
+  {% if item2.content_choice == 'hc-list' %}  
+  <div class="hmegaMenucols {{ item2.content_choice }}">
+   {% if item2.list.title %}<div class="hlistitle">{{ item2.list.title }}</div>{% endif %}
+   {% if item2.list.list %}
+   <div class="hlistrow">
+    {% for item3 in item2.list.list %}
+    <div class="hlistcol"> 
+     <a href="{{ item3.link.url.href|escape_url }}" > 
+      {% if item3.icon.src %} 
+      <div class="hlistiocn">      
+			{% set sizeAttrs = 'width="{{ item2.icon.width }}" height="{{ item2.icon.height }}"' %}
+			{% if item3.icon.size_type == 'auto' %}
+			{% set sizeAttrs = 'width="{{ item2.icon.width }}" height="{{ item2.icon.height }}" style="max-width: 100%; height: auto;"' %}
+			{% elif item3.icon.size_type == 'auto_custom_max' %}
+			{% set sizeAttrs = 'width="{{ item2.icon.max_width }}" height="{{ item2.icon.max_height }}" style="max-width: 100%; height: auto;"' %}
+			{% endif %}
+			{% set loadingAttr = item2.icon.loading != 'disabled' ? 'loading="{{ item2.icon.loading }}"' : '' %}
+			<img src="{{ item3.icon.src }}" alt="{{ item3.icon.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>		 
+     </div>
+      {% endif %} 
+      <div class="hlistcntn">
+       {% if item3.title %}<div class="hlistctitle">{{ item3.title }}</div>{% endif %}
+       {% if item3.text %}<div class="hlistctxt">{{ item3.text }}</div>{% endif %} 
+      </div>
+     </a>
+    </div>
+    {% endfor %} 
+   </div> 
+   {% endif %}  
+  </div>
+  {% elif item2.content_choice == 'hc-blog' %}  
+  <div class="hmegaMenucols {{ item2.content_choice }}">
+   {% if item2.blog.blog_or_custom_content == 'select_blog' %} 
+   <div class="hdrblog">
+    {% set rec_posts = blog_recent_posts(item2.blog.blog_Group.blog, item2.blog.blog_Group.number_of_post) %}
+    {% for rec_post in rec_posts %} 
+    <div class="hdrblogcols"> 
+     {% if rec_post.featured_image %} 
+     <a href="{{ rec_post.absolute_url }}" class="hdrblogimg" style="background-image: url('{{ rec_post.featured_image }}');"> 
+     </a>
+      {% endif %}
+     <div class="hdrblogcntn">
+      {% if rec_post.tag_list %} 
+      <div class="hdrblogtag">
+       {% for tag in rec_post.tag_list %}
+        <a class="hs-blog-post-listing__post-tag" href="{{ blog_tag_url(group.id, tag.slug) }}">{{ tag.name }}</a>
+       {% endfor %}        
+      </div>
+      {% endif %} 
+      {% if rec_post.title %}  
+      <div class="hdrblogtitle">
+       <a href="{{ rec_post.absolute_url }}" >{{ rec_post.name }}</a>
+      </div> 
+      {% endif %} 
+     </div> 
+    </div> 
+    {% endfor %} 
+   </div>
+   {% else %}
+   <div class="hdrblog">
+    {% for item3 in item2.blog.custom_content %}
+    <div class="hdrblogcols"> 
+     {% if item3.image.src %} 
+     <a href="{{ item3.link.url.href }}" class="hdrblogimg" style="background-image: url('{{ item3.image.src }}');"> 
+     </a>
+      {% endif %}
+     <div class="hdrblogcntn">
+      {% if item3.tag %} 
+      <div class="hdrblogtag">
+       {{ item3.tag }}
+      </div>
+      {% endif %} 
+      {% if item3.title %}  
+      <div class="hdrblogtitle">
+       <a href="{{ item3.link.url.href }}" >{{ item3.title }}</a>
+      </div> 
+      {% endif %} 
+     </div> 
+    </div>
+    {% endfor %} 
+   </div>
+   {% endif %} 
+  </div>
+  {% else %}
+  <div class="hmegaMenucols {{ item2.content_choice }}">
+   {% if item2.text.title %}<div class="hmm-title">{{ item2.text.title }}</div>{% endif %}
+   {% if item2.text.text %}<div class="hmm-text">{{ item2.text.text }}</div>{% endif %}
+   {% if item2.text.button_text %}
+   <div class="hmm-btn">
+		{% set href = item2.text.button_link.url.href %}
+		{% if item2.text.button_link.url.type is equalto "EMAIL_ADDRESS" %}
+		{% set href = "mailto:" + href %}
+		{% endif %}
+		<a href="{{ href }}"
+		{% if item2.text.button_link.open_in_new_tab %}target="_blank"{% endif %}
+		{% if item2.text.button_link.rel %}rel="{{ item2.text.button_link.rel }}"{% endif %}
+		>
+     {{ item2.text.button_text }}
+    </a>  
+   </div>{% endif %}
+  </div> 
+  {% endif %}
+  {% endfor %} 
+ </div>
+</div>
+{% endfor %}
+{% require_css %}
+<style>
+  {{ moduleID }} .header-sec { {{ module.style.spacing.desktop.css }} }
+  
+  
+ @media (max-width: 991px) {
+   {{ moduleID }} .header-sec { {{ module.style.spacing.tablet.css }} }
+ }
+  
+ @media (max-width: 767px) {
+   {{ moduleID }} .header-sec { {{ module.style.spacing.mobile.css }} }
+ } 
+</style>
+{% end_require_css %}

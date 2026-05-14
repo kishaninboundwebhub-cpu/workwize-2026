@@ -1,0 +1,163 @@
+{% if dynamic_page_hubdb_row %}
+{% if module.show_hide_ %}
+
+{% set moduleId = '#hs_cos_wrapper_{{ name }}' %}
+<div class="review-sec fullwidth bgsec space-sec">
+ <div class="wrapper">
+  <div class="secinner text-center">
+   {% if module.text or module.title %}   
+   <div class="secheader">
+    {% if module.title %} 
+    <div class="sectitle {% if not module.text %} removespace{% endif %}">
+     <h2>{{ module.title }}</h2> 
+    </div>
+    {% endif %}
+    {% if module.text %}  
+    <div class="sectxt reviewtxt"> 
+     {{ module.text }} 
+    </div>
+    {% endif %} 
+   </div>
+   {% endif %} 
+   {% if module.button %} 
+   <div class="secbtns flexwrap w-100 justifyCenter">
+    {% for item in module.button %} 
+    <div class="secbtn {{ item.button_choice }}">
+     {% set href = item.button_link.url.href %}
+     {% if item.button_link.url.type is equalto "EMAIL_ADDRESS" %}
+     {% set href = "mailto:" + href %}
+     {% endif %}
+     <a href="{{ href }}"
+     {% if item.button_link.open_in_new_tab %}target="_blank"{% endif %}
+     {% if item.button_link.rel %}rel="{{ item.button_link.rel }}"{% endif %}
+     >
+      {{ item.button_text }}
+     </a> 
+    </div>
+    {% endfor %} 
+   </div>  
+   {% endif %} 
+  </div>    
+ </div>
+ <div class="review-wkrw">
+   <div class="review-wktrak review-slider owl-carousel owl-theme">
+<!--    <div class="review-wklist"> -->
+    {% for item in module.content %}
+    <div class="review-wkcol">
+      <div class="review-wkinner">
+        <div class="revwk-rating">
+        <ul class="flexwrap">
+          {% for item2 in item.rating_star %}
+          <li>
+            {% if item2.image.src %}
+			        {% set sizeAttrs = 'width="{{ item2.image.width|escape_attr }}" height="{{ item2.image.height|escape_attr }}"' %}
+			        {% if item2.image.size_type == 'auto' %}
+				      {% set sizeAttrs = 'width="{{ item2.image.width|escape_attr }}" height="{{ item2.image.height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+			        {% elif item2.image.size_type == 'auto_custom_max' %}
+				      {% set sizeAttrs = 'width="{{ item2.image.max_width|escape_attr }}" height="{{ item2.image.max_height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+			        {% endif %}
+			        {% set loadingAttr = item2.image.loading != 'disabled' ? 'loading="{{ item2.image.loading|escape_attr }}"' : '' %}
+			        <img src="{{ item2.image.src|escape_url }}" alt="{{ item2.image.alt|escape_attr }}" {{ loadingAttr }} {{ sizeAttrs }}>
+		        {% endif %}
+          </li>
+          {% endfor %}
+        </ul>        
+      </div>
+        <div class="revwk-content">
+          <h3 class="h4">{{ item.title }}</h3>  
+          <div class="revwk-text">{{ item.text|truncatehtml(352, '...' , false) }}</div>
+        </div>
+        <div class="revwk-person flexwrap">
+        {% if item.person_image.src|escape_url %}
+        <div class="revwk-perimg" style="background-image: url({{ item.person_image.src|escape_url }});"></div>
+        {% endif %}
+        <div class="revwk-perinfo">{{ item.person_info }}</div>
+        <div class="revwk-perinfo-gbt">{{ item.job_title }}</div>
+      </div>
+      </div>
+    </div>
+    {% endfor %}
+<!--      </div> -->
+   </div>
+  </div>
+</div>
+
+
+{% require_css %}
+<style>
+  {{ moduleId }} .bgsec { {% if module.style.select_background == 'bg_color' %}
+    background-color: rgba({{ module.style.background_color.color|convert_rgb }},{{ module.style.background_color.opacity ~ '%' }});
+    {% elif module.style.select_background == 'bg_image' %}
+    {{ module.style.background_image.css }} background-repeat: no-repeat;
+    {% elif module.style.select_background == 'bg_gradient' %}
+    background: {{ module.style.background_gradient.css }};
+    {% endif %} }
+  
+  {{ moduleId }} .space-sec { {{ module.style.spacing.desktop.css }}; }
+  
+  {{ moduleId }} .sectitle h1,
+  {{ moduleId }} .sectitle h2 , 
+  {{ moduleId }} .sectitle h3 , 
+  {{ moduleId }} .sectitle h4 , 
+  {{ moduleId }} .sectitle h5 ,
+  {{ moduleId }} .sectitle h6 { color: rgba({{ module.color_settings.title_color.color|convert_rgb }},{{ module.color_settings.title_color.opacity ~ '%' }}); }
+  {{ moduleId }} .sectxt , {{ moduleId }} .sectxt * { color: rgba({{ module.color_settings.text_color.color|convert_rgb }},{{ module.color_settings.text_color.opacity ~ '%' }}); } 
+  
+  {% for item in module.button %} 
+   {{ moduleId }} .secbtn:nth-child({{ loop.index }}) a { background-color: rgba({{ item.background_color.color|convert_rgb }},{{ item.background_color.opacity ~ '%' }}); border-color: rgba({{ item.border_color.color|convert_rgb }},{{ item.border_color.opacity ~ '%' }}); color: rgba({{ item.text_color.color|convert_rgb }},{{ item.text_color.opacity ~ '%' }}); }
+   {{ moduleId }} .secbtn:nth-child({{ loop.index }}) a:hover { background-color: rgba({{ item.background_color_hover_.color|convert_rgb }},{{ item.background_color_hover_.opacity ~ '%' }}); border-color: rgba({{ item.border_color_hover_.color|convert_rgb }},{{ item.border_color_hover_.opacity ~ '%' }}); color: rgba({{ item.text_color_hover_.color|convert_rgb }},{{ item.text_color_hover_.opacity ~ '%' }}); }  
+  {% endfor %}
+  
+  
+  @media(max-width: 991px){ {{ moduleId }} .space-sec { {{ module.style.spacing.tablet.css }}; } }
+  
+  @media(max-width: 767px){ {{ moduleId }} .space-sec { {{ module.style.spacing.mobile.css }}; } }
+  
+</style>
+{% end_require_css %}
+
+
+{% require_js %}
+  <script>
+   $(document).ready(function(){
+    $(".review-slider").owlCarousel({
+      autoplay: true,
+      loop: true,
+      margin: 30,
+      dots: false,
+      slideTransition: "linear",
+      autoplayTimeout: 4500,
+      autoplayHoverPause: true,
+      autoplaySpeed: 4500,
+      responsive: {
+        0: {
+          items: 1
+        },
+        650: {
+          items: 2
+        },
+        1200: {
+          items: 3
+        }
+      }
+    });
+
+   });
+
+  </script>
+{% end_require_js %}
+{% endif %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endif %}

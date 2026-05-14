@@ -1,0 +1,61 @@
+<!--
+  templateType: "page"
+  isAvailableForNewContent: false
+-->
+{% if content %}
+{% set plain_text = content.post_body|striptags %}
+{% set words = plain_text|trim|split(" ") %}
+{% set word_count = words|length %}
+{% set reading_time = (word_count / 200)|round(0, 'ceil') %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+
+    {
+      "@type": "BlogPosting",
+      "@id": "{{ content.absolute_url }}#article",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "{{ content.absolute_url }}#webpage"
+      },
+      "headline": {{ content.name|striptags|tojson }},
+      "description": {{ page_meta.meta_description|default(content.meta_description)|striptags|tojson }},
+      "wordCount": {{ word_count }},
+      "timeRequired": "PT{{ reading_time }}M",
+      "image": [
+        {% if content.featured_image %}
+        {{ content.featured_image|tojson }}
+        {% endif %}
+      ],
+      "datePublished": "{{ content.publish_date|datetimeformat('%Y-%m-%dT%H:%M:%SZ') }}",
+      "dateModified": "{{ content.updated|datetimeformat('%Y-%m-%dT%H:%M:%SZ') }}",
+      "author": {
+        "@type": "Person",
+        "name": {{ content.blog_post_author.display_name|tojson }},
+        "url": {{ blog_author_url(group.id, content.blog_post_author.slug)|tojson }}
+      },
+      "publisher": {
+        "@type": "Organization",
+        "@id": "https://www.goworkwize.com/#organization",
+        "name": "Workwize",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://www.goworkwize.com/hubfs/Workwize/Image/Workwize%20Logo%20Sky%20Blue%20icon.svg"
+        }
+      },
+      {% if content.tag_list %}
+      "keywords": [
+        {% for tag in content.tag_list %}
+          {{ tag.name|tojson }}{% if not loop.last %},{% endif %}
+        {% endfor %}
+      ],
+      {% endif %}
+      "articleSection": {{ group.name|tojson }}
+    }
+
+  ]
+}
+</script>
+
+{% endif %}

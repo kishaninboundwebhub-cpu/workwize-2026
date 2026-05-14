@@ -1,0 +1,32 @@
+.dynamic-data-section {padding:50px 0; }
+.dynamic-data-box {  width: 32%; margin-right: 2%; float: left; margin-top: 24px;background-color: #fff; box-shadow: 0 0 5px 0 rgba(0, 0, 0, .15);padding-bottom:20px;border-radius: 12px;}
+.dynamic-data-box h4 { margin: 0; }
+.dynamic-data-box:nth-child(3n) { margin-right: 0; }
+.dynamic-data-outer {padding: 150px 0;}
+.country-innerpage-main .hrprocu-sec { padding-top: 148px; padding-bottom: 120px; }
+.country-innerpage-main  .hrprocu-img { min-height: 505px; background-color: rgba(34, 122, 247, 100%); }
+.ddb-img img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; } 
+.ddb-img { border-radius: 12px; padding-top: 64.124%; position: relative; overflow: hidden; }
+.ddb-info { padding: 20px 20px 0px 20px;}
+.dd-list { display: flex; flex-flow: wrap; }
+.dd-short-intro { font-size: 14px; line-height: 1.4; margin: 10px 0 0; }
+.d-list-top-title {text-align:cebter;}
+.dd-read-more a { padding-top: 10px; padding-right: 15px; padding-bottom: 14px; padding-left: 15px; font-size: 15px; }
+.dd-read-more { margin: 20px 0 0; }
+.load-more-data { text-align: center; }
+.load-more-data a { margin: 50px 0 0; }
+.dd-list-top-title { text-align: center; }
+
+@media(max-width:1280px){
+  .country-innerpage-main  .hrprocu-img { min-height: 400px;}
+}
+@media(max-width:991px){
+    .country-innerpage-main .hrprocu-sec, .dynamic-data-outer { padding-top: 140px; padding-bottom: 80px; }
+  .country-innerpage-main  .hrprocu-img { min-height: auto;}
+  .dynamic-data-section {padding-top: 0;}
+  
+}
+@media(max-width:767px){
+    .country-innerpage-main .hrprocu-sec, .dynamic-data-outer { padding-top: 120px; padding-bottom: 60px; }
+  .dynamic-data-box { width: 100%; margin-right: 0; }
+}

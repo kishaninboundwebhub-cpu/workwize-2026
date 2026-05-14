@@ -1,0 +1,1202 @@
+[ {
+  "id" : "c4b4ca2e-fa32-e5c7-e532-6b1e7584a70f",
+  "name" : "style",
+  "label" : "Style",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "8b0ac142-bbaf-7d3a-4c1f-8e5ed5b4c607",
+    "name" : "spacing",
+    "label" : "Spacing",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "0c196d44-1d57-2b40-ffae-a4602d9801fb",
+      "name" : "desktop",
+      "label" : "Desktop",
+      "required" : false,
+      "locked" : false,
+      "type" : "spacing",
+      "display_width" : null,
+      "default" : {
+        "padding" : {
+          "top" : {
+            "value" : 28,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 28,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      }
+    }, {
+      "id" : "a8adeed0-eef7-4fe6-9c2f-7ece1cd9f86d",
+      "name" : "tablet",
+      "label" : "Tablet",
+      "required" : false,
+      "locked" : false,
+      "type" : "spacing",
+      "display_width" : null,
+      "default" : {
+        "padding" : {
+          "top" : {
+            "value" : 20,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 20,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      }
+    }, {
+      "id" : "814848b6-fdbc-a99a-a86f-59304c71c28d",
+      "name" : "mobile",
+      "label" : "Mobile",
+      "required" : false,
+      "locked" : false,
+      "type" : "spacing",
+      "display_width" : null,
+      "default" : { }
+    } ],
+    "tab" : "STYLE",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : {
+      "desktop" : {
+        "padding" : {
+          "top" : {
+            "value" : 28,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 28,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      },
+      "tablet" : {
+        "padding" : {
+          "top" : {
+            "value" : 20,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 20,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      },
+      "mobile" : { }
+    }
+  } ],
+  "tab" : "STYLE",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "spacing" : {
+      "desktop" : {
+        "padding" : {
+          "top" : {
+            "value" : 28,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 28,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      },
+      "tablet" : {
+        "padding" : {
+          "top" : {
+            "value" : 20,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 20,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      },
+      "mobile" : { }
+    }
+  }
+}, {
+  "id" : "fd445e64-01ea-0320-5bde-02821657ff7a",
+  "name" : "logo_link",
+  "label" : "Logo Link",
+  "required" : false,
+  "locked" : false,
+  "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG", "CALL_TO_ACTION", "PHONE_NUMBER", "WHATSAPP_NUMBER" ],
+  "show_advanced_rel_options" : false,
+  "type" : "link",
+  "display_width" : null,
+  "default" : {
+    "url" : {
+      "content_id" : null,
+      "href" : "/",
+      "type" : "EXTERNAL"
+    },
+    "open_in_new_tab" : false,
+    "no_follow" : false
+  }
+}, {
+  "id" : "ff968059-2805-bac4-bea0-b231dc26b858",
+  "name" : "logo_for_dark_blue_",
+  "label" : "Logo For [Dark Blue]",
+  "required" : false,
+  "locked" : false,
+  "responsive" : true,
+  "resizable" : true,
+  "show_loading" : false,
+  "type" : "image",
+  "display_width" : null,
+  "default" : {
+    "size_type" : "auto",
+    "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize/Image/Workwize%20Logo.svg",
+    "alt" : "Workwize Logo",
+    "loading" : "lazy",
+    "width" : 196,
+    "height" : 30,
+    "max_width" : 196,
+    "max_height" : 30
+  }
+}, {
+  "id" : "97a28151-ce92-ce19-6c47-d7217cac67b1",
+  "name" : "logo_for_white_",
+  "label" : "Logo For [White]",
+  "required" : false,
+  "locked" : false,
+  "responsive" : true,
+  "resizable" : true,
+  "show_loading" : false,
+  "type" : "image",
+  "display_width" : null,
+  "default" : {
+    "size_type" : "auto",
+    "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize/Image/Workwize%20Logo%20Sky%20Blue%20icon.svg",
+    "alt" : "Workwize Logo Sky Blue icon",
+    "loading" : "lazy",
+    "width" : 196,
+    "height" : 30,
+    "max_width" : 196,
+    "max_height" : 30
+  }
+}, {
+  "id" : "042c50be-87fc-22d4-a33b-8aa1c7269ab7",
+  "name" : "logo_for_sky_blue_",
+  "label" : "Logo For [Sky Blue]",
+  "required" : false,
+  "locked" : false,
+  "responsive" : true,
+  "resizable" : true,
+  "show_loading" : false,
+  "type" : "image",
+  "display_width" : null,
+  "default" : {
+    "size_type" : "auto",
+    "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize/Image/Workwize%20Logo%20Dark%20Blue.svg",
+    "alt" : "Workwize Logo Dark Blue",
+    "loading" : "lazy",
+    "width" : 196,
+    "height" : 30,
+    "max_width" : 196,
+    "max_height" : 30
+  }
+}, {
+  "id" : "668a40f3-ba1f-074c-99b7-252ab1a81f34",
+  "name" : "menu",
+  "label" : "Menu",
+  "required" : false,
+  "locked" : false,
+  "type" : "menu",
+  "display_width" : null,
+  "default" : 94012587469
+}, {
+  "id" : "8665878b-2352-d0db-9810-faeed1e86e99",
+  "name" : "mega_menu",
+  "label" : "Mega Menu",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : null,
+    "max" : null,
+    "sorting_label_field" : null,
+    "default" : 1
+  },
+  "children" : [ {
+    "id" : "fc37624b-591d-d34c-dfdf-2a93d84265f4",
+    "name" : "assign_mega_menu_in_top_level_main_menu",
+    "label" : "Assign Mega Menu In Top Level Main Menu",
+    "required" : false,
+    "locked" : false,
+    "display" : "text",
+    "step" : 1,
+    "type" : "number",
+    "display_width" : null,
+    "default" : 1
+  }, {
+    "id" : "8800f177-e8e1-0dad-705d-b72ae9eb903d",
+    "name" : "column_choice",
+    "label" : "Column Choice",
+    "required" : false,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "headertwo_cols", "Two Column" ], [ "headerthree_cols", "Three Column" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "headerthree_cols"
+  }, {
+    "id" : "81587ca1-6ec6-46c7-6a20-1366b0a28883",
+    "name" : "column",
+    "label" : "Column",
+    "required" : false,
+    "locked" : false,
+    "occurrence" : {
+      "min" : null,
+      "max" : null,
+      "sorting_label_field" : null,
+      "default" : 1
+    },
+    "children" : [ {
+      "id" : "e39ac72f-6e07-dda6-35bd-9e9bf5a41566",
+      "name" : "content_choice",
+      "label" : "Content Choice",
+      "required" : false,
+      "locked" : false,
+      "display" : "select",
+      "choices" : [ [ "hc-txt", "Text" ], [ "hc-list", "List" ], [ "hc-blog", "Blog Content" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "preset" : null,
+      "type" : "choice",
+      "display_width" : null,
+      "default" : "hc-txt"
+    }, {
+      "id" : "56340f5c-9f4b-cca7-c794-4cf9c42d9751",
+      "name" : "text",
+      "label" : "Text",
+      "required" : false,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : null,
+        "controlling_field_path" : "mega_menu.column.content_choice",
+        "controlling_value_regex" : "hc-txt",
+        "property" : null,
+        "operator" : "MATCHES_REGEX",
+        "access" : null
+      },
+      "children" : [ {
+        "id" : "5c5360d5-bebf-b9a3-6d11-d2090566ee5a",
+        "name" : "title",
+        "label" : "Title",
+        "required" : false,
+        "locked" : false,
+        "allow_new_line" : false,
+        "type" : "text",
+        "display_width" : null,
+        "default" : "Solutions"
+      }, {
+        "id" : "6ed71106-f64c-d2a2-399b-1d58c8323ba1",
+        "name" : "text",
+        "label" : "Text",
+        "required" : false,
+        "locked" : false,
+        "type" : "richtext",
+        "display_width" : null
+      }, {
+        "id" : "21259b5f-2e7a-2837-6bb3-49a3f1e89a13",
+        "name" : "button_text",
+        "label" : "Button Text",
+        "required" : false,
+        "locked" : false,
+        "allow_new_line" : false,
+        "type" : "text",
+        "display_width" : null,
+        "default" : "Learn More"
+      }, {
+        "id" : "32215ddc-f080-d7b4-8cff-64de25cd7fbe",
+        "name" : "button_link",
+        "label" : "Button Link",
+        "required" : false,
+        "locked" : false,
+        "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG", "CALL_TO_ACTION", "PHONE_NUMBER", "WHATSAPP_NUMBER" ],
+        "show_advanced_rel_options" : false,
+        "type" : "link",
+        "display_width" : null,
+        "default" : {
+          "url" : {
+            "content_id" : null,
+            "type" : "EXTERNAL",
+            "href" : ""
+          },
+          "open_in_new_tab" : false,
+          "no_follow" : false
+        }
+      } ],
+      "tab" : "CONTENT",
+      "expanded" : false,
+      "group_occurrence_meta" : null,
+      "type" : "group",
+      "display_width" : null,
+      "default" : {
+        "title" : "Solutions",
+        "button_text" : "Learn More",
+        "button_link" : {
+          "url" : {
+            "content_id" : null,
+            "type" : "EXTERNAL",
+            "href" : ""
+          },
+          "open_in_new_tab" : false,
+          "no_follow" : false
+        }
+      }
+    }, {
+      "id" : "1ecbfb55-e92e-b39e-b53f-e9d2220b8bc0",
+      "name" : "list",
+      "label" : "List",
+      "required" : false,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : null,
+        "controlling_field_path" : "mega_menu.column.content_choice",
+        "controlling_value_regex" : "hc-list",
+        "property" : null,
+        "operator" : "MATCHES_REGEX",
+        "access" : null
+      },
+      "children" : [ {
+        "id" : "cd5e849c-6512-afdf-99d5-1e2695e86ede",
+        "name" : "title",
+        "label" : "Title",
+        "required" : false,
+        "locked" : false,
+        "allow_new_line" : false,
+        "type" : "text",
+        "display_width" : null,
+        "default" : "By Use Cases"
+      }, {
+        "id" : "8531b0a0-bdb2-43da-a186-49f0951a949b",
+        "name" : "list",
+        "label" : "List",
+        "required" : false,
+        "locked" : false,
+        "occurrence" : {
+          "min" : null,
+          "max" : null,
+          "sorting_label_field" : null,
+          "default" : 3
+        },
+        "children" : [ {
+          "id" : "05b4d834-7811-8735-ec6e-ffd563a7d97d",
+          "name" : "title",
+          "label" : "Title",
+          "required" : false,
+          "locked" : false,
+          "allow_new_line" : false,
+          "type" : "text",
+          "display_width" : null,
+          "default" : "IT Procurement"
+        }, {
+          "id" : "837e25be-4214-7f31-87b2-cfbe6dc24768",
+          "name" : "text",
+          "label" : "Text",
+          "required" : false,
+          "locked" : false,
+          "type" : "richtext",
+          "display_width" : null,
+          "default" : "<p>Save time on contract negotiations due diligence, and vendor management.</p>"
+        }, {
+          "id" : "37b4d524-1ae6-267b-afc3-8444bd81c257",
+          "name" : "icon",
+          "label" : "Icon",
+          "required" : false,
+          "locked" : false,
+          "responsive" : true,
+          "resizable" : true,
+          "show_loading" : false,
+          "type" : "image",
+          "display_width" : null,
+          "default" : {
+            "size_type" : "auto",
+            "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize/Image/Header_Icon.svg",
+            "alt" : "Header_Icon",
+            "loading" : "lazy",
+            "width" : 18,
+            "height" : 18,
+            "max_width" : 18,
+            "max_height" : 18
+          }
+        }, {
+          "id" : "da482622-c5f2-101b-6986-9136374370c9",
+          "name" : "link",
+          "label" : "Link",
+          "required" : false,
+          "locked" : false,
+          "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG", "CALL_TO_ACTION", "PHONE_NUMBER", "WHATSAPP_NUMBER" ],
+          "show_advanced_rel_options" : false,
+          "type" : "link",
+          "display_width" : null,
+          "default" : {
+            "url" : {
+              "content_id" : null,
+              "type" : "EXTERNAL",
+              "href" : ""
+            },
+            "open_in_new_tab" : false,
+            "no_follow" : false
+          }
+        } ],
+        "tab" : "CONTENT",
+        "expanded" : false,
+        "group_occurrence_meta" : null,
+        "type" : "group",
+        "display_width" : null,
+        "default" : [ {
+          "title" : "IT Procurement",
+          "text" : "<p>Save time on contract negotiations due diligence, and vendor management.</p>",
+          "icon" : {
+            "size_type" : "auto",
+            "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize/Image/Header_Icon.svg",
+            "alt" : "Header_Icon",
+            "loading" : "lazy",
+            "width" : 18,
+            "height" : 18,
+            "max_width" : 18,
+            "max_height" : 18
+          },
+          "link_field" : {
+            "url" : {
+              "content_id" : null,
+              "type" : "EXTERNAL",
+              "href" : ""
+            },
+            "open_in_new_tab" : false,
+            "no_follow" : false
+          }
+        }, {
+          "title" : "IT Procurement",
+          "text" : "<p>Save time on contract negotiations due diligence, and vendor management.</p>",
+          "icon" : {
+            "size_type" : "auto",
+            "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize/Image/Header_Icon.svg",
+            "alt" : "Header_Icon",
+            "loading" : "lazy",
+            "width" : 18,
+            "height" : 18,
+            "max_width" : 18,
+            "max_height" : 18
+          },
+          "link_field" : {
+            "url" : {
+              "content_id" : null,
+              "type" : "EXTERNAL",
+              "href" : ""
+            },
+            "open_in_new_tab" : false,
+            "no_follow" : false
+          }
+        }, {
+          "title" : "IT Procurement",
+          "text" : "<p>Save time on contract negotiations due diligence, and vendor management.</p>",
+          "icon" : {
+            "size_type" : "auto",
+            "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize/Image/Header_Icon.svg",
+            "alt" : "Header_Icon",
+            "loading" : "lazy",
+            "width" : 18,
+            "height" : 18,
+            "max_width" : 18,
+            "max_height" : 18
+          },
+          "link_field" : {
+            "url" : {
+              "content_id" : null,
+              "type" : "EXTERNAL",
+              "href" : ""
+            },
+            "open_in_new_tab" : false,
+            "no_follow" : false
+          }
+        } ]
+      } ],
+      "tab" : "CONTENT",
+      "expanded" : false,
+      "group_occurrence_meta" : null,
+      "type" : "group",
+      "display_width" : null,
+      "default" : {
+        "title" : "By Use Cases",
+        "list" : [ {
+          "title" : "IT Procurement",
+          "text" : "<p>Save time on contract negotiations due diligence, and vendor management.</p>",
+          "icon" : {
+            "size_type" : "auto",
+            "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize/Image/Header_Icon.svg",
+            "alt" : "Header_Icon",
+            "loading" : "lazy",
+            "width" : 18,
+            "height" : 18,
+            "max_width" : 18,
+            "max_height" : 18
+          },
+          "link_field" : {
+            "url" : {
+              "content_id" : null,
+              "type" : "EXTERNAL",
+              "href" : ""
+            },
+            "open_in_new_tab" : false,
+            "no_follow" : false
+          }
+        }, {
+          "title" : "IT Procurement",
+          "text" : "<p>Save time on contract negotiations due diligence, and vendor management.</p>",
+          "icon" : {
+            "size_type" : "auto",
+            "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize/Image/Header_Icon.svg",
+            "alt" : "Header_Icon",
+            "loading" : "lazy",
+            "width" : 18,
+            "height" : 18,
+            "max_width" : 18,
+            "max_height" : 18
+          },
+          "link_field" : {
+            "url" : {
+              "content_id" : null,
+              "type" : "EXTERNAL",
+              "href" : ""
+            },
+            "open_in_new_tab" : false,
+            "no_follow" : false
+          }
+        }, {
+          "title" : "IT Procurement",
+          "text" : "<p>Save time on contract negotiations due diligence, and vendor management.</p>",
+          "icon" : {
+            "size_type" : "auto",
+            "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize/Image/Header_Icon.svg",
+            "alt" : "Header_Icon",
+            "loading" : "lazy",
+            "width" : 18,
+            "height" : 18,
+            "max_width" : 18,
+            "max_height" : 18
+          },
+          "link_field" : {
+            "url" : {
+              "content_id" : null,
+              "type" : "EXTERNAL",
+              "href" : ""
+            },
+            "open_in_new_tab" : false,
+            "no_follow" : false
+          }
+        } ]
+      }
+    }, {
+      "id" : "8037e70f-d766-3f85-3a2c-2861295c3cb7",
+      "name" : "blog",
+      "label" : "Blog",
+      "required" : false,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : null,
+        "controlling_field_path" : "mega_menu.column.content_choice",
+        "controlling_value_regex" : "hc-blog",
+        "property" : null,
+        "operator" : "MATCHES_REGEX",
+        "access" : null
+      },
+      "children" : [ {
+        "id" : "dbc81213-05d2-c6ec-9328-4c3888673da6",
+        "name" : "blog_or_custom_content",
+        "label" : "Blog OR Custom Content",
+        "required" : false,
+        "locked" : false,
+        "display" : "select",
+        "choices" : [ [ "select_blog", "Select Blog" ], [ "select_customcontent", "Custom Content" ] ],
+        "multiple" : false,
+        "reordering_enabled" : true,
+        "preset" : null,
+        "type" : "choice",
+        "display_width" : null,
+        "default" : "select_customcontent"
+      }, {
+        "id" : "29dbb98e-4671-65a8-0f8d-a3a017914f54",
+        "name" : "blog_Group",
+        "label" : "Blog",
+        "required" : false,
+        "locked" : false,
+        "visibility" : {
+          "controlling_field" : null,
+          "controlling_field_path" : "mega_menu.column.blog.blog_or_custom_content",
+          "controlling_value_regex" : "select_blog",
+          "property" : null,
+          "operator" : "MATCHES_REGEX",
+          "access" : null
+        },
+        "children" : [ {
+          "id" : "5b11f685-3f83-1015-ba34-bb0d4d3d5542",
+          "name" : "blog",
+          "label" : "Blog",
+          "required" : false,
+          "locked" : false,
+          "type" : "blog",
+          "display_width" : null
+        }, {
+          "id" : "9c3aa5ac-b345-e895-9233-2bb8f1b700fd",
+          "name" : "number_of_post",
+          "label" : "Number of Post",
+          "required" : false,
+          "locked" : false,
+          "display" : "text",
+          "step" : 1,
+          "type" : "number",
+          "display_width" : null,
+          "default" : 1
+        } ],
+        "tab" : "CONTENT",
+        "expanded" : false,
+        "group_occurrence_meta" : null,
+        "type" : "group",
+        "display_width" : null,
+        "default" : {
+          "number_of_post" : 1
+        }
+      }, {
+        "id" : "f5ac37a6-5eac-319b-413f-d488d7f4b584",
+        "name" : "custom_content",
+        "label" : "Custom Content",
+        "required" : false,
+        "locked" : false,
+        "occurrence" : {
+          "min" : null,
+          "max" : null,
+          "sorting_label_field" : null,
+          "default" : 1
+        },
+        "visibility" : {
+          "controlling_field" : null,
+          "controlling_field_path" : "mega_menu.column.blog.blog_or_custom_content",
+          "controlling_value_regex" : "select_customcontent",
+          "property" : null,
+          "operator" : "MATCHES_REGEX",
+          "access" : null
+        },
+        "children" : [ {
+          "id" : "a4fefc4e-731a-2117-5fe9-457468a05e40",
+          "name" : "image",
+          "label" : "Image",
+          "required" : false,
+          "locked" : false,
+          "responsive" : true,
+          "resizable" : true,
+          "show_loading" : false,
+          "type" : "image",
+          "display_width" : null,
+          "default" : {
+            "size_type" : "auto",
+            "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize/Image/Header_Blog_Image.png",
+            "alt" : "Header_Blog_Image",
+            "loading" : "lazy",
+            "width" : 364,
+            "height" : 223,
+            "max_width" : 364,
+            "max_height" : 223
+          }
+        }, {
+          "id" : "7bfacddf-0d7d-d657-8280-2ddb51b8c501",
+          "name" : "title",
+          "label" : "Title",
+          "required" : false,
+          "locked" : false,
+          "allow_new_line" : false,
+          "type" : "text",
+          "display_width" : null,
+          "default" : "Deploy, Manage & Retrieve IT and Office Equipment For Your Remote Employees"
+        }, {
+          "id" : "bc65ff65-0b11-437b-992e-04b82b7f64cd",
+          "name" : "tag",
+          "label" : "Tag",
+          "required" : false,
+          "locked" : false,
+          "allow_new_line" : false,
+          "type" : "text",
+          "display_width" : null,
+          "default" : "Blog"
+        }, {
+          "id" : "7aa61aea-8735-060f-9414-1eca606acea2",
+          "name" : "link",
+          "label" : "Link",
+          "required" : false,
+          "locked" : false,
+          "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG", "CALL_TO_ACTION", "PHONE_NUMBER", "WHATSAPP_NUMBER" ],
+          "show_advanced_rel_options" : false,
+          "type" : "link",
+          "display_width" : null,
+          "default" : {
+            "url" : {
+              "content_id" : null,
+              "type" : "EXTERNAL",
+              "href" : ""
+            },
+            "open_in_new_tab" : false,
+            "no_follow" : false
+          }
+        } ],
+        "tab" : "CONTENT",
+        "expanded" : false,
+        "group_occurrence_meta" : null,
+        "type" : "group",
+        "display_width" : null,
+        "default" : [ {
+          "image" : {
+            "size_type" : "auto",
+            "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize/Image/Header_Blog_Image.png",
+            "alt" : "Header_Blog_Image",
+            "loading" : "lazy",
+            "width" : 364,
+            "height" : 223,
+            "max_width" : 364,
+            "max_height" : 223
+          },
+          "title" : "Deploy, Manage & Retrieve IT and Office Equipment For Your Remote Employees",
+          "tag" : "Blog",
+          "link" : {
+            "url" : {
+              "content_id" : null,
+              "type" : "EXTERNAL",
+              "href" : ""
+            },
+            "open_in_new_tab" : false,
+            "no_follow" : false
+          }
+        } ]
+      } ],
+      "tab" : "CONTENT",
+      "expanded" : false,
+      "group_occurrence_meta" : null,
+      "type" : "group",
+      "display_width" : null,
+      "default" : {
+        "blog_or_custom_content" : "select_customcontent",
+        "blog_Group" : {
+          "number_of_post" : 1
+        },
+        "custom_content" : [ {
+          "image" : {
+            "size_type" : "auto",
+            "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize/Image/Header_Blog_Image.png",
+            "alt" : "Header_Blog_Image",
+            "loading" : "lazy",
+            "width" : 364,
+            "height" : 223,
+            "max_width" : 364,
+            "max_height" : 223
+          },
+          "title" : "Deploy, Manage & Retrieve IT and Office Equipment For Your Remote Employees",
+          "tag" : "Blog",
+          "link" : {
+            "url" : {
+              "content_id" : null,
+              "type" : "EXTERNAL",
+              "href" : ""
+            },
+            "open_in_new_tab" : false,
+            "no_follow" : false
+          }
+        } ]
+      }
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : [ {
+      "content_choice" : "hc-txt",
+      "text" : {
+        "title" : "Solutions",
+        "button_link" : {
+          "url" : {
+            "content_id" : null,
+            "type" : "EXTERNAL",
+            "href" : ""
+          },
+          "open_in_new_tab" : false,
+          "no_follow" : false
+        },
+        "button_text" : "Learn More"
+      },
+      "list" : {
+        "title" : "By Use Cases",
+        "list" : [ {
+          "title" : "IT Procurement",
+          "text" : "<p>Save time on contract negotiations due diligence, and vendor management.</p>",
+          "icon" : {
+            "size_type" : "auto",
+            "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize/Image/Header_Icon.svg",
+            "alt" : "Header_Icon",
+            "loading" : "lazy",
+            "width" : 18,
+            "height" : 18,
+            "max_width" : 18,
+            "max_height" : 18
+          },
+          "link_field" : {
+            "url" : {
+              "content_id" : null,
+              "type" : "EXTERNAL",
+              "href" : ""
+            },
+            "open_in_new_tab" : false,
+            "no_follow" : false
+          }
+        }, {
+          "title" : "IT Procurement",
+          "text" : "<p>Save time on contract negotiations due diligence, and vendor management.</p>",
+          "icon" : {
+            "size_type" : "auto",
+            "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize/Image/Header_Icon.svg",
+            "alt" : "Header_Icon",
+            "loading" : "lazy",
+            "width" : 18,
+            "height" : 18,
+            "max_width" : 18,
+            "max_height" : 18
+          },
+          "link_field" : {
+            "url" : {
+              "content_id" : null,
+              "type" : "EXTERNAL",
+              "href" : ""
+            },
+            "open_in_new_tab" : false,
+            "no_follow" : false
+          }
+        }, {
+          "title" : "IT Procurement",
+          "text" : "<p>Save time on contract negotiations due diligence, and vendor management.</p>",
+          "icon" : {
+            "size_type" : "auto",
+            "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize/Image/Header_Icon.svg",
+            "alt" : "Header_Icon",
+            "loading" : "lazy",
+            "width" : 18,
+            "height" : 18,
+            "max_width" : 18,
+            "max_height" : 18
+          },
+          "link_field" : {
+            "url" : {
+              "content_id" : null,
+              "type" : "EXTERNAL",
+              "href" : ""
+            },
+            "open_in_new_tab" : false,
+            "no_follow" : false
+          }
+        } ]
+      },
+      "blog" : {
+        "blog_or_custom_content" : "select_customcontent",
+        "blog_Group" : {
+          "number_of_post" : 1
+        },
+        "custom_content" : [ {
+          "image" : {
+            "size_type" : "auto",
+            "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize/Image/Header_Blog_Image.png",
+            "alt" : "Header_Blog_Image",
+            "loading" : "lazy",
+            "width" : 364,
+            "height" : 223,
+            "max_width" : 364,
+            "max_height" : 223
+          },
+          "title" : "Deploy, Manage & Retrieve IT and Office Equipment For Your Remote Employees",
+          "tag" : "Blog",
+          "link" : {
+            "url" : {
+              "content_id" : null,
+              "type" : "EXTERNAL",
+              "href" : ""
+            },
+            "open_in_new_tab" : false,
+            "no_follow" : false
+          }
+        } ]
+      }
+    } ]
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : [ {
+    "assign_mega_menu_in_top_level_main_menu" : 1,
+    "column_choice" : "headerthree_cols",
+    "column" : [ {
+      "content_choice" : "hc-txt",
+      "text" : {
+        "title" : "Solutions",
+        "button_link" : {
+          "url" : {
+            "content_id" : null,
+            "type" : "EXTERNAL",
+            "href" : ""
+          },
+          "open_in_new_tab" : false,
+          "no_follow" : false
+        },
+        "button_text" : "Learn More"
+      },
+      "list" : {
+        "title" : "By Use Cases",
+        "list" : [ {
+          "title" : "IT Procurement",
+          "text" : "<p>Save time on contract negotiations due diligence, and vendor management.</p>",
+          "icon" : {
+            "size_type" : "auto",
+            "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize/Image/Header_Icon.svg",
+            "alt" : "Header_Icon",
+            "loading" : "lazy",
+            "width" : 18,
+            "height" : 18,
+            "max_width" : 18,
+            "max_height" : 18
+          },
+          "link_field" : {
+            "url" : {
+              "content_id" : null,
+              "type" : "EXTERNAL",
+              "href" : ""
+            },
+            "open_in_new_tab" : false,
+            "no_follow" : false
+          }
+        }, {
+          "title" : "IT Procurement",
+          "text" : "<p>Save time on contract negotiations due diligence, and vendor management.</p>",
+          "icon" : {
+            "size_type" : "auto",
+            "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize/Image/Header_Icon.svg",
+            "alt" : "Header_Icon",
+            "loading" : "lazy",
+            "width" : 18,
+            "height" : 18,
+            "max_width" : 18,
+            "max_height" : 18
+          },
+          "link_field" : {
+            "url" : {
+              "content_id" : null,
+              "type" : "EXTERNAL",
+              "href" : ""
+            },
+            "open_in_new_tab" : false,
+            "no_follow" : false
+          }
+        }, {
+          "title" : "IT Procurement",
+          "text" : "<p>Save time on contract negotiations due diligence, and vendor management.</p>",
+          "icon" : {
+            "size_type" : "auto",
+            "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize/Image/Header_Icon.svg",
+            "alt" : "Header_Icon",
+            "loading" : "lazy",
+            "width" : 18,
+            "height" : 18,
+            "max_width" : 18,
+            "max_height" : 18
+          },
+          "link_field" : {
+            "url" : {
+              "content_id" : null,
+              "type" : "EXTERNAL",
+              "href" : ""
+            },
+            "open_in_new_tab" : false,
+            "no_follow" : false
+          }
+        } ]
+      },
+      "blog" : {
+        "blog_or_custom_content" : "select_customcontent",
+        "blog_Group" : {
+          "number_of_post" : 1
+        },
+        "custom_content" : [ {
+          "image" : {
+            "size_type" : "auto",
+            "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize/Image/Header_Blog_Image.png",
+            "alt" : "Header_Blog_Image",
+            "loading" : "lazy",
+            "width" : 364,
+            "height" : 223,
+            "max_width" : 364,
+            "max_height" : 223
+          },
+          "title" : "Deploy, Manage & Retrieve IT and Office Equipment For Your Remote Employees",
+          "tag" : "Blog",
+          "link" : {
+            "url" : {
+              "content_id" : null,
+              "type" : "EXTERNAL",
+              "href" : ""
+            },
+            "open_in_new_tab" : false,
+            "no_follow" : false
+          }
+        } ]
+      }
+    } ]
+  } ]
+}, {
+  "id" : "c4066178-ca31-1719-bcef-34a892c1415b",
+  "name" : "button_group",
+  "label" : "Button Group",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : null,
+    "max" : null,
+    "sorting_label_field" : null,
+    "default" : 2
+  },
+  "children" : [ {
+    "id" : "37e7bc49-a8d7-481c-b0f6-90929e1086f1",
+    "name" : "link_or_button",
+    "label" : "Link OR Button",
+    "required" : false,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "btnlink", "Link" ], [ "hdrbtn", "Button" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "btnlink"
+  }, {
+    "id" : "1bbdfed3-6486-f044-01a0-5635e086a044",
+    "name" : "button_text",
+    "label" : "Button Text",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Sign in"
+  }, {
+    "id" : "3ff5c0c6-91e4-7727-a16b-822191038db5",
+    "name" : "button_link",
+    "label" : "Button Link",
+    "required" : false,
+    "locked" : false,
+    "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG", "CALL_TO_ACTION", "PHONE_NUMBER", "WHATSAPP_NUMBER" ],
+    "show_advanced_rel_options" : false,
+    "type" : "link",
+    "display_width" : null,
+    "default" : {
+      "url" : {
+        "content_id" : null,
+        "type" : "EXTERNAL",
+        "href" : ""
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : [ {
+    "button_link" : {
+      "url" : {
+        "content_id" : null,
+        "type" : "EXTERNAL",
+        "href" : ""
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    },
+    "button_text" : "Sign in",
+    "link_or_button" : "btnlink"
+  }, {
+    "button_link" : {
+      "url" : {
+        "content_id" : null,
+        "type" : "EXTERNAL",
+        "href" : ""
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    },
+    "button_text" : "Sign in",
+    "link_or_button" : "btnlink"
+  } ]
+} ]

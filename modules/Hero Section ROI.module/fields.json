@@ -1,0 +1,645 @@
+[ {
+  "id" : "e181e1ee-ef06-5ba8-0ad3-f63113a45d24",
+  "name" : "style",
+  "label" : "Style",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "36fd79d2-1107-4452-d226-d4c096723f16",
+    "name" : "select_background",
+    "label" : "Select Background",
+    "required" : false,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "bg_color", "Background Color" ], [ "bg_image", "Background Image" ], [ "bg_gradient", "Background Gradient" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : ""
+  }, {
+    "id" : "60d0ddef-fb34-a99a-73cb-bda8b10e0fc9",
+    "name" : "background_color",
+    "label" : "Background Color",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "style.select_background",
+      "controlling_value_regex" : "bg_color",
+      "property" : null,
+      "operator" : "MATCHES_REGEX",
+      "access" : null
+    },
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#FFF",
+      "opacity" : 100
+    }
+  }, {
+    "id" : "19f0609d-595d-6ef3-f639-3f6006e095fb",
+    "name" : "background_image",
+    "label" : "Background Image",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "style.select_background",
+      "controlling_value_regex" : "bg_image",
+      "property" : null,
+      "operator" : "MATCHES_REGEX",
+      "access" : null
+    },
+    "type" : "backgroundimage",
+    "display_width" : null,
+    "default" : {
+      "src" : "",
+      "background_position" : "MIDDLE_CENTER",
+      "background_size" : "cover"
+    }
+  }, {
+    "id" : "0df6d4e0-395b-eda2-ec5a-1d08ad6c8d35",
+    "name" : "background_gradient",
+    "label" : "Background Gradient",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "style.select_background",
+      "controlling_value_regex" : "bg_gradient",
+      "property" : null,
+      "operator" : "MATCHES_REGEX",
+      "access" : null
+    },
+    "type" : "gradient",
+    "display_width" : null,
+    "default" : { }
+  }, {
+    "id" : "afeb177b-c31d-1412-5116-70d6f85c5565",
+    "name" : "spacing",
+    "label" : "Spacing",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "d59d9e4c-264e-54fa-99b7-0ff07897b867",
+      "name" : "desktop",
+      "label" : "Desktop",
+      "required" : false,
+      "locked" : false,
+      "type" : "spacing",
+      "display_width" : null,
+      "default" : {
+        "padding" : {
+          "top" : {
+            "value" : 60,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 0,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      }
+    }, {
+      "id" : "0c762a95-1339-05fa-721d-3d79f41b571e",
+      "name" : "tablet",
+      "label" : "Tablet",
+      "required" : false,
+      "locked" : false,
+      "type" : "spacing",
+      "display_width" : null,
+      "default" : {
+        "padding" : {
+          "top" : {
+            "value" : 60,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 0,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      }
+    }, {
+      "id" : "0a8a8c35-4008-f2aa-311a-12325d67b19c",
+      "name" : "mobile",
+      "label" : "Mobile",
+      "required" : false,
+      "locked" : false,
+      "type" : "spacing",
+      "display_width" : null,
+      "default" : {
+        "padding" : {
+          "top" : {
+            "value" : 60,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 0,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      }
+    } ],
+    "tab" : "STYLE",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : {
+      "desktop" : {
+        "padding" : {
+          "top" : {
+            "value" : 60,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 0,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      },
+      "tablet" : {
+        "padding" : {
+          "top" : {
+            "value" : 60,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 0,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      },
+      "mobile" : {
+        "padding" : {
+          "top" : {
+            "value" : 60,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 0,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      }
+    }
+  } ],
+  "tab" : "STYLE",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "select_background" : "",
+    "background_color" : {
+      "color" : "#FFF",
+      "opacity" : 100
+    },
+    "background_image" : {
+      "src" : "",
+      "background_position" : "MIDDLE_CENTER",
+      "background_size" : "cover"
+    },
+    "background_gradient" : { },
+    "spacing" : {
+      "desktop" : {
+        "padding" : {
+          "top" : {
+            "value" : 60,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 0,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      },
+      "tablet" : {
+        "padding" : {
+          "top" : {
+            "value" : 60,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 0,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      },
+      "mobile" : {
+        "padding" : {
+          "top" : {
+            "value" : 60,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 0,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      }
+    }
+  }
+}, {
+  "id" : "55ccd3e2-31aa-4e79-9772-80facd954415",
+  "name" : "show_hide_",
+  "label" : "Section [Show/ Hide]",
+  "required" : false,
+  "locked" : false,
+  "display" : "toggle",
+  "type" : "boolean",
+  "display_width" : null,
+  "default" : true
+}, {
+  "id" : "8a5d4b01-f52f-f44f-26df-7d1073b3767e",
+  "name" : "section_id",
+  "label" : "Section ID",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null
+}, {
+  "id" : "9ad39c6f-2975-018c-a1a7-42f7d87b7486",
+  "name" : "sub_title",
+  "label" : "Sub Title",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "ROI Calculator"
+}, {
+  "id" : "bc690976-e7ac-d34e-5690-3c495096fbd3",
+  "name" : "title",
+  "label" : "Title",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "Put a number on what manual IT ops are <span>actually costing you.</span>"
+}, {
+  "id" : "68b8ed2b-9791-1f19-e81f-c4b9459ca1ec",
+  "name" : "top_text",
+  "label" : "Text",
+  "required" : false,
+  "locked" : false,
+  "type" : "richtext",
+  "display_width" : null,
+  "default" : "<span>Add your team size, regions, and workflows. See where time and budget are leaking, and what you recover with Workwize.</span>&nbsp;"
+}, {
+  "id" : "30ebf297-93e6-d22b-b6a5-6197f0661f1d",
+  "name" : "form_field",
+  "label" : "Form",
+  "required" : false,
+  "locked" : false,
+  "embed_versions" : [ "v2", "v4" ],
+  "type" : "form",
+  "display_width" : null,
+  "default" : {
+    "form_id" : "95314578-94f1-401b-82b7-10c9feb3c306",
+    "response_type" : "inline",
+    "message" : "Thanks for submitting the form.",
+    "gotowebinar_webinar_key" : null,
+    "webinar_id" : null,
+    "webinar_source" : null,
+    "form_type" : "HUBSPOT"
+  }
+}, {
+  "id" : "7a36e737-0cb3-2714-9ae9-408c25fd219f",
+  "name" : "form_id",
+  "label" : "Form Id",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "PricingForm"
+}, {
+  "id" : "76bd5843-b51f-bfc1-f4a4-d1455d941c84",
+  "name" : "result_box_group",
+  "label" : "Result Box Group",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "b4d522c7-1510-a899-bfdf-8ca1d3ea35ea",
+    "name" : "title",
+    "label" : "Title",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "You will save the following amount as a result of implementing Workwize\t"
+  }, {
+    "id" : "0b56bbfc-bba5-693b-8c87-0debd94cccd9",
+    "name" : "content",
+    "label" : "Content",
+    "required" : false,
+    "locked" : false,
+    "type" : "richtext",
+    "display_width" : null,
+    "default" : "<p>Total yearly savings from using Workwize</p>"
+  }, {
+    "id" : "f47e87f1-391a-226a-b9c3-905f52c3bc3d",
+    "name" : "procuring_group",
+    "label" : "Procuring group",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "883ce894-fadd-a6b9-33ed-19d1bee4dcc8",
+      "name" : "title",
+      "label" : "Title",
+      "required" : false,
+      "locked" : false,
+      "allow_new_line" : false,
+      "type" : "text",
+      "display_width" : null,
+      "default" : "Yearly costs savings procuring"
+    }, {
+      "id" : "6152a731-10e7-df2a-3e3a-79e40fd2bb6e",
+      "name" : "content",
+      "label" : "Content",
+      "required" : false,
+      "locked" : false,
+      "type" : "richtext",
+      "display_width" : null,
+      "default" : "<p>This calculation is based on qualitative and quantitative research. Please contact the team below to get more information on this calculation.</p>"
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : {
+      "title" : "Yearly costs savings procuring",
+      "content" : "<p>This calculation is based on qualitative and quantitative research. Please contact the team below to get more information on this calculation.</p>"
+    }
+  }, {
+    "id" : "afb80a5f-1d9a-6137-619d-7c571abe8564",
+    "name" : "deploying_group",
+    "label" : "Deploying group",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "e20ffa06-8545-9e5e-12a8-5fbb04b1105d",
+      "name" : "title",
+      "label" : "Title",
+      "required" : false,
+      "locked" : false,
+      "allow_new_line" : false,
+      "type" : "text",
+      "display_width" : null,
+      "default" : "Yearly costs savings deploying"
+    }, {
+      "id" : "22394a1f-af8a-3d8b-5ea4-87f869469186",
+      "name" : "content",
+      "label" : "Content",
+      "required" : false,
+      "locked" : false,
+      "type" : "richtext",
+      "display_width" : null,
+      "default" : "<p>This calculation is based on qualitative and quantitative research. Please contact the team below to get more information on this calculation.</p>"
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : {
+      "title" : "Yearly costs savings deploying",
+      "content" : "<p>This calculation is based on qualitative and quantitative research. Please contact the team below to get more information on this calculation.</p>"
+    }
+  }, {
+    "id" : "c44bbc5d-da51-a65b-020a-8b5db949d9d5",
+    "name" : "managing_group",
+    "label" : "Managing group",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "a63d843b-d8b7-27eb-56e6-32d0856a4cec",
+      "name" : "title",
+      "label" : "Title",
+      "required" : false,
+      "locked" : false,
+      "allow_new_line" : false,
+      "type" : "text",
+      "display_width" : null,
+      "default" : "Yearly costs savings managing"
+    }, {
+      "id" : "2cb035b8-d9d9-1216-409e-b17b40c1e629",
+      "name" : "content",
+      "label" : "Content",
+      "required" : false,
+      "locked" : false,
+      "type" : "richtext",
+      "display_width" : null,
+      "default" : "<p>This calculation is based on qualitative and quantitative research. Please contact the team below to get more information on this calculation.</p>"
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : {
+      "title" : "Yearly costs savings managing",
+      "content" : "<p>This calculation is based on qualitative and quantitative research. Please contact the team below to get more information on this calculation.</p>"
+    }
+  }, {
+    "id" : "5972215f-d425-aab4-8a4d-d5c32813755a",
+    "name" : "retrievals_group",
+    "label" : "Retrievals group",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "e9471a00-bf10-5706-c831-9c0375348a21",
+      "name" : "title",
+      "label" : "Title",
+      "required" : false,
+      "locked" : false,
+      "allow_new_line" : false,
+      "type" : "text",
+      "display_width" : null,
+      "default" : "Yearly costs savings retrievals"
+    }, {
+      "id" : "1d760cf8-d949-159f-ab96-a6ce622acd55",
+      "name" : "content",
+      "label" : "Content",
+      "required" : false,
+      "locked" : false,
+      "type" : "richtext",
+      "display_width" : null,
+      "default" : "<p>This calculation is based on qualitative and quantitative research. Please contact the team below to get more information on this calculation.</p>"
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : {
+      "title" : "Yearly costs savings retrievals",
+      "content" : "<p>This calculation is based on qualitative and quantitative research. Please contact the team below to get more information on this calculation.</p>"
+    }
+  }, {
+    "id" : "ab8738b5-24fb-7a55-9f81-4a52635f02a1",
+    "name" : "disposals_group",
+    "label" : "Disposals group",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "ab26ca5c-24dd-d9f6-e5bd-5daab3cea5e0",
+      "name" : "title",
+      "label" : "Title",
+      "required" : false,
+      "locked" : false,
+      "allow_new_line" : false,
+      "type" : "text",
+      "display_width" : null,
+      "default" : "Yearly costs savings disposals"
+    }, {
+      "id" : "4b9b4e48-308c-fe7d-244e-ad29aa234a23",
+      "name" : "content",
+      "label" : "Content",
+      "required" : false,
+      "locked" : false,
+      "type" : "richtext",
+      "display_width" : null,
+      "default" : "<p>This calculation is based on qualitative and quantitative research. Please contact the team below to get more information on this calculation.</p>"
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : {
+      "title" : "Yearly costs savings disposals",
+      "content" : "<p>This calculation is based on qualitative and quantitative research. Please contact the team below to get more information on this calculation.</p>"
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "title" : "You will save the following amount as a result of implementing Workwize\t",
+    "content" : "<p>Total yearly savings from using Workwize</p>",
+    "procuring_group" : {
+      "title" : "Yearly costs savings procuring",
+      "content" : "<p>This calculation is based on qualitative and quantitative research. Please contact the team below to get more information on this calculation.</p>"
+    },
+    "deploying_group" : {
+      "title" : "Yearly costs savings deploying",
+      "content" : "<p>This calculation is based on qualitative and quantitative research. Please contact the team below to get more information on this calculation.</p>"
+    },
+    "managing_group" : {
+      "title" : "Yearly costs savings managing",
+      "content" : "<p>This calculation is based on qualitative and quantitative research. Please contact the team below to get more information on this calculation.</p>"
+    },
+    "retrievals_group" : {
+      "title" : "Yearly costs savings retrievals",
+      "content" : "<p>This calculation is based on qualitative and quantitative research. Please contact the team below to get more information on this calculation.</p>"
+    },
+    "disposals_group" : {
+      "title" : "Yearly costs savings disposals",
+      "content" : "<p>This calculation is based on qualitative and quantitative research. Please contact the team below to get more information on this calculation.</p>"
+    }
+  }
+}, {
+  "id" : "682c0ab4-e3fc-d897-fb27-dfd8602885d1",
+  "name" : "right_shapes",
+  "label" : "Right Shapes",
+  "required" : false,
+  "locked" : false,
+  "responsive" : true,
+  "resizable" : true,
+  "show_loading" : true,
+  "type" : "image",
+  "display_width" : null,
+  "default" : {
+    "size_type" : "exact",
+    "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/USA%2c%20Canada%2c%20Mexico.svg",
+    "alt" : "USA, Canada, Mexico",
+    "loading" : "lazy",
+    "width" : 288,
+    "height" : 486,
+    "max_width" : 288,
+    "max_height" : 486
+  }
+} ]

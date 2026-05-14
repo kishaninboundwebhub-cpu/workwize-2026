@@ -1,0 +1,1119 @@
+[ {
+  "id" : "e181e1ee-ef06-5ba8-0ad3-f63113a45d24",
+  "name" : "style",
+  "label" : "Style",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "36fd79d2-1107-4452-d226-d4c096723f16",
+    "name" : "select_background",
+    "label" : "Select Background",
+    "required" : false,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "bg_color", "Background Color" ], [ "bg_image", "Background Image" ], [ "bg_gradient", "Background Gradient" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "bg_color"
+  }, {
+    "id" : "60d0ddef-fb34-a99a-73cb-bda8b10e0fc9",
+    "name" : "background_color",
+    "label" : "Background Color",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "style.select_background",
+      "controlling_value_regex" : "bg_color",
+      "property" : null,
+      "operator" : "MATCHES_REGEX",
+      "access" : null
+    },
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#002A5A",
+      "opacity" : 100
+    }
+  }, {
+    "id" : "19f0609d-595d-6ef3-f639-3f6006e095fb",
+    "name" : "background_image",
+    "label" : "Background Image",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "style.select_background",
+      "controlling_value_regex" : "bg_image",
+      "property" : null,
+      "operator" : "MATCHES_REGEX",
+      "access" : null
+    },
+    "type" : "backgroundimage",
+    "display_width" : null,
+    "default" : {
+      "background_position" : "TOP_CENTER",
+      "background_size" : "cover",
+      "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/Group%202147262867.png"
+    }
+  }, {
+    "id" : "0df6d4e0-395b-eda2-ec5a-1d08ad6c8d35",
+    "name" : "background_gradient",
+    "label" : "Background Gradient",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "style.select_background",
+      "controlling_value_regex" : "bg_gradient",
+      "property" : null,
+      "operator" : "MATCHES_REGEX",
+      "access" : null
+    },
+    "type" : "gradient",
+    "display_width" : null,
+    "default" : { }
+  }, {
+    "id" : "afeb177b-c31d-1412-5116-70d6f85c5565",
+    "name" : "spacing",
+    "label" : "Spacing",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "d59d9e4c-264e-54fa-99b7-0ff07897b867",
+      "name" : "desktop",
+      "label" : "Desktop",
+      "required" : false,
+      "locked" : false,
+      "type" : "spacing",
+      "display_width" : null,
+      "default" : {
+        "padding" : {
+          "top" : {
+            "value" : 160,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 80,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      }
+    }, {
+      "id" : "0c762a95-1339-05fa-721d-3d79f41b571e",
+      "name" : "tablet",
+      "label" : "Tablet",
+      "required" : false,
+      "locked" : false,
+      "type" : "spacing",
+      "display_width" : null,
+      "default" : {
+        "padding" : {
+          "top" : {
+            "value" : 160,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 80,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      }
+    }, {
+      "id" : "0a8a8c35-4008-f2aa-311a-12325d67b19c",
+      "name" : "mobile",
+      "label" : "Mobile",
+      "required" : false,
+      "locked" : false,
+      "type" : "spacing",
+      "display_width" : null,
+      "default" : {
+        "padding" : {
+          "top" : {
+            "value" : 100,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 60,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      }
+    } ],
+    "tab" : "STYLE",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : {
+      "desktop" : {
+        "padding" : {
+          "top" : {
+            "value" : 160,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 80,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      },
+      "tablet" : {
+        "padding" : {
+          "top" : {
+            "value" : 160,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 80,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      },
+      "mobile" : {
+        "padding" : {
+          "top" : {
+            "value" : 100,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 60,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      }
+    }
+  } ],
+  "tab" : "STYLE",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "select_background" : "bg_color",
+    "background_color" : {
+      "color" : "#002A5A",
+      "opacity" : 100
+    },
+    "background_image" : {
+      "background_position" : "TOP_CENTER",
+      "background_size" : "cover",
+      "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/Group%202147262867.png"
+    },
+    "background_gradient" : { },
+    "spacing" : {
+      "desktop" : {
+        "padding" : {
+          "top" : {
+            "value" : 160,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 80,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      },
+      "tablet" : {
+        "padding" : {
+          "top" : {
+            "value" : 160,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 80,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      },
+      "mobile" : {
+        "padding" : {
+          "top" : {
+            "value" : 100,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 60,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      }
+    }
+  }
+}, {
+  "id" : "55ccd3e2-31aa-4e79-9772-80facd954415",
+  "name" : "show_hide_",
+  "label" : "Section [Show/ Hide]",
+  "required" : false,
+  "locked" : false,
+  "display" : "toggle",
+  "type" : "boolean",
+  "display_width" : null,
+  "default" : true
+}, {
+  "id" : "816e23db-8d7e-7584-87d2-24ddffb1517b",
+  "name" : "sub_title",
+  "label" : "Sub Title",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "Platform Overview"
+}, {
+  "id" : "8f12f706-cfd9-3d52-bd6e-1a4d9fd78216",
+  "name" : "title",
+  "label" : "Title",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "Scale global hardware operations <span>without scaling manual work.</span>"
+}, {
+  "id" : "3e44a193-014c-fbb6-9e5b-352732913b7f",
+  "name" : "text",
+  "label" : "Text",
+  "required" : false,
+  "locked" : false,
+  "type" : "richtext",
+  "display_width" : null,
+  "default" : "<p><span>Workwize centralizes all IT lifecycle events in one automated system. Reduce operational complexity with a platform built for IT, security, and finance leaders across the globe.</span>&nbsp;</p>"
+}, {
+  "id" : "e290ca55-c1f4-40a0-24f3-17fd06d22876",
+  "name" : "button",
+  "label" : "Button",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : null,
+    "max" : null,
+    "sorting_label_field" : null,
+    "default" : 1
+  },
+  "children" : [ {
+    "id" : "fab803c5-01fd-0031-fe7c-f678dfce3a0f",
+    "name" : "button_choice",
+    "label" : "Button Choice",
+    "required" : false,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "button", "Primary Button" ], [ "second_btn", "Secondary Button" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "second_btn"
+  }, {
+    "id" : "4464f1fc-ff7c-9b81-abdd-ec4f295855a2",
+    "name" : "button_text",
+    "label" : "Button Text",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Book a 30-min Custom demo"
+  }, {
+    "id" : "bf0e64d2-78b6-0dd1-35ac-46dff25d28f5",
+    "name" : "button_link",
+    "label" : "Button Link",
+    "required" : false,
+    "locked" : false,
+    "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG", "CALL_TO_ACTION", "PHONE_NUMBER", "WHATSAPP_NUMBER" ],
+    "show_advanced_rel_options" : false,
+    "type" : "link",
+    "display_width" : null,
+    "default" : {
+      "url" : {
+        "content_id" : null,
+        "href" : "#requestdemo",
+        "type" : "EXTERNAL"
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    }
+  }, {
+    "id" : "adf0f51d-9b4d-2818-41c8-b813510aa7b9",
+    "name" : "set_arrow_",
+    "label" : "Set Arrow ?",
+    "required" : false,
+    "locked" : false,
+    "display" : "toggle",
+    "type" : "boolean",
+    "display_width" : null,
+    "default" : true
+  }, {
+    "id" : "3a893e05-03f5-661a-9ca5-fb698533a59f",
+    "name" : "background_color",
+    "label" : "Background Color",
+    "required" : false,
+    "locked" : false,
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : null,
+      "opacity" : null
+    }
+  }, {
+    "id" : "e14dc782-abe5-8e8b-7b9a-f32882b5bfe2",
+    "name" : "border_color",
+    "label" : "Border Color",
+    "required" : false,
+    "locked" : false,
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : null,
+      "opacity" : null
+    }
+  }, {
+    "id" : "989ac2a4-e767-9d3c-90cb-a86e36b54466",
+    "name" : "text_color",
+    "label" : "Text Color",
+    "required" : false,
+    "locked" : false,
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : null,
+      "opacity" : null
+    }
+  }, {
+    "id" : "e532929d-17e5-2fb4-c7ad-23b3800a31f2",
+    "name" : "background_color_hover_",
+    "label" : "Background Color [Hover]",
+    "required" : false,
+    "locked" : false,
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : null,
+      "opacity" : null
+    }
+  }, {
+    "id" : "d6b688df-c5a9-0afe-7157-fab7b8936b82",
+    "name" : "border_color_hover_",
+    "label" : "Border Color [Hover]",
+    "required" : false,
+    "locked" : false,
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : null,
+      "opacity" : null
+    }
+  }, {
+    "id" : "bd64a200-2ee4-55d8-5b74-ca2e15c1f705",
+    "name" : "text_color_hover_",
+    "label" : "Text Color [Hover]",
+    "required" : false,
+    "locked" : false,
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : null,
+      "opacity" : null
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : [ {
+    "button_choice" : "second_btn",
+    "button_text" : "Book a 30-min Custom demo",
+    "button_link" : {
+      "url" : {
+        "content_id" : null,
+        "href" : "#requestdemo",
+        "type" : "EXTERNAL"
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    },
+    "set_arrow_" : true,
+    "background_color" : {
+      "color" : null,
+      "opacity" : null
+    },
+    "border_color" : {
+      "color" : null,
+      "opacity" : null
+    },
+    "text_color" : {
+      "color" : null,
+      "opacity" : null
+    },
+    "background_color_hover_" : {
+      "color" : null,
+      "opacity" : null
+    },
+    "border_color_hover_" : {
+      "color" : null,
+      "opacity" : null
+    },
+    "text_color_hover_" : {
+      "color" : null,
+      "opacity" : null
+    }
+  } ]
+}, {
+  "id" : "747ffbfc-b733-cf40-668e-c24f678906a0",
+  "name" : "autoplay_tabs",
+  "label" : "Autoplay Tabs",
+  "required" : false,
+  "locked" : false,
+  "display" : "toggle",
+  "type" : "boolean",
+  "display_width" : null,
+  "default" : true
+}, {
+  "id" : "a8a7b7b8-5ad1-1e53-8cfb-de35621c6e1b",
+  "name" : "tabes",
+  "label" : "Tabes",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "b9ee74ab-e521-671c-e711-6103792b03cf",
+    "name" : "tab_item",
+    "label" : "Tab Item",
+    "required" : false,
+    "locked" : false,
+    "occurrence" : {
+      "min" : null,
+      "max" : null,
+      "sorting_label_field" : "4add812c-a128-0e43-1bf7-e4f4d9f3ae21",
+      "default" : 5
+    },
+    "children" : [ {
+      "id" : "7fb90fb3-e936-55a2-4595-40db3bdf6945",
+      "name" : "image_field",
+      "label" : "Image",
+      "required" : false,
+      "locked" : false,
+      "responsive" : true,
+      "resizable" : true,
+      "show_loading" : true,
+      "type" : "image",
+      "display_width" : null,
+      "default" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/Feaute_%201%20Visuals.png",
+        "alt" : "Feaute_ 1 Visuals",
+        "loading" : "lazy",
+        "width" : 2000,
+        "height" : 1008,
+        "max_width" : 2000,
+        "max_height" : 1008
+      }
+    }, {
+      "id" : "4add812c-a128-0e43-1bf7-e4f4d9f3ae21",
+      "name" : "text_field",
+      "label" : "Text",
+      "required" : false,
+      "locked" : false,
+      "allow_new_line" : false,
+      "type" : "text",
+      "display_width" : null,
+      "default" : "Product catalog"
+    }, {
+      "id" : "99ba2437-b36e-0b04-9a67-2d2a468cc985",
+      "name" : "tab_default_icon",
+      "label" : "Tab Default Icon",
+      "required" : false,
+      "locked" : false,
+      "responsive" : true,
+      "resizable" : true,
+      "show_loading" : true,
+      "type" : "image",
+      "display_width" : null,
+      "default" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/Layout-Grid--Streamline-Core.svg",
+        "alt" : "Layout-Grid--Streamline-Core",
+        "loading" : "lazy",
+        "width" : 20,
+        "height" : 20,
+        "max_width" : 20,
+        "max_height" : 20
+      }
+    }, {
+      "id" : "1451e61d-229c-d327-822f-5b1414989981",
+      "name" : "tab_active_icon",
+      "label" : "Tab Active Icon",
+      "required" : false,
+      "locked" : false,
+      "responsive" : true,
+      "resizable" : true,
+      "show_loading" : true,
+      "type" : "image",
+      "display_width" : null,
+      "default" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/Layout-Grid--Streamline-Core%20(1).svg",
+        "alt" : "Layout-Grid--Streamline-Core (1)",
+        "loading" : "lazy",
+        "width" : 20,
+        "height" : 20,
+        "max_width" : 20,
+        "max_height" : 20
+      }
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : [ {
+      "image_field" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/Feaute_%201%20Visuals.png",
+        "alt" : "Feaute_ 1 Visuals",
+        "loading" : "lazy",
+        "width" : 2000,
+        "height" : 1008,
+        "max_width" : 2000,
+        "max_height" : 1008
+      },
+      "text_field" : "Product catalog",
+      "tab_default_icon" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/Layout-Grid--Streamline-Core.svg",
+        "alt" : "Layout-Grid--Streamline-Core",
+        "loading" : "lazy",
+        "width" : 20,
+        "height" : 20,
+        "max_width" : 20,
+        "max_height" : 20
+      },
+      "tab_active_icon" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/Layout-Grid--Streamline-Core%20(1).svg",
+        "alt" : "Layout-Grid--Streamline-Core (1)",
+        "loading" : "lazy",
+        "width" : 20,
+        "height" : 20,
+        "max_width" : 20,
+        "max_height" : 20
+      }
+    }, {
+      "image_field" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/Feaute_%201%20Visuals.png",
+        "alt" : "Feaute_ 1 Visuals",
+        "loading" : "lazy",
+        "width" : 2000,
+        "height" : 1008,
+        "max_width" : 2000,
+        "max_height" : 1008
+      },
+      "text_field" : "Product catalog",
+      "tab_default_icon" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/Layout-Grid--Streamline-Core.svg",
+        "alt" : "Layout-Grid--Streamline-Core",
+        "loading" : "lazy",
+        "width" : 20,
+        "height" : 20,
+        "max_width" : 20,
+        "max_height" : 20
+      },
+      "tab_active_icon" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/Layout-Grid--Streamline-Core%20(1).svg",
+        "alt" : "Layout-Grid--Streamline-Core (1)",
+        "loading" : "lazy",
+        "width" : 20,
+        "height" : 20,
+        "max_width" : 20,
+        "max_height" : 20
+      }
+    }, {
+      "image_field" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/Feaute_%201%20Visuals.png",
+        "alt" : "Feaute_ 1 Visuals",
+        "loading" : "lazy",
+        "width" : 2000,
+        "height" : 1008,
+        "max_width" : 2000,
+        "max_height" : 1008
+      },
+      "text_field" : "Product catalog",
+      "tab_default_icon" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/Layout-Grid--Streamline-Core.svg",
+        "alt" : "Layout-Grid--Streamline-Core",
+        "loading" : "lazy",
+        "width" : 20,
+        "height" : 20,
+        "max_width" : 20,
+        "max_height" : 20
+      },
+      "tab_active_icon" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/Layout-Grid--Streamline-Core%20(1).svg",
+        "alt" : "Layout-Grid--Streamline-Core (1)",
+        "loading" : "lazy",
+        "width" : 20,
+        "height" : 20,
+        "max_width" : 20,
+        "max_height" : 20
+      }
+    }, {
+      "image_field" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/Feaute_%201%20Visuals.png",
+        "alt" : "Feaute_ 1 Visuals",
+        "loading" : "lazy",
+        "width" : 2000,
+        "height" : 1008,
+        "max_width" : 2000,
+        "max_height" : 1008
+      },
+      "text_field" : "Product catalog",
+      "tab_default_icon" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/Layout-Grid--Streamline-Core.svg",
+        "alt" : "Layout-Grid--Streamline-Core",
+        "loading" : "lazy",
+        "width" : 20,
+        "height" : 20,
+        "max_width" : 20,
+        "max_height" : 20
+      },
+      "tab_active_icon" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/Layout-Grid--Streamline-Core%20(1).svg",
+        "alt" : "Layout-Grid--Streamline-Core (1)",
+        "loading" : "lazy",
+        "width" : 20,
+        "height" : 20,
+        "max_width" : 20,
+        "max_height" : 20
+      }
+    }, {
+      "image_field" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/Feaute_%201%20Visuals.png",
+        "alt" : "Feaute_ 1 Visuals",
+        "loading" : "lazy",
+        "width" : 2000,
+        "height" : 1008,
+        "max_width" : 2000,
+        "max_height" : 1008
+      },
+      "text_field" : "Product catalog",
+      "tab_default_icon" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/Layout-Grid--Streamline-Core.svg",
+        "alt" : "Layout-Grid--Streamline-Core",
+        "loading" : "lazy",
+        "width" : 20,
+        "height" : 20,
+        "max_width" : 20,
+        "max_height" : 20
+      },
+      "tab_active_icon" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/Layout-Grid--Streamline-Core%20(1).svg",
+        "alt" : "Layout-Grid--Streamline-Core (1)",
+        "loading" : "lazy",
+        "width" : 20,
+        "height" : 20,
+        "max_width" : 20,
+        "max_height" : 20
+      }
+    } ]
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "tab_item" : [ {
+      "image_field" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/Feaute_%201%20Visuals.png",
+        "alt" : "Feaute_ 1 Visuals",
+        "loading" : "lazy",
+        "width" : 2000,
+        "height" : 1008,
+        "max_width" : 2000,
+        "max_height" : 1008
+      },
+      "text_field" : "Product catalog",
+      "tab_default_icon" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/Layout-Grid--Streamline-Core.svg",
+        "alt" : "Layout-Grid--Streamline-Core",
+        "loading" : "lazy",
+        "width" : 20,
+        "height" : 20,
+        "max_width" : 20,
+        "max_height" : 20
+      },
+      "tab_active_icon" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/Layout-Grid--Streamline-Core%20(1).svg",
+        "alt" : "Layout-Grid--Streamline-Core (1)",
+        "loading" : "lazy",
+        "width" : 20,
+        "height" : 20,
+        "max_width" : 20,
+        "max_height" : 20
+      }
+    }, {
+      "image_field" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/Feaute_%201%20Visuals.png",
+        "alt" : "Feaute_ 1 Visuals",
+        "loading" : "lazy",
+        "width" : 2000,
+        "height" : 1008,
+        "max_width" : 2000,
+        "max_height" : 1008
+      },
+      "text_field" : "Product catalog",
+      "tab_default_icon" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/Layout-Grid--Streamline-Core.svg",
+        "alt" : "Layout-Grid--Streamline-Core",
+        "loading" : "lazy",
+        "width" : 20,
+        "height" : 20,
+        "max_width" : 20,
+        "max_height" : 20
+      },
+      "tab_active_icon" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/Layout-Grid--Streamline-Core%20(1).svg",
+        "alt" : "Layout-Grid--Streamline-Core (1)",
+        "loading" : "lazy",
+        "width" : 20,
+        "height" : 20,
+        "max_width" : 20,
+        "max_height" : 20
+      }
+    }, {
+      "image_field" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/Feaute_%201%20Visuals.png",
+        "alt" : "Feaute_ 1 Visuals",
+        "loading" : "lazy",
+        "width" : 2000,
+        "height" : 1008,
+        "max_width" : 2000,
+        "max_height" : 1008
+      },
+      "text_field" : "Product catalog",
+      "tab_default_icon" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/Layout-Grid--Streamline-Core.svg",
+        "alt" : "Layout-Grid--Streamline-Core",
+        "loading" : "lazy",
+        "width" : 20,
+        "height" : 20,
+        "max_width" : 20,
+        "max_height" : 20
+      },
+      "tab_active_icon" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/Layout-Grid--Streamline-Core%20(1).svg",
+        "alt" : "Layout-Grid--Streamline-Core (1)",
+        "loading" : "lazy",
+        "width" : 20,
+        "height" : 20,
+        "max_width" : 20,
+        "max_height" : 20
+      }
+    }, {
+      "image_field" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/Feaute_%201%20Visuals.png",
+        "alt" : "Feaute_ 1 Visuals",
+        "loading" : "lazy",
+        "width" : 2000,
+        "height" : 1008,
+        "max_width" : 2000,
+        "max_height" : 1008
+      },
+      "text_field" : "Product catalog",
+      "tab_default_icon" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/Layout-Grid--Streamline-Core.svg",
+        "alt" : "Layout-Grid--Streamline-Core",
+        "loading" : "lazy",
+        "width" : 20,
+        "height" : 20,
+        "max_width" : 20,
+        "max_height" : 20
+      },
+      "tab_active_icon" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/Layout-Grid--Streamline-Core%20(1).svg",
+        "alt" : "Layout-Grid--Streamline-Core (1)",
+        "loading" : "lazy",
+        "width" : 20,
+        "height" : 20,
+        "max_width" : 20,
+        "max_height" : 20
+      }
+    }, {
+      "image_field" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/Feaute_%201%20Visuals.png",
+        "alt" : "Feaute_ 1 Visuals",
+        "loading" : "lazy",
+        "width" : 2000,
+        "height" : 1008,
+        "max_width" : 2000,
+        "max_height" : 1008
+      },
+      "text_field" : "Product catalog",
+      "tab_default_icon" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/Layout-Grid--Streamline-Core.svg",
+        "alt" : "Layout-Grid--Streamline-Core",
+        "loading" : "lazy",
+        "width" : 20,
+        "height" : 20,
+        "max_width" : 20,
+        "max_height" : 20
+      },
+      "tab_active_icon" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/Layout-Grid--Streamline-Core%20(1).svg",
+        "alt" : "Layout-Grid--Streamline-Core (1)",
+        "loading" : "lazy",
+        "width" : 20,
+        "height" : 20,
+        "max_width" : 20,
+        "max_height" : 20
+      }
+    } ]
+  }
+}, {
+  "id" : "3e787836-a9fa-97bc-e6a7-e46ce021a08d",
+  "name" : "color_settings",
+  "label" : "Color Settings",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "0bfa717a-3e23-1a95-9a99-e3d4c7839085",
+    "name" : "title_color",
+    "label" : "Title Color",
+    "required" : false,
+    "locked" : false,
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#fff",
+      "opacity" : 100
+    }
+  }, {
+    "id" : "35c3ffcb-f777-d175-35bc-607e75f90a42",
+    "name" : "title_span_color",
+    "label" : "Title Span Color",
+    "required" : false,
+    "locked" : false,
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#F6DE45",
+      "opacity" : 100
+    }
+  }, {
+    "id" : "efb420e8-6267-7d53-b932-7f2ed4188f7e",
+    "name" : "text_color",
+    "label" : "Text Color",
+    "required" : false,
+    "locked" : false,
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#FFFFFF",
+      "opacity" : 75
+    }
+  }, {
+    "id" : "d3e8eca6-9ade-aa45-f16c-ec7c5681a429",
+    "name" : "sub_title_color",
+    "label" : "Sub Title Color",
+    "required" : false,
+    "locked" : false,
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#F6DE45",
+      "opacity" : 100
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "title_color" : {
+      "color" : "#fff",
+      "opacity" : 100
+    },
+    "title_span_color" : {
+      "color" : "#F6DE45",
+      "opacity" : 100
+    },
+    "text_color" : {
+      "color" : "#FFFFFF",
+      "opacity" : 75
+    },
+    "sub_title_color" : {
+      "color" : "#F6DE45",
+      "opacity" : 100
+    }
+  }
+}, {
+  "id" : "10b88bcb-f15d-42b9-a1ce-0311d4c242b7",
+  "name" : "text_max_width",
+  "label" : "Text Max Width",
+  "required" : false,
+  "locked" : false,
+  "display" : "text",
+  "step" : 1,
+  "suffix" : "px",
+  "type" : "number",
+  "display_width" : null,
+  "default" : 590
+}, {
+  "id" : "fd435cb1-e070-b85f-1b81-91de888dabe8",
+  "name" : "left_image",
+  "label" : "Left Image",
+  "required" : false,
+  "locked" : false,
+  "responsive" : true,
+  "resizable" : true,
+  "show_loading" : true,
+  "type" : "image",
+  "display_width" : null,
+  "default" : {
+    "size_type" : "exact",
+    "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/Brazil%2c%20Argentina.png",
+    "alt" : "Brazil, Argentina",
+    "loading" : "lazy",
+    "width" : 541,
+    "height" : 920,
+    "max_width" : 541,
+    "max_height" : 920
+  }
+}, {
+  "id" : "cfa32a87-0e36-4dad-d061-7a78ab75a5ed",
+  "name" : "right_image",
+  "label" : "Right Image",
+  "required" : false,
+  "locked" : false,
+  "responsive" : true,
+  "resizable" : true,
+  "show_loading" : true,
+  "type" : "image",
+  "display_width" : null,
+  "default" : {
+    "size_type" : "exact",
+    "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize%202026/Images/Europe%2c%20Asia.png",
+    "alt" : "Europe, Asia",
+    "loading" : "lazy",
+    "width" : 586,
+    "height" : 1127,
+    "max_width" : 586,
+    "max_height" : 1127
+  }
+}, {
+  "id" : "dcac13e3-2228-c0f9-fd29-ede8faa49b79",
+  "name" : "header_max_width",
+  "label" : "Header Max Width",
+  "required" : false,
+  "locked" : false,
+  "display" : "text",
+  "step" : 1,
+  "suffix" : "px",
+  "type" : "number",
+  "display_width" : null,
+  "default" : 900
+} ]

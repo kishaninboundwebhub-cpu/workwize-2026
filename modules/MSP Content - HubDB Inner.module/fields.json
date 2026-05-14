@@ -1,0 +1,897 @@
+[ {
+  "id" : "e181e1ee-ef06-5ba8-0ad3-f63113a45d24",
+  "name" : "style",
+  "label" : "Style",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "36fd79d2-1107-4452-d226-d4c096723f16",
+    "name" : "select_background",
+    "label" : "Select Background",
+    "required" : false,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "bg_color", "Background Color" ], [ "bg_image", "Background Image" ], [ "bg_gradient", "Background Gradient" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "bg_color"
+  }, {
+    "id" : "60d0ddef-fb34-a99a-73cb-bda8b10e0fc9",
+    "name" : "background_color",
+    "label" : "Background Color",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "style.select_background",
+      "controlling_value_regex" : "bg_color",
+      "property" : null,
+      "operator" : "MATCHES_REGEX",
+      "access" : null
+    },
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#fff",
+      "opacity" : 100
+    }
+  }, {
+    "id" : "19f0609d-595d-6ef3-f639-3f6006e095fb",
+    "name" : "background_image",
+    "label" : "Background Image",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "style.select_background",
+      "controlling_value_regex" : "bg_image",
+      "property" : null,
+      "operator" : "MATCHES_REGEX",
+      "access" : null
+    },
+    "type" : "backgroundimage",
+    "display_width" : null,
+    "default" : {
+      "src" : "",
+      "background_position" : "MIDDLE_CENTER",
+      "background_size" : "cover"
+    }
+  }, {
+    "id" : "0df6d4e0-395b-eda2-ec5a-1d08ad6c8d35",
+    "name" : "background_gradient",
+    "label" : "Background Gradient",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "style.select_background",
+      "controlling_value_regex" : "bg_gradient",
+      "property" : null,
+      "operator" : "MATCHES_REGEX",
+      "access" : null
+    },
+    "type" : "gradient",
+    "display_width" : null,
+    "default" : { }
+  }, {
+    "id" : "afeb177b-c31d-1412-5116-70d6f85c5565",
+    "name" : "spacing",
+    "label" : "Spacing",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "d59d9e4c-264e-54fa-99b7-0ff07897b867",
+      "name" : "desktop",
+      "label" : "Desktop",
+      "required" : false,
+      "locked" : false,
+      "type" : "spacing",
+      "display_width" : null,
+      "default" : {
+        "padding" : {
+          "top" : {
+            "value" : 170,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 100,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      }
+    }, {
+      "id" : "0c762a95-1339-05fa-721d-3d79f41b571e",
+      "name" : "tablet",
+      "label" : "Tablet",
+      "required" : false,
+      "locked" : false,
+      "type" : "spacing",
+      "display_width" : null,
+      "default" : { }
+    }, {
+      "id" : "0a8a8c35-4008-f2aa-311a-12325d67b19c",
+      "name" : "mobile",
+      "label" : "Mobile",
+      "required" : false,
+      "locked" : false,
+      "type" : "spacing",
+      "display_width" : null,
+      "default" : {
+        "padding" : {
+          "top" : {
+            "value" : 100,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 60,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      }
+    } ],
+    "tab" : "STYLE",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : {
+      "desktop" : {
+        "padding" : {
+          "top" : {
+            "value" : 170,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 100,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      },
+      "tablet" : { },
+      "mobile" : {
+        "padding" : {
+          "top" : {
+            "value" : 100,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 60,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      }
+    }
+  } ],
+  "tab" : "STYLE",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "select_background" : "bg_color",
+    "background_color" : {
+      "color" : "#fff",
+      "opacity" : 100
+    },
+    "background_image" : {
+      "src" : "",
+      "background_position" : "MIDDLE_CENTER",
+      "background_size" : "cover"
+    },
+    "background_gradient" : { },
+    "spacing" : {
+      "desktop" : {
+        "padding" : {
+          "top" : {
+            "value" : 170,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 100,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      },
+      "tablet" : { },
+      "mobile" : {
+        "padding" : {
+          "top" : {
+            "value" : 100,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 60,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      }
+    }
+  }
+}, {
+  "id" : "55ccd3e2-31aa-4e79-9772-80facd954415",
+  "name" : "show_hide_",
+  "label" : "Section [Show/ Hide]",
+  "required" : false,
+  "locked" : false,
+  "display" : "toggle",
+  "type" : "boolean",
+  "display_width" : null,
+  "default" : true
+}, {
+  "id" : "e9b8b27a-4c45-923f-b445-0edd9166a525",
+  "name" : "sidebar_title",
+  "label" : "Sidebar Title",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "TABLE OF CONTENTS"
+}, {
+  "id" : "27060589-d244-0a6d-cb64-537752cae155",
+  "name" : "content_item",
+  "label" : "Content Item",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : null,
+    "max" : null,
+    "sorting_label_field" : null,
+    "default" : 1
+  },
+  "children" : [ {
+    "id" : "f4492aff-06cd-0069-1896-fe2eb933f6ad",
+    "name" : "select_content_option",
+    "label" : "Select Content Option",
+    "required" : false,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "text", "Text" ], [ "cta", "CTA" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "text"
+  }, {
+    "id" : "3c116637-8bc3-5c4b-e3ed-8ed843f30002",
+    "name" : "text",
+    "label" : "Text",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "content_item.select_content_option",
+      "controlling_value_regex" : "text",
+      "property" : null,
+      "operator" : "MATCHES_REGEX",
+      "access" : null
+    },
+    "type" : "richtext",
+    "display_width" : null,
+    "default" : "<p>If you want to tap into the talent pool in {{ dynamic_page_hubdb_row.hs_name }} or expand your business territory, all your employees will need access to IT equipment.</p>\n<p>Managing the logistics of equipping your global workforce, such as shipping laptops from {{ dynamic_page_hubdb_row.hs_name }} to {{ dynamic_page_hubdb_row.country_2 }}, presents a unique set of challenges.</p>\n<p>High shipping fees, customs regulations, and long lead times—even a day of delay can prevent employees from being equipped on time.</p>"
+  }, {
+    "id" : "68a946ae-5493-f764-aa36-68754c95b6a7",
+    "name" : "cta",
+    "label" : "CTA",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "content_item.select_content_option",
+      "controlling_value_regex" : "cta",
+      "property" : null,
+      "operator" : "MATCHES_REGEX",
+      "access" : null
+    },
+    "children" : [ {
+      "id" : "dae15c60-be07-94ab-5cc3-ae7face7754b",
+      "name" : "select_cta_style",
+      "label" : "Select CTA Style",
+      "required" : false,
+      "locked" : false,
+      "display" : "select",
+      "choices" : [ [ "cta_yellow", "CTA Yellow" ], [ "cta_blue", "CTA Blue " ], [ "cta_purple", "CTA Purple" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "preset" : null,
+      "type" : "choice",
+      "display_width" : null,
+      "default" : "cta_yellow"
+    }, {
+      "id" : "49e3c59c-6564-47ee-5c7f-fdc0e73a866e",
+      "name" : "cta_one",
+      "label" : "CTA Yellow",
+      "required" : false,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : null,
+        "controlling_field_path" : "content_item.cta.select_cta_style",
+        "controlling_value_regex" : "cta_yellow",
+        "property" : null,
+        "operator" : "MATCHES_REGEX",
+        "access" : null
+      },
+      "children" : [ {
+        "id" : "404625c4-d5a7-d327-ba03-65dcadcdbe17",
+        "name" : "cta_text",
+        "label" : "CTA Text",
+        "required" : false,
+        "locked" : false,
+        "allow_new_line" : false,
+        "type" : "text",
+        "display_width" : null,
+        "default" : "Send laptops in bulk from {{ dynamic_page_hubdb_row.hs_name }} to {{ dynamic_page_hubdb_row.country_2 }} without the logistical hurdles and the shipping costs. Book a Workwize demo!"
+      }, {
+        "id" : "bd01afb5-0afb-9102-6e13-b2ee90438b76",
+        "name" : "cta_link",
+        "label" : "CTA Link",
+        "required" : false,
+        "locked" : false,
+        "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG", "CALL_TO_ACTION", "PHONE_NUMBER", "WHATSAPP_NUMBER", "PAYMENT" ],
+        "show_advanced_rel_options" : false,
+        "type" : "link",
+        "display_width" : null,
+        "default" : {
+          "url" : {
+            "content_id" : 183552102627,
+            "href" : null,
+            "type" : "CONTENT"
+          },
+          "open_in_new_tab" : false,
+          "no_follow" : false
+        }
+      }, {
+        "id" : "14e7ff87-75d8-4021-59eb-e141c8cbb418",
+        "name" : "image_field",
+        "label" : "Image",
+        "required" : false,
+        "locked" : false,
+        "responsive" : true,
+        "resizable" : true,
+        "show_loading" : true,
+        "type" : "image",
+        "display_width" : null,
+        "default" : {
+          "size_type" : "exact",
+          "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/box%20with%20laptop%20inside%20icon.png",
+          "alt" : "box with laptop inside icon",
+          "loading" : "lazy",
+          "width" : 500,
+          "height" : 500,
+          "max_width" : 500,
+          "max_height" : 500
+        }
+      }, {
+        "id" : "e316a46d-1967-3a6a-b88e-848586491606",
+        "name" : "button_text",
+        "label" : "Button Text",
+        "required" : false,
+        "locked" : false,
+        "allow_new_line" : false,
+        "type" : "text",
+        "display_width" : null,
+        "default" : "Calculate Your Savings"
+      } ],
+      "tab" : "CONTENT",
+      "expanded" : false,
+      "group_occurrence_meta" : null,
+      "type" : "group",
+      "display_width" : null,
+      "default" : {
+        "cta_text" : "Send laptops in bulk from {{ dynamic_page_hubdb_row.hs_name }} to {{ dynamic_page_hubdb_row.country_2 }} without the logistical hurdles and the shipping costs. Book a Workwize demo!",
+        "cta_link" : {
+          "url" : {
+            "content_id" : 183552102627,
+            "href" : null,
+            "type" : "CONTENT"
+          },
+          "open_in_new_tab" : false,
+          "no_follow" : false
+        },
+        "image_field" : {
+          "size_type" : "exact",
+          "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/box%20with%20laptop%20inside%20icon.png",
+          "alt" : "box with laptop inside icon",
+          "loading" : "lazy",
+          "width" : 500,
+          "height" : 500,
+          "max_width" : 500,
+          "max_height" : 500
+        },
+        "button_text" : "Calculate Your Savings"
+      }
+    }, {
+      "id" : "73fc84bd-fb6b-f2d1-8f14-833f823b6bc0",
+      "name" : "cta_blue",
+      "label" : "CTA Blue",
+      "required" : false,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : null,
+        "controlling_field_path" : "content_item.cta.select_cta_style",
+        "controlling_value_regex" : "cta_blue",
+        "property" : null,
+        "operator" : "MATCHES_REGEX",
+        "access" : null
+      },
+      "children" : [ {
+        "id" : "81cbe783-de80-f712-299d-e309ecd392cf",
+        "name" : "cta_text",
+        "label" : "CTA Text",
+        "required" : false,
+        "locked" : false,
+        "allow_new_line" : false,
+        "type" : "text",
+        "display_width" : null,
+        "default" : "Procure, deploy, and retrieve IT hardware worldwide from {{ dynamic_page_hubdb_row.hs_name }} to {{ dynamic_page_hubdb_row.country_2 }} in one platform."
+      }, {
+        "id" : "8fe2598a-ac9d-d6f8-51de-8076c5879156",
+        "name" : "cta_link",
+        "label" : "CTA Link",
+        "required" : false,
+        "locked" : false,
+        "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG", "CALL_TO_ACTION", "PHONE_NUMBER", "WHATSAPP_NUMBER", "PAYMENT" ],
+        "show_advanced_rel_options" : false,
+        "type" : "link",
+        "display_width" : null,
+        "default" : {
+          "url" : {
+            "content_id" : 97002402260,
+            "href" : null,
+            "type" : "CONTENT"
+          },
+          "open_in_new_tab" : false,
+          "no_follow" : false
+        }
+      }, {
+        "id" : "f084b1af-cc1a-a4ca-5dbc-8aa2405a9624",
+        "name" : "image_field",
+        "label" : "Image",
+        "required" : false,
+        "locked" : false,
+        "responsive" : true,
+        "resizable" : true,
+        "show_loading" : true,
+        "type" : "image",
+        "display_width" : null,
+        "default" : {
+          "size_type" : "exact",
+          "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Imported%20images/image.png",
+          "alt" : "image",
+          "loading" : "lazy",
+          "width" : 3880,
+          "height" : 2560,
+          "max_width" : 2000,
+          "max_height" : 1319.5876288659795
+        }
+      }, {
+        "id" : "c6a5f462-8d8f-df69-ab85-c3e33a55badc",
+        "name" : "button_text",
+        "label" : "Button Text",
+        "required" : false,
+        "locked" : false,
+        "allow_new_line" : false,
+        "type" : "text",
+        "display_width" : null,
+        "default" : "Request a Demo"
+      } ],
+      "tab" : "CONTENT",
+      "expanded" : false,
+      "group_occurrence_meta" : null,
+      "type" : "group",
+      "display_width" : null,
+      "default" : {
+        "cta_text" : "Procure, deploy, and retrieve IT hardware worldwide from {{ dynamic_page_hubdb_row.hs_name }} to {{ dynamic_page_hubdb_row.country_2 }} in one platform.",
+        "cta_link" : {
+          "url" : {
+            "content_id" : 97002402260,
+            "href" : null,
+            "type" : "CONTENT"
+          },
+          "open_in_new_tab" : false,
+          "no_follow" : false
+        },
+        "image_field" : {
+          "size_type" : "exact",
+          "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Imported%20images/image.png",
+          "alt" : "image",
+          "loading" : "lazy",
+          "width" : 3880,
+          "height" : 2560,
+          "max_width" : 2000,
+          "max_height" : 1319.5876288659795
+        },
+        "button_text" : "Request a Demo"
+      }
+    }, {
+      "id" : "7c6997e0-e70a-f5f9-7bc7-22fe9d661e5e",
+      "name" : "cta_purple",
+      "label" : "CTA Purple",
+      "required" : false,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : null,
+        "controlling_field_path" : "content_item.cta.select_cta_style",
+        "controlling_value_regex" : "cta_purple",
+        "property" : null,
+        "operator" : "MATCHES_REGEX",
+        "access" : null
+      },
+      "children" : [ {
+        "id" : "b9a7d03d-3f5c-b106-a650-c0041a5358cc",
+        "name" : "cta_text",
+        "label" : "CTA Text",
+        "required" : false,
+        "locked" : false,
+        "allow_new_line" : false,
+        "type" : "text",
+        "display_width" : null,
+        "default" : "Procure Laptops {{ dynamic_page_hubdb_row.hs_name }} to {{ dynamic_page_hubdb_row.country_2 }} with Workwize "
+      }, {
+        "id" : "fb4aa622-cd7f-3486-46b9-410cbe69bb72",
+        "name" : "cta_sub_text",
+        "label" : "CTA Sub Text",
+        "required" : false,
+        "locked" : false,
+        "allow_new_line" : false,
+        "type" : "text",
+        "display_width" : null,
+        "default" : "Order laptops via Workwize's centralized dashboard, and get them shipped globally-within days."
+      }, {
+        "id" : "4797bd00-a7c0-d63a-fb45-6f504cf4661f",
+        "name" : "cta_link",
+        "label" : "CTA Link",
+        "required" : false,
+        "locked" : false,
+        "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG", "CALL_TO_ACTION", "PHONE_NUMBER", "WHATSAPP_NUMBER", "PAYMENT" ],
+        "show_advanced_rel_options" : false,
+        "type" : "link",
+        "display_width" : null,
+        "default" : {
+          "url" : {
+            "content_id" : 97002402260,
+            "href" : null,
+            "type" : "CONTENT"
+          },
+          "open_in_new_tab" : false,
+          "no_follow" : false
+        }
+      }, {
+        "id" : "766f635e-dc89-be16-1f54-cc38c798f129",
+        "name" : "image_field",
+        "label" : "Background Image",
+        "required" : false,
+        "locked" : false,
+        "responsive" : true,
+        "resizable" : false,
+        "show_loading" : false,
+        "type" : "image",
+        "display_width" : null,
+        "default" : {
+          "size_type" : "auto_custom_max",
+          "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize/Image/blog-post-cta-banner.png",
+          "alt" : "blog-post-cta-banner",
+          "loading" : "lazy",
+          "width" : 4096,
+          "height" : 992,
+          "max_width" : 2000,
+          "max_height" : 484.375
+        }
+      }, {
+        "id" : "2b2f915f-966e-1104-98e5-c83c560b66ee",
+        "name" : "button_text",
+        "label" : "Button Text",
+        "required" : false,
+        "locked" : false,
+        "allow_new_line" : false,
+        "type" : "text",
+        "display_width" : null,
+        "default" : "Get a Demo!"
+      } ],
+      "tab" : "CONTENT",
+      "expanded" : false,
+      "group_occurrence_meta" : null,
+      "type" : "group",
+      "display_width" : null,
+      "default" : {
+        "cta_text" : "Procure Laptops {{ dynamic_page_hubdb_row.hs_name }} to {{ dynamic_page_hubdb_row.country_2 }} with Workwize ",
+        "cta_sub_text" : "Order laptops via Workwize's centralized dashboard, and get them shipped globally-within days.",
+        "cta_link" : {
+          "url" : {
+            "content_id" : 97002402260,
+            "href" : null,
+            "type" : "CONTENT"
+          },
+          "open_in_new_tab" : false,
+          "no_follow" : false
+        },
+        "image_field" : {
+          "size_type" : "auto_custom_max",
+          "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize/Image/blog-post-cta-banner.png",
+          "alt" : "blog-post-cta-banner",
+          "loading" : "lazy",
+          "width" : 4096,
+          "height" : 992,
+          "max_width" : 2000,
+          "max_height" : 484.375
+        },
+        "button_text" : "Get a Demo!"
+      }
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : {
+      "select_cta_style" : "cta_yellow",
+      "cta_one" : {
+        "cta_text" : "Send laptops in bulk from {{ dynamic_page_hubdb_row.hs_name }} to {{ dynamic_page_hubdb_row.country_2 }} without the logistical hurdles and the shipping costs. Book a Workwize demo!",
+        "cta_link" : {
+          "url" : {
+            "content_id" : 183552102627,
+            "href" : null,
+            "type" : "CONTENT"
+          },
+          "open_in_new_tab" : false,
+          "no_follow" : false
+        },
+        "image_field" : {
+          "size_type" : "exact",
+          "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/box%20with%20laptop%20inside%20icon.png",
+          "alt" : "box with laptop inside icon",
+          "loading" : "lazy",
+          "width" : 500,
+          "height" : 500,
+          "max_width" : 500,
+          "max_height" : 500
+        },
+        "button_text" : "Calculate Your Savings"
+      },
+      "cta_blue" : {
+        "cta_text" : "Procure, deploy, and retrieve IT hardware worldwide from {{ dynamic_page_hubdb_row.hs_name }} to {{ dynamic_page_hubdb_row.country_2 }} in one platform.",
+        "cta_link" : {
+          "url" : {
+            "content_id" : 97002402260,
+            "href" : null,
+            "type" : "CONTENT"
+          },
+          "open_in_new_tab" : false,
+          "no_follow" : false
+        },
+        "image_field" : {
+          "size_type" : "exact",
+          "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Imported%20images/image.png",
+          "alt" : "image",
+          "loading" : "lazy",
+          "width" : 3880,
+          "height" : 2560,
+          "max_width" : 2000,
+          "max_height" : 1319.5876288659795
+        },
+        "button_text" : "Request a Demo"
+      },
+      "cta_purple" : {
+        "cta_text" : "Procure Laptops {{ dynamic_page_hubdb_row.hs_name }} to {{ dynamic_page_hubdb_row.country_2 }} with Workwize ",
+        "cta_sub_text" : "Order laptops via Workwize's centralized dashboard, and get them shipped globally-within days.",
+        "cta_link" : {
+          "url" : {
+            "content_id" : 97002402260,
+            "href" : null,
+            "type" : "CONTENT"
+          },
+          "open_in_new_tab" : false,
+          "no_follow" : false
+        },
+        "image_field" : {
+          "size_type" : "auto_custom_max",
+          "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize/Image/blog-post-cta-banner.png",
+          "alt" : "blog-post-cta-banner",
+          "loading" : "lazy",
+          "width" : 4096,
+          "height" : 992,
+          "max_width" : 2000,
+          "max_height" : 484.375
+        },
+        "button_text" : "Get a Demo!"
+      }
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : [ {
+    "select_content_option" : "text",
+    "text" : "<p>If you want to tap into the talent pool in {{ dynamic_page_hubdb_row.hs_name }} or expand your business territory, all your employees will need access to IT equipment.</p>\n<p>Managing the logistics of equipping your global workforce, such as shipping laptops from {{ dynamic_page_hubdb_row.hs_name }} to {{ dynamic_page_hubdb_row.country_2 }}, presents a unique set of challenges.</p>\n<p>High shipping fees, customs regulations, and long lead times—even a day of delay can prevent employees from being equipped on time.</p>",
+    "cta" : {
+      "select_cta_style" : "cta_yellow",
+      "cta_one" : {
+        "cta_text" : "Send laptops in bulk from {{ dynamic_page_hubdb_row.hs_name }} to {{ dynamic_page_hubdb_row.country_2 }} without the logistical hurdles and the shipping costs. Book a Workwize demo!",
+        "cta_link" : {
+          "url" : {
+            "content_id" : 183552102627,
+            "href" : null,
+            "type" : "CONTENT"
+          },
+          "open_in_new_tab" : false,
+          "no_follow" : false
+        },
+        "image_field" : {
+          "size_type" : "exact",
+          "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/box%20with%20laptop%20inside%20icon.png",
+          "alt" : "box with laptop inside icon",
+          "loading" : "lazy",
+          "width" : 500,
+          "height" : 500,
+          "max_width" : 500,
+          "max_height" : 500
+        },
+        "button_text" : "Calculate Your Savings"
+      },
+      "cta_blue" : {
+        "cta_text" : "Procure, deploy, and retrieve IT hardware worldwide from {{ dynamic_page_hubdb_row.hs_name }} to {{ dynamic_page_hubdb_row.country_2 }} in one platform.",
+        "cta_link" : {
+          "url" : {
+            "content_id" : 97002402260,
+            "href" : null,
+            "type" : "CONTENT"
+          },
+          "open_in_new_tab" : false,
+          "no_follow" : false
+        },
+        "image_field" : {
+          "size_type" : "exact",
+          "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Imported%20images/image.png",
+          "alt" : "image",
+          "loading" : "lazy",
+          "width" : 3880,
+          "height" : 2560,
+          "max_width" : 2000,
+          "max_height" : 1319.5876288659795
+        },
+        "button_text" : "Request a Demo"
+      },
+      "cta_purple" : {
+        "cta_text" : "Procure Laptops {{ dynamic_page_hubdb_row.hs_name }} to {{ dynamic_page_hubdb_row.country_2 }} with Workwize ",
+        "cta_sub_text" : "Order laptops via Workwize's centralized dashboard, and get them shipped globally-within days.",
+        "cta_link" : {
+          "url" : {
+            "content_id" : 97002402260,
+            "href" : null,
+            "type" : "CONTENT"
+          },
+          "open_in_new_tab" : false,
+          "no_follow" : false
+        },
+        "image_field" : {
+          "size_type" : "auto_custom_max",
+          "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Workwize/Image/blog-post-cta-banner.png",
+          "alt" : "blog-post-cta-banner",
+          "loading" : "lazy",
+          "width" : 4096,
+          "height" : 992,
+          "max_width" : 2000,
+          "max_height" : 484.375
+        },
+        "button_text" : "Get a Demo!"
+      }
+    }
+  } ]
+}, {
+  "id" : "4ce773ef-e376-50ac-4054-f771ddf09f3b",
+  "name" : "back_page_button",
+  "label" : "Back Page Button",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "55768f73-99fb-246e-011e-c44c19dfd844",
+    "name" : "back_page_button_text",
+    "label" : "Back Page Button Text",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Back to Ship Laptops"
+  }, {
+    "id" : "49c74dc8-3a4b-3fa9-c98f-3b948cda7d9e",
+    "name" : "back_page_link",
+    "label" : "Back Page Button Link",
+    "required" : false,
+    "locked" : false,
+    "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG", "CALL_TO_ACTION", "PHONE_NUMBER", "WHATSAPP_NUMBER", "PAYMENT" ],
+    "show_advanced_rel_options" : false,
+    "type" : "link",
+    "display_width" : null,
+    "default" : {
+      "url" : {
+        "content_id" : 190957420779,
+        "href" : null,
+        "type" : "CONTENT"
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "back_page_button_text" : "Back to Ship Laptops",
+    "back_page_link" : {
+      "url" : {
+        "content_id" : 190957420779,
+        "href" : null,
+        "type" : "CONTENT"
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    }
+  }
+}, {
+  "id" : "371c5760-8e18-7727-b8c5-d6c02fa8b48c",
+  "name" : "title_starting_text",
+  "label" : "Title Starting Text",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "Top 4 Managed Service Providers in"
+} ]

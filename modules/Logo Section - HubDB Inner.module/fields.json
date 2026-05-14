@@ -1,0 +1,441 @@
+[ {
+  "id" : "c7e216d1-86ab-69c7-e416-e53a4768b0fc",
+  "name" : "style",
+  "label" : "Style",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "542c716f-3ddc-ce46-52af-61510d4aa073",
+    "name" : "spacing",
+    "label" : "Spacing",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "ea44dfc5-1e56-7a52-d821-957ee0ac552a",
+      "name" : "desktop",
+      "label" : "Desktop",
+      "required" : false,
+      "locked" : false,
+      "type" : "spacing",
+      "display_width" : null,
+      "default" : {
+        "padding" : {
+          "top" : {
+            "value" : 0,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 60,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      }
+    }, {
+      "id" : "25eeba74-ff37-fa93-7c6e-ad9d021b85f9",
+      "name" : "tablet",
+      "label" : "Tablet",
+      "required" : false,
+      "locked" : false,
+      "type" : "spacing",
+      "display_width" : null,
+      "default" : {
+        "padding" : {
+          "top" : {
+            "value" : 0,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 60,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      }
+    }, {
+      "id" : "74843e76-10bb-6439-0bd6-29d33b72b424",
+      "name" : "mobile",
+      "label" : "Mobile",
+      "required" : false,
+      "locked" : false,
+      "type" : "spacing",
+      "display_width" : null,
+      "default" : {
+        "padding" : {
+          "top" : {
+            "value" : 0,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 60,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      }
+    } ],
+    "tab" : "STYLE",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : {
+      "desktop" : {
+        "padding" : {
+          "top" : {
+            "value" : 0,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 60,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      },
+      "tablet" : {
+        "padding" : {
+          "top" : {
+            "value" : 0,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 60,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      },
+      "mobile" : {
+        "padding" : {
+          "top" : {
+            "value" : 0,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 60,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      }
+    }
+  } ],
+  "tab" : "STYLE",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "spacing" : {
+      "desktop" : {
+        "padding" : {
+          "top" : {
+            "value" : 0,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 60,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      },
+      "tablet" : {
+        "padding" : {
+          "top" : {
+            "value" : 0,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 60,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      },
+      "mobile" : {
+        "padding" : {
+          "top" : {
+            "value" : 0,
+            "units" : "px"
+          },
+          "bottom" : {
+            "value" : 60,
+            "units" : "px"
+          },
+          "left" : {
+            "value" : null,
+            "units" : null
+          },
+          "right" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      }
+    }
+  }
+}, {
+  "id" : "bdfc5b40-fdef-6941-c7dd-d4fe2c0c84ab",
+  "name" : "content",
+  "label" : "Content",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "4a83f8e6-96e1-e70f-d041-bf07d58419f9",
+    "name" : "title",
+    "label" : "Title",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Remote-first brands that have outsourced IT solutions to Workwize"
+  }, {
+    "id" : "91226044-7c60-c13d-3e5b-808b93b5cad3",
+    "name" : "logo_item",
+    "label" : "Logo Item",
+    "required" : false,
+    "locked" : false,
+    "occurrence" : {
+      "min" : null,
+      "max" : null,
+      "sorting_label_field" : null,
+      "default" : 5
+    },
+    "children" : [ {
+      "id" : "f1e7b573-3bdf-2bfa-6a4e-bf7aa75731de",
+      "name" : "logo",
+      "label" : "Logo",
+      "required" : false,
+      "locked" : false,
+      "responsive" : true,
+      "resizable" : true,
+      "show_loading" : true,
+      "type" : "image",
+      "display_width" : null,
+      "default" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Monday%20Dark.svg",
+        "alt" : "Monday Dark",
+        "loading" : "lazy",
+        "width" : 196,
+        "height" : 36,
+        "max_width" : 196,
+        "max_height" : 36
+      }
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : [ {
+      "logo" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Monday%20Dark.svg",
+        "alt" : "Monday Dark",
+        "loading" : "lazy",
+        "width" : 196,
+        "height" : 36,
+        "max_width" : 196,
+        "max_height" : 36
+      }
+    }, {
+      "logo" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Monday%20Dark.svg",
+        "alt" : "Monday Dark",
+        "loading" : "lazy",
+        "width" : 196,
+        "height" : 36,
+        "max_width" : 196,
+        "max_height" : 36
+      }
+    }, {
+      "logo" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Monday%20Dark.svg",
+        "alt" : "Monday Dark",
+        "loading" : "lazy",
+        "width" : 196,
+        "height" : 36,
+        "max_width" : 196,
+        "max_height" : 36
+      }
+    }, {
+      "logo" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Monday%20Dark.svg",
+        "alt" : "Monday Dark",
+        "loading" : "lazy",
+        "width" : 196,
+        "height" : 36,
+        "max_width" : 196,
+        "max_height" : 36
+      }
+    }, {
+      "logo" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Monday%20Dark.svg",
+        "alt" : "Monday Dark",
+        "loading" : "lazy",
+        "width" : 196,
+        "height" : 36,
+        "max_width" : 196,
+        "max_height" : 36
+      }
+    } ]
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "title" : "Remote-first brands that have outsourced IT solutions to Workwize",
+    "logo_item" : [ {
+      "logo" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Monday%20Dark.svg",
+        "alt" : "Monday Dark",
+        "loading" : "lazy",
+        "width" : 196,
+        "height" : 36,
+        "max_width" : 196,
+        "max_height" : 36
+      }
+    }, {
+      "logo" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Monday%20Dark.svg",
+        "alt" : "Monday Dark",
+        "loading" : "lazy",
+        "width" : 196,
+        "height" : 36,
+        "max_width" : 196,
+        "max_height" : 36
+      }
+    }, {
+      "logo" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Monday%20Dark.svg",
+        "alt" : "Monday Dark",
+        "loading" : "lazy",
+        "width" : 196,
+        "height" : 36,
+        "max_width" : 196,
+        "max_height" : 36
+      }
+    }, {
+      "logo" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Monday%20Dark.svg",
+        "alt" : "Monday Dark",
+        "loading" : "lazy",
+        "width" : 196,
+        "height" : 36,
+        "max_width" : 196,
+        "max_height" : 36
+      }
+    }, {
+      "logo" : {
+        "size_type" : "exact",
+        "src" : "https://25662839.fs1.hubspotusercontent-eu1.net/hubfs/25662839/Monday%20Dark.svg",
+        "alt" : "Monday Dark",
+        "loading" : "lazy",
+        "width" : 196,
+        "height" : 36,
+        "max_width" : 196,
+        "max_height" : 36
+      }
+    } ]
+  }
+}, {
+  "id" : "ed49b96e-d412-99cb-e322-a5ecc7161e49",
+  "name" : "styles",
+  "label" : "Styles",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "1fefaf1a-2725-526b-5cff-17532d2de935",
+    "name" : "background_color",
+    "label" : "Background Color",
+    "required" : false,
+    "locked" : false,
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#d2f7eb",
+      "opacity" : 100
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "background_color" : {
+      "color" : "#d2f7eb",
+      "opacity" : 100
+    }
+  }
+} ]

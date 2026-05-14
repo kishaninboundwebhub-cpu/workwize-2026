@@ -1,0 +1,206 @@
+{% if module.show_hide_ %}
+{% set moduleId = '#hs_cos_wrapper_{{ name }}' %}
+
+<div class="casestuddysec fullwidth bgsec space-sec">
+ <div class="wrapper">
+   <div class="casestuddyTitle text-center pb45 wow fadeInUp">
+     <h2>{{ module.content.title }}</h2>
+   </div>
+   <div class="casestuddyLogos d_flex align_center flex_center  pb80 wow fadeInUp">
+     {% for item in module.content.logos.logo_item %}
+       <div class="casestuddyLogo">
+              {% if item.logo.src %}
+              {% set sizeAttrs = 'width="{{ item.logo.width|escape_attr }}" height="{{ item.logo.height|escape_attr }}"' %}
+              {% if item.logo.size_type == 'auto' %}
+              {% set sizeAttrs = 'width="{{ item.logo.width|escape_attr }}" height="{{ item.logo.height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+              {% elif item.logo.size_type == 'auto_custom_max' %}
+              {% set sizeAttrs = 'width="{{ item.logo.max_width|escape_attr }}" height="{{ item.logo.max_height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+              {% endif %}
+              {% set loadingAttr = item.logo.loading != 'disabled' ? 'loading="{{ item.logo.loading|escape_attr }}"' : '' %}
+              <img src="{{ item.logo.src|escape_url }}" alt="{{ item.logo.alt|escape_attr }}" {{ loadingAttr }} {{ sizeAttrs }}>
+              {% endif %}
+       </div>
+     {% endfor %}
+   </div>
+   
+   
+   <div class="casestuddyInners d_flex align_cente wow fadeInUp">
+     
+     <div class="casestuddyILeft">
+       {% for item in module.content.case_study_tab %}
+       <div class="casestuddyILitem casestd{{ loop.index }}">
+         <div class="casestuddyILimage">
+              {% if item.image_field.src %}
+              {% set sizeAttrs = 'width="{{ item.image_field.width|escape_attr }}" height="{{ item.image_field.height|escape_attr }}"' %}
+              {% if item.image_field.size_type == 'auto' %}
+              {% set sizeAttrs = 'width="{{ item.image_field.width|escape_attr }}" height="{{ item.image_field.height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+              {% elif item.image_field.size_type == 'auto_custom_max' %}
+              {% set sizeAttrs = 'width="{{ item.image_field.max_width|escape_attr }}" height="{{ item.image_field.max_height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+              {% endif %}
+              {% set loadingAttr = item.image_field.loading != 'disabled' ? 'loading="{{ item.image_field.loading|escape_attr }}"' : '' %}
+              <img src="{{ item.image_field.src|escape_url }}" alt="{{ item.image_field.alt|escape_attr }}" {{ loadingAttr }} {{ sizeAttrs }}>
+              {% endif %}
+         </div>
+         {% if item.button.button_text %}
+         <div class="casestuddyILBtn" data-value=".vids{{  loop.index }}">
+            {{ item.button.button_text }}
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g clip-path="url(#clip0_1861_724)">
+            <path d="M10.875 5.13398C11.5417 5.51888 11.5417 6.48113 10.875 6.86603L4.875 10.3301C4.20833 10.715 3.375 10.2339 3.375 9.4641L3.375 2.5359C3.375 1.7661 4.20833 1.28497 4.875 1.66987L10.875 5.13398Z" fill="#333333"/>
+            </g>
+            <defs>
+            <clipPath id="clip0_1861_724">
+            <rect width="12" height="12" fill="white" transform="translate(5.24537e-07 12) rotate(-90)"/>
+            </clipPath>
+            </defs>
+            </svg>
+         </div>
+         {% endif %}
+       </div>
+       {% endfor %}
+     </div>
+     
+     <div class="casestuddyIRight">
+       
+       <div class="casestuddyIRTabs">
+         {% for item in module.content.case_study_tab %}
+           <div class="casestuddyIRTab" data-value=".casestd{{ loop.index }}">
+                  {% if item.logo.src %}
+                  {% set sizeAttrs = 'width="{{ item.logo.width|escape_attr }}" height="{{ item.logo.height|escape_attr }}"' %}
+                  {% if item.logo.size_type == 'auto' %}
+                  {% set sizeAttrs = 'width="{{ item.logo.width|escape_attr }}" height="{{ item.logo.height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+                  {% elif item.logo.size_type == 'auto_custom_max' %}
+                  {% set sizeAttrs = 'width="{{ item.logo.max_width|escape_attr }}" height="{{ item.logo.max_height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+                  {% endif %}
+                  {% set loadingAttr = item.logo.loading != 'disabled' ? 'loading="{{ item.logo.loading|escape_attr }}"' : '' %}
+                  <img src="{{ item.logo.src|escape_url }}" alt="{{ item.logo.alt|escape_attr }}" {{ loadingAttr }} {{ sizeAttrs }}>
+                  {% endif %}
+           </div>
+         {% endfor %}
+       </div>
+       
+       
+       <div class="casestuddyIRtConte">
+         {% for item in module.content.case_study_tab %}
+           <div class="casestuddyIRtCitm casestd{{ loop.index }}">
+             <div class="casestuddyIRtCinnn">
+             <h3 class="pb48">{{ item.title }}</h3>    
+             <div class="casestuddyIRtCitt"> 
+               <div class="casestuddyIRttext">
+                 {{ item.text }}
+               </div>
+               <div class="casestuddyIRsuttext">
+                 {{ item.sub_text }}
+               </div>
+             </div>
+             </div>
+           </div>
+         {% endfor %}
+       </div>
+       
+       
+       
+       
+       
+       
+       
+       
+     </div>
+   </div>
+   
+   
+   
+   
+  </div>
+  
+  
+  <div class="casestuddyLshape">
+     {% if module.content.left_shape.src %}
+      {% set sizeAttrs = 'width="{{ module.content.left_shape.width|escape_attr }}" height="{{ module.content.left_shape.height|escape_attr }}"' %}
+      {% if module.content.left_shape.size_type == 'auto' %}
+        {% set sizeAttrs = 'width="{{ module.content.left_shape.width|escape_attr }}" height="{{ module.content.left_shape.height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+      {% elif module.content.left_shape.size_type == 'auto_custom_max' %}
+        {% set sizeAttrs = 'width="{{ module.content.left_shape.max_width|escape_attr }}" height="{{ module.content.left_shape.max_height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+      {% endif %}
+       {% set loadingAttr = module.content.left_shape.loading != 'disabled' ? 'loading="{{ module.content.left_shape.loading|escape_attr }}"' : '' %}
+      <img src="{{ module.content.left_shape.src|escape_url }}" alt="{{ module.content.left_shape.alt|escape_attr }}" {{ loadingAttr }} {{ sizeAttrs }}>
+     {% endif %}
+  </div>
+  <div class="casestuddyRshape">
+    {% if module.content.right_shape.src %}
+      {% set sizeAttrs = 'width="{{ module.content.right_shape.width|escape_attr }}" height="{{ module.content.right_shape.height|escape_attr }}"' %}
+      {% if module.content.right_shape.size_type == 'auto' %}
+        {% set sizeAttrs = 'width="{{ module.content.right_shape.width|escape_attr }}" height="{{ module.content.right_shape.height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+      {% elif module.content.right_shape.size_type == 'auto_custom_max' %}
+        {% set sizeAttrs = 'width="{{ module.content.right_shape.max_width|escape_attr }}" height="{{ module.content.right_shape.max_height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+      {% endif %}
+       {% set loadingAttr = module.content.right_shape.loading != 'disabled' ? 'loading="{{ module.content.right_shape.loading|escape_attr }}"' : '' %}
+      <img src="{{ module.content.right_shape.src|escape_url }}" alt="{{ module.content.right_shape.alt|escape_attr }}" {{ loadingAttr }} {{ sizeAttrs }}>
+    {% endif %}
+  </div>
+  
+  
+  
+  
+</div>
+
+  <div class="casestuddyVids">
+    <div class="casestuddyVidover"></div>
+    <div class="wrapper">
+      <div class="case-close-popp"></div>
+    {% for item in module.content.case_study_tab %}
+    <div class="casestuddyVid vids{{  loop.index }}">
+      
+       {% if item.button.video_source == 'file' %}
+
+      <video width="320" height="240" controls>
+        <source src="{{ item.button.video }}" type="video/mp4">
+        <source src="{{ item.button.video }}" type="video/ogg">
+      </video>
+
+     {% elif item.button.video_source == 'youtube' %}
+        <iframe width="560" height="315" src="{{ item.button.youtube_url|replace('watch?v=','embed/')|replace('//youtu.be','//www.youtube.com/embed/') }}?enablejsapi=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      {% endif %}
+
+
+      
+    </div>
+    {% endfor %}
+  </div>
+</div>
+
+
+
+
+{% require_css %}
+<style>
+  {{ moduleId }} .bgsec { {% if module.style.select_background == 'bg_color' %}
+    background-color: rgba({{ module.style.background_color.color|convert_rgb }},{{ module.style.background_color.opacity ~ '%' }});
+    {% elif module.style.select_background == 'bg_image' %}
+    {{ module.style.background_image.css }} background-repeat: no-repeat;
+    {% elif module.style.select_background == 'bg_gradient' %}
+    background: {{ module.style.background_gradient.css }};
+    {% endif %} }
+  
+  {{ moduleId }} .space-sec { {{ module.style.spacing.desktop.css }}; }
+  
+  {{ moduleId }} .casestuddyTitle h2 { color:rgba({{ module.color_setting.title_color.color|convert_rgb }},{{ module.color_setting.title_color.opacity }}%);  }
+  {{ moduleId }} .casestuddyTitle h2 span { color:rgba({{ module.color_setting.title_span_color.color|convert_rgb }},{{ module.color_setting.title_span_color.opacity }}%);  }
+  {{ moduleId }} .casestuddyIRtCitm h3 { color:rgba({{ module.color_setting.tab_title_color.color|convert_rgb }},{{ module.color_setting.tab_title_color.opacity }}%);  }
+  {{ moduleId }} .casestuddyIRttext { color:rgba({{ module.color_setting.tab_text_color.color|convert_rgb }},{{ module.color_setting.tab_text_color.opacity }}%);  }
+  {{ moduleId }} .casestuddyIRsuttext { color:rgba({{ module.color_setting.tab_sub_text_color.color|convert_rgb }},{{ module.color_setting.tab_sub_text_color.opacity }}%);  }
+  {{ moduleId }} .casestuddyIRsuttext span { color:rgba({{ module.color_setting.tab_sub_text_span_color.color|convert_rgb }},{{ module.color_setting.tab_sub_text_span_color.opacity }}%);  }
+  
+  
+  
+  @media(max-width: 991px){ {{ moduleId }} .space-sec { {{ module.style.spacing.tablet.css }}; } }
+  
+  @media(max-width: 767px){ {{ moduleId }} .space-sec { {{ module.style.spacing.mobile.css }}; } }
+  
+</style>
+{% end_require_css %}
+
+
+
+{% endif %}
+

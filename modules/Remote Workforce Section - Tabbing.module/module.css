@@ -1,0 +1,54 @@
+.rwtab-header { max-width: 1135px; margin-left: auto; margin-right: auto; margin-bottom: 72px; }
+.rwtab-list { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; }
+.rwtab-list ul { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; row-gap: 10px; border-radius: 24px; border: 2px solid #F6F6F9; }
+.rwtab-list ul li { margin-left: 2px; margin-right: 2px; }
+.rwtab-list ul li:first-child { margin-left: 0; }
+.rwtab-list ul li:last-child { margin-right: 0; }
+.rwtab-list ul li a { letter-spacing: -0.15px; box-shadow: none; white-space: nowrap; padding: 8px 20px 12px; border-radius: 24px; border: 2px solid transparent; font-size: 20px; font-weight: 700; }
+.rwtab-listicon { padding-right: 8px; display: inline-block; vertical-align: middle; line-height: 1; }
+.rwtab-list ul li.active a { border-color: #227AF7; }
+.rwtab-list ul li a:hover { background-color: #F5F6FA; }
+.rwtab-row { width: 100%; margin-top: 40px; }
+.rwtab-cols { display: none; width: 100%;  flex-wrap: wrap; align-items: center; }
+.rwtab-colscontent { width: 48%; margin-right: 4%; }
+.rwtab-colsimg { width: 48%; }
+.rwtab-cols-btn { margin-top: 24px; }
+.rwtab-colstxt { font-size: 20px; line-height: 1.5; max-width: 500px; }
+.rwtab-tabr { display: flex; flex-wrap: wrap; background-color: #fff; padding: 60px; border-radius: 24px; }
+.rwtab-colsimgbg { padding: 30px 43px; border-radius: 24px; }
+.rwtab-cols.active { display: flex; }
+
+.rwtabbtns { margin-top: 40px; }
+
+
+
+
+@media (max-width: 1080px) {
+  
+ .rwtab-tabr { padding: 40px; }
+ .rwtab-colsimgbg { padding: 30px 30px; }
+  
+}
+
+@media (max-width: 991px) {
+  
+ .rwtab-list ul li a { font-size: 16px; padding: 8px 14px 12px; }
+ .rwtab-colstxt { font-size: 18px; }
+ .rwtab-colscontent { margin-right: 0; width: 100%; }
+ .rwtab-colsimg { width: 100%; margin-top: 30px; }     
+    
+}
+
+@media (max-width: 767px) {
+  
+  .rwtab-tabr { padding: 20px; border-radius: 12px; }
+  .rwtab-listicon img { max-width: 16px !important; }
+  .rwtab-colsimg { border-radius: 12px; padding: 20px; }
+  .rwtab-list ul li { margin-left: 0; margin-right: 0; }
+  
+  
+  
+}
+
+
+
