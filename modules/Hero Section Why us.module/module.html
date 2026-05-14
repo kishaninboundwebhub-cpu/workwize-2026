@@ -1,6 +1,6 @@
 {% if module.show_hide_ %}
 {% set moduleId = '#hs_cos_wrapper_{{ name }}' %}
-<div class="heroWhSec {% if module.updated_shapes %} heroWhupdahs {% endif %} fullwidth bgsec space-sec">
+<div class="heroWhSec {% if module.updated_shapes %} heroWhupdahs {% endif %} {% if module.set_bottom_shapes %} herobotshape {% endif %} fullwidth bgsec space-sec">
   <div class="heroWhsp1">
         {% if module.left_image.src %}
         {% set sizeAttrs = 'width="{{ module.left_image.width|escape_attr }}" height="{{ module.left_image.height|escape_attr }}"' %}

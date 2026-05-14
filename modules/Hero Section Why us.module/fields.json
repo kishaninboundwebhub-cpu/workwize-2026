@@ -607,6 +607,17 @@
   "type" : "boolean",
   "display_width" : null,
   "default" : false
+}, 
+{
+  "id" : "0e04464e-da41-2a44-38e3-35e4b16122245",
+  "name" : "set_bottom_shapes",
+  "label" : "Set Bottom Shapes",
+  "required" : false,
+  "locked" : false,
+  "display" : "toggle",
+  "type" : "boolean",
+  "display_width" : null,
+  "default" : false
 }, {
   "id" : "997a0d18-8a77-3304-977d-c7564f9127db",
   "name" : "content_max_width",
